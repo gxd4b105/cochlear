@@ -12,7 +12,6 @@ export function getName(id) {
 export function getHeader() {
     return async function (dispatch, getState) {
         let {data} = await getHeaderFromAPI();
-        console.log('we havre the header ', data);
         dispatch({ type: Types.UPDATE_HEADER, payload: data });
     }
 }
@@ -41,15 +40,11 @@ export function getHomesecond() {
 export function getFooter() {
     return async function (dispatch, getState) {
         let {data} = await getFooterFromAPI();
-        console.log('we havre the footer ', data);
         dispatch({ type: Types.UPDATE_FOOTER, payload: data });
     }
 }
 
-
-
 function getUserFromAPI(id) {
-    console.log('get user..', id);
     return Request.get(`https://jsonplaceholder.typicode.com/users/${id}`);
 }
 

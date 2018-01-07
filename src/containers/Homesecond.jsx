@@ -9,21 +9,7 @@ import * as actions from '../shared/app/redux/actions/user-actions'
 
 class Homesecond extends Component {
     static fetchData({ store, params }) {
-
-        // ok we are in Home, so lets go through each component  we are going to use and call
-        // their fetchData to get all fo the data we need for each.
-
-        // IN REALITY THE HEADER AND FOOTER WILL ALWAYS BE THERE IN THE MAIN DIV SO THEY WONT
-        // BE IN INDIVIDUAL COMPONENTS LIKE HOME.JSX
-
-        // TODO - MOVE HEADER AND FOOTER TO SHOW ON LIKE A MAIN.JSX FILE, THEN
-        // MAKE ROUTE MATCH COCHLEAR LIKE /INTL/ARTICLEBLAH
-
-        //console.log('XXXXXXXXXXXXXXXX');
-
         return store.dispatch(actions.getHomesecond());
-        
-        return Promise.all([Header.fetchData({store}), Footer.fetchData({store})]);
     }
 
     componentDidMount() {
@@ -39,8 +25,6 @@ class Homesecond extends Component {
                     <title>Homesecond</title>
                 </Helmet>
                 <Bodysecond />
-
-
             </div>
         );
     }

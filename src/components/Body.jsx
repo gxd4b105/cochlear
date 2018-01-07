@@ -8,18 +8,16 @@ import * as actions from '../shared/app/redux/actions/user-actions'
 
 class Body extends Component {
     static fetchData() {
-        console.log('test-header');
+        console.log('test fetch. This does nothing at the moment');
     }
     componentDidMount() {
-        console.log('YES!!!!');
-        this.props.getHomesecond();
+        this.props.getHome();
     }
     render() {
         return (
             <div>
                 <hr />
                 This is the Body 
-
                 title: {this.props.bodyTitle} 
                 <Navbar />
                 <hr />
@@ -28,7 +26,6 @@ class Body extends Component {
     }
 }
 function mapStateToProps(state) {
-    console.log('MMMMMMMMMMM ', state);
     return {
         ...state.user,
     }

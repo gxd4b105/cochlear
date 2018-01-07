@@ -19,7 +19,6 @@ app.get('*', (req, res) => {
 		//create new redux store on each request
 
 		const store = createStore(reducers, {}, applyMiddleware(thunk));
-		console.log('This fires whenever you view source for some reason. ', store.getState());
 		let foundPath = null;
 		// match request url to our React Router paths and grab component
 		let { path, component } = routeBank.routes.find(
@@ -34,83 +33,46 @@ app.get('*', (req, res) => {
 				return foundPath;
 			}) || {};
 		// safety check for valid component, if no component we initialize an empty shell.
-
-		console.log('OK11111111');
-			console.log(App.fetchData);
-		console.log('OK2');
+		console.log(App.fetchData);
 		if (!component)
 			component = {};
 		// safety check for fetchData function, if no function we give it an empty promise
 		if (!component.fetchData)
 			component.fetchData = () => new Promise(resolve => resolve());
 		// meat and bones of our isomorphic application: grabbing async data
-		console.log('foundpath is ', foundPath);
-		console.log('AND fetchdata is ', component);
 
 		let p1 = component.fetchData({ store, params: (foundPath ? foundPath.params : {}) });
 		let p2 = App.fetchData({ store, params: (foundPath ? foundPath.params : {}) });
 
-
 		Promise.all([p1, p2]).then(values => { 
-			console.log('HeLLLLOO WOOOOOOO');
-			console.log(values); // [3, 1337, "foo"] 
-
-
-
-
-
-
-
-
-
-
-
-
-		//await component.fetchData({ store, params: (foundPath ? foundPath.params : {}) });
-		//await App.fetchData({ store, params: (foundPath ? foundPath.params : {}) });
-		//get store state (js object of entire store)
-		console.log('store is ', store.getState());
-		let preloadedState = store.getState();
-		//context is used by react router, empty by default
-		let context = {};
-		const html = ReactDOM.renderToString(
-			<Provider store={store}>
-				<Router context={context} location={req.url}>
-					<App />
-				</Router>
-			</Provider>
-		)
-		//render helmet data aka meta data in <head></head>
-		const helmetData = helmet.renderStatic();
-		//check context for url, if url exists then react router has ran into a redirect
-		if (context.url) {
-			//process redirect through express by redirecting
-			res.redirect(context.status, 'http://' + req.headers.host + context.url);
-		} else if (foundPath && foundPath.path == '/404') {
-			//if 404 then send our custom 404 page with initial state and meta data, this is needed for status code 404
-			res.status(404).send(renderFullPage(html, preloadedState, helmetData))
-		} else {
-			console.log('HHHHHH');
-			console.log(html);
-			console.log(preloadedState);
-			//else send down page with initial state and meta data
-			res.send(renderFullPage(html, preloadedState, helmetData))
-		}
-
-
-
-
-
-
-
-
-		  });
-
-
-
-
-
-
+			//await component.fetchData({ store, params: (foundPath ? foundPath.params : {}) });
+			//await App.fetchData({ store, params: (foundPath ? foundPath.params : {}) });
+			//get store state (js object of entire store)
+			console.log('store is ', store.getState());
+			let preloadedState = store.getState();
+			//context is used by react router, empty by default
+			let context = {};
+			const html = ReactDOM.renderToString(
+				<Provider store={store}>
+					<Router context={context} location={req.url}>
+						<App />
+					</Router>
+				</Provider>
+			)
+			//render helmet data aka meta data in <head></head>
+			const helmetData = helmet.renderStatic();
+			//check context for url, if url exists then react router has ran into a redirect
+			if (context.url) {
+				//process redirect through express by redirecting
+				res.redirect(context.status, 'http://' + req.headers.host + context.url);
+			} else if (foundPath && foundPath.path == '/404') {
+				//if 404 then send our custom 404 page with initial state and meta data, this is needed for status code 404
+				res.status(404).send(renderFullPage(html, preloadedState, helmetData))
+			} else {
+				//else send down page with initial state and meta data
+				res.send(renderFullPage(html, preloadedState, helmetData))
+			}
+		});
 	} catch (error) {
 		res.status(400).send(renderFullPage('An error occured.', {}, {}));
 	}

@@ -911,7 +911,6 @@ function getHeader() {
             _ref2 = _resp;
             data = _ref2.data;
 
-            console.log('we havre the header ', data);
             dispatch({ type: _userTypes.Types.UPDATE_HEADER, payload: data });
         });
     };
@@ -972,14 +971,12 @@ function getFooter() {
             _ref6 = _resp;
             data = _ref6.data;
 
-            console.log('we havre the footer ', data);
             dispatch({ type: _userTypes.Types.UPDATE_FOOTER, payload: data });
         });
     };
 }
 
 function getUserFromAPI(id) {
-    console.log('get user..', id);
     return _axios2.default.get('https://jsonplaceholder.typicode.com/users/' + id);
 }
 
@@ -3281,16 +3278,7 @@ var Navbar = function (_Component) {
                         _react2.default.createElement(
                             _reactRouterDom.Link,
                             { to: '/' },
-                            'Home please!!!!'
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'li',
-                        null,
-                        _react2.default.createElement(
-                            _reactRouterDom.Link,
-                            { to: '/user' },
-                            'User'
+                            'Home Page'
                         )
                     ),
                     _react2.default.createElement(
@@ -3299,7 +3287,7 @@ var Navbar = function (_Component) {
                         _react2.default.createElement(
                             _reactRouterDom.Link,
                             { to: '/secondpage' },
-                            'Secondpage'
+                            'Second Page'
                         )
                     )
                 )
@@ -3307,9 +3295,7 @@ var Navbar = function (_Component) {
         }
     }], [{
         key: 'fetchData',
-        value: function fetchData() {
-            console.log('test');
-        }
+        value: function fetchData() {}
     }]);
 
     return Navbar;
@@ -5372,18 +5358,6 @@ var App = function (_Component) {
             var store = _ref3.store,
                 params = _ref3.params;
 
-
-            // ok we are in Home, so lets go through each component  we are going to use and call
-            // their fetchData to get all fo the data we need for each.
-
-            // IN REALITY THE HEADER AND FOOTER WILL ALWAYS BE THERE IN THE MAIN DIV SO THEY WONT
-            // BE IN INDIVIDUAL COMPONENTS LIKE HOME.JSX
-
-            // TODO - MOVE HEADER AND FOOTER TO SHOW ON LIKE A MAIN.JSX FILE, THEN
-            // MAKE ROUTE MATCH COCHLEAR LIKE /INTL/ARTICLEBLAH
-
-            //return 'baladfad';
-
             return Promise.all([_Header2.default.fetchData({ store: store }), _Footer2.default.fetchData({ store: store })]);
         }
     }]);
@@ -6417,8 +6391,7 @@ var Body = function (_Component) {
     _createClass(Body, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            console.log('YES!!!!');
-            this.props.getHomesecond();
+            this.props.getHome();
         }
     }, {
         key: 'render',
@@ -6436,7 +6409,7 @@ var Body = function (_Component) {
     }], [{
         key: 'fetchData',
         value: function fetchData() {
-            console.log('test-header');
+            console.log('test fetch. This does nothing at the moment');
         }
     }]);
 
@@ -6444,7 +6417,6 @@ var Body = function (_Component) {
 }(_react.Component);
 
 function mapStateToProps(state) {
-    console.log('MMMMMMMMMMM ', state);
     return _extends({}, state.user);
 }
 function mapDispatchToProps(dispatch) {
@@ -6509,7 +6481,6 @@ var Bodysecond = function (_Component) {
     _createClass(Bodysecond, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            console.log('YES!!!!');
             this.props.getHomesecond();
         }
     }, {
@@ -6528,7 +6499,7 @@ var Bodysecond = function (_Component) {
     }], [{
         key: 'fetchData',
         value: function fetchData() {
-            console.log('test-header');
+            console.log('test fetch. This does nothing at the moment');
         }
     }]);
 
@@ -6536,7 +6507,6 @@ var Bodysecond = function (_Component) {
 }(_react.Component);
 
 function mapStateToProps(state) {
-    console.log('MMMMMMMMMMM ', state);
     return _extends({}, state.user);
 }
 function mapDispatchToProps(dispatch) {
@@ -6616,16 +6586,6 @@ var Home = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(
-                    _reactHelmet.Helmet,
-                    null,
-                    _react2.default.createElement('meta', { charSet: 'utf-8' }),
-                    _react2.default.createElement(
-                        'title',
-                        null,
-                        'Home'
-                    )
-                ),
                 _react2.default.createElement(_Body2.default, null)
             );
         }
@@ -6635,19 +6595,7 @@ var Home = function (_Component) {
             var store = _ref.store,
                 params = _ref.params;
 
-
-            // ok we are in Home, so lets go through each component  we are going to use and call
-            // their fetchData to get all fo the data we need for each.
-
-            // IN REALITY THE HEADER AND FOOTER WILL ALWAYS BE THERE IN THE MAIN DIV SO THEY WONT
-            // BE IN INDIVIDUAL COMPONENTS LIKE HOME.JSX
-
-            // TODO - MOVE HEADER AND FOOTER TO SHOW ON LIKE A MAIN.JSX FILE, THEN
-            // MAKE ROUTE MATCH COCHLEAR LIKE /INTL/ARTICLEBLAH
-
             return store.dispatch(actions.getHome());
-
-            return Promise.all([_Header2.default.fetchData({ store: store }), _Footer2.default.fetchData({ store: store })]);
         }
     }]);
 
@@ -6753,21 +6701,7 @@ var Homesecond = function (_Component) {
             var store = _ref.store,
                 params = _ref.params;
 
-
-            // ok we are in Home, so lets go through each component  we are going to use and call
-            // their fetchData to get all fo the data we need for each.
-
-            // IN REALITY THE HEADER AND FOOTER WILL ALWAYS BE THERE IN THE MAIN DIV SO THEY WONT
-            // BE IN INDIVIDUAL COMPONENTS LIKE HOME.JSX
-
-            // TODO - MOVE HEADER AND FOOTER TO SHOW ON LIKE A MAIN.JSX FILE, THEN
-            // MAKE ROUTE MATCH COCHLEAR LIKE /INTL/ARTICLEBLAH
-
-            //console.log('XXXXXXXXXXXXXXXX');
-
             return store.dispatch(actions.getHomesecond());
-
-            return Promise.all([_Header2.default.fetchData({ store: store }), _Footer2.default.fetchData({ store: store })]);
         }
     }]);
 

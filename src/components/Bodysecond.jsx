@@ -8,10 +8,9 @@ import * as actions from '../shared/app/redux/actions/user-actions'
 
 class Bodysecond extends Component {
     static fetchData() {
-        console.log('test-header');
+        console.log('test fetch. This does nothing at the moment');
     }
     componentDidMount() {
-        console.log('YES!!!!');
         this.props.getHomesecond();
     }
     render() {
@@ -28,7 +27,6 @@ class Bodysecond extends Component {
     }
 }
 function mapStateToProps(state) {
-    console.log('MMMMMMMMMMM ', state);
     return {
         ...state.user,
     }

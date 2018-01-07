@@ -19,9 +19,7 @@ class Header extends Component {
                     <title>The title</title>
                 </Helmet>
                 <strong>HEADER</strong>
-    
                     title: {this.props.headerTitle} 
-  
             </div>
         );
     }
