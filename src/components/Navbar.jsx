@@ -1,0 +1,20 @@
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
+class Navbar extends Component {
+    static fetchData() {
+        console.log('test');
+    }
+    render() {
+        return (
+            <div>
+                <ul>
+                    <li><Link to='/'>Home please!!!!</Link></li>
+                    <li><Link to='/user'>User</Link></li>
+                    <li><Link to='/secondpage'>Secondpage</Link></li>
+                </ul>
+            </div>
+        );
+    }
+}
+export default Navbar;
