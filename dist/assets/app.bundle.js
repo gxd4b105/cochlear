@@ -803,65 +803,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 /* 8 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__ = __webpack_require__(152);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "BrowserRouter", function() { return __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HashRouter__ = __webpack_require__(153);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "HashRouter", function() { return __WEBPACK_IMPORTED_MODULE_1__HashRouter__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Link__ = __webpack_require__(61);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Link", function() { return __WEBPACK_IMPORTED_MODULE_2__Link__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__ = __webpack_require__(154);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MemoryRouter", function() { return __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__NavLink__ = __webpack_require__(155);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "NavLink", function() { return __WEBPACK_IMPORTED_MODULE_4__NavLink__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Prompt__ = __webpack_require__(156);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Prompt", function() { return __WEBPACK_IMPORTED_MODULE_5__Prompt__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Redirect__ = __webpack_require__(157);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Redirect", function() { return __WEBPACK_IMPORTED_MODULE_6__Redirect__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Route__ = __webpack_require__(62);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Route", function() { return __WEBPACK_IMPORTED_MODULE_7__Route__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Router__ = __webpack_require__(31);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Router", function() { return __WEBPACK_IMPORTED_MODULE_8__Router__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__StaticRouter__ = __webpack_require__(158);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "StaticRouter", function() { return __WEBPACK_IMPORTED_MODULE_9__StaticRouter__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Switch__ = __webpack_require__(159);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Switch", function() { return __WEBPACK_IMPORTED_MODULE_10__Switch__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__matchPath__ = __webpack_require__(160);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "matchPath", function() { return __WEBPACK_IMPORTED_MODULE_11__matchPath__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__withRouter__ = __webpack_require__(161);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "withRouter", function() { return __WEBPACK_IMPORTED_MODULE_12__withRouter__["a"]; });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/***/ }),
-/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -872,6 +813,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getName = getName;
 exports.getHeader = getHeader;
+exports.setHeaderCountry = setHeaderCountry;
+exports.getFooterCountry = getFooterCountry;
 exports.getBody = getBody;
 exports.getHome = getHome;
 exports.getHomesecond = getHomesecond;
@@ -913,6 +856,19 @@ function getHeader() {
 
             dispatch({ type: _userTypes.Types.UPDATE_HEADER, payload: data });
         });
+    };
+}
+
+function setHeaderCountry(data) {
+    console.log('here we go ', data);
+    return function (dispatch, getState) {
+        dispatch({ type: _userTypes.Types.UPDATE_HEADER_COUNTRY, payload: data });
+    };
+}
+
+function getFooterCountry(data) {
+    return function (dispatch, getState) {
+        dispatch({ type: _userTypes.Types.UPDATE_FOOTER_COUNTRY, payload: data });
     };
 }
 
@@ -999,6 +955,65 @@ function getHomesecondFromAPI() {
 function getFooterFromAPI() {
     return _axios2.default.get('https://api.myjson.com/bins/xrn0n');
 }
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__ = __webpack_require__(152);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "BrowserRouter", function() { return __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HashRouter__ = __webpack_require__(153);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "HashRouter", function() { return __WEBPACK_IMPORTED_MODULE_1__HashRouter__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Link__ = __webpack_require__(61);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Link", function() { return __WEBPACK_IMPORTED_MODULE_2__Link__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__ = __webpack_require__(154);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MemoryRouter", function() { return __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__NavLink__ = __webpack_require__(155);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "NavLink", function() { return __WEBPACK_IMPORTED_MODULE_4__NavLink__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Prompt__ = __webpack_require__(156);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Prompt", function() { return __WEBPACK_IMPORTED_MODULE_5__Prompt__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Redirect__ = __webpack_require__(157);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Redirect", function() { return __WEBPACK_IMPORTED_MODULE_6__Redirect__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Route__ = __webpack_require__(62);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Route", function() { return __WEBPACK_IMPORTED_MODULE_7__Route__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Router__ = __webpack_require__(31);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Router", function() { return __WEBPACK_IMPORTED_MODULE_8__Router__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__StaticRouter__ = __webpack_require__(158);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "StaticRouter", function() { return __WEBPACK_IMPORTED_MODULE_9__StaticRouter__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Switch__ = __webpack_require__(159);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Switch", function() { return __WEBPACK_IMPORTED_MODULE_10__Switch__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__matchPath__ = __webpack_require__(160);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "matchPath", function() { return __WEBPACK_IMPORTED_MODULE_11__matchPath__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__withRouter__ = __webpack_require__(161);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "withRouter", function() { return __WEBPACK_IMPORTED_MODULE_12__withRouter__["a"]; });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /***/ }),
 /* 10 */
@@ -1836,7 +1851,7 @@ var _redux = __webpack_require__(6);
 
 var _reactHelmet = __webpack_require__(10);
 
-var _userActions = __webpack_require__(9);
+var _userActions = __webpack_require__(8);
 
 var actions = _interopRequireWildcard(_userActions);
 
@@ -1935,7 +1950,7 @@ var _redux = __webpack_require__(6);
 
 var _reactHelmet = __webpack_require__(10);
 
-var _userActions = __webpack_require__(9);
+var _userActions = __webpack_require__(8);
 
 var actions = _interopRequireWildcard(_userActions);
 
@@ -1961,6 +1976,13 @@ var Header = function (_Component) {
     _createClass(Header, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
+            if (this.props.match) {
+                console.log('mounted ', this.props.match.params.country);
+            }
+            console.log('rwwwww');
+            console.log(this.props);
+            //console.log(store);
+
             this.props.getHeader();
         }
     }, {
@@ -1984,16 +2006,38 @@ var Header = function (_Component) {
                     null,
                     'HEADER'
                 ),
+                _react2.default.createElement(
+                    'p',
+                    null,
+                    'So Esteban is ... ',
+                    this.props.esteban
+                ),
                 'title: ',
-                this.props.headerTitle
+                this.props.headerTitle,
+                ' ANFFDDDD ',
+                this.props.headerCountry
             );
         }
     }], [{
         key: 'fetchData',
         value: function fetchData(_ref) {
-            var store = _ref.store;
+            var store = _ref.store,
+                params = _ref.params;
 
-            return store.dispatch(actions.getHeader());
+            console.log('STORE STATES ', store.getState().user.headerCountry);
+            console.log('PARAMS ', params);
+            console.log('Mounted ', params.country);
+            console.log('CHECKING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+            if (store.getState().user.headerCountry != params.country) {
+                console.log('NO ', params.country);
+                console.log('ACtisoNS ', actions);
+
+                store.dispatch(actions.setHeaderCountry(params));
+                return store.dispatch(actions.getHeader());
+            } else {
+                console.log('YES!');
+                return;
+            }
         }
     }]);
 
@@ -3244,7 +3288,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(8);
+var _reactRouterDom = __webpack_require__(9);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3277,7 +3321,7 @@ var Navbar = function (_Component) {
                         null,
                         _react2.default.createElement(
                             _reactRouterDom.Link,
-                            { to: '/' },
+                            { to: '/intl/firstpage' },
                             'Home Page'
                         )
                     ),
@@ -3286,7 +3330,7 @@ var Navbar = function (_Component) {
                         null,
                         _react2.default.createElement(
                             _reactRouterDom.Link,
-                            { to: '/secondpage' },
+                            { to: '/intl/secondpage' },
                             'Second Page'
                         )
                     )
@@ -3319,7 +3363,9 @@ var Types = exports.Types = {
     UPDATE_BODY: 'UPDATE_BODY',
     UPDATE_HOME: 'UPDATE_HOME',
     UPDATE_HOMESECOND: 'UPDATE_HOMESECOND',
-    UPDATE_FOOTER: 'UPDATE_FOOTER'
+    UPDATE_FOOTER: 'UPDATE_FOOTER',
+    UPDATE_HEADER_COUNTRY: 'UPDATE_HEADER_COUNTRY',
+    UPDATE_FOOTER_COUNTRY: 'UPDATE_FOOTER_COUNTRY'
 };
 
 /***/ }),
@@ -5279,13 +5325,15 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(8);
+var _reactRouterDom = __webpack_require__(9);
 
 var _redirectWStatus = __webpack_require__(98);
 
@@ -5306,6 +5354,16 @@ var _Header2 = _interopRequireDefault(_Header);
 var _Footer = __webpack_require__(18);
 
 var _Footer2 = _interopRequireDefault(_Footer);
+
+var _reactRedux = __webpack_require__(7);
+
+var _redux = __webpack_require__(6);
+
+var _userActions = __webpack_require__(8);
+
+var actions = _interopRequireWildcard(_userActions);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5339,10 +5397,11 @@ var App = function (_Component) {
                     status = _ref2.status;
                 return _react2.default.createElement(_redirectWStatus2.default, { key: Math.random() + 'REDIRECT_', from: from, to: to, status: status });
             });
+
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_Header2.default, null),
+                _react2.default.createElement(_Header2.default, { esteban: this.props.bodyTitle }),
                 _react2.default.createElement(
                     _reactRouterDom.Switch,
                     null,
@@ -5358,14 +5417,20 @@ var App = function (_Component) {
             var store = _ref3.store,
                 params = _ref3.params;
 
-            return Promise.all([_Header2.default.fetchData({ store: store }), _Footer2.default.fetchData({ store: store })]);
+            return Promise.all([_Header2.default.fetchData({ store: store, params: params }), _Footer2.default.fetchData({ store: store, params: params })]);
         }
     }]);
 
     return App;
 }(_react.Component);
 
-exports.default = App;
+function mapStateToProps(state) {
+    return _extends({}, state.user);
+}
+function mapDispatchToProps(dispatch) {
+    return (0, _redux.bindActionCreators)(actions, dispatch);
+}
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(App);
 
 /***/ }),
 /* 72 */
@@ -6310,7 +6375,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(73);
 
-var _reactRouterDom = __webpack_require__(8);
+var _reactRouterDom = __webpack_require__(9);
 
 var _reactRedux = __webpack_require__(7);
 
@@ -6353,7 +6418,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(8);
+var _reactRouterDom = __webpack_require__(9);
 
 var _reactRedux = __webpack_require__(7);
 
@@ -6365,7 +6430,7 @@ var _redux = __webpack_require__(6);
 
 var _reactHelmet = __webpack_require__(10);
 
-var _userActions = __webpack_require__(9);
+var _userActions = __webpack_require__(8);
 
 var actions = _interopRequireWildcard(_userActions);
 
@@ -6443,7 +6508,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(8);
+var _reactRouterDom = __webpack_require__(9);
 
 var _reactRedux = __webpack_require__(7);
 
@@ -6455,7 +6520,7 @@ var _redux = __webpack_require__(6);
 
 var _reactHelmet = __webpack_require__(10);
 
-var _userActions = __webpack_require__(9);
+var _userActions = __webpack_require__(8);
 
 var actions = _interopRequireWildcard(_userActions);
 
@@ -6551,7 +6616,7 @@ var _Body = __webpack_require__(93);
 
 var _Body2 = _interopRequireDefault(_Body);
 
-var _userActions = __webpack_require__(9);
+var _userActions = __webpack_require__(8);
 
 var actions = _interopRequireWildcard(_userActions);
 
@@ -6647,7 +6712,7 @@ var _Bodysecond = __webpack_require__(94);
 
 var _Bodysecond2 = _interopRequireDefault(_Bodysecond);
 
-var _userActions = __webpack_require__(9);
+var _userActions = __webpack_require__(8);
 
 var actions = _interopRequireWildcard(_userActions);
 
@@ -6673,6 +6738,7 @@ var Homesecond = function (_Component) {
     _createClass(Homesecond, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
+            console.log('mounted ', this.props.match.params.country);
             this.props.getHeader();
             this.props.getFooter();
         }
@@ -6692,7 +6758,9 @@ var Homesecond = function (_Component) {
                         'Homesecond'
                     )
                 ),
-                _react2.default.createElement(_Bodysecond2.default, null)
+                _react2.default.createElement(_Bodysecond2.default, null),
+                'AND the route params is: ',
+                this.props.match.params.country
             );
         }
     }], [{
@@ -6709,6 +6777,8 @@ var Homesecond = function (_Component) {
 }(_react.Component);
 
 function mapStateToProps(state) {
+    console.log('TEST TEST TEST ', state);
+
     return _extends({}, state.home);
 }
 function mapDispatchToProps(dispatch) {
@@ -6733,7 +6803,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(8);
+var _reactRouterDom = __webpack_require__(9);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6809,7 +6879,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(8);
+var _reactRouterDom = __webpack_require__(9);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6919,6 +6989,8 @@ var initialState = {
     email: null,
     title: null,
     headerTitle: null,
+    headerCountry: null,
+    footerCountry: null,
     footerTitle: null,
     bodyTitle: null,
     bodysecondTitle: null
@@ -6927,11 +6999,17 @@ function userReducer() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
     var action = arguments[1];
 
+    console.log('here we go222 ', action);
     switch (action.type) {
         case _userTypes.Types.UPDATE_NAME:
             return _extends({}, state, { name: action.payload.name, email: action.payload.email });
         case _userTypes.Types.UPDATE_HEADER:
             return _extends({}, state, { headerTitle: action.payload.title });
+        case _userTypes.Types.UPDATE_HEADER_COUNTRY:
+            console.log('YE UES ', state, action.payload.country);
+            return _extends({}, state, { headerCountry: action.payload.country });
+        case _userTypes.Types.UPDATE_FOOTER_COUNTRY:
+            return _extends({}, state, { footerCountry: action.payload.country });
         case _userTypes.Types.UPDATE_FOOTER:
             return _extends({}, state, { footerTitle: action.payload.title });
         case _userTypes.Types.UPDATE_HOME:
@@ -6968,7 +7046,7 @@ var _redux = __webpack_require__(6);
 
 var _reactHelmet = __webpack_require__(10);
 
-var _userActions = __webpack_require__(9);
+var _userActions = __webpack_require__(8);
 
 var actions = _interopRequireWildcard(_userActions);
 
@@ -7076,11 +7154,11 @@ exports.default = {
         component: _Home2.default,
         exact: true
     }, {
-        path: '/user',
-        component: _user2.default,
+        path: '/:country/firstpage',
+        component: _Home2.default,
         exact: true
     }, {
-        path: '/secondpage',
+        path: '/:country/secondpage',
         component: _Homesecond2.default,
         exact: true
     }],

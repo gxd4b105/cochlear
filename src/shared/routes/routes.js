@@ -10,12 +10,12 @@ export default {
             exact: true
         },
         {
-            path: '/user',
-            component: User,
+            path: '/:country/firstpage',
+            component: Home,
             exact: true
         },
         {
-            path: '/secondpage',
+            path: '/:country/secondpage',
             component: Homesecond,
             exact: true
         }

@@ -82,13 +82,13 @@ module.exports = require("redux");
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-helmet");
+module.exports = require("react-redux");
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-redux");
+module.exports = require("react-helmet");
 
 /***/ }),
 /* 4 */
@@ -102,6 +102,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getName = getName;
 exports.getHeader = getHeader;
+exports.setHeaderCountry = setHeaderCountry;
+exports.getFooterCountry = getFooterCountry;
 exports.getBody = getBody;
 exports.getHome = getHome;
 exports.getHomesecond = getHomesecond;
@@ -131,6 +133,19 @@ function getHeader() {
             data = _ref2.data;
 
         dispatch({ type: _userTypes.Types.UPDATE_HEADER, payload: data });
+    };
+}
+
+function setHeaderCountry(data) {
+    console.log('here we go ', data);
+    return function (dispatch, getState) {
+        dispatch({ type: _userTypes.Types.UPDATE_HEADER_COUNTRY, payload: data });
+    };
+}
+
+function getFooterCountry(data) {
+    return function (dispatch, getState) {
+        dispatch({ type: _userTypes.Types.UPDATE_FOOTER_COUNTRY, payload: data });
     };
 }
 
@@ -219,11 +234,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(3);
+var _reactRedux = __webpack_require__(2);
 
 var _redux = __webpack_require__(1);
 
-var _reactHelmet = __webpack_require__(2);
+var _reactHelmet = __webpack_require__(3);
 
 var _userActions = __webpack_require__(4);
 
@@ -318,11 +333,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(3);
+var _reactRedux = __webpack_require__(2);
 
 var _redux = __webpack_require__(1);
 
-var _reactHelmet = __webpack_require__(2);
+var _reactHelmet = __webpack_require__(3);
 
 var _userActions = __webpack_require__(4);
 
@@ -350,6 +365,13 @@ var Header = function (_Component) {
     _createClass(Header, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
+            if (this.props.match) {
+                console.log('mounted ', this.props.match.params.country);
+            }
+            console.log('rwwwww');
+            console.log(this.props);
+            //console.log(store);
+
             this.props.getHeader();
         }
     }, {
@@ -373,16 +395,38 @@ var Header = function (_Component) {
                     null,
                     'HEADER'
                 ),
+                _react2.default.createElement(
+                    'p',
+                    null,
+                    'So Esteban is ... ',
+                    this.props.esteban
+                ),
                 'title: ',
-                this.props.headerTitle
+                this.props.headerTitle,
+                ' ANFFDDDD ',
+                this.props.headerCountry
             );
         }
     }], [{
         key: 'fetchData',
         value: function fetchData(_ref) {
-            var store = _ref.store;
+            var store = _ref.store,
+                params = _ref.params;
 
-            return store.dispatch(actions.getHeader());
+            console.log('STORE STATES ', store.getState().user.headerCountry);
+            console.log('PARAMS ', params);
+            console.log('Mounted ', params.country);
+            console.log('CHECKING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+            if (store.getState().user.headerCountry != params.country) {
+                console.log('NO ', params.country);
+                console.log('ACtisoNS ', actions);
+
+                store.dispatch(actions.setHeaderCountry(params));
+                return store.dispatch(actions.getHeader());
+            } else {
+                console.log('YES!');
+                return;
+            }
         }
     }]);
 
@@ -428,11 +472,11 @@ exports.default = {
         component: _Home2.default,
         exact: true
     }, {
-        path: '/user',
-        component: _user2.default,
+        path: '/:country/firstpage',
+        component: _Home2.default,
         exact: true
     }, {
-        path: '/secondpage',
+        path: '/:country/secondpage',
         component: _Homesecond2.default,
         exact: true
     }],
@@ -493,7 +537,7 @@ var Navbar = function (_Component) {
                         null,
                         _react2.default.createElement(
                             _reactRouterDom.Link,
-                            { to: '/' },
+                            { to: '/intl/firstpage' },
                             'Home Page'
                         )
                     ),
@@ -502,7 +546,7 @@ var Navbar = function (_Component) {
                         null,
                         _react2.default.createElement(
                             _reactRouterDom.Link,
-                            { to: '/secondpage' },
+                            { to: '/intl/secondpage' },
                             'Second Page'
                         )
                     )
@@ -535,7 +579,9 @@ var Types = exports.Types = {
     UPDATE_BODY: 'UPDATE_BODY',
     UPDATE_HOME: 'UPDATE_HOME',
     UPDATE_HOMESECOND: 'UPDATE_HOMESECOND',
-    UPDATE_FOOTER: 'UPDATE_FOOTER'
+    UPDATE_FOOTER: 'UPDATE_FOOTER',
+    UPDATE_HEADER_COUNTRY: 'UPDATE_HEADER_COUNTRY',
+    UPDATE_FOOTER_COUNTRY: 'UPDATE_FOOTER_COUNTRY'
 };
 
 /***/ }),
@@ -548,6 +594,8 @@ var Types = exports.Types = {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -576,6 +624,16 @@ var _Header2 = _interopRequireDefault(_Header);
 var _Footer = __webpack_require__(6);
 
 var _Footer2 = _interopRequireDefault(_Footer);
+
+var _reactRedux = __webpack_require__(2);
+
+var _redux = __webpack_require__(1);
+
+var _userActions = __webpack_require__(4);
+
+var actions = _interopRequireWildcard(_userActions);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -609,10 +667,11 @@ var App = function (_Component) {
                     status = _ref2.status;
                 return _react2.default.createElement(_redirectWStatus2.default, { key: Math.random() + 'REDIRECT_', from: from, to: to, status: status });
             });
+
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_Header2.default, null),
+                _react2.default.createElement(_Header2.default, { esteban: this.props.bodyTitle }),
                 _react2.default.createElement(
                     _reactRouterDom.Switch,
                     null,
@@ -628,14 +687,20 @@ var App = function (_Component) {
             var store = _ref3.store,
                 params = _ref3.params;
 
-            return Promise.all([_Header2.default.fetchData({ store: store }), _Footer2.default.fetchData({ store: store })]);
+            return Promise.all([_Header2.default.fetchData({ store: store, params: params }), _Footer2.default.fetchData({ store: store, params: params })]);
         }
     }]);
 
     return App;
 }(_react.Component);
 
-exports.default = App;
+function mapStateToProps(state) {
+    return _extends({}, state.user);
+}
+function mapDispatchToProps(dispatch) {
+    return (0, _redux.bindActionCreators)(actions, dispatch);
+}
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(App);
 
 /***/ }),
 /* 12 */
@@ -730,7 +795,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(5);
 
-var _reactRedux = __webpack_require__(3);
+var _reactRedux = __webpack_require__(2);
 
 var _Navbar = __webpack_require__(9);
 
@@ -738,7 +803,7 @@ var _Navbar2 = _interopRequireDefault(_Navbar);
 
 var _redux = __webpack_require__(1);
 
-var _reactHelmet = __webpack_require__(2);
+var _reactHelmet = __webpack_require__(3);
 
 var _userActions = __webpack_require__(4);
 
@@ -820,7 +885,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(5);
 
-var _reactRedux = __webpack_require__(3);
+var _reactRedux = __webpack_require__(2);
 
 var _Navbar = __webpack_require__(9);
 
@@ -828,7 +893,7 @@ var _Navbar2 = _interopRequireDefault(_Navbar);
 
 var _redux = __webpack_require__(1);
 
-var _reactHelmet = __webpack_require__(2);
+var _reactHelmet = __webpack_require__(3);
 
 var _userActions = __webpack_require__(4);
 
@@ -908,11 +973,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(3);
+var _reactRedux = __webpack_require__(2);
 
 var _redux = __webpack_require__(1);
 
-var _reactHelmet = __webpack_require__(2);
+var _reactHelmet = __webpack_require__(3);
 
 var _Header = __webpack_require__(7);
 
@@ -1004,11 +1069,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(3);
+var _reactRedux = __webpack_require__(2);
 
 var _redux = __webpack_require__(1);
 
-var _reactHelmet = __webpack_require__(2);
+var _reactHelmet = __webpack_require__(3);
 
 var _Header = __webpack_require__(7);
 
@@ -1048,6 +1113,7 @@ var Homesecond = function (_Component) {
     _createClass(Homesecond, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
+            console.log('mounted ', this.props.match.params.country);
             this.props.getHeader();
             this.props.getFooter();
         }
@@ -1067,7 +1133,9 @@ var Homesecond = function (_Component) {
                         'Homesecond'
                     )
                 ),
-                _react2.default.createElement(_Bodysecond2.default, null)
+                _react2.default.createElement(_Bodysecond2.default, null),
+                'AND the route params is: ',
+                this.props.match.params.country
             );
         }
     }], [{
@@ -1084,6 +1152,8 @@ var Homesecond = function (_Component) {
 }(_react.Component);
 
 function mapStateToProps(state) {
+    console.log('TEST TEST TEST ', state);
+
     return _extends({}, state.home);
 }
 function mapDispatchToProps(dispatch) {
@@ -1110,7 +1180,7 @@ var _server = __webpack_require__(16);
 
 var _server2 = _interopRequireDefault(_server);
 
-var _reactHelmet = __webpack_require__(2);
+var _reactHelmet = __webpack_require__(3);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
@@ -1120,7 +1190,7 @@ var _app2 = _interopRequireDefault(_app);
 
 var _reactDom = __webpack_require__(15);
 
-var _reactRedux = __webpack_require__(3);
+var _reactRedux = __webpack_require__(2);
 
 var _redux = __webpack_require__(1);
 
@@ -1179,8 +1249,13 @@ app.get('*', function (req, res) {
 		};
 		// meat and bones of our isomorphic application: grabbing async data
 
+		console.log('AAAAAAAAAAA');
+		console.log('found path ', foundPath);
+
 		var p1 = component.fetchData({ store: store, params: foundPath ? foundPath.params : {} });
 		var p2 = _app2.default.fetchData({ store: store, params: foundPath ? foundPath.params : {} });
+
+		console.log('found path params ', foundPath.params);
 
 		Promise.all([p1, p2]).then(function (values) {
 			//await component.fetchData({ store, params: (foundPath ? foundPath.params : {}) });
@@ -1362,6 +1437,8 @@ var initialState = {
     email: null,
     title: null,
     headerTitle: null,
+    headerCountry: null,
+    footerCountry: null,
     footerTitle: null,
     bodyTitle: null,
     bodysecondTitle: null
@@ -1370,11 +1447,17 @@ function userReducer() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
     var action = arguments[1];
 
+    console.log('here we go222 ', action);
     switch (action.type) {
         case _userTypes.Types.UPDATE_NAME:
             return _extends({}, state, { name: action.payload.name, email: action.payload.email });
         case _userTypes.Types.UPDATE_HEADER:
             return _extends({}, state, { headerTitle: action.payload.title });
+        case _userTypes.Types.UPDATE_HEADER_COUNTRY:
+            console.log('YE UES ', state, action.payload.country);
+            return _extends({}, state, { headerCountry: action.payload.country });
+        case _userTypes.Types.UPDATE_FOOTER_COUNTRY:
+            return _extends({}, state, { footerCountry: action.payload.country });
         case _userTypes.Types.UPDATE_FOOTER:
             return _extends({}, state, { footerTitle: action.payload.title });
         case _userTypes.Types.UPDATE_HOME:
@@ -1405,11 +1488,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(3);
+var _reactRedux = __webpack_require__(2);
 
 var _redux = __webpack_require__(1);
 
-var _reactHelmet = __webpack_require__(2);
+var _reactHelmet = __webpack_require__(3);
 
 var _userActions = __webpack_require__(4);
 

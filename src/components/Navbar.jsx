@@ -8,8 +8,8 @@ class Navbar extends Component {
         return (
             <div>
                 <ul>
-                    <li><Link to='/'>Home Page</Link></li>
-                    <li><Link to='/secondpage'>Second Page</Link></li>
+                    <li><Link to='/intl/firstpage'>Home Page</Link></li>
+                    <li><Link to='/intl/secondpage'>Second Page</Link></li>
                 </ul>
             </div>
         );

@@ -5,10 +5,13 @@ import Navbar from './navbar.jsx';
 import routeOptions from '../routes/routes';
 import Header from '../../components/Header.jsx';
 import Footer from '../../components/Footer.jsx';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from './redux/actions/user-actions'
 
 class App extends Component {
     static fetchData({ store, params }) {        
-        return Promise.all([Header.fetchData({store}), Footer.fetchData({store})]);
+        return Promise.all([Header.fetchData({store, params}), Footer.fetchData({store, params})]);
     }
 
     render() {
@@ -18,9 +21,10 @@ class App extends Component {
         let redirects = routeOptions.redirects.map(({ from, to, status }, i) =>
             <RedirectWithStatus key={Math.random() + 'REDIRECT_'} from={from} to={to} status={status} />
         );
+
         return (
             <div>
-                <Header />
+                <Header esteban={this.props.bodyTitle} />
                 <Switch>
                     {routes}
                     {redirects}
@@ -30,4 +34,13 @@ class App extends Component {
         );
     }
 }
-export default App;
+
+function mapStateToProps(state) {
+    return {
+        ...state.user,
+    }
+}
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(actions, dispatch);
+}
+export default connect(mapStateToProps, mapDispatchToProps, null, { withRef: true })(App);

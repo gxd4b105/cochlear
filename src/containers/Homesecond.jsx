@@ -13,6 +13,7 @@ class Homesecond extends Component {
     }
 
     componentDidMount() {
+        console.log('mounted ', this.props.match.params.country);
         this.props.getHeader();
         this.props.getFooter();
     }
@@ -25,11 +26,16 @@ class Homesecond extends Component {
                     <title>Homesecond</title>
                 </Helmet>
                 <Bodysecond />
+
+                AND the route params is: {this.props.match.params.country}
+
             </div>
         );
     }
 }
 function mapStateToProps(state) {
+    console.log('TEST TEST TEST ', state);
+
     return {
         ...state.home,
     }

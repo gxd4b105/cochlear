@@ -16,6 +16,19 @@ export function getHeader() {
     }
 }
 
+export function setHeaderCountry(data) {
+    console.log('here we go ', data);
+    return function (dispatch, getState) {
+        dispatch({ type: Types.UPDATE_HEADER_COUNTRY, payload: data });
+    }
+}
+
+export function getFooterCountry(data) {
+    return function (dispatch, getState) {
+        dispatch({ type: Types.UPDATE_FOOTER_COUNTRY, payload: data });
+    }
+}
+
 export function getBody() {
     return async function (dispatch, getState) {
         let {data} = await getBodyFromAPI();
