@@ -9,7 +9,8 @@ const initialState = {
     footerCountry: null,
     footerTitle: null,
     bodyTitle: null,
-    bodysecondTitle: null
+    bodysecondTitle: null,
+    bodythirdTitle: null
 };
 export default function userReducer(state = initialState, action) {
     switch (action.type) {
@@ -27,6 +28,8 @@ export default function userReducer(state = initialState, action) {
             return {...state, bodyTitle: action.payload.title}
         case Types.UPDATE_HOMESECOND:
             return {...state, bodysecondTitle: action.payload.title}
+        case Types.UPDATE_HOMETHIRD:
+            return {...state, bodythirdTitle: action.payload.title}
         default:
             return state;
     }

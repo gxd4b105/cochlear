@@ -813,12 +813,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getName = getName;
 exports.getHeader = getHeader;
+exports.getHeaderUS = getHeaderUS;
 exports.setHeaderCountry = setHeaderCountry;
 exports.getFooterCountry = getFooterCountry;
 exports.getBody = getBody;
 exports.getHome = getHome;
 exports.getHomesecond = getHomesecond;
+exports.getHomethird = getHomethird;
 exports.getFooter = getFooter;
+exports.getFooterUS = getFooterUS;
 
 var _userTypes = __webpack_require__(43);
 
@@ -858,8 +861,22 @@ function getHeader() {
     };
 }
 
+function getHeaderUS() {
+    return function (dispatch, getState) {
+        var _ref3, data;
+
+        return Promise.resolve().then(function () {
+            return getHeaderUSFromAPI();
+        }).then(function (_resp) {
+            _ref3 = _resp;
+            data = _ref3.data;
+
+            dispatch({ type: _userTypes.Types.UPDATE_HEADER, payload: data });
+        });
+    };
+}
+
 function setHeaderCountry(data) {
-    console.log('YYYYYYYYY ', data);
     return function (dispatch, getState) {
         dispatch({ type: _userTypes.Types.UPDATE_HEADER_COUNTRY, payload: data });
     };
@@ -873,13 +890,13 @@ function getFooterCountry(data) {
 
 function getBody() {
     return function (dispatch, getState) {
-        var _ref3, data;
+        var _ref4, data;
 
         return Promise.resolve().then(function () {
             return getBodyFromAPI();
         }).then(function (_resp) {
-            _ref3 = _resp;
-            data = _ref3.data;
+            _ref4 = _resp;
+            data = _ref4.data;
 
             dispatch({ type: _userTypes.Types.UPDATE_BODY, payload: data });
         });
@@ -888,13 +905,13 @@ function getBody() {
 
 function getHome() {
     return function (dispatch, getState) {
-        var _ref4, data;
+        var _ref5, data;
 
         return Promise.resolve().then(function () {
             return getHomeFromAPI();
         }).then(function (_resp) {
-            _ref4 = _resp;
-            data = _ref4.data;
+            _ref5 = _resp;
+            data = _ref5.data;
 
             dispatch({ type: _userTypes.Types.UPDATE_HOME, payload: data });
         });
@@ -903,28 +920,58 @@ function getHome() {
 
 function getHomesecond() {
     return function (dispatch, getState) {
-        var _ref5, data;
+        var _ref6, data;
 
         return Promise.resolve().then(function () {
             return getHomesecondFromAPI();
         }).then(function (_resp) {
-            _ref5 = _resp;
-            data = _ref5.data;
+            _ref6 = _resp;
+            data = _ref6.data;
 
             dispatch({ type: _userTypes.Types.UPDATE_HOMESECOND, payload: data });
         });
     };
 }
 
+function getHomethird() {
+    return function (dispatch, getState) {
+        var _ref7, data;
+
+        return Promise.resolve().then(function () {
+            return getHomethirdFromAPI();
+        }).then(function (_resp) {
+            _ref7 = _resp;
+            data = _ref7.data;
+
+            dispatch({ type: _userTypes.Types.UPDATE_HOMETHIRD, payload: data });
+        });
+    };
+}
+
 function getFooter() {
     return function (dispatch, getState) {
-        var _ref6, data;
+        var _ref8, data;
 
         return Promise.resolve().then(function () {
             return getFooterFromAPI();
         }).then(function (_resp) {
-            _ref6 = _resp;
-            data = _ref6.data;
+            _ref8 = _resp;
+            data = _ref8.data;
+
+            dispatch({ type: _userTypes.Types.UPDATE_FOOTER, payload: data });
+        });
+    };
+}
+
+function getFooterUS() {
+    return function (dispatch, getState) {
+        var _ref9, data;
+
+        return Promise.resolve().then(function () {
+            return getFooterUSFromAPI();
+        }).then(function (_resp) {
+            _ref9 = _resp;
+            data = _ref9.data;
 
             dispatch({ type: _userTypes.Types.UPDATE_FOOTER, payload: data });
         });
@@ -951,8 +998,20 @@ function getHomesecondFromAPI() {
     return _axios2.default.get('https://api.myjson.com/bins/17qxib');
 }
 
+function getHomethirdFromAPI() {
+    return _axios2.default.get('https://api.myjson.com/bins/nv52p');
+}
+
 function getFooterFromAPI() {
     return _axios2.default.get('https://api.myjson.com/bins/xrn0n');
+}
+
+function getFooterUSFromAPI() {
+    return _axios2.default.get('https://api.myjson.com/bins/jr901');
+}
+
+function getHeaderUSFromAPI() {
+    return _axios2.default.get('https://api.myjson.com/bins/g6ndd');
 }
 
 /***/ }),
@@ -1990,9 +2049,15 @@ var Header = function (_Component) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             console.log('III ', this.props.countryUpdate);
+
+            console.log('IV contry ', this.props.country);
             if (this.props.countryUpdate === 'true') {
                 this.props.setHeaderCountry({ 'country': this.props.countryParams });
-                this.props.getHeader();
+                if (this.props.countryParams === 'intl') {
+                    this.props.getHeader();
+                } else {
+                    this.props.getHeaderUS();
+                }
             }
         }
     }, {
@@ -3391,6 +3456,7 @@ var Types = exports.Types = {
     UPDATE_BODY: 'UPDATE_BODY',
     UPDATE_HOME: 'UPDATE_HOME',
     UPDATE_HOMESECOND: 'UPDATE_HOMESECOND',
+    UPDATE_HOMETHIRD: 'UPDATE_HOMETHIRD',
     UPDATE_FOOTER: 'UPDATE_FOOTER',
     UPDATE_HEADER_COUNTRY: 'UPDATE_HEADER_COUNTRY',
     UPDATE_FOOTER_COUNTRY: 'UPDATE_FOOTER_COUNTRY'
@@ -7042,7 +7108,8 @@ var initialState = {
     footerCountry: null,
     footerTitle: null,
     bodyTitle: null,
-    bodysecondTitle: null
+    bodysecondTitle: null,
+    bodythirdTitle: null
 };
 function userReducer() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
@@ -7063,6 +7130,8 @@ function userReducer() {
             return _extends({}, state, { bodyTitle: action.payload.title });
         case _userTypes.Types.UPDATE_HOMESECOND:
             return _extends({}, state, { bodysecondTitle: action.payload.title });
+        case _userTypes.Types.UPDATE_HOMETHIRD:
+            return _extends({}, state, { bodythirdTitle: action.payload.title });
         default:
             return state;
     }

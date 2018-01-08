@@ -15,8 +15,14 @@ export function getHeader() {
     }
 }
 
+export function getHeaderUS() {
+    return async function (dispatch, getState) {
+        let {data} = await getHeaderUSFromAPI();
+        dispatch({ type: Types.UPDATE_HEADER, payload: data });
+    }
+}
+
 export function setHeaderCountry(data) {
-    console.log('YYYYYYYYY ', data);
     return function (dispatch, getState) {
         dispatch({ type: Types.UPDATE_HEADER_COUNTRY, payload: data });
     }
@@ -49,9 +55,23 @@ export function getHomesecond() {
     }
 }
 
+export function getHomethird() {
+    return async function (dispatch, getState) {
+        let {data} = await getHomethirdFromAPI();
+        dispatch({ type: Types.UPDATE_HOMETHIRD, payload: data });
+    }
+}
+
 export function getFooter() {
     return async function (dispatch, getState) {
         let {data} = await getFooterFromAPI();
+        dispatch({ type: Types.UPDATE_FOOTER, payload: data });
+    }
+}
+
+export function getFooterUS() {
+    return async function (dispatch, getState) {
+        let {data} = await getFooterUSFromAPI();
         dispatch({ type: Types.UPDATE_FOOTER, payload: data });
     }
 }
@@ -76,6 +96,18 @@ function getHomesecondFromAPI() {
     return Request.get(`https://api.myjson.com/bins/17qxib`);
 }
 
+function getHomethirdFromAPI() {
+    return Request.get(`https://api.myjson.com/bins/nv52p`);
+}
+
 function getFooterFromAPI() {
     return Request.get(`https://api.myjson.com/bins/xrn0n`);
+}
+
+function getFooterUSFromAPI() {
+    return Request.get(`https://api.myjson.com/bins/jr901`);
+}
+
+function getHeaderUSFromAPI() {
+    return Request.get(`https://api.myjson.com/bins/g6ndd`);
 }
