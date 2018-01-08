@@ -7,33 +7,19 @@ import * as actions from '../shared/app/redux/actions/user-actions'
 
 class Header extends Component {
     static fetchData({ store, params }) {
-        console.log('STORE STATES ', store.getState().user.headerCountry);
-        console.log('PARAMS ', params); 
-        console.log('Mounted ', params.country);
-        console.log('CHECKING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
         if (store.getState().user.headerCountry != params.country || store.getState().user.headerCountry === null){
-            console.log('NOooooooooooooooooooooooooo ', params.country);
-            console.log('ACtisoNS ', actions);
-
             store.dispatch(actions.setHeaderCountry(params));
             return store.dispatch(actions.getHeader());
-        } else {
-            console.log('YESSSSSSSssssssssssssssssss ', store.getState().user.headerCountry);
-            return ;
         }
+        
+        return ;
     }
     componentDidMount() {
-        console.log('HEADER HAS MOUNTED! WOOHOO');
-        //console.log('this.props.match.params.country ', this.props.match.params.country);
-        console.log('bbbbcd ', this.props.country);
-        console.log('bbbbcdeeee ', this.props);
-
-        if(this.props.countryUpdate === 'true'){
-            console.log('WE are going to get a new header ', this.props.countryParams);
+        console.log('III ',this.props.countryUpdate);
+        if (this.props.countryUpdate === 'true') {
             this.props.setHeaderCountry({'country': this.props.countryParams});
             this.props.getHeader();
         }
-        
     }
     render() {
         return (
@@ -49,11 +35,9 @@ class Header extends Component {
                             <a href={this.props.logoURL}><img src={this.props.logoPath} alt={this.props.title} /></a>
                         </div>
                         <h1>{this.props.headerTitle}</h1>
-                        <p>Should I update? {this.props.countryUpdate}</p>
                         <Navbar />
                     </div>
                 </header>
-
             </div>
         );
     }

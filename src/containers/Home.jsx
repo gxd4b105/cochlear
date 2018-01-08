@@ -13,11 +13,6 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        console.log('HELLO!!!!');
-        console.log(this.props);
-        console.log('XXXXXXHELLO!!!!');
-        //this.props.getHeader();
-        //this.props.getFooter();
     }
 
     render() {
@@ -25,7 +20,7 @@ class Home extends Component {
             <div>
                 <Header title={this.props.headerTitle} country={this.props.headerCountry} />
                     <Body />
-                <Footer title={this.props.footerTitle} />
+                <Footer title={this.props.footerTitle} country={this.props.headerCountry} />
              </div>
         );
     }

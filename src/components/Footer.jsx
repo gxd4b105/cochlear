@@ -5,11 +5,16 @@ import { Helmet } from 'react-helmet';
 import * as actions from '../shared/app/redux/actions/user-actions'
 
 class Footer extends Component {
-    static fetchData({store}) {
-        return store.dispatch(actions.getFooter());
+    static fetchData({store, params}) {
+        if (store.getState().user.headerCountry != params.country || store.getState().user.headerCountry === null){
+            return store.dispatch(actions.getFooter());
+        }
+        return ;
     }
     componentDidMount() {
-        //this.props.getFooter();
+        if(this.props.countryUpdate === 'true'){
+            this.props.getFooter();
+        }
     }
     render() {
 

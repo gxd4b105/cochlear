@@ -13,40 +13,29 @@ class Homesecond extends Component {
     }
 
     componentDidMount() {
-        console.log('mounteduuu ', this.props.match.params.country);
-        console.log('mounteduuu2 ', this.props.headerCountry);
-
-        let test = this.props.match.params.country !== this.props.headerCountry ? 'yes' : 'no';
-        console.log('test is ',test);
-        //this.props.getHeader();
-        //this.props.getFooter();
-        //{...condition ? {bsStyle: 'success'} : {}}
-        this.test = test;
     }
 
     render() {
         if(this.props.match.params.country === this.props.headerCountry){
-        return (
-            <div>BLAH {this.props.match.params.country} and {this.props.headerCountry}
-                <Header title={this.props.headerTitle} country={this.props.headerCountry} countryUpdate = 'false' />
-                <Bodysecond />
-                <Footer title={this.props.footerTitle} />
-            </div>
-        );
-    } else {
-        return (
-            <div>BLAH {this.props.match.params.country} and {this.props.headerCountry}
-                <Header title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'true' />
-                <Bodysecond />
-                <Footer title={this.props.footerTitle} />
-            </div>
-        );
-    }
+            return (
+                <div>
+                    <Header title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
+                    <Bodysecond />
+                    <Footer title={this.props.footerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
+                </div>
+            );
+        } else {
+            return (
+                <div>
+                    <Header title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'true' />
+                    <Bodysecond />
+                    <Footer title={this.props.footerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'true' />
+                </div>
+            );
+        }
     }
 }
 function mapStateToProps(state) {
-    console.log('TEST TEST TEST ', state);
-
     return {
         ...state.user,
     }

@@ -1876,7 +1876,9 @@ var Footer = function (_Component) {
     _createClass(Footer, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            //this.props.getFooter();
+            if (this.props.countryUpdate === 'true') {
+                this.props.getFooter();
+            }
         }
     }, {
         key: 'render',
@@ -1911,9 +1913,13 @@ var Footer = function (_Component) {
     }], [{
         key: 'fetchData',
         value: function fetchData(_ref) {
-            var store = _ref.store;
+            var store = _ref.store,
+                params = _ref.params;
 
-            return store.dispatch(actions.getFooter());
+            if (store.getState().user.headerCountry != params.country || store.getState().user.headerCountry === null) {
+                return store.dispatch(actions.getFooter());
+            }
+            return;
         }
     }]);
 
@@ -1983,13 +1989,8 @@ var Header = function (_Component) {
     _createClass(Header, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            console.log('HEADER HAS MOUNTED! WOOHOO');
-            //console.log('this.props.match.params.country ', this.props.match.params.country);
-            console.log('bbbbcd ', this.props.country);
-            console.log('bbbbcdeeee ', this.props);
-
+            console.log('III ', this.props.countryUpdate);
             if (this.props.countryUpdate === 'true') {
-                console.log('WE are going to get a new header ', this.props.countryParams);
                 this.props.setHeaderCountry({ 'country': this.props.countryParams });
                 this.props.getHeader();
             }
@@ -2030,12 +2031,6 @@ var Header = function (_Component) {
                             null,
                             this.props.headerTitle
                         ),
-                        _react2.default.createElement(
-                            'p',
-                            null,
-                            'Should I update? ',
-                            this.props.countryUpdate
-                        ),
                         _react2.default.createElement(_Navbar2.default, null)
                     )
                 )
@@ -2047,20 +2042,12 @@ var Header = function (_Component) {
             var store = _ref.store,
                 params = _ref.params;
 
-            console.log('STORE STATES ', store.getState().user.headerCountry);
-            console.log('PARAMS ', params);
-            console.log('Mounted ', params.country);
-            console.log('CHECKING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
             if (store.getState().user.headerCountry != params.country || store.getState().user.headerCountry === null) {
-                console.log('NOooooooooooooooooooooooooo ', params.country);
-                console.log('ACtisoNS ', actions);
-
                 store.dispatch(actions.setHeaderCountry(params));
                 return store.dispatch(actions.getHeader());
-            } else {
-                console.log('YESSSSSSSssssssssssssssssss ', store.getState().user.headerCountry);
-                return;
             }
+
+            return;
         }
     }]);
 
@@ -6700,7 +6687,7 @@ var Navbar = function (_Component) {
                         _react2.default.createElement(
                             _reactRouterDom.Link,
                             { className: 'nav-item-title', to: '/usa/thirdpage' },
-                            'Second Page ',
+                            'Third Page ',
                             _react2.default.createElement(
                                 'span',
                                 { className: 'sub-text' },
@@ -6788,13 +6775,7 @@ var Home = function (_Component) {
 
     _createClass(Home, [{
         key: 'componentDidMount',
-        value: function componentDidMount() {
-            console.log('HELLO!!!!');
-            console.log(this.props);
-            console.log('XXXXXXHELLO!!!!');
-            //this.props.getHeader();
-            //this.props.getFooter();
-        }
+        value: function componentDidMount() {}
     }, {
         key: 'render',
         value: function render() {
@@ -6803,7 +6784,7 @@ var Home = function (_Component) {
                 null,
                 _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry }),
                 _react2.default.createElement(_Body2.default, null),
-                _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle })
+                _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle, country: this.props.headerCountry })
             );
         }
     }], [{
@@ -6889,17 +6870,7 @@ var Homesecond = function (_Component) {
 
     _createClass(Homesecond, [{
         key: 'componentDidMount',
-        value: function componentDidMount() {
-            console.log('mounteduuu ', this.props.match.params.country);
-            console.log('mounteduuu2 ', this.props.headerCountry);
-
-            var test = this.props.match.params.country !== this.props.headerCountry ? 'yes' : 'no';
-            console.log('test is ', test);
-            //this.props.getHeader();
-            //this.props.getFooter();
-            //{...condition ? {bsStyle: 'success'} : {}}
-            this.test = test;
-        }
+        value: function componentDidMount() {}
     }, {
         key: 'render',
         value: function render() {
@@ -6907,25 +6878,17 @@ var Homesecond = function (_Component) {
                 return _react2.default.createElement(
                     'div',
                     null,
-                    'BLAH ',
-                    this.props.match.params.country,
-                    ' and ',
-                    this.props.headerCountry,
-                    _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryUpdate: 'false' }),
+                    _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
                     _react2.default.createElement(_Bodysecond2.default, null),
-                    _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle })
+                    _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
                 );
             } else {
                 return _react2.default.createElement(
                     'div',
                     null,
-                    'BLAH ',
-                    this.props.match.params.country,
-                    ' and ',
-                    this.props.headerCountry,
                     _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' }),
                     _react2.default.createElement(_Bodysecond2.default, null),
-                    _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle })
+                    _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' })
                 );
             }
         }
@@ -6943,8 +6906,6 @@ var Homesecond = function (_Component) {
 }(_react.Component);
 
 function mapStateToProps(state) {
-    console.log('TEST TEST TEST ', state);
-
     return _extends({}, state.user);
 }
 function mapDispatchToProps(dispatch) {
