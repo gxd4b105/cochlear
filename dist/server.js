@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 22);
+/******/ 	return __webpack_require__(__webpack_require__.s = 23);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -256,26 +256,31 @@ var Footer = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
+
+            var today = new Date(),
+                Year = today.getFullYear();
+
             return _react2.default.createElement(
-                'div',
-                null,
+                'footer',
+                { className: 'global-footer', role: 'contentinfo' },
                 _react2.default.createElement(
-                    _reactHelmet.Helmet,
-                    null,
-                    _react2.default.createElement('meta', { charSet: 'utf-8' }),
+                    'div',
+                    { className: 'l-padding' },
                     _react2.default.createElement(
-                        'title',
+                        'h2',
                         null,
-                        'The title'
+                        'title: ',
+                        this.props.footerTitle,
+                        ' '
+                    ),
+                    _react2.default.createElement(
+                        'p',
+                        null,
+                        '\xA9 ',
+                        Year,
+                        ' Deloitte Digital Australia'
                     )
-                ),
-                _react2.default.createElement(
-                    'strong',
-                    null,
-                    'FOOTER'
-                ),
-                'title: ',
-                this.props.footerTitle
+                )
             );
         }
     }], [{
@@ -324,6 +329,10 @@ var _redux = __webpack_require__(1);
 
 var _reactHelmet = __webpack_require__(2);
 
+var _Navbar = __webpack_require__(20);
+
+var _Navbar2 = _interopRequireDefault(_Navbar);
+
 var _userActions = __webpack_require__(4);
 
 var actions = _interopRequireWildcard(_userActions);
@@ -369,12 +378,28 @@ var Header = function (_Component) {
                     )
                 ),
                 _react2.default.createElement(
-                    'strong',
-                    null,
-                    'HEADER'
-                ),
-                'title: ',
-                this.props.headerTitle
+                    'header',
+                    { className: 'global-header ' + this.props.additionalClass },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'l-padding' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'logo' },
+                            _react2.default.createElement(
+                                'a',
+                                { href: this.props.logoURL },
+                                _react2.default.createElement('img', { src: this.props.logoPath, alt: this.props.title })
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'h1',
+                            null,
+                            this.props.headerTitle
+                        ),
+                        _react2.default.createElement(_Navbar2.default, null)
+                    )
+                )
             );
         }
     }], [{
@@ -395,6 +420,14 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return (0, _redux.bindActionCreators)(actions, dispatch);
 }
+
+Header.defaultProps = {
+    title: "FED Framework 4.2",
+    logoURL: "#",
+    logoPath: "http://www.cochlear.com/wps/wcm/connect/f3088c94-a515-45e6-b59f-a6f79299d16b/logo.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE-f3088c94-a515-45e6-b59f-a6f79299d16b-kSekuTE",
+    additionalClass: "is-dark"
+};
+
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Header);
 
 /***/ }),
@@ -408,11 +441,11 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Home = __webpack_require__(20);
+var _Home = __webpack_require__(21);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _Homesecond = __webpack_require__(21);
+var _Homesecond = __webpack_require__(22);
 
 var _Homesecond2 = _interopRequireDefault(_Homesecond);
 
@@ -460,8 +493,6 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(5);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -470,54 +501,66 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Navbar = function (_Component) {
-    _inherits(Navbar, _Component);
+var HeaderLandingBanner = function (_React$Component) {
+    _inherits(HeaderLandingBanner, _React$Component);
 
-    function Navbar() {
-        _classCallCheck(this, Navbar);
+    function HeaderLandingBanner() {
+        _classCallCheck(this, HeaderLandingBanner);
 
-        return _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (HeaderLandingBanner.__proto__ || Object.getPrototypeOf(HeaderLandingBanner)).apply(this, arguments));
     }
 
-    _createClass(Navbar, [{
+    _createClass(HeaderLandingBanner, [{
         key: 'render',
         value: function render() {
+
             return _react2.default.createElement(
-                'div',
-                null,
+                'header',
+                { className: 'landing-banner ' + this.props.additionalClass },
                 _react2.default.createElement(
-                    'ul',
-                    null,
+                    'div',
+                    { className: 'l-padding' },
                     _react2.default.createElement(
-                        'li',
-                        null,
+                        'div',
+                        { className: 'content' },
                         _react2.default.createElement(
-                            _reactRouterDom.Link,
-                            { to: '/' },
-                            'Home Page'
+                            'h1',
+                            null,
+                            this.props.title
+                        ),
+                        _react2.default.createElement(
+                            'p',
+                            null,
+                            this.props.description
                         )
                     ),
                     _react2.default.createElement(
-                        'li',
-                        null,
+                        'div',
+                        { className: 'image', style: { backgroundImage: 'url(' + this.props.image + ')' } },
                         _react2.default.createElement(
-                            _reactRouterDom.Link,
-                            { to: '/secondpage' },
-                            'Second Page'
+                            'span',
+                            { className: 'vh' },
+                            'Image: ',
+                            this.props.imageAlt
                         )
                     )
                 )
             );
         }
-    }], [{
-        key: 'fetchData',
-        value: function fetchData() {}
     }]);
 
-    return Navbar;
-}(_react.Component);
+    return HeaderLandingBanner;
+}(_react2.default.Component);
 
-exports.default = Navbar;
+HeaderLandingBanner.defaultProps = {
+    title: "Landing page title",
+    description: "Aliquam eget ornare nisl. Pellentesque varius magna eu sodales fringilla. Nam feugiat tincidunt orci fringilla pharetra. Aenean a turpis in nunc commodo posuere. Nullam molestie velit leo.",
+    image: "http://fed.donlineclients.com/assets/img/placeholder/landing-hero.jpg",
+    imageAlt: "Landing page banner alt text",
+    additionalClass: "is-dark"
+};
+
+exports.default = HeaderLandingBanner;
 
 /***/ }),
 /* 10 */
@@ -560,10 +603,6 @@ var _reactRouterDom = __webpack_require__(5);
 var _redirectWStatus = __webpack_require__(24);
 
 var _redirectWStatus2 = _interopRequireDefault(_redirectWStatus);
-
-var _navbar = __webpack_require__(23);
-
-var _navbar2 = _interopRequireDefault(_navbar);
 
 var _routes = __webpack_require__(8);
 
@@ -609,6 +648,7 @@ var App = function (_Component) {
                     status = _ref2.status;
                 return _react2.default.createElement(_redirectWStatus2.default, { key: Math.random() + 'REDIRECT_', from: from, to: to, status: status });
             });
+
             return _react2.default.createElement(
                 'div',
                 null,
@@ -732,9 +772,9 @@ var _reactRouterDom = __webpack_require__(5);
 
 var _reactRedux = __webpack_require__(3);
 
-var _Navbar = __webpack_require__(9);
+var _HeaderLandingBanner = __webpack_require__(9);
 
-var _Navbar2 = _interopRequireDefault(_Navbar);
+var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
 
 var _redux = __webpack_require__(1);
 
@@ -771,15 +811,7 @@ var Body = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            return _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement('hr', null),
-                'This is the Body title: ',
-                this.props.bodyTitle,
-                _react2.default.createElement(_Navbar2.default, null),
-                _react2.default.createElement('hr', null)
-            );
+            return _react2.default.createElement(_HeaderLandingBanner2.default, { title: this.props.bodyTitle });
         }
     }], [{
         key: 'fetchData',
@@ -822,9 +854,9 @@ var _reactRouterDom = __webpack_require__(5);
 
 var _reactRedux = __webpack_require__(3);
 
-var _Navbar = __webpack_require__(9);
+var _HeaderLandingBanner = __webpack_require__(9);
 
-var _Navbar2 = _interopRequireDefault(_Navbar);
+var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
 
 var _redux = __webpack_require__(1);
 
@@ -861,15 +893,7 @@ var Bodysecond = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            return _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement('hr', null),
-                'This is the Body SECOND title: ',
-                this.props.bodysecondTitle,
-                _react2.default.createElement(_Navbar2.default, null),
-                _react2.default.createElement('hr', null)
-            );
+            return _react2.default.createElement(_HeaderLandingBanner2.default, { title: this.props.bodysecondTitle });
         }
     }], [{
         key: 'fetchData',
@@ -891,6 +915,97 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, 
 
 /***/ }),
 /* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(5);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Navbar = function (_Component) {
+    _inherits(Navbar, _Component);
+
+    function Navbar() {
+        _classCallCheck(this, Navbar);
+
+        return _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).apply(this, arguments));
+    }
+
+    _createClass(Navbar, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'nav',
+                { className: 'nav-onscreen js-onscreen nav-onscreen__global-header' },
+                _react2.default.createElement(
+                    'ul',
+                    { className: 'nav cf' },
+                    _react2.default.createElement(
+                        'li',
+                        { className: 'nav-item' },
+                        _react2.default.createElement(
+                            _reactRouterDom.Link,
+                            { prefetch: true, className: 'nav-item-title', to: '/' },
+                            'Home ',
+                            _react2.default.createElement(
+                                'span',
+                                { className: 'sub-text' },
+                                'This links to the homepage'
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'li',
+                        { className: 'nav-item' },
+                        _react2.default.createElement(
+                            _reactRouterDom.Link,
+                            { prefetch: true, className: 'nav-item-title', to: '/secondpage' },
+                            'Second Page ',
+                            _react2.default.createElement(
+                                'span',
+                                { className: 'sub-text' },
+                                'This links to the second page'
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'a',
+                    { href: '#', className: 'icon-button login' },
+                    'Login'
+                )
+            );
+        }
+    }], [{
+        key: 'fetchData',
+        value: function fetchData() {}
+    }]);
+
+    return Navbar;
+}(_react.Component);
+
+exports.default = Navbar;
+
+/***/ }),
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -986,7 +1101,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Home);
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1092,7 +1207,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Homesecond);
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1224,86 +1339,8 @@ app.listen(port, function () {
 });
 
 function renderFullPage(html, preloadedState, helmet) {
-	return '\n    <!doctype html>\n    <html>\n      <head>\n        <link rel="icon" href="/dist/favicon.ico" type="image/ico" />\n        ' + helmet.title.toString() + '\n        ' + helmet.meta.toString() + '\n        ' + helmet.link.toString() + '\n      </head>\n      <body>\n        <div id="root">' + html + '</div>\n        <script>\n          // WARNING: See the following for security issues around embedding JSON in HTML:\n          // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations\n          window.__PRELOADED_STATE__ = ' + JSON.stringify(preloadedState).replace(/</g, '\\u003c') + '\n        </script>\n        <script src="/dist/assets/app.bundle.js"></script>\n      </body>\n    </html>\n    ';
+	return '\n    <!doctype html>\n    <html>\n      <head>\n        <link rel="icon" href="/dist/favicon.ico" type="image/ico" />\n        <link rel="stylesheet" href="/dist/assets/fed-global.css" type="text/css" />\n        <link rel="stylesheet" href="/dist/assets/overwrites.css" type="text/css" />\n        ' + helmet.title.toString() + '\n        ' + helmet.meta.toString() + '\n        ' + helmet.link.toString() + '\n      </head>\n      <body>\n        <div id="root">' + html + '</div>\n        <script>\n          // WARNING: See the following for security issues around embedding JSON in HTML:\n          // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations\n          window.__PRELOADED_STATE__ = ' + JSON.stringify(preloadedState).replace(/</g, '\\u003c') + '\n        </script>\n        <script src="/dist/assets/app.bundle.js"></script>\n      </body>\n    </html>\n    ';
 }
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(5);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Navbar = function (_Component) {
-    _inherits(Navbar, _Component);
-
-    function Navbar() {
-        _classCallCheck(this, Navbar);
-
-        return _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).apply(this, arguments));
-    }
-
-    _createClass(Navbar, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(
-                    'ul',
-                    null,
-                    _react2.default.createElement(
-                        'li',
-                        null,
-                        _react2.default.createElement(
-                            _reactRouterDom.Link,
-                            { to: '/' },
-                            'Home please'
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'li',
-                        null,
-                        _react2.default.createElement(
-                            _reactRouterDom.Link,
-                            { to: '/user' },
-                            'User'
-                        )
-                    )
-                )
-            );
-        }
-    }], [{
-        key: 'fetchData',
-        value: function fetchData() {
-            console.log('test');
-        }
-    }]);
-
-    return Navbar;
-}(_react.Component);
-
-exports.default = Navbar;
 
 /***/ }),
 /* 24 */

@@ -24,6 +24,16 @@ module.exports = {
                     loader: 'babel-loader',
                     options: { presets: ['es2015', 'react'], plugins: ['transform-object-rest-spread'] }
                 }],
+            },
+            {
+                test: /\.(css|scss)$/,
+                use: [{
+                    loader: "style-loader" // creates style nodes from JS strings
+                }, {
+                    loader: "css-loader" // translates CSS into CommonJS
+                }, {
+                    loader: "sass-loader" // compiles Sass to CSS
+                }]
             }
             //loaders for other file types can go here
         ]

@@ -89,6 +89,8 @@ function renderFullPage(html, preloadedState, helmet) {
     <html>
       <head>
         <link rel="icon" href="/dist/favicon.ico" type="image/ico" />
+        <link rel="stylesheet" href="/dist/assets/fed-global.css" type="text/css" />
+        <link rel="stylesheet" href="/dist/assets/overwrites.css" type="text/css" />
         ${helmet.title.toString()}
         ${helmet.meta.toString()}
         ${helmet.link.toString()}

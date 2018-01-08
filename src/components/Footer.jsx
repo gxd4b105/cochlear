@@ -13,17 +13,17 @@ class Footer extends Component {
         this.props.getFooter();
     }
     render() {
+
+        var today = new Date(), Year = today.getFullYear();
+
         return (
-            <div>
-                <Helmet>
-                    <meta charSet="utf-8" />
-                    <title>The title</title>
-                </Helmet>
-                <strong>FOOTER</strong>
-    
-                    title: {this.props.footerTitle} 
-  
-            </div>
+
+            <footer className="global-footer" role="contentinfo">
+                <div className="l-padding">
+                    <h2>title: {this.props.footerTitle} </h2>
+                    <p>&copy; {Year} Deloitte Digital Australia</p>
+                </div>
+            </footer>
         );
     }
 }
