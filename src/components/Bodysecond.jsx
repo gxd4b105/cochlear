@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Navbar from './Navbar.jsx';
+import HeaderLandingBanner from './HeaderLandingBanner/HeaderLandingBanner.jsx'
 import { bindActionCreators } from 'redux';
 import { Helmet } from 'react-helmet';
 import * as actions from '../shared/app/redux/actions/user-actions'
@@ -15,14 +15,8 @@ class Bodysecond extends Component {
     }
     render() {
         return (
-            <div>
-                <hr />
-                This is the Body SECOND
 
-                title: {this.props.bodysecondTitle} 
-                <Navbar />
-                <hr />
-            </div>
+            <HeaderLandingBanner title={this.props.bodysecondTitle} />
         );
     }
 }

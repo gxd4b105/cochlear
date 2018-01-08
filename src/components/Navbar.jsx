@@ -6,12 +6,24 @@ class Navbar extends Component {
     }
     render() {
         return (
-            <div>
-                <ul>
-                    <li><Link to='/intl/firstpage'>Home Page</Link></li>
-                    <li><Link to='/intl/secondpage'>Second Page</Link></li>
+            <nav className={`nav-onscreen js-onscreen nav-onscreen__global-header`}>
+                <ul className="nav cf">
+                    <li className={`nav-item`}>
+                        <Link prefetch className="nav-item-title" to="/">
+                            Home <span className="sub-text">This links to the homepage</span>
+                        </Link>
+                    </li>
+                    <li className={`nav-item`}>
+                        <Link prefetch className="nav-item-title" to="/secondpage">
+                            Second Page <span className="sub-text">This links to the second page</span>
+                        </Link>
+                    </li>
                 </ul>
-            </div>
+                {/* <% if vars[:hasLogin] == true %> */}
+                <a href="#" className="icon-button login">Login</a>
+                {/* <% end %> */}
+            </nav>
+
         );
     }
 }
