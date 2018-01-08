@@ -20,7 +20,7 @@ class Navbar extends Component {
                     </li>
                     <li className={`nav-item`}>
                         <Link className="nav-item-title" to="/usa/thirdpage">
-                            Second Page <span className="sub-text">This links to the third page</span>
+                            Third Page <span className="sub-text">This links to the third page</span>
                         </Link>
                     </li>
                 </ul>
