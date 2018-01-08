@@ -2,7 +2,6 @@ import { Types } from '../constants/user-types';
 import Request from 'axios';
 
 export function getName(id) {
-    console.log('get name ..', id);
     return async function (dispatch, getState) {
         let {data} = await getUserFromAPI(id);
         dispatch({ type: Types.UPDATE_NAME, payload: data });
@@ -17,7 +16,6 @@ export function getHeader() {
 }
 
 export function setHeaderCountry(data) {
-    console.log('here we go ', data);
     return function (dispatch, getState) {
         dispatch({ type: Types.UPDATE_HEADER_COUNTRY, payload: data });
     }

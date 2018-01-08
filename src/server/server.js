@@ -41,9 +41,6 @@ app.get('*', (req, res) => {
 			component.fetchData = () => new Promise(resolve => resolve());
 		// meat and bones of our isomorphic application: grabbing async data
 
-		console.log('AAAAAAAAAAA');
-		console.log('found path ', foundPath);
-
 		let p1 = component.fetchData({ store, params: (foundPath ? foundPath.params : {}) });
 		let p2 = App.fetchData({ store, params: (foundPath ? foundPath.params : {}) });
 
