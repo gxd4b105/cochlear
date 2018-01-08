@@ -9,11 +9,8 @@ import { bindActionCreators } from 'redux';
 import * as actions from './redux/actions/user-actions'
 
 class App extends Component {
-    static fetchData({ store, params }) { 
-        console.log('abcdefg');    
-        //console.log('MMMMMMMMPr ', params.country, params.country.length);   
+    static fetchData({ store, params }) {  
         if(!params.country){
-            console.log('returning nothing!!!');
             return Promise.all([],[]);
         }
         return Promise.all([Header.fetchData({store, params}), Footer.fetchData({store, params})]);

@@ -18,8 +18,6 @@ app.use('/', (req, res) => {
 	try {
 		//create new redux store on each request
 
-		console.log('WE GOT ONE~~!!!');
-
 		const store = createStore(reducers, {}, applyMiddleware(thunk));
 		let foundPath = null;
 		// match request url to our React Router paths and grab component
@@ -44,8 +42,6 @@ app.use('/', (req, res) => {
 
 		let p1 = component.fetchData({ store, params: (foundPath ? foundPath.params : {}) });
 		let p2 = App.fetchData({ store, params: (foundPath ? foundPath.params : {}) });
-
-		console.log('found path params ', foundPath.params);
 
 		Promise.all([p1, p2]).then(values => { 
 			//await component.fetchData({ store, params: (foundPath ? foundPath.params : {}) });

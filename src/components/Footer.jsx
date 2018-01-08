@@ -13,7 +13,11 @@ class Footer extends Component {
     }
     componentDidMount() {
         if(this.props.countryUpdate === 'true'){
-            this.props.getFooter();
+            if(this.props.countryParams === 'intl'){
+                this.props.getFooter();
+            } else {
+                this.props.getFooterUS();
+            }
         }
     }
     render() {

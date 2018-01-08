@@ -1936,7 +1936,11 @@ var Footer = function (_Component) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             if (this.props.countryUpdate === 'true') {
-                this.props.getFooter();
+                if (this.props.countryParams === 'intl') {
+                    this.props.getFooter();
+                } else {
+                    this.props.getFooterUS();
+                }
             }
         }
     }, {
@@ -2109,7 +2113,11 @@ var Header = function (_Component) {
 
             if (store.getState().user.headerCountry != params.country || store.getState().user.headerCountry === null) {
                 store.dispatch(actions.setHeaderCountry(params));
-                return store.dispatch(actions.getHeader());
+                console.log('HEADER ', params.country);
+                if (params.country === 'intl') {
+                    return store.dispatch(actions.getHeader());
+                }
+                return store.dispatch(actions.getHeaderUS());
             }
 
             return;
@@ -5504,10 +5512,7 @@ var App = function (_Component) {
             var store = _ref3.store,
                 params = _ref3.params;
 
-            console.log('abcdefg');
-            //console.log('MMMMMMMMPr ', params.country, params.country.length);   
             if (!params.country) {
-                console.log('returning nothing!!!');
                 return Promise.all([], []);
             }
             return Promise.all([_Header2.default.fetchData({ store: store, params: params }), _Footer2.default.fetchData({ store: store, params: params })]);
@@ -6561,17 +6566,7 @@ var Body = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_HeaderLandingBanner2.default, { title: this.props.bodyTitle }),
-                _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { className: 'nav-item-title', to: '/intl/secondpage' },
-                    'Home ',
-                    _react2.default.createElement(
-                        'span',
-                        { className: 'sub-text' },
-                        'This links to the homepage'
-                    )
-                )
+                _react2.default.createElement(_HeaderLandingBanner2.default, { title: this.props.bodyTitle })
             );
         }
     }], [{

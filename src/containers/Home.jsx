@@ -19,7 +19,7 @@ class Home extends Component {
         return (
             <div>
                 <Header title={this.props.headerTitle} country={this.props.headerCountry} />
-                    <Body />
+                <Body />
                 <Footer title={this.props.footerTitle} country={this.props.headerCountry} />
              </div>
         );

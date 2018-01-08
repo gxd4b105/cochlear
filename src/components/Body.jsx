@@ -17,10 +17,6 @@ class Body extends Component {
         return (
             <div>
             <HeaderLandingBanner title={this.props.bodyTitle} />
-
-            <Link className="nav-item-title" to="/intl/secondpage">
-            Home <span className="sub-text">This links to the homepage</span>
-        </Link>
             </div>
         );
     }

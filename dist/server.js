@@ -307,7 +307,11 @@ var Footer = function (_Component) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             if (this.props.countryUpdate === 'true') {
-                this.props.getFooter();
+                if (this.props.countryParams === 'intl') {
+                    this.props.getFooter();
+                } else {
+                    this.props.getFooterUS();
+                }
             }
         }
     }, {
@@ -480,7 +484,11 @@ var Header = function (_Component) {
 
             if (store.getState().user.headerCountry != params.country || store.getState().user.headerCountry === null) {
                 store.dispatch(actions.setHeaderCountry(params));
-                return store.dispatch(actions.getHeader());
+                console.log('HEADER ', params.country);
+                if (params.country === 'intl') {
+                    return store.dispatch(actions.getHeader());
+                }
+                return store.dispatch(actions.getHeaderUS());
             }
 
             return;
@@ -760,10 +768,7 @@ var App = function (_Component) {
             var store = _ref3.store,
                 params = _ref3.params;
 
-            console.log('abcdefg');
-            //console.log('MMMMMMMMPr ', params.country, params.country.length);   
             if (!params.country) {
-                console.log('returning nothing!!!');
                 return Promise.all([], []);
             }
             return Promise.all([_Header2.default.fetchData({ store: store, params: params }), _Footer2.default.fetchData({ store: store, params: params })]);
@@ -922,17 +927,7 @@ var Body = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_HeaderLandingBanner2.default, { title: this.props.bodyTitle }),
-                _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { className: 'nav-item-title', to: '/intl/secondpage' },
-                    'Home ',
-                    _react2.default.createElement(
-                        'span',
-                        { className: 'sub-text' },
-                        'This links to the homepage'
-                    )
-                )
+                _react2.default.createElement(_HeaderLandingBanner2.default, { title: this.props.bodyTitle })
             );
         }
     }], [{
@@ -1398,8 +1393,6 @@ app.use('/', function (req, res) {
 	try {
 		//create new redux store on each request
 
-		console.log('WE GOT ONE~~!!!');
-
 		var store = (0, _redux.createStore)(_combine2.default, {}, (0, _redux.applyMiddleware)(_thunk2.default));
 		var foundPath = null;
 		// match request url to our React Router paths and grab component
@@ -1431,8 +1424,6 @@ app.use('/', function (req, res) {
 
 		var p1 = component.fetchData({ store: store, params: foundPath ? foundPath.params : {} });
 		var p2 = _app2.default.fetchData({ store: store, params: foundPath ? foundPath.params : {} });
-
-		console.log('found path params ', foundPath.params);
 
 		Promise.all([p1, p2]).then(function (values) {
 			//await component.fetchData({ store, params: (foundPath ? foundPath.params : {}) });
