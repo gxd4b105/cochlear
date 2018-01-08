@@ -13,19 +13,35 @@ class Homesecond extends Component {
     }
 
     componentDidMount() {
-        console.log('mounted ', this.props.match.params.country);
+        console.log('mounteduuu ', this.props.match.params.country);
+        console.log('mounteduuu2 ', this.props.headerCountry);
+
+        let test = this.props.match.params.country !== this.props.headerCountry ? 'yes' : 'no';
+        console.log('test is ',test);
         //this.props.getHeader();
         //this.props.getFooter();
+        //{...condition ? {bsStyle: 'success'} : {}}
+        this.test = test;
     }
 
     render() {
+        if(this.props.match.params.country === this.props.headerCountry){
         return (
-            <div>
-                <Header title={this.props.headerTitle} country={this.props.headerCountry} />
-                    <Bodysecond />
+            <div>BLAH {this.props.match.params.country} and {this.props.headerCountry}
+                <Header title={this.props.headerTitle} country={this.props.headerCountry} countryUpdate = 'false' />
+                <Bodysecond />
                 <Footer title={this.props.footerTitle} />
             </div>
         );
+    } else {
+        return (
+            <div>BLAH {this.props.match.params.country} and {this.props.headerCountry}
+                <Header title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'true' />
+                <Bodysecond />
+                <Footer title={this.props.footerTitle} />
+            </div>
+        );
+    }
     }
 }
 function mapStateToProps(state) {

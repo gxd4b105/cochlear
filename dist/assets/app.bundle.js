@@ -859,6 +859,7 @@ function getHeader() {
 }
 
 function setHeaderCountry(data) {
+    console.log('YYYYYYYYY ', data);
     return function (dispatch, getState) {
         dispatch({ type: _userTypes.Types.UPDATE_HEADER_COUNTRY, payload: data });
     };
@@ -1984,12 +1985,14 @@ var Header = function (_Component) {
         value: function componentDidMount() {
             console.log('HEADER HAS MOUNTED! WOOHOO');
             //console.log('this.props.match.params.country ', this.props.match.params.country);
-            console.log('bbbbc ', this.props.country);
+            console.log('bbbbcd ', this.props.country);
+            console.log('bbbbcdeeee ', this.props);
 
-            if (this.props.match) {
-                console.log('mounted ', this.props.country);
+            if (this.props.countryUpdate === 'true') {
+                console.log('WE are going to get a new header ', this.props.countryParams);
+                this.props.setHeaderCountry({ 'country': this.props.countryParams });
+                this.props.getHeader();
             }
-            //this.props.getHeader();
         }
     }, {
         key: 'render',
@@ -2026,6 +2029,12 @@ var Header = function (_Component) {
                             'h1',
                             null,
                             this.props.headerTitle
+                        ),
+                        _react2.default.createElement(
+                            'p',
+                            null,
+                            'Should I update? ',
+                            this.props.countryUpdate
                         ),
                         _react2.default.createElement(_Navbar2.default, null)
                     )
@@ -6684,6 +6693,20 @@ var Navbar = function (_Component) {
                                 'This links to the second page'
                             )
                         )
+                    ),
+                    _react2.default.createElement(
+                        'li',
+                        { className: 'nav-item' },
+                        _react2.default.createElement(
+                            _reactRouterDom.Link,
+                            { className: 'nav-item-title', to: '/usa/thirdpage' },
+                            'Second Page ',
+                            _react2.default.createElement(
+                                'span',
+                                { className: 'sub-text' },
+                                'This links to the third page'
+                            )
+                        )
                     )
                 ),
                 _react2.default.createElement(
@@ -6867,20 +6890,44 @@ var Homesecond = function (_Component) {
     _createClass(Homesecond, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            console.log('mounted ', this.props.match.params.country);
+            console.log('mounteduuu ', this.props.match.params.country);
+            console.log('mounteduuu2 ', this.props.headerCountry);
+
+            var test = this.props.match.params.country !== this.props.headerCountry ? 'yes' : 'no';
+            console.log('test is ', test);
             //this.props.getHeader();
             //this.props.getFooter();
+            //{...condition ? {bsStyle: 'success'} : {}}
+            this.test = test;
         }
     }, {
         key: 'render',
         value: function render() {
-            return _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry }),
-                _react2.default.createElement(_Bodysecond2.default, null),
-                _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle })
-            );
+            if (this.props.match.params.country === this.props.headerCountry) {
+                return _react2.default.createElement(
+                    'div',
+                    null,
+                    'BLAH ',
+                    this.props.match.params.country,
+                    ' and ',
+                    this.props.headerCountry,
+                    _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryUpdate: 'false' }),
+                    _react2.default.createElement(_Bodysecond2.default, null),
+                    _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle })
+                );
+            } else {
+                return _react2.default.createElement(
+                    'div',
+                    null,
+                    'BLAH ',
+                    this.props.match.params.country,
+                    ' and ',
+                    this.props.headerCountry,
+                    _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' }),
+                    _react2.default.createElement(_Bodysecond2.default, null),
+                    _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle })
+                );
+            }
         }
     }], [{
         key: 'fetchData',
@@ -7198,6 +7245,10 @@ exports.default = {
         exact: true
     }, {
         path: '/:country/secondpage',
+        component: _Homesecond2.default,
+        exact: true
+    }, {
+        path: '/:country/thirdpage',
         component: _Homesecond2.default,
         exact: true
     }],

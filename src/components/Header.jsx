@@ -25,12 +25,15 @@ class Header extends Component {
     componentDidMount() {
         console.log('HEADER HAS MOUNTED! WOOHOO');
         //console.log('this.props.match.params.country ', this.props.match.params.country);
-        console.log('bbbbc ', this.props.country);
+        console.log('bbbbcd ', this.props.country);
+        console.log('bbbbcdeeee ', this.props);
 
-        if(this.props.match){
-            console.log('mounted ', this.props.country);
+        if(this.props.countryUpdate === 'true'){
+            console.log('WE are going to get a new header ', this.props.countryParams);
+            this.props.setHeaderCountry({'country': this.props.countryParams});
+            this.props.getHeader();
         }
-        //this.props.getHeader();
+        
     }
     render() {
         return (
@@ -46,6 +49,7 @@ class Header extends Component {
                             <a href={this.props.logoURL}><img src={this.props.logoPath} alt={this.props.title} /></a>
                         </div>
                         <h1>{this.props.headerTitle}</h1>
+                        <p>Should I update? {this.props.countryUpdate}</p>
                         <Navbar />
                     </div>
                 </header>

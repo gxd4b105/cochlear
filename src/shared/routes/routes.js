@@ -18,6 +18,11 @@ export default {
             path: '/:country/secondpage',
             component: Homesecond,
             exact: true
+        },
+        {
+            path: '/:country/thirdpage',
+            component: Homesecond,
+            exact: true
         }
     ],
     redirects: [

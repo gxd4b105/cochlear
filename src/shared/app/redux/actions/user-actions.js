@@ -16,6 +16,7 @@ export function getHeader() {
 }
 
 export function setHeaderCountry(data) {
+    console.log('YYYYYYYYY ', data);
     return function (dispatch, getState) {
         dispatch({ type: Types.UPDATE_HEADER_COUNTRY, payload: data });
     }
