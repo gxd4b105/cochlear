@@ -9,7 +9,13 @@ import { bindActionCreators } from 'redux';
 import * as actions from './redux/actions/user-actions'
 
 class App extends Component {
-    static fetchData({ store, params }) {        
+    static fetchData({ store, params }) { 
+        console.log('abcdefg');    
+        //console.log('MMMMMMMMPr ', params.country, params.country.length);   
+        if(!params.country){
+            console.log('returning nothing!!!');
+            return Promise.all([],[]);
+        }
         return Promise.all([Header.fetchData({store, params}), Footer.fetchData({store, params})]);
     }
 
@@ -22,24 +28,24 @@ class App extends Component {
         );
         return (
             <div>
-                <Header title={this.props.headerTitle} />
-
                 <Switch>
                     {routes}
                     {redirects}
                 </Switch>
-                <Footer title={this.props.footerTitle} />
             </div>
         );
     }
 }
 
+export default App;
+
 function mapStateToProps(state) {
+    console.log('APP APP - ', state);
     return {
-        ...state.user,
+        ...state.home
     }
 }
 function mapDispatchToProps(dispatch) {
     return bindActionCreators(actions, dispatch);
 }
-export default connect(mapStateToProps, mapDispatchToProps, null, { withRef: true })(App);
+//export default connect(mapStateToProps, mapDispatchToProps)(App);

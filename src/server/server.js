@@ -14,9 +14,11 @@ import routeBank from '../shared/routes/routes';
 
 app.use('/dist', express.static('./dist'));
 
-app.get('*', (req, res) => {
+app.use('/', (req, res) => {
 	try {
 		//create new redux store on each request
+
+		console.log('WE GOT ONE~~!!!');
 
 		const store = createStore(reducers, {}, applyMiddleware(thunk));
 		let foundPath = null;
@@ -33,7 +35,6 @@ app.get('*', (req, res) => {
 				return foundPath;
 			}) || {};
 		// safety check for valid component, if no component we initialize an empty shell.
-		console.log(App.fetchData);
 		if (!component)
 			component = {};
 		// safety check for fetchData function, if no function we give it an empty promise

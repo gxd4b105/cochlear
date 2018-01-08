@@ -13,21 +13,26 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        this.props.getHeader();
-        this.props.getFooter();
+        console.log('HELLO!!!!');
+        console.log(this.props);
+        console.log('XXXXXXHELLO!!!!');
+        //this.props.getHeader();
+        //this.props.getFooter();
     }
 
     render() {
         return (
             <div>
-                <Body />
-            </div>
+                <Header title={this.props.headerTitle} country={this.props.headerCountry} />
+                    <Body />
+                <Footer title={this.props.footerTitle} />
+             </div>
         );
     }
 }
 function mapStateToProps(state) {
     return {
-        ...state.home,
+        ...state.user,
     }
 }
 function mapDispatchToProps(dispatch) {

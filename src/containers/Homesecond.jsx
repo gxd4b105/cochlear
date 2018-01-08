@@ -14,21 +14,16 @@ class Homesecond extends Component {
 
     componentDidMount() {
         console.log('mounted ', this.props.match.params.country);
-        this.props.getHeader();
-        this.props.getFooter();
+        //this.props.getHeader();
+        //this.props.getFooter();
     }
 
     render() {
         return (
             <div>
-                <Helmet>
-                    <meta charSet="utf-8" />
-                    <title>Homesecond</title>
-                </Helmet>
-                <Bodysecond />
-
-                AND the route params is: {this.props.match.params.country}
-
+                <Header title={this.props.headerTitle} country={this.props.headerCountry} />
+                    <Bodysecond />
+                <Footer title={this.props.footerTitle} />
             </div>
         );
     }
@@ -37,7 +32,7 @@ function mapStateToProps(state) {
     console.log('TEST TEST TEST ', state);
 
     return {
-        ...state.home,
+        ...state.user,
     }
 }
 function mapDispatchToProps(dispatch) {

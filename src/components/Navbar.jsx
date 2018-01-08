@@ -9,13 +9,18 @@ class Navbar extends Component {
             <nav className={`nav-onscreen js-onscreen nav-onscreen__global-header`}>
                 <ul className="nav cf">
                     <li className={`nav-item`}>
-                        <Link prefetch className="nav-item-title" to="/">
+                        <Link className="nav-item-title" to="/intl/firstpage">
                             Home <span className="sub-text">This links to the homepage</span>
                         </Link>
                     </li>
                     <li className={`nav-item`}>
-                        <Link prefetch className="nav-item-title" to="/secondpage">
+                        <Link className="nav-item-title" to="/intl/secondpage">
                             Second Page <span className="sub-text">This links to the second page</span>
+                        </Link>
+                    </li>
+                    <li className={`nav-item`}>
+                        <Link className="nav-item-title" to="/usa/thirdpage">
+                            Second Page <span className="sub-text">This links to the third page</span>
                         </Link>
                     </li>
                 </ul>

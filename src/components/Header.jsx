@@ -11,26 +11,26 @@ class Header extends Component {
         console.log('PARAMS ', params); 
         console.log('Mounted ', params.country);
         console.log('CHECKING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
-        if (store.getState().user.headerCountry != params.country){
-            console.log('NO ', params.country);
+        if (store.getState().user.headerCountry != params.country || store.getState().user.headerCountry === null){
+            console.log('NOooooooooooooooooooooooooo ', params.country);
             console.log('ACtisoNS ', actions);
 
             store.dispatch(actions.setHeaderCountry(params));
             return store.dispatch(actions.getHeader());
         } else {
-            console.log('YES!');
-            return;
+            console.log('YESSSSSSSssssssssssssssssss ', store.getState().user.headerCountry);
+            return ;
         }
     }
     componentDidMount() {
-        if(this.props.match){
-            console.log('mounted ', this.props.match.params.country);
-        }
-        console.log('rwwwww');
-        console.log(this.props);
-        //console.log(store);
+        console.log('HEADER HAS MOUNTED! WOOHOO');
+        //console.log('this.props.match.params.country ', this.props.match.params.country);
+        console.log('bbbbc ', this.props.country);
 
-        this.props.getHeader();
+        if(this.props.match){
+            console.log('mounted ', this.props.country);
+        }
+        //this.props.getHeader();
     }
     render() {
         return (
@@ -42,15 +42,11 @@ class Header extends Component {
 
                 <header className={`global-header ${this.props.additionalClass}`}>
                     <div className="l-padding">
-
                         <div className="logo">
                             <a href={this.props.logoURL}><img src={this.props.logoPath} alt={this.props.title} /></a>
                         </div>
-
-                        <h1>{this.props.title}</h1>
-
+                        <h1>{this.props.headerTitle}</h1>
                         <Navbar />
-
                     </div>
                 </header>
 

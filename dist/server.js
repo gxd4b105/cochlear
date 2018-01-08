@@ -118,7 +118,6 @@ var _axios2 = _interopRequireDefault(_axios);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function getName(id) {
-    console.log('get name ..', id);
     return async function (dispatch, getState) {
         var _ref = await getUserFromAPI(id),
             data = _ref.data;
@@ -137,7 +136,6 @@ function getHeader() {
 }
 
 function setHeaderCountry(data) {
-    console.log('here we go ', data);
     return function (dispatch, getState) {
         dispatch({ type: _userTypes.Types.UPDATE_HEADER_COUNTRY, payload: data });
     };
@@ -266,7 +264,7 @@ var Footer = function (_Component) {
     _createClass(Footer, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            this.props.getFooter();
+            //this.props.getFooter();
         }
     }, {
         key: 'render',
@@ -285,7 +283,7 @@ var Footer = function (_Component) {
                         'h2',
                         null,
                         'title: ',
-                        this.props.title,
+                        this.props.footerTitle,
                         ' '
                     ),
                     _react2.default.createElement(
@@ -303,7 +301,6 @@ var Footer = function (_Component) {
         value: function fetchData(_ref) {
             var store = _ref.store;
 
-            //console.log('okey dokey ', store.getState());
             return store.dispatch(actions.getFooter());
         }
     }]);
@@ -374,14 +371,14 @@ var Header = function (_Component) {
     _createClass(Header, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            if (this.props.match) {
-                console.log('mounted ', this.props.match.params.country);
-            }
-            console.log('rwwwww');
-            console.log(this.props);
-            //console.log(store);
+            console.log('HEADER HAS MOUNTED! WOOHOO');
+            //console.log('this.props.match.params.country ', this.props.match.params.country);
+            console.log('bbbbc ', this.props.country);
 
-            this.props.getHeader();
+            if (this.props.match) {
+                console.log('mounted ', this.props.country);
+            }
+            //this.props.getHeader();
         }
     }, {
         key: 'render',
@@ -417,7 +414,7 @@ var Header = function (_Component) {
                         _react2.default.createElement(
                             'h1',
                             null,
-                            this.props.title
+                            this.props.headerTitle
                         ),
                         _react2.default.createElement(_Navbar2.default, null)
                     )
@@ -434,14 +431,14 @@ var Header = function (_Component) {
             console.log('PARAMS ', params);
             console.log('Mounted ', params.country);
             console.log('CHECKING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
-            if (store.getState().user.headerCountry != params.country) {
-                console.log('NO ', params.country);
+            if (store.getState().user.headerCountry != params.country || store.getState().user.headerCountry === null) {
+                console.log('NOooooooooooooooooooooooooo ', params.country);
                 console.log('ACtisoNS ', actions);
 
                 store.dispatch(actions.setHeaderCountry(params));
                 return store.dispatch(actions.getHeader());
             } else {
-                console.log('YES!');
+                console.log('YESSSSSSSssssssssssssssssss ', store.getState().user.headerCountry);
                 return;
             }
         }
@@ -701,14 +698,12 @@ var App = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_Header2.default, { title: this.props.headerTitle }),
                 _react2.default.createElement(
                     _reactRouterDom.Switch,
                     null,
                     routes,
                     redirects
-                ),
-                _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle })
+                )
             );
         }
     }], [{
@@ -717,6 +712,12 @@ var App = function (_Component) {
             var store = _ref3.store,
                 params = _ref3.params;
 
+            console.log('abcdefg');
+            //console.log('MMMMMMMMPr ', params.country, params.country.length);   
+            if (!params.country) {
+                console.log('returning nothing!!!');
+                return Promise.all([], []);
+            }
             return Promise.all([_Header2.default.fetchData({ store: store, params: params }), _Footer2.default.fetchData({ store: store, params: params })]);
         }
     }]);
@@ -724,13 +725,17 @@ var App = function (_Component) {
     return App;
 }(_react.Component);
 
+exports.default = App;
+
+
 function mapStateToProps(state) {
-    return _extends({}, state.user);
+    console.log('APP APP - ', state);
+    return _extends({}, state.home);
 }
 function mapDispatchToProps(dispatch) {
     return (0, _redux.bindActionCreators)(actions, dispatch);
 }
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(App);
+//export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 /***/ }),
 /* 12 */
@@ -866,7 +871,21 @@ var Body = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            return _react2.default.createElement(_HeaderLandingBanner2.default, { title: this.props.bodyTitle });
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(_HeaderLandingBanner2.default, { title: this.props.bodyTitle }),
+                _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { className: 'nav-item-title', to: '/intl/secondpage' },
+                    'Home ',
+                    _react2.default.createElement(
+                        'span',
+                        { className: 'sub-text' },
+                        'This links to the homepage'
+                    )
+                )
+            );
         }
     }], [{
         key: 'fetchData',
@@ -1018,7 +1037,7 @@ var Navbar = function (_Component) {
                         { className: 'nav-item' },
                         _react2.default.createElement(
                             _reactRouterDom.Link,
-                            { prefetch: true, className: 'nav-item-title', to: '/' },
+                            { className: 'nav-item-title', to: '/intl/firstpage' },
                             'Home ',
                             _react2.default.createElement(
                                 'span',
@@ -1032,7 +1051,7 @@ var Navbar = function (_Component) {
                         { className: 'nav-item' },
                         _react2.default.createElement(
                             _reactRouterDom.Link,
-                            { prefetch: true, className: 'nav-item-title', to: '/secondpage' },
+                            { className: 'nav-item-title', to: '/intl/secondpage' },
                             'Second Page ',
                             _react2.default.createElement(
                                 'span',
@@ -1122,8 +1141,11 @@ var Home = function (_Component) {
     _createClass(Home, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            this.props.getHeader();
-            this.props.getFooter();
+            console.log('HELLO!!!!');
+            console.log(this.props);
+            console.log('XXXXXXHELLO!!!!');
+            //this.props.getHeader();
+            //this.props.getFooter();
         }
     }, {
         key: 'render',
@@ -1131,7 +1153,9 @@ var Home = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_Body2.default, null)
+                _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry }),
+                _react2.default.createElement(_Body2.default, null),
+                _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle })
             );
         }
     }], [{
@@ -1148,7 +1172,7 @@ var Home = function (_Component) {
 }(_react.Component);
 
 function mapStateToProps(state) {
-    return _extends({}, state.home);
+    return _extends({}, state.user);
 }
 function mapDispatchToProps(dispatch) {
     return (0, _redux.bindActionCreators)(actions, dispatch);
@@ -1219,8 +1243,8 @@ var Homesecond = function (_Component) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             console.log('mounted ', this.props.match.params.country);
-            this.props.getHeader();
-            this.props.getFooter();
+            //this.props.getHeader();
+            //this.props.getFooter();
         }
     }, {
         key: 'render',
@@ -1228,19 +1252,9 @@ var Homesecond = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(
-                    _reactHelmet.Helmet,
-                    null,
-                    _react2.default.createElement('meta', { charSet: 'utf-8' }),
-                    _react2.default.createElement(
-                        'title',
-                        null,
-                        'Homesecond'
-                    )
-                ),
+                _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry }),
                 _react2.default.createElement(_Bodysecond2.default, null),
-                'AND the route params is: ',
-                this.props.match.params.country
+                _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle })
             );
         }
     }], [{
@@ -1259,7 +1273,7 @@ var Homesecond = function (_Component) {
 function mapStateToProps(state) {
     console.log('TEST TEST TEST ', state);
 
-    return _extends({}, state.home);
+    return _extends({}, state.user);
 }
 function mapDispatchToProps(dispatch) {
     return (0, _redux.bindActionCreators)(actions, dispatch);
@@ -1320,9 +1334,11 @@ var app = (0, _express2.default)();
 
 app.use('/dist', _express2.default.static('./dist'));
 
-app.get('*', function (req, res) {
+app.use('/', function (req, res) {
 	try {
 		//create new redux store on each request
+
+		console.log('WE GOT ONE~~!!!');
 
 		var store = (0, _redux.createStore)(_combine2.default, {}, (0, _redux.applyMiddleware)(_thunk2.default));
 		var foundPath = null;
@@ -1344,7 +1360,6 @@ app.get('*', function (req, res) {
 		// safety check for valid component, if no component we initialize an empty shell.
 
 
-		console.log(_app2.default.fetchData);
 		if (!component) component = {};
 		// safety check for fetchData function, if no function we give it an empty promise
 		if (!component.fetchData) component.fetchData = function () {
@@ -1353,9 +1368,6 @@ app.get('*', function (req, res) {
 			});
 		};
 		// meat and bones of our isomorphic application: grabbing async data
-
-		console.log('AAAAAAAAAAA');
-		console.log('found path ', foundPath);
 
 		var p1 = component.fetchData({ store: store, params: foundPath ? foundPath.params : {} });
 		var p2 = _app2.default.fetchData({ store: store, params: foundPath ? foundPath.params : {} });
@@ -1474,14 +1486,12 @@ function userReducer() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
     var action = arguments[1];
 
-    console.log('here we go222 ', action);
     switch (action.type) {
         case _userTypes.Types.UPDATE_NAME:
             return _extends({}, state, { name: action.payload.name, email: action.payload.email });
         case _userTypes.Types.UPDATE_HEADER:
             return _extends({}, state, { headerTitle: action.payload.title });
         case _userTypes.Types.UPDATE_HEADER_COUNTRY:
-            console.log('YE UES ', state, action.payload.country);
             return _extends({}, state, { headerCountry: action.payload.country });
         case _userTypes.Types.UPDATE_FOOTER_COUNTRY:
             return _extends({}, state, { footerCountry: action.payload.country });
