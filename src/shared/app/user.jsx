@@ -6,11 +6,9 @@ import * as actions from './redux/actions/user-actions'
 
 class User extends Component {
     static fetchData({ store }) {
-        console.log('FTCH USER');
         return store.dispatch(actions.getName(1));
     }
     componentDidMount() {
-        console.log('YES!!!!');
         this.props.getName(1);
     }
     render() {

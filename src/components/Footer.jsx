@@ -6,7 +6,7 @@ import * as actions from '../shared/app/redux/actions/user-actions'
 
 class Footer extends Component {
     static fetchData({store, params}) {
-        if (store.getState().user.headerCountry != params.country || store.getState().user.headerCountry === null){
+        if (store.getState().user.footerCountry != params.country || store.getState().user.footerCountry === null){
             return store.dispatch(actions.getFooter());
         }
         return ;

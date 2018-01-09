@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
     static fetchData() {
-        console.log('test');
     }
     render() {
         return (

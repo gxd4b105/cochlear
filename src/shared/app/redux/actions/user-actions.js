@@ -28,7 +28,7 @@ export function setHeaderCountry(data) {
     }
 }
 
-export function getFooterCountry(data) {
+export function setFooterCountry(data) {
     return function (dispatch, getState) {
         dispatch({ type: Types.UPDATE_FOOTER_COUNTRY, payload: data });
     }

@@ -815,7 +815,7 @@ exports.getName = getName;
 exports.getHeader = getHeader;
 exports.getHeaderUS = getHeaderUS;
 exports.setHeaderCountry = setHeaderCountry;
-exports.getFooterCountry = getFooterCountry;
+exports.setFooterCountry = setFooterCountry;
 exports.getBody = getBody;
 exports.getHome = getHome;
 exports.getHomesecond = getHomesecond;
@@ -882,7 +882,7 @@ function setHeaderCountry(data) {
     };
 }
 
-function getFooterCountry(data) {
+function setFooterCountry(data) {
     return function (dispatch, getState) {
         dispatch({ type: _userTypes.Types.UPDATE_FOOTER_COUNTRY, payload: data });
     };
@@ -1979,7 +1979,7 @@ var Footer = function (_Component) {
             var store = _ref.store,
                 params = _ref.params;
 
-            if (store.getState().user.headerCountry != params.country || store.getState().user.headerCountry === null) {
+            if (store.getState().user.footerCountry != params.country || store.getState().user.footerCountry === null) {
                 return store.dispatch(actions.getFooter());
             }
             return;
@@ -2052,9 +2052,6 @@ var Header = function (_Component) {
     _createClass(Header, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            console.log('III ', this.props.countryUpdate);
-
-            console.log('IV contry ', this.props.country);
             if (this.props.countryUpdate === 'true') {
                 this.props.setHeaderCountry({ 'country': this.props.countryParams });
                 if (this.props.countryParams === 'intl') {
@@ -2113,7 +2110,6 @@ var Header = function (_Component) {
 
             if (store.getState().user.headerCountry != params.country || store.getState().user.headerCountry === null) {
                 store.dispatch(actions.setHeaderCountry(params));
-                console.log('HEADER ', params.country);
                 if (params.country === 'intl') {
                     return store.dispatch(actions.getHeader());
                 }
@@ -5526,7 +5522,6 @@ exports.default = App;
 
 
 function mapStateToProps(state) {
-    console.log('APP APP - ', state);
     return _extends({}, state.home);
 }
 function mapDispatchToProps(dispatch) {
@@ -6840,13 +6835,23 @@ var Home = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            return _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry }),
-                _react2.default.createElement(_Body2.default, null),
-                _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle, country: this.props.headerCountry })
-            );
+            if (this.props.match.params.country === this.props.headerCountry) {
+                return _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
+                    _react2.default.createElement(_Body2.default, null),
+                    _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
+                );
+            } else {
+                return _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' }),
+                    _react2.default.createElement(_Body2.default, null),
+                    _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' })
+                );
+            }
         }
     }], [{
         key: 'fetchData',
@@ -6939,9 +6944,12 @@ var Homesecond = function (_Component) {
                 return _react2.default.createElement(
                     'div',
                     null,
+                    'PPPP ',
+                    this.props.title,
+                    ' PPP',
                     _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
                     _react2.default.createElement(_Bodysecond2.default, null),
-                    _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
+                    _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
                 );
             } else {
                 return _react2.default.createElement(
@@ -6949,7 +6957,7 @@ var Homesecond = function (_Component) {
                     null,
                     _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' }),
                     _react2.default.createElement(_Bodysecond2.default, null),
-                    _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' })
+                    _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' })
                 );
             }
         }
@@ -7183,7 +7191,6 @@ var User = function (_Component) {
     _createClass(User, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            console.log('YES!!!!');
             this.props.getName(1);
         }
     }, {
@@ -7218,7 +7225,6 @@ var User = function (_Component) {
         value: function fetchData(_ref) {
             var store = _ref.store;
 
-            console.log('FTCH USER');
             return store.dispatch(actions.getName(1));
         }
     }]);

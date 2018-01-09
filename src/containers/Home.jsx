@@ -16,13 +16,23 @@ class Home extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <Header title={this.props.headerTitle} country={this.props.headerCountry} />
-                <Body />
-                <Footer title={this.props.footerTitle} country={this.props.headerCountry} />
-             </div>
-        );
+        if(this.props.match.params.country === this.props.headerCountry){
+            return (
+                <div>
+                    <Header title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
+                    <Body />
+                    <Footer title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
+                </div>
+            );
+        } else {
+            return (
+                <div>
+                    <Header title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'true' />
+                    <Body />
+                    <Footer title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'true' />
+                </div>
+            );
+        }
     }
 }
 function mapStateToProps(state) {

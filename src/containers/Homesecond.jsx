@@ -18,10 +18,10 @@ class Homesecond extends Component {
     render() {
         if(this.props.match.params.country === this.props.headerCountry){
             return (
-                <div>
+                <div>PPPP {this.props.title} PPP 
                     <Header title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
                     <Bodysecond />
-                    <Footer title={this.props.footerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
+                    <Footer title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
                 </div>
             );
         } else {
@@ -29,7 +29,7 @@ class Homesecond extends Component {
                 <div>
                     <Header title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'true' />
                     <Bodysecond />
-                    <Footer title={this.props.footerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'true' />
+                    <Footer title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'true' />
                 </div>
             );
         }

@@ -9,7 +9,6 @@ class Header extends Component {
     static fetchData({ store, params }) {
         if (store.getState().user.headerCountry != params.country || store.getState().user.headerCountry === null){
             store.dispatch(actions.setHeaderCountry(params));
-            console.log('HEADER ', params.country);
             if(params.country === 'intl') {
                 return store.dispatch(actions.getHeader());
             }
@@ -19,17 +18,13 @@ class Header extends Component {
         return ;
     }
     componentDidMount() {
-        console.log('III ',this.props.countryUpdate);
-
-        console.log('IV contry ',this.props.country );
         if (this.props.countryUpdate === 'true') {
             this.props.setHeaderCountry({'country': this.props.countryParams});
             if(this.props.countryParams === 'intl'){
                 this.props.getHeader();
             } else {
                 this.props.getHeaderUS();
-            }
-            
+            }  
         }
     }
     render() {

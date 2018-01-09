@@ -37,7 +37,6 @@ class App extends Component {
 export default App;
 
 function mapStateToProps(state) {
-    console.log('APP APP - ', state);
     return {
         ...state.home
     }
