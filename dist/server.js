@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 23);
+/******/ 	return __webpack_require__(__webpack_require__.s = 25);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -114,7 +114,7 @@ exports.getFooterUS = getFooterUS;
 
 var _userTypes = __webpack_require__(10);
 
-var _axios = __webpack_require__(27);
+var _axios = __webpack_require__(29);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -396,7 +396,7 @@ var _redux = __webpack_require__(1);
 
 var _reactHelmet = __webpack_require__(3);
 
-var _Navbar = __webpack_require__(20);
+var _Navbar = __webpack_require__(21);
 
 var _Navbar2 = _interopRequireDefault(_Navbar);
 
@@ -524,56 +524,6 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Home = __webpack_require__(21);
-
-var _Home2 = _interopRequireDefault(_Home);
-
-var _Homesecond = __webpack_require__(22);
-
-var _Homesecond2 = _interopRequireDefault(_Homesecond);
-
-var _user = __webpack_require__(26);
-
-var _user2 = _interopRequireDefault(_user);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-    routes: [{
-        path: '/',
-        component: _Home2.default,
-        exact: true
-    }, {
-        path: '/:country/firstpage',
-        component: _Home2.default,
-        exact: true
-    }, {
-        path: '/:country/secondpage',
-        component: _Homesecond2.default,
-        exact: true
-    }, {
-        path: '/:country/thirdpage',
-        component: _Homesecond2.default,
-        exact: true
-    }],
-    redirects: [{
-        from: '/people',
-        to: '/user',
-        status: 301
-    }]
-};
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
@@ -650,6 +600,60 @@ HeaderLandingBanner.defaultProps = {
 exports.default = HeaderLandingBanner;
 
 /***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _Home = __webpack_require__(22);
+
+var _Home2 = _interopRequireDefault(_Home);
+
+var _Homesecond = __webpack_require__(23);
+
+var _Homesecond2 = _interopRequireDefault(_Homesecond);
+
+var _Homethird = __webpack_require__(24);
+
+var _Homethird2 = _interopRequireDefault(_Homethird);
+
+var _user = __webpack_require__(28);
+
+var _user2 = _interopRequireDefault(_user);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    routes: [{
+        path: '/',
+        component: _Home2.default,
+        exact: true
+    }, {
+        path: '/:country/firstpage',
+        component: _Home2.default,
+        exact: true
+    }, {
+        path: '/:country/secondpage',
+        component: _Homesecond2.default,
+        exact: true
+    }, {
+        path: '/:country/thirdpage',
+        component: _Homethird2.default,
+        exact: true
+    }],
+    redirects: [{
+        from: '/people',
+        to: '/user',
+        status: 301
+    }]
+};
+
+/***/ }),
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -692,11 +696,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(5);
 
-var _redirectWStatus = __webpack_require__(24);
+var _redirectWStatus = __webpack_require__(26);
 
 var _redirectWStatus2 = _interopRequireDefault(_redirectWStatus);
 
-var _routes = __webpack_require__(8);
+var _routes = __webpack_require__(9);
 
 var _routes2 = _interopRequireDefault(_routes);
 
@@ -824,7 +828,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(1);
 
-var _userReducer = __webpack_require__(25);
+var _userReducer = __webpack_require__(27);
 
 var _userReducer2 = _interopRequireDefault(_userReducer);
 
@@ -883,7 +887,7 @@ var _reactRouterDom = __webpack_require__(5);
 
 var _reactRedux = __webpack_require__(2);
 
-var _HeaderLandingBanner = __webpack_require__(9);
+var _HeaderLandingBanner = __webpack_require__(8);
 
 var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
 
@@ -969,7 +973,7 @@ var _reactRouterDom = __webpack_require__(5);
 
 var _reactRedux = __webpack_require__(2);
 
-var _HeaderLandingBanner = __webpack_require__(9);
+var _HeaderLandingBanner = __webpack_require__(8);
 
 var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
 
@@ -1030,6 +1034,88 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, 
 
 /***/ }),
 /* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(5);
+
+var _reactRedux = __webpack_require__(2);
+
+var _HeaderLandingBanner = __webpack_require__(8);
+
+var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
+
+var _redux = __webpack_require__(1);
+
+var _reactHelmet = __webpack_require__(3);
+
+var _userActions = __webpack_require__(4);
+
+var actions = _interopRequireWildcard(_userActions);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Bodythird = function (_Component) {
+    _inherits(Bodythird, _Component);
+
+    function Bodythird() {
+        _classCallCheck(this, Bodythird);
+
+        return _possibleConstructorReturn(this, (Bodythird.__proto__ || Object.getPrototypeOf(Bodythird)).apply(this, arguments));
+    }
+
+    _createClass(Bodythird, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.props.getHomethird();
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(_HeaderLandingBanner2.default, { title: this.props.bodythirdTitle });
+        }
+    }], [{
+        key: 'fetchData',
+        value: function fetchData() {
+            console.log('test fetch. This does nothing at the moment');
+        }
+    }]);
+
+    return Bodythird;
+}(_react.Component);
+
+function mapStateToProps(state) {
+    return _extends({}, state.user);
+}
+function mapDispatchToProps(dispatch) {
+    return (0, _redux.bindActionCreators)(actions, dispatch);
+}
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Bodythird);
+
+/***/ }),
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1134,7 +1220,7 @@ var Navbar = function (_Component) {
 exports.default = Navbar;
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1239,7 +1325,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Home);
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1344,7 +1430,112 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Homesecond);
 
 /***/ }),
-/* 23 */
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(2);
+
+var _redux = __webpack_require__(1);
+
+var _reactHelmet = __webpack_require__(3);
+
+var _Header = __webpack_require__(7);
+
+var _Header2 = _interopRequireDefault(_Header);
+
+var _Footer = __webpack_require__(6);
+
+var _Footer2 = _interopRequireDefault(_Footer);
+
+var _Bodythird = __webpack_require__(20);
+
+var _Bodythird2 = _interopRequireDefault(_Bodythird);
+
+var _userActions = __webpack_require__(4);
+
+var actions = _interopRequireWildcard(_userActions);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Homethird = function (_Component) {
+    _inherits(Homethird, _Component);
+
+    function Homethird() {
+        _classCallCheck(this, Homethird);
+
+        return _possibleConstructorReturn(this, (Homethird.__proto__ || Object.getPrototypeOf(Homethird)).apply(this, arguments));
+    }
+
+    _createClass(Homethird, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {}
+    }, {
+        key: 'render',
+        value: function render() {
+            if (this.props.match.params.country === this.props.headerCountry) {
+                return _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
+                    _react2.default.createElement(_Bodythird2.default, null),
+                    _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
+                );
+            } else {
+                return _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' }),
+                    _react2.default.createElement(_Bodythird2.default, null),
+                    _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' })
+                );
+            }
+        }
+    }], [{
+        key: 'fetchData',
+        value: function fetchData(_ref) {
+            var store = _ref.store,
+                params = _ref.params;
+
+            return store.dispatch(actions.getHomethird());
+        }
+    }]);
+
+    return Homethird;
+}(_react.Component);
+
+function mapStateToProps(state) {
+    return _extends({}, state.user);
+}
+function mapDispatchToProps(dispatch) {
+    return (0, _redux.bindActionCreators)(actions, dispatch);
+}
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Homethird);
+
+/***/ }),
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1386,7 +1577,7 @@ var _thunk = __webpack_require__(12);
 
 var _thunk2 = _interopRequireDefault(_thunk);
 
-var _routes = __webpack_require__(8);
+var _routes = __webpack_require__(9);
 
 var _routes2 = _interopRequireDefault(_routes);
 
@@ -1479,7 +1670,7 @@ function renderFullPage(html, preloadedState, helmet) {
 }
 
 /***/ }),
-/* 24 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1514,7 +1705,7 @@ var RedirectWithStatus = function RedirectWithStatus(_ref) {
 exports.default = RedirectWithStatus;
 
 /***/ }),
-/* 25 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1569,7 +1760,7 @@ function userReducer() {
 }
 
 /***/ }),
-/* 26 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1669,7 +1860,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(User);
 
 /***/ }),
-/* 27 */
+/* 29 */
 /***/ (function(module, exports) {
 
 module.exports = require("axios");

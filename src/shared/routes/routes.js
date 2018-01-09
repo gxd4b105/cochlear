@@ -1,5 +1,6 @@
 import Home from '../../containers/Home.jsx';
 import Homesecond from '../../containers/Homesecond.jsx';
+import Homethird from '../../containers/Homethird.jsx';
 import User from '../app/user.jsx';
 
 export default {
@@ -21,7 +22,7 @@ export default {
         },
         {
             path: '/:country/thirdpage',
-            component: Homesecond,
+            component: Homethird,
             exact: true
         }
     ],
