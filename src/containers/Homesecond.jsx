@@ -18,7 +18,7 @@ class Homesecond extends Component {
     render() {
         if(this.props.match.params.country === this.props.headerCountry){
             return (
-                <div>PPPP {this.props.title} PPP 
+                <div>
                     <Header title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
                     <Bodysecond />
                     <Footer title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />

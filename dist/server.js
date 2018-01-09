@@ -317,7 +317,6 @@ var Footer = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-
             var today = new Date(),
                 Year = today.getFullYear();
 
@@ -351,7 +350,11 @@ var Footer = function (_Component) {
                 params = _ref.params;
 
             if (store.getState().user.footerCountry != params.country || store.getState().user.footerCountry === null) {
-                return store.dispatch(actions.getFooter());
+                store.dispatch(actions.setHeaderCountry(params));
+                if (params.country === 'intl') {
+                    return store.dispatch(actions.getFooter());
+                }
+                return store.dispatch(actions.getFooterUS());
             }
             return;
         }
@@ -1305,9 +1308,6 @@ var Homesecond = function (_Component) {
                 return _react2.default.createElement(
                     'div',
                     null,
-                    'PPPP ',
-                    this.props.title,
-                    ' PPP',
                     _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
                     _react2.default.createElement(_Bodysecond2.default, null),
                     _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })

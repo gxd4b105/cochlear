@@ -7,13 +7,17 @@ import * as actions from '../shared/app/redux/actions/user-actions'
 class Footer extends Component {
     static fetchData({store, params}) {
         if (store.getState().user.footerCountry != params.country || store.getState().user.footerCountry === null){
-            return store.dispatch(actions.getFooter());
+            store.dispatch(actions.setHeaderCountry(params));
+            if (params.country === 'intl') {
+                return store.dispatch(actions.getFooter());
+            }
+            return store.dispatch(actions.getFooterUS());
         }
         return ;
     }
     componentDidMount() {
-        if(this.props.countryUpdate === 'true'){
-            if(this.props.countryParams === 'intl'){
+        if (this.props.countryUpdate === 'true') {
+            if (this.props.countryParams === 'intl') {
                 this.props.getFooter();
             } else {
                 this.props.getFooterUS();
@@ -21,7 +25,6 @@ class Footer extends Component {
         }
     }
     render() {
-
         var today = new Date(), Year = today.getFullYear();
 
         return (
