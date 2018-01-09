@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class Navbar extends Component {
     static fetchData() {
@@ -9,19 +9,19 @@ class Navbar extends Component {
             <nav className={`nav-onscreen js-onscreen nav-onscreen__global-header`}>
                 <ul className="nav cf">
                     <li className={`nav-item`}>
-                        <Link className="nav-item-title" to="/intl/firstpage">
+                        <NavLink className="nav-item-title" to="/intl/firstpage">
                             Home <span className="sub-text">This links to the homepage</span>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li className={`nav-item`}>
-                        <Link className="nav-item-title" to="/intl/secondpage">
+                        <NavLink className="nav-item-title" to="/intl/secondpage">
                             Second Page <span className="sub-text">This links to the second page</span>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li className={`nav-item`}>
-                        <Link className="nav-item-title" to="/usa/thirdpage">
+                        <NavLink className="nav-item-title" to="/usa/thirdpage">
                             Third Page <span className="sub-text">This links to the third page</span>
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
                 {/* <% if vars[:hasLogin] == true %> */}

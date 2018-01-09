@@ -6718,7 +6718,7 @@ var Navbar = function (_Component) {
                         'li',
                         { className: 'nav-item' },
                         _react2.default.createElement(
-                            _reactRouterDom.Link,
+                            _reactRouterDom.NavLink,
                             { className: 'nav-item-title', to: '/intl/firstpage' },
                             'Home ',
                             _react2.default.createElement(
@@ -6732,7 +6732,7 @@ var Navbar = function (_Component) {
                         'li',
                         { className: 'nav-item' },
                         _react2.default.createElement(
-                            _reactRouterDom.Link,
+                            _reactRouterDom.NavLink,
                             { className: 'nav-item-title', to: '/intl/secondpage' },
                             'Second Page ',
                             _react2.default.createElement(
@@ -6746,7 +6746,7 @@ var Navbar = function (_Component) {
                         'li',
                         { className: 'nav-item' },
                         _react2.default.createElement(
-                            _reactRouterDom.Link,
+                            _reactRouterDom.NavLink,
                             { className: 'nav-item-title', to: '/usa/thirdpage' },
                             'Third Page ',
                             _react2.default.createElement(

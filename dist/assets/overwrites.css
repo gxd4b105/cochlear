@@ -22,7 +22,7 @@ body {
 .nav-onscreen__global-header .nav > li {
   float: none;
   flex-grow: 1; }
-.nav-onscreen__global-header .nav > li.active {
+.nav-onscreen__global-header .nav > li a.active {
   background-color: #efefef;}
 .nav-onscreen__global-header .nav-item .sub-text {
   display: block;
