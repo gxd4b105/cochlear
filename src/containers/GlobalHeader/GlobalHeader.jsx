@@ -2,8 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Helmet } from 'react-helmet';
-import Navbar from './Navbar.jsx';
-import * as actions from '../shared/app/redux/actions/user-actions'
+import * as actions from '../../shared/app/redux/actions/user-actions';
+
+
+
+
+import OnScreeNav from '../../components/OnScreenNav/OnScreeNav.js';
+import OnScreenNav__Item from '../../components/OnScreenNav__Item/OnScreenNav__Item.js';
+
+
 
 class Header extends Component {
     static fetchData({ store, params }) {
@@ -41,7 +48,22 @@ class Header extends Component {
                             <a href={this.props.logoURL}><img src={this.props.logoPath} alt={this.props.title} /></a>
                         </div>
                         <h1>{this.props.headerTitle}</h1>
-                        <Navbar />
+
+                        <OnScreeNav additionalClass="nav-onscreen__global-header">
+                            <OnScreenNav__Item title="Home Intl"
+                                               subtitle="This links to the first page"
+                                               path="/intl/firstpage"/>
+
+                            <OnScreenNav__Item title="Second Intl"
+                                               subtitle="This links to the second page"
+                                               path="/intl/secondpage"/>
+
+                            <OnScreenNav__Item title="Third USA"
+                                               subtitle="This links to the third page"
+                                               path="/usa/thirdpage"/>
+                        </OnScreeNav>
+
+
                     </div>
                 </header>
             </div>

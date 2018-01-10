@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Switch, Link, Route } from 'react-router-dom';
 import RedirectWithStatus from './redirect-w-status.jsx';
 import routeOptions from '../routes/routes';
-import Header from '../../components/Header.jsx';
-import Footer from '../../components/Footer.jsx';
+import Header from '../../containers/GlobalHeader/GlobalHeader.jsx';
+import Footer from '../../containers/GlobalFooter/GlobalFooter.jsx';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from './redux/actions/user-actions'

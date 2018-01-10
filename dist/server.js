@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 25);
+/******/ 	return __webpack_require__(__webpack_require__.s = 30);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -114,7 +114,7 @@ exports.getFooterUS = getFooterUS;
 
 var _userTypes = __webpack_require__(10);
 
-var _axios = __webpack_require__(29);
+var _axios = __webpack_require__(34);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -284,6 +284,22 @@ var _userActions = __webpack_require__(4);
 
 var actions = _interopRequireWildcard(_userActions);
 
+var _GlobalFooter__Nav = __webpack_require__(21);
+
+var _GlobalFooter__Nav2 = _interopRequireDefault(_GlobalFooter__Nav);
+
+var _GlobalFooter__Nav__Item = __webpack_require__(22);
+
+var _GlobalFooter__Nav__Item2 = _interopRequireDefault(_GlobalFooter__Nav__Item);
+
+var _GlobalFooter__Nav__Social = __webpack_require__(23);
+
+var _GlobalFooter__Nav__Social2 = _interopRequireDefault(_GlobalFooter__Nav__Social);
+
+var _GlobalFooter__Nav__Social__Item = __webpack_require__(24);
+
+var _GlobalFooter__Nav__Social__Item2 = _interopRequireDefault(_GlobalFooter__Nav__Social__Item);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -317,6 +333,9 @@ var Footer = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
+
+            var children = this.props.children;
+
             var today = new Date(),
                 Year = today.getFullYear();
 
@@ -332,6 +351,54 @@ var Footer = function (_Component) {
                         'title: ',
                         this.props.footerTitle,
                         ' '
+                    ),
+                    _react2.default.createElement(
+                        'nav',
+                        null,
+                        _react2.default.createElement(
+                            'ul',
+                            { className: 'nav-footer has-5-items' },
+                            _react2.default.createElement(
+                                _GlobalFooter__Nav2.default,
+                                null,
+                                _react2.default.createElement(_GlobalFooter__Nav__Item2.default, null),
+                                _react2.default.createElement(_GlobalFooter__Nav__Item2.default, null),
+                                _react2.default.createElement(_GlobalFooter__Nav__Item2.default, null),
+                                _react2.default.createElement(_GlobalFooter__Nav__Item2.default, null)
+                            ),
+                            _react2.default.createElement(
+                                _GlobalFooter__Nav2.default,
+                                null,
+                                _react2.default.createElement(_GlobalFooter__Nav__Item2.default, null),
+                                _react2.default.createElement(_GlobalFooter__Nav__Item2.default, null),
+                                _react2.default.createElement(_GlobalFooter__Nav__Item2.default, null),
+                                _react2.default.createElement(_GlobalFooter__Nav__Item2.default, null)
+                            ),
+                            _react2.default.createElement(
+                                _GlobalFooter__Nav2.default,
+                                null,
+                                _react2.default.createElement(_GlobalFooter__Nav__Item2.default, null),
+                                _react2.default.createElement(_GlobalFooter__Nav__Item2.default, null),
+                                _react2.default.createElement(_GlobalFooter__Nav__Item2.default, null),
+                                _react2.default.createElement(_GlobalFooter__Nav__Item2.default, null)
+                            ),
+                            _react2.default.createElement(
+                                _GlobalFooter__Nav2.default,
+                                null,
+                                _react2.default.createElement(_GlobalFooter__Nav__Item2.default, null),
+                                _react2.default.createElement(_GlobalFooter__Nav__Item2.default, null),
+                                _react2.default.createElement(_GlobalFooter__Nav__Item2.default, null),
+                                _react2.default.createElement(_GlobalFooter__Nav__Item2.default, null)
+                            ),
+                            _react2.default.createElement(
+                                _GlobalFooter__Nav__Social2.default,
+                                null,
+                                _react2.default.createElement(_GlobalFooter__Nav__Social__Item2.default, null),
+                                _react2.default.createElement(_GlobalFooter__Nav__Social__Item2.default, null),
+                                _react2.default.createElement(_GlobalFooter__Nav__Social__Item2.default, null),
+                                _react2.default.createElement(_GlobalFooter__Nav__Social__Item2.default, null)
+                            )
+                        )
                     ),
                     _react2.default.createElement(
                         'p',
@@ -396,13 +463,17 @@ var _redux = __webpack_require__(1);
 
 var _reactHelmet = __webpack_require__(3);
 
-var _Navbar = __webpack_require__(21);
-
-var _Navbar2 = _interopRequireDefault(_Navbar);
-
 var _userActions = __webpack_require__(4);
 
 var actions = _interopRequireWildcard(_userActions);
+
+var _OnScreeNav = __webpack_require__(25);
+
+var _OnScreeNav2 = _interopRequireDefault(_OnScreeNav);
+
+var _OnScreenNav__Item = __webpack_require__(26);
+
+var _OnScreenNav__Item2 = _interopRequireDefault(_OnScreenNav__Item);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -471,7 +542,19 @@ var Header = function (_Component) {
                             null,
                             this.props.headerTitle
                         ),
-                        _react2.default.createElement(_Navbar2.default, null)
+                        _react2.default.createElement(
+                            _OnScreeNav2.default,
+                            { additionalClass: 'nav-onscreen__global-header' },
+                            _react2.default.createElement(_OnScreenNav__Item2.default, { title: 'Home Intl',
+                                subtitle: 'This links to the first page',
+                                path: '/intl/firstpage' }),
+                            _react2.default.createElement(_OnScreenNav__Item2.default, { title: 'Second Intl',
+                                subtitle: 'This links to the second page',
+                                path: '/intl/secondpage' }),
+                            _react2.default.createElement(_OnScreenNav__Item2.default, { title: 'Third USA',
+                                subtitle: 'This links to the third page',
+                                path: '/usa/thirdpage' })
+                        )
                     )
                 )
             );
@@ -610,19 +693,19 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Home = __webpack_require__(22);
+var _Home = __webpack_require__(27);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _Homesecond = __webpack_require__(23);
+var _Homesecond = __webpack_require__(28);
 
 var _Homesecond2 = _interopRequireDefault(_Homesecond);
 
-var _Homethird = __webpack_require__(24);
+var _Homethird = __webpack_require__(29);
 
 var _Homethird2 = _interopRequireDefault(_Homethird);
 
-var _user = __webpack_require__(28);
+var _user = __webpack_require__(33);
 
 var _user2 = _interopRequireDefault(_user);
 
@@ -696,7 +779,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(5);
 
-var _redirectWStatus = __webpack_require__(26);
+var _redirectWStatus = __webpack_require__(31);
 
 var _redirectWStatus2 = _interopRequireDefault(_redirectWStatus);
 
@@ -704,13 +787,13 @@ var _routes = __webpack_require__(9);
 
 var _routes2 = _interopRequireDefault(_routes);
 
-var _Header = __webpack_require__(7);
+var _GlobalHeader = __webpack_require__(7);
 
-var _Header2 = _interopRequireDefault(_Header);
+var _GlobalHeader2 = _interopRequireDefault(_GlobalHeader);
 
-var _Footer = __webpack_require__(6);
+var _GlobalFooter = __webpack_require__(6);
 
-var _Footer2 = _interopRequireDefault(_Footer);
+var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
 var _reactRedux = __webpack_require__(2);
 
@@ -774,7 +857,7 @@ var App = function (_Component) {
             if (!params.country) {
                 return Promise.all([], []);
             }
-            return Promise.all([_Header2.default.fetchData({ store: store, params: params }), _Footer2.default.fetchData({ store: store, params: params })]);
+            return Promise.all([_GlobalHeader2.default.fetchData({ store: store, params: params }), _GlobalFooter2.default.fetchData({ store: store, params: params })]);
         }
     }]);
 
@@ -828,7 +911,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(1);
 
-var _userReducer = __webpack_require__(27);
+var _userReducer = __webpack_require__(32);
 
 var _userReducer2 = _interopRequireDefault(_userReducer);
 
@@ -1131,6 +1214,352 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var GlobalFooter__Nav = function (_React$Component) {
+    _inherits(GlobalFooter__Nav, _React$Component);
+
+    function GlobalFooter__Nav() {
+        _classCallCheck(this, GlobalFooter__Nav);
+
+        return _possibleConstructorReturn(this, (GlobalFooter__Nav.__proto__ || Object.getPrototypeOf(GlobalFooter__Nav)).apply(this, arguments));
+    }
+
+    _createClass(GlobalFooter__Nav, [{
+        key: "render",
+        value: function render() {
+
+            var children = this.props.children;
+
+            return _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                    "div",
+                    { className: "h2" },
+                    _react2.default.createElement(
+                        "a",
+                        { href: this.props.path },
+                        this.props.title
+                    )
+                ),
+                _react2.default.createElement(
+                    "ul",
+                    null,
+                    _react2.default.Children.map(children, function (child) {
+                        return child;
+                    })
+                )
+            );
+        }
+    }]);
+
+    return GlobalFooter__Nav;
+}(_react2.default.Component);
+
+GlobalFooter__Nav.defaultProps = {
+    title: "Footer Title",
+    path: "#"
+};
+
+exports.default = GlobalFooter__Nav;
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var GlobalFooter__Nav__Item = function (_React$Component) {
+    _inherits(GlobalFooter__Nav__Item, _React$Component);
+
+    function GlobalFooter__Nav__Item() {
+        _classCallCheck(this, GlobalFooter__Nav__Item);
+
+        return _possibleConstructorReturn(this, (GlobalFooter__Nav__Item.__proto__ || Object.getPrototypeOf(GlobalFooter__Nav__Item)).apply(this, arguments));
+    }
+
+    _createClass(GlobalFooter__Nav__Item, [{
+        key: "render",
+        value: function render() {
+
+            return _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                    "a",
+                    { href: this.props.path },
+                    this.props.title
+                )
+            );
+        }
+    }]);
+
+    return GlobalFooter__Nav__Item;
+}(_react2.default.Component);
+
+GlobalFooter__Nav__Item.defaultProps = {
+    title: "Footer Nav Item",
+    path: "#"
+};
+
+exports.default = GlobalFooter__Nav__Item;
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var GlobalFooter__Nav__Social = function (_React$Component) {
+    _inherits(GlobalFooter__Nav__Social, _React$Component);
+
+    function GlobalFooter__Nav__Social() {
+        _classCallCheck(this, GlobalFooter__Nav__Social);
+
+        return _possibleConstructorReturn(this, (GlobalFooter__Nav__Social.__proto__ || Object.getPrototypeOf(GlobalFooter__Nav__Social)).apply(this, arguments));
+    }
+
+    _createClass(GlobalFooter__Nav__Social, [{
+        key: "render",
+        value: function render() {
+
+            var children = this.props.children;
+
+            return _react2.default.createElement(
+                "li",
+                { className: "nav-footer-social link-icons-disabled" },
+                _react2.default.createElement(
+                    "h2",
+                    null,
+                    "Connect with us"
+                ),
+                _react2.default.createElement(
+                    "ul",
+                    null,
+                    _react2.default.Children.map(children, function (child) {
+                        return child;
+                    })
+                )
+            );
+        }
+    }]);
+
+    return GlobalFooter__Nav__Social;
+}(_react2.default.Component);
+
+exports.default = GlobalFooter__Nav__Social;
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var GlobalFooter__Nav__Social__Item = function (_React$Component) {
+    _inherits(GlobalFooter__Nav__Social__Item, _React$Component);
+
+    function GlobalFooter__Nav__Social__Item() {
+        _classCallCheck(this, GlobalFooter__Nav__Social__Item);
+
+        return _possibleConstructorReturn(this, (GlobalFooter__Nav__Social__Item.__proto__ || Object.getPrototypeOf(GlobalFooter__Nav__Social__Item)).apply(this, arguments));
+    }
+
+    _createClass(GlobalFooter__Nav__Social__Item, [{
+        key: "render",
+        value: function render() {
+
+            return _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                    "a",
+                    { href: this.props.path, title: this.props.socialVerb + " us on " + this.props.socialTitle },
+                    _react2.default.createElement("span", { className: "icon " + this.props.socialIcon, "data-grunticon-embed": true })
+                )
+            );
+        }
+    }]);
+
+    return GlobalFooter__Nav__Social__Item;
+}(_react2.default.Component);
+
+GlobalFooter__Nav__Social__Item.defaultProps = {
+    socialVerb: "Talk to",
+    socialTitle: "Socials",
+    socialIcon: "facebook",
+    path: "#"
+};
+
+exports.default = GlobalFooter__Nav__Social__Item;
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var OnScreeNav = function (_React$Component) {
+    _inherits(OnScreeNav, _React$Component);
+
+    function OnScreeNav() {
+        _classCallCheck(this, OnScreeNav);
+
+        return _possibleConstructorReturn(this, (OnScreeNav.__proto__ || Object.getPrototypeOf(OnScreeNav)).apply(this, arguments));
+    }
+
+    _createClass(OnScreeNav, [{
+        key: "render",
+        value: function render() {
+
+            var children = this.props.children;
+
+            {/*
+                       <%
+                       vars = {
+                       :currentPagePath => '/' + current_page.path,
+                       :hasLogin => false
+                   }.deep_merge!(locals)
+                        def get_menu_classes(lvl, path, checkChildren=false)
+                       classes = []
+                        if lvl.path == path
+                           classes.push('is-active')
+                end
+                if !lvl.pages.nil?
+                if checkChildren
+                classes.push('has-children')
+                end
+                if dd_nav_isChildActive(path, lvl.pages)
+                classes.push('is-active-parent')
+                end
+                end
+                return classes
+                end
+                %> */}
+
+            return _react2.default.createElement(
+                "nav",
+                { className: "nav-onscreen js-onscreen " + this.props.additionalClass },
+                _react2.default.createElement(
+                    "ul",
+                    { className: "nav cf" },
+                    _react2.default.Children.map(children, function (child) {
+                        return child;
+                    })
+                ),
+                _react2.default.createElement(
+                    "a",
+                    { href: "#", className: "icon-button login" },
+                    "Login"
+                )
+            );
+        }
+    }]);
+
+    return OnScreeNav;
+}(_react2.default.Component);
+
+exports.default = OnScreeNav;
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
 var _reactRouterDom = __webpack_require__(5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -1141,86 +1570,51 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Navbar = function (_Component) {
-    _inherits(Navbar, _Component);
+var OnScreenNav__Item = function (_React$Component) {
+    _inherits(OnScreenNav__Item, _React$Component);
 
-    function Navbar() {
-        _classCallCheck(this, Navbar);
+    function OnScreenNav__Item() {
+        _classCallCheck(this, OnScreenNav__Item);
 
-        return _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (OnScreenNav__Item.__proto__ || Object.getPrototypeOf(OnScreenNav__Item)).apply(this, arguments));
     }
 
-    _createClass(Navbar, [{
+    _createClass(OnScreenNav__Item, [{
         key: 'render',
         value: function render() {
+
             return _react2.default.createElement(
-                'nav',
-                { className: 'nav-onscreen js-onscreen nav-onscreen__global-header' },
+                'li',
+                { className: 'nav-item ' + this.props.additionalClass },
                 _react2.default.createElement(
-                    'ul',
-                    { className: 'nav cf' },
+                    _reactRouterDom.NavLink,
+                    { className: 'nav-item-title', to: '' + this.props.path },
+                    this.props.title,
+                    '  ',
                     _react2.default.createElement(
-                        'li',
-                        { className: 'nav-item' },
-                        _react2.default.createElement(
-                            _reactRouterDom.NavLink,
-                            { className: 'nav-item-title', to: '/intl/firstpage' },
-                            'Home ',
-                            _react2.default.createElement(
-                                'span',
-                                { className: 'sub-text' },
-                                'This links to the homepage'
-                            )
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'li',
-                        { className: 'nav-item' },
-                        _react2.default.createElement(
-                            _reactRouterDom.NavLink,
-                            { className: 'nav-item-title', to: '/intl/secondpage' },
-                            'Second Page ',
-                            _react2.default.createElement(
-                                'span',
-                                { className: 'sub-text' },
-                                'This links to the second page'
-                            )
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'li',
-                        { className: 'nav-item' },
-                        _react2.default.createElement(
-                            _reactRouterDom.NavLink,
-                            { className: 'nav-item-title', to: '/usa/thirdpage' },
-                            'Third Page ',
-                            _react2.default.createElement(
-                                'span',
-                                { className: 'sub-text' },
-                                'This links to the third page'
-                            )
-                        )
+                        'span',
+                        { className: 'sub-text' },
+                        this.props.subtitle
                     )
-                ),
-                _react2.default.createElement(
-                    'a',
-                    { href: '#', className: 'icon-button login' },
-                    'Login'
                 )
             );
         }
-    }], [{
-        key: 'fetchData',
-        value: function fetchData() {}
     }]);
 
-    return Navbar;
-}(_react.Component);
+    return OnScreenNav__Item;
+}(_react2.default.Component);
 
-exports.default = Navbar;
+OnScreenNav__Item.defaultProps = {
+    title: "On Screen Nav",
+    subtitle: '',
+    path: "#",
+    additionalClass: ''
+};
+
+exports.default = OnScreenNav__Item;
 
 /***/ }),
-/* 22 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1244,13 +1638,13 @@ var _redux = __webpack_require__(1);
 
 var _reactHelmet = __webpack_require__(3);
 
-var _Header = __webpack_require__(7);
+var _GlobalHeader = __webpack_require__(7);
 
-var _Header2 = _interopRequireDefault(_Header);
+var _GlobalHeader2 = _interopRequireDefault(_GlobalHeader);
 
-var _Footer = __webpack_require__(6);
+var _GlobalFooter = __webpack_require__(6);
 
-var _Footer2 = _interopRequireDefault(_Footer);
+var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
 var _Body = __webpack_require__(18);
 
@@ -1289,17 +1683,17 @@ var Home = function (_Component) {
                 return _react2.default.createElement(
                     'div',
                     null,
-                    _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
+                    _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
                     _react2.default.createElement(_Body2.default, null),
-                    _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
+                    _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
                 );
             } else {
                 return _react2.default.createElement(
                     'div',
                     null,
-                    _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' }),
+                    _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' }),
                     _react2.default.createElement(_Body2.default, null),
-                    _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' })
+                    _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' })
                 );
             }
         }
@@ -1325,7 +1719,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Home);
 
 /***/ }),
-/* 23 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1349,13 +1743,13 @@ var _redux = __webpack_require__(1);
 
 var _reactHelmet = __webpack_require__(3);
 
-var _Header = __webpack_require__(7);
+var _GlobalHeader = __webpack_require__(7);
 
-var _Header2 = _interopRequireDefault(_Header);
+var _GlobalHeader2 = _interopRequireDefault(_GlobalHeader);
 
-var _Footer = __webpack_require__(6);
+var _GlobalFooter = __webpack_require__(6);
 
-var _Footer2 = _interopRequireDefault(_Footer);
+var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
 var _Bodysecond = __webpack_require__(19);
 
@@ -1394,17 +1788,17 @@ var Homesecond = function (_Component) {
                 return _react2.default.createElement(
                     'div',
                     null,
-                    _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
+                    _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
                     _react2.default.createElement(_Bodysecond2.default, null),
-                    _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
+                    _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
                 );
             } else {
                 return _react2.default.createElement(
                     'div',
                     null,
-                    _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' }),
+                    _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' }),
                     _react2.default.createElement(_Bodysecond2.default, null),
-                    _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' })
+                    _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' })
                 );
             }
         }
@@ -1430,7 +1824,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Homesecond);
 
 /***/ }),
-/* 24 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1454,13 +1848,13 @@ var _redux = __webpack_require__(1);
 
 var _reactHelmet = __webpack_require__(3);
 
-var _Header = __webpack_require__(7);
+var _GlobalHeader = __webpack_require__(7);
 
-var _Header2 = _interopRequireDefault(_Header);
+var _GlobalHeader2 = _interopRequireDefault(_GlobalHeader);
 
-var _Footer = __webpack_require__(6);
+var _GlobalFooter = __webpack_require__(6);
 
-var _Footer2 = _interopRequireDefault(_Footer);
+var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
 var _Bodythird = __webpack_require__(20);
 
@@ -1499,17 +1893,17 @@ var Homethird = function (_Component) {
                 return _react2.default.createElement(
                     'div',
                     null,
-                    _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
+                    _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
                     _react2.default.createElement(_Bodythird2.default, null),
-                    _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
+                    _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
                 );
             } else {
                 return _react2.default.createElement(
                     'div',
                     null,
-                    _react2.default.createElement(_Header2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' }),
+                    _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' }),
                     _react2.default.createElement(_Bodythird2.default, null),
-                    _react2.default.createElement(_Footer2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' })
+                    _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' })
                 );
             }
         }
@@ -1535,7 +1929,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Homethird);
 
 /***/ }),
-/* 25 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1670,7 +2064,7 @@ function renderFullPage(html, preloadedState, helmet) {
 }
 
 /***/ }),
-/* 26 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1705,7 +2099,7 @@ var RedirectWithStatus = function RedirectWithStatus(_ref) {
 exports.default = RedirectWithStatus;
 
 /***/ }),
-/* 27 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1760,7 +2154,7 @@ function userReducer() {
 }
 
 /***/ }),
-/* 28 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1860,7 +2254,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(User);
 
 /***/ }),
-/* 29 */
+/* 34 */
 /***/ (function(module, exports) {
 
 module.exports = require("axios");

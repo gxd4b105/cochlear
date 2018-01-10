@@ -1,0 +1,38 @@
+import React from 'react';
+import Link from 'next/link'
+
+class Cm08ChildListing extends React.Component {
+    render () {
+
+        const children = this.props.children
+
+        return (
+            <div className='cm cm-child-listing'>
+                <div className='title'>
+                    <h2><Link prefetch href={`${this.props.path}`}><a>{this.props.title}</a></Link></h2>
+                    {/* <% if vars[:description] != '' %> */}
+                    <p>{this.props.description}</p>
+                    {/* <% end %> */}
+                </div>
+                {/* <% if vars[:pages].length > 0 %>*/}
+                <ul>
+                    {React.Children.map(children, (child) => {
+                        return  child
+                    })}
+                </ul>
+                {/* <% end %> */}
+            </div>
+
+        );
+    }
+}
+
+Cm08ChildListing.defaultProps = {
+    title: "CM08 Child Listing",
+    path: "#",
+    description:"Aliquam eget ornare nisl. Pellentesque varius magna eu sodales fringilla. Nam feugiat tincidunt orci fringilla pharetra. Aenean a turpis in nunc commodo posuere. Nullam molestie velit leo.",
+    image: "/assets/img/placeholder/landing-hero.jpg",
+    imageAlt: "Landing page banner alt text"
+}
+
+export default Cm08ChildListing;

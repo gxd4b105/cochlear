@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Helmet } from 'react-helmet';
-import Header from '../components/Header.jsx';
-import Footer from '../components/Footer.jsx';
+import Header from './GlobalHeader/GlobalHeader.jsx';
+import Footer from './GlobalFooter/GlobalFooter.jsx';
 import Body from '../components/Body.jsx';
 import * as actions from '../shared/app/redux/actions/user-actions'
 
