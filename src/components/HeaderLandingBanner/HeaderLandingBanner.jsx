@@ -28,7 +28,7 @@ class HeaderLandingBanner extends React.Component {
 
 HeaderLandingBanner.defaultProps = {
     title: "Landing page title",
-    description:"Aliquam eget ornare nisl. Pellentesque varius magna eu sodales fringilla. Nam feugiat tincidunt orci fringilla pharetra. Aenean a turpis in nunc commodo posuere. Nullam molestie velit leo.",
+    description:"",
     image: "http://fed.donlineclients.com/assets/img/placeholder/landing-hero.jpg",
     imageAlt: "Landing page banner alt text",
     additionalClass: "is-dark"
