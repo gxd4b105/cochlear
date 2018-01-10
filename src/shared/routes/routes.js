@@ -1,6 +1,6 @@
-import Home from '../../containers/Home.jsx';
-import Homesecond from '../../containers/Homesecond.jsx';
-import Homethird from '../../containers/Homethird.jsx';
+import Home from '../../containers/Home/Home.jsx';
+import Homesecond from '../../containers/Homesecond/Homesecond.jsx';
+import Homethird from '../../containers/Homethird/Homethird.jsx';
 import User from '../app/user.jsx';
 
 export default {

@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Helmet } from 'react-helmet';
-import Header from './GlobalHeader/GlobalHeader.jsx';
-import Footer from './GlobalFooter/GlobalFooter.jsx';
-import Bodysecond from '../components/Bodysecond.jsx';
-import * as actions from '../shared/app/redux/actions/user-actions'
+import GlobalHeader from './../GlobalHeader/GlobalHeader.jsx';
+import GlobalFooter from './../GlobalFooter/GlobalFooter.jsx';
+import Bodysecond from '../../components/Bodysecond.jsx';
+import * as actions from '../../shared/app/redux/actions/user-actions'
 
 class Homesecond extends Component {
     static fetchData({ store, params }) {
@@ -19,17 +19,17 @@ class Homesecond extends Component {
         if(this.props.match.params.country === this.props.headerCountry){
             return (
                 <div>
-                    <Header title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
+                    <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
                     <Bodysecond />
-                    <Footer title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
+                    <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
                 </div>
             );
         } else {
             return (
                 <div>
-                    <Header title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'true' />
+                    <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'true' />
                     <Bodysecond />
-                    <Footer title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'true' />
+                    <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'true' />
                 </div>
             );
         }
