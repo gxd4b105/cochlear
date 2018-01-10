@@ -10,14 +10,14 @@ export function getName(id) {
 
 export function getHeader() {
     return async function (dispatch, getState) {
-        let {data} = await getHeaderFromAPI();
+        let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/dig-content-header`);
         dispatch({ type: Types.UPDATE_HEADER, payload: data });
     }
 }
 
 export function getHeaderUS() {
     return async function (dispatch, getState) {
-        let {data} = await getHeaderUSFromAPI();
+        let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/us/dig/us-content-header`);
         dispatch({ type: Types.UPDATE_HEADER, payload: data });
     }
 }
@@ -28,86 +28,38 @@ export function setHeaderCountry(data) {
     }
 }
 
-export function setFooterCountry(data) {
-    return function (dispatch, getState) {
-        dispatch({ type: Types.UPDATE_FOOTER_COUNTRY, payload: data });
-    }
-}
-
-export function getBody() {
-    return async function (dispatch, getState) {
-        let {data} = await getBodyFromAPI();
-        dispatch({ type: Types.UPDATE_BODY, payload: data });
-    }
-}
 
 export function getHome() {
     return async function (dispatch, getState) {
-        let {data} = await getHomeFromAPI();
+        let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/dig-content-1`);
         dispatch({ type: Types.UPDATE_HOME, payload: data });
     }
 }
 
 export function getHomesecond() {
     return async function (dispatch, getState) {
-        let {data} = await getHomesecondFromAPI();
+        let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/dig-content-2`);
         dispatch({ type: Types.UPDATE_HOMESECOND, payload: data });
     }
 }
 
 export function getHomethird() {
     return async function (dispatch, getState) {
-        let {data} = await getHomethirdFromAPI();
+        let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/us/dig/us-content1`);
         dispatch({ type: Types.UPDATE_HOMETHIRD, payload: data });
     }
 }
 
 export function getFooter() {
     return async function (dispatch, getState) {
-        let {data} = await getFooterFromAPI();
+        let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/dig-content-footer`);
         dispatch({ type: Types.UPDATE_FOOTER, payload: data });
     }
 }
 
 export function getFooterUS() {
     return async function (dispatch, getState) {
-        let {data} = await getFooterUSFromAPI();
+        let {data} = await  Request.get(`https://dev.cochlear.com/contentservice/api/content/us/dig/us-content-footer`);
         dispatch({ type: Types.UPDATE_FOOTER, payload: data });
     }
-}
-
-function getUserFromAPI(id) {
-    return Request.get(`https://jsonplaceholder.typicode.com/users/${id}`);
-}
-
-function getHeaderFromAPI() {
-    return Request.get(`https://api.myjson.com/bins/192vif`);
-}
-
-function getBodyFromAPI() {
-    return Request.get(`https://api.myjson.com/bins/8rflz`);
-}
-
-function getHomeFromAPI() {
-    return Request.get(`https://api.myjson.com/bins/8rflz`);
-}
-
-function getHomesecondFromAPI() {
-    return Request.get(`https://api.myjson.com/bins/17qxib`);
-}
-
-function getHomethirdFromAPI() {
-    return Request.get(`https://api.myjson.com/bins/nv52p`);
-}
-
-function getFooterFromAPI() {
-    return Request.get(`https://api.myjson.com/bins/xrn0n`);
-}
-
-function getFooterUSFromAPI() {
-    return Request.get(`https://api.myjson.com/bins/jr901`);
-}
-
-function getHeaderUSFromAPI() {
-    return Request.get(`https://api.myjson.com/bins/g6ndd`);
 }

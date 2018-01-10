@@ -815,8 +815,6 @@ exports.getName = getName;
 exports.getHeader = getHeader;
 exports.getHeaderUS = getHeaderUS;
 exports.setHeaderCountry = setHeaderCountry;
-exports.setFooterCountry = setFooterCountry;
-exports.getBody = getBody;
 exports.getHome = getHome;
 exports.getHomesecond = getHomesecond;
 exports.getHomethird = getHomethird;
@@ -851,7 +849,7 @@ function getHeader() {
         var _ref2, data;
 
         return Promise.resolve().then(function () {
-            return getHeaderFromAPI();
+            return _axios2.default.get('https://dev.cochlear.com/contentservice/api/content/intl/dig/dig-content-header');
         }).then(function (_resp) {
             _ref2 = _resp;
             data = _ref2.data;
@@ -866,7 +864,7 @@ function getHeaderUS() {
         var _ref3, data;
 
         return Promise.resolve().then(function () {
-            return getHeaderUSFromAPI();
+            return _axios2.default.get('https://dev.cochlear.com/contentservice/api/content/us/dig/us-content-header');
         }).then(function (_resp) {
             _ref3 = _resp;
             data = _ref3.data;
@@ -882,36 +880,15 @@ function setHeaderCountry(data) {
     };
 }
 
-function setFooterCountry(data) {
-    return function (dispatch, getState) {
-        dispatch({ type: _userTypes.Types.UPDATE_FOOTER_COUNTRY, payload: data });
-    };
-}
-
-function getBody() {
+function getHome() {
     return function (dispatch, getState) {
         var _ref4, data;
 
         return Promise.resolve().then(function () {
-            return getBodyFromAPI();
+            return _axios2.default.get('https://dev.cochlear.com/contentservice/api/content/intl/dig/dig-content-1');
         }).then(function (_resp) {
             _ref4 = _resp;
             data = _ref4.data;
-
-            dispatch({ type: _userTypes.Types.UPDATE_BODY, payload: data });
-        });
-    };
-}
-
-function getHome() {
-    return function (dispatch, getState) {
-        var _ref5, data;
-
-        return Promise.resolve().then(function () {
-            return getHomeFromAPI();
-        }).then(function (_resp) {
-            _ref5 = _resp;
-            data = _ref5.data;
 
             dispatch({ type: _userTypes.Types.UPDATE_HOME, payload: data });
         });
@@ -920,13 +897,13 @@ function getHome() {
 
 function getHomesecond() {
     return function (dispatch, getState) {
-        var _ref6, data;
+        var _ref5, data;
 
         return Promise.resolve().then(function () {
-            return getHomesecondFromAPI();
+            return _axios2.default.get('https://dev.cochlear.com/contentservice/api/content/intl/dig/dig-content-2');
         }).then(function (_resp) {
-            _ref6 = _resp;
-            data = _ref6.data;
+            _ref5 = _resp;
+            data = _ref5.data;
 
             dispatch({ type: _userTypes.Types.UPDATE_HOMESECOND, payload: data });
         });
@@ -935,13 +912,13 @@ function getHomesecond() {
 
 function getHomethird() {
     return function (dispatch, getState) {
-        var _ref7, data;
+        var _ref6, data;
 
         return Promise.resolve().then(function () {
-            return getHomethirdFromAPI();
+            return _axios2.default.get('https://dev.cochlear.com/contentservice/api/content/us/dig/us-content1');
         }).then(function (_resp) {
-            _ref7 = _resp;
-            data = _ref7.data;
+            _ref6 = _resp;
+            data = _ref6.data;
 
             dispatch({ type: _userTypes.Types.UPDATE_HOMETHIRD, payload: data });
         });
@@ -950,13 +927,13 @@ function getHomethird() {
 
 function getFooter() {
     return function (dispatch, getState) {
-        var _ref8, data;
+        var _ref7, data;
 
         return Promise.resolve().then(function () {
-            return getFooterFromAPI();
+            return _axios2.default.get('https://dev.cochlear.com/contentservice/api/content/intl/dig/dig-content-footer');
         }).then(function (_resp) {
-            _ref8 = _resp;
-            data = _ref8.data;
+            _ref7 = _resp;
+            data = _ref7.data;
 
             dispatch({ type: _userTypes.Types.UPDATE_FOOTER, payload: data });
         });
@@ -965,53 +942,17 @@ function getFooter() {
 
 function getFooterUS() {
     return function (dispatch, getState) {
-        var _ref9, data;
+        var _ref8, data;
 
         return Promise.resolve().then(function () {
-            return getFooterUSFromAPI();
+            return _axios2.default.get('https://dev.cochlear.com/contentservice/api/content/us/dig/us-content-footer');
         }).then(function (_resp) {
-            _ref9 = _resp;
-            data = _ref9.data;
+            _ref8 = _resp;
+            data = _ref8.data;
 
             dispatch({ type: _userTypes.Types.UPDATE_FOOTER, payload: data });
         });
     };
-}
-
-function getUserFromAPI(id) {
-    return _axios2.default.get('https://jsonplaceholder.typicode.com/users/' + id);
-}
-
-function getHeaderFromAPI() {
-    return _axios2.default.get('https://api.myjson.com/bins/192vif');
-}
-
-function getBodyFromAPI() {
-    return _axios2.default.get('https://api.myjson.com/bins/8rflz');
-}
-
-function getHomeFromAPI() {
-    return _axios2.default.get('https://api.myjson.com/bins/8rflz');
-}
-
-function getHomesecondFromAPI() {
-    return _axios2.default.get('https://api.myjson.com/bins/17qxib');
-}
-
-function getHomethirdFromAPI() {
-    return _axios2.default.get('https://api.myjson.com/bins/nv52p');
-}
-
-function getFooterFromAPI() {
-    return _axios2.default.get('https://api.myjson.com/bins/xrn0n');
-}
-
-function getFooterUSFromAPI() {
-    return _axios2.default.get('https://api.myjson.com/bins/jr901');
-}
-
-function getHeaderUSFromAPI() {
-    return _axios2.default.get('https://api.myjson.com/bins/g6ndd');
 }
 
 /***/ }),
@@ -2303,7 +2244,7 @@ var HeaderLandingBanner = function (_React$Component) {
 
 HeaderLandingBanner.defaultProps = {
     title: "Landing page title",
-    description: "Aliquam eget ornare nisl. Pellentesque varius magna eu sodales fringilla. Nam feugiat tincidunt orci fringilla pharetra. Aenean a turpis in nunc commodo posuere. Nullam molestie velit leo.",
+    description: "",
     image: "http://fed.donlineclients.com/assets/img/placeholder/landing-hero.jpg",
     imageAlt: "Landing page banner alt text",
     additionalClass: "is-dark"
@@ -7680,19 +7621,19 @@ function userReducer() {
         case _userTypes.Types.UPDATE_NAME:
             return _extends({}, state, { name: action.payload.name, email: action.payload.email });
         case _userTypes.Types.UPDATE_HEADER:
-            return _extends({}, state, { headerTitle: action.payload.title });
+            return _extends({}, state, { headerTitle: action.payload['HeaderBanner-title'] });
         case _userTypes.Types.UPDATE_HEADER_COUNTRY:
             return _extends({}, state, { headerCountry: action.payload.country });
         case _userTypes.Types.UPDATE_FOOTER_COUNTRY:
             return _extends({}, state, { footerCountry: action.payload.country });
         case _userTypes.Types.UPDATE_FOOTER:
-            return _extends({}, state, { footerTitle: action.payload.title });
+            return _extends({}, state, { footerTitle: action.payload['HeaderBanner-title'] });
         case _userTypes.Types.UPDATE_HOME:
-            return _extends({}, state, { bodyTitle: action.payload.title });
+            return _extends({}, state, { bodyTitle: action.payload['HeaderBanner-title'] });
         case _userTypes.Types.UPDATE_HOMESECOND:
-            return _extends({}, state, { bodysecondTitle: action.payload.title });
+            return _extends({}, state, { bodysecondTitle: action.payload['HeaderBanner-title'] });
         case _userTypes.Types.UPDATE_HOMETHIRD:
-            return _extends({}, state, { bodythirdTitle: action.payload.title });
+            return _extends({}, state, { bodythirdTitle: action.payload['HeaderBanner-title'] });
         default:
             return state;
     }
