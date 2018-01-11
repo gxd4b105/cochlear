@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Helmet } from 'react-helmet';
-import * as actions from '../../shared/app/redux/actions/user-actions';
+import * as actions from '../../shared/app/redux/actions/actions';
 
 import GlobalFooter__Nav from '../../components/GlobalFooter__Nav/GlobalFooter__Nav.js';
 import GlobalFooter__Nav__Item from '../../components/GlobalFooter__Nav__Item/GlobalFooter__Nav__Item.js';

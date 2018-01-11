@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 import GlobalHeader from './../GlobalHeader/GlobalHeader.jsx';
 import GlobalFooter from './../GlobalFooter/GlobalFooter.jsx';
 import Bodythird from '../../components/Bodythird.jsx';
-import * as actions from '../../shared/app/redux/actions/user-actions'
+import * as actions from '../../shared/app/redux/actions/actions'
 
 class Homethird extends Component {
     static fetchData({ store, params }) {
