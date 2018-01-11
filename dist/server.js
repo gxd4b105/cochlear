@@ -227,9 +227,9 @@ var _redux = __webpack_require__(1);
 
 var _reactHelmet = __webpack_require__(3);
 
-var _userActions = __webpack_require__(4);
+var _actions = __webpack_require__(4);
 
-var actions = _interopRequireWildcard(_userActions);
+var actions = _interopRequireWildcard(_actions);
 
 var _GlobalFooter__Nav = __webpack_require__(21);
 
@@ -410,9 +410,9 @@ var _redux = __webpack_require__(1);
 
 var _reactHelmet = __webpack_require__(3);
 
-var _userActions = __webpack_require__(4);
+var _actions = __webpack_require__(4);
 
-var actions = _interopRequireWildcard(_userActions);
+var actions = _interopRequireWildcard(_actions);
 
 var _OnScreeNav = __webpack_require__(25);
 
@@ -746,9 +746,9 @@ var _reactRedux = __webpack_require__(2);
 
 var _redux = __webpack_require__(1);
 
-var _userActions = __webpack_require__(4);
+var _actions = __webpack_require__(4);
 
-var actions = _interopRequireWildcard(_userActions);
+var actions = _interopRequireWildcard(_actions);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -858,14 +858,14 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(1);
 
-var _userReducer = __webpack_require__(32);
+var _reducer = __webpack_require__(32);
 
-var _userReducer2 = _interopRequireDefault(_userReducer);
+var _reducer2 = _interopRequireDefault(_reducer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var reducers = (0, _redux.combineReducers)({
-    user: _userReducer2.default
+    user: _reducer2.default
 });
 
 exports.default = reducers;
@@ -925,9 +925,9 @@ var _redux = __webpack_require__(1);
 
 var _reactHelmet = __webpack_require__(3);
 
-var _userActions = __webpack_require__(4);
+var _actions = __webpack_require__(4);
 
-var actions = _interopRequireWildcard(_userActions);
+var actions = _interopRequireWildcard(_actions);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -1011,9 +1011,9 @@ var _redux = __webpack_require__(1);
 
 var _reactHelmet = __webpack_require__(3);
 
-var _userActions = __webpack_require__(4);
+var _actions = __webpack_require__(4);
 
-var actions = _interopRequireWildcard(_userActions);
+var actions = _interopRequireWildcard(_actions);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -1093,9 +1093,9 @@ var _redux = __webpack_require__(1);
 
 var _reactHelmet = __webpack_require__(3);
 
-var _userActions = __webpack_require__(4);
+var _actions = __webpack_require__(4);
 
-var actions = _interopRequireWildcard(_userActions);
+var actions = _interopRequireWildcard(_actions);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -1597,9 +1597,9 @@ var _Body = __webpack_require__(18);
 
 var _Body2 = _interopRequireDefault(_Body);
 
-var _userActions = __webpack_require__(4);
+var _actions = __webpack_require__(4);
 
-var actions = _interopRequireWildcard(_userActions);
+var actions = _interopRequireWildcard(_actions);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -1702,9 +1702,9 @@ var _Bodysecond = __webpack_require__(19);
 
 var _Bodysecond2 = _interopRequireDefault(_Bodysecond);
 
-var _userActions = __webpack_require__(4);
+var _actions = __webpack_require__(4);
 
-var actions = _interopRequireWildcard(_userActions);
+var actions = _interopRequireWildcard(_actions);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -1807,9 +1807,9 @@ var _Bodythird = __webpack_require__(20);
 
 var _Bodythird2 = _interopRequireDefault(_Bodythird);
 
-var _userActions = __webpack_require__(4);
+var _actions = __webpack_require__(4);
 
-var actions = _interopRequireWildcard(_userActions);
+var actions = _interopRequireWildcard(_actions);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -2125,9 +2125,9 @@ var _redux = __webpack_require__(1);
 
 var _reactHelmet = __webpack_require__(3);
 
-var _userActions = __webpack_require__(4);
+var _actions = __webpack_require__(4);
 
-var actions = _interopRequireWildcard(_userActions);
+var actions = _interopRequireWildcard(_actions);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 

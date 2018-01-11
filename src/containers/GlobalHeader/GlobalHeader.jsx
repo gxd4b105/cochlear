@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Helmet } from 'react-helmet';
-import * as actions from '../../shared/app/redux/actions/user-actions';
+import * as actions from '../../shared/app/redux/actions/actions';
 
 
 
