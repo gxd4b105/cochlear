@@ -21,12 +21,15 @@ class Footer extends Component {
         return ;
     }
     componentDidMount() {
-        if (this.props.countryUpdate === 'true') {
-            if (this.props.countryParams === 'intl') {
+        if (this.props.countryUpdate === 'true' || this.props.countryUpdate === true) {
+            console.log('it is true ', this.props.countryParams);
+            this.props.setHeaderCountry({'country': this.props.countryParams});
+            if(this.props.countryParams === 'intl'){
+                console.log('getting intl');
                 this.props.getFooter();
             } else {
                 this.props.getFooterUS();
-            }
+            }  
         }
     }
     render() {

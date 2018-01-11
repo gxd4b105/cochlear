@@ -12,27 +12,21 @@ class Home extends Component {
         return store.dispatch(actions.getHome());
     }
 
-    componentDidMount() {
-    }
-
     render() {
-        if(this.props.match.params.country === this.props.headerCountry){
-            return (
-                <div>
-                    <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
-                    <Body />
-                    <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
-                </div>
-            );
-        } else {
-            return (
-                <div>
-                    <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'true' />
-                    <Body />
-                    <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'true' />
-                </div>
-            );
-        }
+        let countryChange = this.props.match.params.country !== this.props.headerCountry;
+        return (
+            <div>
+            <GlobalHeader title={this.props.headerTitle} 
+                            country={this.props.headerCountry} 
+                            countryParams={this.props.match.params.country} 
+                            countryUpdate = {countryChange} />
+            <Body />
+            <GlobalFooter title={this.props.footerTitle} 
+                            country={this.props.footerCountry} 
+                            countryParams={this.props.match.params.country} 
+                            countryUpdate = {countryChange} />
+        </div>
+        );
     }
 }
 function mapStateToProps(state) {

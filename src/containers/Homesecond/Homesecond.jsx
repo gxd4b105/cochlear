@@ -5,35 +5,29 @@ import { Helmet } from 'react-helmet';
 import GlobalHeader from './../GlobalHeader/GlobalHeader.jsx';
 import GlobalFooter from './../GlobalFooter/GlobalFooter.jsx';
 import Bodysecond from '../../components/Bodysecond.jsx';
-import * as actions from '../../shared/app/redux/actions/user-actions'
+import * as actions from '../../shared/app/redux/actions/user-actions';
 
 class Homesecond extends Component {
     static fetchData({ store, params }) {
         return store.dispatch(actions.getHomesecond());
     }
 
-    componentDidMount() {
-    }
-
     render() {
-        if(this.props.match.params.country === this.props.headerCountry){
-            return (
-                <div>
-                    <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
-                    <Bodysecond />
-                    <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
-                </div>
-            );
-        } else {
-            return (
-                <div>
-                    <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'true' />
-                    <Bodysecond />
-                    <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'true' />
-                </div>
-            );
-        }
-    }
+        let countryChange = this.props.match.params.country !== this.props.headerCountry;
+        return (
+            <div>
+                <GlobalHeader title={this.props.headerTitle} 
+                                country={this.props.headerCountry} 
+                                countryParams={this.props.match.params.country} 
+                                countryUpdate = {countryChange} />
+                <Bodysecond />
+                <GlobalFooter title={this.props.footerTitle} 
+                                country={this.props.footerCountry} 
+                                countryParams={this.props.match.params.country} 
+                                countryUpdate = {countryChange} />
+            </div>
+        );
+    } 
 }
 function mapStateToProps(state) {
     return {

@@ -269,8 +269,11 @@ var Footer = function (_Component) {
     _createClass(Footer, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            if (this.props.countryUpdate === 'true') {
+            if (this.props.countryUpdate === 'true' || this.props.countryUpdate === true) {
+                console.log('it is true ', this.props.countryParams);
+                this.props.setHeaderCountry({ 'country': this.props.countryParams });
                 if (this.props.countryParams === 'intl') {
+                    console.log('getting intl');
                     this.props.getFooter();
                 } else {
                     this.props.getFooterUS();
@@ -444,9 +447,10 @@ var Header = function (_Component) {
     _createClass(Header, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            if (this.props.countryUpdate === 'true') {
+            if (this.props.countryUpdate === 'true' || this.props.countryUpdate === true) {
                 this.props.setHeaderCountry({ 'country': this.props.countryParams });
                 if (this.props.countryParams === 'intl') {
+                    console.log('getting intl');
                     this.props.getHeader();
                 } else {
                     this.props.getHeaderUS();
@@ -1621,28 +1625,22 @@ var Home = function (_Component) {
     }
 
     _createClass(Home, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {}
-    }, {
         key: 'render',
         value: function render() {
-            if (this.props.match.params.country === this.props.headerCountry) {
-                return _react2.default.createElement(
-                    'div',
-                    null,
-                    _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
-                    _react2.default.createElement(_Body2.default, null),
-                    _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
-                );
-            } else {
-                return _react2.default.createElement(
-                    'div',
-                    null,
-                    _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' }),
-                    _react2.default.createElement(_Body2.default, null),
-                    _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' })
-                );
-            }
+            var countryChange = this.props.match.params.country !== this.props.headerCountry;
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle,
+                    country: this.props.headerCountry,
+                    countryParams: this.props.match.params.country,
+                    countryUpdate: countryChange }),
+                _react2.default.createElement(_Body2.default, null),
+                _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle,
+                    country: this.props.footerCountry,
+                    countryParams: this.props.match.params.country,
+                    countryUpdate: countryChange })
+            );
         }
     }], [{
         key: 'fetchData',
@@ -1726,28 +1724,22 @@ var Homesecond = function (_Component) {
     }
 
     _createClass(Homesecond, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {}
-    }, {
         key: 'render',
         value: function render() {
-            if (this.props.match.params.country === this.props.headerCountry) {
-                return _react2.default.createElement(
-                    'div',
-                    null,
-                    _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
-                    _react2.default.createElement(_Bodysecond2.default, null),
-                    _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
-                );
-            } else {
-                return _react2.default.createElement(
-                    'div',
-                    null,
-                    _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' }),
-                    _react2.default.createElement(_Bodysecond2.default, null),
-                    _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' })
-                );
-            }
+            var countryChange = this.props.match.params.country !== this.props.headerCountry;
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle,
+                    country: this.props.headerCountry,
+                    countryParams: this.props.match.params.country,
+                    countryUpdate: countryChange }),
+                _react2.default.createElement(_Bodysecond2.default, null),
+                _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle,
+                    country: this.props.footerCountry,
+                    countryParams: this.props.match.params.country,
+                    countryUpdate: countryChange })
+            );
         }
     }], [{
         key: 'fetchData',
@@ -1836,23 +1828,20 @@ var Homethird = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            if (this.props.match.params.country === this.props.headerCountry) {
-                return _react2.default.createElement(
-                    'div',
-                    null,
-                    _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
-                    _react2.default.createElement(_Bodythird2.default, null),
-                    _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
-                );
-            } else {
-                return _react2.default.createElement(
-                    'div',
-                    null,
-                    _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' }),
-                    _react2.default.createElement(_Bodythird2.default, null),
-                    _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' })
-                );
-            }
+            var countryChange = this.props.match.params.country !== this.props.headerCountry;
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle,
+                    country: this.props.headerCountry,
+                    countryParams: this.props.match.params.country,
+                    countryUpdate: countryChange }),
+                _react2.default.createElement(_Bodythird2.default, null),
+                _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle,
+                    country: this.props.footerCountry,
+                    countryParams: this.props.match.params.country,
+                    countryUpdate: countryChange })
+            );
         }
     }], [{
         key: 'fetchData',
