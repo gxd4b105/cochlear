@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 30);
+/******/ 	return __webpack_require__(__webpack_require__.s = 38);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -110,9 +110,9 @@ exports.getHomethird = getHomethird;
 exports.getFooter = getFooter;
 exports.getFooterUS = getFooterUS;
 
-var _userTypes = __webpack_require__(10);
+var _userTypes = __webpack_require__(14);
 
-var _axios = __webpack_require__(34);
+var _axios = __webpack_require__(42);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -129,7 +129,7 @@ function getName(id) {
 
 function getHeader() {
     return async function (dispatch, getState) {
-        var _ref2 = await _axios2.default.get('https://dev.cochlear.com/contentservice/api/content/intl/dig/dig-content-header'),
+        var _ref2 = await _axios2.default.get('https://api.myjson.com/bins/192vif'),
             data = _ref2.data;
 
         dispatch({ type: _userTypes.Types.UPDATE_HEADER, payload: data });
@@ -138,7 +138,7 @@ function getHeader() {
 
 function getHeaderUS() {
     return async function (dispatch, getState) {
-        var _ref3 = await _axios2.default.get('https://dev.cochlear.com/contentservice/api/content/us/dig/us-content-header'),
+        var _ref3 = await _axios2.default.get('https://api.myjson.com/bins/g6ndd'),
             data = _ref3.data;
 
         dispatch({ type: _userTypes.Types.UPDATE_HEADER, payload: data });
@@ -153,7 +153,7 @@ function setHeaderCountry(data) {
 
 function getHome() {
     return async function (dispatch, getState) {
-        var _ref4 = await _axios2.default.get('https://dev.cochlear.com/contentservice/api/content/intl/dig/dig-content-1'),
+        var _ref4 = await _axios2.default.get('https://api.myjson.com/bins/8rflz'),
             data = _ref4.data;
 
         dispatch({ type: _userTypes.Types.UPDATE_HOME, payload: data });
@@ -162,7 +162,7 @@ function getHome() {
 
 function getHomesecond() {
     return async function (dispatch, getState) {
-        var _ref5 = await _axios2.default.get('https://dev.cochlear.com/contentservice/api/content/intl/dig/dig-content-2'),
+        var _ref5 = await _axios2.default.get('https://api.myjson.com/bins/17qxib'),
             data = _ref5.data;
 
         dispatch({ type: _userTypes.Types.UPDATE_HOMESECOND, payload: data });
@@ -171,7 +171,7 @@ function getHomesecond() {
 
 function getHomethird() {
     return async function (dispatch, getState) {
-        var _ref6 = await _axios2.default.get('https://dev.cochlear.com/contentservice/api/content/us/dig/us-content1'),
+        var _ref6 = await _axios2.default.get('https://api.myjson.com/bins/nv52p'),
             data = _ref6.data;
 
         dispatch({ type: _userTypes.Types.UPDATE_HOMETHIRD, payload: data });
@@ -180,7 +180,7 @@ function getHomethird() {
 
 function getFooter() {
     return async function (dispatch, getState) {
-        var _ref7 = await _axios2.default.get('https://dev.cochlear.com/contentservice/api/content/intl/dig/dig-content-footer'),
+        var _ref7 = await _axios2.default.get('https://api.myjson.com/bins/xrn0n'),
             data = _ref7.data;
 
         dispatch({ type: _userTypes.Types.UPDATE_FOOTER, payload: data });
@@ -189,7 +189,7 @@ function getFooter() {
 
 function getFooterUS() {
     return async function (dispatch, getState) {
-        var _ref8 = await _axios2.default.get('https://dev.cochlear.com/contentservice/api/content/us/dig/us-content-footer'),
+        var _ref8 = await _axios2.default.get('https://api.myjson.com/bins/jr901'),
             data = _ref8.data;
 
         dispatch({ type: _userTypes.Types.UPDATE_FOOTER, payload: data });
@@ -198,12 +198,6 @@ function getFooterUS() {
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-router-dom");
-
-/***/ }),
-/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -231,19 +225,19 @@ var _actions = __webpack_require__(4);
 
 var actions = _interopRequireWildcard(_actions);
 
-var _GlobalFooter__Nav = __webpack_require__(21);
+var _GlobalFooter__Nav = __webpack_require__(25);
 
 var _GlobalFooter__Nav2 = _interopRequireDefault(_GlobalFooter__Nav);
 
-var _GlobalFooter__Nav__Item = __webpack_require__(22);
+var _GlobalFooter__Nav__Item = __webpack_require__(26);
 
 var _GlobalFooter__Nav__Item2 = _interopRequireDefault(_GlobalFooter__Nav__Item);
 
-var _GlobalFooter__Nav__Social = __webpack_require__(23);
+var _GlobalFooter__Nav__Social = __webpack_require__(27);
 
 var _GlobalFooter__Nav__Social2 = _interopRequireDefault(_GlobalFooter__Nav__Social);
 
-var _GlobalFooter__Nav__Social__Item = __webpack_require__(24);
+var _GlobalFooter__Nav__Social__Item = __webpack_require__(28);
 
 var _GlobalFooter__Nav__Social__Item2 = _interopRequireDefault(_GlobalFooter__Nav__Social__Item);
 
@@ -386,7 +380,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Footer);
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -414,11 +408,11 @@ var _actions = __webpack_require__(4);
 
 var actions = _interopRequireWildcard(_actions);
 
-var _OnScreeNav = __webpack_require__(25);
+var _OnScreeNav = __webpack_require__(29);
 
 var _OnScreeNav2 = _interopRequireDefault(_OnScreeNav);
 
-var _OnScreenNav__Item = __webpack_require__(26);
+var _OnScreenNav__Item = __webpack_require__(30);
 
 var _OnScreenNav__Item2 = _interopRequireDefault(_OnScreenNav__Item);
 
@@ -459,16 +453,6 @@ var Header = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(
-                    _reactHelmet.Helmet,
-                    null,
-                    _react2.default.createElement('meta', { charSet: 'utf-8' }),
-                    _react2.default.createElement(
-                        'title',
-                        null,
-                        'The title'
-                    )
-                ),
                 _react2.default.createElement(
                     'header',
                     { className: 'global-header ' + this.props.additionalClass },
@@ -542,6 +526,12 @@ Header.defaultProps = {
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Header);
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-router-dom");
 
 /***/ }),
 /* 8 */
@@ -640,21 +630,131 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Home = __webpack_require__(27);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Cm02ContentTile = function (_React$Component) {
+    _inherits(Cm02ContentTile, _React$Component);
+
+    function Cm02ContentTile() {
+        _classCallCheck(this, Cm02ContentTile);
+
+        return _possibleConstructorReturn(this, (Cm02ContentTile.__proto__ || Object.getPrototypeOf(Cm02ContentTile)).apply(this, arguments));
+    }
+
+    _createClass(Cm02ContentTile, [{
+        key: "render",
+        value: function render() {
+
+            return _react2.default.createElement(
+                "section",
+                { className: "cm cm-content-tile " + this.props.additionalClass },
+                _react2.default.createElement(
+                    "div",
+                    { className: "cm-image-block-link" },
+                    _react2.default.createElement(
+                        "a",
+                        { href: "" + this.props.path, className: "image" },
+                        _react2.default.createElement("img", { className: "img", src: "" + this.props.image, alt: this.props.imageAlt })
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "content" },
+                        _react2.default.createElement(
+                            "h1",
+                            null,
+                            " ",
+                            _react2.default.createElement(
+                                "a",
+                                { href: "" + this.props.path },
+                                this.props.title
+                            ),
+                            " "
+                        ),
+                        " ",
+                        _react2.default.createElement(
+                            "p",
+                            null,
+                            this.props.description
+                        ),
+                        _react2.default.createElement(
+                            "a",
+                            { href: "" + this.props.path, className: "cta" },
+                            "Read more"
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Cm02ContentTile;
+}(_react2.default.Component);
+
+Cm02ContentTile.defaultProps = {
+    title: "CM02 Content Tile",
+    path: "#",
+    description: "This is a description",
+    image: "http://fed.donlineclients.com/assets/img/placeholder/landing-hero.jpg",
+    imageAlt: "Content tile image alt text",
+    additionalClass: ""
+};
+
+exports.default = Cm02ContentTile;
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _Home = __webpack_require__(33);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _Homesecond = __webpack_require__(28);
+var _Homesecond = __webpack_require__(35);
 
 var _Homesecond2 = _interopRequireDefault(_Homesecond);
 
-var _Homethird = __webpack_require__(29);
+var _Homethird = __webpack_require__(36);
 
 var _Homethird2 = _interopRequireDefault(_Homethird);
 
-var _user = __webpack_require__(33);
+var _user = __webpack_require__(41);
 
 var _user2 = _interopRequireDefault(_user);
+
+var _HomePage = __webpack_require__(34);
+
+var _HomePage2 = _interopRequireDefault(_HomePage);
+
+var _HearingAidVsCochlearImplant = __webpack_require__(32);
+
+var _HearingAidVsCochlearImplant2 = _interopRequireDefault(_HearingAidVsCochlearImplant);
+
+var _TreatingHearingLoss = __webpack_require__(37);
+
+var _TreatingHearingLoss2 = _interopRequireDefault(_TreatingHearingLoss);
+
+var _ClinicFinder = __webpack_require__(31);
+
+var _ClinicFinder2 = _interopRequireDefault(_ClinicFinder);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -675,6 +775,22 @@ exports.default = {
         path: '/:country/thirdpage',
         component: _Homethird2.default,
         exact: true
+    }, {
+        path: '/:country/home',
+        component: _HomePage2.default,
+        exact: true
+    }, {
+        path: '/:country/hearing-aid-vs-cochlear-implant',
+        component: _HearingAidVsCochlearImplant2.default,
+        exact: true
+    }, {
+        path: '/:country/treating-hearing-loss',
+        component: _TreatingHearingLoss2.default,
+        exact: true
+    }, {
+        path: '/:country/clinic-finder',
+        component: _ClinicFinder2.default,
+        exact: true
     }],
     redirects: [{
         from: '/people',
@@ -684,7 +800,232 @@ exports.default = {
 };
 
 /***/ }),
-/* 10 */
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// import Breadcrumbs from 'react-breadcrumbs';
+
+var BreadCrumbs = function (_React$Component) {
+    _inherits(BreadCrumbs, _React$Component);
+
+    function BreadCrumbs() {
+        _classCallCheck(this, BreadCrumbs);
+
+        return _possibleConstructorReturn(this, (BreadCrumbs.__proto__ || Object.getPrototypeOf(BreadCrumbs)).apply(this, arguments));
+    }
+
+    _createClass(BreadCrumbs, [{
+        key: "render",
+        value: function render() {
+
+            return _react2.default.createElement(
+                "div",
+                { className: "breadcrumbs" },
+                _react2.default.createElement("div", { className: "l-padding" })
+            );
+        }
+    }]);
+
+    return BreadCrumbs;
+}(_react2.default.Component);
+
+exports.default = BreadCrumbs;
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Cm01RichText = function (_React$Component) {
+    _inherits(Cm01RichText, _React$Component);
+
+    function Cm01RichText() {
+        _classCallCheck(this, Cm01RichText);
+
+        return _possibleConstructorReturn(this, (Cm01RichText.__proto__ || Object.getPrototypeOf(Cm01RichText)).apply(this, arguments));
+    }
+
+    _createClass(Cm01RichText, [{
+        key: "render",
+        value: function render() {
+
+            return _react2.default.createElement(
+                "div",
+                { className: "cm cm-rich-text" },
+                _react2.default.createElement(
+                    "p",
+                    { className: "intro" },
+                    "Intro paragraph. Lorem ipsum consequat enim incididunt ea aliqua ut minim anim occaecat cupidatat id eiusmod culpa in velit ut fugiat laboris commodo anim. Esse ut proident ea Ut dolore proident enim"
+                ),
+                _react2.default.createElement(
+                    "p",
+                    null,
+                    "Lorem ipsum consequat enim incididunt ea aliqua ut minim anim occaecat cupidatat id eiusmod culpa in velit ut fugiat laboris commodo anim. Esse ut proident ea Ut dolore proident enim Duis et exercitation in incididunt nisi in elit culpa deserunt quis ex officia nostrud sint enim anim ullamco labore Excepteur eiusmod cupidatat sint labore consequat in Excepteur est officia cillum nostrud id id proident dolor voluptate ut Duis labore veniam."
+                ),
+                _react2.default.createElement(
+                    "h2",
+                    null,
+                    "Ut dolore proident"
+                ),
+                _react2.default.createElement(
+                    "figure",
+                    { className: "is-full" },
+                    _react2.default.createElement("img", { src: "http://fed.donlineclients.com/assets/img/placeholder/landing-hero.jpg", alt: "Placeholder image" }),
+                    _react2.default.createElement(
+                        "figcaption",
+                        null,
+                        _react2.default.createElement(
+                            "strong",
+                            null,
+                            "Image caption"
+                        ),
+                        _react2.default.createElement(
+                            "p",
+                            null,
+                            "Lorem ipsum - dolor sit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    "p",
+                    null,
+                    "Lorem ipsum consequat enim incididunt ea aliqua ut minim anim occaecat cupidatat id eiusmod culpa in velit ut fugiat laboris commodo anim commodo mollit adipisicing sit occaecat eu amet labore qui pariatur sunt sit in est ea in sed dolore pariatur consequat proident esse deserunt nostrud in cillum sunt quis ut id nostrud officia id enim labore esse ut proident."
+                ),
+                _react2.default.createElement(
+                    "blockquote",
+                    null,
+                    "\u201CLorem ipsum Ea aliqua consectetur laboris adipisicing voluptate elit cupidatat proident nostrud consequat sit sunt.\u201D",
+                    _react2.default.createElement(
+                        "footer",
+                        null,
+                        "John Pullquote from ",
+                        _react2.default.createElement(
+                            "cite",
+                            null,
+                            "Publication"
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    "p",
+                    null,
+                    "Vivamus posuere facilisis purus a pulvinar. Mauris vel dolor sagittis, posuere tellus sit amet, tempor nisl. Duis bibendum consequat ex, in vehicula nibh. Aenean finibus hendrerit turpis, id porttitor risus ultricies non. Vestibulum condimentum rhoncus mi, sit amet congue sem fermentum pellentesque. "
+                )
+            );
+        }
+    }]);
+
+    return Cm01RichText;
+}(_react2.default.Component);
+
+exports.default = Cm01RichText;
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ContentHeader = function (_React$Component) {
+    _inherits(ContentHeader, _React$Component);
+
+    function ContentHeader() {
+        _classCallCheck(this, ContentHeader);
+
+        return _possibleConstructorReturn(this, (ContentHeader.__proto__ || Object.getPrototypeOf(ContentHeader)).apply(this, arguments));
+    }
+
+    _createClass(ContentHeader, [{
+        key: "render",
+        value: function render() {
+
+            return _react2.default.createElement(
+                "header",
+                { className: "content-header" },
+                _react2.default.createElement(
+                    "header",
+                    { className: "content-header" },
+                    _react2.default.createElement(
+                        "h1",
+                        null,
+                        this.props.title
+                    )
+                )
+            );
+        }
+    }]);
+
+    return ContentHeader;
+}(_react2.default.Component);
+
+ContentHeader.defaultProps = {
+    title: "Content Header"
+};
+
+exports.default = ContentHeader;
+
+/***/ }),
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -706,7 +1047,7 @@ var Types = exports.Types = {
 };
 
 /***/ }),
-/* 11 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -724,21 +1065,21 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(5);
+var _reactRouterDom = __webpack_require__(7);
 
-var _redirectWStatus = __webpack_require__(31);
+var _redirectWStatus = __webpack_require__(39);
 
 var _redirectWStatus2 = _interopRequireDefault(_redirectWStatus);
 
-var _routes = __webpack_require__(9);
+var _routes = __webpack_require__(10);
 
 var _routes2 = _interopRequireDefault(_routes);
 
-var _GlobalHeader = __webpack_require__(7);
+var _GlobalHeader = __webpack_require__(6);
 
 var _GlobalHeader2 = _interopRequireDefault(_GlobalHeader);
 
-var _GlobalFooter = __webpack_require__(6);
+var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
@@ -823,7 +1164,7 @@ function mapDispatchToProps(dispatch) {
 //export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 /***/ }),
-/* 12 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -846,7 +1187,7 @@ var isFunction = function isFunction(action) {
 exports.default = customMiddleware;
 
 /***/ }),
-/* 13 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -858,7 +1199,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(1);
 
-var _reducer = __webpack_require__(32);
+var _reducer = __webpack_require__(40);
 
 var _reducer2 = _interopRequireDefault(_reducer);
 
@@ -871,31 +1212,31 @@ var reducers = (0, _redux.combineReducers)({
 exports.default = reducers;
 
 /***/ }),
-/* 14 */
+/* 18 */
 /***/ (function(module, exports) {
 
 module.exports = require("express");
 
 /***/ }),
-/* 15 */
+/* 19 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom");
 
 /***/ }),
-/* 16 */
+/* 20 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 17 */
+/* 21 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router");
 
 /***/ }),
-/* 18 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -913,7 +1254,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(5);
+var _reactRouterDom = __webpack_require__(7);
 
 var _reactRedux = __webpack_require__(2);
 
@@ -981,7 +1322,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Body);
 
 /***/ }),
-/* 19 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -999,7 +1340,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(5);
+var _reactRouterDom = __webpack_require__(7);
 
 var _reactRedux = __webpack_require__(2);
 
@@ -1063,7 +1404,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Bodysecond);
 
 /***/ }),
-/* 20 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1081,7 +1422,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(5);
+var _reactRouterDom = __webpack_require__(7);
 
 var _reactRedux = __webpack_require__(2);
 
@@ -1145,7 +1486,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Bodythird);
 
 /***/ }),
-/* 21 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1218,7 +1559,7 @@ GlobalFooter__Nav.defaultProps = {
 exports.default = GlobalFooter__Nav;
 
 /***/ }),
-/* 22 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1278,7 +1619,7 @@ GlobalFooter__Nav__Item.defaultProps = {
 exports.default = GlobalFooter__Nav__Item;
 
 /***/ }),
-/* 23 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1342,7 +1683,7 @@ var GlobalFooter__Nav__Social = function (_React$Component) {
 exports.default = GlobalFooter__Nav__Social;
 
 /***/ }),
-/* 24 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1404,7 +1745,7 @@ GlobalFooter__Nav__Social__Item.defaultProps = {
 exports.default = GlobalFooter__Nav__Social__Item;
 
 /***/ }),
-/* 25 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1491,7 +1832,7 @@ var OnScreeNav = function (_React$Component) {
 exports.default = OnScreeNav;
 
 /***/ }),
-/* 26 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1507,7 +1848,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(5);
+var _reactRouterDom = __webpack_require__(7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1561,7 +1902,7 @@ OnScreenNav__Item.defaultProps = {
 exports.default = OnScreenNav__Item;
 
 /***/ }),
-/* 27 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1585,15 +1926,333 @@ var _redux = __webpack_require__(1);
 
 var _reactHelmet = __webpack_require__(3);
 
-var _GlobalHeader = __webpack_require__(7);
+var _actions = __webpack_require__(4);
+
+var actions = _interopRequireWildcard(_actions);
+
+var _GlobalHeader = __webpack_require__(6);
 
 var _GlobalHeader2 = _interopRequireDefault(_GlobalHeader);
 
-var _GlobalFooter = __webpack_require__(6);
+var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Body = __webpack_require__(18);
+var _HeaderLandingBanner = __webpack_require__(8);
+
+var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Home = function (_Component) {
+    _inherits(Home, _Component);
+
+    function Home() {
+        _classCallCheck(this, Home);
+
+        return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+    }
+
+    _createClass(Home, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {}
+    }, {
+        key: 'render',
+        value: function render() {
+            if (this.props.match.params.country === this.props.headerCountry) {
+                return _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
+                    _react2.default.createElement(_HeaderLandingBanner2.default, { title: this.props.bodyTitle }),
+                    _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
+                );
+            } else {
+                return _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' }),
+                    _react2.default.createElement(_HeaderLandingBanner2.default, { title: this.props.bodyTitle }),
+                    _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' })
+                );
+            }
+        }
+    }], [{
+        key: 'fetchData',
+        value: function fetchData(_ref) {
+            var store = _ref.store,
+                params = _ref.params;
+
+            return store.dispatch(actions.getHome());
+        }
+    }]);
+
+    return Home;
+}(_react.Component);
+
+function mapStateToProps(state) {
+    return _extends({}, state.user);
+}
+function mapDispatchToProps(dispatch) {
+    return (0, _redux.bindActionCreators)(actions, dispatch);
+}
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Home);
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(2);
+
+var _redux = __webpack_require__(1);
+
+var _reactHelmet = __webpack_require__(3);
+
+var _actions = __webpack_require__(4);
+
+var actions = _interopRequireWildcard(_actions);
+
+var _GlobalHeader = __webpack_require__(6);
+
+var _GlobalHeader2 = _interopRequireDefault(_GlobalHeader);
+
+var _GlobalFooter = __webpack_require__(5);
+
+var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
+
+var _Cm02ContentTile = __webpack_require__(9);
+
+var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
+
+var _Cm01RichText = __webpack_require__(12);
+
+var _Cm01RichText2 = _interopRequireDefault(_Cm01RichText);
+
+var _ContentHeader = __webpack_require__(13);
+
+var _ContentHeader2 = _interopRequireDefault(_ContentHeader);
+
+var _BreadCrumbs = __webpack_require__(11);
+
+var _BreadCrumbs2 = _interopRequireDefault(_BreadCrumbs);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Home = function (_Component) {
+    _inherits(Home, _Component);
+
+    function Home() {
+        _classCallCheck(this, Home);
+
+        return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+    }
+
+    _createClass(Home, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {}
+    }, {
+        key: 'render',
+        value: function render() {
+            if (this.props.match.params.country === this.props.headerCountry) {
+                return _react2.default.createElement(
+                    'div',
+                    { className: 'l-layout l-three-column cf' },
+                    _react2.default.createElement(
+                        _reactHelmet.Helmet,
+                        null,
+                        _react2.default.createElement('meta', { charSet: 'utf-8' }),
+                        _react2.default.createElement(
+                            'title',
+                            null,
+                            'Heading Aid vs Cochlear Implant'
+                        )
+                    ),
+                    _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
+                    _react2.default.createElement(_BreadCrumbs2.default, null),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'l-content-container cf l-padding' },
+                        _react2.default.createElement(
+                            'article',
+                            { className: 'l-content-column' },
+                            _react2.default.createElement(
+                                'main',
+                                { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
+                                _react2.default.createElement(_ContentHeader2.default, { title: 'Hearing Aid vs Cochlear Implant' }),
+                                _react2.default.createElement(_Cm01RichText2.default, null),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'sl' },
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'sl-list has-2-items' },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'sl-item' },
+                                            _react2.default.createElement(_Cm02ContentTile2.default, { title: 'Options for when Hearing Aids no longer work',
+                                                description: '',
+                                                path: '/intl/treating-hearing-loss',
+                                                additionalClass: 'is-shaded is-small' })
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'sl-item' },
+                                            _react2.default.createElement(_Cm02ContentTile2.default, { title: 'More information about Cochlear implants',
+                                                description: '',
+                                                path: '/intl/treating-hearing-loss',
+                                                additionalClass: 'is-shaded is-small' })
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
+                );
+            } else {
+                return _react2.default.createElement(
+                    'div',
+                    { className: 'l-layout l-three-column cf' },
+                    _react2.default.createElement(
+                        _reactHelmet.Helmet,
+                        null,
+                        _react2.default.createElement('meta', { charSet: 'utf-8' }),
+                        _react2.default.createElement(
+                            'title',
+                            null,
+                            'Heading Aid vs Cochlear Implant'
+                        )
+                    ),
+                    _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
+                    _react2.default.createElement(_BreadCrumbs2.default, null),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'l-content-container cf l-padding' },
+                        _react2.default.createElement(
+                            'article',
+                            { className: 'l-content-column' },
+                            _react2.default.createElement(
+                                'main',
+                                { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
+                                _react2.default.createElement(_ContentHeader2.default, { title: 'Hearing Aid vs Cochlear Implant' }),
+                                _react2.default.createElement(_Cm01RichText2.default, null),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'sl' },
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'sl-list has-2-items' },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'sl-item' },
+                                            _react2.default.createElement(_Cm02ContentTile2.default, { title: 'Compare Statistic',
+                                                description: '',
+                                                path: '/intl/treating-hearing-loss',
+                                                additionalClass: 'is-shaded is-small' })
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'sl-item' },
+                                            _react2.default.createElement(_Cm02ContentTile2.default, { title: 'Downloads',
+                                                description: '',
+                                                path: '/intl/treating-hearing-loss',
+                                                additionalClass: 'is-shaded is-small' })
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
+                );
+            }
+        }
+    }], [{
+        key: 'fetchData',
+        value: function fetchData(_ref) {
+            var store = _ref.store,
+                params = _ref.params;
+
+            return store.dispatch(actions.getHome());
+        }
+    }]);
+
+    return Home;
+}(_react.Component);
+
+function mapStateToProps(state) {
+    return _extends({}, state.user);
+}
+function mapDispatchToProps(dispatch) {
+    return (0, _redux.bindActionCreators)(actions, dispatch);
+}
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Home);
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(2);
+
+var _redux = __webpack_require__(1);
+
+var _reactHelmet = __webpack_require__(3);
+
+var _GlobalHeader = __webpack_require__(6);
+
+var _GlobalHeader2 = _interopRequireDefault(_GlobalHeader);
+
+var _GlobalFooter = __webpack_require__(5);
+
+var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
+
+var _Body = __webpack_require__(22);
 
 var _Body2 = _interopRequireDefault(_Body);
 
@@ -1666,7 +2325,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Home);
 
 /***/ }),
-/* 28 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1690,15 +2349,152 @@ var _redux = __webpack_require__(1);
 
 var _reactHelmet = __webpack_require__(3);
 
-var _GlobalHeader = __webpack_require__(7);
+var _actions = __webpack_require__(4);
+
+var actions = _interopRequireWildcard(_actions);
+
+var _GlobalHeader = __webpack_require__(6);
 
 var _GlobalHeader2 = _interopRequireDefault(_GlobalHeader);
 
-var _GlobalFooter = __webpack_require__(6);
+var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Bodysecond = __webpack_require__(19);
+var _HeaderLandingBanner = __webpack_require__(8);
+
+var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
+
+var _Cm02ContentTile = __webpack_require__(9);
+
+var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var HomePage = function (_Component) {
+    _inherits(HomePage, _Component);
+
+    function HomePage() {
+        _classCallCheck(this, HomePage);
+
+        return _possibleConstructorReturn(this, (HomePage.__proto__ || Object.getPrototypeOf(HomePage)).apply(this, arguments));
+    }
+
+    _createClass(HomePage, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {}
+    }, {
+        key: 'render',
+        value: function render() {
+            if (this.props.match.params.country === this.props.headerCountry) {
+                return _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                        _reactHelmet.Helmet,
+                        null,
+                        _react2.default.createElement('meta', { charSet: 'utf-8' }),
+                        _react2.default.createElement(
+                            'title',
+                            null,
+                            'Home Page'
+                        )
+                    ),
+                    _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
+                    _react2.default.createElement(_HeaderLandingBanner2.default, { title: this.props.bodyTitle }),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'l-content-container cf l-padding' },
+                        _react2.default.createElement(_Cm02ContentTile2.default, { title: 'Treating Hearing Loss',
+                            description: 'Act early and discuss all your options with a health professional.',
+                            path: '/intl/treating-hearing-loss',
+                            additionalClass: 'is-shaded is-large' })
+                    ),
+                    _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
+                );
+            } else {
+                return _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                        _reactHelmet.Helmet,
+                        null,
+                        _react2.default.createElement('meta', { charSet: 'utf-8' }),
+                        _react2.default.createElement(
+                            'title',
+                            null,
+                            'Home Page'
+                        )
+                    ),
+                    _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' }),
+                    _react2.default.createElement(_HeaderLandingBanner2.default, { title: this.props.bodyTitle }),
+                    _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'true' })
+                );
+            }
+        }
+    }], [{
+        key: 'fetchData',
+        value: function fetchData(_ref) {
+            var store = _ref.store,
+                params = _ref.params;
+
+            return store.dispatch(actions.getHome());
+        }
+    }]);
+
+    return HomePage;
+}(_react.Component);
+
+function mapStateToProps(state) {
+    return _extends({}, state.user);
+}
+function mapDispatchToProps(dispatch) {
+    return (0, _redux.bindActionCreators)(actions, dispatch);
+}
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(HomePage);
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(2);
+
+var _redux = __webpack_require__(1);
+
+var _reactHelmet = __webpack_require__(3);
+
+var _GlobalHeader = __webpack_require__(6);
+
+var _GlobalHeader2 = _interopRequireDefault(_GlobalHeader);
+
+var _GlobalFooter = __webpack_require__(5);
+
+var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
+
+var _Bodysecond = __webpack_require__(23);
 
 var _Bodysecond2 = _interopRequireDefault(_Bodysecond);
 
@@ -1771,7 +2567,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Homesecond);
 
 /***/ }),
-/* 29 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1795,15 +2591,15 @@ var _redux = __webpack_require__(1);
 
 var _reactHelmet = __webpack_require__(3);
 
-var _GlobalHeader = __webpack_require__(7);
+var _GlobalHeader = __webpack_require__(6);
 
 var _GlobalHeader2 = _interopRequireDefault(_GlobalHeader);
 
-var _GlobalFooter = __webpack_require__(6);
+var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Bodythird = __webpack_require__(20);
+var _Bodythird = __webpack_require__(24);
 
 var _Bodythird2 = _interopRequireDefault(_Bodythird);
 
@@ -1876,13 +2672,188 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Homethird);
 
 /***/ }),
-/* 30 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _express = __webpack_require__(14);
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(2);
+
+var _redux = __webpack_require__(1);
+
+var _reactHelmet = __webpack_require__(3);
+
+var _actions = __webpack_require__(4);
+
+var actions = _interopRequireWildcard(_actions);
+
+var _GlobalHeader = __webpack_require__(6);
+
+var _GlobalHeader2 = _interopRequireDefault(_GlobalHeader);
+
+var _GlobalFooter = __webpack_require__(5);
+
+var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
+
+var _Cm02ContentTile = __webpack_require__(9);
+
+var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
+
+var _Cm01RichText = __webpack_require__(12);
+
+var _Cm01RichText2 = _interopRequireDefault(_Cm01RichText);
+
+var _ContentHeader = __webpack_require__(13);
+
+var _ContentHeader2 = _interopRequireDefault(_ContentHeader);
+
+var _BreadCrumbs = __webpack_require__(11);
+
+var _BreadCrumbs2 = _interopRequireDefault(_BreadCrumbs);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Home = function (_Component) {
+    _inherits(Home, _Component);
+
+    function Home() {
+        _classCallCheck(this, Home);
+
+        return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+    }
+
+    _createClass(Home, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {}
+    }, {
+        key: 'render',
+        value: function render() {
+            if (this.props.match.params.country === this.props.headerCountry) {
+                return _react2.default.createElement(
+                    'div',
+                    { className: 'l-layout l-three-column cf' },
+                    _react2.default.createElement(
+                        _reactHelmet.Helmet,
+                        null,
+                        _react2.default.createElement('meta', { charSet: 'utf-8' }),
+                        _react2.default.createElement(
+                            'title',
+                            null,
+                            'Treating Hearing Loss'
+                        )
+                    ),
+                    _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
+                    _react2.default.createElement(_BreadCrumbs2.default, null),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'l-content-container cf l-padding' },
+                        _react2.default.createElement(
+                            'article',
+                            { className: 'l-content-column' },
+                            _react2.default.createElement(
+                                'main',
+                                { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
+                                _react2.default.createElement(_ContentHeader2.default, { title: 'Treating Hearing Loss' }),
+                                _react2.default.createElement(_Cm01RichText2.default, null),
+                                _react2.default.createElement(_Cm02ContentTile2.default, { title: 'Hearing Aid vs Cochlear Implant',
+                                    description: 'A cochlear implant is an electronic medical device that does the work of damaged parts of the inner ear (cochlea) to provide sound signals to the brain.',
+                                    path: '/intl/hearing-aid-vs-cochlear-implant',
+                                    image: 'http://www.cochlear.com/wps/wcm/connect/ce8cb1a1-4fc8-47a8-a84e-8f59b646aa1e/lifestyle_cochlearimplant_motherandyounggirl_300x300.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-ce8cb1a1-4fc8-47a8-a84e-8f59b646aa1e-jB18lfj',
+                                    additionalClass: 'is-shaded is-large' })
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
+                );
+            } else {
+                return _react2.default.createElement(
+                    'div',
+                    { className: 'l-layout l-three-column cf' },
+                    _react2.default.createElement(
+                        _reactHelmet.Helmet,
+                        null,
+                        _react2.default.createElement('meta', { charSet: 'utf-8' }),
+                        _react2.default.createElement(
+                            'title',
+                            null,
+                            'Treating Hearing Loss'
+                        )
+                    ),
+                    _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
+                    _react2.default.createElement(_BreadCrumbs2.default, null),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'l-content-container cf l-padding' },
+                        _react2.default.createElement(
+                            'article',
+                            { className: 'l-content-column' },
+                            _react2.default.createElement(
+                                'main',
+                                { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
+                                _react2.default.createElement(_ContentHeader2.default, { title: 'Treating Hearing Loss' }),
+                                _react2.default.createElement(_Cm01RichText2.default, null),
+                                _react2.default.createElement(_Cm02ContentTile2.default, { title: 'Hearing Aid vs Cochlear Implant',
+                                    description: 'A cochlear implant is an electronic medical device that does the work of damaged parts of the inner ear (cochlea) to provide sound signals to the brain.',
+                                    path: '/intl/hearing-aid-vs-cochlear-implant',
+                                    image: 'http://www.cochlear.com/wps/wcm/connect/ce8cb1a1-4fc8-47a8-a84e-8f59b646aa1e/lifestyle_cochlearimplant_motherandyounggirl_300x300.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-ce8cb1a1-4fc8-47a8-a84e-8f59b646aa1e-jB18lfj',
+                                    additionalClass: 'is-shaded is-large' })
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
+                );
+            }
+        }
+    }], [{
+        key: 'fetchData',
+        value: function fetchData(_ref) {
+            var store = _ref.store,
+                params = _ref.params;
+
+            return store.dispatch(actions.getHome());
+        }
+    }]);
+
+    return Home;
+}(_react.Component);
+
+function mapStateToProps(state) {
+    return _extends({}, state.user);
+}
+function mapDispatchToProps(dispatch) {
+    return (0, _redux.bindActionCreators)(actions, dispatch);
+}
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Home);
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _express = __webpack_require__(18);
 
 var _express2 = _interopRequireDefault(_express);
 
@@ -1890,7 +2861,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(16);
+var _server = __webpack_require__(20);
 
 var _server2 = _interopRequireDefault(_server);
 
@@ -1898,27 +2869,27 @@ var _reactHelmet = __webpack_require__(3);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
-var _app = __webpack_require__(11);
+var _app = __webpack_require__(15);
 
 var _app2 = _interopRequireDefault(_app);
 
-var _reactDom = __webpack_require__(15);
+var _reactDom = __webpack_require__(19);
 
 var _reactRedux = __webpack_require__(2);
 
 var _redux = __webpack_require__(1);
 
-var _combine = __webpack_require__(13);
+var _combine = __webpack_require__(17);
 
 var _combine2 = _interopRequireDefault(_combine);
 
-var _reactRouter = __webpack_require__(17);
+var _reactRouter = __webpack_require__(21);
 
-var _thunk = __webpack_require__(12);
+var _thunk = __webpack_require__(16);
 
 var _thunk2 = _interopRequireDefault(_thunk);
 
-var _routes = __webpack_require__(9);
+var _routes = __webpack_require__(10);
 
 var _routes2 = _interopRequireDefault(_routes);
 
@@ -2011,7 +2982,7 @@ function renderFullPage(html, preloadedState, helmet) {
 }
 
 /***/ }),
-/* 31 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2025,7 +2996,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(5);
+var _reactRouterDom = __webpack_require__(7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2046,7 +3017,7 @@ var RedirectWithStatus = function RedirectWithStatus(_ref) {
 exports.default = RedirectWithStatus;
 
 /***/ }),
-/* 32 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2060,7 +3031,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 exports.default = userReducer;
 
-var _userTypes = __webpack_require__(10);
+var _userTypes = __webpack_require__(14);
 
 var initialState = {
     name: null,
@@ -2082,26 +3053,26 @@ function userReducer() {
         case _userTypes.Types.UPDATE_NAME:
             return _extends({}, state, { name: action.payload.name, email: action.payload.email });
         case _userTypes.Types.UPDATE_HEADER:
-            return _extends({}, state, { headerTitle: action.payload['HeaderBanner-title'] });
+            return _extends({}, state, { headerTitle: action.payload['title'] });
         case _userTypes.Types.UPDATE_HEADER_COUNTRY:
             return _extends({}, state, { headerCountry: action.payload.country });
         case _userTypes.Types.UPDATE_FOOTER_COUNTRY:
             return _extends({}, state, { footerCountry: action.payload.country });
         case _userTypes.Types.UPDATE_FOOTER:
-            return _extends({}, state, { footerTitle: action.payload['HeaderBanner-title'] });
+            return _extends({}, state, { footerTitle: action.payload['title'] });
         case _userTypes.Types.UPDATE_HOME:
-            return _extends({}, state, { bodyTitle: action.payload['HeaderBanner-title'] });
+            return _extends({}, state, { bodyTitle: action.payload['title'] });
         case _userTypes.Types.UPDATE_HOMESECOND:
-            return _extends({}, state, { bodysecondTitle: action.payload['HeaderBanner-title'] });
+            return _extends({}, state, { bodysecondTitle: action.payload['title'] });
         case _userTypes.Types.UPDATE_HOMETHIRD:
-            return _extends({}, state, { bodythirdTitle: action.payload['HeaderBanner-title'] });
+            return _extends({}, state, { bodythirdTitle: action.payload['title'] });
         default:
             return state;
     }
 }
 
 /***/ }),
-/* 33 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2201,7 +3172,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(User);
 
 /***/ }),
-/* 34 */
+/* 42 */
 /***/ (function(module, exports) {
 
 module.exports = require("axios");

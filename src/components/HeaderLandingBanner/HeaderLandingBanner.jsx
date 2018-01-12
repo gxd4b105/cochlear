@@ -1,7 +1,6 @@
 import React from 'react';
 
 
-
 class HeaderLandingBanner extends React.Component {
     render () {
 

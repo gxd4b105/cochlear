@@ -17,19 +17,19 @@ export default function userReducer(state = initialState, action) {
         case Types.UPDATE_NAME:
             return {...state, name: action.payload.name, email: action.payload.email}
         case Types.UPDATE_HEADER:
-            return {...state, headerTitle: action.payload['HeaderBanner-title']}
+            return {...state, headerTitle: action.payload['title']}
         case Types.UPDATE_HEADER_COUNTRY:
             return {...state, headerCountry: action.payload.country}
         case Types.UPDATE_FOOTER_COUNTRY:
             return {...state, footerCountry: action.payload.country}
         case Types.UPDATE_FOOTER:
-            return {...state, footerTitle: action.payload['HeaderBanner-title']}
+            return {...state, footerTitle: action.payload['title']}
         case Types.UPDATE_HOME:
-            return {...state, bodyTitle: action.payload['HeaderBanner-title']}
+            return {...state, bodyTitle: action.payload['title']}
         case Types.UPDATE_HOMESECOND:
-            return {...state, bodysecondTitle: action.payload['HeaderBanner-title']}
+            return {...state, bodysecondTitle: action.payload['title']}
         case Types.UPDATE_HOMETHIRD:
-            return {...state, bodythirdTitle: action.payload['HeaderBanner-title']}
+            return {...state, bodythirdTitle: action.payload['title']}
         default:
             return state;
     }

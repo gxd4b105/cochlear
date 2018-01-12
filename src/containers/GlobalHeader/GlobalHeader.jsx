@@ -37,11 +37,6 @@ class Header extends Component {
     render() {
         return (
             <div>
-                <Helmet>
-                    <meta charSet="utf-8" />
-                    <title>The title</title>
-                </Helmet>
-
                 <header className={`global-header ${this.props.additionalClass}`}>
                     <div className="l-padding">
                         <div className="logo">
