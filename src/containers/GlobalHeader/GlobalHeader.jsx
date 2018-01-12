@@ -25,9 +25,10 @@ class Header extends Component {
         return ;
     }
     componentDidMount() {
-        if (this.props.countryUpdate === 'true') {
+        if (this.props.countryUpdate === 'true' || this.props.countryUpdate === true) {
             this.props.setHeaderCountry({'country': this.props.countryParams});
             if(this.props.countryParams === 'intl'){
+                console.log('getting intl');
                 this.props.getHeader();
             } else {
                 this.props.getHeaderUS();

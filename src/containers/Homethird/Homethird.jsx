@@ -12,27 +12,21 @@ class Homethird extends Component {
         return store.dispatch(actions.getHomethird());
     }
 
-    componentDidMount() {
-    }
-
     render() {
-        if(this.props.match.params.country === this.props.headerCountry){
-            return (
-                <div>
-                    <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
-                    <Bodythird />
-                    <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
-                </div>
-            );
-        } else {
-            return (
-                <div>
-                    <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'true' />
-                    <Bodythird />
-                    <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'true' />
-                </div>
-            );
-        }
+        let countryChange = this.props.match.params.country !== this.props.headerCountry;
+        return (
+            <div>
+            <GlobalHeader title={this.props.headerTitle} 
+                          country={this.props.headerCountry} 
+                          countryParams={this.props.match.params.country} 
+                          countryUpdate = {countryChange} />
+            <Bodythird />
+            <GlobalFooter title={this.props.footerTitle} 
+                          country={this.props.footerCountry} 
+                          countryParams={this.props.match.params.country} 
+                          countryUpdate = {countryChange} />
+        </div>
+        );
     }
 }
 function mapStateToProps(state) {
