@@ -6,7 +6,6 @@ import * as actions from '../../shared/app/redux/actions/actions'
 
 import GlobalHeader from './../GlobalHeader/GlobalHeader.jsx';
 import GlobalFooter from './../GlobalFooter/GlobalFooter.jsx';
-import HeaderLandingBanner from '../../components/HeaderLandingBanner/HeaderLandingBanner.jsx';
 import Cm02ContentTile from "../../components/Cm02ContentTile/Cm02ContentTile.jsx";
 
 class HomePage extends Component {
@@ -18,37 +17,22 @@ class HomePage extends Component {
     }
 
     render() {
-        if(this.props.match.params.country === this.props.headerCountry){
-            return (
-                <div>
-                    <Helmet>
-                        <meta charSet="utf-8" />
-                        <title>Home Page</title>
-                    </Helmet>
-                    <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
-                    <HeaderLandingBanner title={this.props.bodyTitle} />
-                    <div className='l-content-container cf l-padding'>
-                        <Cm02ContentTile    title="Treating Hearing Loss"
-                                            description="Act early and discuss all your options with a health professional."
-                                            path="/intl/treating-hearing-loss"
-                                            additionalClass="is-shaded is-large"/>
-                    </div>
-                    <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
+        return (
+            <div>
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Home Page</title>
+                </Helmet>
+                <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
+                <div className='l-content-container cf l-padding'>
+                    <Cm02ContentTile    title="Treating Hearing Loss"
+                                        description="Act early and discuss all your options with a health professional."
+                                        path="/intl/treating-hearing-loss"
+                                        additionalClass="is-shaded is-large"/>
                 </div>
-            );
-        } else {
-            return (
-                <div>
-                    <Helmet>
-                        <meta charSet="utf-8" />
-                        <title>Home Page</title>
-                    </Helmet>
-                    <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'true' />
-                    <HeaderLandingBanner title={this.props.bodyTitle} />
-                    <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'true' />
-                </div>
-            );
-        }
+                <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
+            </div>
+        );
     }
 }
 function mapStateToProps(state) {

@@ -48,7 +48,7 @@ class Header extends Component {
                         <OnScreeNav additionalClass="nav-onscreen__global-header">
                             <OnScreenNav__Item title="Home Intl"
                                                subtitle="This links to the first page"
-                                               path="/intl/firstpage"/>
+                                               path="/intl/home"/>
 
                             <OnScreenNav__Item title="Second Intl"
                                                subtitle="This links to the second page"

@@ -7,6 +7,7 @@ import HomePage from "../../containers/HomePage/HomePage.jsx";
 import HearingAidVsCochlearImplant from "../../containers/HearingAidVsCochlearImplant/HearingAidVsCochlearImplant.jsx";
 import TreatingHearingLoss from "../../containers/TreatingHearingLoss/TreatingHearingLoss.jsx";
 import ClinicFinder from "../../containers/ClinicFinder/ClinicFinder.jsx";
+import StatsAndProofs from "../../containers/StatsAndProofs/StatsAndProofs.jsx";
 
 export default {
     routes: [
@@ -43,6 +44,11 @@ export default {
         {
             path: '/:country/treating-hearing-loss',
             component: TreatingHearingLoss,
+            exact: true
+        },
+        {
+            path: '/:country/stats-and-proofs',
+            component: StatsAndProofs,
             exact: true
         },
         {

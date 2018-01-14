@@ -6,13 +6,12 @@ import * as actions from '../../shared/app/redux/actions/actions'
 
 import GlobalHeader from './../GlobalHeader/GlobalHeader.jsx';
 import GlobalFooter from './../GlobalFooter/GlobalFooter.jsx';
-
+import Cm01RichText from "../../components/Cm01RichText/Cm01RichText.jsx";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs.jsx";
-import ClinicNearYou from "../../components/ClinicNearYou/ClinicNearYou.jsx";
-import ContentHeader from "../../components/ContentHeader/ContentHeader.jsx";
+import HeaderLandingBanner from "../../components/HeaderLandingBanner/HeaderLandingBanner.jsx";
 
 
-class ClinicFinder extends Component {
+class StatsAndProofs extends Component {
     static fetchData({ store, params }) {
         return store.dispatch(actions.getHome());
     }
@@ -22,21 +21,22 @@ class ClinicFinder extends Component {
 
     render() {
         return (
-            <div className="l-layout l-two-column cf">
+            <div className="l-layout l-one-column cf">
                 <Helmet>
                     <meta charSet="utf-8" />
-                    <title>Heading Aid vs Cochlear Implant</title>
+                    <title>Stats and Proofs</title>
                 </Helmet>
                 <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
                 <BreadCrumbs/>
                 <article>
+                    <HeaderLandingBanner title="Statistics and Proofs"
+                                         description="There is a range of accessories for the Cochlear™ Baha® 3 Sound Processor (BP100) that allow you to customise your sound processor to fit your lifestyle."
+                                         additionalClass="is-dark"/>
                     <div className='l-content-container cf l-padding'>
                         <div className="l-content-column">
-                            <ContentHeader title="Find a Clinic"
-                                           description=""/>
-                            <ClinicNearYou  title="Find your nearest clinic"
-                                            description="Type in your postcode to find a Cochlear Clinic that is nearest to you."
-                                            additionalClass="is-shaded is-medium" />
+                            <main id="main" tabIndex="-1" role="main" className="l-main">
+                                <Cm01RichText/>
+                            </main>
                         </div>
                     </div>
                 </article>
@@ -53,4 +53,4 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators(actions, dispatch);
 }
-export default connect(mapStateToProps, mapDispatchToProps, null, { withRef: true })(ClinicFinder);
+export default connect(mapStateToProps, mapDispatchToProps, null, { withRef: true })(StatsAndProofs);

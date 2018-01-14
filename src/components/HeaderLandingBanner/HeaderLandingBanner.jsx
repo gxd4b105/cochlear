@@ -30,7 +30,7 @@ HeaderLandingBanner.defaultProps = {
     description:"",
     image: "http://fed.donlineclients.com/assets/img/placeholder/landing-hero.jpg",
     imageAlt: "Landing page banner alt text",
-    additionalClass: "is-dark"
+    additionalClass: ""
 };
 
 export default HeaderLandingBanner;
