@@ -34,5 +34,12 @@ module.exports = {
             }
             //loaders for other file types can go here
         ]
-    }
+    },
+    plugins: [
+        new webpack.DefinePlugin({
+            "process.env": {
+                BROWSER: JSON.stringify(true)
+            }
+        })
+    ]
 }
