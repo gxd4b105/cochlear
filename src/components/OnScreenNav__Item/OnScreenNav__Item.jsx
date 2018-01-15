@@ -1,6 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+if (process.env.BROWSER) {
+    require("./OnScreenNav__Item.scss");
+}
+
 class OnScreenNav__Item extends React.Component {
     render() {
 

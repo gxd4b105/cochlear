@@ -4,12 +4,12 @@ import { bindActionCreators } from 'redux';
 import { Helmet } from 'react-helmet';
 import * as actions from '../../shared/app/redux/actions/actions';
 
+import OnScreeNav from '../../components/OnScreenNav/OnScreeNav.jsx';
+import OnScreenNav__Item from '../../components/OnScreenNav__Item/OnScreenNav__Item.jsx';
 
-
-
-import OnScreeNav from '../../components/OnScreenNav/OnScreeNav.js';
-import OnScreenNav__Item from '../../components/OnScreenNav__Item/OnScreenNav__Item.js';
-
+if (process.env.BROWSER) {
+    require("./GlobalHeader.scss");
+}
 
 
 class Header extends Component {

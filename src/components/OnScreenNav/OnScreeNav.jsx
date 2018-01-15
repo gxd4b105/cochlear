@@ -1,5 +1,9 @@
 import React from 'react';
 
+if (process.env.BROWSER) {
+    require("./OnScreenNav.scss");
+}
+
 class OnScreeNav extends React.Component {
     render() {
 

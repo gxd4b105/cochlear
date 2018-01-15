@@ -8,6 +8,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from './redux/actions/actions'
 
+if (process.env.BROWSER) {
+    require("../../styles/framework.css");
+    require("../../styles/global.scss");
+}
+
+
 class App extends Component {
     static fetchData({ store, params }) {  
         if(!params.country){

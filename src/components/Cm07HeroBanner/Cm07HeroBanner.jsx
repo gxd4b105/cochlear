@@ -1,5 +1,8 @@
 import React from "react";
-import Link from 'next/link'
+
+if (process.env.BROWSER) {
+    require("./Cm07HeroBanner.scss");
+}
 
 
 class Cm07HeroBanner extends React.Component {
