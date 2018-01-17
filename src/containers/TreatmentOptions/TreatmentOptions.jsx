@@ -12,9 +12,9 @@ import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs.jsx";
 import HeaderLandingBanner from "../../components/HeaderLandingBanner/HeaderLandingBanner.jsx";
 
 
-class TreatingHearingLoss extends Component {
+class TreatmentOptions extends Component {
     static fetchData({ store, params }) {
-        return store.dispatch(actions.getTreatingHearingLoss());
+        return store.dispatch(actions.getTreatmentOptions());
     }
 
     componentDidMount() {
@@ -22,29 +22,26 @@ class TreatingHearingLoss extends Component {
 
     render() {
 
-        console.log(this.props.dataTreatingHearingLoss);
-
-        let getData = this.props.dataTreatingHearingLoss;
+        console.log(this.props.dataTreatmentOptions);
 
         return (
             <div className="l-layout l-one-column cf">
                 <Helmet>
                     <meta charSet="utf-8" />
-                    <title>{getData['title']}</title>
+                    <title>{this.props.dataTreatmentOptions['title']}</title>
                 </Helmet>
                 <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
                 <BreadCrumbs/>
                 <article>
-                    <HeaderLandingBanner title={getData['title']}
-                                         description={getData['description']}
-                                         image={'https://auth.cochlear.com/'+getData['banner-image'].src}
-                                         imagePath={getData['banner-image'].alt}
+                    <HeaderLandingBanner title={this.props.dataTreatmentOptions['title']}
+                                         description={this.props.dataTreatmentOptions['description']}
+                                         image={'https://auth.cochlear.com/'+this.props.dataTreatmentOptions['banner-image'].src}
+                                         imagePath={this.props.dataTreatmentOptions['banner-image'].alt}
                                          additionalClass="is-dark"/>
                     <div className='l-content-container cf l-padding'>
                         <div className="l-content-column">
                             <main id="main" tabIndex="-1" role="main" className="l-main">
-                                <Cm01RichText body={getData['body-copy']}/>
-                                {/*
+                                <Cm01RichText body={this.props.dataTreatmentOptions['body-copy']}/>
                                 <div className="sl">
                                     <div className="sl-list has-4-items">
                                         <div className="sl-item">
@@ -77,12 +74,11 @@ class TreatingHearingLoss extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                */}
-                                <Cm02ContentTile    title={getData['cm02-title'].title}
-                                                    description={getData['cm02-description']}
-                                                    path={getData['cm02-title'].path}
-                                                    image={'https://auth.cochlear.com'+getData['cm02-image'].src}
-                                                    imagePath={getData['cm02-title'].path}
+                                <Cm02ContentTile    title={this.props.dataTreatmentOptions['cm02-title'].title}
+                                                    description={this.props.dataTreatmentOptions['cm02-description']}
+                                                    path={this.props.dataTreatmentOptions['cm02-title'].path}
+                                                    image={'https://auth.cochlear.com'+this.props.dataTreatmentOptions['cm02-image'].src}
+                                                    imagePath={this.props.dataTreatmentOptions['cm02-title'].path}
                                                     additionalClass="is-shaded is-large"/>
                             </main>
                         </div>
@@ -101,4 +97,4 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators(actions, dispatch);
 }
-export default connect(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TreatingHearingLoss);
+export default connect(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TreatmentOptions);

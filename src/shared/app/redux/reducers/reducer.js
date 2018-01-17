@@ -10,7 +10,10 @@ const initialState = {
     footerTitle: null,
     bodyTitle: null,
     bodysecondTitle: null,
-    bodythirdTitle: null
+    bodythirdTitle: null,
+    dataTreatmentOptions: null,
+    dataTreatingHearingLoss: null,
+    dataTypesOfTreatment: null
 };
 export default function userReducer(state = initialState, action) {
     switch (action.type) {
@@ -28,6 +31,14 @@ export default function userReducer(state = initialState, action) {
             return {...state, bodyTitle: action.payload['title']}
         case Types.UPDATE_HOMESECOND:
             return {...state, bodysecondTitle: action.payload['title']}
+        case Types.UPDATE_TREATMENTOPTIONS:
+            return {...state, dataTreatmentOptions: action.payload}
+        case Types.UPDATE_TREATINGHEARINGLOSS:
+            return {...state, dataTreatingHearingLoss: action.payload}
+        case Types.UPDATE_HEARINGAIDSVISCOCHLEARIMPLANTS:
+            return {...state, dataHearingAidsVsCochlearImplants: action.payload}
+        case Types.UPDATE_TYPESOFTREATMENT:
+            return {...state, dataTypesOfTreatment: action.payload}
         case Types.UPDATE_HOMETHIRD:
             return {...state, bodythirdTitle: action.payload['title']}
         default:

@@ -4,7 +4,8 @@ class Cm01RichText extends React.Component {
     render() {
 
         return (
-            <div className="cm cm-rich-text">
+            <div className="cm cm-rich-text" dangerouslySetInnerHTML={{ __html: this.props.body }}>
+                {/*
                 <p className="intro">Intro paragraph. Lorem ipsum consequat enim incididunt ea aliqua ut minim anim occaecat cupidatat id eiusmod culpa in velit ut fugiat laboris commodo anim. Esse ut proident ea Ut dolore proident enim</p>
 
                 <p>Lorem ipsum consequat enim incididunt ea aliqua ut minim anim occaecat cupidatat id eiusmod culpa in velit ut fugiat laboris commodo anim. Esse ut proident ea Ut dolore proident enim Duis et exercitation in incididunt nisi in elit culpa deserunt quis ex officia nostrud sint enim anim ullamco labore Excepteur eiusmod cupidatat sint labore consequat in Excepteur est officia cillum nostrud id id proident dolor voluptate ut Duis labore veniam.</p>
@@ -29,9 +30,15 @@ class Cm01RichText extends React.Component {
 
                 <p>Vivamus posuere facilisis purus a pulvinar. Mauris vel dolor sagittis, posuere tellus sit amet, tempor nisl. Duis bibendum consequat ex, in vehicula nibh. Aenean finibus hendrerit turpis, id porttitor risus ultricies non. Vestibulum condimentum rhoncus mi, sit amet congue sem fermentum pellentesque. </p>
 
+                */}
             </div>
         );
     }
 }
+
+Cm01RichText.defaultProps = {
+    body: "Landing page title"
+};
+
 
 export default Cm01RichText;

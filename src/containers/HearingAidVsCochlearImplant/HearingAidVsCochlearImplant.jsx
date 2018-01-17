@@ -18,28 +18,35 @@ import ClinicNearYou from "../../components/ClinicNearYou/ClinicNearYou.jsx";
 
 class HearingAidVsCochlearImplant extends Component {
     static fetchData({ store, params }) {
-        return store.dispatch(actions.getHome());
+        return store.dispatch(actions.getHearingAidsVsCochlearImplants());
     }
-
     componentDidMount() {
     }
 
     render() {
+
+        console.log(this.props.dataHearingAidsVsCochlearImplants);
+
+        let getData = this.props.dataHearingAidsVsCochlearImplants;
+
         return (
             <div className="l-layout l-two-column cf">
                 <Helmet>
                     <meta charSet="utf-8" />
-                    <title>Heading Aid vs Cochlear Implant</title>
+                    <title>{getData['title']}</title>
                 </Helmet>
                 <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
                 <BreadCrumbs/>
                 <article>
-                    <HeaderLandingBanner title="Hearing Aid vs Cochlear Implant"
-                                         description="A cochlear implant is an electronic medical device that does the work of damaged parts of the inner ear (cochlea) to provide sound signals to the brain."
+                    <HeaderLandingBanner title={getData['title']}
+                                         description={getData['description']}
+                                         image={'https://auth.cochlear.com/'+getData['banner-image'].src}
+                                         imagePath={getData['banner-image'].alt}
                                          additionalClass="is-dark"/>
                     <div className='l-content-container cf l-padding'>
                         <div className="l-content-column">
-                            <Cm01RichText/>
+                            <Cm01RichText body={getData['body-copy']}/>
+                            {/*
                             <div className="sl">
                                 <div className="sl-list has-2-items">
                                     <div className="sl-item">
@@ -49,13 +56,21 @@ class HearingAidVsCochlearImplant extends Component {
                                                             additionalClass="is-shaded is-small"/>
                                     </div>
                                     <div className="sl-item">
-                                        <Cm02ContentTile    title="Download Brochures"
-                                                            description="Download a brochures od Cochlear's products"
+                                        <Cm02ContentTile    title="Download Hearing Aid vs Cochlear Implant Brochure"
+                                                            description="Download a brochures Hearing Aid vs Cochlear Implant Brochure"
                                                             path="/intl/download-brochures"
                                                             additionalClass="is-shaded is-small"/>
                                     </div>
                                 </div>
                             </div>
+                            */}
+
+                            <Cm02ContentTile    title={getData['cm02-title'].title}
+                                                description={getData['cm02-description']}
+                                                path={getData['cm02-title'].path}
+                                                image={'https://auth.cochlear.com'+getData['cm02-image'].src}
+                                                imagePath={getData['cm02-title'].path}
+                                                additionalClass="is-shaded is-large"/>
 
                             <ClinicNearYou  title="Find your nearest clinic"
                                                     description="Type in your postcode to find a Cochlear Clinic that is nearest to you."
