@@ -8,6 +8,8 @@ import OnScreeNav from '../../components/OnScreenNav/OnScreeNav.jsx';
 import OnScreenNav__Item from '../../components/OnScreenNav__Item/OnScreenNav__Item.jsx';
 
 if (process.env.BROWSER) {
+    require("../../styles/framework.css");
+    require("../../styles/global.scss");
     require("./GlobalHeader.scss");
 }
 
