@@ -88,11 +88,16 @@ function renderFullPage(html, preloadedState, helmet) {
     <html>
       <head>
         <link rel="icon" href="/dist/favicon.ico" type="image/ico" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
         ${helmet.title.toString()}
         ${helmet.meta.toString()}
         ${helmet.link.toString()}
       </head>
       <body>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVM6MWV"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->      
         <div id="root">${html}</div>
         <script>
           // WARNING: See the following for security issues around embedding JSON in HTML:
@@ -100,6 +105,14 @@ function renderFullPage(html, preloadedState, helmet) {
           window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
         </script>
         <script src="/dist/assets/app.bundle.js"></script>
+        
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-PVM6MWV');</script>
+		<!-- End Google Tag Manager -->        
       </body>
     </html>
     `

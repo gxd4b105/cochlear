@@ -51,9 +51,9 @@ class OnScreeNav extends React.Component {
                         return  child
                     })}
                 </ul>
-                {/* <% if vars[:hasLogin] == true %> */}
+                {/* <% if vars[:hasLogin] == true %>
                     <a href="#" className="icon-button login">Login</a>
-                {/* <% end %> */}
+                <% end %> */}
             </nav>
         );
     }

@@ -74,11 +74,20 @@ export function getTypesOfTreatment() {
     }
 }
 
-export function getHearingAidsVsCochlearImplants() {
+export function getHearingAidVsImplantableSolutions() {
     return async function (dispatch, getState) {
         // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
-        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/hearing-aids-vs-cochlear-implants`);
-        dispatch({ type: Types.UPDATE_HEARINGAIDSVISCOCHLEARIMPLANTS, payload: data });
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/hearing-aids-vs-implantable-solutions`);
+        dispatch({ type: Types.UPDATE_HEARINGAIDSVSIMPLANTABLESOLUTIONS, payload: data });
+    }
+}
+
+
+export function getCostsAndAffordability() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/costs-and-affordability`);
+        dispatch({ type: Types.UPDATE_COSTSANDAFFORDABILITY, payload: data });
     }
 }
 

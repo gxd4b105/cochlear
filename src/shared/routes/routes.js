@@ -4,13 +4,15 @@ import Homethird from '../../containers/Homethird/Homethird.jsx';
 import User from '../app/user.jsx';
 
 import HomePage from "../../containers/HomePage/HomePage.jsx";
-import HearingAidVsCochlearImplant from "../../containers/HearingAidVsCochlearImplant/HearingAidVsCochlearImplant.jsx";
+import HearingAidVsImplantableSolutions from "../../containers/HearingAidVsImplantableSolutions/HearingAidVsImplantableSolutions.jsx";
 import ClinicFinder from "../../containers/ClinicFinder/ClinicFinder.jsx";
 import StatsAndProofs from "../../containers/StatsAndProofs/StatsAndProofs.jsx";
 import TreatmentOptions from "../../containers/TreatmentOptions/TreatmentOptions.jsx";
 import TypesOfTreatment from "../../containers/TypesOfTreatment/TypesOfTreatment.jsx";
 import TreatingHearingLoss from "../../containers/TreatingHearingLoss/TreatingHearingLoss.jsx"
 import ImplantableSolutions from "../../containers/ImplantableSolutions/ImplantableSolutions.jsx";
+import CostsAndAffordability from "../../containers/CostsAndAffordability/CostsAndAffordability.jsx"
+
 
 export default {
     routes: [
@@ -40,8 +42,13 @@ export default {
             exact: true
         },
         {
-            path: '/:country/hearing-aids-vs-cochlear-implants',
-            component: HearingAidVsCochlearImplant,
+            path: '/:country/hearing-aids-vs-implantable-solutions',
+            component: HearingAidVsImplantableSolutions,
+            exact: true
+        },
+        {
+            path: '/:country/costs-and-affordability',
+            component: CostsAndAffordability,
             exact: true
         },
         {

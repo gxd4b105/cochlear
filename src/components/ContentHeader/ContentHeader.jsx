@@ -23,9 +23,10 @@ class ContentHeader extends React.Component {
                 <% end %>
                 <% if vars[:usePadding] %></div><% end %>
                 */}
-                <header className="content-header">
-                    <h1>{this.props.title}</h1>
-                </header>
+
+                <h1>{this.props.title}</h1>
+                <p>{this.props.description}</p>
+
             </header>
         );
     }

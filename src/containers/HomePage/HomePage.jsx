@@ -26,7 +26,7 @@ class HomePage extends Component {
                 <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
                 <div className='l-content-container cf l-padding'>
                     <Cm02ContentTile    title="Treating Hearing Loss"
-                                        description="Act early and discuss all your options with a health professional."
+                                        description="Find out what treatment options are available to manage hearing loss"
                                         path="/intl/treating-hearing-loss"
                                         additionalClass="is-shaded is-large"/>
                 </div>

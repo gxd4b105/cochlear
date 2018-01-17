@@ -10,6 +10,7 @@ import Cm02ContentTile from "../../components/Cm02ContentTile/Cm02ContentTile.js
 import Cm01RichText from "../../components/Cm01RichText/Cm01RichText.jsx";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs.jsx";
 import HeaderLandingBanner from "../../components/HeaderLandingBanner/HeaderLandingBanner.jsx";
+import ContentHeader from "../../components/ContentHeader/ContentHeader.jsx";
 
 
 class TreatingHearingLoss extends Component {
@@ -34,15 +35,19 @@ class TreatingHearingLoss extends Component {
                 </Helmet>
                 <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
                 <BreadCrumbs/>
-                <article>
-                    <HeaderLandingBanner title={getData['title']}
-                                         description={getData['description']}
+
+                    <HeaderLandingBanner title=""
+                                         description=""
                                          image={'https://auth.cochlear.com/'+getData['banner-image'].src}
                                          imagePath={getData['banner-image'].alt}
                                          additionalClass="is-dark"/>
                     <div className='l-content-container cf l-padding'>
-                        <div className="l-content-column">
+                        <article className="l-content-column">
                             <main id="main" tabIndex="-1" role="main" className="l-main">
+
+                                <ContentHeader title={getData['title']}
+                                               description={getData['description']} />
+
                                 <Cm01RichText body={getData['body-copy']}/>
                                 {/*
                                 <div className="sl">
@@ -85,9 +90,8 @@ class TreatingHearingLoss extends Component {
                                                     imagePath={getData['cm02-title'].path}
                                                     additionalClass="is-shaded is-large"/>
                             </main>
-                        </div>
+                        </article>
                     </div>
-                </article>
                 <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
             </div>
         );

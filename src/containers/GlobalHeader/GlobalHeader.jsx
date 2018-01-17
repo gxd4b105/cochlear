@@ -14,6 +14,7 @@ if (process.env.BROWSER) {
 }
 
 
+
 class Header extends Component {
     static fetchData({ store, params }) {
         if (store.getState().user.headerCountry != params.country || store.getState().user.headerCountry === null){
@@ -42,23 +43,25 @@ class Header extends Component {
             <div>
                 <header className={`global-header ${this.props.additionalClass}`}>
                     <div className="l-padding">
+                        <button className="nav-toggle js-offscreen-toggle" type="button" role="button" aria-label="Toggle navigation" data-offscreen-id="nav">
+                            <span className="lines"></span>
+                            <span className="vh">Toggle navigation</span>
+                        </button>
+
+
                         <div className="logo">
                             <a href={this.props.logoURL}><img src={this.props.logoPath} alt={this.props.title} /></a>
                         </div>
                         <h1>{this.props.headerTitle}</h1>
 
                         <OnScreeNav additionalClass="nav-onscreen__global-header">
-                            <OnScreenNav__Item title="Home Intl"
-                                               subtitle="This links to the first page"
+                            <OnScreenNav__Item title="Home"
+                                               subtitle="Home"
                                                path="/intl/home"/>
+                            <OnScreenNav__Item title="Treatment"
+                                               subtitle="Treating hearing loss"
+                                               path="/intl/treating-hearing-loss"/>
 
-                            <OnScreenNav__Item title="Second Intl"
-                                               subtitle="This links to the second page"
-                                               path="/intl/secondpage"/>
-
-                            <OnScreenNav__Item title="Third USA"
-                                               subtitle="This links to the third page"
-                                               path="/usa/thirdpage"/>
                         </OnScreeNav>
 
 

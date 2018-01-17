@@ -15,9 +15,9 @@ import Cm18Accordian__Item from "../../components/Cm18Accordian__Item/Cm18Accord
 import ContentHeader from "../../components/ContentHeader/ContentHeader.jsx";
 
 
-class TypesOfTreatment extends Component {
+class CostsAndAffordability extends Component {
     static fetchData({ store, params }) {
-        return store.dispatch(actions.getTypesOfTreatment());
+        return store.dispatch(actions.getCostsAndAffordability());
     }
 
     componentDidMount() {
@@ -25,9 +25,9 @@ class TypesOfTreatment extends Component {
 
     render() {
 
-        console.log(this.props.dataTypesOfTreatment);
+        console.log(this.props.dataCostsAndAffordability);
 
-        let getData = this.props.dataTypesOfTreatment;
+        let getData = this.props.dataCostsAndAffordability;
 
         return (
             <div className="l-layout l-one-column cf">
@@ -51,29 +51,8 @@ class TypesOfTreatment extends Component {
                             <ContentHeader title={getData['title']}
                                            description={getData['description']} />
 
-                            <Cm01RichText body={getData['body-copy']}/>
 
 
-                            <div className="sl">
-                                <div className="sl-list has-2-items">
-                                    <div className="sl-item">
-                                        <Cm02ContentTile    title={getData['cm02-title-01'].title}
-                                                            description={getData['cm02-description-01']}
-                                                            path={getData['cm02-title-01'].path}
-                                                            image={'https://auth.cochlear.com'+getData['cm02-image-01'].src}
-                                                            imagePath={getData['cm02-title-01'].path}
-                                                            additionalClass="is-shaded is-small"/>
-                                    </div>
-                                    <div className="sl-item">
-                                        <Cm02ContentTile    title={getData['cm02-title-02'].title}
-                                                            description={getData['cm02-description-02']}
-                                                            path={getData['cm02-title-02'].path}
-                                                            image={'https://auth.cochlear.com'+getData['cm02-image-02'].src}
-                                                            imagePath={getData['cm02-title-02'].path}
-                                                            additionalClass="is-shaded is-small"/>
-                                    </div>
-                                </div>
-                            </div>
 
                         </main>
                     </article>
@@ -92,4 +71,4 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators(actions, dispatch);
 }
-export default connect(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TypesOfTreatment);
+export default connect(mapStateToProps, mapDispatchToProps, null, { withRef: true })(CostsAndAffordability);
