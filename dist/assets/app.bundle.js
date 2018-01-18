@@ -6072,8 +6072,7 @@ var ClinicNearYou = function (_React$Component) {
     _createClass(ClinicNearYou, [{
         key: 'componentWillMount',
         value: function componentWillMount() {
-            var that = this;
-            this.setState({ markers: [], lat: 63, lng: -51 });
+            this.setState({ markers: [], lat: -32, lng: 151, label: '' });
         }
     }, {
         key: 'componentDidMount',
@@ -6087,6 +6086,15 @@ var ClinicNearYou = function (_React$Component) {
             // 	`/raw/758852bbc1979f6c4522ab4e92d1c92cba8fb0dc/data.json`
             // ].join("")
 
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    console.log('ok');
+                    console.log(position.coords.latitude);
+                    _this2.setState({ lat: position.coords.latitude, lng: position.coords.longitude });
+                });
+            }
+
             var url = 'https://api.myjson.com/bins/nzoqd';
 
             fetch(url).then(function (res) {
@@ -6098,6 +6106,7 @@ var ClinicNearYou = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
+            var _this3 = this;
 
             return _react2.default.createElement(
                 'section',
@@ -6168,14 +6177,40 @@ var ClinicNearYou = function (_React$Component) {
                     )
                 ),
                 _react2.default.createElement(
+                    'div',
+                    null,
+                    'The closest clinics to ',
+                    this.state.label,
+                    ':'
+                ),
+                _react2.default.createElement(
+                    'ul',
+                    null,
+                    this.state.markers.map(function (marker) {
+
+                        if (_this3.getDistance(_this3.state.lat, _this3.state.lng, marker.lat, marker.lng) < 1000) {
+
+                            return _react2.default.createElement(
+                                'li',
+                                { key: marker.lat },
+                                marker.lat,
+                                ' , ',
+                                marker.lng,
+                                ', ',
+                                marker.text
+                            );
+                        }
+                    })
+                ),
+                _react2.default.createElement(
                     _GoogleMapsWrapper2.default,
                     {
                         googleMapURL: 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyD49FWPcw5h8bj6-LnHNaCkbqhFm7hULFI',
                         loadingElement: _react2.default.createElement('div', { style: { height: '100%' } }),
                         containerElement: _react2.default.createElement('div', { style: { height: '400px' } }),
                         mapElement: _react2.default.createElement('div', { style: { height: '100%' } }),
-                        defaultZoom: 3,
-                        defaultCenter: { lat: 25.0391667, lng: 121.525 },
+                        defaultZoom: 12,
+                        defaultCenter: { lat: -33.0391667, lng: 131.525 },
                         center: { lat: this.state.lat, lng: this.state.lng }
                     },
                     _react2.default.createElement(_reactGeosuggest2.default, {
@@ -6201,10 +6236,37 @@ var ClinicNearYou = function (_React$Component) {
     }, {
         key: 'onSuggestSelect',
         value: function onSuggestSelect(suggest) {
-            console.log('adsfasdfasdfsd');
+            console.log('adsfasdfasdfsd ', suggest.label);
             console.log(suggest);
 
-            this.setState({ lat: suggest.location.lat, lng: suggest.location.lng });
+            this.setState({ lat: suggest.location.lat, lng: suggest.location.lng, label: suggest.label });
+        }
+    }, {
+        key: 'getDistance',
+        value: function getDistance(lat1, lng1, lat2, lng2, miles) {
+            // miles optional
+            if (typeof miles === "undefined") {
+                miles = false;
+            }
+            function deg2rad(deg) {
+                return deg * (Math.PI / 180);
+            }
+            function square(x) {
+                return Math.pow(x, 2);
+            }
+            var r = 6371; // radius of the earth in km
+            lat1 = deg2rad(lat1);
+            lat2 = deg2rad(lat2);
+            var lat_dif = lat2 - lat1;
+            var lng_dif = deg2rad(lng2 - lng1);
+            var a = square(Math.sin(lat_dif / 2)) + Math.cos(lat1) * Math.cos(lat2) * square(Math.sin(lng_dif / 2));
+            var d = 2 * r * Math.asin(Math.sqrt(a));
+            if (miles) {
+                return d * 0.621371;
+            } //return miles
+            else {
+                    return d;
+                } //return km
         }
     }]);
 

@@ -10,8 +10,8 @@ class ClinicNearYou extends React.Component {
     
 
 	componentWillMount() {
-        let that = this;
-		this.setState({ markers: [], lat: 63, lng: -51 })
+        this.setState({ markers: [], lat: -32, lng: 151, label: '' });
+
 	}
 
     componentDidMount() {
@@ -21,6 +21,14 @@ class ClinicNearYou extends React.Component {
 		// 	`/farrrr/dfda7dd7fccfec5474d3`,
 		// 	`/raw/758852bbc1979f6c4522ab4e92d1c92cba8fb0dc/data.json`
         // ].join("")
+
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                this.setState({ lat: position.coords.latitude, lng: position.coords.longitude });
+
+            });
+        }
         
         const url = 'https://api.myjson.com/bins/nzoqd';
 		
@@ -62,7 +70,22 @@ class ClinicNearYou extends React.Component {
             </form>
         </div>
 
-        
+        <div>The closest clinics to {this.state.label}:</div>
+<ul>
+        {this.state.markers.map((marker) => {
+
+            
+
+
+    if(this.getDistance(this.state.lat,this.state.lng,marker.lat,marker.lng) < 1000){
+ 
+
+
+   return <li key={marker.lat}>{marker.lat} , {marker.lng}, {marker.text}</li>
+}
+
+})}
+</ul>
 
 
         <GoogleMapsWrapper
@@ -70,8 +93,8 @@ class ClinicNearYou extends React.Component {
 				loadingElement={<div style={{ height: `100%` }} />}
 				containerElement={<div style={{ height: `400px` }} />}
 				mapElement={<div style={{ height: `100%` }} />}
-				defaultZoom={3}
-				defaultCenter={{ lat: 25.0391667, lng: 121.525 }}
+				defaultZoom={12}
+				defaultCenter={{ lat: -33.0391667, lng: 131.525 }}
                 center={{lat: this.state.lat, lng: this.state.lng}}
                 >
                 
@@ -108,12 +131,26 @@ class ClinicNearYou extends React.Component {
 
 
     onSuggestSelect(suggest) {
-        console.log('adsfasdfasdfsd');
+        console.log('adsfasdfasdfsd ',suggest.label);
         console.log(suggest);
 
-        this.setState({ lat: suggest.location.lat, lng: suggest.location.lng });
+        this.setState({ lat: suggest.location.lat, lng: suggest.location.lng, label:suggest.label });
       }
 
+      getDistance(lat1, lng1, lat2, lng2, miles) { // miles optional
+        if (typeof miles === "undefined"){miles=false;}
+        function deg2rad(deg){return deg * (Math.PI/180);}
+        function square(x){return Math.pow(x, 2);}
+        var r=6371; // radius of the earth in km
+        lat1=deg2rad(lat1);
+        lat2=deg2rad(lat2);
+        var lat_dif=lat2-lat1;
+        var lng_dif=deg2rad(lng2-lng1);
+        var a=square(Math.sin(lat_dif/2))+Math.cos(lat1)*Math.cos(lat2)*square(Math.sin(lng_dif/2));
+        var d=2*r*Math.asin(Math.sqrt(a));
+        if (miles){return d * 0.621371;} //return miles
+        else{return d;} //return km
+      }
 
 
 

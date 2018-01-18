@@ -7,9 +7,7 @@ import GlobalFooter from './../GlobalFooter/GlobalFooter.jsx';
 import Body from '../../components/Body.jsx';
 import * as actions from '../../shared/app/redux/actions/actions';
 if (process.env.BROWSER) {
-    console.log('TESTAATTTTTTTTTklm');
     require("./Home.scss");
-    //import style from './Home.scss';
   }
 
 class Home extends Component {
