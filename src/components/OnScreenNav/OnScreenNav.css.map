@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,4BAA6B;EAC1B,KAAK,EAAE,IAAI;EACX,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,QAAQ,EAAE,QAAQ;EAElB,iCAAK;IACH,OAAO,EAAE,IAAI;IACb,KAAK,EAAE,IAAI",
+"sources": ["OnScreenNav.scss"],
+"names": [],
+"file": "OnScreenNav.css"
+}

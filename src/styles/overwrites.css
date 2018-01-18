@@ -1,0 +1,41 @@
+body {
+  font-family: "Trebuchet MS","Gill Sans","Helvetica Neue",Arial,sans-serif; }
+
+/* COMPONENTS */
+.global-header h1 {
+  line-height: 85px; }
+.global-header .logo {
+  height: auto; }
+
+.nav-onscreen__global-header {
+  float: left;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative; }
+.nav-onscreen__global-header .nav {
+  display: flex;
+  float: none; }
+
+.nav-onscreen__global-header {
+  margin-top: 25px; }
+.nav-onscreen__global-header .nav > li {
+  float: none;
+  flex-grow: 1; }
+.nav-onscreen__global-header .nav > li a.active {
+  background-color: #efefef;}
+.nav-onscreen__global-header .nav-item .sub-text {
+  display: block;
+  font-size: 12px; }
+.nav-onscreen__global-header .login {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0; }
+
+.landing-banner .image {
+  display: none; }
+
+.landing-banner .image {
+  display: block; }
