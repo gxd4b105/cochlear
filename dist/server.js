@@ -1461,9 +1461,13 @@ var _GoogleMapsWrapper2 = _interopRequireDefault(_GoogleMapsWrapper);
 
 var _reactGoogleMaps = __webpack_require__(20);
 
-var _MarkerClusterer = __webpack_require__(70);
+var _MarkerClusterer = __webpack_require__(71);
 
 var _MarkerClusterer2 = _interopRequireDefault(_MarkerClusterer);
+
+var _reactGeosuggest = __webpack_require__(70);
+
+var _reactGeosuggest2 = _interopRequireDefault(_reactGeosuggest);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1485,7 +1489,8 @@ var ClinicNearYou = function (_React$Component) {
     _createClass(ClinicNearYou, [{
         key: 'componentWillMount',
         value: function componentWillMount() {
-            this.setState({ markers: [] });
+            var that = this;
+            this.setState({ markers: [], lat: 63, lng: -51 });
         }
     }, {
         key: 'componentDidMount',
@@ -1587,7 +1592,12 @@ var ClinicNearYou = function (_React$Component) {
                         containerElement: _react2.default.createElement('div', { style: { height: '400px' } }),
                         mapElement: _react2.default.createElement('div', { style: { height: '100%' } }),
                         defaultZoom: 3,
-                        defaultCenter: { lat: 25.0391667, lng: 121.525 } },
+                        defaultCenter: { lat: 25.0391667, lng: 121.525 },
+                        center: { lat: this.state.lat, lng: this.state.lng }
+                    },
+                    _react2.default.createElement(_reactGeosuggest2.default, {
+                        onSuggestSelect: this.onSuggestSelect.bind(this)
+                    }),
                     _react2.default.createElement(
                         _MarkerClusterer2.default,
                         {
@@ -1604,6 +1614,14 @@ var ClinicNearYou = function (_React$Component) {
                     )
                 )
             );
+        }
+    }, {
+        key: 'onSuggestSelect',
+        value: function onSuggestSelect(suggest) {
+            console.log('adsfasdfasdfsd');
+            console.log(suggest);
+
+            this.setState({ lat: suggest.location.lat, lng: suggest.location.lng });
         }
     }]);
 
@@ -5019,6 +5037,12 @@ module.exports = require("axios");
 
 /***/ }),
 /* 70 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-geosuggest");
+
+/***/ }),
+/* 71 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-google-maps/lib/components/addons/MarkerClusterer");

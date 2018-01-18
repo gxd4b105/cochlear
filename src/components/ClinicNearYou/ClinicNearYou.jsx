@@ -2,11 +2,16 @@ import React from 'react';
 import GoogleMapsWrapper from './GoogleMapsWrapper.jsx';
 import { Marker } from 'react-google-maps';
 import MarkerClusterer from "react-google-maps/lib/components/addons/MarkerClusterer";
+import Geosuggest from 'react-geosuggest';
+
 
 class ClinicNearYou extends React.Component {
 
+    
+
 	componentWillMount() {
-		this.setState({ markers: [] })
+        let that = this;
+		this.setState({ markers: [], lat: 63, lng: -51 })
 	}
 
     componentDidMount() {
@@ -57,7 +62,7 @@ class ClinicNearYou extends React.Component {
             </form>
         </div>
 
-
+        
 
 
         <GoogleMapsWrapper
@@ -66,7 +71,13 @@ class ClinicNearYou extends React.Component {
 				containerElement={<div style={{ height: `400px` }} />}
 				mapElement={<div style={{ height: `100%` }} />}
 				defaultZoom={3}
-				defaultCenter={{ lat: 25.0391667, lng: 121.525 }}>
+				defaultCenter={{ lat: 25.0391667, lng: 121.525 }}
+                center={{lat: this.state.lat, lng: this.state.lng}}
+                >
+                
+                <Geosuggest 
+                onSuggestSelect={this.onSuggestSelect.bind(this)}
+                />
 				<MarkerClusterer
 					averageCenter
 					enableRetinaIcons
@@ -79,6 +90,7 @@ class ClinicNearYou extends React.Component {
 							/>
 					))}
 				</MarkerClusterer>
+                
 			</GoogleMapsWrapper>
 
 
@@ -93,6 +105,21 @@ class ClinicNearYou extends React.Component {
 
         );
     }
+
+
+    onSuggestSelect(suggest) {
+        console.log('adsfasdfasdfsd');
+        console.log(suggest);
+
+        this.setState({ lat: suggest.location.lat, lng: suggest.location.lng });
+      }
+
+
+
+
+
+
+
 }
 
 export default ClinicNearYou;
