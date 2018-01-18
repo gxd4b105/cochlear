@@ -5974,7 +5974,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 Object.defineProperty(exports, "__esModule", {
-				value: true
+    value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -6002,135 +6002,140 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var ClinicNearYou = function (_React$Component) {
-				_inherits(ClinicNearYou, _React$Component);
+    _inherits(ClinicNearYou, _React$Component);
 
-				function ClinicNearYou() {
-								_classCallCheck(this, ClinicNearYou);
+    function ClinicNearYou() {
+        _classCallCheck(this, ClinicNearYou);
 
-								return _possibleConstructorReturn(this, (ClinicNearYou.__proto__ || Object.getPrototypeOf(ClinicNearYou)).apply(this, arguments));
-				}
+        return _possibleConstructorReturn(this, (ClinicNearYou.__proto__ || Object.getPrototypeOf(ClinicNearYou)).apply(this, arguments));
+    }
 
-				_createClass(ClinicNearYou, [{
-								key: 'componentWillMount',
-								value: function componentWillMount() {
-												this.setState({ markers: [] });
-								}
-				}, {
-								key: 'componentDidMount',
-								value: function componentDidMount() {
-												var _this2 = this;
+    _createClass(ClinicNearYou, [{
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            this.setState({ markers: [] });
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _this2 = this;
 
-												var url = [
-												// Length issue
-												'https://gist.githubusercontent.com', '/farrrr/dfda7dd7fccfec5474d3', '/raw/758852bbc1979f6c4522ab4e92d1c92cba8fb0dc/data.json'].join("");
+            // const url = [
+            // 	// Length issue
+            // 	`https://gist.githubusercontent.com`,
+            // 	`/farrrr/dfda7dd7fccfec5474d3`,
+            // 	`/raw/758852bbc1979f6c4522ab4e92d1c92cba8fb0dc/data.json`
+            // ].join("")
 
-												fetch(url).then(function (res) {
-																return res.json();
-												}).then(function (data) {
-																_this2.setState({ markers: data.photos });
-												});
-								}
-				}, {
-								key: 'render',
-								value: function render() {
+            var url = 'https://api.myjson.com/bins/nzoqd';
 
-												return _react2.default.createElement(
-																'section',
-																{ className: 'cm cm-subscription-banner ' + this.props.additionalClass },
-																_react2.default.createElement(
-																				'div',
-																				{ className: 'l-padding' },
-																				_react2.default.createElement(
-																								'form',
-																								{ className: 'fn_validate', action: '/intl/clinic-finder' },
-																								_react2.default.createElement('div', { className: 'fn_validate_summary' }),
-																								_react2.default.createElement(
-																												'fieldset',
-																												null,
-																												_react2.default.createElement(
-																																'div',
-																																{ className: 'title-text-container' },
-																																_react2.default.createElement(
-																																				'legend',
-																																				null,
-																																				this.props.title
-																																),
-																																_react2.default.createElement(
-																																				'p',
-																																				null,
-																																				this.props.description
-																																)
-																												),
-																												_react2.default.createElement(
-																																'div',
-																																{ className: 'input-container' },
-																																_react2.default.createElement(
-																																				'div',
-																																				{ className: 'ctrl-holder width-l' },
-																																				_react2.default.createElement(
-																																								'label',
-																																								{ htmlFor: 'txt-postcode' },
-																																								'Postcode',
-																																								_react2.default.createElement(
-																																												'em',
-																																												null,
-																																												'*',
-																																												_react2.default.createElement(
-																																																'span',
-																																																{ className: 'vh' },
-																																																'Required field'
-																																												)
-																																								)
-																																				),
-																																				_react2.default.createElement(
-																																								'div',
-																																								{ className: 'ctrl' },
-																																								_react2.default.createElement('input', { name: 'txt-postcode', id: 'txt-postcode', className: 'text', 'data-rule-required': 'true' }),
-																																								_react2.default.createElement('div', { className: 'status-msg' })
-																																				)
-																																),
-																																_react2.default.createElement(
-																																				'div',
-																																				{ className: 'btn-holder' },
-																																				_react2.default.createElement(
-																																								'button',
-																																								{ role: 'button', type: 'submit', className: 'fn_validate_submit cta' },
-																																								'Search'
-																																				)
-																																)
-																												)
-																								)
-																				)
-																),
-																_react2.default.createElement(
-																				_GoogleMapsWrapper2.default,
-																				{
-																								googleMapURL: 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyD49FWPcw5h8bj6-LnHNaCkbqhFm7hULFI',
-																								loadingElement: _react2.default.createElement('div', { style: { height: '100%' } }),
-																								containerElement: _react2.default.createElement('div', { style: { height: '400px' } }),
-																								mapElement: _react2.default.createElement('div', { style: { height: '100%' } }),
-																								defaultZoom: 3,
-																								defaultCenter: { lat: 25.0391667, lng: 121.525 } },
-																				_react2.default.createElement(
-																								_MarkerClusterer2.default,
-																								{
-																												averageCenter: true,
-																												enableRetinaIcons: true,
-																												gridSize: 60
-																								},
-																								this.state.markers.map(function (marker) {
-																												return _react2.default.createElement(_reactGoogleMaps.Marker, {
-																																key: marker.photo_id,
-																																position: { lat: marker.latitude, lng: marker.longitude }
-																												});
-																								})
-																				)
-																)
-												);
-								}
-				}]);
+            fetch(url).then(function (res) {
+                return res.json();
+            }).then(function (data) {
+                _this2.setState({ markers: data });
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
 
-				return ClinicNearYou;
+            return _react2.default.createElement(
+                'section',
+                { className: 'cm cm-subscription-banner ' + this.props.additionalClass },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'l-padding' },
+                    _react2.default.createElement(
+                        'form',
+                        { className: 'fn_validate', action: '/intl/clinic-finder' },
+                        _react2.default.createElement('div', { className: 'fn_validate_summary' }),
+                        _react2.default.createElement(
+                            'fieldset',
+                            null,
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'title-text-container' },
+                                _react2.default.createElement(
+                                    'legend',
+                                    null,
+                                    this.props.title
+                                ),
+                                _react2.default.createElement(
+                                    'p',
+                                    null,
+                                    this.props.description
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'input-container' },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'ctrl-holder width-l' },
+                                    _react2.default.createElement(
+                                        'label',
+                                        { htmlFor: 'txt-postcode' },
+                                        'Postcode',
+                                        _react2.default.createElement(
+                                            'em',
+                                            null,
+                                            '*',
+                                            _react2.default.createElement(
+                                                'span',
+                                                { className: 'vh' },
+                                                'Required field'
+                                            )
+                                        )
+                                    ),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'ctrl' },
+                                        _react2.default.createElement('input', { name: 'txt-postcode', id: 'txt-postcode', className: 'text', 'data-rule-required': 'true' }),
+                                        _react2.default.createElement('div', { className: 'status-msg' })
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'btn-holder' },
+                                    _react2.default.createElement(
+                                        'button',
+                                        { role: 'button', type: 'submit', className: 'fn_validate_submit cta' },
+                                        'Search'
+                                    )
+                                )
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    _GoogleMapsWrapper2.default,
+                    {
+                        googleMapURL: 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyD49FWPcw5h8bj6-LnHNaCkbqhFm7hULFI',
+                        loadingElement: _react2.default.createElement('div', { style: { height: '100%' } }),
+                        containerElement: _react2.default.createElement('div', { style: { height: '400px' } }),
+                        mapElement: _react2.default.createElement('div', { style: { height: '100%' } }),
+                        defaultZoom: 3,
+                        defaultCenter: { lat: 25.0391667, lng: 121.525 } },
+                    _react2.default.createElement(
+                        _MarkerClusterer2.default,
+                        {
+                            averageCenter: true,
+                            enableRetinaIcons: true,
+                            gridSize: 60
+                        },
+                        this.state.markers.map(function (marker) {
+                            return _react2.default.createElement(_reactGoogleMaps.Marker, {
+                                key: marker.text,
+                                position: { lat: parseInt(marker.lat), lng: parseInt(marker.lng) }
+                            });
+                        })
+                    )
+                )
+            );
+        }
+    }]);
+
+    return ClinicNearYou;
 }(_react2.default.Component);
 
 exports.default = ClinicNearYou;

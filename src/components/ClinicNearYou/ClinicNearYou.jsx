@@ -10,17 +10,19 @@ class ClinicNearYou extends React.Component {
 	}
 
     componentDidMount() {
-		const url = [
-			// Length issue
-			`https://gist.githubusercontent.com`,
-			`/farrrr/dfda7dd7fccfec5474d3`,
-			`/raw/758852bbc1979f6c4522ab4e92d1c92cba8fb0dc/data.json`
-		].join("")
+		// const url = [
+		// 	// Length issue
+		// 	`https://gist.githubusercontent.com`,
+		// 	`/farrrr/dfda7dd7fccfec5474d3`,
+		// 	`/raw/758852bbc1979f6c4522ab4e92d1c92cba8fb0dc/data.json`
+        // ].join("")
+        
+        const url = 'https://api.myjson.com/bins/nzoqd';
 		
 		fetch(url)
 		.then(res => res.json())
 		.then(data => {
-			this.setState({ markers: data.photos });
+			this.setState({ markers: data });
 		});
 	}
 
@@ -72,8 +74,8 @@ class ClinicNearYou extends React.Component {
 					>
 					{this.state.markers.map(marker => (
 						<Marker
-							key={marker.photo_id}
-							position={{ lat: marker.latitude, lng: marker.longitude }}
+							key={marker.text}
+							position={{ lat: parseInt(marker.lat), lng: parseInt(marker.lng) }}
 							/>
 					))}
 				</MarkerClusterer>
