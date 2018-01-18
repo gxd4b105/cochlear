@@ -6089,13 +6089,11 @@ var ClinicNearYou = function (_React$Component) {
 
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function (position) {
-                    console.log('ok');
-                    console.log(position.coords.latitude);
                     _this2.setState({ lat: position.coords.latitude, lng: position.coords.longitude });
                 });
             }
 
-            var url = 'https://api.myjson.com/bins/nzoqd';
+            var url = 'https://api.myjson.com/bins/193iwd';
 
             fetch(url).then(function (res) {
                 return res.json();
@@ -6180,7 +6178,11 @@ var ClinicNearYou = function (_React$Component) {
                     'div',
                     null,
                     'The closest clinics to ',
-                    this.state.label,
+                    _react2.default.createElement(
+                        'strong',
+                        null,
+                        this.state.label.length > 0 ? this.state.label : 'you'
+                    ),
                     ':'
                 ),
                 _react2.default.createElement(
@@ -6188,16 +6190,23 @@ var ClinicNearYou = function (_React$Component) {
                     null,
                     this.state.markers.map(function (marker) {
 
-                        if (_this3.getDistance(_this3.state.lat, _this3.state.lng, marker.lat, marker.lng) < 1000) {
+                        var markerDistance = _this3.getDistance(_this3.state.lat, _this3.state.lng, marker.lat, marker.lng);
+
+                        if (markerDistance < 1000) {
 
                             return _react2.default.createElement(
                                 'li',
                                 { key: marker.lat },
-                                marker.lat,
-                                ' , ',
-                                marker.lng,
-                                ', ',
-                                marker.text
+                                marker.text,
+                                _react2.default.createElement('br', null),
+                                marker.address,
+                                ' \xA0 ',
+                                _react2.default.createElement(
+                                    'span',
+                                    { style: { 'fontSize': '12px' } },
+                                    parseInt(markerDistance),
+                                    'km'
+                                )
                             );
                         }
                     })
@@ -6236,7 +6245,6 @@ var ClinicNearYou = function (_React$Component) {
     }, {
         key: 'onSuggestSelect',
         value: function onSuggestSelect(suggest) {
-            console.log('adsfasdfasdfsd ', suggest.label);
             console.log(suggest);
 
             this.setState({ lat: suggest.location.lat, lng: suggest.location.lng, label: suggest.label });
@@ -13443,9 +13451,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (true) {
-    console.log('TESTAATTTTTTTTTklm');
     __webpack_require__(551);
-    //import style from './Home.scss';
 }
 
 var Home = function (_Component) {

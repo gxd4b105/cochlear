@@ -25,12 +25,12 @@ class ClinicNearYou extends React.Component {
 
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position) => {
-                this.setState({ lat: position.coords.latitude, lng: position.coords.longitude });
+                this.setState({ lat: position.coords.latitude, lng: position.coords.longitude});
 
             });
         }
         
-        const url = 'https://api.myjson.com/bins/nzoqd';
+        const url = 'https://api.myjson.com/bins/193iwd';
 		
 		fetch(url)
 		.then(res => res.json())
@@ -70,18 +70,22 @@ class ClinicNearYou extends React.Component {
             </form>
         </div>
 
-        <div>The closest clinics to {this.state.label}:</div>
+
+
+
+
+        <div>The closest clinics to <strong>{this.state.label.length >0 ? this.state.label : 'you'}</strong>:</div>
 <ul>
         {this.state.markers.map((marker) => {
 
-            
+          let markerDistance = this.getDistance(this.state.lat,this.state.lng,marker.lat,marker.lng);  
 
 
-    if(this.getDistance(this.state.lat,this.state.lng,marker.lat,marker.lng) < 1000){
+    if(markerDistance < 1000){
  
 
 
-   return <li key={marker.lat}>{marker.lat} , {marker.lng}, {marker.text}</li>
+   return <li key={marker.lat}><strong>{marker.text}</strong><br />{marker.address} &nbsp; <span style={{'fontSize':'12px'}}>{parseInt(markerDistance)}km</span></li>
 }
 
 })}
@@ -97,10 +101,14 @@ class ClinicNearYou extends React.Component {
 				defaultCenter={{ lat: -33.0391667, lng: 131.525 }}
                 center={{lat: this.state.lat, lng: this.state.lng}}
                 >
-                
-                <Geosuggest 
+
+
+<Geosuggest 
                 onSuggestSelect={this.onSuggestSelect.bind(this)}
                 />
+
+                
+                
 				<MarkerClusterer
 					averageCenter
 					enableRetinaIcons
@@ -131,7 +139,6 @@ class ClinicNearYou extends React.Component {
 
 
     onSuggestSelect(suggest) {
-        console.log('adsfasdfasdfsd ',suggest.label);
         console.log(suggest);
 
         this.setState({ lat: suggest.location.lat, lng: suggest.location.lng, label:suggest.label });
