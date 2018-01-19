@@ -15,7 +15,8 @@ const initialState = {
     dataTreatingHearingLoss: null,
     dataTypesOfTreatment: null,
     dataHearingAidVsImplantableSolutions: null,
-    dataCostsAndAffordability: null
+    dataCostsAndAffordability: null,
+    dataFindAClinic: null
 };
 export default function userReducer(state = initialState, action) {
     switch (action.type) {
@@ -39,6 +40,8 @@ export default function userReducer(state = initialState, action) {
             return {...state, dataTreatingHearingLoss: action.payload}
         case Types.UPDATE_HEARINGAIDSVSIMPLANTABLESOLUTIONS:
             return {...state, dataHearingAidVsImplantableSolutions: action.payload}
+        case Types.UPDATE_FINDACLINIC:
+            return {...state, dataFindAClinic: action.payload}
         case Types.UPDATE_TYPESOFTREATMENT:
             return {...state, dataTypesOfTreatment: action.payload}
         case Types.UPDATE_COSTSANDAFFORDABILITY:

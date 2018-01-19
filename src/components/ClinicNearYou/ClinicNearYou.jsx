@@ -7,7 +7,7 @@ class ClinicNearYou extends React.Component {
 
     <section className={`cm cm-subscription-banner ${this.props.additionalClass}`}>
         <div className="l-padding">
-            <form className="fn_validate" action="/intl/clinic-finder">
+            <form className="fn_validate" action="/intl/find-a-clinic">
                 <div className="fn_validate_summary"></div>
                 <fieldset>
                     <div className="title-text-container">

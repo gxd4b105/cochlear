@@ -56,10 +56,14 @@ class HearingAidVsCochlearImplant extends Component {
                             <Cm02bContentTile title={getData['cm02b-title-01']}
                                               body={getData['cm02b-description-01']}
                                               image={'https://auth.cochlear.com/'+getData['cm02b-image-01'].src}/>
+
+                            <ClinicNearYou title="Clinics near you"
+                                           description="find a clinic that is nearest to you"
+                                            additionalClass="is-shaded"/>
                         </main>
                     </article>
                 </div>
-
+                <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
             </div>
         );
     }

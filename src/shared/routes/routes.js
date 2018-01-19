@@ -5,7 +5,7 @@ import User from '../app/user.jsx';
 
 import HomePage from "../../containers/HomePage/HomePage.jsx";
 import HearingAidVsImplantableSolutions from "../../containers/HearingAidVsImplantableSolutions/HearingAidVsImplantableSolutions.jsx";
-import ClinicFinder from "../../containers/ClinicFinder/ClinicFinder.jsx";
+import FindAClinic from "../../containers/FindAClinic/FindAClinic.jsx";
 import StatsAndProofs from "../../containers/StatsAndProofs/StatsAndProofs.jsx";
 import TreatmentOptions from "../../containers/TreatmentOptions/TreatmentOptions.jsx";
 import TypesOfTreatment from "../../containers/TypesOfTreatment/TypesOfTreatment.jsx";
@@ -77,8 +77,8 @@ export default {
             exact: true
         },
         {
-            path: '/:country/clinic-finder',
-            component: ClinicFinder,
+            path: '/:country/find-a-clinic',
+            component: FindAClinic,
             exact: true
         }
     ],

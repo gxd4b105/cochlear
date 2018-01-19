@@ -5,7 +5,7 @@ class Cm02bContentTile extends React.Component {
 
         return (
             <section className={`cm cm-content-tile ${this.props.additionalClass}`}>
-                <div className="cm-image-block-link">
+                <div>
                     <h1>{this.props.title}</h1>
                     <div className="cm cm-rich-text" dangerouslySetInnerHTML={{ __html: this.props.body }}>
 

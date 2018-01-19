@@ -65,9 +65,6 @@ class Header extends Component {
                             <OnScreenNav__Item title="Home"
                                                subtitle="Home"
                                                path="/intl/home"/>
-                            <OnScreenNav__Item title="Treatment"
-                                               subtitle="Treating hearing loss"
-                                               path="/intl/treating-hearing-loss"/>
 
                         </OnScreeNav>
 

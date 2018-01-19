@@ -82,6 +82,13 @@ export function getHearingAidVsImplantableSolutions() {
     }
 }
 
+export function getFindAClinic() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/find-a-clinic`);
+        dispatch({ type: Types.UPDATE_FINDACLINIC, payload: data });
+    }
+}
 
 export function getCostsAndAffordability() {
     return async function (dispatch, getState) {
