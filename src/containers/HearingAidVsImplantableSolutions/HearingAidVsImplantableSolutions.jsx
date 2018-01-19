@@ -13,6 +13,7 @@ import HeaderLandingBanner from "../../components/HeaderLandingBanner/HeaderLand
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs.jsx";
 import ClinicNearYou from "../../components/ClinicNearYou/ClinicNearYou.jsx";
 import ContentHeader from "../../components/ContentHeader/ContentHeader.jsx";
+import Cm02bContentTile from "../../components/Cm02bContentTile/Cm02bContentTile.jsx"
 
 
 class HearingAidVsCochlearImplant extends Component {
@@ -52,6 +53,9 @@ class HearingAidVsCochlearImplant extends Component {
 
                             <Cm01RichText body={getData['body-copy']}/>
 
+                            <Cm02bContentTile title={getData['cm02b-title-01']}
+                                              body={getData['cm02b-description-01']}
+                                              image={'https://auth.cochlear.com/'+getData['cm02b-image-01'].src}/>
                         </main>
                     </article>
                 </div>

@@ -89,6 +89,32 @@ function renderFullPage(html, preloadedState, helmet) {
       <head>
         <link rel="icon" href="/dist/favicon.ico" type="image/ico" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        
+		<script type="text/javascript">
+			let gtm4wp_datalayer_name = "dataLayer";
+			if ( "undefined" == typeof dataLayer ) {
+				dataLayer = new Array();
+			}
+		</script>	
+        
+        
+	   <script type="text/javascript">
+function dataLayerPush (){
+	dataLayer.push({
+		page:{
+			pageInfo:{			
+				"page-title":  '',
+				"page-url": window.location.href
+			}
+		}
+	}); 
+}
+
+dataLayerPush(); 
+
+
+		</script>	
+        
         ${helmet.title.toString()}
         ${helmet.meta.toString()}
         ${helmet.link.toString()}

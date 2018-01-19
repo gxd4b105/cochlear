@@ -1,22 +1,24 @@
-.nav-onscreen__global-header {
+.nav-onscreen {
+  &.nav-onscreen__global-header {
 
-  margin-top: 25px;
-
-  .nav > li {
-    float: none;
-    flex-grow: 1;
-  }
-  .nav-item {
-    span {
-      display: block;
-      font-size: 12px;
+    margin-top: 25px;
+    display: block;
+    .nav > li {
+      float: none;
+      flex-grow: 1;
     }
-  }
-  .login {
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    top: 0;
-    right: 0;
+    .nav-item {
+      span {
+        display: block;
+        font-size: 12px;
+      }
+    }
+    .login {
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
 }

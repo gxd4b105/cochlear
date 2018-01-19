@@ -1,12 +1,13 @@
-.nav-onscreen__global-header {
-  margin-top: 25px; }
-  .nav-onscreen__global-header .nav > li {
+.nav-onscreen.nav-onscreen__global-header {
+  margin-top: 25px;
+  display: block; }
+  .nav-onscreen.nav-onscreen__global-header .nav > li {
     float: none;
     flex-grow: 1; }
-  .nav-onscreen__global-header .nav-item span {
+  .nav-onscreen.nav-onscreen__global-header .nav-item span {
     display: block;
     font-size: 12px; }
-  .nav-onscreen__global-header .login {
+  .nav-onscreen.nav-onscreen__global-header .login {
     padding: 0;
     margin: 0;
     position: absolute;

@@ -14,6 +14,9 @@ import Cm18Accordian from "../../components/Cm18Accordian/Cm18Accordian.jsx";
 import Cm18Accordian__Item from "../../components/Cm18Accordian__Item/Cm18Accordian__Item.jsx";
 import ContentHeader from "../../components/ContentHeader/ContentHeader.jsx";
 
+if (typeof window === 'undefined') {
+    global.window = {}
+}
 
 class TypesOfTreatment extends Component {
     static fetchData({ store, params }) {
@@ -23,18 +26,26 @@ class TypesOfTreatment extends Component {
     componentDidMount() {
     }
 
+
     render() {
 
         console.log(this.props.dataTypesOfTreatment);
-
         let getData = this.props.dataTypesOfTreatment;
+
+
+        console.log(global.window.dataLayer);
 
         return (
             <div className="l-layout l-one-column cf">
                 <Helmet>
                     <meta charSet="utf-8" />
                     <title>{getData['title']}</title>
+                    <meta name="title" content={getData['title']} />
+                    <meta name="description" content={getData['description']} />
+                    <meta name="keywords" content="Hearing aids for children,Sensorineural hearing loss in children,Conductive hearing loss in children,Single sided deafness in children,hearing aids,unilateral hearing loss in children,hearing loss in one ear" />
+                    <link rel="canonical" href="http://www.cochlear.com/wps/wcm/connect/intl/home/understand/my-child-has-hl" />
                 </Helmet>
+
                 <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
                 <BreadCrumbs/>
 

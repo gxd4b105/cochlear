@@ -7,6 +7,11 @@ import * as actions from '../../shared/app/redux/actions/actions';
 import OnScreeNav from '../../components/OnScreenNav/OnScreeNav.jsx';
 import OnScreenNav__Item from '../../components/OnScreenNav__Item/OnScreenNav__Item.jsx';
 
+import GoogleTagManager from "../../components/GoogleTagManager/GoogleTagManager.jsx";
+import GTM from 'react-tag-manager';
+import DataLayer from 'react-tag-manager/DataLayer';
+
+
 if (process.env.BROWSER) {
     require("../../styles/framework.css");
     require("../../styles/global.scss");
@@ -41,13 +46,15 @@ class Header extends Component {
     render() {
         return (
             <div>
+
                 <header className={`global-header ${this.props.additionalClass}`}>
                     <div className="l-padding">
+                        {/*
                         <button className="nav-toggle js-offscreen-toggle" type="button" role="button" aria-label="Toggle navigation" data-offscreen-id="nav">
                             <span className="lines"></span>
                             <span className="vh">Toggle navigation</span>
                         </button>
-
+                        */}
 
                         <div className="logo">
                             <a href={this.props.logoURL}><img src={this.props.logoPath} alt={this.props.title} /></a>

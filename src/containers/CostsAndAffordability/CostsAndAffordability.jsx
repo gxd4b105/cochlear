@@ -51,7 +51,7 @@ class CostsAndAffordability extends Component {
                             <ContentHeader title={getData['title']}
                                            description={getData['description']} />
 
-
+                            <Cm01RichText body={getData['body-copy']}/>
 
 
                         </main>
