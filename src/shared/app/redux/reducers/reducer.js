@@ -16,7 +16,11 @@ const initialState = {
     dataTypesOfTreatment: null,
     dataHearingAidVsImplantableSolutions: null,
     dataCostsAndAffordability: null,
-    dataFindAClinic: null
+    dataFindAClinic: null,
+    getCurrentPosition: null,
+    markers: [],
+    lat: 0,
+    lng: 0
 };
 export default function userReducer(state = initialState, action) {
     switch (action.type) {
@@ -48,6 +52,12 @@ export default function userReducer(state = initialState, action) {
             return {...state, dataCostsAndAffordability: action.payload}
         case Types.UPDATE_HOMETHIRD:
             return {...state, bodythirdTitle: action.payload['title']}
+        case Types.GET_CURRENT_POSITION:
+            console.log(' action.payload.lat ',action.payload.lat);
+            return {...state, lat: action.payload.lat, lng: action.payload.lng}
+        case Types.UPDATE_MARKERS:
+            console.log(' MARKERS - action.payload ',action.payload.markers);
+            return {...state, markers: action.payload.markers}
         default:
             return state;
     }
