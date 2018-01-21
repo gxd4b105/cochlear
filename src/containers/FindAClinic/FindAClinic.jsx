@@ -78,7 +78,8 @@ console.log('test1');
                                             lng={this.props.lng}
                                             label=""
                                             markers={this.props.markers}
-                                            test={this.test}/>
+                                            test={this.test}
+                                            getCurrentPosition={this.props.getCurrentPosition}/>
                         </div>
                     </div>
                 </article>

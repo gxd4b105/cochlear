@@ -6376,7 +6376,9 @@ var ClinicNearYou = function (_React$Component) {
         value: function onSuggestSelect(suggest) {
             console.log(suggest);
 
-            this.setState({ lat: suggest.location.lat, lng: suggest.location.lng, label: suggest.label });
+            this.props.getCurrentPosition({ lat: suggest.location.lat, lng: suggest.location.lng });
+
+            //this.setState({ lat: suggest.location.lat, lng: suggest.location.lng, label:suggest.label });
         }
     }, {
         key: 'getDistance',
@@ -14538,7 +14540,8 @@ var FindAClinic = function (_Component) {
                                 lng: this.props.lng,
                                 label: '',
                                 markers: this.props.markers,
-                                test: this.test })
+                                test: this.test,
+                                getCurrentPosition: this.props.getCurrentPosition })
                         )
                     )
                 ),

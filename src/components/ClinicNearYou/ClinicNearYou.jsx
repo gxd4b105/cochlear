@@ -176,7 +176,11 @@ class ClinicNearYou extends React.Component {
     onSuggestSelect(suggest) {
         console.log(suggest);
 
-        this.setState({ lat: suggest.location.lat, lng: suggest.location.lng, label:suggest.label });
+        this.props.getCurrentPosition({ lat: suggest.location.lat, lng: suggest.location.lng});
+        
+        
+
+        //this.setState({ lat: suggest.location.lat, lng: suggest.location.lng, label:suggest.label });
       }
 
       getDistance(lat1, lng1, lat2, lng2, miles) { // miles optional
