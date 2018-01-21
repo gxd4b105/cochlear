@@ -3,9 +3,15 @@ import GoogleMapsWrapper from './GoogleMapsWrapper.jsx';
 import { Marker } from 'react-google-maps';
 import MarkerClusterer from "react-google-maps/lib/components/addons/MarkerClusterer";
 import Geosuggest from 'react-geosuggest';
+import ReactDOM from 'react-dom';
 
 
 class ClinicNearYou extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { 'showDetails': 'show' };
+      }
 
 	componentWillMount() {
         //this.setState({ markers: [], lat: -32, lng: 151, label: '' });
@@ -91,7 +97,7 @@ class ClinicNearYou extends React.Component {
  
 
 
-   return <li key={marker.lat} style={{'backgroundColor':'#fff','border':'1px solid #ccc','padding': '20px'}}><strong>{marker.text}</strong><div className="details">{marker.address} &nbsp; <span style={{'fontSize':'12px'}}>{parseInt(markerDistance)}km</span></div></li>
+   return <li key={marker.lat} ref={marker.lat} style={{'backgroundColor':'#fff','border':'1px solid #ccc','padding': '20px'}}><strong>{marker.text}</strong><div className={'details'}>{marker.address} &nbsp; <span style={{'fontSize':'12px'}}>{parseInt(markerDistance)}km</span></div></li>
 }
 
             }
@@ -101,7 +107,6 @@ class ClinicNearYou extends React.Component {
 
 </div>
 <div style={{'width':'50%', 'display': 'inline-block', 'verticalAlign': 'top'}}>
-
 
 <GoogleMapsWrapper
       googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyD49FWPcw5h8bj6-LnHNaCkbqhFm7hULFI"
@@ -130,7 +135,7 @@ class ClinicNearYou extends React.Component {
                   key={marker.text}
                   position={{ lat: parseInt(marker.lat), lng: parseInt(marker.lng) }}
                   test={this.test}
-                  onClick={() => this.test()}
+                  onClick={() => this.toggleClinic(marker.lat)}
                   />
           ))}
       </MarkerClusterer>
@@ -189,8 +194,10 @@ class ClinicNearYou extends React.Component {
         else{return d;} //return km
       }
 
-      test() {
-        console.log('YES!!!!!28');
+      toggleClinic(lat) {
+        var node = ReactDOM.findDOMNode(this.refs[lat]);
+        node.querySelector('.details').classList.toggle('show');
+        
     }
     
 

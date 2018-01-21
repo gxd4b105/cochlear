@@ -76,7 +76,7 @@ console.log('test1');
                                             isLoggedIn={this.props.isLoggedIn}
                                             lat={this.props.lat}
                                             lng={this.props.lng}
-                                            label=''
+                                            label=""
                                             markers={this.props.markers}
                                             test={this.test}/>
                         </div>
