@@ -3,7 +3,9 @@
   display: block; }
   .nav-onscreen.nav-onscreen__global-header .nav > li {
     float: none;
-    flex-grow: 1; }
+    flex-grow: 1;
+    max-width: 200px;
+    padding: 10px; }
   .nav-onscreen.nav-onscreen__global-header .nav-item span {
     display: block;
     font-size: 12px; }

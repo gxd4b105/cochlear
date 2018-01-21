@@ -1,0 +1,33 @@
+.nav-region-dropdown {
+  float: right;
+  position: relative; }
+  .nav-region-dropdown .nav-region-dropdown__cta {
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: underline; }
+    .nav-region-dropdown .nav-region-dropdown__cta:hover {
+      color: #81BC00; }
+  .nav-region-dropdown .nav-region-dropdown__form {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    z-index: 901; }
+  .nav-region-dropdown .nav-region-dropdown__label {
+    display: block; }
+    .nav-region-dropdown .nav-region-dropdown__label span {
+      width: 150px;
+      display: inline-block; }
+  .nav-region-dropdown .nav-region-dropdown__select {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #efefef; }
+  .nav-region-dropdown .nav-region-dropdown__submit {
+    display: block;
+    width: 100px;
+    text-align: center;
+    background-color: #000000;
+    color: #ffffff;
+    margin-top: 10px; }
+
+/*# sourceMappingURL=RegionLanguageSelect.css.map */
