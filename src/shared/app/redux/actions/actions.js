@@ -111,3 +111,17 @@ export function getFooterUS() {
         dispatch({ type: Types.UPDATE_FOOTER, payload: data });
     }
 }
+
+export function getCurrentPosition(data) {
+    return function (dispatch, getState) {
+        console.log('DATA is ',data);
+        dispatch({ type: Types.GET_CURRENT_POSITION, payload: data });
+    }
+}
+
+export function updateMarkers(data) {
+    return function (dispatch, getState) {
+        console.log('DATA is ',data);
+        dispatch({ type: Types.UPDATE_MARKERS, payload: data });
+    }
+}
