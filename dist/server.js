@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 48);
+/******/ 	return __webpack_require__(__webpack_require__.s = 51);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -111,13 +111,14 @@ exports.getTreatmentOptions = getTreatmentOptions;
 exports.getTreatingHearingLoss = getTreatingHearingLoss;
 exports.getTypesOfTreatment = getTypesOfTreatment;
 exports.getHearingAidVsImplantableSolutions = getHearingAidVsImplantableSolutions;
+exports.getFindAClinic = getFindAClinic;
 exports.getCostsAndAffordability = getCostsAndAffordability;
 exports.getFooter = getFooter;
 exports.getFooterUS = getFooterUS;
 
 var _userTypes = __webpack_require__(19);
 
-var _axios = __webpack_require__(67);
+var _axios = __webpack_require__(72);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -223,11 +224,21 @@ function getHearingAidVsImplantableSolutions() {
     };
 }
 
+function getFindAClinic() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        var _ref11 = await _axios2.default.get('https://auth.cochlear.com/contentservice/api/content/deloitte/home/find-a-clinic'),
+            data = _ref11.data;
+
+        dispatch({ type: _userTypes.Types.UPDATE_FINDACLINIC, payload: data });
+    };
+}
+
 function getCostsAndAffordability() {
     return async function (dispatch, getState) {
         // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
-        var _ref11 = await _axios2.default.get('https://auth.cochlear.com/contentservice/api/content/deloitte/home/costs-and-affordability'),
-            data = _ref11.data;
+        var _ref12 = await _axios2.default.get('https://auth.cochlear.com/contentservice/api/content/deloitte/home/costs-and-affordability'),
+            data = _ref12.data;
 
         dispatch({ type: _userTypes.Types.UPDATE_COSTSANDAFFORDABILITY, payload: data });
     };
@@ -235,8 +246,8 @@ function getCostsAndAffordability() {
 
 function getFooter() {
     return async function (dispatch, getState) {
-        var _ref12 = await _axios2.default.get('https://api.myjson.com/bins/xrn0n'),
-            data = _ref12.data;
+        var _ref13 = await _axios2.default.get('https://api.myjson.com/bins/xrn0n'),
+            data = _ref13.data;
 
         dispatch({ type: _userTypes.Types.UPDATE_FOOTER, payload: data });
     };
@@ -244,8 +255,8 @@ function getFooter() {
 
 function getFooterUS() {
     return async function (dispatch, getState) {
-        var _ref13 = await _axios2.default.get('https://api.myjson.com/bins/jr901'),
-            data = _ref13.data;
+        var _ref14 = await _axios2.default.get('https://api.myjson.com/bins/jr901'),
+            data = _ref14.data;
 
         dispatch({ type: _userTypes.Types.UPDATE_FOOTER, payload: data });
     };
@@ -280,19 +291,19 @@ var _actions = __webpack_require__(4);
 
 var actions = _interopRequireWildcard(_actions);
 
-var _GlobalFooter__Nav = __webpack_require__(30);
+var _GlobalFooter__Nav = __webpack_require__(31);
 
 var _GlobalFooter__Nav2 = _interopRequireDefault(_GlobalFooter__Nav);
 
-var _GlobalFooter__Nav__Item = __webpack_require__(31);
+var _GlobalFooter__Nav__Item = __webpack_require__(32);
 
 var _GlobalFooter__Nav__Item2 = _interopRequireDefault(_GlobalFooter__Nav__Item);
 
-var _GlobalFooter__Nav__Social = __webpack_require__(32);
+var _GlobalFooter__Nav__Social = __webpack_require__(33);
 
 var _GlobalFooter__Nav__Social2 = _interopRequireDefault(_GlobalFooter__Nav__Social);
 
-var _GlobalFooter__Nav__Social__Item = __webpack_require__(33);
+var _GlobalFooter__Nav__Social__Item = __webpack_require__(34);
 
 var _GlobalFooter__Nav__Social__Item2 = _interopRequireDefault(_GlobalFooter__Nav__Social__Item);
 
@@ -466,13 +477,29 @@ var _actions = __webpack_require__(4);
 
 var actions = _interopRequireWildcard(_actions);
 
-var _OnScreeNav = __webpack_require__(34);
+var _OnScreeNav = __webpack_require__(36);
 
 var _OnScreeNav2 = _interopRequireDefault(_OnScreeNav);
 
-var _OnScreenNav__Item = __webpack_require__(35);
+var _OnScreenNav__Item = __webpack_require__(37);
 
 var _OnScreenNav__Item2 = _interopRequireDefault(_OnScreenNav__Item);
+
+var _GoogleTagManager = __webpack_require__(35);
+
+var _GoogleTagManager2 = _interopRequireDefault(_GoogleTagManager);
+
+var _reactTagManager = __webpack_require__(75);
+
+var _reactTagManager2 = _interopRequireDefault(_reactTagManager);
+
+var _DataLayer = __webpack_require__(76);
+
+var _DataLayer2 = _interopRequireDefault(_DataLayer);
+
+var _RegionLanguageSelect = __webpack_require__(38);
+
+var _RegionLanguageSelect2 = _interopRequireDefault(_RegionLanguageSelect);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -485,9 +512,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(65);
-    __webpack_require__(66);
-    __webpack_require__(63);
+    __webpack_require__(70);
+    __webpack_require__(71);
+    __webpack_require__(68);
 }
 
 var Header = function (_Component) {
@@ -524,16 +551,9 @@ var Header = function (_Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'l-padding' },
-                        _react2.default.createElement(
-                            'button',
-                            { className: 'nav-toggle js-offscreen-toggle', type: 'button', role: 'button', 'aria-label': 'Toggle navigation', 'data-offscreen-id': 'nav' },
-                            _react2.default.createElement('span', { className: 'lines' }),
-                            _react2.default.createElement(
-                                'span',
-                                { className: 'vh' },
-                                'Toggle navigation'
-                            )
-                        ),
+                        _react2.default.createElement(_RegionLanguageSelect2.default, { cta: 'Select a region and language',
+                            formAction: '/intl/home',
+                            submitText: 'Change' }),
                         _react2.default.createElement(
                             'div',
                             { className: 'logo' },
@@ -543,20 +563,13 @@ var Header = function (_Component) {
                                 _react2.default.createElement('img', { src: this.props.logoPath, alt: this.props.title })
                             )
                         ),
-                        _react2.default.createElement(
-                            'h1',
-                            null,
-                            this.props.headerTitle
-                        ),
+                        _react2.default.createElement('h1', null),
                         _react2.default.createElement(
                             _OnScreeNav2.default,
                             { additionalClass: 'nav-onscreen__global-header' },
                             _react2.default.createElement(_OnScreenNav__Item2.default, { title: 'Home',
                                 subtitle: 'Home',
-                                path: '/intl/home' }),
-                            _react2.default.createElement(_OnScreenNav__Item2.default, { title: 'Treatment',
-                                subtitle: 'Treating hearing loss',
-                                path: '/intl/treating-hearing-loss' })
+                                path: '/intl/home' })
                         )
                     )
                 )
@@ -791,100 +804,6 @@ exports.default = Cm01RichText;
 
 /***/ }),
 /* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Cm02ContentTile = function (_React$Component) {
-    _inherits(Cm02ContentTile, _React$Component);
-
-    function Cm02ContentTile() {
-        _classCallCheck(this, Cm02ContentTile);
-
-        return _possibleConstructorReturn(this, (Cm02ContentTile.__proto__ || Object.getPrototypeOf(Cm02ContentTile)).apply(this, arguments));
-    }
-
-    _createClass(Cm02ContentTile, [{
-        key: "render",
-        value: function render() {
-
-            return _react2.default.createElement(
-                "section",
-                { className: "cm cm-content-tile " + this.props.additionalClass },
-                _react2.default.createElement(
-                    "div",
-                    { className: "cm-image-block-link" },
-                    _react2.default.createElement(
-                        "a",
-                        { href: "" + this.props.path, className: "image" },
-                        _react2.default.createElement("img", { className: "img", src: "" + this.props.image, alt: this.props.imageAlt })
-                    ),
-                    _react2.default.createElement(
-                        "div",
-                        { className: "content" },
-                        _react2.default.createElement(
-                            "h1",
-                            null,
-                            " ",
-                            _react2.default.createElement(
-                                "a",
-                                { href: "" + this.props.path },
-                                this.props.title
-                            ),
-                            " "
-                        ),
-                        " ",
-                        _react2.default.createElement(
-                            "p",
-                            null,
-                            this.props.description
-                        ),
-                        _react2.default.createElement(
-                            "a",
-                            { href: "" + this.props.path, className: "cta" },
-                            "Read more"
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return Cm02ContentTile;
-}(_react2.default.Component);
-
-Cm02ContentTile.defaultProps = {
-    title: "CM02 Content Tile",
-    path: "#",
-    description: "This is a description",
-    image: "http://fed.donlineclients.com/assets/img/placeholder/landing-hero.jpg",
-    imageAlt: "Content tile image alt text",
-    additionalClass: ""
-};
-
-exports.default = Cm02ContentTile;
-
-/***/ }),
-/* 11 */
 /***/ (function(module, exports) {
 
 /*
@@ -966,7 +885,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -990,7 +909,7 @@ var stylesInDom = {},
 	singletonElement = null,
 	singletonCounter = 0,
 	styleElementsInsertedAtTop = [],
-	fixUrls = __webpack_require__(59);
+	fixUrls = __webpack_require__(63);
 
 module.exports = function(list, options) {
 	if(typeof DEBUG !== "undefined" && DEBUG) {
@@ -1243,6 +1162,100 @@ function updateLink(linkElement, options, obj) {
 
 
 /***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Cm02ContentTile = function (_React$Component) {
+    _inherits(Cm02ContentTile, _React$Component);
+
+    function Cm02ContentTile() {
+        _classCallCheck(this, Cm02ContentTile);
+
+        return _possibleConstructorReturn(this, (Cm02ContentTile.__proto__ || Object.getPrototypeOf(Cm02ContentTile)).apply(this, arguments));
+    }
+
+    _createClass(Cm02ContentTile, [{
+        key: "render",
+        value: function render() {
+
+            return _react2.default.createElement(
+                "section",
+                { className: "cm cm-content-tile " + this.props.additionalClass },
+                _react2.default.createElement(
+                    "div",
+                    { className: "cm-image-block-link" },
+                    _react2.default.createElement(
+                        "a",
+                        { href: "" + this.props.path, className: "image" },
+                        _react2.default.createElement("img", { className: "img", src: "" + this.props.image, alt: this.props.imageAlt })
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "content" },
+                        _react2.default.createElement(
+                            "h1",
+                            null,
+                            " ",
+                            _react2.default.createElement(
+                                "a",
+                                { href: "" + this.props.path },
+                                this.props.title
+                            ),
+                            " "
+                        ),
+                        " ",
+                        _react2.default.createElement(
+                            "p",
+                            null,
+                            this.props.description
+                        ),
+                        _react2.default.createElement(
+                            "a",
+                            { href: "" + this.props.path, className: "cta" },
+                            "Read more"
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Cm02ContentTile;
+}(_react2.default.Component);
+
+Cm02ContentTile.defaultProps = {
+    title: "CM02 Content Tile",
+    path: "#",
+    description: "This is a description",
+    image: "http://fed.donlineclients.com/assets/img/placeholder/landing-hero.jpg",
+    imageAlt: "Content tile image alt text",
+    additionalClass: ""
+};
+
+exports.default = Cm02ContentTile;
+
+/***/ }),
 /* 13 */
 /***/ (function(module, exports) {
 
@@ -1323,55 +1336,55 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Home = __webpack_require__(39);
+var _Home = __webpack_require__(42);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _Homesecond = __webpack_require__(41);
+var _Homesecond = __webpack_require__(44);
 
 var _Homesecond2 = _interopRequireDefault(_Homesecond);
 
-var _Homethird = __webpack_require__(42);
+var _Homethird = __webpack_require__(45);
 
 var _Homethird2 = _interopRequireDefault(_Homethird);
 
-var _user = __webpack_require__(51);
+var _user = __webpack_require__(54);
 
 var _user2 = _interopRequireDefault(_user);
 
-var _HomePage = __webpack_require__(40);
+var _HomePage = __webpack_require__(43);
 
 var _HomePage2 = _interopRequireDefault(_HomePage);
 
-var _HearingAidVsImplantableSolutions = __webpack_require__(38);
+var _HearingAidVsImplantableSolutions = __webpack_require__(41);
 
 var _HearingAidVsImplantableSolutions2 = _interopRequireDefault(_HearingAidVsImplantableSolutions);
 
-var _ClinicFinder = __webpack_require__(36);
+var _FindAClinic = __webpack_require__(40);
 
-var _ClinicFinder2 = _interopRequireDefault(_ClinicFinder);
+var _FindAClinic2 = _interopRequireDefault(_FindAClinic);
 
-var _StatsAndProofs = __webpack_require__(44);
+var _StatsAndProofs = __webpack_require__(47);
 
 var _StatsAndProofs2 = _interopRequireDefault(_StatsAndProofs);
 
-var _TreatmentOptions = __webpack_require__(46);
+var _TreatmentOptions = __webpack_require__(49);
 
 var _TreatmentOptions2 = _interopRequireDefault(_TreatmentOptions);
 
-var _TypesOfTreatment = __webpack_require__(47);
+var _TypesOfTreatment = __webpack_require__(50);
 
 var _TypesOfTreatment2 = _interopRequireDefault(_TypesOfTreatment);
 
-var _TreatingHearingLoss = __webpack_require__(45);
+var _TreatingHearingLoss = __webpack_require__(48);
 
 var _TreatingHearingLoss2 = _interopRequireDefault(_TreatingHearingLoss);
 
-var _ImplantableSolutions = __webpack_require__(43);
+var _ImplantableSolutions = __webpack_require__(46);
 
 var _ImplantableSolutions2 = _interopRequireDefault(_ImplantableSolutions);
 
-var _CostsAndAffordability = __webpack_require__(37);
+var _CostsAndAffordability = __webpack_require__(39);
 
 var _CostsAndAffordability2 = _interopRequireDefault(_CostsAndAffordability);
 
@@ -1427,8 +1440,8 @@ exports.default = {
         component: _StatsAndProofs2.default,
         exact: true
     }, {
-        path: '/:country/clinic-finder',
-        component: _ClinicFinder2.default,
+        path: '/:country/find-a-clinic',
+        component: _FindAClinic2.default,
         exact: true
     }],
     redirects: [{
@@ -1484,7 +1497,7 @@ var ClinicNearYou = function (_React$Component) {
                     { className: "l-padding" },
                     _react2.default.createElement(
                         "form",
-                        { className: "fn_validate", action: "/intl/clinic-finder" },
+                        { className: "fn_validate", action: "/intl/find-a-clinic" },
                         _react2.default.createElement("div", { className: "fn_validate_summary" }),
                         _react2.default.createElement(
                             "fieldset",
@@ -1579,7 +1592,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(60);
+    __webpack_require__(64);
 }
 
 var Cm18Accordian = function (_React$Component) {
@@ -1709,6 +1722,7 @@ var Types = exports.Types = {
     UPDATE_TREATMENTOPTIONS: 'UPDATE_TREATMENTOPTIONS',
     UPDATE_TREATINGHEARINGLOSS: 'UPDATE_TREATINGHEARINGLOSS',
     UPDATE_HEARINGAIDSVSIMPLANTABLESOLUTIONS: 'UPDATE_HEARINGAIDSVSIMPLANTABLESOLUTIONS',
+    UPDATE_FINDACLINIC: 'UPDATE_FINDACLINIC',
     UPDATE_COSTSANDAFFORDABILITY: 'UPDATE_COSTSANDAFFORDABILITY'
 };
 
@@ -1733,7 +1747,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(13);
 
-var _redirectWStatus = __webpack_require__(49);
+var _redirectWStatus = __webpack_require__(52);
 
 var _redirectWStatus2 = _interopRequireDefault(_redirectWStatus);
 
@@ -1865,7 +1879,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(1);
 
-var _reducer = __webpack_require__(50);
+var _reducer = __webpack_require__(53);
 
 var _reducer2 = _interopRequireDefault(_reducer);
 
@@ -2176,6 +2190,75 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var Cm02bContentTile = function (_React$Component) {
+    _inherits(Cm02bContentTile, _React$Component);
+
+    function Cm02bContentTile() {
+        _classCallCheck(this, Cm02bContentTile);
+
+        return _possibleConstructorReturn(this, (Cm02bContentTile.__proto__ || Object.getPrototypeOf(Cm02bContentTile)).apply(this, arguments));
+    }
+
+    _createClass(Cm02bContentTile, [{
+        key: "render",
+        value: function render() {
+
+            return _react2.default.createElement(
+                "section",
+                { className: "cm cm-content-tile " + this.props.additionalClass },
+                _react2.default.createElement(
+                    "div",
+                    null,
+                    _react2.default.createElement(
+                        "h1",
+                        null,
+                        this.props.title
+                    ),
+                    _react2.default.createElement("div", { className: "cm cm-rich-text", dangerouslySetInnerHTML: { __html: this.props.body } }),
+                    _react2.default.createElement("img", { className: "img", src: "" + this.props.image, alt: this.props.imageAlt })
+                )
+            );
+        }
+    }]);
+
+    return Cm02bContentTile;
+}(_react2.default.Component);
+
+Cm02bContentTile.defaultProps = {
+    title: "CM02b Content Tile",
+    body: "This is a description",
+    image: "http://fed.donlineclients.com/assets/img/placeholder/landing-hero.jpg",
+    imageAlt: "Content tile image alt text",
+    additionalClass: ""
+};
+
+exports.default = Cm02bContentTile;
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var GlobalFooter__Nav = function (_React$Component) {
     _inherits(GlobalFooter__Nav, _React$Component);
 
@@ -2225,7 +2308,7 @@ GlobalFooter__Nav.defaultProps = {
 exports.default = GlobalFooter__Nav;
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2285,7 +2368,7 @@ GlobalFooter__Nav__Item.defaultProps = {
 exports.default = GlobalFooter__Nav__Item;
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2349,7 +2432,7 @@ var GlobalFooter__Nav__Social = function (_React$Component) {
 exports.default = GlobalFooter__Nav__Social;
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2411,7 +2494,101 @@ GlobalFooter__Nav__Social__Item.defaultProps = {
 exports.default = GlobalFooter__Nav__Social__Item;
 
 /***/ }),
-/* 34 */
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactGoogleTagManager = __webpack_require__(74);
+
+var _reactGoogleTagManager2 = _interopRequireDefault(_reactGoogleTagManager);
+
+var _propTypes = __webpack_require__(73);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var GoogleTagManager = function (_React$Component) {
+    _inherits(GoogleTagManager, _React$Component);
+
+    function GoogleTagManager() {
+        _classCallCheck(this, GoogleTagManager);
+
+        return _possibleConstructorReturn(this, (GoogleTagManager.__proto__ || Object.getPrototypeOf(GoogleTagManager)).apply(this, arguments));
+    }
+
+    _createClass(GoogleTagManager, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var dataLayerName = this.props.dataLayerName || 'dataLayer';
+            var scriptId = this.props.scriptId || 'react-google-tag-manager-gtm';
+
+            if (!window[dataLayerName]) {
+                var gtmScriptNode = document.getElementById(scriptId);
+
+                eval(gtmScriptNode.textContent);
+            }
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var gtm = (0, _reactGoogleTagManager2.default)({
+                id: this.props.gtmId,
+                dataLayerName: this.props.dataLayerName || 'dataLayer',
+                additionalEvents: this.props.additionalEvents || {},
+                previewVariables: this.props.previewVariables || false
+            });
+
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'div',
+                    null,
+                    gtm.noScriptAsReact()
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { id: this.props.scriptId || 'react-google-tag-manager-gtm' },
+                    gtm.scriptAsReact()
+                )
+            );
+        }
+    }]);
+
+    return GoogleTagManager;
+}(_react2.default.Component);
+
+GoogleTagManager.propTypes = {
+    gtmId: _propTypes2.default.string.isRequired,
+    dataLayerName: _propTypes2.default.string,
+    additionalEvents: _propTypes2.default.object,
+    previewVariables: _propTypes2.default.string,
+    scriptId: _propTypes2.default.string
+};
+
+exports.default = GoogleTagManager;
+
+/***/ }),
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2436,7 +2613,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(61);
+    __webpack_require__(65);
 }
 
 var OnScreeNav = function (_React$Component) {
@@ -2497,7 +2674,7 @@ var OnScreeNav = function (_React$Component) {
 exports.default = OnScreeNav;
 
 /***/ }),
-/* 35 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2524,7 +2701,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(62);
+    __webpack_require__(66);
 }
 
 var OnScreenNav__Item = function (_React$Component) {
@@ -2571,7 +2748,7 @@ OnScreenNav__Item.defaultProps = {
 exports.default = OnScreenNav__Item;
 
 /***/ }),
-/* 36 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2581,45 +2758,11 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
-
-var _reactRedux = __webpack_require__(2);
-
-var _redux = __webpack_require__(1);
-
-var _reactHelmet = __webpack_require__(3);
-
-var _actions = __webpack_require__(4);
-
-var actions = _interopRequireWildcard(_actions);
-
-var _GlobalHeader = __webpack_require__(6);
-
-var _GlobalHeader2 = _interopRequireDefault(_GlobalHeader);
-
-var _GlobalFooter = __webpack_require__(5);
-
-var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
-
-var _BreadCrumbs = __webpack_require__(8);
-
-var _BreadCrumbs2 = _interopRequireDefault(_BreadCrumbs);
-
-var _ClinicNearYou = __webpack_require__(16);
-
-var _ClinicNearYou2 = _interopRequireDefault(_ClinicNearYou);
-
-var _ContentHeader = __webpack_require__(14);
-
-var _ContentHeader2 = _interopRequireDefault(_ContentHeader);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2629,79 +2772,676 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ClinicFinder = function (_Component) {
-    _inherits(ClinicFinder, _Component);
+if (process.env.BROWSER) {
+    __webpack_require__(67);
+}
 
-    function ClinicFinder() {
-        _classCallCheck(this, ClinicFinder);
+var RegionLanguageSelect = function (_React$Component) {
+    _inherits(RegionLanguageSelect, _React$Component);
 
-        return _possibleConstructorReturn(this, (ClinicFinder.__proto__ || Object.getPrototypeOf(ClinicFinder)).apply(this, arguments));
+    function RegionLanguageSelect() {
+        _classCallCheck(this, RegionLanguageSelect);
+
+        return _possibleConstructorReturn(this, (RegionLanguageSelect.__proto__ || Object.getPrototypeOf(RegionLanguageSelect)).apply(this, arguments));
     }
 
-    _createClass(ClinicFinder, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {}
-    }, {
-        key: 'render',
+    _createClass(RegionLanguageSelect, [{
+        key: "render",
         value: function render() {
-            return _react2.default.createElement(
-                'div',
-                { className: 'l-layout l-two-column cf' },
-                _react2.default.createElement(
-                    _reactHelmet.Helmet,
-                    null,
-                    _react2.default.createElement('meta', { charSet: 'utf-8' }),
-                    _react2.default.createElement(
-                        'title',
-                        null,
-                        'Heading Aid vs Cochlear Implant'
-                    )
-                ),
-                _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
-                _react2.default.createElement(_BreadCrumbs2.default, null),
-                _react2.default.createElement(
-                    'article',
-                    null,
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'l-content-container cf l-padding' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'l-content-column' },
-                            _react2.default.createElement(_ContentHeader2.default, { title: 'Find a Clinic',
-                                description: '' }),
-                            _react2.default.createElement(_ClinicNearYou2.default, { title: 'Find your nearest clinic',
-                                description: 'Type in your postcode to find a Cochlear Clinic that is nearest to you.',
-                                additionalClass: 'is-shaded is-medium' })
-                        )
-                    )
-                ),
-                _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
-            );
-        }
-    }], [{
-        key: 'fetchData',
-        value: function fetchData(_ref) {
-            var store = _ref.store,
-                params = _ref.params;
 
-            return store.dispatch(actions.getHome());
+            function showHide() {
+                var x = document.getElementById("nav-region-dropdown__form");
+                if (x.style.display === "") {
+                    x.style.display = "block";
+                } else if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+
+            return _react2.default.createElement(
+                "nav",
+                { className: "nav-region-dropdown " + this.props.additionalClass },
+                _react2.default.createElement(
+                    "h4",
+                    { onClick: showHide, className: "nav-region-dropdown__cta" },
+                    this.props.cta
+                ),
+                _react2.default.createElement(
+                    "form",
+                    { id: "nav-region-dropdown__form", className: "nav-region-dropdown__form", action: this.props.formAction },
+                    _react2.default.createElement(
+                        "label",
+                        { className: "nav-region-dropdown__label", htmlFor: "nav-region-dropdown__region" },
+                        _react2.default.createElement(
+                            "span",
+                            null,
+                            "Select a region:"
+                        ),
+                        _react2.default.createElement(
+                            "select",
+                            { id: "nav-region-dropdown__region", "data-placeholder": "Choose a Region...", className: "nav-region-dropdown__select nav-region-dropdown__region" },
+                            _react2.default.createElement(
+                                "optgroup",
+                                { label: "International" },
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/intl/home", selected: true },
+                                    "Cochlear International"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/intl/careers" },
+                                    "Careers at Cochlear"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/intl/about" },
+                                    "About Cochlear"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/intl/contact" },
+                                    "Contact Us"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/intl/about/investor" },
+                                    "Investor Centre"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "optgroup",
+                                { label: "North America" },
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/us" },
+                                    "United States & Canada"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "optgroup",
+                                { label: "South America" },
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/la" },
+                                    "Latin America"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/br" },
+                                    "Brazil"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "optgroup",
+                                { label: "Middle East & Africa" },
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/me" },
+                                    "Middle East"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/uk/africa" },
+                                    "Africa"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "optgroup",
+                                { label: "Europe" },
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/at" },
+                                    "Austria"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/cz" },
+                                    "Czech Republic"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/dk" },
+                                    "Denmark"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/fi" },
+                                    "Finland"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/fr" },
+                                    "France"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/de" },
+                                    "Germany"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/hu" },
+                                    "Hungary"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/il" },
+                                    "Israel"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/it" },
+                                    "Italy"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/nl" },
+                                    "Netherlands"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/no" },
+                                    "Norway"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/ro" },
+                                    "Romania"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/es" },
+                                    "Spain"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/sv" },
+                                    "Sweden"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/ch" },
+                                    "Switzerland"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/tr" },
+                                    "Turkey"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/uk" },
+                                    "UK/Ireland"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "optgroup",
+                                { label: "Other Eastern Europe" },
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/ru" },
+                                    "Other Eastern Europe"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "optgroup",
+                                { label: "Asia Pacific" },
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/au" },
+                                    "Australia/New Zealand"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/in" },
+                                    "India"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/sg" },
+                                    "Singapore"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/cn" },
+                                    "China: \u4E2D\u6587"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/jp" },
+                                    "Japan: \u65E5\u672C\u8A9E"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/kr" },
+                                    "Korea: \uD55C\uAE00"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/hk" },
+                                    "Hong Kong/Taiwan Region"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/id" },
+                                    "Indonesia"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/my" },
+                                    "Malaysia"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/ph" },
+                                    "Philippines"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/th" },
+                                    "Thailand"
+                                ),
+                                _react2.default.createElement(
+                                    "option",
+                                    { value: "/vn" },
+                                    "Vietnam"
+                                )
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "label",
+                        { className: "nav-region-dropdown__label", htmlFor: "nav-region-dropdown__language" },
+                        _react2.default.createElement(
+                            "span",
+                            null,
+                            "Select a language:"
+                        ),
+                        _react2.default.createElement(
+                            "select",
+                            { id: "nav-region-dropdown__language", "data-placeholder": "Choose a Language...", className: "nav-region-dropdown__select nav-region-dropdown__language" },
+                            _react2.default.createElement(
+                                "option",
+                                { value: "AF" },
+                                "Afrikanns"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "SQ" },
+                                "Albanian"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "AR" },
+                                "Arabic"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "HY" },
+                                "Armenian"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "EU" },
+                                "Basque"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "BN" },
+                                "Bengali"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "BG" },
+                                "Bulgarian"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "CA" },
+                                "Catalan"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "KM" },
+                                "Cambodian"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "ZH" },
+                                "Chinese (Mandarin)"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "HR" },
+                                "Croation"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "CS" },
+                                "Czech"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "DA" },
+                                "Danish"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "NL" },
+                                "Dutch"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "EN", selected: true },
+                                "English"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "ET" },
+                                "Estonian"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "FJ" },
+                                "Fiji"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "FI" },
+                                "Finnish"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "FR" },
+                                "French"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "KA" },
+                                "Georgian"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "DE" },
+                                "German"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "EL" },
+                                "Greek"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "GU" },
+                                "Gujarati"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "HE" },
+                                "Hebrew"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "HI" },
+                                "Hindi"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "HU" },
+                                "Hungarian"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "IS" },
+                                "Icelandic"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "ID" },
+                                "Indonesian"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "GA" },
+                                "Irish"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "IT" },
+                                "Italian"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "JA" },
+                                "Japanese"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "JW" },
+                                "Javanese"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "KO" },
+                                "Korean"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "LA" },
+                                "Latin"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "LV" },
+                                "Latvian"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "LT" },
+                                "Lithuanian"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "MK" },
+                                "Macedonian"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "MS" },
+                                "Malay"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "ML" },
+                                "Malayalam"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "MT" },
+                                "Maltese"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "MI" },
+                                "Maori"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "MR" },
+                                "Marathi"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "MN" },
+                                "Mongolian"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "NE" },
+                                "Nepali"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "NO" },
+                                "Norwegian"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "FA" },
+                                "Persian"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "PL" },
+                                "Polish"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "PT" },
+                                "Portuguese"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "PA" },
+                                "Punjabi"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "QU" },
+                                "Quechua"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "RO" },
+                                "Romanian"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "RU" },
+                                "Russian"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "SM" },
+                                "Samoan"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "SR" },
+                                "Serbian"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "SK" },
+                                "Slovak"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "SL" },
+                                "Slovenian"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "ES" },
+                                "Spanish"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "SW" },
+                                "Swahili"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "SV" },
+                                "Swedish "
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "TA" },
+                                "Tamil"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "TT" },
+                                "Tatar"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "TE" },
+                                "Telugu"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "TH" },
+                                "Thai"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "BO" },
+                                "Tibetan"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "TO" },
+                                "Tonga"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "TR" },
+                                "Turkish"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "UK" },
+                                "Ukranian"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "UR" },
+                                "Urdu"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "UZ" },
+                                "Uzbek"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "VI" },
+                                "Vietnamese"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "CY" },
+                                "Welsh"
+                            ),
+                            _react2.default.createElement(
+                                "option",
+                                { value: "XH" },
+                                "Xhosa"
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "button",
+                        { className: "nav-region-dropdown__submit" },
+                        this.props.submitText
+                    )
+                )
+            );
         }
     }]);
 
-    return ClinicFinder;
-}(_react.Component);
+    return RegionLanguageSelect;
+}(_react2.default.Component);
 
-function mapStateToProps(state) {
-    return _extends({}, state.user);
-}
-function mapDispatchToProps(dispatch) {
-    return (0, _redux.bindActionCreators)(actions, dispatch);
-}
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(ClinicFinder);
+exports.default = RegionLanguageSelect;
 
 /***/ }),
-/* 37 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2737,7 +3477,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Cm02ContentTile = __webpack_require__(10);
+var _Cm02ContentTile = __webpack_require__(12);
 
 var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
 
@@ -2825,7 +3565,8 @@ var CostsAndAffordability = function (_Component) {
                             'main',
                             { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
                             _react2.default.createElement(_ContentHeader2.default, { title: getData['title'],
-                                description: getData['description'] })
+                                description: getData['description'] }),
+                            _react2.default.createElement(_Cm01RichText2.default, { body: getData['body-copy'] })
                         )
                     )
                 ),
@@ -2854,7 +3595,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(CostsAndAffordability);
 
 /***/ }),
-/* 38 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2890,7 +3631,147 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Cm02ContentTile = __webpack_require__(10);
+var _BreadCrumbs = __webpack_require__(8);
+
+var _BreadCrumbs2 = _interopRequireDefault(_BreadCrumbs);
+
+var _ClinicNearYou = __webpack_require__(16);
+
+var _ClinicNearYou2 = _interopRequireDefault(_ClinicNearYou);
+
+var _ContentHeader = __webpack_require__(14);
+
+var _ContentHeader2 = _interopRequireDefault(_ContentHeader);
+
+var _Cm01RichText = __webpack_require__(9);
+
+var _Cm01RichText2 = _interopRequireDefault(_Cm01RichText);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var FindAClinic = function (_Component) {
+    _inherits(FindAClinic, _Component);
+
+    function FindAClinic() {
+        _classCallCheck(this, FindAClinic);
+
+        return _possibleConstructorReturn(this, (FindAClinic.__proto__ || Object.getPrototypeOf(FindAClinic)).apply(this, arguments));
+    }
+
+    _createClass(FindAClinic, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {}
+    }, {
+        key: 'render',
+        value: function render() {
+
+            console.log(this.props.dataFindAClinic);
+
+            var getData = this.props.dataFindAClinic;
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'l-layout l-two-column cf' },
+                _react2.default.createElement(
+                    _reactHelmet.Helmet,
+                    null,
+                    _react2.default.createElement('meta', { charSet: 'utf-8' }),
+                    _react2.default.createElement(
+                        'title',
+                        null,
+                        getData['title']
+                    )
+                ),
+                _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
+                _react2.default.createElement(_BreadCrumbs2.default, null),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'l-content-container cf l-padding' },
+                    _react2.default.createElement(
+                        'article',
+                        { className: 'l-content-column' },
+                        _react2.default.createElement(
+                            'main',
+                            { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
+                            _react2.default.createElement(_ContentHeader2.default, { title: getData['title'],
+                                description: getData['description'] }),
+                            _react2.default.createElement(_Cm01RichText2.default, { body: getData['body-copy'] }),
+                            _react2.default.createElement(_ClinicNearYou2.default, { title: 'Find your nearest clinic',
+                                description: 'Type in your postcode to find a Cochlear Clinic that is nearest to you.',
+                                additionalClass: 'is-shaded is-medium' })
+                        )
+                    )
+                ),
+                _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
+            );
+        }
+    }], [{
+        key: 'fetchData',
+        value: function fetchData(_ref) {
+            var store = _ref.store,
+                params = _ref.params;
+
+            return store.dispatch(actions.getFindAClinic());
+        }
+    }]);
+
+    return FindAClinic;
+}(_react.Component);
+
+function mapStateToProps(state) {
+    return _extends({}, state.user);
+}
+function mapDispatchToProps(dispatch) {
+    return (0, _redux.bindActionCreators)(actions, dispatch);
+}
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(FindAClinic);
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(2);
+
+var _redux = __webpack_require__(1);
+
+var _reactHelmet = __webpack_require__(3);
+
+var _actions = __webpack_require__(4);
+
+var actions = _interopRequireWildcard(_actions);
+
+var _GlobalHeader = __webpack_require__(6);
+
+var _GlobalHeader2 = _interopRequireDefault(_GlobalHeader);
+
+var _GlobalFooter = __webpack_require__(5);
+
+var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
+
+var _Cm02ContentTile = __webpack_require__(12);
 
 var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
 
@@ -2913,6 +3794,10 @@ var _ClinicNearYou2 = _interopRequireDefault(_ClinicNearYou);
 var _ContentHeader = __webpack_require__(14);
 
 var _ContentHeader2 = _interopRequireDefault(_ContentHeader);
+
+var _Cm02bContentTile = __webpack_require__(30);
+
+var _Cm02bContentTile2 = _interopRequireDefault(_Cm02bContentTile);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -2975,10 +3860,17 @@ var HearingAidVsCochlearImplant = function (_Component) {
                             { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
                             _react2.default.createElement(_ContentHeader2.default, { title: getData['title'],
                                 description: getData['description'] }),
-                            _react2.default.createElement(_Cm01RichText2.default, { body: getData['body-copy'] })
+                            _react2.default.createElement(_Cm01RichText2.default, { body: getData['body-copy'] }),
+                            _react2.default.createElement(_Cm02bContentTile2.default, { title: getData['cm02b-title-01'],
+                                body: getData['cm02b-description-01'],
+                                image: 'https://auth.cochlear.com/' + getData['cm02b-image-01'].src }),
+                            _react2.default.createElement(_ClinicNearYou2.default, { title: 'Clinics near you',
+                                description: 'find a clinic that is nearest to you',
+                                additionalClass: 'is-shaded' })
                         )
                     )
-                )
+                ),
+                _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
             );
         }
     }], [{
@@ -3003,7 +3895,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(HearingAidVsCochlearImplant);
 
 /***/ }),
-/* 39 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3055,7 +3947,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 if (process.env.BROWSER) {
     console.log('TESTAATTTTTTTTTklm');
-    __webpack_require__(64);
+    __webpack_require__(69);
     //import style from './Home.scss';
 }
 
@@ -3108,7 +4000,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Home);
 
 /***/ }),
-/* 40 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3144,7 +4036,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Cm02ContentTile = __webpack_require__(10);
+var _Cm02ContentTile = __webpack_require__(12);
 
 var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
 
@@ -3190,8 +4082,9 @@ var HomePage = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'l-content-container cf l-padding' },
-                    _react2.default.createElement(_Cm02ContentTile2.default, { title: 'Treating Hearing Loss',
+                    _react2.default.createElement(_Cm02ContentTile2.default, { title: 'Treating hearing loss',
                         description: 'Find out what treatment options are available to manage hearing loss',
+                        image: 'https://auth.cochlear.com//wps/wcm/connect/dd2107e8-0708-4a4c-9fb9-1bcc1b82be49/CHILD_SWITCH-ON_1_RGB.jpg?MOD=AJPERES&CVID=',
                         path: '/intl/treating-hearing-loss',
                         additionalClass: 'is-shaded is-large' })
                 ),
@@ -3220,7 +4113,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(HomePage);
 
 /***/ }),
-/* 41 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3319,7 +4212,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Homesecond);
 
 /***/ }),
-/* 42 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3418,7 +4311,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Homethird);
 
 /***/ }),
-/* 43 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3454,7 +4347,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Cm02ContentTile = __webpack_require__(10);
+var _Cm02ContentTile = __webpack_require__(12);
 
 var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
 
@@ -3568,7 +4461,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(ImplantableSolutions);
 
 /***/ }),
-/* 44 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3701,7 +4594,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(StatsAndProofs);
 
 /***/ }),
-/* 45 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3737,7 +4630,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Cm02ContentTile = __webpack_require__(10);
+var _Cm02ContentTile = __webpack_require__(12);
 
 var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
 
@@ -3853,7 +4746,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TreatingHearingLoss);
 
 /***/ }),
-/* 46 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3889,7 +4782,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Cm02ContentTile = __webpack_require__(10);
+var _Cm02ContentTile = __webpack_require__(12);
 
 var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
 
@@ -4045,7 +4938,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TreatmentOptions);
 
 /***/ }),
-/* 47 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4081,7 +4974,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Cm02ContentTile = __webpack_require__(10);
+var _Cm02ContentTile = __webpack_require__(12);
 
 var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
 
@@ -4119,6 +5012,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+if (typeof window === 'undefined') {
+    global.window = {};
+}
+
 var TypesOfTreatment = function (_Component) {
     _inherits(TypesOfTreatment, _Component);
 
@@ -4136,8 +5033,9 @@ var TypesOfTreatment = function (_Component) {
         value: function render() {
 
             console.log(this.props.dataTypesOfTreatment);
-
             var getData = this.props.dataTypesOfTreatment;
+
+            console.log(global.window.dataLayer);
 
             return _react2.default.createElement(
                 'div',
@@ -4150,7 +5048,11 @@ var TypesOfTreatment = function (_Component) {
                         'title',
                         null,
                         getData['title']
-                    )
+                    ),
+                    _react2.default.createElement('meta', { name: 'title', content: getData['title'] }),
+                    _react2.default.createElement('meta', { name: 'description', content: getData['description'] }),
+                    _react2.default.createElement('meta', { name: 'keywords', content: 'Hearing aids for children,Sensorineural hearing loss in children,Conductive hearing loss in children,Single sided deafness in children,hearing aids,unilateral hearing loss in children,hearing loss in one ear' }),
+                    _react2.default.createElement('link', { rel: 'canonical', href: 'http://www.cochlear.com/wps/wcm/connect/intl/home/understand/my-child-has-hl' })
                 ),
                 _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
                 _react2.default.createElement(_BreadCrumbs2.default, null),
@@ -4227,7 +5129,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TypesOfTreatment);
 
 /***/ }),
-/* 48 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4358,11 +5260,11 @@ app.listen(port, function () {
 });
 
 function renderFullPage(html, preloadedState, helmet) {
-	return '\n    <!doctype html>\n    <html>\n      <head>\n        <link rel="icon" href="/dist/favicon.ico" type="image/ico" />\n        <meta name="viewport" content="width=device-width,initial-scale=1" />\n        ' + helmet.title.toString() + '\n        ' + helmet.meta.toString() + '\n        ' + helmet.link.toString() + '\n      </head>\n      <body>\n\t\t<!-- Google Tag Manager (noscript) -->\n\t\t<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVM6MWV"\n\t\theight="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>\n\t\t<!-- End Google Tag Manager (noscript) -->      \n        <div id="root">' + html + '</div>\n        <script>\n          // WARNING: See the following for security issues around embedding JSON in HTML:\n          // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations\n          window.__PRELOADED_STATE__ = ' + JSON.stringify(preloadedState).replace(/</g, '\\u003c') + '\n        </script>\n        <script src="/dist/assets/app.bundle.js"></script>\n        \n\t\t<!-- Google Tag Manager -->\n\t\t<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({\'gtm.start\':\n\t\tnew Date().getTime(),event:\'gtm.js\'});var f=d.getElementsByTagName(s)[0],\n\t\tj=d.createElement(s),dl=l!=\'dataLayer\'?\'&l=\'+l:\'\';j.async=true;j.src=\n\t\t\'https://www.googletagmanager.com/gtm.js?id=\'+i+dl;f.parentNode.insertBefore(j,f);\n\t\t})(window,document,\'script\',\'dataLayer\',\'GTM-PVM6MWV\');</script>\n\t\t<!-- End Google Tag Manager -->        \n      </body>\n    </html>\n    ';
+	return '\n    <!doctype html>\n    <html>\n      <head>\n        <link rel="icon" href="/dist/favicon.ico" type="image/ico" />\n        <meta name="viewport" content="width=device-width,initial-scale=1" />\n        \n\t\t<script type="text/javascript">\n\t\t\tlet gtm4wp_datalayer_name = "dataLayer";\n\t\t\tif ( "undefined" == typeof dataLayer ) {\n\t\t\t\tdataLayer = new Array();\n\t\t\t}\n\t\t</script>\t\n        \n        \n\t   <script type="text/javascript">\nfunction dataLayerPush (){\n\tdataLayer.push({\n\t\tpage:{\n\t\t\tpageInfo:{\t\t\t\n\t\t\t\t"page-title":  \'\',\n\t\t\t\t"page-url": window.location.href\n\t\t\t}\n\t\t}\n\t}); \n}\n\ndataLayerPush(); \n\n\n\t\t</script>\t\n        \n        ' + helmet.title.toString() + '\n        ' + helmet.meta.toString() + '\n        ' + helmet.link.toString() + '\n      </head>\n      <body>\n\t\t<!-- Google Tag Manager (noscript) -->\n\t\t<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVM6MWV"\n\t\theight="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>\n\t\t<!-- End Google Tag Manager (noscript) -->      \n        <div id="root">' + html + '</div>\n        <script>\n          // WARNING: See the following for security issues around embedding JSON in HTML:\n          // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations\n          window.__PRELOADED_STATE__ = ' + JSON.stringify(preloadedState).replace(/</g, '\\u003c') + '\n        </script>\n        <script src="/dist/assets/app.bundle.js"></script>\n        \n\t\t<!-- Google Tag Manager -->\n\t\t<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({\'gtm.start\':\n\t\tnew Date().getTime(),event:\'gtm.js\'});var f=d.getElementsByTagName(s)[0],\n\t\tj=d.createElement(s),dl=l!=\'dataLayer\'?\'&l=\'+l:\'\';j.async=true;j.src=\n\t\t\'https://www.googletagmanager.com/gtm.js?id=\'+i+dl;f.parentNode.insertBefore(j,f);\n\t\t})(window,document,\'script\',\'dataLayer\',\'GTM-PVM6MWV\');</script>\n\t\t<!-- End Google Tag Manager -->        \n      </body>\n    </html>\n    ';
 }
 
 /***/ }),
-/* 49 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4397,7 +5299,7 @@ var RedirectWithStatus = function RedirectWithStatus(_ref) {
 exports.default = RedirectWithStatus;
 
 /***/ }),
-/* 50 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4428,7 +5330,8 @@ var initialState = {
     dataTreatingHearingLoss: null,
     dataTypesOfTreatment: null,
     dataHearingAidVsImplantableSolutions: null,
-    dataCostsAndAffordability: null
+    dataCostsAndAffordability: null,
+    dataFindAClinic: null
 };
 function userReducer() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
@@ -4455,6 +5358,8 @@ function userReducer() {
             return _extends({}, state, { dataTreatingHearingLoss: action.payload });
         case _userTypes.Types.UPDATE_HEARINGAIDSVSIMPLANTABLESOLUTIONS:
             return _extends({}, state, { dataHearingAidVsImplantableSolutions: action.payload });
+        case _userTypes.Types.UPDATE_FINDACLINIC:
+            return _extends({}, state, { dataFindAClinic: action.payload });
         case _userTypes.Types.UPDATE_TYPESOFTREATMENT:
             return _extends({}, state, { dataTypesOfTreatment: action.payload });
         case _userTypes.Types.UPDATE_COSTSANDAFFORDABILITY:
@@ -4467,7 +5372,7 @@ function userReducer() {
 }
 
 /***/ }),
-/* 51 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4567,10 +5472,10 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(User);
 
 /***/ }),
-/* 52 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(11)(false);
+exports = module.exports = __webpack_require__(10)(false);
 // imports
 
 
@@ -4581,38 +5486,52 @@ exports.push([module.i, "/* Style the buttons that are used to open and close th
 
 
 /***/ }),
-/* 53 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(11)(false);
+exports = module.exports = __webpack_require__(10)(false);
 // imports
 
 
 // module
-exports.push([module.i, ".nav-onscreen__global-header {\n  float: left;\n  width: 100%;\n  margin: 0;\n  padding: 0;\n  position: relative; }\n  .nav-onscreen__global-header .nav {\n    display: flex;\n    float: none; }\n", ""]);
+exports.push([module.i, ".nav-onscreen.nav-onscreen__global-header {\n  float: left;\n  width: 100%;\n  margin: 0;\n  padding: 0;\n  position: relative; }\n  .nav-onscreen.nav-onscreen__global-header .nav {\n    display: flex;\n    float: none; }\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 54 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(11)(false);
+exports = module.exports = __webpack_require__(10)(false);
 // imports
 
 
 // module
-exports.push([module.i, ".nav-onscreen__global-header {\n  margin-top: 25px; }\n  .nav-onscreen__global-header .nav > li {\n    float: none;\n    flex-grow: 1; }\n  .nav-onscreen__global-header .nav-item span {\n    display: block;\n    font-size: 12px; }\n  .nav-onscreen__global-header .login {\n    padding: 0;\n    margin: 0;\n    position: absolute;\n    top: 0;\n    right: 0; }\n", ""]);
+exports.push([module.i, ".nav-onscreen.nav-onscreen__global-header {\n  margin-top: 25px;\n  display: block; }\n  .nav-onscreen.nav-onscreen__global-header .nav > li {\n    float: none;\n    flex-grow: 1;\n    max-width: 200px;\n    padding: 10px; }\n  .nav-onscreen.nav-onscreen__global-header .nav-item span {\n    display: block;\n    font-size: 12px; }\n  .nav-onscreen.nav-onscreen__global-header .login {\n    padding: 0;\n    margin: 0;\n    position: absolute;\n    top: 0;\n    right: 0; }\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 55 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(11)(false);
+exports = module.exports = __webpack_require__(10)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".nav-region-dropdown {\n  float: right;\n  position: relative; }\n  .nav-region-dropdown .nav-region-dropdown__cta {\n    cursor: pointer;\n    font-size: 14px;\n    text-transform: uppercase;\n    text-decoration: underline; }\n    .nav-region-dropdown .nav-region-dropdown__cta:hover {\n      color: #81BC00; }\n  .nav-region-dropdown .nav-region-dropdown__form {\n    display: none;\n    position: absolute;\n    background-color: #ffffff;\n    z-index: 901; }\n  .nav-region-dropdown .nav-region-dropdown__label {\n    display: block; }\n    .nav-region-dropdown .nav-region-dropdown__label span {\n      width: 150px;\n      display: inline-block; }\n  .nav-region-dropdown .nav-region-dropdown__select {\n    width: 200px;\n    padding: 5px;\n    border: 1px solid #efefef; }\n  .nav-region-dropdown .nav-region-dropdown__submit {\n    display: block;\n    width: 100px;\n    text-align: center;\n    background-color: #000000;\n    color: #ffffff;\n    margin-top: 10px; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(10)(false);
 // imports
 
 
@@ -4623,10 +5542,10 @@ exports.push([module.i, ".global-header h1 {\n  line-height: 85px; }\n\n.global-
 
 
 /***/ }),
-/* 56 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(11)(false);
+exports = module.exports = __webpack_require__(10)(false);
 // imports
 
 
@@ -4637,10 +5556,10 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 57 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(11)(false);
+exports = module.exports = __webpack_require__(10)(false);
 // imports
 
 
@@ -4651,21 +5570,21 @@ exports.push([module.i, "/*\n * Default stylesheet\n * This stylesheet is includ
 
 
 /***/ }),
-/* 58 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(11)(false);
+exports = module.exports = __webpack_require__(10)(false);
 // imports
 
 
 // module
-exports.push([module.i, "body {\n  font-family: \"Trebuchet MS\",\"Gill Sans\",\"Helvetica Neue\",Arial,sans-serif; }\n", ""]);
+exports.push([module.i, "body {\n  font-family: \"BlissPro-Regular\",\"Trebuchet MS\",\"Gill Sans\",\"Helvetica Neue\",Arial,sans-serif; }\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 59 */
+/* 63 */
 /***/ (function(module, exports) {
 
 
@@ -4734,16 +5653,16 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 60 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(52);
+var content = __webpack_require__(55);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(12)(content, {});
+var update = __webpack_require__(11)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -4760,16 +5679,16 @@ if(false) {
 }
 
 /***/ }),
-/* 61 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(53);
+var content = __webpack_require__(56);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(12)(content, {});
+var update = __webpack_require__(11)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -4786,16 +5705,16 @@ if(false) {
 }
 
 /***/ }),
-/* 62 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(54);
+var content = __webpack_require__(57);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(12)(content, {});
+var update = __webpack_require__(11)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -4812,16 +5731,42 @@ if(false) {
 }
 
 /***/ }),
-/* 63 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(55);
+var content = __webpack_require__(58);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(12)(content, {});
+var update = __webpack_require__(11)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./RegionLanguageSelect.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./RegionLanguageSelect.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 68 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(59);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(11)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -4838,16 +5783,16 @@ if(false) {
 }
 
 /***/ }),
-/* 64 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(56);
+var content = __webpack_require__(60);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(12)(content, {});
+var update = __webpack_require__(11)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -4864,16 +5809,16 @@ if(false) {
 }
 
 /***/ }),
-/* 65 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(57);
+var content = __webpack_require__(61);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(12)(content, {});
+var update = __webpack_require__(11)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -4890,16 +5835,16 @@ if(false) {
 }
 
 /***/ }),
-/* 66 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(58);
+var content = __webpack_require__(62);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(12)(content, {});
+var update = __webpack_require__(11)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -4916,10 +5861,34 @@ if(false) {
 }
 
 /***/ }),
-/* 67 */
+/* 72 */
 /***/ (function(module, exports) {
 
 module.exports = require("axios");
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports) {
+
+module.exports = require("prop-types");
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-google-tag-manager");
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-tag-manager");
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-tag-manager/DataLayer");
 
 /***/ })
 /******/ ]);
