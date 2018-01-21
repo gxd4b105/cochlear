@@ -25,8 +25,9 @@ class HomePage extends Component {
                 </Helmet>
                 <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
                 <div className='l-content-container cf l-padding'>
-                    <Cm02ContentTile    title="Treating Hearing Loss"
+                    <Cm02ContentTile    title="Treating hearing loss"
                                         description="Find out what treatment options are available to manage hearing loss"
+                                        image="https://auth.cochlear.com//wps/wcm/connect/dd2107e8-0708-4a4c-9fb9-1bcc1b82be49/CHILD_SWITCH-ON_1_RGB.jpg?MOD=AJPERES&amp;CVID="
                                         path="/intl/treating-hearing-loss"
                                         additionalClass="is-shaded is-large"/>
                 </div>

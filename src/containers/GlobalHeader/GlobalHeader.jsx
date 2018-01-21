@@ -10,6 +10,7 @@ import OnScreenNav__Item from '../../components/OnScreenNav__Item/OnScreenNav__I
 import GoogleTagManager from "../../components/GoogleTagManager/GoogleTagManager.jsx";
 import GTM from 'react-tag-manager';
 import DataLayer from 'react-tag-manager/DataLayer';
+import RegionLanguageSelect from "../../components/RegionLanguageSelect/RegionLanguageSelect.jsx";
 
 
 if (process.env.BROWSER) {
@@ -56,10 +57,14 @@ class Header extends Component {
                         </button>
                         */}
 
+                        <RegionLanguageSelect cta="Select a region and language"
+                                              formAction="/intl/home"
+                                              submitText="Change"/>
+
                         <div className="logo">
                             <a href={this.props.logoURL}><img src={this.props.logoPath} alt={this.props.title} /></a>
                         </div>
-                        <h1>{this.props.headerTitle}</h1>
+                        <h1></h1>
 
                         <OnScreeNav additionalClass="nav-onscreen__global-header">
                             <OnScreenNav__Item title="Home"

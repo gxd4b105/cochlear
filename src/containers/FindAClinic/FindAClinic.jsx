@@ -21,6 +21,11 @@ class FindAClinic extends Component {
     }
 
     render() {
+
+        console.log(this.props.dataFindAClinic);
+
+        let getData = this.props.dataFindAClinic;
+
         return (
             <div className="l-layout l-two-column cf">
                 <Helmet>

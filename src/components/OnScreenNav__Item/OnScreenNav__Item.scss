@@ -6,6 +6,8 @@
     .nav > li {
       float: none;
       flex-grow: 1;
+      max-width: 200px;
+      padding: 10px;
     }
     .nav-item {
       span {
