@@ -97,7 +97,7 @@ class ClinicNearYou extends React.Component {
  
 
 
-   return <li key={marker.lat} ref={marker.lat} style={{'backgroundColor':'#fff','border':'1px solid #ccc','padding': '20px'}}><strong>{marker.text}</strong><div className={'details'}>{marker.address} &nbsp; <span style={{'fontSize':'12px'}}>{parseInt(markerDistance)}km</span></div></li>
+   return <li key={marker.lat} ref={marker.lat} onClick={() => this.toggleClinic(marker.lat)} style={{'backgroundColor':'#fff','border':'1px solid #ccc','padding': '20px'}}><strong>{marker.text}</strong><div className={'details'}>{marker.address} &nbsp; <span style={{'fontSize':'12px'}}>{parseInt(markerDistance)}km</span><br />Number: {marker.number}<br />Email: {marker.email}<br />Opening Hours: {marker.hours}</div></li>
 }
 
             }
@@ -132,8 +132,8 @@ class ClinicNearYou extends React.Component {
           >
           {this.props.markers.map(marker => (
               <Marker
-                  key={marker.text}
-                  position={{ lat: parseInt(marker.lat), lng: parseInt(marker.lng) }}
+                  key={marker.lat}
+                  position={{ lat: this.ConvertToDecimal(marker.lat), lng: this.ConvertToDecimal(marker.lng)}}
                   test={this.test}
                   onClick={() => this.toggleClinic(marker.lat)}
                   />
@@ -168,7 +168,12 @@ class ClinicNearYou extends React.Component {
 
 
 
-
+    ConvertToDecimal(num) {
+        num = num.toString(); //If it's not already a String
+        num = num.slice(0, (num.indexOf(".")) + 6); //With 3 exposing the hundredths place
+       console.log('M : ' +  Number(num)); //If you need it back as a Number  
+       return Number(num);  
+    }
 
 
 
