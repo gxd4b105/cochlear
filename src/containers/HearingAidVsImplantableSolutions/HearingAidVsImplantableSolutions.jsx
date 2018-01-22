@@ -21,7 +21,6 @@ class HearingAidVsCochlearImplant extends Component {
         return store.dispatch(actions.getHearingAidVsImplantableSolutions());
     }
     componentDidMount() {
-
         if (navigator.geolocation) {
             
                         console.log('test4 ', this.props);
@@ -43,13 +42,16 @@ class HearingAidVsCochlearImplant extends Component {
             
                     console.log('HERE WE GO 1 ..............');
                     
-                    fetch(url)
-                    .then(res => res.json())
-                    .then(data => {
-                        //this.setState({ markers: data });
-                        console.log('HERE WE GO 2 ..............');
-                        this.props.updateMarkers({ markers: data});
-                    });
+                    // fetch(url)
+                    // .then(res => res.json())
+                    // .then(data => {
+                    //     //this.setState({ markers: data });
+                    //     console.log('HERE WE GO 2 ..............');
+                    //     this.props.updateMarkers({ markers: data});
+                    // });
+
+                    let testdata = [{"lat":"-33.815000","lng":"151.001111","text":"Prince Alfred Audiology","address":"23 Macquarie Street, Parramatta 2037","number":"0459 576 289","email":"paa@tech.com","hours":"Mon to Fri - 9am to 5.30pm"},{"lat":"-33.876927","lng":"151.219254","text":"Neurosensory Centre","address":"52 Finton Street, Surrey Hills 2008","number":"0459 834 229","email":"neurocent@gmail.com","hours":"Mon to Fri - 9am to 5.30pm"},{"lat":"-33.635113","lng":"151.147842","text":"Precision hearing","address":"52 Finton Street, Surrey Hills 2008","number":"0459 129 784","email":"precision@hearing.com","hours":"Mon to Fri - 9am to 5.30pm"},{"lat":"-12.439206","lng":"130.933685","text":"Hearing NT","address":"27 Berrimah Road, Berrimah 8083","number":"0459 779 784","email":"precision@hearing.com","hours":"Mon to Fri - 9am to 5.30pm"},{"lat":"-12.460327","lng":"130.841331","text":"Darwin Hearing Centre","address":"81 Knuckey Street, Darwin 8003","number":"0459 129 784","email":"darwinhearing@mailto.com","hours":"Mon to Fri - 9am to 5.30pm"},{"lat":"-12.484128","lng":"131.040802","text":"Precision hearing","address":"39 Derwen Avenue, Howard Springs 8074","number":"0459 863 184","email":"precision@hearing.com","hours":"Mon to Fri - 9am to 5.30pm"}];
+                    this.props.updateMarkers({ markers: testdata});
 
     }
 
