@@ -97,7 +97,7 @@ class ClinicNearYou extends React.Component {
  
 
 
-   return <li key={marker.lat} ref={marker.lat} onClick={() => this.toggleClinic(marker.lat)} style={{'backgroundColor':'#fff','border':'1px solid #ccc','padding': '20px'}}><strong>{marker.text}</strong><div className={'details'}>{marker.address} &nbsp; <span style={{'fontSize':'12px'}}>{parseInt(markerDistance)}km</span><br />Number: {marker.number}<br />Email: {marker.email}<br />Opening Hours: {marker.hours}</div></li>
+   return <li key={marker.lat} ref={marker.lat} onClick={() => this.toggleClinic(marker.lat)} style={{'backgroundColor':'#fff','border':'1px solid #ccc','padding': '20px'}}><strong>{marker.text}</strong><br />{marker.address} &nbsp; <span style={{'fontSize':'12px'}}>{parseInt(markerDistance)}km</span><div className={'details'}> <br />Number: {marker.number}<br />Email: {marker.email}<br />Opening Hours: {marker.hours}</div></li>
 }
 
             }
