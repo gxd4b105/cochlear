@@ -3,9 +3,15 @@ import GoogleMapsWrapper from './GoogleMapsWrapper.jsx';
 import { Marker } from 'react-google-maps';
 import MarkerClusterer from "react-google-maps/lib/components/addons/MarkerClusterer";
 import Geosuggest from 'react-geosuggest';
+import ReactDOM from 'react-dom';
 
 
 class ClinicNearYou extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { 'showDetails': 'show' };
+      }
 
 	componentWillMount() {
         //this.setState({ markers: [], lat: -32, lng: 151, label: '' });
@@ -91,7 +97,7 @@ class ClinicNearYou extends React.Component {
  
 
 
-   return <li key={marker.lat} style={{'backgroundColor':'#fff','border':'1px solid #ccc','padding': '20px'}}><strong>{marker.text}</strong><div className="details">{marker.address} &nbsp; <span style={{'fontSize':'12px'}}>{parseInt(markerDistance)}km</span></div></li>
+   return <li key={marker.lat} ref={marker.lat} onClick={() => this.toggleClinic(marker.lat)} style={{'backgroundColor':'#fff','border':'1px solid #ccc','padding': '20px'}}><strong>{marker.text}</strong><div className={'details'}>{marker.address} &nbsp; <span style={{'fontSize':'12px'}}>{parseInt(markerDistance)}km</span><br />Number: {marker.number}<br />Email: {marker.email}<br />Opening Hours: {marker.hours}</div></li>
 }
 
             }
@@ -101,7 +107,6 @@ class ClinicNearYou extends React.Component {
 
 </div>
 <div style={{'width':'50%', 'display': 'inline-block', 'verticalAlign': 'top'}}>
-
 
 <GoogleMapsWrapper
       googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyD49FWPcw5h8bj6-LnHNaCkbqhFm7hULFI"
@@ -127,10 +132,10 @@ class ClinicNearYou extends React.Component {
           >
           {this.props.markers.map(marker => (
               <Marker
-                  key={marker.text}
-                  position={{ lat: parseInt(marker.lat), lng: parseInt(marker.lng) }}
+                  key={marker.lat}
+                  position={{ lat: this.ConvertToDecimal(marker.lat), lng: this.ConvertToDecimal(marker.lng)}}
                   test={this.test}
-                  onClick={() => this.test()}
+                  onClick={() => this.toggleClinic(marker.lat)}
                   />
           ))}
       </MarkerClusterer>
@@ -163,7 +168,12 @@ class ClinicNearYou extends React.Component {
 
 
 
-
+    ConvertToDecimal(num) {
+        num = num.toString(); //If it's not already a String
+        num = num.slice(0, (num.indexOf(".")) + 6); //With 3 exposing the hundredths place
+       console.log('M : ' +  Number(num)); //If you need it back as a Number  
+       return Number(num);  
+    }
 
 
 
@@ -171,7 +181,11 @@ class ClinicNearYou extends React.Component {
     onSuggestSelect(suggest) {
         console.log(suggest);
 
-        this.setState({ lat: suggest.location.lat, lng: suggest.location.lng, label:suggest.label });
+        this.props.getCurrentPosition({ lat: suggest.location.lat, lng: suggest.location.lng});
+        
+        
+
+        //this.setState({ lat: suggest.location.lat, lng: suggest.location.lng, label:suggest.label });
       }
 
       getDistance(lat1, lng1, lat2, lng2, miles) { // miles optional
@@ -189,8 +203,10 @@ class ClinicNearYou extends React.Component {
         else{return d;} //return km
       }
 
-      test() {
-        console.log('YES!!!!!28');
+      toggleClinic(lat) {
+        var node = ReactDOM.findDOMNode(this.refs[lat]);
+        node.querySelector('.details').classList.toggle('show');
+        
     }
     
 

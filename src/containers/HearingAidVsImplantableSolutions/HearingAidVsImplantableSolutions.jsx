@@ -11,7 +11,7 @@ import Cm02ContentTile from "../../components/Cm02ContentTile/Cm02ContentTile.js
 import Cm01RichText from "../../components/Cm01RichText/Cm01RichText.jsx";
 import HeaderLandingBanner from "../../components/HeaderLandingBanner/HeaderLandingBanner.jsx";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs.jsx";
-import ClinicNearYou from "../../components/ClinicNearYou/ClinicNearYou.jsx";
+import ClinicNearYouMini from "../../components/ClinicNearYou/ClinicNearYouMini.jsx";
 import ContentHeader from "../../components/ContentHeader/ContentHeader.jsx";
 import Cm02bContentTile from "../../components/Cm02bContentTile/Cm02bContentTile.jsx"
 
@@ -21,6 +21,36 @@ class HearingAidVsCochlearImplant extends Component {
         return store.dispatch(actions.getHearingAidVsImplantableSolutions());
     }
     componentDidMount() {
+
+        if (navigator.geolocation) {
+            
+                        console.log('test4 ', this.props);
+                        navigator.geolocation.getCurrentPosition((position) => {
+                            console.log('test222');
+                            //this.setState({ lat: position.coords.latitude, lng: position.coords.longitude});
+                            //console.log(this.mapDispatchToProps);
+            
+                            this.props.getCurrentPosition({ lat: position.coords.latitude, lng: position.coords.longitude});
+            
+            
+            
+                            console.log('this.state is ', this.state);
+            
+                        });
+                    }
+                    
+                    const url = 'https://api.myjson.com/bins/12k2w9';
+            
+                    console.log('HERE WE GO 1 ..............');
+                    
+                    fetch(url)
+                    .then(res => res.json())
+                    .then(data => {
+                        //this.setState({ markers: data });
+                        console.log('HERE WE GO 2 ..............');
+                        this.props.updateMarkers({ markers: data});
+                    });
+
     }
 
     render() {
@@ -57,9 +87,16 @@ class HearingAidVsCochlearImplant extends Component {
                                               body={getData['cm02b-description-01']}
                                               image={'https://auth.cochlear.com/'+getData['cm02b-image-01'].src}/>
 
-                            <ClinicNearYou title="Clinics near you"
-                                           description="find a clinic that is nearest to you"
-                                            additionalClass="is-shaded"/>
+                            <ClinicNearYouMini title="Clinics near"
+                                           description=""
+                                            additionalClass="is-shaded"
+                                            label=""
+                                            markers={this.props.markers}
+                                            test={this.test}
+                                            lat={this.props.lat}
+                                            lng={this.props.lng}
+                                            path={'/intl/find-a-clinic'}
+                                            getCurrentPosition={this.props.getCurrentPosition} />
                         </main>
                     </article>
                 </div>

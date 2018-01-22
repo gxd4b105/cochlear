@@ -43,7 +43,7 @@ console.log('test1');
             });
         }
         
-        const url = 'https://api.myjson.com/bins/193iwd';
+        const url = 'https://api.myjson.com/bins/12k2w9';
 
         console.log('HERE WE GO 1 ..............');
 		
@@ -76,9 +76,10 @@ console.log('test1');
                                             isLoggedIn={this.props.isLoggedIn}
                                             lat={this.props.lat}
                                             lng={this.props.lng}
-                                            label=''
+                                            label=""
                                             markers={this.props.markers}
-                                            test={this.test}/>
+                                            test={this.test}
+                                            getCurrentPosition={this.props.getCurrentPosition}/>
                         </div>
                     </div>
                 </article>

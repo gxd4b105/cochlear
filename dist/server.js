@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 51);
+/******/ 	return __webpack_require__(__webpack_require__.s = 56);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -115,10 +115,12 @@ exports.getFindAClinic = getFindAClinic;
 exports.getCostsAndAffordability = getCostsAndAffordability;
 exports.getFooter = getFooter;
 exports.getFooterUS = getFooterUS;
+exports.getCurrentPosition = getCurrentPosition;
+exports.updateMarkers = updateMarkers;
 
-var _userTypes = __webpack_require__(19);
+var _userTypes = __webpack_require__(21);
 
-var _axios = __webpack_require__(72);
+var _axios = __webpack_require__(77);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -262,6 +264,18 @@ function getFooterUS() {
     };
 }
 
+function getCurrentPosition(data) {
+    return function (dispatch, getState) {
+        dispatch({ type: _userTypes.Types.GET_CURRENT_POSITION, payload: data });
+    };
+}
+
+function updateMarkers(data) {
+    return function (dispatch, getState) {
+        dispatch({ type: _userTypes.Types.UPDATE_MARKERS, payload: data });
+    };
+}
+
 /***/ }),
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -291,19 +305,19 @@ var _actions = __webpack_require__(4);
 
 var actions = _interopRequireWildcard(_actions);
 
-var _GlobalFooter__Nav = __webpack_require__(31);
+var _GlobalFooter__Nav = __webpack_require__(36);
 
 var _GlobalFooter__Nav2 = _interopRequireDefault(_GlobalFooter__Nav);
 
-var _GlobalFooter__Nav__Item = __webpack_require__(32);
+var _GlobalFooter__Nav__Item = __webpack_require__(37);
 
 var _GlobalFooter__Nav__Item2 = _interopRequireDefault(_GlobalFooter__Nav__Item);
 
-var _GlobalFooter__Nav__Social = __webpack_require__(33);
+var _GlobalFooter__Nav__Social = __webpack_require__(38);
 
 var _GlobalFooter__Nav__Social2 = _interopRequireDefault(_GlobalFooter__Nav__Social);
 
-var _GlobalFooter__Nav__Social__Item = __webpack_require__(34);
+var _GlobalFooter__Nav__Social__Item = __webpack_require__(39);
 
 var _GlobalFooter__Nav__Social__Item2 = _interopRequireDefault(_GlobalFooter__Nav__Social__Item);
 
@@ -477,27 +491,27 @@ var _actions = __webpack_require__(4);
 
 var actions = _interopRequireWildcard(_actions);
 
-var _OnScreeNav = __webpack_require__(36);
+var _OnScreeNav = __webpack_require__(41);
 
 var _OnScreeNav2 = _interopRequireDefault(_OnScreeNav);
 
-var _OnScreenNav__Item = __webpack_require__(37);
+var _OnScreenNav__Item = __webpack_require__(42);
 
 var _OnScreenNav__Item2 = _interopRequireDefault(_OnScreenNav__Item);
 
-var _GoogleTagManager = __webpack_require__(35);
+var _GoogleTagManager = __webpack_require__(40);
 
 var _GoogleTagManager2 = _interopRequireDefault(_GoogleTagManager);
 
-var _reactTagManager = __webpack_require__(75);
+var _reactTagManager = __webpack_require__(80);
 
 var _reactTagManager2 = _interopRequireDefault(_reactTagManager);
 
-var _DataLayer = __webpack_require__(76);
+var _DataLayer = __webpack_require__(81);
 
 var _DataLayer2 = _interopRequireDefault(_DataLayer);
 
-var _RegionLanguageSelect = __webpack_require__(38);
+var _RegionLanguageSelect = __webpack_require__(43);
 
 var _RegionLanguageSelect2 = _interopRequireDefault(_RegionLanguageSelect);
 
@@ -512,9 +526,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(70);
-    __webpack_require__(71);
-    __webpack_require__(68);
+    __webpack_require__(75);
+    __webpack_require__(76);
+    __webpack_require__(73);
 }
 
 var Header = function (_Component) {
@@ -909,7 +923,7 @@ var stylesInDom = {},
 	singletonElement = null,
 	singletonCounter = 0,
 	styleElementsInsertedAtTop = [],
-	fixUrls = __webpack_require__(63);
+	fixUrls = __webpack_require__(68);
 
 module.exports = function(list, options) {
 	if(typeof DEBUG !== "undefined" && DEBUG) {
@@ -1327,6 +1341,18 @@ exports.default = ContentHeader;
 
 /***/ }),
 /* 15 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-dom");
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-google-maps");
+
+/***/ }),
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1336,55 +1362,55 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Home = __webpack_require__(42);
+var _Home = __webpack_require__(47);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _Homesecond = __webpack_require__(44);
+var _Homesecond = __webpack_require__(49);
 
 var _Homesecond2 = _interopRequireDefault(_Homesecond);
 
-var _Homethird = __webpack_require__(45);
+var _Homethird = __webpack_require__(50);
 
 var _Homethird2 = _interopRequireDefault(_Homethird);
 
-var _user = __webpack_require__(54);
+var _user = __webpack_require__(59);
 
 var _user2 = _interopRequireDefault(_user);
 
-var _HomePage = __webpack_require__(43);
+var _HomePage = __webpack_require__(48);
 
 var _HomePage2 = _interopRequireDefault(_HomePage);
 
-var _HearingAidVsImplantableSolutions = __webpack_require__(41);
+var _HearingAidVsImplantableSolutions = __webpack_require__(46);
 
 var _HearingAidVsImplantableSolutions2 = _interopRequireDefault(_HearingAidVsImplantableSolutions);
 
-var _FindAClinic = __webpack_require__(40);
+var _FindAClinic = __webpack_require__(45);
 
 var _FindAClinic2 = _interopRequireDefault(_FindAClinic);
 
-var _StatsAndProofs = __webpack_require__(47);
+var _StatsAndProofs = __webpack_require__(52);
 
 var _StatsAndProofs2 = _interopRequireDefault(_StatsAndProofs);
 
-var _TreatmentOptions = __webpack_require__(49);
+var _TreatmentOptions = __webpack_require__(54);
 
 var _TreatmentOptions2 = _interopRequireDefault(_TreatmentOptions);
 
-var _TypesOfTreatment = __webpack_require__(50);
+var _TypesOfTreatment = __webpack_require__(55);
 
 var _TypesOfTreatment2 = _interopRequireDefault(_TypesOfTreatment);
 
-var _TreatingHearingLoss = __webpack_require__(48);
+var _TreatingHearingLoss = __webpack_require__(53);
 
 var _TreatingHearingLoss2 = _interopRequireDefault(_TreatingHearingLoss);
 
-var _ImplantableSolutions = __webpack_require__(46);
+var _ImplantableSolutions = __webpack_require__(51);
 
 var _ImplantableSolutions2 = _interopRequireDefault(_ImplantableSolutions);
 
-var _CostsAndAffordability = __webpack_require__(39);
+var _CostsAndAffordability = __webpack_require__(44);
 
 var _CostsAndAffordability2 = _interopRequireDefault(_CostsAndAffordability);
 
@@ -1452,122 +1478,38 @@ exports.default = {
 };
 
 /***/ }),
-/* 16 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactGoogleMaps = __webpack_require__(16);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var GoogleMapsWrapper = (0, _reactGoogleMaps.withScriptjs)((0, _reactGoogleMaps.withGoogleMap)(function (props) {
+  return _react2.default.createElement(
+    _reactGoogleMaps.GoogleMap,
+    _extends({}, props, { ref: props.onMapMounted }),
+    props.children
+  );
+}));
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ClinicNearYou = function (_React$Component) {
-    _inherits(ClinicNearYou, _React$Component);
-
-    function ClinicNearYou() {
-        _classCallCheck(this, ClinicNearYou);
-
-        return _possibleConstructorReturn(this, (ClinicNearYou.__proto__ || Object.getPrototypeOf(ClinicNearYou)).apply(this, arguments));
-    }
-
-    _createClass(ClinicNearYou, [{
-        key: "render",
-        value: function render() {
-
-            return _react2.default.createElement(
-                "section",
-                { className: "cm cm-subscription-banner " + this.props.additionalClass },
-                _react2.default.createElement(
-                    "div",
-                    { className: "l-padding" },
-                    _react2.default.createElement(
-                        "form",
-                        { className: "fn_validate", action: "/intl/find-a-clinic" },
-                        _react2.default.createElement("div", { className: "fn_validate_summary" }),
-                        _react2.default.createElement(
-                            "fieldset",
-                            null,
-                            _react2.default.createElement(
-                                "div",
-                                { className: "title-text-container" },
-                                _react2.default.createElement(
-                                    "legend",
-                                    null,
-                                    this.props.title
-                                ),
-                                _react2.default.createElement(
-                                    "p",
-                                    null,
-                                    this.props.description
-                                )
-                            ),
-                            _react2.default.createElement(
-                                "div",
-                                { className: "input-container" },
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "ctrl-holder width-l" },
-                                    _react2.default.createElement(
-                                        "label",
-                                        { htmlFor: "txt-postcode" },
-                                        "Postcode",
-                                        _react2.default.createElement(
-                                            "em",
-                                            null,
-                                            "*",
-                                            _react2.default.createElement(
-                                                "span",
-                                                { className: "vh" },
-                                                "Required field"
-                                            )
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        "div",
-                                        { className: "ctrl" },
-                                        _react2.default.createElement("input", { name: "txt-postcode", id: "txt-postcode", className: "text", "data-rule-required": "true" }),
-                                        _react2.default.createElement("div", { className: "status-msg" })
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "btn-holder" },
-                                    _react2.default.createElement(
-                                        "button",
-                                        { role: "button", type: "submit", className: "fn_validate_submit cta" },
-                                        "Search"
-                                    )
-                                )
-                            )
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return ClinicNearYou;
-}(_react2.default.Component);
-
-exports.default = ClinicNearYou;
+exports.default = GoogleMapsWrapper;
 
 /***/ }),
-/* 17 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1592,7 +1534,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(64);
+    __webpack_require__(69);
 }
 
 var Cm18Accordian = function (_React$Component) {
@@ -1635,7 +1577,7 @@ var Cm18Accordian = function (_React$Component) {
 exports.default = Cm18Accordian;
 
 /***/ }),
-/* 18 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1699,7 +1641,7 @@ var Cm18Accordian__Item = function (_React$Component) {
 exports.default = Cm18Accordian__Item;
 
 /***/ }),
-/* 19 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1723,11 +1665,25 @@ var Types = exports.Types = {
     UPDATE_TREATINGHEARINGLOSS: 'UPDATE_TREATINGHEARINGLOSS',
     UPDATE_HEARINGAIDSVSIMPLANTABLESOLUTIONS: 'UPDATE_HEARINGAIDSVSIMPLANTABLESOLUTIONS',
     UPDATE_FINDACLINIC: 'UPDATE_FINDACLINIC',
-    UPDATE_COSTSANDAFFORDABILITY: 'UPDATE_COSTSANDAFFORDABILITY'
+    UPDATE_COSTSANDAFFORDABILITY: 'UPDATE_COSTSANDAFFORDABILITY',
+    GET_CURRENT_POSITION: 'GET_CURRENT_POSITION',
+    UPDATE_MARKERS: 'UPDATE_MARKERS'
 };
 
 /***/ }),
-/* 20 */
+/* 22 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-geosuggest");
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-google-maps/lib/components/addons/MarkerClusterer");
+
+/***/ }),
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1747,11 +1703,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(13);
 
-var _redirectWStatus = __webpack_require__(52);
+var _redirectWStatus = __webpack_require__(57);
 
 var _redirectWStatus2 = _interopRequireDefault(_redirectWStatus);
 
-var _routes = __webpack_require__(15);
+var _routes = __webpack_require__(17);
 
 var _routes2 = _interopRequireDefault(_routes);
 
@@ -1844,7 +1800,7 @@ function mapDispatchToProps(dispatch) {
 //export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 /***/ }),
-/* 21 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1867,7 +1823,7 @@ var isFunction = function isFunction(action) {
 exports.default = customMiddleware;
 
 /***/ }),
-/* 22 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1879,7 +1835,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(1);
 
-var _reducer = __webpack_require__(53);
+var _reducer = __webpack_require__(58);
 
 var _reducer2 = _interopRequireDefault(_reducer);
 
@@ -1892,31 +1848,25 @@ var reducers = (0, _redux.combineReducers)({
 exports.default = reducers;
 
 /***/ }),
-/* 23 */
+/* 27 */
 /***/ (function(module, exports) {
 
 module.exports = require("express");
 
 /***/ }),
-/* 24 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-dom");
-
-/***/ }),
-/* 25 */
+/* 28 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 26 */
+/* 29 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router");
 
 /***/ }),
-/* 27 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2002,7 +1952,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Body);
 
 /***/ }),
-/* 28 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2084,7 +2034,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Bodysecond);
 
 /***/ }),
-/* 29 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2166,7 +2116,514 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Bodythird);
 
 /***/ }),
-/* 30 */
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _GoogleMapsWrapper = __webpack_require__(18);
+
+var _GoogleMapsWrapper2 = _interopRequireDefault(_GoogleMapsWrapper);
+
+var _reactGoogleMaps = __webpack_require__(16);
+
+var _MarkerClusterer = __webpack_require__(23);
+
+var _MarkerClusterer2 = _interopRequireDefault(_MarkerClusterer);
+
+var _reactGeosuggest = __webpack_require__(22);
+
+var _reactGeosuggest2 = _interopRequireDefault(_reactGeosuggest);
+
+var _reactDom = __webpack_require__(15);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ClinicNearYou = function (_React$Component) {
+    _inherits(ClinicNearYou, _React$Component);
+
+    function ClinicNearYou(props) {
+        _classCallCheck(this, ClinicNearYou);
+
+        var _this = _possibleConstructorReturn(this, (ClinicNearYou.__proto__ || Object.getPrototypeOf(ClinicNearYou)).call(this, props));
+
+        _this.state = { 'showDetails': 'show' };
+        return _this;
+    }
+
+    _createClass(ClinicNearYou, [{
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            //this.setState({ markers: [], lat: -32, lng: 151, label: '' });
+
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            // const url = [
+            // 	// Length issue
+            // 	`https://gist.githubusercontent.com`,
+            // 	`/farrrr/dfda7dd7fccfec5474d3`,
+            // 	`/raw/758852bbc1979f6c4522ab4e92d1c92cba8fb0dc/data.json`
+            // ].join("")
+
+
+            // if (navigator.geolocation) {
+            //     navigator.geolocation.getCurrentPosition((position) => {
+            //         this.setState({ lat: position.coords.latitude, lng: position.coords.longitude});
+
+            //     });
+            // }
+
+            // const url = 'https://api.myjson.com/bins/193iwd';
+
+            // fetch(url)
+            // .then(res => res.json())
+            // .then(data => {
+            // 	this.setState({ markers: data });
+            // });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            console.log('rending ', this.props);
+
+            return _react2.default.createElement(
+                'section',
+                { className: 'cm cm-subscription-banner ' + this.props.additionalClass },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'l-padding' },
+                    _react2.default.createElement(
+                        'form',
+                        { className: 'fn_validate', action: '/intl/clinic-finder' },
+                        _react2.default.createElement('div', { className: 'fn_validate_summary' }),
+                        _react2.default.createElement(
+                            'fieldset',
+                            null,
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'title-text-container' },
+                                _react2.default.createElement(
+                                    'legend',
+                                    null,
+                                    this.props.title
+                                ),
+                                _react2.default.createElement(
+                                    'p',
+                                    null,
+                                    this.props.description
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'input-container' },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'ctrl-holder width-l' },
+                                    _react2.default.createElement(
+                                        'label',
+                                        { htmlFor: 'txt-postcode' },
+                                        'Postcode',
+                                        _react2.default.createElement(
+                                            'em',
+                                            null,
+                                            '*',
+                                            _react2.default.createElement(
+                                                'span',
+                                                { className: 'vh' },
+                                                'Required field'
+                                            )
+                                        )
+                                    ),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'ctrl' },
+                                        _react2.default.createElement('input', { name: 'txt-postcode', id: 'txt-postcode', className: 'text', 'data-rule-required': 'true' }),
+                                        _react2.default.createElement('div', { className: 'status-msg' })
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'btn-holder' },
+                                    _react2.default.createElement(
+                                        'button',
+                                        { role: 'button', type: 'submit', className: 'fn_validate_submit cta' },
+                                        'Search'
+                                    )
+                                )
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    null,
+                    'The closest clinics to ',
+                    _react2.default.createElement(
+                        'strong',
+                        null,
+                        this.props.label.length > 0 ? this.props.label : 'you'
+                    ),
+                    ':'
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { style: { 'width': '50%', 'display': 'inline-block', 'verticalAlign': 'top' } },
+                    _react2.default.createElement(
+                        'ul',
+                        { style: { 'listStyle': 'none', 'padding': '0', 'width': '80%' } },
+                        this.props.markers.map(function (marker) {
+
+                            if (marker.lat) {
+
+                                var markerDistance = _this2.getDistance(_this2.props.lat, _this2.props.lng, marker.lat, marker.lng);
+
+                                if (markerDistance < 100) {
+
+                                    return _react2.default.createElement(
+                                        'li',
+                                        { key: marker.lat, ref: marker.lat, onClick: function onClick() {
+                                                return _this2.toggleClinic(marker.lat);
+                                            }, style: { 'backgroundColor': '#fff', 'border': '1px solid #ccc', 'padding': '20px' } },
+                                        _react2.default.createElement(
+                                            'strong',
+                                            null,
+                                            marker.text
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'details' },
+                                            marker.address,
+                                            ' \xA0 ',
+                                            _react2.default.createElement(
+                                                'span',
+                                                { style: { 'fontSize': '12px' } },
+                                                parseInt(markerDistance),
+                                                'km'
+                                            ),
+                                            _react2.default.createElement('br', null),
+                                            'Number: ',
+                                            marker.number,
+                                            _react2.default.createElement('br', null),
+                                            'Email: ',
+                                            marker.email,
+                                            _react2.default.createElement('br', null),
+                                            'Opening Hours: ',
+                                            marker.hours
+                                        )
+                                    );
+                                }
+                            }
+                        })
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { style: { 'width': '50%', 'display': 'inline-block', 'verticalAlign': 'top' } },
+                    _react2.default.createElement(
+                        _GoogleMapsWrapper2.default,
+                        {
+                            googleMapURL: 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyD49FWPcw5h8bj6-LnHNaCkbqhFm7hULFI',
+                            loadingElement: _react2.default.createElement('div', { style: { height: '100%' } }),
+                            containerElement: _react2.default.createElement('div', { style: { height: '400px' } }),
+                            mapElement: _react2.default.createElement('div', { style: { height: '100%' } }),
+                            defaultZoom: 9,
+                            defaultCenter: { lat: -33.0391667, lng: 131.525 },
+                            center: { lat: this.props.lat, lng: this.props.lng }
+                        },
+                        _react2.default.createElement(_reactGeosuggest2.default, {
+                            onSuggestSelect: this.onSuggestSelect.bind(this)
+                        }),
+                        _react2.default.createElement(
+                            _MarkerClusterer2.default,
+                            {
+                                averageCenter: true,
+                                enableRetinaIcons: true,
+                                gridSize: 60
+                            },
+                            this.props.markers.map(function (marker) {
+                                return _react2.default.createElement(_reactGoogleMaps.Marker, {
+                                    key: marker.lat,
+                                    position: { lat: _this2.ConvertToDecimal(marker.lat), lng: _this2.ConvertToDecimal(marker.lng) },
+                                    test: _this2.test,
+                                    onClick: function onClick() {
+                                        return _this2.toggleClinic(marker.lat);
+                                    }
+                                });
+                            })
+                        )
+                    )
+                )
+            );
+        }
+    }, {
+        key: 'ConvertToDecimal',
+        value: function ConvertToDecimal(num) {
+            num = num.toString(); //If it's not already a String
+            num = num.slice(0, num.indexOf(".") + 6); //With 3 exposing the hundredths place
+            console.log('M : ' + Number(num)); //If you need it back as a Number  
+            return Number(num);
+        }
+    }, {
+        key: 'onSuggestSelect',
+        value: function onSuggestSelect(suggest) {
+            console.log(suggest);
+
+            this.props.getCurrentPosition({ lat: suggest.location.lat, lng: suggest.location.lng });
+
+            //this.setState({ lat: suggest.location.lat, lng: suggest.location.lng, label:suggest.label });
+        }
+    }, {
+        key: 'getDistance',
+        value: function getDistance(lat1, lng1, lat2, lng2, miles) {
+            // miles optional
+            if (typeof miles === "undefined") {
+                miles = false;
+            }
+            function deg2rad(deg) {
+                return deg * (Math.PI / 180);
+            }
+            function square(x) {
+                return Math.pow(x, 2);
+            }
+            var r = 6371; // radius of the earth in km
+            lat1 = deg2rad(lat1);
+            lat2 = deg2rad(lat2);
+            var lat_dif = lat2 - lat1;
+            var lng_dif = deg2rad(lng2 - lng1);
+            var a = square(Math.sin(lat_dif / 2)) + Math.cos(lat1) * Math.cos(lat2) * square(Math.sin(lng_dif / 2));
+            var d = 2 * r * Math.asin(Math.sqrt(a));
+            if (miles) {
+                return d * 0.621371;
+            } //return miles
+            else {
+                    return d;
+                } //return km
+        }
+    }, {
+        key: 'toggleClinic',
+        value: function toggleClinic(lat) {
+            var node = _reactDom2.default.findDOMNode(this.refs[lat]);
+            node.querySelector('.details').classList.toggle('show');
+        }
+    }]);
+
+    return ClinicNearYou;
+}(_react2.default.Component);
+
+exports.default = ClinicNearYou;
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _GoogleMapsWrapper = __webpack_require__(18);
+
+var _GoogleMapsWrapper2 = _interopRequireDefault(_GoogleMapsWrapper);
+
+var _reactGoogleMaps = __webpack_require__(16);
+
+var _MarkerClusterer = __webpack_require__(23);
+
+var _MarkerClusterer2 = _interopRequireDefault(_MarkerClusterer);
+
+var _reactGeosuggest = __webpack_require__(22);
+
+var _reactGeosuggest2 = _interopRequireDefault(_reactGeosuggest);
+
+var _reactDom = __webpack_require__(15);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ClinicNearYouMini = function (_React$Component) {
+    _inherits(ClinicNearYouMini, _React$Component);
+
+    function ClinicNearYouMini(props) {
+        _classCallCheck(this, ClinicNearYouMini);
+
+        var _this = _possibleConstructorReturn(this, (ClinicNearYouMini.__proto__ || Object.getPrototypeOf(ClinicNearYouMini)).call(this, props));
+
+        _this.state = { 'showDetails': 'show' };
+        return _this;
+    }
+
+    _createClass(ClinicNearYouMini, [{
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            console.log('MINI MINI MINI');
+            return _react2.default.createElement(
+                'section',
+                { className: 'cm cm-subscription-banner ' + this.props.additionalClass },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'l-padding' },
+                    _react2.default.createElement(
+                        'form',
+                        { className: 'fn_validate', action: '/intl/clinic-finder' },
+                        _react2.default.createElement('div', { className: 'fn_validate_summary' }),
+                        _react2.default.createElement(
+                            'fieldset',
+                            null,
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'title-text-container' },
+                                _react2.default.createElement(
+                                    'legend',
+                                    null,
+                                    this.props.title
+                                ),
+                                _react2.default.createElement(
+                                    'p',
+                                    null,
+                                    this.props.description
+                                )
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { style: { 'width': '50%', 'display': 'inline-block', 'verticalAlign': 'top' } },
+                    _react2.default.createElement(
+                        'ul',
+                        { style: { 'listStyle': 'none', 'padding': '0', 'width': '80%' } },
+                        this.props.markers.map(function (marker) {
+
+                            if (marker.lat) {
+
+                                console.log('this.props.lat ', _this2.props.lat);
+
+                                var markerDistance = _this2.getDistance(_this2.props.lat, _this2.props.lng, marker.lat, marker.lng);
+                                console.log('CAM 11', marker, markerDistance);
+
+                                if (markerDistance < 100) {
+
+                                    console.log('CAM 2', marker);
+
+                                    return _react2.default.createElement(
+                                        'li',
+                                        { key: marker.lat, ref: marker.lat, style: { 'backgroundColor': '#fff', 'border': '1px solid #ccc', 'padding': '20px' } },
+                                        _react2.default.createElement(
+                                            'strong',
+                                            null,
+                                            marker.text
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'details show' },
+                                            marker.address,
+                                            ' \xA0 ',
+                                            _react2.default.createElement(
+                                                'span',
+                                                { style: { 'fontSize': '12px' } },
+                                                parseInt(markerDistance),
+                                                'km'
+                                            )
+                                        )
+                                    );
+                                }
+                            }
+                        })
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                        'a',
+                        { href: '' + this.props.path, className: 'cta' },
+                        'See All Clinics'
+                    )
+                )
+            );
+        }
+    }, {
+        key: 'getDistance',
+        value: function getDistance(lat1, lng1, lat2, lng2, miles) {
+            // miles optional
+            if (typeof miles === "undefined") {
+                miles = false;
+            }
+            function deg2rad(deg) {
+                return deg * (Math.PI / 180);
+            }
+            function square(x) {
+                return Math.pow(x, 2);
+            }
+            var r = 6371; // radius of the earth in km
+            lat1 = deg2rad(lat1);
+            lat2 = deg2rad(lat2);
+            var lat_dif = lat2 - lat1;
+            var lng_dif = deg2rad(lng2 - lng1);
+            var a = square(Math.sin(lat_dif / 2)) + Math.cos(lat1) * Math.cos(lat2) * square(Math.sin(lng_dif / 2));
+            var d = 2 * r * Math.asin(Math.sqrt(a));
+            if (miles) {
+                return d * 0.621371;
+            } //return miles
+            else {
+                    return d;
+                } //return km
+        }
+    }, {
+        key: 'toggleClinic',
+        value: function toggleClinic(lat) {
+            var node = _reactDom2.default.findDOMNode(this.refs[lat]);
+            node.querySelector('.details').classList.toggle('show');
+        }
+    }]);
+
+    return ClinicNearYouMini;
+}(_react2.default.Component);
+
+exports.default = ClinicNearYouMini;
+
+/***/ }),
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2235,7 +2692,7 @@ Cm02bContentTile.defaultProps = {
 exports.default = Cm02bContentTile;
 
 /***/ }),
-/* 31 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2308,7 +2765,7 @@ GlobalFooter__Nav.defaultProps = {
 exports.default = GlobalFooter__Nav;
 
 /***/ }),
-/* 32 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2368,7 +2825,7 @@ GlobalFooter__Nav__Item.defaultProps = {
 exports.default = GlobalFooter__Nav__Item;
 
 /***/ }),
-/* 33 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2432,7 +2889,7 @@ var GlobalFooter__Nav__Social = function (_React$Component) {
 exports.default = GlobalFooter__Nav__Social;
 
 /***/ }),
-/* 34 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2494,7 +2951,7 @@ GlobalFooter__Nav__Social__Item.defaultProps = {
 exports.default = GlobalFooter__Nav__Social__Item;
 
 /***/ }),
-/* 35 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2510,11 +2967,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactGoogleTagManager = __webpack_require__(74);
+var _reactGoogleTagManager = __webpack_require__(79);
 
 var _reactGoogleTagManager2 = _interopRequireDefault(_reactGoogleTagManager);
 
-var _propTypes = __webpack_require__(73);
+var _propTypes = __webpack_require__(78);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -2588,7 +3045,7 @@ GoogleTagManager.propTypes = {
 exports.default = GoogleTagManager;
 
 /***/ }),
-/* 36 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2613,7 +3070,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(65);
+    __webpack_require__(70);
 }
 
 var OnScreeNav = function (_React$Component) {
@@ -2674,7 +3131,7 @@ var OnScreeNav = function (_React$Component) {
 exports.default = OnScreeNav;
 
 /***/ }),
-/* 37 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2701,7 +3158,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(66);
+    __webpack_require__(71);
 }
 
 var OnScreenNav__Item = function (_React$Component) {
@@ -2748,7 +3205,7 @@ OnScreenNav__Item.defaultProps = {
 exports.default = OnScreenNav__Item;
 
 /***/ }),
-/* 38 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2773,7 +3230,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(67);
+    __webpack_require__(72);
 }
 
 var RegionLanguageSelect = function (_React$Component) {
@@ -3441,7 +3898,7 @@ var RegionLanguageSelect = function (_React$Component) {
 exports.default = RegionLanguageSelect;
 
 /***/ }),
-/* 39 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3493,11 +3950,11 @@ var _HeaderLandingBanner = __webpack_require__(7);
 
 var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
 
-var _Cm18Accordian = __webpack_require__(17);
+var _Cm18Accordian = __webpack_require__(19);
 
 var _Cm18Accordian2 = _interopRequireDefault(_Cm18Accordian);
 
-var _Cm18Accordian__Item = __webpack_require__(18);
+var _Cm18Accordian__Item = __webpack_require__(20);
 
 var _Cm18Accordian__Item2 = _interopRequireDefault(_Cm18Accordian__Item);
 
@@ -3595,7 +4052,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(CostsAndAffordability);
 
 /***/ }),
-/* 40 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3635,7 +4092,7 @@ var _BreadCrumbs = __webpack_require__(8);
 
 var _BreadCrumbs2 = _interopRequireDefault(_BreadCrumbs);
 
-var _ClinicNearYou = __webpack_require__(16);
+var _ClinicNearYou = __webpack_require__(33);
 
 var _ClinicNearYou2 = _interopRequireDefault(_ClinicNearYou);
 
@@ -3667,16 +4124,48 @@ var FindAClinic = function (_Component) {
     }
 
     _createClass(FindAClinic, [{
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            //this.setState({ markers: [], lat: -32, lng: 151, label: '' });
+            //store.dispatch(actions.getHome());
+
+        }
+    }, {
         key: 'componentDidMount',
-        value: function componentDidMount() {}
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            console.log('test1');
+
+            if (navigator.geolocation) {
+
+                console.log('test4 ', this.props);
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    console.log('test222');
+                    //this.setState({ lat: position.coords.latitude, lng: position.coords.longitude});
+                    //console.log(this.mapDispatchToProps);
+
+                    _this2.props.getCurrentPosition({ lat: position.coords.latitude, lng: position.coords.longitude });
+
+                    console.log('this.state is ', _this2.state);
+                });
+            }
+
+            var url = 'https://api.myjson.com/bins/12k2w9';
+
+            console.log('HERE WE GO 1 ..............');
+
+            fetch(url).then(function (res) {
+                return res.json();
+            }).then(function (data) {
+                //this.setState({ markers: data });
+                console.log('HERE WE GO 2 ..............');
+                _this2.props.updateMarkers({ markers: data });
+            });
+        }
     }, {
         key: 'render',
         value: function render() {
-
-            console.log(this.props.dataFindAClinic);
-
-            var getData = this.props.dataFindAClinic;
-
             return _react2.default.createElement(
                 'div',
                 { className: 'l-layout l-two-column cf' },
@@ -3687,26 +4176,32 @@ var FindAClinic = function (_Component) {
                     _react2.default.createElement(
                         'title',
                         null,
-                        getData['title']
+                        'Heading Aid vs Cochlear Implant'
                     )
                 ),
                 _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
                 _react2.default.createElement(_BreadCrumbs2.default, null),
                 _react2.default.createElement(
-                    'div',
-                    { className: 'l-content-container cf l-padding' },
+                    'article',
+                    null,
                     _react2.default.createElement(
-                        'article',
-                        { className: 'l-content-column' },
+                        'div',
+                        { className: 'l-content-container cf l-padding' },
                         _react2.default.createElement(
-                            'main',
-                            { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
-                            _react2.default.createElement(_ContentHeader2.default, { title: getData['title'],
-                                description: getData['description'] }),
-                            _react2.default.createElement(_Cm01RichText2.default, { body: getData['body-copy'] }),
+                            'div',
+                            { className: 'l-content-column' },
+                            _react2.default.createElement(_ContentHeader2.default, { title: 'Find a Clinic',
+                                description: '' }),
                             _react2.default.createElement(_ClinicNearYou2.default, { title: 'Find your nearest clinic',
                                 description: 'Type in your postcode to find a Cochlear Clinic that is nearest to you.',
-                                additionalClass: 'is-shaded is-medium' })
+                                additionalClass: 'is-shaded is-medium',
+                                isLoggedIn: this.props.isLoggedIn,
+                                lat: this.props.lat,
+                                lng: this.props.lng,
+                                label: '',
+                                markers: this.props.markers,
+                                test: this.test,
+                                getCurrentPosition: this.props.getCurrentPosition })
                         )
                     )
                 ),
@@ -3719,7 +4214,7 @@ var FindAClinic = function (_Component) {
             var store = _ref.store,
                 params = _ref.params;
 
-            return store.dispatch(actions.getFindAClinic());
+            return store.dispatch(actions.getHome());
         }
     }]);
 
@@ -3727,15 +4222,17 @@ var FindAClinic = function (_Component) {
 }(_react.Component);
 
 function mapStateToProps(state) {
+    console.log('AAAA ', state);
     return _extends({}, state.user);
 }
 function mapDispatchToProps(dispatch) {
+    console.log('we have dipsatch ', dispatch);
     return (0, _redux.bindActionCreators)(actions, dispatch);
 }
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(FindAClinic);
 
 /***/ }),
-/* 41 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3787,15 +4284,15 @@ var _BreadCrumbs = __webpack_require__(8);
 
 var _BreadCrumbs2 = _interopRequireDefault(_BreadCrumbs);
 
-var _ClinicNearYou = __webpack_require__(16);
+var _ClinicNearYouMini = __webpack_require__(34);
 
-var _ClinicNearYou2 = _interopRequireDefault(_ClinicNearYou);
+var _ClinicNearYouMini2 = _interopRequireDefault(_ClinicNearYouMini);
 
 var _ContentHeader = __webpack_require__(14);
 
 var _ContentHeader2 = _interopRequireDefault(_ContentHeader);
 
-var _Cm02bContentTile = __webpack_require__(30);
+var _Cm02bContentTile = __webpack_require__(35);
 
 var _Cm02bContentTile2 = _interopRequireDefault(_Cm02bContentTile);
 
@@ -3820,7 +4317,35 @@ var HearingAidVsCochlearImplant = function (_Component) {
 
     _createClass(HearingAidVsCochlearImplant, [{
         key: 'componentDidMount',
-        value: function componentDidMount() {}
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            if (navigator.geolocation) {
+
+                console.log('test4 ', this.props);
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    console.log('test222');
+                    //this.setState({ lat: position.coords.latitude, lng: position.coords.longitude});
+                    //console.log(this.mapDispatchToProps);
+
+                    _this2.props.getCurrentPosition({ lat: position.coords.latitude, lng: position.coords.longitude });
+
+                    console.log('this.state is ', _this2.state);
+                });
+            }
+
+            var url = 'https://api.myjson.com/bins/12k2w9';
+
+            console.log('HERE WE GO 1 ..............');
+
+            fetch(url).then(function (res) {
+                return res.json();
+            }).then(function (data) {
+                //this.setState({ markers: data });
+                console.log('HERE WE GO 2 ..............');
+                _this2.props.updateMarkers({ markers: data });
+            });
+        }
     }, {
         key: 'render',
         value: function render() {
@@ -3864,9 +4389,16 @@ var HearingAidVsCochlearImplant = function (_Component) {
                             _react2.default.createElement(_Cm02bContentTile2.default, { title: getData['cm02b-title-01'],
                                 body: getData['cm02b-description-01'],
                                 image: 'https://auth.cochlear.com/' + getData['cm02b-image-01'].src }),
-                            _react2.default.createElement(_ClinicNearYou2.default, { title: 'Clinics near you',
-                                description: 'find a clinic that is nearest to you',
-                                additionalClass: 'is-shaded' })
+                            _react2.default.createElement(_ClinicNearYouMini2.default, { title: 'Clinics near you',
+                                description: '',
+                                additionalClass: 'is-shaded',
+                                label: '',
+                                markers: this.props.markers,
+                                test: this.test,
+                                lat: this.props.lat,
+                                lng: this.props.lng,
+                                path: '/intl/find-a-clinic',
+                                getCurrentPosition: this.props.getCurrentPosition })
                         )
                     )
                 ),
@@ -3895,7 +4427,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(HearingAidVsCochlearImplant);
 
 /***/ }),
-/* 42 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3927,7 +4459,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Body = __webpack_require__(27);
+var _Body = __webpack_require__(30);
 
 var _Body2 = _interopRequireDefault(_Body);
 
@@ -3946,8 +4478,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    console.log('TESTAATTTTTTTTTklm');
-    __webpack_require__(69);
+    __webpack_require__(74);
     //import style from './Home.scss';
 }
 
@@ -4000,7 +4531,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Home);
 
 /***/ }),
-/* 43 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4113,7 +4644,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(HomePage);
 
 /***/ }),
-/* 44 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4145,7 +4676,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Bodysecond = __webpack_require__(28);
+var _Bodysecond = __webpack_require__(31);
 
 var _Bodysecond2 = _interopRequireDefault(_Bodysecond);
 
@@ -4212,7 +4743,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Homesecond);
 
 /***/ }),
-/* 45 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4244,7 +4775,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Bodythird = __webpack_require__(29);
+var _Bodythird = __webpack_require__(32);
 
 var _Bodythird2 = _interopRequireDefault(_Bodythird);
 
@@ -4311,7 +4842,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Homethird);
 
 /***/ }),
-/* 46 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4461,7 +4992,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(ImplantableSolutions);
 
 /***/ }),
-/* 47 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4594,7 +5125,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(StatsAndProofs);
 
 /***/ }),
-/* 48 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4746,7 +5277,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TreatingHearingLoss);
 
 /***/ }),
-/* 49 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4938,7 +5469,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TreatmentOptions);
 
 /***/ }),
-/* 50 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4990,11 +5521,11 @@ var _HeaderLandingBanner = __webpack_require__(7);
 
 var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
 
-var _Cm18Accordian = __webpack_require__(17);
+var _Cm18Accordian = __webpack_require__(19);
 
 var _Cm18Accordian2 = _interopRequireDefault(_Cm18Accordian);
 
-var _Cm18Accordian__Item = __webpack_require__(18);
+var _Cm18Accordian__Item = __webpack_require__(20);
 
 var _Cm18Accordian__Item2 = _interopRequireDefault(_Cm18Accordian__Item);
 
@@ -5129,13 +5660,13 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TypesOfTreatment);
 
 /***/ }),
-/* 51 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _express = __webpack_require__(23);
+var _express = __webpack_require__(27);
 
 var _express2 = _interopRequireDefault(_express);
 
@@ -5143,7 +5674,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(25);
+var _server = __webpack_require__(28);
 
 var _server2 = _interopRequireDefault(_server);
 
@@ -5151,27 +5682,27 @@ var _reactHelmet = __webpack_require__(3);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
-var _app = __webpack_require__(20);
+var _app = __webpack_require__(24);
 
 var _app2 = _interopRequireDefault(_app);
 
-var _reactDom = __webpack_require__(24);
+var _reactDom = __webpack_require__(15);
 
 var _reactRedux = __webpack_require__(2);
 
 var _redux = __webpack_require__(1);
 
-var _combine = __webpack_require__(22);
+var _combine = __webpack_require__(26);
 
 var _combine2 = _interopRequireDefault(_combine);
 
-var _reactRouter = __webpack_require__(26);
+var _reactRouter = __webpack_require__(29);
 
-var _thunk = __webpack_require__(21);
+var _thunk = __webpack_require__(25);
 
 var _thunk2 = _interopRequireDefault(_thunk);
 
-var _routes = __webpack_require__(15);
+var _routes = __webpack_require__(17);
 
 var _routes2 = _interopRequireDefault(_routes);
 
@@ -5264,7 +5795,7 @@ function renderFullPage(html, preloadedState, helmet) {
 }
 
 /***/ }),
-/* 52 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5299,7 +5830,7 @@ var RedirectWithStatus = function RedirectWithStatus(_ref) {
 exports.default = RedirectWithStatus;
 
 /***/ }),
-/* 53 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5313,7 +5844,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 exports.default = userReducer;
 
-var _userTypes = __webpack_require__(19);
+var _userTypes = __webpack_require__(21);
 
 var initialState = {
     name: null,
@@ -5331,7 +5862,11 @@ var initialState = {
     dataTypesOfTreatment: null,
     dataHearingAidVsImplantableSolutions: null,
     dataCostsAndAffordability: null,
-    dataFindAClinic: null
+    dataFindAClinic: null,
+    getCurrentPosition: null,
+    markers: [],
+    lat: 0,
+    lng: 0
 };
 function userReducer() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
@@ -5366,13 +5901,19 @@ function userReducer() {
             return _extends({}, state, { dataCostsAndAffordability: action.payload });
         case _userTypes.Types.UPDATE_HOMETHIRD:
             return _extends({}, state, { bodythirdTitle: action.payload['title'] });
+        case _userTypes.Types.GET_CURRENT_POSITION:
+            console.log(' action.payload.lat ', action.payload.lat);
+            return _extends({}, state, { lat: action.payload.lat, lng: action.payload.lng });
+        case _userTypes.Types.UPDATE_MARKERS:
+            console.log(' MARKERS - action.payload ', action.payload.markers);
+            return _extends({}, state, { markers: action.payload.markers });
         default:
             return state;
     }
 }
 
 /***/ }),
-/* 54 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5472,7 +6013,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(User);
 
 /***/ }),
-/* 55 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(10)(false);
@@ -5486,7 +6027,7 @@ exports.push([module.i, "/* Style the buttons that are used to open and close th
 
 
 /***/ }),
-/* 56 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(10)(false);
@@ -5500,7 +6041,7 @@ exports.push([module.i, ".nav-onscreen.nav-onscreen__global-header {\n  float: l
 
 
 /***/ }),
-/* 57 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(10)(false);
@@ -5514,7 +6055,7 @@ exports.push([module.i, ".nav-onscreen.nav-onscreen__global-header {\n  margin-t
 
 
 /***/ }),
-/* 58 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(10)(false);
@@ -5528,7 +6069,7 @@ exports.push([module.i, ".nav-region-dropdown {\n  float: right;\n  position: re
 
 
 /***/ }),
-/* 59 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(10)(false);
@@ -5542,7 +6083,7 @@ exports.push([module.i, ".global-header h1 {\n  line-height: 85px; }\n\n.global-
 
 
 /***/ }),
-/* 60 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(10)(false);
@@ -5550,13 +6091,13 @@ exports = module.exports = __webpack_require__(10)(false);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "li .details {\n  display: none; }\n  li .details.show {\n    display: block; }\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 61 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(10)(false);
@@ -5570,7 +6111,7 @@ exports.push([module.i, "/*\n * Default stylesheet\n * This stylesheet is includ
 
 
 /***/ }),
-/* 62 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(10)(false);
@@ -5584,7 +6125,7 @@ exports.push([module.i, "body {\n  font-family: \"BlissPro-Regular\",\"Trebuchet
 
 
 /***/ }),
-/* 63 */
+/* 68 */
 /***/ (function(module, exports) {
 
 
@@ -5653,136 +6194,6 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 64 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(55);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(11)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Cm18Accordian.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Cm18Accordian.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 65 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(56);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(11)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 66 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(57);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(11)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav__Item.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav__Item.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 67 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(58);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(11)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./RegionLanguageSelect.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./RegionLanguageSelect.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 68 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(59);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(11)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./GlobalHeader.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./GlobalHeader.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
 /* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5798,8 +6209,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Home.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Home.scss");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Cm18Accordian.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Cm18Accordian.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -5824,8 +6235,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./framework.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./framework.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -5850,6 +6261,136 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav__Item.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav__Item.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(63);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(11)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./RegionLanguageSelect.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./RegionLanguageSelect.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(64);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(11)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./GlobalHeader.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./GlobalHeader.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(65);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(11)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Home.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Home.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(66);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(11)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./framework.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./framework.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(67);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(11)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
 		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./global.scss", function() {
 			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./global.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
@@ -5861,31 +6402,31 @@ if(false) {
 }
 
 /***/ }),
-/* 72 */
+/* 77 */
 /***/ (function(module, exports) {
 
 module.exports = require("axios");
 
 /***/ }),
-/* 73 */
+/* 78 */
 /***/ (function(module, exports) {
 
 module.exports = require("prop-types");
 
 /***/ }),
-/* 74 */
+/* 79 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-google-tag-manager");
 
 /***/ }),
-/* 75 */
+/* 80 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-tag-manager");
 
 /***/ }),
-/* 76 */
+/* 81 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-tag-manager/DataLayer");
