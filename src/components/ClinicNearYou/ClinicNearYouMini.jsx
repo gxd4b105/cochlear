@@ -14,8 +14,6 @@ class ClinicNearYouMini extends React.Component {
       }
 
     render() {
-
-        console.log('MINI MINI MINI');
         return (
 
     <section className={`cm cm-subscription-banner ${this.props.additionalClass}`}>
@@ -24,7 +22,7 @@ class ClinicNearYouMini extends React.Component {
                 <div className="fn_validate_summary"></div>
                 <fieldset>
                     <div className="title-text-container">
-                        <legend>{this.props.title}</legend>
+                        <legend>{this.props.title} {this.props.label}</legend>
                         <p>{this.props.description}</p>
                     </div>
                 </fieldset>
@@ -51,7 +49,7 @@ class ClinicNearYouMini extends React.Component {
  
 
 
-   return <li key={marker.lat} ref={marker.lat} style={{'backgroundColor':'#fff','border':'1px solid #ccc','padding': '20px'}}><strong>{marker.text}</strong><div className={'details'}>{marker.address} &nbsp; <span style={{'fontSize':'12px'}}>{parseInt(markerDistance)}km</span></div></li>
+   return <li key={marker.lat} ref={marker.lat} style={{'backgroundColor':'#fff','border':'1px solid #ccc','padding': '20px'}}><strong>{marker.text}</strong><div className={'details show'}>{marker.address} &nbsp; <span style={{'fontSize':'12px'}}>{parseInt(markerDistance)}km</span></div></li>
 }
 
             }
