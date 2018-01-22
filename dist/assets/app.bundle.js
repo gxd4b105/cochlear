@@ -13925,17 +13925,19 @@ var ClinicNearYou = function (_React$Component) {
                                             null,
                                             marker.text
                                         ),
+                                        _react2.default.createElement('br', null),
+                                        marker.address,
+                                        ' \xA0 ',
+                                        _react2.default.createElement(
+                                            'span',
+                                            { style: { 'fontSize': '12px' } },
+                                            parseInt(markerDistance),
+                                            'km'
+                                        ),
                                         _react2.default.createElement(
                                             'div',
                                             { className: 'details' },
-                                            marker.address,
-                                            ' \xA0 ',
-                                            _react2.default.createElement(
-                                                'span',
-                                                { style: { 'fontSize': '12px' } },
-                                                parseInt(markerDistance),
-                                                'km'
-                                            ),
+                                            ' ',
                                             _react2.default.createElement('br', null),
                                             'Number: ',
                                             marker.number,
@@ -14108,7 +14110,6 @@ var ClinicNearYouMini = function (_React$Component) {
         value: function render() {
             var _this2 = this;
 
-            console.log('MINI MINI MINI');
             return _react2.default.createElement(
                 'section',
                 { className: 'cm cm-subscription-banner ' + this.props.additionalClass },
@@ -14128,7 +14129,9 @@ var ClinicNearYouMini = function (_React$Component) {
                                 _react2.default.createElement(
                                     'legend',
                                     null,
-                                    this.props.title
+                                    this.props.title,
+                                    ' ',
+                                    this.props.label
                                 ),
                                 _react2.default.createElement(
                                     'p',
@@ -15979,7 +15982,7 @@ var HearingAidVsCochlearImplant = function (_Component) {
                             _react2.default.createElement(_Cm02bContentTile2.default, { title: getData['cm02b-title-01'],
                                 body: getData['cm02b-description-01'],
                                 image: 'https://auth.cochlear.com/' + getData['cm02b-image-01'].src }),
-                            _react2.default.createElement(_ClinicNearYouMini2.default, { title: 'Clinics near you',
+                            _react2.default.createElement(_ClinicNearYouMini2.default, { title: 'Clinics near',
                                 description: '',
                                 additionalClass: 'is-shaded',
                                 label: '',

@@ -1,0 +1,12 @@
+body {
+    border: 11px dotted green;
+}
+li {
+    .details {
+        display: none;
+
+        &.show {
+          display: block;
+        }
+    }
+}
