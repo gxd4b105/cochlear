@@ -97,7 +97,8 @@ console.log('test1');
                                             city={this.props.city}
                                             markers={this.props.markers}
                                             test={this.test}
-                                            getCurrentPosition={this.props.getCurrentPosition}/>
+                                            getCurrentPosition={this.props.getCurrentPosition}
+                                            updateCity={this.props.updateCity}/>
                         </div>
                     </div>
                 </article>

@@ -105,8 +105,7 @@ this.state.counter = 1;
     if (this.props.markers.length - 1 === index){
 
 if(this.state.counter === 0){
-    console.log('OOOOOOOO ', index);
-    return <div>Nothing found</div>;
+    return <div>Unfortunately we did not find any clinics.</div>;
 }
 
     }
@@ -204,7 +203,7 @@ if(this.state.counter === 0){
         console.log(suggest);
 
         this.props.getCurrentPosition({ lat: suggest.location.lat, lng: suggest.location.lng});
-        
+        this.props.updateCity({ city: suggest.label});
         
 
         //this.setState({ lat: suggest.location.lat, lng: suggest.location.lng, label:suggest.label });
