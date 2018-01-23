@@ -10,7 +10,7 @@ class ClinicNearYou extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { 'showDetails': 'show' };
+        this.state = { 'showDetails': 'show', 'counter': 0 };
       }
 
 	componentWillMount() {
@@ -45,9 +45,7 @@ class ClinicNearYou extends React.Component {
 
 
     render() {
-
-        console.log('rending ', this.props);
-
+this.state.counter = 0;
         return (
 
     <section className={`cm cm-subscription-banner ${this.props.additionalClass}`}>
@@ -86,7 +84,12 @@ class ClinicNearYou extends React.Component {
         <div style={{'width':'50%', 'display': 'inline-block', 'verticalAlign': 'top'}}>
 
 <ul style={{'listStyle':'none','padding':'0', 'width':'80%'}}>
-        {this.props.markers.map((marker) => {
+
+
+ {
+this.props.markers.map((marker, index) => {
+console.log('index ', this.props.markers.length, index);
+
 
             if(marker.lat){
 
@@ -95,15 +98,34 @@ class ClinicNearYou extends React.Component {
 
     if(markerDistance < 100){
  
-
+this.state.counter = 1;
 
    return <li key={marker.lat} ref={marker.lat} onClick={() => this.toggleClinic(marker.lat)} style={{'backgroundColor':'#fff','border':'1px solid #ccc','padding': '20px'}}><strong>{marker.text}</strong><br />{marker.address} &nbsp; <span style={{'fontSize':'12px'}}>{parseInt(markerDistance)}km</span><div className={'details'}> <br />Number: {marker.number}<br />Email: {marker.email}<br />Opening Hours: {marker.hours}</div></li>
+} else {
+    if (this.props.markers.length - 1 === index){
+
+if(this.state.counter === 0){
+    console.log('OOOOOOOO ', index);
+    return <div>Nothing found</div>;
+}
+
+    }
 }
 
             }
 
-})}
+})
+
+
+
+
+
+}
+
+
+
 </ul>
+
 
 </div>
 <div style={{'width':'50%', 'display': 'inline-block', 'verticalAlign': 'top'}}>
