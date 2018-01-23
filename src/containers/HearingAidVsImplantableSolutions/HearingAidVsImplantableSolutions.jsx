@@ -115,6 +115,8 @@ class HearingAidVsCochlearImplant extends Component {
                                               body={getData['cm02b-description-01']}
                                               image={'https://auth.cochlear.com/'+getData['cm02b-image-01'].src}/>
 
+                            <Cm01RichText body={getData['video-embed']}/>
+
                             <ClinicNearYouMini title="Clinics near"
                                            description=""
                                             additionalClass="is-shaded"

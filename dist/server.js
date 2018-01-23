@@ -117,10 +117,11 @@ exports.getFooter = getFooter;
 exports.getFooterUS = getFooterUS;
 exports.getCurrentPosition = getCurrentPosition;
 exports.updateMarkers = updateMarkers;
+exports.updateCity = updateCity;
 
-var _userTypes = __webpack_require__(21);
+var _userTypes = __webpack_require__(22);
 
-var _axios = __webpack_require__(22);
+var _axios = __webpack_require__(15);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -273,6 +274,13 @@ function getCurrentPosition(data) {
 function updateMarkers(data) {
     return function (dispatch, getState) {
         dispatch({ type: _userTypes.Types.UPDATE_MARKERS, payload: data });
+    };
+}
+
+function updateCity(data) {
+    return function (dispatch, getState) {
+        console.log('YYYYYYYYYYYYYYYYY ', data);
+        dispatch({ type: _userTypes.Types.UPDATE_CITY, payload: data.city });
     };
 }
 
@@ -1331,16 +1339,22 @@ exports.default = ContentHeader;
 /* 15 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-dom");
+module.exports = require("axios");
 
 /***/ }),
 /* 16 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-google-maps");
+module.exports = require("react-dom");
 
 /***/ }),
 /* 17 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-google-maps");
+
+/***/ }),
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1466,7 +1480,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1482,7 +1496,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactGoogleMaps = __webpack_require__(16);
+var _reactGoogleMaps = __webpack_require__(17);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1497,7 +1511,7 @@ var GoogleMapsWrapper = (0, _reactGoogleMaps.withScriptjs)((0, _reactGoogleMaps.
 exports.default = GoogleMapsWrapper;
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1565,7 +1579,7 @@ var Cm18Accordian = function (_React$Component) {
 exports.default = Cm18Accordian;
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1629,7 +1643,7 @@ var Cm18Accordian__Item = function (_React$Component) {
 exports.default = Cm18Accordian__Item;
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1655,14 +1669,9 @@ var Types = exports.Types = {
     UPDATE_FINDACLINIC: 'UPDATE_FINDACLINIC',
     UPDATE_COSTSANDAFFORDABILITY: 'UPDATE_COSTSANDAFFORDABILITY',
     GET_CURRENT_POSITION: 'GET_CURRENT_POSITION',
-    UPDATE_MARKERS: 'UPDATE_MARKERS'
+    UPDATE_MARKERS: 'UPDATE_MARKERS',
+    UPDATE_CITY: 'UPDATE_CITY'
 };
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports) {
-
-module.exports = require("axios");
 
 /***/ }),
 /* 23 */
@@ -1701,7 +1710,7 @@ var _redirectWStatus = __webpack_require__(57);
 
 var _redirectWStatus2 = _interopRequireDefault(_redirectWStatus);
 
-var _routes = __webpack_require__(17);
+var _routes = __webpack_require__(18);
 
 var _routes2 = _interopRequireDefault(_routes);
 
@@ -2126,11 +2135,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _GoogleMapsWrapper = __webpack_require__(18);
+var _GoogleMapsWrapper = __webpack_require__(19);
 
 var _GoogleMapsWrapper2 = _interopRequireDefault(_GoogleMapsWrapper);
 
-var _reactGoogleMaps = __webpack_require__(16);
+var _reactGoogleMaps = __webpack_require__(17);
 
 var _MarkerClusterer = __webpack_require__(24);
 
@@ -2140,7 +2149,7 @@ var _reactGeosuggest = __webpack_require__(23);
 
 var _reactGeosuggest2 = _interopRequireDefault(_reactGeosuggest);
 
-var _reactDom = __webpack_require__(15);
+var _reactDom = __webpack_require__(16);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -2278,7 +2287,7 @@ var ClinicNearYou = function (_React$Component) {
                     _react2.default.createElement(
                         'strong',
                         null,
-                        this.props.label.length > 0 ? this.props.label : 'you'
+                        this.props.city && this.props.city.length > 0 ? this.props.city : 'you'
                     ),
                     ':'
                 ),
@@ -2448,11 +2457,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _GoogleMapsWrapper = __webpack_require__(18);
+var _GoogleMapsWrapper = __webpack_require__(19);
 
 var _GoogleMapsWrapper2 = _interopRequireDefault(_GoogleMapsWrapper);
 
-var _reactGoogleMaps = __webpack_require__(16);
+var _reactGoogleMaps = __webpack_require__(17);
 
 var _MarkerClusterer = __webpack_require__(24);
 
@@ -2462,7 +2471,7 @@ var _reactGeosuggest = __webpack_require__(23);
 
 var _reactGeosuggest2 = _interopRequireDefault(_reactGeosuggest);
 
-var _reactDom = __webpack_require__(15);
+var _reactDom = __webpack_require__(16);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -2512,7 +2521,7 @@ var ClinicNearYouMini = function (_React$Component) {
                                     null,
                                     this.props.title,
                                     ' ',
-                                    this.props.label
+                                    this.props.city
                                 ),
                                 _react2.default.createElement(
                                     'p',
@@ -2544,7 +2553,9 @@ var ClinicNearYouMini = function (_React$Component) {
 
                                     return _react2.default.createElement(
                                         'li',
-                                        { key: marker.lat, ref: marker.lat, style: { 'backgroundColor': '#fff', 'border': '1px solid #ccc', 'padding': '20px' } },
+                                        { key: marker.lat, ref: marker.lat, onClick: function onClick() {
+                                                return _this2.toggleClinic(marker.lat);
+                                            }, style: { 'backgroundColor': '#fff', 'border': '1px solid #ccc', 'padding': '20px' } },
                                         _react2.default.createElement(
                                             'strong',
                                             null,
@@ -2610,7 +2621,9 @@ var ClinicNearYouMini = function (_React$Component) {
         key: 'toggleClinic',
         value: function toggleClinic(lat) {
             var node = _reactDom2.default.findDOMNode(this.refs[lat]);
-            node.querySelector('.details').classList.toggle('show');
+
+            console.log('NODE ', node);
+            //node.querySelector('.details').classList.toggle('show');
         }
     }]);
 
@@ -3124,7 +3137,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _axios = __webpack_require__(22);
+var _axios = __webpack_require__(15);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -3898,11 +3911,11 @@ var _HeaderLandingBanner = __webpack_require__(7);
 
 var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
 
-var _Cm18Accordian = __webpack_require__(19);
+var _Cm18Accordian = __webpack_require__(20);
 
 var _Cm18Accordian2 = _interopRequireDefault(_Cm18Accordian);
 
-var _Cm18Accordian__Item = __webpack_require__(20);
+var _Cm18Accordian__Item = __webpack_require__(21);
 
 var _Cm18Accordian__Item2 = _interopRequireDefault(_Cm18Accordian__Item);
 
@@ -4052,6 +4065,10 @@ var _Cm01RichText = __webpack_require__(9);
 
 var _Cm01RichText2 = _interopRequireDefault(_Cm01RichText);
 
+var _axios = __webpack_require__(15);
+
+var _axios2 = _interopRequireDefault(_axios);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -4082,6 +4099,17 @@ var FindAClinic = function (_Component) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             var _this2 = this;
+
+            var url2 = 'https://freegeoip.net/json/';
+
+            console.log('HERE WE GOJSON ..............');
+
+            _axios2.default.get(url2).then(function (res) {
+                console.log('RES JSON ', res.data.city);
+                _this2.props.updateCity({ city: res.data.city });
+
+                return res.data.city;
+            });
 
             console.log('test1');
 
@@ -4147,6 +4175,7 @@ var FindAClinic = function (_Component) {
                                 lat: this.props.lat,
                                 lng: this.props.lng,
                                 label: '',
+                                city: this.props.city,
                                 markers: this.props.markers,
                                 test: this.test,
                                 getCurrentPosition: this.props.getCurrentPosition })
@@ -4244,6 +4273,10 @@ var _Cm02bContentTile = __webpack_require__(36);
 
 var _Cm02bContentTile2 = _interopRequireDefault(_Cm02bContentTile);
 
+var _axios = __webpack_require__(15);
+
+var _axios2 = _interopRequireDefault(_axios);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -4286,13 +4319,33 @@ var HearingAidVsCochlearImplant = function (_Component) {
 
             console.log('HERE WE GO 1 ..............');
 
-            fetch(url).then(function (res) {
-                return res.json();
+            _axios2.default.get(url).then(function (res) {
+                console.log('RES ', res);
+                return res.data;
             }).then(function (data) {
                 //this.setState({ markers: data });
                 console.log('HERE WE GO 2 ..............');
                 _this2.props.updateMarkers({ markers: data });
             });
+
+            // GET CITY
+
+
+            console.log('HERE WE GOJSON!!!!!!!!!!!!  !!! ..............');
+
+            var url2 = 'https://freegeoip.net/json/';
+
+            console.log('HERE WE GOJSON ..............');
+
+            _axios2.default.get(url2).then(function (res) {
+                console.log('RES JSON ', res.data.city);
+                _this2.props.updateCity({ city: res.data.city });
+
+                return res.data.city;
+            });
+
+            // let testdata = [{"lat":"-33.815000","lng":"151.001111","text":"Prince Alfred Audiology","address":"23 Macquarie Street, Parramatta 2037","number":"0459 576 289","email":"paa@tech.com","hours":"Mon to Fri - 9am to 5.30pm"},{"lat":"-33.876927","lng":"151.219254","text":"Neurosensory Centre","address":"52 Finton Street, Surrey Hills 2008","number":"0459 834 229","email":"neurocent@gmail.com","hours":"Mon to Fri - 9am to 5.30pm"},{"lat":"-33.635113","lng":"151.147842","text":"Precision hearing","address":"52 Finton Street, Surrey Hills 2008","number":"0459 129 784","email":"precision@hearing.com","hours":"Mon to Fri - 9am to 5.30pm"},{"lat":"-12.439206","lng":"130.933685","text":"Hearing NT","address":"27 Berrimah Road, Berrimah 8083","number":"0459 779 784","email":"precision@hearing.com","hours":"Mon to Fri - 9am to 5.30pm"},{"lat":"-12.460327","lng":"130.841331","text":"Darwin Hearing Centre","address":"81 Knuckey Street, Darwin 8003","number":"0459 129 784","email":"darwinhearing@mailto.com","hours":"Mon to Fri - 9am to 5.30pm"},{"lat":"-12.484128","lng":"131.040802","text":"Precision hearing","address":"39 Derwen Avenue, Howard Springs 8074","number":"0459 863 184","email":"precision@hearing.com","hours":"Mon to Fri - 9am to 5.30pm"}];
+            // this.props.updateMarkers({ markers: testdata});
         }
     }, {
         key: 'render',
@@ -4337,10 +4390,12 @@ var HearingAidVsCochlearImplant = function (_Component) {
                             _react2.default.createElement(_Cm02bContentTile2.default, { title: getData['cm02b-title-01'],
                                 body: getData['cm02b-description-01'],
                                 image: 'https://auth.cochlear.com/' + getData['cm02b-image-01'].src }),
+                            _react2.default.createElement(_Cm01RichText2.default, { body: getData['video-embed'] }),
                             _react2.default.createElement(_ClinicNearYouMini2.default, { title: 'Clinics near',
                                 description: '',
                                 additionalClass: 'is-shaded',
                                 label: '',
+                                city: this.props.city,
                                 markers: this.props.markers,
                                 test: this.test,
                                 lat: this.props.lat,
@@ -5469,11 +5524,11 @@ var _HeaderLandingBanner = __webpack_require__(7);
 
 var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
 
-var _Cm18Accordian = __webpack_require__(19);
+var _Cm18Accordian = __webpack_require__(20);
 
 var _Cm18Accordian2 = _interopRequireDefault(_Cm18Accordian);
 
-var _Cm18Accordian__Item = __webpack_require__(20);
+var _Cm18Accordian__Item = __webpack_require__(21);
 
 var _Cm18Accordian__Item2 = _interopRequireDefault(_Cm18Accordian__Item);
 
@@ -5634,7 +5689,7 @@ var _app = __webpack_require__(25);
 
 var _app2 = _interopRequireDefault(_app);
 
-var _reactDom = __webpack_require__(15);
+var _reactDom = __webpack_require__(16);
 
 var _reactRedux = __webpack_require__(2);
 
@@ -5650,7 +5705,7 @@ var _thunk = __webpack_require__(26);
 
 var _thunk2 = _interopRequireDefault(_thunk);
 
-var _routes = __webpack_require__(17);
+var _routes = __webpack_require__(18);
 
 var _routes2 = _interopRequireDefault(_routes);
 
@@ -5792,7 +5847,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 exports.default = userReducer;
 
-var _userTypes = __webpack_require__(21);
+var _userTypes = __webpack_require__(22);
 
 var initialState = {
     name: null,
@@ -5855,6 +5910,10 @@ function userReducer() {
         case _userTypes.Types.UPDATE_MARKERS:
             console.log(' MARKERS - action.payload ', action.payload.markers);
             return _extends({}, state, { markers: action.payload.markers });
+        case _userTypes.Types.UPDATE_CITY:
+            console.log(' CITY ---  ', action.payload);
+            return _extends({}, state, { city: action.payload });
+
         default:
             return state;
     }
@@ -6067,7 +6126,7 @@ exports = module.exports = __webpack_require__(10)(false);
 
 
 // module
-exports.push([module.i, "body {\n  font-family: \"BlissPro-Regular\",\"Trebuchet MS\",\"Gill Sans\",\"Helvetica Neue\",Arial,sans-serif; }\n", ""]);
+exports.push([module.i, "body {\n  font-family: \"BlissPro-Regular\",\"Trebuchet MS\",\"Gill Sans\",\"Helvetica Neue\",Arial,sans-serif; }\n\n.video-embed {\n  position: relative;\n  padding-bottom: 56.25%;\n  /* 16:9 */\n  padding-top: 25px;\n  height: 0; }\n\n.video-embed iframe {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n", ""]);
 
 // exports
 
