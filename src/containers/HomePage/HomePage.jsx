@@ -30,6 +30,13 @@ class HomePage extends Component {
                                         image="https://auth.cochlear.com//wps/wcm/connect/dd2107e8-0708-4a4c-9fb9-1bcc1b82be49/CHILD_SWITCH-ON_1_RGB.jpg?MOD=AJPERES&amp;CVID="
                                         path="/intl/treating-hearing-loss"
                                         additionalClass="is-shaded is-large"/>
+
+                    <Cm02ContentTile    title="Hearing loss"
+                                        description="Hearing Loss"
+                                        image="https://auth.cochlear.com/wps/wcm/myconnect/8f687f04-3032-46f6-8753-fcf767978216/GettyImages-753288525_super.jpg?MOD=AJPERES&amp;CVID="
+                                        path="/intl/hearing-loss"
+                                        additionalClass="is-shaded is-large"/>
+
                 </div>
                 <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
             </div>

@@ -16,7 +16,7 @@ if (typeof window === 'undefined') {
     global.window = {}
 }
 
-class TypesOfTreatment extends Component {
+class UntreatedHearingLossAdult extends Component {
     static fetchData({ store, params }) {
         return store.dispatch(actions.getTypesOfTreatment());
     }
@@ -101,4 +101,4 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators(actions, dispatch);
 }
-export default connect(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TypesOfTreatment);
+export default connect(mapStateToProps, mapDispatchToProps, null, { withRef: true })(UntreatedHearingLossAdult);

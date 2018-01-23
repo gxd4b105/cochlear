@@ -10,6 +10,7 @@ import StatsAndProofs from "../../containers/StatsAndProofs/StatsAndProofs.jsx";
 import TreatmentOptions from "../../containers/TreatmentOptions/TreatmentOptions.jsx";
 import TypesOfTreatment from "../../containers/TypesOfTreatment/TypesOfTreatment.jsx";
 import TreatingHearingLoss from "../../containers/TreatingHearingLoss/TreatingHearingLoss.jsx"
+import HearingLoss from "../../containers/HearingLoss/HearingLoss.jsx"
 import ImplantableSolutions from "../../containers/ImplantableSolutions/ImplantableSolutions.jsx";
 import CostsAndAffordability from "../../containers/CostsAndAffordability/CostsAndAffordability.jsx"
 
@@ -64,6 +65,11 @@ export default {
         {
             path: '/:country/treating-hearing-loss',
             component: TreatingHearingLoss,
+            exact: true
+        },
+        {
+            path: '/:country/hearing-loss',
+            component: HearingLoss,
             exact: true
         },
         {
