@@ -15680,7 +15680,7 @@ var HomePage = function (_Component) {
                         additionalClass: 'is-shaded is-large' }),
                     _react2.default.createElement(_Cm02ContentTile2.default, { title: 'Hearing loss',
                         description: 'Learn more about the different degrees and types of hearing loss.',
-                        image: 'https://auth.cochlear.com/wps/wcm/myconnect/8f687f04-3032-46f6-8753-fcf767978216/GettyImages-753288525_super.jpg?MOD=AJPERES&CVID=',
+                        image: 'https://auth.cochlear.com/wps/wcm/connect/296231d8-90a5-4303-9292-6c85752ca872/GettyImages-753288525_super.jpg?MOD=AJPERES&CVID=',
                         path: '/intl/hearing-loss',
                         additionalClass: 'is-shaded is-large' })
                 ),

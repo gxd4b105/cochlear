@@ -33,7 +33,7 @@ class HomePage extends Component {
 
                     <Cm02ContentTile    title="Hearing loss"
                                         description="Learn more about the different degrees and types of hearing loss."
-                                        image="https://auth.cochlear.com/wps/wcm/myconnect/8f687f04-3032-46f6-8753-fcf767978216/GettyImages-753288525_super.jpg?MOD=AJPERES&amp;CVID="
+                                        image="https://auth.cochlear.com/wps/wcm/connect/296231d8-90a5-4303-9292-6c85752ca872/GettyImages-753288525_super.jpg?MOD=AJPERES&amp;CVID="
                                         path="/intl/hearing-loss"
                                         additionalClass="is-shaded is-large"/>
 
