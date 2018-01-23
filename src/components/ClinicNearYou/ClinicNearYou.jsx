@@ -80,7 +80,7 @@ class ClinicNearYou extends React.Component {
 
 
 
-        <div>The closest clinics to <strong>{this.props.label.length >0 ? this.props.label : 'you'}</strong>:</div>
+        <div>The closest clinics to <strong>{this.props.city && this.props.city.length >0 ? this.props.city : 'you'}</strong>:</div>
 
 
         <div style={{'width':'50%', 'display': 'inline-block', 'verticalAlign': 'top'}}>

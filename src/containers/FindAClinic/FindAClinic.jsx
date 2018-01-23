@@ -12,6 +12,8 @@ import ClinicNearYou from "../../components/ClinicNearYou/ClinicNearYou.jsx";
 import ContentHeader from "../../components/ContentHeader/ContentHeader.jsx";
 import Cm01RichText from "../../components/Cm01RichText/Cm01RichText.jsx";
 
+import axios from 'axios';
+
 class FindAClinic extends Component {
     static fetchData({ store, params }) {
         return store.dispatch(actions.getHome());
@@ -24,6 +26,21 @@ class FindAClinic extends Component {
 	}
 
     componentDidMount() {
+
+        const url2 = 'https://freegeoip.net/json/';
+        
+                console.log('HERE WE GOJSON ..............');
+                
+                axios.get(url2)
+                .then(res => {
+                    console.log('RES JSON ', res.data.city);
+                    this.props.updateCity({ city: res.data.city});
+
+                    return res.data.city;
+                });
+
+
+
 console.log('test1');
 
         if (navigator.geolocation) {
@@ -77,6 +94,7 @@ console.log('test1');
                                             lat={this.props.lat}
                                             lng={this.props.lng}
                                             label=""
+                                            city={this.props.city}
                                             markers={this.props.markers}
                                             test={this.test}
                                             getCurrentPosition={this.props.getCurrentPosition}/>

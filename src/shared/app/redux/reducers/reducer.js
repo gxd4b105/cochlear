@@ -58,6 +58,10 @@ export default function userReducer(state = initialState, action) {
         case Types.UPDATE_MARKERS:
             console.log(' MARKERS - action.payload ',action.payload.markers);
             return {...state, markers: action.payload.markers}
+        case Types.UPDATE_CITY:
+        console.log(' CITY ---  ',action.payload);
+             return {...state, city: action.payload}
+             
         default:
             return state;
     }
