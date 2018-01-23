@@ -40,7 +40,7 @@ class HearingAidVsCochlearImplant extends Component {
                         });
                     }
                     
-                    const url = 'https://api.myjson.com/bins/12k2w9';
+                    const url = 'https://api.myjson.com/bins/h0g21';
             
                     console.log('HERE WE GO 1 ..............');
                     
