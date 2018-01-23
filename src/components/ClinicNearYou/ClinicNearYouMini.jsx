@@ -14,6 +14,8 @@ class ClinicNearYouMini extends React.Component {
       }
 
     render() {
+
+        let counter = 0;
         return (
 
     <section className={`cm cm-subscription-banner ${this.props.additionalClass}`}>
@@ -32,21 +34,24 @@ class ClinicNearYouMini extends React.Component {
      
         <div style={{'width':'50%', 'display': 'inline-block', 'verticalAlign': 'top'}}>
         <ul style={{'listStyle':'none','padding':'0', 'width':'80%'}}>
-        {this.props.markers.map((marker) => {
+        {
+            this.props.markers.map((marker) => {
 
 
 
             if(marker.lat){
+                
 
                 console.log('this.props.lat ', this.props.lat);
 
           let markerDistance = this.getDistance(this.props.lat,this.props.lng,marker.lat,marker.lng);  
           console.log('CAM 11', marker, markerDistance);
 
-    if(markerDistance < 100){
+    if(markerDistance < 100 && counter < 3){
+        
 
-        console.log('CAM 2', marker);
- 
+        console.log('CAM 2222222999', marker);
+        counter = counter + 1;
 
 
    return <li key={marker.lat} ref={marker.lat} onClick={() => this.toggleClinic(marker.lat)} style={{'backgroundColor':'#fff','border':'1px solid #ccc','padding': '20px'}}><strong>{marker.text}</strong><div className={'details show'}>{marker.address} &nbsp; <span style={{'fontSize':'12px'}}>{parseInt(markerDistance)}km</span></div></li>
