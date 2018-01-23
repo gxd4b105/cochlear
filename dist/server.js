@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 60);
+/******/ 	return __webpack_require__(__webpack_require__.s = 61);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -566,9 +566,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(79);
     __webpack_require__(80);
-    __webpack_require__(77);
+    __webpack_require__(81);
+    __webpack_require__(78);
 }
 
 var Header = function (_Component) {
@@ -1121,7 +1121,7 @@ var stylesInDom = {},
 	singletonElement = null,
 	singletonCounter = 0,
 	styleElementsInsertedAtTop = [],
-	fixUrls = __webpack_require__(72);
+	fixUrls = __webpack_require__(73);
 
 module.exports = function(list, options) {
 	if(typeof DEBUG !== "undefined" && DEBUG) {
@@ -1420,7 +1420,7 @@ var _Homethird = __webpack_require__(51);
 
 var _Homethird2 = _interopRequireDefault(_Homethird);
 
-var _user = __webpack_require__(63);
+var _user = __webpack_require__(64);
 
 var _user2 = _interopRequireDefault(_user);
 
@@ -1436,19 +1436,19 @@ var _FindAClinic = __webpack_require__(45);
 
 var _FindAClinic2 = _interopRequireDefault(_FindAClinic);
 
-var _StatsAndProofs = __webpack_require__(54);
+var _StatsAndProofs = __webpack_require__(55);
 
 var _StatsAndProofs2 = _interopRequireDefault(_StatsAndProofs);
 
-var _TreatmentOptions = __webpack_require__(56);
+var _TreatmentOptions = __webpack_require__(57);
 
 var _TreatmentOptions2 = _interopRequireDefault(_TreatmentOptions);
 
-var _TypesOfTreatment = __webpack_require__(57);
+var _TypesOfTreatment = __webpack_require__(58);
 
 var _TypesOfTreatment2 = _interopRequireDefault(_TypesOfTreatment);
 
-var _TreatingHearingLoss = __webpack_require__(55);
+var _TreatingHearingLoss = __webpack_require__(56);
 
 var _TreatingHearingLoss2 = _interopRequireDefault(_TreatingHearingLoss);
 
@@ -1468,13 +1468,17 @@ var _ImpactOfHearingLoss = __webpack_require__(52);
 
 var _ImpactOfHearingLoss2 = _interopRequireDefault(_ImpactOfHearingLoss);
 
-var _UntreatedHearingLossAdult = __webpack_require__(58);
+var _UntreatedHearingLossAdult = __webpack_require__(59);
 
 var _UntreatedHearingLossAdult2 = _interopRequireDefault(_UntreatedHearingLossAdult);
 
-var _UntreatedHearingLossChildren = __webpack_require__(59);
+var _UntreatedHearingLossChildren = __webpack_require__(60);
 
 var _UntreatedHearingLossChildren2 = _interopRequireDefault(_UntreatedHearingLossChildren);
+
+var _PlanningYourTest = __webpack_require__(54);
+
+var _PlanningYourTest2 = _interopRequireDefault(_PlanningYourTest);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1526,6 +1530,10 @@ exports.default = {
     }, {
         path: '/:country/hearing-loss',
         component: _HearingLoss2.default,
+        exact: true
+    }, {
+        path: '/:country/planning-your-test',
+        component: _PlanningYourTest2.default,
         exact: true
     }, {
         path: '/:country/implantable-solutions',
@@ -1654,7 +1662,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(14);
 
-var _redirectWStatus = __webpack_require__(61);
+var _redirectWStatus = __webpack_require__(62);
 
 var _redirectWStatus2 = _interopRequireDefault(_redirectWStatus);
 
@@ -1786,7 +1794,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(1);
 
-var _reducer = __webpack_require__(62);
+var _reducer = __webpack_require__(63);
 
 var _reducer2 = _interopRequireDefault(_reducer);
 
@@ -2117,7 +2125,7 @@ var ClinicNearYou = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (ClinicNearYou.__proto__ || Object.getPrototypeOf(ClinicNearYou)).call(this, props));
 
-        _this.state = { 'showDetails': 'show' };
+        _this.state = { 'showDetails': 'show', 'counter': 0 };
         return _this;
     }
 
@@ -2158,8 +2166,7 @@ var ClinicNearYou = function (_React$Component) {
         value: function render() {
             var _this2 = this;
 
-            console.log('rending ', this.props);
-
+            this.state.counter = 0;
             return _react2.default.createElement(
                 'section',
                 { className: 'cm cm-subscription-banner ' + this.props.additionalClass },
@@ -2245,13 +2252,16 @@ var ClinicNearYou = function (_React$Component) {
                     _react2.default.createElement(
                         'ul',
                         { style: { 'listStyle': 'none', 'padding': '0', 'width': '80%' } },
-                        this.props.markers.map(function (marker) {
+                        this.props.markers.map(function (marker, index) {
+                            console.log('index ', _this2.props.markers.length, index);
 
                             if (marker.lat) {
 
                                 var markerDistance = _this2.getDistance(_this2.props.lat, _this2.props.lng, marker.lat, marker.lng);
 
                                 if (markerDistance < 100) {
+
+                                    _this2.state.counter = 1;
 
                                     return _react2.default.createElement(
                                         'li',
@@ -2287,6 +2297,17 @@ var ClinicNearYou = function (_React$Component) {
                                             marker.hours
                                         )
                                     );
+                                } else {
+                                    if (_this2.props.markers.length - 1 === index) {
+
+                                        if (_this2.state.counter === 0) {
+                                            return _react2.default.createElement(
+                                                'div',
+                                                null,
+                                                'Unfortunately we did not find any clinics.'
+                                            );
+                                        }
+                                    }
                                 }
                             }
                         })
@@ -2345,6 +2366,7 @@ var ClinicNearYou = function (_React$Component) {
             console.log(suggest);
 
             this.props.getCurrentPosition({ lat: suggest.location.lat, lng: suggest.location.lng });
+            this.props.updateCity({ city: suggest.label });
 
             //this.setState({ lat: suggest.location.lat, lng: suggest.location.lng, label:suggest.label });
         }
@@ -2439,7 +2461,7 @@ var ClinicNearYouMini = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (ClinicNearYouMini.__proto__ || Object.getPrototypeOf(ClinicNearYouMini)).call(this, props));
 
-        _this.state = { 'showDetails': 'show' };
+        _this.state = { 'showDetails': 'show', 'counter': 0 };
         return _this;
     }
 
@@ -2487,7 +2509,7 @@ var ClinicNearYouMini = function (_React$Component) {
                     _react2.default.createElement(
                         'ul',
                         { style: { 'listStyle': 'none', 'padding': '0', 'width': '80%' } },
-                        this.props.markers.map(function (marker) {
+                        this.props.markers.map(function (marker, index) {
 
                             if (marker.lat) {
 
@@ -2498,8 +2520,8 @@ var ClinicNearYouMini = function (_React$Component) {
 
                                 if (markerDistance < 100 && counter < 3) {
 
-                                    console.log('CAM 2222222999', marker);
                                     counter = counter + 1;
+                                    _this2.state.counter = 1;
 
                                     return _react2.default.createElement(
                                         'li',
@@ -2524,6 +2546,17 @@ var ClinicNearYouMini = function (_React$Component) {
                                             )
                                         )
                                     );
+                                } else {
+                                    if (_this2.props.markers.length - 1 === index) {
+
+                                        if (_this2.state.counter === 0) {
+                                            return _react2.default.createElement(
+                                                'div',
+                                                null,
+                                                'Unfortunately we did not find any clinics.'
+                                            );
+                                        }
+                                    }
                                 }
                             }
                         })
@@ -2677,7 +2710,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(73);
+    __webpack_require__(74);
 }
 
 var Cm18Accordian = function (_React$Component) {
@@ -3068,7 +3101,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(74);
+    __webpack_require__(75);
 }
 
 var OnScreeNav = function (_React$Component) {
@@ -3156,7 +3189,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(75);
+    __webpack_require__(76);
 }
 
 var OnScreenNav__Item = function (_React$Component) {
@@ -3232,7 +3265,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(76);
+    __webpack_require__(77);
 }
 
 var RegionLanguageSelect = function (_React$Component) {
@@ -4260,7 +4293,8 @@ var FindAClinic = function (_Component) {
                                 city: this.props.city,
                                 markers: this.props.markers,
                                 test: this.test,
-                                getCurrentPosition: this.props.getCurrentPosition })
+                                getCurrentPosition: this.props.getCurrentPosition,
+                                updateCity: this.props.updateCity })
                         )
                     )
                 ),
@@ -4735,7 +4769,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(78);
+    __webpack_require__(79);
     //import style from './Home.scss';
 }
 
@@ -5485,6 +5519,147 @@ var _HeaderLandingBanner = __webpack_require__(7);
 
 var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
 
+var _ContentHeader = __webpack_require__(11);
+
+var _ContentHeader2 = _interopRequireDefault(_ContentHeader);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PlanningYourTest = function (_Component) {
+    _inherits(PlanningYourTest, _Component);
+
+    function PlanningYourTest() {
+        _classCallCheck(this, PlanningYourTest);
+
+        return _possibleConstructorReturn(this, (PlanningYourTest.__proto__ || Object.getPrototypeOf(PlanningYourTest)).apply(this, arguments));
+    }
+
+    _createClass(PlanningYourTest, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {}
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: 'l-layout l-one-column cf' },
+                _react2.default.createElement(
+                    _reactHelmet.Helmet,
+                    null,
+                    _react2.default.createElement('meta', { charSet: 'utf-8' }),
+                    _react2.default.createElement(
+                        'title',
+                        null,
+                        'Planning Your Test'
+                    )
+                ),
+                _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
+                _react2.default.createElement(_BreadCrumbs2.default, null),
+                _react2.default.createElement(
+                    'article',
+                    null,
+                    _react2.default.createElement(_HeaderLandingBanner2.default, { title: '',
+                        description: '',
+                        image: 'https://auth.cochlear.com//wps/wcm/connect/dd2107e8-0708-4a4c-9fb9-1bcc1b82be49/CHILD_SWITCH-ON_1_RGB.jpg?MOD=AJPERES&CVID=',
+                        imagePath: '/in',
+                        additionalClass: 'is-dark' }),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'l-content-container cf l-padding' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'l-content-column' },
+                            _react2.default.createElement(
+                                'main',
+                                { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
+                                _react2.default.createElement(_ContentHeader2.default, { title: 'Planning Your Test',
+                                    description: 'If you need to confirm a hearing loss, you can empower yourself by knowing what to expect at your first appointment with an audiologist' }),
+                                _react2.default.createElement(_Cm01RichText2.default, { body: ' ' })
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
+            );
+        }
+    }], [{
+        key: 'fetchData',
+        value: function fetchData(_ref) {
+            var store = _ref.store,
+                params = _ref.params;
+
+            return store.dispatch(actions.getHome());
+        }
+    }]);
+
+    return PlanningYourTest;
+}(_react.Component);
+
+function mapStateToProps(state) {
+    return _extends({}, state.user);
+}
+function mapDispatchToProps(dispatch) {
+    return (0, _redux.bindActionCreators)(actions, dispatch);
+}
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(PlanningYourTest);
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(2);
+
+var _redux = __webpack_require__(1);
+
+var _reactHelmet = __webpack_require__(3);
+
+var _actions = __webpack_require__(4);
+
+var actions = _interopRequireWildcard(_actions);
+
+var _GlobalHeader = __webpack_require__(6);
+
+var _GlobalHeader2 = _interopRequireDefault(_GlobalHeader);
+
+var _GlobalFooter = __webpack_require__(5);
+
+var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
+
+var _Cm01RichText = __webpack_require__(9);
+
+var _Cm01RichText2 = _interopRequireDefault(_Cm01RichText);
+
+var _BreadCrumbs = __webpack_require__(8);
+
+var _BreadCrumbs2 = _interopRequireDefault(_BreadCrumbs);
+
+var _HeaderLandingBanner = __webpack_require__(7);
+
+var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -5570,7 +5745,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(StatsAndProofs);
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5722,7 +5897,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TreatingHearingLoss);
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5914,7 +6089,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TreatmentOptions);
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6097,7 +6272,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TypesOfTreatment);
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6271,7 +6446,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(UntreatedHearingLossAdult);
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6445,7 +6620,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(UntreatedHearingLossChildren);
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6580,7 +6755,7 @@ function renderFullPage(html, preloadedState, helmet) {
 }
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6615,7 +6790,7 @@ var RedirectWithStatus = function RedirectWithStatus(_ref) {
 exports.default = RedirectWithStatus;
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6714,7 +6889,7 @@ function userReducer() {
 }
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6814,7 +6989,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(User);
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(12)(false);
@@ -6828,7 +7003,7 @@ exports.push([module.i, "/* Style the buttons that are used to open and close th
 
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(12)(false);
@@ -6842,7 +7017,7 @@ exports.push([module.i, ".nav-onscreen.nav-onscreen__global-header {\n  float: l
 
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(12)(false);
@@ -6856,7 +7031,7 @@ exports.push([module.i, ".nav-onscreen.nav-onscreen__global-header {\n  margin-t
 
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(12)(false);
@@ -6870,7 +7045,7 @@ exports.push([module.i, ".nav-region-dropdown {\n  float: right;\n  position: re
 
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(12)(false);
@@ -6884,7 +7059,7 @@ exports.push([module.i, ".global-header h1 {\n  line-height: 85px; }\n\n.global-
 
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(12)(false);
@@ -6898,7 +7073,7 @@ exports.push([module.i, "li .details {\n  display: none; }\n  li .details.show {
 
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(12)(false);
@@ -6912,7 +7087,7 @@ exports.push([module.i, "/*\n * Default stylesheet\n * This stylesheet is includ
 
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(12)(false);
@@ -6926,7 +7101,7 @@ exports.push([module.i, "body {\n  font-family: \"BlissPro-Regular\",\"Trebuchet
 
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports) {
 
 
@@ -6995,32 +7170,6 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 73 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(64);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(13)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Cm18Accordian.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Cm18Accordian.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
 /* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7036,8 +7185,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav.scss");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Cm18Accordian.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Cm18Accordian.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -7062,8 +7211,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav__Item.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav__Item.scss");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -7088,8 +7237,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./RegionLanguageSelect.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./RegionLanguageSelect.scss");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav__Item.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav__Item.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -7114,8 +7263,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./GlobalHeader.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./GlobalHeader.scss");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./RegionLanguageSelect.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./RegionLanguageSelect.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -7140,8 +7289,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Home.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Home.scss");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./GlobalHeader.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./GlobalHeader.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -7166,8 +7315,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./framework.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./framework.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Home.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Home.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -7184,6 +7333,32 @@ if(false) {
 
 // load the styles
 var content = __webpack_require__(71);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(13)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./framework.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./framework.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(72);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(13)(content, {});

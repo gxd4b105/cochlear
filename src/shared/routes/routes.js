@@ -16,6 +16,7 @@ import CostsAndAffordability from "../../containers/CostsAndAffordability/CostsA
 import ImpactOfHearingLoss from "../../containers/ImpactOfHearingLoss/ImpactOfHearingLoss.jsx";
 import UntreatedHearingLossAdult from "../../containers/UntreatedHearingLossAdult/UntreatedHearingLossAdult.jsx";
 import UntreatedHearingLossChildren from "../../containers/UntreatedHearingLossChildren/UntreatedHearingLossChildren.jsx";
+import PlanningYourTest from "../../containers/PlanningYourTest/PlanningYourTest.jsx";
 
 
 export default {
@@ -78,6 +79,11 @@ export default {
         {
             path: '/:country/hearing-loss',
             component: HearingLoss,
+            exact: true
+        },
+        {
+            path: '/:country/planning-your-test',
+            component: PlanningYourTest,
             exact: true
         },
         {
