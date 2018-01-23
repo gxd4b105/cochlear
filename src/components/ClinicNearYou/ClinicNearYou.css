@@ -1,0 +1,9 @@
+body {
+  border: 11px dotted green; }
+
+li .details {
+  display: none; }
+  li .details.show {
+    display: block; }
+
+/*# sourceMappingURL=ClinicNearYou.css.map */

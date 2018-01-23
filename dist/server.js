@@ -120,7 +120,7 @@ exports.updateMarkers = updateMarkers;
 
 var _userTypes = __webpack_require__(21);
 
-var _axios = __webpack_require__(77);
+var _axios = __webpack_require__(22);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -305,19 +305,19 @@ var _actions = __webpack_require__(4);
 
 var actions = _interopRequireWildcard(_actions);
 
-var _GlobalFooter__Nav = __webpack_require__(36);
+var _GlobalFooter__Nav = __webpack_require__(37);
 
 var _GlobalFooter__Nav2 = _interopRequireDefault(_GlobalFooter__Nav);
 
-var _GlobalFooter__Nav__Item = __webpack_require__(37);
+var _GlobalFooter__Nav__Item = __webpack_require__(38);
 
 var _GlobalFooter__Nav__Item2 = _interopRequireDefault(_GlobalFooter__Nav__Item);
 
-var _GlobalFooter__Nav__Social = __webpack_require__(38);
+var _GlobalFooter__Nav__Social = __webpack_require__(39);
 
 var _GlobalFooter__Nav__Social2 = _interopRequireDefault(_GlobalFooter__Nav__Social);
 
-var _GlobalFooter__Nav__Social__Item = __webpack_require__(39);
+var _GlobalFooter__Nav__Social__Item = __webpack_require__(40);
 
 var _GlobalFooter__Nav__Social__Item2 = _interopRequireDefault(_GlobalFooter__Nav__Social__Item);
 
@@ -498,18 +498,6 @@ var _OnScreeNav2 = _interopRequireDefault(_OnScreeNav);
 var _OnScreenNav__Item = __webpack_require__(42);
 
 var _OnScreenNav__Item2 = _interopRequireDefault(_OnScreenNav__Item);
-
-var _GoogleTagManager = __webpack_require__(40);
-
-var _GoogleTagManager2 = _interopRequireDefault(_GoogleTagManager);
-
-var _reactTagManager = __webpack_require__(80);
-
-var _reactTagManager2 = _interopRequireDefault(_reactTagManager);
-
-var _DataLayer = __webpack_require__(81);
-
-var _DataLayer2 = _interopRequireDefault(_DataLayer);
 
 var _RegionLanguageSelect = __webpack_require__(43);
 
@@ -1674,16 +1662,22 @@ var Types = exports.Types = {
 /* 22 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-geosuggest");
+module.exports = require("axios");
 
 /***/ }),
 /* 23 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-google-maps/lib/components/addons/MarkerClusterer");
+module.exports = require("react-geosuggest");
 
 /***/ }),
 /* 24 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-google-maps/lib/components/addons/MarkerClusterer");
+
+/***/ }),
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1800,7 +1794,7 @@ function mapDispatchToProps(dispatch) {
 //export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1823,7 +1817,7 @@ var isFunction = function isFunction(action) {
 exports.default = customMiddleware;
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1848,25 +1842,25 @@ var reducers = (0, _redux.combineReducers)({
 exports.default = reducers;
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports) {
 
 module.exports = require("express");
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router");
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1952,7 +1946,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Body);
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2034,7 +2028,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Bodysecond);
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2116,7 +2110,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Bodythird);
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2138,11 +2132,11 @@ var _GoogleMapsWrapper2 = _interopRequireDefault(_GoogleMapsWrapper);
 
 var _reactGoogleMaps = __webpack_require__(16);
 
-var _MarkerClusterer = __webpack_require__(23);
+var _MarkerClusterer = __webpack_require__(24);
 
 var _MarkerClusterer2 = _interopRequireDefault(_MarkerClusterer);
 
-var _reactGeosuggest = __webpack_require__(22);
+var _reactGeosuggest = __webpack_require__(23);
 
 var _reactGeosuggest2 = _interopRequireDefault(_reactGeosuggest);
 
@@ -2438,7 +2432,7 @@ var ClinicNearYou = function (_React$Component) {
 exports.default = ClinicNearYou;
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2460,11 +2454,11 @@ var _GoogleMapsWrapper2 = _interopRequireDefault(_GoogleMapsWrapper);
 
 var _reactGoogleMaps = __webpack_require__(16);
 
-var _MarkerClusterer = __webpack_require__(23);
+var _MarkerClusterer = __webpack_require__(24);
 
 var _MarkerClusterer2 = _interopRequireDefault(_MarkerClusterer);
 
-var _reactGeosuggest = __webpack_require__(22);
+var _reactGeosuggest = __webpack_require__(23);
 
 var _reactGeosuggest2 = _interopRequireDefault(_reactGeosuggest);
 
@@ -2626,7 +2620,7 @@ var ClinicNearYouMini = function (_React$Component) {
 exports.default = ClinicNearYouMini;
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2695,7 +2689,7 @@ Cm02bContentTile.defaultProps = {
 exports.default = Cm02bContentTile;
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2768,7 +2762,7 @@ GlobalFooter__Nav.defaultProps = {
 exports.default = GlobalFooter__Nav;
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2828,7 +2822,7 @@ GlobalFooter__Nav__Item.defaultProps = {
 exports.default = GlobalFooter__Nav__Item;
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2892,7 +2886,7 @@ var GlobalFooter__Nav__Social = function (_React$Component) {
 exports.default = GlobalFooter__Nav__Social;
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2952,100 +2946,6 @@ GlobalFooter__Nav__Social__Item.defaultProps = {
 };
 
 exports.default = GlobalFooter__Nav__Social__Item;
-
-/***/ }),
-/* 40 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactGoogleTagManager = __webpack_require__(79);
-
-var _reactGoogleTagManager2 = _interopRequireDefault(_reactGoogleTagManager);
-
-var _propTypes = __webpack_require__(78);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var GoogleTagManager = function (_React$Component) {
-    _inherits(GoogleTagManager, _React$Component);
-
-    function GoogleTagManager() {
-        _classCallCheck(this, GoogleTagManager);
-
-        return _possibleConstructorReturn(this, (GoogleTagManager.__proto__ || Object.getPrototypeOf(GoogleTagManager)).apply(this, arguments));
-    }
-
-    _createClass(GoogleTagManager, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            var dataLayerName = this.props.dataLayerName || 'dataLayer';
-            var scriptId = this.props.scriptId || 'react-google-tag-manager-gtm';
-
-            if (!window[dataLayerName]) {
-                var gtmScriptNode = document.getElementById(scriptId);
-
-                eval(gtmScriptNode.textContent);
-            }
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var gtm = (0, _reactGoogleTagManager2.default)({
-                id: this.props.gtmId,
-                dataLayerName: this.props.dataLayerName || 'dataLayer',
-                additionalEvents: this.props.additionalEvents || {},
-                previewVariables: this.props.previewVariables || false
-            });
-
-            return _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(
-                    'div',
-                    null,
-                    gtm.noScriptAsReact()
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { id: this.props.scriptId || 'react-google-tag-manager-gtm' },
-                    gtm.scriptAsReact()
-                )
-            );
-        }
-    }]);
-
-    return GoogleTagManager;
-}(_react2.default.Component);
-
-GoogleTagManager.propTypes = {
-    gtmId: _propTypes2.default.string.isRequired,
-    dataLayerName: _propTypes2.default.string,
-    additionalEvents: _propTypes2.default.object,
-    previewVariables: _propTypes2.default.string,
-    scriptId: _propTypes2.default.string
-};
-
-exports.default = GoogleTagManager;
 
 /***/ }),
 /* 41 */
@@ -3224,6 +3124,10 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _axios = __webpack_require__(22);
+
+var _axios2 = _interopRequireDefault(_axios);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3239,14 +3143,67 @@ if (process.env.BROWSER) {
 var RegionLanguageSelect = function (_React$Component) {
     _inherits(RegionLanguageSelect, _React$Component);
 
-    function RegionLanguageSelect() {
+    function RegionLanguageSelect(props) {
         _classCallCheck(this, RegionLanguageSelect);
 
-        return _possibleConstructorReturn(this, (RegionLanguageSelect.__proto__ || Object.getPrototypeOf(RegionLanguageSelect)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (RegionLanguageSelect.__proto__ || Object.getPrototypeOf(RegionLanguageSelect)).call(this, props));
+
+        _this.state = {
+            selectLanguage: '',
+            selectRegion: '',
+            getIPData: ''
+        };
+
+        _this.handleRegionChange = _this.handleRegionChange.bind(_this);
+        _this.handleLanguageChange = _this.handleLanguageChange.bind(_this);
+        _this.handleSubmit = _this.handleSubmit.bind(_this);
+
+        return _this;
     }
 
     _createClass(RegionLanguageSelect, [{
-        key: "render",
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            var selectRegion = this.refs.selectRegion;
+            var selectLanguage = this.refs.selectLanguage;
+
+            console.log(navigator.language.toLowerCase().replace('-', '_'));
+            console.log('pass one ' + selectRegion.value);
+            console.log('pass one ' + selectLanguage.value);
+
+            this.setState({ selectRegion: selectRegion.value });
+            this.setState({ selectLanguage: selectLanguage.value });
+
+            _axios2.default.get('https://freegeoip.net/json/').then(function (res) {
+                //const posts = res.data.data.children.map(obj => obj.data);
+                //this.setState({ posts });
+                // console.log(res.data.country_code);
+                var countryCode = res.data.country_code.toLowerCase();
+                var languageCode = navigator.language.toLowerCase().replace('-', '_');
+                _this2.setState({ selectRegion: countryCode });
+                _this2.setState({ selectLanguage: languageCode });
+            });
+        }
+    }, {
+        key: 'handleRegionChange',
+        value: function handleRegionChange(event) {
+            this.setState({ selectRegion: event.target.value });
+        }
+    }, {
+        key: 'handleLanguageChange',
+        value: function handleLanguageChange(event) {
+            this.setState({ selectLanguage: event.target.value });
+        }
+    }, {
+        key: 'handleSubmit',
+        value: function handleSubmit(event) {
+            alert('Region selection: ' + this.state.selectRegion + '\nLanguage selection: ' + this.state.selectLanguage);
+            event.preventDefault();
+        }
+    }, {
+        key: 'render',
         value: function render() {
 
             function showHide() {
@@ -3260,634 +3217,622 @@ var RegionLanguageSelect = function (_React$Component) {
                 }
             }
 
+            console.log('pass two ' + this.state.selectRegion);
+            console.log('pass two ' + this.state.selectLanguage);
+
             return _react2.default.createElement(
-                "nav",
-                { className: "nav-region-dropdown " + this.props.additionalClass },
+                'nav',
+                { className: 'nav-region-dropdown ' + this.props.additionalClass },
                 _react2.default.createElement(
-                    "h4",
-                    { onClick: showHide, className: "nav-region-dropdown__cta" },
+                    'h4',
+                    { onClick: showHide, className: 'nav-region-dropdown__cta' },
                     this.props.cta
                 ),
                 _react2.default.createElement(
-                    "form",
-                    { id: "nav-region-dropdown__form", className: "nav-region-dropdown__form", action: this.props.formAction },
+                    'form',
+                    { onSubmit: this.handleSubmit, id: 'nav-region-dropdown__form', className: 'nav-region-dropdown__form' },
                     _react2.default.createElement(
-                        "label",
-                        { className: "nav-region-dropdown__label", htmlFor: "nav-region-dropdown__region" },
+                        'label',
+                        { className: 'nav-region-dropdown__label', htmlFor: 'nav-region-dropdown__region' },
                         _react2.default.createElement(
-                            "span",
+                            'span',
                             null,
-                            "Select a region:"
+                            'Select a region:'
                         ),
                         _react2.default.createElement(
-                            "select",
-                            { id: "nav-region-dropdown__region", "data-placeholder": "Choose a Region...", className: "nav-region-dropdown__select nav-region-dropdown__region" },
+                            'select',
+                            { defaultValue: 'intl/home', value: this.state.selectRegion, onChange: this.handleRegionChange, ref: 'selectRegion', id: 'nav-region-dropdown__region', 'data-placeholder': 'Choose a Region...', className: 'nav-region-dropdown__select nav-region-dropdown__region' },
                             _react2.default.createElement(
-                                "optgroup",
-                                { label: "International" },
+                                'optgroup',
+                                { label: 'International' },
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/intl/home", selected: true },
-                                    "Cochlear International"
-                                ),
-                                _react2.default.createElement(
-                                    "option",
-                                    { value: "/intl/careers" },
-                                    "Careers at Cochlear"
-                                ),
-                                _react2.default.createElement(
-                                    "option",
-                                    { value: "/intl/about" },
-                                    "About Cochlear"
-                                ),
-                                _react2.default.createElement(
-                                    "option",
-                                    { value: "/intl/contact" },
-                                    "Contact Us"
-                                ),
-                                _react2.default.createElement(
-                                    "option",
-                                    { value: "/intl/about/investor" },
-                                    "Investor Centre"
+                                    'option',
+                                    { value: 'intl/home', selected: true },
+                                    'Cochlear International'
                                 )
                             ),
                             _react2.default.createElement(
-                                "optgroup",
-                                { label: "North America" },
+                                'optgroup',
+                                { label: 'North America' },
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/us" },
-                                    "United States & Canada"
+                                    'option',
+                                    { value: 'us' },
+                                    'United States & Canada'
                                 )
                             ),
                             _react2.default.createElement(
-                                "optgroup",
-                                { label: "South America" },
+                                'optgroup',
+                                { label: 'South America' },
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/la" },
-                                    "Latin America"
+                                    'option',
+                                    { value: 'la' },
+                                    'Latin America'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/br" },
-                                    "Brazil"
+                                    'option',
+                                    { value: 'br' },
+                                    'Brazil'
                                 )
                             ),
                             _react2.default.createElement(
-                                "optgroup",
-                                { label: "Middle East & Africa" },
+                                'optgroup',
+                                { label: 'Middle East & Africa' },
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/me" },
-                                    "Middle East"
+                                    'option',
+                                    { value: 'me' },
+                                    'Middle East'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/uk/africa" },
-                                    "Africa"
+                                    'option',
+                                    { value: 'uk/africa' },
+                                    'Africa'
                                 )
                             ),
                             _react2.default.createElement(
-                                "optgroup",
-                                { label: "Europe" },
+                                'optgroup',
+                                { label: 'Europe' },
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/at" },
-                                    "Austria"
+                                    'option',
+                                    { value: 'at' },
+                                    'Austria'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/cz" },
-                                    "Czech Republic"
+                                    'option',
+                                    { value: 'cz' },
+                                    'Czech Republic'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/dk" },
-                                    "Denmark"
+                                    'option',
+                                    { value: 'dk' },
+                                    'Denmark'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/fi" },
-                                    "Finland"
+                                    'option',
+                                    { value: 'fi' },
+                                    'Finland'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/fr" },
-                                    "France"
+                                    'option',
+                                    { value: 'fr' },
+                                    'France'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/de" },
-                                    "Germany"
+                                    'option',
+                                    { value: 'de' },
+                                    'Germany'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/hu" },
-                                    "Hungary"
+                                    'option',
+                                    { value: 'hu' },
+                                    'Hungary'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/il" },
-                                    "Israel"
+                                    'option',
+                                    { value: 'il' },
+                                    'Israel'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/it" },
-                                    "Italy"
+                                    'option',
+                                    { value: 'it' },
+                                    'Italy'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/nl" },
-                                    "Netherlands"
+                                    'option',
+                                    { value: 'nl' },
+                                    'Netherlands'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/no" },
-                                    "Norway"
+                                    'option',
+                                    { value: 'no' },
+                                    'Norway'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/ro" },
-                                    "Romania"
+                                    'option',
+                                    { value: 'ro' },
+                                    'Romania'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/es" },
-                                    "Spain"
+                                    'option',
+                                    { value: 'es' },
+                                    'Spain'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/sv" },
-                                    "Sweden"
+                                    'option',
+                                    { value: 'sv' },
+                                    'Sweden'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/ch" },
-                                    "Switzerland"
+                                    'option',
+                                    { value: 'ch' },
+                                    'Switzerland'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/tr" },
-                                    "Turkey"
+                                    'option',
+                                    { value: 'tr' },
+                                    'Turkey'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/uk" },
-                                    "UK/Ireland"
+                                    'option',
+                                    { value: 'uk' },
+                                    'UK/Ireland'
                                 )
                             ),
                             _react2.default.createElement(
-                                "optgroup",
-                                { label: "Other Eastern Europe" },
+                                'optgroup',
+                                { label: 'Other Eastern Europe' },
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/ru" },
-                                    "Other Eastern Europe"
+                                    'option',
+                                    { value: 'ru' },
+                                    'Other Eastern Europe'
                                 )
                             ),
                             _react2.default.createElement(
-                                "optgroup",
-                                { label: "Asia Pacific" },
+                                'optgroup',
+                                { label: 'Asia Pacific' },
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/au" },
-                                    "Australia/New Zealand"
+                                    'option',
+                                    { value: 'au' },
+                                    'Australia/New Zealand'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/in" },
-                                    "India"
+                                    'option',
+                                    { value: 'in' },
+                                    'India'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/sg" },
-                                    "Singapore"
+                                    'option',
+                                    { value: 'sg' },
+                                    'Singapore'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/cn" },
-                                    "China: \u4E2D\u6587"
+                                    'option',
+                                    { value: 'cn' },
+                                    'China: \u4E2D\u6587'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/jp" },
-                                    "Japan: \u65E5\u672C\u8A9E"
+                                    'option',
+                                    { value: 'jp' },
+                                    'Japan: \u65E5\u672C\u8A9E'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/kr" },
-                                    "Korea: \uD55C\uAE00"
+                                    'option',
+                                    { value: 'kr' },
+                                    'Korea: \uD55C\uAE00'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/hk" },
-                                    "Hong Kong/Taiwan Region"
+                                    'option',
+                                    { value: 'hk' },
+                                    'Hong Kong/Taiwan Region'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/id" },
-                                    "Indonesia"
+                                    'option',
+                                    { value: 'id' },
+                                    'Indonesia'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/my" },
-                                    "Malaysia"
+                                    'option',
+                                    { value: 'my' },
+                                    'Malaysia'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/ph" },
-                                    "Philippines"
+                                    'option',
+                                    { value: 'ph' },
+                                    'Philippines'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/th" },
-                                    "Thailand"
+                                    'option',
+                                    { value: 'th' },
+                                    'Thailand'
                                 ),
                                 _react2.default.createElement(
-                                    "option",
-                                    { value: "/vn" },
-                                    "Vietnam"
+                                    'option',
+                                    { value: 'vn' },
+                                    'Vietnam'
                                 )
                             )
                         )
                     ),
                     _react2.default.createElement(
-                        "label",
-                        { className: "nav-region-dropdown__label", htmlFor: "nav-region-dropdown__language" },
+                        'label',
+                        { className: 'nav-region-dropdown__label', htmlFor: 'nav-region-dropdown__language' },
                         _react2.default.createElement(
-                            "span",
+                            'span',
                             null,
-                            "Select a language:"
+                            'Select a language:'
                         ),
                         _react2.default.createElement(
-                            "select",
-                            { id: "nav-region-dropdown__language", "data-placeholder": "Choose a Language...", className: "nav-region-dropdown__select nav-region-dropdown__language" },
+                            'select',
+                            { defaultValue: 'en_us', value: this.state.selectLanguage, onChange: this.handleLanguageChange, ref: 'selectLanguage', id: 'nav-region-dropdown__language', 'data-placeholder': 'Choose a Language...', className: 'nav-region-dropdown__select nav-region-dropdown__language' },
                             _react2.default.createElement(
-                                "option",
-                                { value: "AF" },
-                                "Afrikanns"
+                                'option',
+                                { value: 'AF' },
+                                'Afrikanns'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "SQ" },
-                                "Albanian"
+                                'option',
+                                { value: 'SQ' },
+                                'Albanian'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "AR" },
-                                "Arabic"
+                                'option',
+                                { value: 'AR' },
+                                'Arabic'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "HY" },
-                                "Armenian"
+                                'option',
+                                { value: 'HY' },
+                                'Armenian'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "EU" },
-                                "Basque"
+                                'option',
+                                { value: 'EU' },
+                                'Basque'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "BN" },
-                                "Bengali"
+                                'option',
+                                { value: 'BN' },
+                                'Bengali'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "BG" },
-                                "Bulgarian"
+                                'option',
+                                { value: 'BG' },
+                                'Bulgarian'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "CA" },
-                                "Catalan"
+                                'option',
+                                { value: 'CA' },
+                                'Catalan'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "KM" },
-                                "Cambodian"
+                                'option',
+                                { value: 'KM' },
+                                'Cambodian'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "ZH" },
-                                "Chinese (Mandarin)"
+                                'option',
+                                { value: 'ZH' },
+                                'Chinese (Mandarin)'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "HR" },
-                                "Croation"
+                                'option',
+                                { value: 'HR' },
+                                'Croation'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "CS" },
-                                "Czech"
+                                'option',
+                                { value: 'CS' },
+                                'Czech'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "DA" },
-                                "Danish"
+                                'option',
+                                { value: 'DA' },
+                                'Danish'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "NL" },
-                                "Dutch"
+                                'option',
+                                { value: 'NL' },
+                                'Dutch'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "EN", selected: true },
-                                "English"
+                                'option',
+                                { value: 'en_gb' },
+                                'English (Great Britain)'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "ET" },
-                                "Estonian"
+                                'option',
+                                { value: 'en_us' },
+                                'English (United States)'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "FJ" },
-                                "Fiji"
+                                'option',
+                                { value: 'ET' },
+                                'Estonian'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "FI" },
-                                "Finnish"
+                                'option',
+                                { value: 'FJ' },
+                                'Fiji'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "FR" },
-                                "French"
+                                'option',
+                                { value: 'FI' },
+                                'Finnish'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "KA" },
-                                "Georgian"
+                                'option',
+                                { value: 'FR' },
+                                'French'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "DE" },
-                                "German"
+                                'option',
+                                { value: 'KA' },
+                                'Georgian'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "EL" },
-                                "Greek"
+                                'option',
+                                { value: 'DE' },
+                                'German'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "GU" },
-                                "Gujarati"
+                                'option',
+                                { value: 'EL' },
+                                'Greek'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "HE" },
-                                "Hebrew"
+                                'option',
+                                { value: 'GU' },
+                                'Gujarati'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "HI" },
-                                "Hindi"
+                                'option',
+                                { value: 'HE' },
+                                'Hebrew'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "HU" },
-                                "Hungarian"
+                                'option',
+                                { value: 'HI' },
+                                'Hindi'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "IS" },
-                                "Icelandic"
+                                'option',
+                                { value: 'HU' },
+                                'Hungarian'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "ID" },
-                                "Indonesian"
+                                'option',
+                                { value: 'IS' },
+                                'Icelandic'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "GA" },
-                                "Irish"
+                                'option',
+                                { value: 'ID' },
+                                'Indonesian'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "IT" },
-                                "Italian"
+                                'option',
+                                { value: 'GA' },
+                                'Irish'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "JA" },
-                                "Japanese"
+                                'option',
+                                { value: 'IT' },
+                                'Italian'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "JW" },
-                                "Javanese"
+                                'option',
+                                { value: 'JA' },
+                                'Japanese'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "KO" },
-                                "Korean"
+                                'option',
+                                { value: 'JW' },
+                                'Javanese'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "LA" },
-                                "Latin"
+                                'option',
+                                { value: 'KO' },
+                                'Korean'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "LV" },
-                                "Latvian"
+                                'option',
+                                { value: 'LA' },
+                                'Latin'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "LT" },
-                                "Lithuanian"
+                                'option',
+                                { value: 'LV' },
+                                'Latvian'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "MK" },
-                                "Macedonian"
+                                'option',
+                                { value: 'LT' },
+                                'Lithuanian'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "MS" },
-                                "Malay"
+                                'option',
+                                { value: 'MK' },
+                                'Macedonian'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "ML" },
-                                "Malayalam"
+                                'option',
+                                { value: 'MS' },
+                                'Malay'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "MT" },
-                                "Maltese"
+                                'option',
+                                { value: 'ML' },
+                                'Malayalam'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "MI" },
-                                "Maori"
+                                'option',
+                                { value: 'MT' },
+                                'Maltese'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "MR" },
-                                "Marathi"
+                                'option',
+                                { value: 'MI' },
+                                'Maori'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "MN" },
-                                "Mongolian"
+                                'option',
+                                { value: 'MR' },
+                                'Marathi'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "NE" },
-                                "Nepali"
+                                'option',
+                                { value: 'MN' },
+                                'Mongolian'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "NO" },
-                                "Norwegian"
+                                'option',
+                                { value: 'NE' },
+                                'Nepali'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "FA" },
-                                "Persian"
+                                'option',
+                                { value: 'NO' },
+                                'Norwegian'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "PL" },
-                                "Polish"
+                                'option',
+                                { value: 'FA' },
+                                'Persian'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "PT" },
-                                "Portuguese"
+                                'option',
+                                { value: 'PL' },
+                                'Polish'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "PA" },
-                                "Punjabi"
+                                'option',
+                                { value: 'PT' },
+                                'Portuguese'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "QU" },
-                                "Quechua"
+                                'option',
+                                { value: 'PA' },
+                                'Punjabi'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "RO" },
-                                "Romanian"
+                                'option',
+                                { value: 'QU' },
+                                'Quechua'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "RU" },
-                                "Russian"
+                                'option',
+                                { value: 'RO' },
+                                'Romanian'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "SM" },
-                                "Samoan"
+                                'option',
+                                { value: 'RU' },
+                                'Russian'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "SR" },
-                                "Serbian"
+                                'option',
+                                { value: 'SM' },
+                                'Samoan'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "SK" },
-                                "Slovak"
+                                'option',
+                                { value: 'SR' },
+                                'Serbian'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "SL" },
-                                "Slovenian"
+                                'option',
+                                { value: 'SK' },
+                                'Slovak'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "ES" },
-                                "Spanish"
+                                'option',
+                                { value: 'SL' },
+                                'Slovenian'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "SW" },
-                                "Swahili"
+                                'option',
+                                { value: 'ES' },
+                                'Spanish'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "SV" },
-                                "Swedish "
+                                'option',
+                                { value: 'SW' },
+                                'Swahili'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "TA" },
-                                "Tamil"
+                                'option',
+                                { value: 'SV' },
+                                'Swedish '
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "TT" },
-                                "Tatar"
+                                'option',
+                                { value: 'TA' },
+                                'Tamil'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "TE" },
-                                "Telugu"
+                                'option',
+                                { value: 'TT' },
+                                'Tatar'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "TH" },
-                                "Thai"
+                                'option',
+                                { value: 'TE' },
+                                'Telugu'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "BO" },
-                                "Tibetan"
+                                'option',
+                                { value: 'TH' },
+                                'Thai'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "TO" },
-                                "Tonga"
+                                'option',
+                                { value: 'BO' },
+                                'Tibetan'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "TR" },
-                                "Turkish"
+                                'option',
+                                { value: 'TO' },
+                                'Tonga'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "UK" },
-                                "Ukranian"
+                                'option',
+                                { value: 'TR' },
+                                'Turkish'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "UR" },
-                                "Urdu"
+                                'option',
+                                { value: 'UK' },
+                                'Ukranian'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "UZ" },
-                                "Uzbek"
+                                'option',
+                                { value: 'UR' },
+                                'Urdu'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "VI" },
-                                "Vietnamese"
+                                'option',
+                                { value: 'UZ' },
+                                'Uzbek'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "CY" },
-                                "Welsh"
+                                'option',
+                                { value: 'VI' },
+                                'Vietnamese'
                             ),
                             _react2.default.createElement(
-                                "option",
-                                { value: "XH" },
-                                "Xhosa"
+                                'option',
+                                { value: 'CY' },
+                                'Welsh'
+                            ),
+                            _react2.default.createElement(
+                                'option',
+                                { value: 'XH' },
+                                'Xhosa'
                             )
                         )
                     ),
                     _react2.default.createElement(
-                        "button",
-                        { className: "nav-region-dropdown__submit" },
+                        'button',
+                        { type: 'submit', className: 'nav-region-dropdown__submit' },
                         this.props.submitText
                     )
                 )
@@ -4095,7 +4040,7 @@ var _BreadCrumbs = __webpack_require__(8);
 
 var _BreadCrumbs2 = _interopRequireDefault(_BreadCrumbs);
 
-var _ClinicNearYou = __webpack_require__(33);
+var _ClinicNearYou = __webpack_require__(34);
 
 var _ClinicNearYou2 = _interopRequireDefault(_ClinicNearYou);
 
@@ -4287,7 +4232,7 @@ var _BreadCrumbs = __webpack_require__(8);
 
 var _BreadCrumbs2 = _interopRequireDefault(_BreadCrumbs);
 
-var _ClinicNearYouMini = __webpack_require__(34);
+var _ClinicNearYouMini = __webpack_require__(35);
 
 var _ClinicNearYouMini2 = _interopRequireDefault(_ClinicNearYouMini);
 
@@ -4295,7 +4240,7 @@ var _ContentHeader = __webpack_require__(14);
 
 var _ContentHeader2 = _interopRequireDefault(_ContentHeader);
 
-var _Cm02bContentTile = __webpack_require__(35);
+var _Cm02bContentTile = __webpack_require__(36);
 
 var _Cm02bContentTile2 = _interopRequireDefault(_Cm02bContentTile);
 
@@ -4462,7 +4407,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Body = __webpack_require__(30);
+var _Body = __webpack_require__(31);
 
 var _Body2 = _interopRequireDefault(_Body);
 
@@ -4679,7 +4624,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Bodysecond = __webpack_require__(31);
+var _Bodysecond = __webpack_require__(32);
 
 var _Bodysecond2 = _interopRequireDefault(_Bodysecond);
 
@@ -4778,7 +4723,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Bodythird = __webpack_require__(32);
+var _Bodythird = __webpack_require__(33);
 
 var _Bodythird2 = _interopRequireDefault(_Bodythird);
 
@@ -5669,7 +5614,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, 
 "use strict";
 
 
-var _express = __webpack_require__(27);
+var _express = __webpack_require__(28);
 
 var _express2 = _interopRequireDefault(_express);
 
@@ -5677,7 +5622,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(28);
+var _server = __webpack_require__(29);
 
 var _server2 = _interopRequireDefault(_server);
 
@@ -5685,7 +5630,7 @@ var _reactHelmet = __webpack_require__(3);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
-var _app = __webpack_require__(24);
+var _app = __webpack_require__(25);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -5695,13 +5640,13 @@ var _reactRedux = __webpack_require__(2);
 
 var _redux = __webpack_require__(1);
 
-var _combine = __webpack_require__(26);
+var _combine = __webpack_require__(27);
 
 var _combine2 = _interopRequireDefault(_combine);
 
-var _reactRouter = __webpack_require__(29);
+var _reactRouter = __webpack_require__(30);
 
-var _thunk = __webpack_require__(25);
+var _thunk = __webpack_require__(26);
 
 var _thunk2 = _interopRequireDefault(_thunk);
 
@@ -6403,36 +6348,6 @@ if(false) {
 	// When the module is disposed, remove the <style> tags
 	module.hot.dispose(function() { update(); });
 }
-
-/***/ }),
-/* 77 */
-/***/ (function(module, exports) {
-
-module.exports = require("axios");
-
-/***/ }),
-/* 78 */
-/***/ (function(module, exports) {
-
-module.exports = require("prop-types");
-
-/***/ }),
-/* 79 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-google-tag-manager");
-
-/***/ }),
-/* 80 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-tag-manager");
-
-/***/ }),
-/* 81 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-tag-manager/DataLayer");
 
 /***/ })
 /******/ ]);
