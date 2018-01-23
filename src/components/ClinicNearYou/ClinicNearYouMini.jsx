@@ -14,8 +14,8 @@ class ClinicNearYouMini extends React.Component {
       }
 
     render() {
-        this.state.counter = 0;
 
+        let counter = 0;
         return (
 
     <section className={`cm cm-subscription-banner ${this.props.additionalClass}`}>
@@ -47,22 +47,22 @@ class ClinicNearYouMini extends React.Component {
           let markerDistance = this.getDistance(this.props.lat,this.props.lng,marker.lat,marker.lng);  
           console.log('CAM 11', marker, markerDistance);
 
-    if(markerDistance < 100){
-
-        this.state.counter = 1;
+    if(markerDistance < 100 && counter < 3){
         
-
+        counter = counter + 1;
+        this.state.counter = 1;
 
    return <li key={marker.lat} ref={marker.lat} onClick={() => this.toggleClinic(marker.lat)} style={{'backgroundColor':'#fff','border':'1px solid #ccc','padding': '20px'}}><strong>{marker.text}</strong><div className={'details show'}>{marker.address} &nbsp; <span style={{'fontSize':'12px'}}>{parseInt(markerDistance)}km</span></div></li>
 } else {
     if (this.props.markers.length - 1 === index){
-        
-        if(this.state.counter === 0){
-            return <div>Unfortunately we did not find any clinics.</div>;
-        }
-        
-            }
+
+if(this.state.counter === 0){
+    return <div>Unfortunately we did not find any clinics.</div>;
 }
+
+    }
+}
+
 
             }
 
