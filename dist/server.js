@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 56);
+/******/ 	return __webpack_require__(__webpack_require__.s = 60);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -109,8 +109,12 @@ exports.getHomesecond = getHomesecond;
 exports.getHomethird = getHomethird;
 exports.getTreatmentOptions = getTreatmentOptions;
 exports.getTreatingHearingLoss = getTreatingHearingLoss;
+exports.getHearingLoss = getHearingLoss;
 exports.getTypesOfTreatment = getTypesOfTreatment;
+exports.getImpactOfHearingLoss = getImpactOfHearingLoss;
 exports.getHearingAidVsImplantableSolutions = getHearingAidVsImplantableSolutions;
+exports.getUntreatedHearingLossChildren = getUntreatedHearingLossChildren;
+exports.getUntreatedHearingLossAdult = getUntreatedHearingLossAdult;
 exports.getFindAClinic = getFindAClinic;
 exports.getCostsAndAffordability = getCostsAndAffordability;
 exports.getFooter = getFooter;
@@ -119,7 +123,7 @@ exports.getCurrentPosition = getCurrentPosition;
 exports.updateMarkers = updateMarkers;
 exports.updateCity = updateCity;
 
-var _userTypes = __webpack_require__(22);
+var _userTypes = __webpack_require__(20);
 
 var _axios = __webpack_require__(15);
 
@@ -207,31 +211,71 @@ function getTreatingHearingLoss() {
     };
 }
 
+function getHearingLoss() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        var _ref9 = await _axios2.default.get('https://auth.cochlear.com/contentservice/api/content/deloitte/home/hearing-loss'),
+            data = _ref9.data;
+
+        dispatch({ type: _userTypes.Types.UPDATE_HEARINGLOSS, payload: data });
+    };
+}
+
 function getTypesOfTreatment() {
     return async function (dispatch, getState) {
         // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
-        var _ref9 = await _axios2.default.get('https://auth.cochlear.com/contentservice/api/content/deloitte/home/types-of-treatment'),
-            data = _ref9.data;
+        var _ref10 = await _axios2.default.get('https://auth.cochlear.com/contentservice/api/content/deloitte/home/types-of-treatment'),
+            data = _ref10.data;
 
         dispatch({ type: _userTypes.Types.UPDATE_TYPESOFTREATMENT, payload: data });
+    };
+}
+
+function getImpactOfHearingLoss() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        var _ref11 = await _axios2.default.get('https://auth.cochlear.com/contentservice/api/content/deloitte/home/impact-of-hearing-loss'),
+            data = _ref11.data;
+
+        dispatch({ type: _userTypes.Types.UPDATE_IMPACTOFHEARINGLOSS, payload: data });
     };
 }
 
 function getHearingAidVsImplantableSolutions() {
     return async function (dispatch, getState) {
         // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
-        var _ref10 = await _axios2.default.get('https://auth.cochlear.com/contentservice/api/content/deloitte/home/hearing-aids-vs-implantable-solutions'),
-            data = _ref10.data;
+        var _ref12 = await _axios2.default.get('https://auth.cochlear.com/contentservice/api/content/deloitte/home/hearing-aids-vs-implantable-solutions'),
+            data = _ref12.data;
 
         dispatch({ type: _userTypes.Types.UPDATE_HEARINGAIDSVSIMPLANTABLESOLUTIONS, payload: data });
+    };
+}
+
+function getUntreatedHearingLossChildren() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        var _ref13 = await _axios2.default.get('https://auth.cochlear.com/contentservice/api/content/deloitte/home/untreated-hearing-loss-children'),
+            data = _ref13.data;
+
+        dispatch({ type: _userTypes.Types.UPDATE_UNTREATEDHEARINGLOSSCHILDREN, payload: data });
+    };
+}
+
+function getUntreatedHearingLossAdult() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        var _ref14 = await _axios2.default.get('https://auth.cochlear.com/contentservice/api/content/deloitte/home/untreated-hearing-loss-adult'),
+            data = _ref14.data;
+
+        dispatch({ type: _userTypes.Types.UPDATE_UNTREATEDHEARINGLOSSADULT, payload: data });
     };
 }
 
 function getFindAClinic() {
     return async function (dispatch, getState) {
         // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
-        var _ref11 = await _axios2.default.get('https://auth.cochlear.com/contentservice/api/content/deloitte/home/find-a-clinic'),
-            data = _ref11.data;
+        var _ref15 = await _axios2.default.get('https://auth.cochlear.com/contentservice/api/content/deloitte/home/find-a-clinic'),
+            data = _ref15.data;
 
         dispatch({ type: _userTypes.Types.UPDATE_FINDACLINIC, payload: data });
     };
@@ -240,8 +284,8 @@ function getFindAClinic() {
 function getCostsAndAffordability() {
     return async function (dispatch, getState) {
         // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
-        var _ref12 = await _axios2.default.get('https://auth.cochlear.com/contentservice/api/content/deloitte/home/costs-and-affordability'),
-            data = _ref12.data;
+        var _ref16 = await _axios2.default.get('https://auth.cochlear.com/contentservice/api/content/deloitte/home/costs-and-affordability'),
+            data = _ref16.data;
 
         dispatch({ type: _userTypes.Types.UPDATE_COSTSANDAFFORDABILITY, payload: data });
     };
@@ -249,8 +293,8 @@ function getCostsAndAffordability() {
 
 function getFooter() {
     return async function (dispatch, getState) {
-        var _ref13 = await _axios2.default.get('https://api.myjson.com/bins/xrn0n'),
-            data = _ref13.data;
+        var _ref17 = await _axios2.default.get('https://api.myjson.com/bins/xrn0n'),
+            data = _ref17.data;
 
         dispatch({ type: _userTypes.Types.UPDATE_FOOTER, payload: data });
     };
@@ -258,8 +302,8 @@ function getFooter() {
 
 function getFooterUS() {
     return async function (dispatch, getState) {
-        var _ref14 = await _axios2.default.get('https://api.myjson.com/bins/jr901'),
-            data = _ref14.data;
+        var _ref18 = await _axios2.default.get('https://api.myjson.com/bins/jr901'),
+            data = _ref18.data;
 
         dispatch({ type: _userTypes.Types.UPDATE_FOOTER, payload: data });
     };
@@ -522,9 +566,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(75);
-    __webpack_require__(76);
-    __webpack_require__(73);
+    __webpack_require__(79);
+    __webpack_require__(80);
+    __webpack_require__(77);
 }
 
 var Header = function (_Component) {
@@ -814,6 +858,164 @@ exports.default = Cm01RichText;
 
 /***/ }),
 /* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Cm02ContentTile = function (_React$Component) {
+    _inherits(Cm02ContentTile, _React$Component);
+
+    function Cm02ContentTile() {
+        _classCallCheck(this, Cm02ContentTile);
+
+        return _possibleConstructorReturn(this, (Cm02ContentTile.__proto__ || Object.getPrototypeOf(Cm02ContentTile)).apply(this, arguments));
+    }
+
+    _createClass(Cm02ContentTile, [{
+        key: "render",
+        value: function render() {
+
+            return _react2.default.createElement(
+                "section",
+                { className: "cm cm-content-tile " + this.props.additionalClass },
+                _react2.default.createElement(
+                    "div",
+                    { className: "cm-image-block-link" },
+                    _react2.default.createElement(
+                        "a",
+                        { href: "" + this.props.path, className: "image" },
+                        _react2.default.createElement("img", { className: "img", src: "" + this.props.image, alt: this.props.imageAlt })
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "content" },
+                        _react2.default.createElement(
+                            "h1",
+                            null,
+                            " ",
+                            _react2.default.createElement(
+                                "a",
+                                { href: "" + this.props.path },
+                                this.props.title
+                            ),
+                            " "
+                        ),
+                        " ",
+                        _react2.default.createElement(
+                            "p",
+                            null,
+                            this.props.description
+                        ),
+                        _react2.default.createElement(
+                            "a",
+                            { href: "" + this.props.path, className: "cta" },
+                            "Read more"
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Cm02ContentTile;
+}(_react2.default.Component);
+
+Cm02ContentTile.defaultProps = {
+    title: "CM02 Content Tile",
+    path: "#",
+    description: "This is a description",
+    image: "http://fed.donlineclients.com/assets/img/placeholder/landing-hero.jpg",
+    imageAlt: "Content tile image alt text",
+    additionalClass: ""
+};
+
+exports.default = Cm02ContentTile;
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ContentHeader = function (_React$Component) {
+    _inherits(ContentHeader, _React$Component);
+
+    function ContentHeader() {
+        _classCallCheck(this, ContentHeader);
+
+        return _possibleConstructorReturn(this, (ContentHeader.__proto__ || Object.getPrototypeOf(ContentHeader)).apply(this, arguments));
+    }
+
+    _createClass(ContentHeader, [{
+        key: "render",
+        value: function render() {
+
+            return _react2.default.createElement(
+                "header",
+                { className: "content-header" },
+                _react2.default.createElement(
+                    "h1",
+                    null,
+                    this.props.title
+                ),
+                _react2.default.createElement(
+                    "p",
+                    null,
+                    this.props.description
+                )
+            );
+        }
+    }]);
+
+    return ContentHeader;
+}(_react2.default.Component);
+
+ContentHeader.defaultProps = {
+    title: "Content Header"
+};
+
+exports.default = ContentHeader;
+
+/***/ }),
+/* 12 */
 /***/ (function(module, exports) {
 
 /*
@@ -895,7 +1097,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -919,7 +1121,7 @@ var stylesInDom = {},
 	singletonElement = null,
 	singletonCounter = 0,
 	styleElementsInsertedAtTop = [],
-	fixUrls = __webpack_require__(68);
+	fixUrls = __webpack_require__(72);
 
 module.exports = function(list, options) {
 	if(typeof DEBUG !== "undefined" && DEBUG) {
@@ -1172,168 +1374,10 @@ function updateLink(linkElement, options, obj) {
 
 
 /***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Cm02ContentTile = function (_React$Component) {
-    _inherits(Cm02ContentTile, _React$Component);
-
-    function Cm02ContentTile() {
-        _classCallCheck(this, Cm02ContentTile);
-
-        return _possibleConstructorReturn(this, (Cm02ContentTile.__proto__ || Object.getPrototypeOf(Cm02ContentTile)).apply(this, arguments));
-    }
-
-    _createClass(Cm02ContentTile, [{
-        key: "render",
-        value: function render() {
-
-            return _react2.default.createElement(
-                "section",
-                { className: "cm cm-content-tile " + this.props.additionalClass },
-                _react2.default.createElement(
-                    "div",
-                    { className: "cm-image-block-link" },
-                    _react2.default.createElement(
-                        "a",
-                        { href: "" + this.props.path, className: "image" },
-                        _react2.default.createElement("img", { className: "img", src: "" + this.props.image, alt: this.props.imageAlt })
-                    ),
-                    _react2.default.createElement(
-                        "div",
-                        { className: "content" },
-                        _react2.default.createElement(
-                            "h1",
-                            null,
-                            " ",
-                            _react2.default.createElement(
-                                "a",
-                                { href: "" + this.props.path },
-                                this.props.title
-                            ),
-                            " "
-                        ),
-                        " ",
-                        _react2.default.createElement(
-                            "p",
-                            null,
-                            this.props.description
-                        ),
-                        _react2.default.createElement(
-                            "a",
-                            { href: "" + this.props.path, className: "cta" },
-                            "Read more"
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return Cm02ContentTile;
-}(_react2.default.Component);
-
-Cm02ContentTile.defaultProps = {
-    title: "CM02 Content Tile",
-    path: "#",
-    description: "This is a description",
-    image: "http://fed.donlineclients.com/assets/img/placeholder/landing-hero.jpg",
-    imageAlt: "Content tile image alt text",
-    additionalClass: ""
-};
-
-exports.default = Cm02ContentTile;
-
-/***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router-dom");
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ContentHeader = function (_React$Component) {
-    _inherits(ContentHeader, _React$Component);
-
-    function ContentHeader() {
-        _classCallCheck(this, ContentHeader);
-
-        return _possibleConstructorReturn(this, (ContentHeader.__proto__ || Object.getPrototypeOf(ContentHeader)).apply(this, arguments));
-    }
-
-    _createClass(ContentHeader, [{
-        key: "render",
-        value: function render() {
-
-            return _react2.default.createElement(
-                "header",
-                { className: "content-header" },
-                _react2.default.createElement(
-                    "h1",
-                    null,
-                    this.props.title
-                ),
-                _react2.default.createElement(
-                    "p",
-                    null,
-                    this.props.description
-                )
-            );
-        }
-    }]);
-
-    return ContentHeader;
-}(_react2.default.Component);
-
-ContentHeader.defaultProps = {
-    title: "Content Header"
-};
-
-exports.default = ContentHeader;
 
 /***/ }),
 /* 15 */
@@ -1364,23 +1408,23 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Home = __webpack_require__(47);
+var _Home = __webpack_require__(48);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _Homesecond = __webpack_require__(49);
+var _Homesecond = __webpack_require__(50);
 
 var _Homesecond2 = _interopRequireDefault(_Homesecond);
 
-var _Homethird = __webpack_require__(50);
+var _Homethird = __webpack_require__(51);
 
 var _Homethird2 = _interopRequireDefault(_Homethird);
 
-var _user = __webpack_require__(59);
+var _user = __webpack_require__(63);
 
 var _user2 = _interopRequireDefault(_user);
 
-var _HomePage = __webpack_require__(48);
+var _HomePage = __webpack_require__(49);
 
 var _HomePage2 = _interopRequireDefault(_HomePage);
 
@@ -1392,29 +1436,45 @@ var _FindAClinic = __webpack_require__(45);
 
 var _FindAClinic2 = _interopRequireDefault(_FindAClinic);
 
-var _StatsAndProofs = __webpack_require__(52);
+var _StatsAndProofs = __webpack_require__(54);
 
 var _StatsAndProofs2 = _interopRequireDefault(_StatsAndProofs);
 
-var _TreatmentOptions = __webpack_require__(54);
+var _TreatmentOptions = __webpack_require__(56);
 
 var _TreatmentOptions2 = _interopRequireDefault(_TreatmentOptions);
 
-var _TypesOfTreatment = __webpack_require__(55);
+var _TypesOfTreatment = __webpack_require__(57);
 
 var _TypesOfTreatment2 = _interopRequireDefault(_TypesOfTreatment);
 
-var _TreatingHearingLoss = __webpack_require__(53);
+var _TreatingHearingLoss = __webpack_require__(55);
 
 var _TreatingHearingLoss2 = _interopRequireDefault(_TreatingHearingLoss);
 
-var _ImplantableSolutions = __webpack_require__(51);
+var _HearingLoss = __webpack_require__(47);
+
+var _HearingLoss2 = _interopRequireDefault(_HearingLoss);
+
+var _ImplantableSolutions = __webpack_require__(53);
 
 var _ImplantableSolutions2 = _interopRequireDefault(_ImplantableSolutions);
 
 var _CostsAndAffordability = __webpack_require__(44);
 
 var _CostsAndAffordability2 = _interopRequireDefault(_CostsAndAffordability);
+
+var _ImpactOfHearingLoss = __webpack_require__(52);
+
+var _ImpactOfHearingLoss2 = _interopRequireDefault(_ImpactOfHearingLoss);
+
+var _UntreatedHearingLossAdult = __webpack_require__(58);
+
+var _UntreatedHearingLossAdult2 = _interopRequireDefault(_UntreatedHearingLossAdult);
+
+var _UntreatedHearingLossChildren = __webpack_require__(59);
+
+var _UntreatedHearingLossChildren2 = _interopRequireDefault(_UntreatedHearingLossChildren);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1460,12 +1520,28 @@ exports.default = {
         component: _TreatingHearingLoss2.default,
         exact: true
     }, {
+        path: '/:country/impact-of-hearing-loss',
+        component: _ImpactOfHearingLoss2.default,
+        exact: true
+    }, {
+        path: '/:country/hearing-loss',
+        component: _HearingLoss2.default,
+        exact: true
+    }, {
         path: '/:country/implantable-solutions',
         component: _ImplantableSolutions2.default,
         exact: true
     }, {
         path: '/:country/stats-and-proofs',
         component: _StatsAndProofs2.default,
+        exact: true
+    }, {
+        path: '/:country/untreated-hearing-loss-adult',
+        component: _UntreatedHearingLossAdult2.default,
+        exact: true
+    }, {
+        path: '/:country/untreated-hearing-loss-children',
+        component: _UntreatedHearingLossChildren2.default,
         exact: true
     }, {
         path: '/:country/find-a-clinic',
@@ -1520,138 +1596,6 @@ exports.default = GoogleMapsWrapper;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-if (process.env.BROWSER) {
-    __webpack_require__(69);
-}
-
-var Cm18Accordian = function (_React$Component) {
-    _inherits(Cm18Accordian, _React$Component);
-
-    function Cm18Accordian() {
-        _classCallCheck(this, Cm18Accordian);
-
-        return _possibleConstructorReturn(this, (Cm18Accordian.__proto__ || Object.getPrototypeOf(Cm18Accordian)).apply(this, arguments));
-    }
-
-    _createClass(Cm18Accordian, [{
-        key: "render",
-        value: function render() {
-
-            var children = this.props.children;
-
-            return _react2.default.createElement(
-                "section",
-                { className: "cm cm-accordion" },
-                _react2.default.createElement(
-                    "h1",
-                    null,
-                    this.props.title
-                ),
-                _react2.default.createElement(
-                    "ul",
-                    { className: "accordion-list" },
-                    _react2.default.Children.map(children, function (child) {
-                        return child;
-                    })
-                )
-            );
-        }
-    }]);
-
-    return Cm18Accordian;
-}(_react2.default.Component);
-
-exports.default = Cm18Accordian;
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Cm18Accordian__Item = function (_React$Component) {
-    _inherits(Cm18Accordian__Item, _React$Component);
-
-    function Cm18Accordian__Item() {
-        _classCallCheck(this, Cm18Accordian__Item);
-
-        return _possibleConstructorReturn(this, (Cm18Accordian__Item.__proto__ || Object.getPrototypeOf(Cm18Accordian__Item)).apply(this, arguments));
-    }
-
-    _createClass(Cm18Accordian__Item, [{
-        key: "render",
-        value: function render() {
-
-            return _react2.default.createElement(
-                "li",
-                null,
-                _react2.default.createElement(
-                    "button",
-                    { className: "js-ec-link accordion-item accordion" },
-                    this.props.title
-                ),
-                _react2.default.createElement(
-                    "div",
-                    { className: "js-ec expandcollapse-content" },
-                    _react2.default.createElement(
-                        "p",
-                        null,
-                        this.props.description
-                    )
-                )
-            );
-        }
-    }]);
-
-    return Cm18Accordian__Item;
-}(_react2.default.Component);
-
-exports.default = Cm18Accordian__Item;
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
 var Types = exports.Types = {
     UPDATE_NAME: 'UPDATE_NAME',
     UPDATE_HEADER: 'UPDATE_HEADER',
@@ -1670,23 +1614,27 @@ var Types = exports.Types = {
     UPDATE_COSTSANDAFFORDABILITY: 'UPDATE_COSTSANDAFFORDABILITY',
     GET_CURRENT_POSITION: 'GET_CURRENT_POSITION',
     UPDATE_MARKERS: 'UPDATE_MARKERS',
-    UPDATE_CITY: 'UPDATE_CITY'
+    UPDATE_CITY: 'UPDATE_CITY',
+    UPDATE_HEARINGLOSS: 'UPDATE_HEARINGLOSS',
+    UPDATE_IMPACTOFHEARINGLOSS: 'UPDATE_IMPACTOFHEARINGLOSS',
+    UPDATE_UNTREATEDHEARINGLOSSCHILDREN: 'UPDATE_UNTREATEDHEARINGLOSSCHILDREN',
+    UPDATE_UNTREATEDHEARINGLOSSADULT: 'UPDATE_UNTREATEDHEARINGLOSSADULT'
 };
 
 /***/ }),
-/* 23 */
+/* 21 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-geosuggest");
 
 /***/ }),
-/* 24 */
+/* 22 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-google-maps/lib/components/addons/MarkerClusterer");
 
 /***/ }),
-/* 25 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1704,9 +1652,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(13);
+var _reactRouterDom = __webpack_require__(14);
 
-var _redirectWStatus = __webpack_require__(57);
+var _redirectWStatus = __webpack_require__(61);
 
 var _redirectWStatus2 = _interopRequireDefault(_redirectWStatus);
 
@@ -1803,7 +1751,7 @@ function mapDispatchToProps(dispatch) {
 //export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 /***/ }),
-/* 26 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1826,7 +1774,7 @@ var isFunction = function isFunction(action) {
 exports.default = customMiddleware;
 
 /***/ }),
-/* 27 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1838,7 +1786,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(1);
 
-var _reducer = __webpack_require__(58);
+var _reducer = __webpack_require__(62);
 
 var _reducer2 = _interopRequireDefault(_reducer);
 
@@ -1851,25 +1799,25 @@ var reducers = (0, _redux.combineReducers)({
 exports.default = reducers;
 
 /***/ }),
-/* 28 */
+/* 26 */
 /***/ (function(module, exports) {
 
 module.exports = require("express");
 
 /***/ }),
-/* 29 */
+/* 27 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 30 */
+/* 28 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router");
 
 /***/ }),
-/* 31 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1887,7 +1835,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(13);
+var _reactRouterDom = __webpack_require__(14);
 
 var _reactRedux = __webpack_require__(2);
 
@@ -1955,7 +1903,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Body);
 
 /***/ }),
-/* 32 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1973,7 +1921,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(13);
+var _reactRouterDom = __webpack_require__(14);
 
 var _reactRedux = __webpack_require__(2);
 
@@ -2037,7 +1985,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Bodysecond);
 
 /***/ }),
-/* 33 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2055,7 +2003,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(13);
+var _reactRouterDom = __webpack_require__(14);
 
 var _reactRedux = __webpack_require__(2);
 
@@ -2119,7 +2067,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Bodythird);
 
 /***/ }),
-/* 34 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2141,11 +2089,11 @@ var _GoogleMapsWrapper2 = _interopRequireDefault(_GoogleMapsWrapper);
 
 var _reactGoogleMaps = __webpack_require__(17);
 
-var _MarkerClusterer = __webpack_require__(24);
+var _MarkerClusterer = __webpack_require__(22);
 
 var _MarkerClusterer2 = _interopRequireDefault(_MarkerClusterer);
 
-var _reactGeosuggest = __webpack_require__(23);
+var _reactGeosuggest = __webpack_require__(21);
 
 var _reactGeosuggest2 = _interopRequireDefault(_reactGeosuggest);
 
@@ -2441,7 +2389,7 @@ var ClinicNearYou = function (_React$Component) {
 exports.default = ClinicNearYou;
 
 /***/ }),
-/* 35 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2463,11 +2411,11 @@ var _GoogleMapsWrapper2 = _interopRequireDefault(_GoogleMapsWrapper);
 
 var _reactGoogleMaps = __webpack_require__(17);
 
-var _MarkerClusterer = __webpack_require__(24);
+var _MarkerClusterer = __webpack_require__(22);
 
 var _MarkerClusterer2 = _interopRequireDefault(_MarkerClusterer);
 
-var _reactGeosuggest = __webpack_require__(23);
+var _reactGeosuggest = __webpack_require__(21);
 
 var _reactGeosuggest2 = _interopRequireDefault(_reactGeosuggest);
 
@@ -2500,6 +2448,7 @@ var ClinicNearYouMini = function (_React$Component) {
         value: function render() {
             var _this2 = this;
 
+            var counter = 0;
             return _react2.default.createElement(
                 'section',
                 { className: 'cm cm-subscription-banner ' + this.props.additionalClass },
@@ -2547,9 +2496,10 @@ var ClinicNearYouMini = function (_React$Component) {
                                 var markerDistance = _this2.getDistance(_this2.props.lat, _this2.props.lng, marker.lat, marker.lng);
                                 console.log('CAM 11', marker, markerDistance);
 
-                                if (markerDistance < 100) {
+                                if (markerDistance < 100 && counter < 3) {
 
-                                    console.log('CAM 2', marker);
+                                    console.log('CAM 2222222999', marker);
+                                    counter = counter + 1;
 
                                     return _react2.default.createElement(
                                         'li',
@@ -2633,7 +2583,7 @@ var ClinicNearYouMini = function (_React$Component) {
 exports.default = ClinicNearYouMini;
 
 /***/ }),
-/* 36 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2700,6 +2650,138 @@ Cm02bContentTile.defaultProps = {
 };
 
 exports.default = Cm02bContentTile;
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+if (process.env.BROWSER) {
+    __webpack_require__(73);
+}
+
+var Cm18Accordian = function (_React$Component) {
+    _inherits(Cm18Accordian, _React$Component);
+
+    function Cm18Accordian() {
+        _classCallCheck(this, Cm18Accordian);
+
+        return _possibleConstructorReturn(this, (Cm18Accordian.__proto__ || Object.getPrototypeOf(Cm18Accordian)).apply(this, arguments));
+    }
+
+    _createClass(Cm18Accordian, [{
+        key: "render",
+        value: function render() {
+
+            var children = this.props.children;
+
+            return _react2.default.createElement(
+                "section",
+                { className: "cm cm-accordion" },
+                _react2.default.createElement(
+                    "h1",
+                    null,
+                    this.props.title
+                ),
+                _react2.default.createElement(
+                    "ul",
+                    { className: "accordion-list" },
+                    _react2.default.Children.map(children, function (child) {
+                        return child;
+                    })
+                )
+            );
+        }
+    }]);
+
+    return Cm18Accordian;
+}(_react2.default.Component);
+
+exports.default = Cm18Accordian;
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Cm18Accordian__Item = function (_React$Component) {
+    _inherits(Cm18Accordian__Item, _React$Component);
+
+    function Cm18Accordian__Item() {
+        _classCallCheck(this, Cm18Accordian__Item);
+
+        return _possibleConstructorReturn(this, (Cm18Accordian__Item.__proto__ || Object.getPrototypeOf(Cm18Accordian__Item)).apply(this, arguments));
+    }
+
+    _createClass(Cm18Accordian__Item, [{
+        key: "render",
+        value: function render() {
+
+            return _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                    "button",
+                    { className: "js-ec-link accordion-item accordion" },
+                    this.props.title
+                ),
+                _react2.default.createElement(
+                    "div",
+                    { className: "js-ec expandcollapse-content" },
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        this.props.description
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Cm18Accordian__Item;
+}(_react2.default.Component);
+
+exports.default = Cm18Accordian__Item;
 
 /***/ }),
 /* 37 */
@@ -2986,7 +3068,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(70);
+    __webpack_require__(74);
 }
 
 var OnScreeNav = function (_React$Component) {
@@ -3063,7 +3145,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(13);
+var _reactRouterDom = __webpack_require__(14);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3074,7 +3156,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(71);
+    __webpack_require__(75);
 }
 
 var OnScreenNav__Item = function (_React$Component) {
@@ -3150,7 +3232,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(72);
+    __webpack_require__(76);
 }
 
 var RegionLanguageSelect = function (_React$Component) {
@@ -3895,7 +3977,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Cm02ContentTile = __webpack_require__(12);
+var _Cm02ContentTile = __webpack_require__(10);
 
 var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
 
@@ -3911,15 +3993,15 @@ var _HeaderLandingBanner = __webpack_require__(7);
 
 var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
 
-var _Cm18Accordian = __webpack_require__(20);
+var _Cm18Accordian = __webpack_require__(35);
 
 var _Cm18Accordian2 = _interopRequireDefault(_Cm18Accordian);
 
-var _Cm18Accordian__Item = __webpack_require__(21);
+var _Cm18Accordian__Item = __webpack_require__(36);
 
 var _Cm18Accordian__Item2 = _interopRequireDefault(_Cm18Accordian__Item);
 
-var _ContentHeader = __webpack_require__(14);
+var _ContentHeader = __webpack_require__(11);
 
 var _ContentHeader2 = _interopRequireDefault(_ContentHeader);
 
@@ -4053,11 +4135,11 @@ var _BreadCrumbs = __webpack_require__(8);
 
 var _BreadCrumbs2 = _interopRequireDefault(_BreadCrumbs);
 
-var _ClinicNearYou = __webpack_require__(34);
+var _ClinicNearYou = __webpack_require__(32);
 
 var _ClinicNearYou2 = _interopRequireDefault(_ClinicNearYou);
 
-var _ContentHeader = __webpack_require__(14);
+var _ContentHeader = __webpack_require__(11);
 
 var _ContentHeader2 = _interopRequireDefault(_ContentHeader);
 
@@ -4127,7 +4209,7 @@ var FindAClinic = function (_Component) {
                 });
             }
 
-            var url = 'https://api.myjson.com/bins/12k2w9';
+            var url = 'https://api.myjson.com/bins/h0g21';
 
             console.log('HERE WE GO 1 ..............');
 
@@ -4245,7 +4327,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Cm02ContentTile = __webpack_require__(12);
+var _Cm02ContentTile = __webpack_require__(10);
 
 var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
 
@@ -4261,15 +4343,15 @@ var _BreadCrumbs = __webpack_require__(8);
 
 var _BreadCrumbs2 = _interopRequireDefault(_BreadCrumbs);
 
-var _ClinicNearYouMini = __webpack_require__(35);
+var _ClinicNearYouMini = __webpack_require__(33);
 
 var _ClinicNearYouMini2 = _interopRequireDefault(_ClinicNearYouMini);
 
-var _ContentHeader = __webpack_require__(14);
+var _ContentHeader = __webpack_require__(11);
 
 var _ContentHeader2 = _interopRequireDefault(_ContentHeader);
 
-var _Cm02bContentTile = __webpack_require__(36);
+var _Cm02bContentTile = __webpack_require__(34);
 
 var _Cm02bContentTile2 = _interopRequireDefault(_Cm02bContentTile);
 
@@ -4315,7 +4397,7 @@ var HearingAidVsCochlearImplant = function (_Component) {
                 });
             }
 
-            var url = 'https://api.myjson.com/bins/12k2w9';
+            var url = 'https://api.myjson.com/bins/h0g21';
 
             console.log('HERE WE GO 1 ..............');
 
@@ -4454,6 +4536,10 @@ var _redux = __webpack_require__(1);
 
 var _reactHelmet = __webpack_require__(3);
 
+var _actions = __webpack_require__(4);
+
+var actions = _interopRequireWildcard(_actions);
+
 var _GlobalHeader = __webpack_require__(6);
 
 var _GlobalHeader2 = _interopRequireDefault(_GlobalHeader);
@@ -4462,7 +4548,175 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Body = __webpack_require__(31);
+var _Cm02ContentTile = __webpack_require__(10);
+
+var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
+
+var _Cm01RichText = __webpack_require__(9);
+
+var _Cm01RichText2 = _interopRequireDefault(_Cm01RichText);
+
+var _BreadCrumbs = __webpack_require__(8);
+
+var _BreadCrumbs2 = _interopRequireDefault(_BreadCrumbs);
+
+var _HeaderLandingBanner = __webpack_require__(7);
+
+var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
+
+var _ContentHeader = __webpack_require__(11);
+
+var _ContentHeader2 = _interopRequireDefault(_ContentHeader);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+if (typeof window === 'undefined') {
+    global.window = {};
+}
+
+var HearingLoss = function (_Component) {
+    _inherits(HearingLoss, _Component);
+
+    function HearingLoss() {
+        _classCallCheck(this, HearingLoss);
+
+        return _possibleConstructorReturn(this, (HearingLoss.__proto__ || Object.getPrototypeOf(HearingLoss)).apply(this, arguments));
+    }
+
+    _createClass(HearingLoss, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {}
+    }, {
+        key: 'render',
+        value: function render() {
+
+            console.log(this.props.dataHearingLoss);
+            var getData = this.props.dataHearingLoss;
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'l-layout l-one-column cf' },
+                _react2.default.createElement(
+                    _reactHelmet.Helmet,
+                    null,
+                    _react2.default.createElement('meta', { charSet: 'utf-8' }),
+                    _react2.default.createElement(
+                        'title',
+                        null,
+                        getData['title']
+                    ),
+                    _react2.default.createElement('meta', { name: 'title', content: getData['title'] }),
+                    _react2.default.createElement('meta', { name: 'description', content: getData['description'] }),
+                    _react2.default.createElement('meta', { name: 'keywords', content: 'Hearing aids for children,Sensorineural hearing loss in children,Conductive hearing loss in children,Single sided deafness in children,hearing aids,unilateral hearing loss in children,hearing loss in one ear' }),
+                    _react2.default.createElement('link', { rel: 'canonical', href: 'http://www.cochlear.com/wps/wcm/connect/intl/home/understand/my-child-has-hl' })
+                ),
+                _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
+                _react2.default.createElement(_BreadCrumbs2.default, null),
+                _react2.default.createElement(_HeaderLandingBanner2.default, { title: '',
+                    description: '',
+                    image: 'https://auth.cochlear.com/' + getData['banner-image'].src,
+                    imagePath: getData['banner-image'].alt,
+                    additionalClass: 'is-dark' }),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'l-content-container cf l-padding' },
+                    _react2.default.createElement(
+                        'article',
+                        { className: 'l-content-column' },
+                        _react2.default.createElement(
+                            'main',
+                            { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
+                            _react2.default.createElement(_ContentHeader2.default, { title: getData['title'],
+                                description: getData['description'] }),
+                            _react2.default.createElement(_Cm01RichText2.default, { body: getData['body-copy'] }),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'sl' },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'sl-list has-2-items' },
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'sl-item' },
+                                        _react2.default.createElement(_Cm02ContentTile2.default, { title: getData['cm02-title-01'].title,
+                                            description: getData['cm02-description-01'],
+                                            path: getData['cm02-title-01'].path,
+                                            image: 'https://auth.cochlear.com' + getData['cm02-image-01'].src,
+                                            imagePath: getData['cm02-title-01'].path,
+                                            additionalClass: 'is-shaded is-small' })
+                                    ),
+                                    _react2.default.createElement('div', { className: 'sl-item' })
+                                )
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
+            );
+        }
+    }], [{
+        key: 'fetchData',
+        value: function fetchData(_ref) {
+            var store = _ref.store,
+                params = _ref.params;
+
+            return store.dispatch(actions.getHearingLoss());
+        }
+    }]);
+
+    return HearingLoss;
+}(_react.Component);
+
+function mapStateToProps(state) {
+    return _extends({}, state.user);
+}
+function mapDispatchToProps(dispatch) {
+    return (0, _redux.bindActionCreators)(actions, dispatch);
+}
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(HearingLoss);
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(2);
+
+var _redux = __webpack_require__(1);
+
+var _reactHelmet = __webpack_require__(3);
+
+var _GlobalHeader = __webpack_require__(6);
+
+var _GlobalHeader2 = _interopRequireDefault(_GlobalHeader);
+
+var _GlobalFooter = __webpack_require__(5);
+
+var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
+
+var _Body = __webpack_require__(29);
 
 var _Body2 = _interopRequireDefault(_Body);
 
@@ -4481,7 +4735,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(74);
+    __webpack_require__(78);
     //import style from './Home.scss';
 }
 
@@ -4534,7 +4788,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Home);
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4570,7 +4824,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Cm02ContentTile = __webpack_require__(12);
+var _Cm02ContentTile = __webpack_require__(10);
 
 var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
 
@@ -4620,6 +4874,11 @@ var HomePage = function (_Component) {
                         description: 'Find out what treatment options are available to manage hearing loss',
                         image: 'https://auth.cochlear.com//wps/wcm/connect/dd2107e8-0708-4a4c-9fb9-1bcc1b82be49/CHILD_SWITCH-ON_1_RGB.jpg?MOD=AJPERES&CVID=',
                         path: '/intl/treating-hearing-loss',
+                        additionalClass: 'is-shaded is-large' }),
+                    _react2.default.createElement(_Cm02ContentTile2.default, { title: 'Hearing loss',
+                        description: 'Learn more about the different degrees and types of hearing loss.',
+                        image: 'https://auth.cochlear.com/wps/wcm/myconnect/8f687f04-3032-46f6-8753-fcf767978216/GettyImages-753288525_super.jpg?MOD=AJPERES&CVID=',
+                        path: '/intl/hearing-loss',
                         additionalClass: 'is-shaded is-large' })
                 ),
                 _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
@@ -4647,7 +4906,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(HomePage);
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4679,7 +4938,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Bodysecond = __webpack_require__(32);
+var _Bodysecond = __webpack_require__(30);
 
 var _Bodysecond2 = _interopRequireDefault(_Bodysecond);
 
@@ -4746,7 +5005,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Homesecond);
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4778,7 +5037,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Bodythird = __webpack_require__(33);
+var _Bodythird = __webpack_require__(31);
 
 var _Bodythird2 = _interopRequireDefault(_Bodythird);
 
@@ -4845,7 +5104,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Homethird);
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4881,7 +5140,190 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Cm02ContentTile = __webpack_require__(12);
+var _Cm02ContentTile = __webpack_require__(10);
+
+var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
+
+var _Cm01RichText = __webpack_require__(9);
+
+var _Cm01RichText2 = _interopRequireDefault(_Cm01RichText);
+
+var _BreadCrumbs = __webpack_require__(8);
+
+var _BreadCrumbs2 = _interopRequireDefault(_BreadCrumbs);
+
+var _HeaderLandingBanner = __webpack_require__(7);
+
+var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
+
+var _ContentHeader = __webpack_require__(11);
+
+var _ContentHeader2 = _interopRequireDefault(_ContentHeader);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+if (typeof window === 'undefined') {
+    global.window = {};
+}
+
+var ImpactOfHearingLoss = function (_Component) {
+    _inherits(ImpactOfHearingLoss, _Component);
+
+    function ImpactOfHearingLoss() {
+        _classCallCheck(this, ImpactOfHearingLoss);
+
+        return _possibleConstructorReturn(this, (ImpactOfHearingLoss.__proto__ || Object.getPrototypeOf(ImpactOfHearingLoss)).apply(this, arguments));
+    }
+
+    _createClass(ImpactOfHearingLoss, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {}
+    }, {
+        key: 'render',
+        value: function render() {
+
+            console.log(this.props.dataImpactOfHearingLoss);
+            var getData = this.props.dataImpactOfHearingLoss;
+
+            console.log(global.window.dataLayer);
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'l-layout l-one-column cf' },
+                _react2.default.createElement(
+                    _reactHelmet.Helmet,
+                    null,
+                    _react2.default.createElement('meta', { charSet: 'utf-8' }),
+                    _react2.default.createElement(
+                        'title',
+                        null,
+                        getData['title']
+                    ),
+                    _react2.default.createElement('meta', { name: 'title', content: getData['title'] }),
+                    _react2.default.createElement('meta', { name: 'description', content: getData['description'] }),
+                    _react2.default.createElement('meta', { name: 'keywords', content: 'Hearing aids for children,Sensorineural hearing loss in children,Conductive hearing loss in children,Single sided deafness in children,hearing aids,unilateral hearing loss in children,hearing loss in one ear' }),
+                    _react2.default.createElement('link', { rel: 'canonical', href: 'http://www.cochlear.com/wps/wcm/connect/intl/home/understand/my-child-has-hl' })
+                ),
+                _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
+                _react2.default.createElement(_BreadCrumbs2.default, null),
+                _react2.default.createElement(_HeaderLandingBanner2.default, { title: '',
+                    description: '',
+                    image: 'https://auth.cochlear.com/' + getData['banner-image'].src,
+                    imagePath: getData['banner-image'].alt,
+                    additionalClass: 'is-dark' }),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'l-content-container cf l-padding' },
+                    _react2.default.createElement(
+                        'article',
+                        { className: 'l-content-column' },
+                        _react2.default.createElement(
+                            'main',
+                            { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
+                            _react2.default.createElement(_ContentHeader2.default, { title: getData['title'],
+                                description: getData['description'] }),
+                            _react2.default.createElement(_Cm01RichText2.default, { body: getData['body-copy'] }),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'sl' },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'sl-list has-2-items' },
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'sl-item' },
+                                        _react2.default.createElement(_Cm02ContentTile2.default, { title: getData['cm02-title-01'].title,
+                                            description: getData['cm02-description-01'],
+                                            path: getData['cm02-title-01'].path,
+                                            image: 'https://auth.cochlear.com' + getData['cm02-image-01'].src,
+                                            imagePath: getData['cm02-title-01'].path,
+                                            additionalClass: 'is-shaded is-small' })
+                                    ),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'sl-item' },
+                                        _react2.default.createElement(_Cm02ContentTile2.default, { title: getData['cm02-title-02'].title,
+                                            description: getData['cm02-description-02'],
+                                            path: getData['cm02-title-02'].path,
+                                            image: 'https://auth.cochlear.com' + getData['cm02-image-02'].src,
+                                            imagePath: getData['cm02-title-02'].path,
+                                            additionalClass: 'is-shaded is-small' })
+                                    )
+                                )
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
+            );
+        }
+    }], [{
+        key: 'fetchData',
+        value: function fetchData(_ref) {
+            var store = _ref.store,
+                params = _ref.params;
+
+            return store.dispatch(actions.getImpactOfHearingLoss());
+        }
+    }]);
+
+    return ImpactOfHearingLoss;
+}(_react.Component);
+
+function mapStateToProps(state) {
+    return _extends({}, state.user);
+}
+function mapDispatchToProps(dispatch) {
+    return (0, _redux.bindActionCreators)(actions, dispatch);
+}
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(ImpactOfHearingLoss);
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(2);
+
+var _redux = __webpack_require__(1);
+
+var _reactHelmet = __webpack_require__(3);
+
+var _actions = __webpack_require__(4);
+
+var actions = _interopRequireWildcard(_actions);
+
+var _GlobalHeader = __webpack_require__(6);
+
+var _GlobalHeader2 = _interopRequireDefault(_GlobalHeader);
+
+var _GlobalFooter = __webpack_require__(5);
+
+var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
+
+var _Cm02ContentTile = __webpack_require__(10);
 
 var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
 
@@ -4995,7 +5437,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(ImplantableSolutions);
 
 /***/ }),
-/* 52 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5128,7 +5570,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(StatsAndProofs);
 
 /***/ }),
-/* 53 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5164,7 +5606,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Cm02ContentTile = __webpack_require__(12);
+var _Cm02ContentTile = __webpack_require__(10);
 
 var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
 
@@ -5180,7 +5622,7 @@ var _HeaderLandingBanner = __webpack_require__(7);
 
 var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
 
-var _ContentHeader = __webpack_require__(14);
+var _ContentHeader = __webpack_require__(11);
 
 var _ContentHeader2 = _interopRequireDefault(_ContentHeader);
 
@@ -5280,7 +5722,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TreatingHearingLoss);
 
 /***/ }),
-/* 54 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5316,7 +5758,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Cm02ContentTile = __webpack_require__(12);
+var _Cm02ContentTile = __webpack_require__(10);
 
 var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
 
@@ -5472,7 +5914,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TreatmentOptions);
 
 /***/ }),
-/* 55 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5508,7 +5950,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Cm02ContentTile = __webpack_require__(12);
+var _Cm02ContentTile = __webpack_require__(10);
 
 var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
 
@@ -5524,15 +5966,7 @@ var _HeaderLandingBanner = __webpack_require__(7);
 
 var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
 
-var _Cm18Accordian = __webpack_require__(20);
-
-var _Cm18Accordian2 = _interopRequireDefault(_Cm18Accordian);
-
-var _Cm18Accordian__Item = __webpack_require__(21);
-
-var _Cm18Accordian__Item2 = _interopRequireDefault(_Cm18Accordian__Item);
-
-var _ContentHeader = __webpack_require__(14);
+var _ContentHeader = __webpack_require__(11);
 
 var _ContentHeader2 = _interopRequireDefault(_ContentHeader);
 
@@ -5663,13 +6097,361 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TypesOfTreatment);
 
 /***/ }),
-/* 56 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _express = __webpack_require__(28);
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(2);
+
+var _redux = __webpack_require__(1);
+
+var _reactHelmet = __webpack_require__(3);
+
+var _actions = __webpack_require__(4);
+
+var actions = _interopRequireWildcard(_actions);
+
+var _GlobalHeader = __webpack_require__(6);
+
+var _GlobalHeader2 = _interopRequireDefault(_GlobalHeader);
+
+var _GlobalFooter = __webpack_require__(5);
+
+var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
+
+var _Cm02ContentTile = __webpack_require__(10);
+
+var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
+
+var _Cm01RichText = __webpack_require__(9);
+
+var _Cm01RichText2 = _interopRequireDefault(_Cm01RichText);
+
+var _BreadCrumbs = __webpack_require__(8);
+
+var _BreadCrumbs2 = _interopRequireDefault(_BreadCrumbs);
+
+var _HeaderLandingBanner = __webpack_require__(7);
+
+var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
+
+var _ContentHeader = __webpack_require__(11);
+
+var _ContentHeader2 = _interopRequireDefault(_ContentHeader);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+if (typeof window === 'undefined') {
+    global.window = {};
+}
+
+var UntreatedHearingLossAdult = function (_Component) {
+    _inherits(UntreatedHearingLossAdult, _Component);
+
+    function UntreatedHearingLossAdult() {
+        _classCallCheck(this, UntreatedHearingLossAdult);
+
+        return _possibleConstructorReturn(this, (UntreatedHearingLossAdult.__proto__ || Object.getPrototypeOf(UntreatedHearingLossAdult)).apply(this, arguments));
+    }
+
+    _createClass(UntreatedHearingLossAdult, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {}
+    }, {
+        key: 'render',
+        value: function render() {
+
+            console.log(this.props.dataUntreatedHearingLossAdult);
+            var getData = this.props.dataUntreatedHearingLossAdult;
+
+            console.log(global.window.dataLayer);
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'l-layout l-one-column cf' },
+                _react2.default.createElement(
+                    _reactHelmet.Helmet,
+                    null,
+                    _react2.default.createElement('meta', { charSet: 'utf-8' }),
+                    _react2.default.createElement(
+                        'title',
+                        null,
+                        getData['title']
+                    ),
+                    _react2.default.createElement('meta', { name: 'title', content: getData['title'] }),
+                    _react2.default.createElement('meta', { name: 'description', content: getData['description'] }),
+                    _react2.default.createElement('meta', { name: 'keywords', content: 'Hearing aids for children,Sensorineural hearing loss in children,Conductive hearing loss in children,Single sided deafness in children,hearing aids,unilateral hearing loss in children,hearing loss in one ear' }),
+                    _react2.default.createElement('link', { rel: 'canonical', href: 'http://www.cochlear.com/wps/wcm/connect/intl/home/understand/my-child-has-hl' })
+                ),
+                _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
+                _react2.default.createElement(_BreadCrumbs2.default, null),
+                _react2.default.createElement(_HeaderLandingBanner2.default, { title: '',
+                    description: '',
+                    image: 'https://auth.cochlear.com/' + getData['banner-image'].src,
+                    imagePath: getData['banner-image'].alt,
+                    additionalClass: 'is-dark' }),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'l-content-container cf l-padding' },
+                    _react2.default.createElement(
+                        'article',
+                        { className: 'l-content-column' },
+                        _react2.default.createElement(
+                            'main',
+                            { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
+                            _react2.default.createElement(_ContentHeader2.default, { title: getData['title'],
+                                description: getData['description'] }),
+                            _react2.default.createElement(_Cm01RichText2.default, { body: getData['body-copy'] }),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'sl' },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'sl-list has-2-items' },
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'sl-item' },
+                                        _react2.default.createElement(_Cm02ContentTile2.default, { title: getData['cm02-title-01'].title,
+                                            description: getData['cm02-description-01'],
+                                            path: getData['cm02-title-01'].path,
+                                            image: 'https://auth.cochlear.com' + getData['cm02-image-01'].src,
+                                            imagePath: getData['cm02-title-01'].path,
+                                            additionalClass: 'is-shaded is-small' })
+                                    ),
+                                    _react2.default.createElement('div', { className: 'sl-item' })
+                                )
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
+            );
+        }
+    }], [{
+        key: 'fetchData',
+        value: function fetchData(_ref) {
+            var store = _ref.store,
+                params = _ref.params;
+
+            return store.dispatch(actions.getUntreatedHearingLossAdult());
+        }
+    }]);
+
+    return UntreatedHearingLossAdult;
+}(_react.Component);
+
+function mapStateToProps(state) {
+    return _extends({}, state.user);
+}
+function mapDispatchToProps(dispatch) {
+    return (0, _redux.bindActionCreators)(actions, dispatch);
+}
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(UntreatedHearingLossAdult);
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(2);
+
+var _redux = __webpack_require__(1);
+
+var _reactHelmet = __webpack_require__(3);
+
+var _actions = __webpack_require__(4);
+
+var actions = _interopRequireWildcard(_actions);
+
+var _GlobalHeader = __webpack_require__(6);
+
+var _GlobalHeader2 = _interopRequireDefault(_GlobalHeader);
+
+var _GlobalFooter = __webpack_require__(5);
+
+var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
+
+var _Cm02ContentTile = __webpack_require__(10);
+
+var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
+
+var _Cm01RichText = __webpack_require__(9);
+
+var _Cm01RichText2 = _interopRequireDefault(_Cm01RichText);
+
+var _BreadCrumbs = __webpack_require__(8);
+
+var _BreadCrumbs2 = _interopRequireDefault(_BreadCrumbs);
+
+var _HeaderLandingBanner = __webpack_require__(7);
+
+var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
+
+var _ContentHeader = __webpack_require__(11);
+
+var _ContentHeader2 = _interopRequireDefault(_ContentHeader);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+if (typeof window === 'undefined') {
+    global.window = {};
+}
+
+var UntreatedHearingLossChildren = function (_Component) {
+    _inherits(UntreatedHearingLossChildren, _Component);
+
+    function UntreatedHearingLossChildren() {
+        _classCallCheck(this, UntreatedHearingLossChildren);
+
+        return _possibleConstructorReturn(this, (UntreatedHearingLossChildren.__proto__ || Object.getPrototypeOf(UntreatedHearingLossChildren)).apply(this, arguments));
+    }
+
+    _createClass(UntreatedHearingLossChildren, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {}
+    }, {
+        key: 'render',
+        value: function render() {
+
+            console.log(this.props.dataUntreatedHearingLossChildren);
+            var getData = this.props.dataUntreatedHearingLossChildren;
+
+            console.log(global.window.dataLayer);
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'l-layout l-one-column cf' },
+                _react2.default.createElement(
+                    _reactHelmet.Helmet,
+                    null,
+                    _react2.default.createElement('meta', { charSet: 'utf-8' }),
+                    _react2.default.createElement(
+                        'title',
+                        null,
+                        getData['title']
+                    ),
+                    _react2.default.createElement('meta', { name: 'title', content: getData['title'] }),
+                    _react2.default.createElement('meta', { name: 'description', content: getData['description'] }),
+                    _react2.default.createElement('meta', { name: 'keywords', content: 'Hearing aids for children,Sensorineural hearing loss in children,Conductive hearing loss in children,Single sided deafness in children,hearing aids,unilateral hearing loss in children,hearing loss in one ear' }),
+                    _react2.default.createElement('link', { rel: 'canonical', href: 'http://www.cochlear.com/wps/wcm/connect/intl/home/understand/my-child-has-hl' })
+                ),
+                _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
+                _react2.default.createElement(_BreadCrumbs2.default, null),
+                _react2.default.createElement(_HeaderLandingBanner2.default, { title: '',
+                    description: '',
+                    image: 'https://auth.cochlear.com/' + getData['banner-image'].src,
+                    imagePath: getData['banner-image'].alt,
+                    additionalClass: 'is-dark' }),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'l-content-container cf l-padding' },
+                    _react2.default.createElement(
+                        'article',
+                        { className: 'l-content-column' },
+                        _react2.default.createElement(
+                            'main',
+                            { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
+                            _react2.default.createElement(_ContentHeader2.default, { title: getData['title'],
+                                description: getData['description'] }),
+                            _react2.default.createElement(_Cm01RichText2.default, { body: getData['body-copy'] }),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'sl' },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'sl-list has-2-items' },
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'sl-item' },
+                                        _react2.default.createElement(_Cm02ContentTile2.default, { title: getData['cm02-title-01'].title,
+                                            description: getData['cm02-description-01'],
+                                            path: getData['cm02-title-01'].path,
+                                            image: 'https://auth.cochlear.com' + getData['cm02-image-01'].src,
+                                            imagePath: getData['cm02-title-01'].path,
+                                            additionalClass: 'is-shaded is-small' })
+                                    ),
+                                    _react2.default.createElement('div', { className: 'sl-item' })
+                                )
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
+            );
+        }
+    }], [{
+        key: 'fetchData',
+        value: function fetchData(_ref) {
+            var store = _ref.store,
+                params = _ref.params;
+
+            return store.dispatch(actions.getUntreatedHearingLossChildren());
+        }
+    }]);
+
+    return UntreatedHearingLossChildren;
+}(_react.Component);
+
+function mapStateToProps(state) {
+    return _extends({}, state.user);
+}
+function mapDispatchToProps(dispatch) {
+    return (0, _redux.bindActionCreators)(actions, dispatch);
+}
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(UntreatedHearingLossChildren);
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _express = __webpack_require__(26);
 
 var _express2 = _interopRequireDefault(_express);
 
@@ -5677,7 +6459,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(29);
+var _server = __webpack_require__(27);
 
 var _server2 = _interopRequireDefault(_server);
 
@@ -5685,7 +6467,7 @@ var _reactHelmet = __webpack_require__(3);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
-var _app = __webpack_require__(25);
+var _app = __webpack_require__(23);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -5695,13 +6477,13 @@ var _reactRedux = __webpack_require__(2);
 
 var _redux = __webpack_require__(1);
 
-var _combine = __webpack_require__(27);
+var _combine = __webpack_require__(25);
 
 var _combine2 = _interopRequireDefault(_combine);
 
-var _reactRouter = __webpack_require__(30);
+var _reactRouter = __webpack_require__(28);
 
-var _thunk = __webpack_require__(26);
+var _thunk = __webpack_require__(24);
 
 var _thunk2 = _interopRequireDefault(_thunk);
 
@@ -5798,7 +6580,7 @@ function renderFullPage(html, preloadedState, helmet) {
 }
 
 /***/ }),
-/* 57 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5812,7 +6594,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(13);
+var _reactRouterDom = __webpack_require__(14);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5833,7 +6615,7 @@ var RedirectWithStatus = function RedirectWithStatus(_ref) {
 exports.default = RedirectWithStatus;
 
 /***/ }),
-/* 58 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5847,7 +6629,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 exports.default = userReducer;
 
-var _userTypes = __webpack_require__(22);
+var _userTypes = __webpack_require__(20);
 
 var initialState = {
     name: null,
@@ -5862,10 +6644,14 @@ var initialState = {
     bodythirdTitle: null,
     dataTreatmentOptions: null,
     dataTreatingHearingLoss: null,
+    dataHearingLoss: null,
     dataTypesOfTreatment: null,
     dataHearingAidVsImplantableSolutions: null,
     dataCostsAndAffordability: null,
+    dataUntreatedHearingLossAdult: null,
+    dataUntreatedHearingLossChildren: null,
     dataFindAClinic: null,
+    dataImpactOfHearingLoss: null,
     getCurrentPosition: null,
     markers: [],
     lat: 0,
@@ -5894,6 +6680,8 @@ function userReducer() {
             return _extends({}, state, { dataTreatmentOptions: action.payload });
         case _userTypes.Types.UPDATE_TREATINGHEARINGLOSS:
             return _extends({}, state, { dataTreatingHearingLoss: action.payload });
+        case _userTypes.Types.UPDATE_HEARINGLOSS:
+            return _extends({}, state, { dataHearingLoss: action.payload });
         case _userTypes.Types.UPDATE_HEARINGAIDSVSIMPLANTABLESOLUTIONS:
             return _extends({}, state, { dataHearingAidVsImplantableSolutions: action.payload });
         case _userTypes.Types.UPDATE_FINDACLINIC:
@@ -5902,6 +6690,12 @@ function userReducer() {
             return _extends({}, state, { dataTypesOfTreatment: action.payload });
         case _userTypes.Types.UPDATE_COSTSANDAFFORDABILITY:
             return _extends({}, state, { dataCostsAndAffordability: action.payload });
+        case _userTypes.Types.UPDATE_IMPACTOFHEARINGLOSS:
+            return _extends({}, state, { dataImpactOfHearingLoss: action.payload });
+        case _userTypes.Types.UPDATE_UNTREATEDHEARINGLOSSADULT:
+            return _extends({}, state, { dataUntreatedHearingLossAdult: action.payload });
+        case _userTypes.Types.UPDATE_UNTREATEDHEARINGLOSSCHILDREN:
+            return _extends({}, state, { dataUntreatedHearingLossChildren: action.payload });
         case _userTypes.Types.UPDATE_HOMETHIRD:
             return _extends({}, state, { bodythirdTitle: action.payload['title'] });
         case _userTypes.Types.GET_CURRENT_POSITION:
@@ -5920,7 +6714,7 @@ function userReducer() {
 }
 
 /***/ }),
-/* 59 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6020,10 +6814,10 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(User);
 
 /***/ }),
-/* 60 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(10)(false);
+exports = module.exports = __webpack_require__(12)(false);
 // imports
 
 
@@ -6034,10 +6828,10 @@ exports.push([module.i, "/* Style the buttons that are used to open and close th
 
 
 /***/ }),
-/* 61 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(10)(false);
+exports = module.exports = __webpack_require__(12)(false);
 // imports
 
 
@@ -6048,10 +6842,10 @@ exports.push([module.i, ".nav-onscreen.nav-onscreen__global-header {\n  float: l
 
 
 /***/ }),
-/* 62 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(10)(false);
+exports = module.exports = __webpack_require__(12)(false);
 // imports
 
 
@@ -6062,10 +6856,10 @@ exports.push([module.i, ".nav-onscreen.nav-onscreen__global-header {\n  margin-t
 
 
 /***/ }),
-/* 63 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(10)(false);
+exports = module.exports = __webpack_require__(12)(false);
 // imports
 
 
@@ -6076,10 +6870,10 @@ exports.push([module.i, ".nav-region-dropdown {\n  float: right;\n  position: re
 
 
 /***/ }),
-/* 64 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(10)(false);
+exports = module.exports = __webpack_require__(12)(false);
 // imports
 
 
@@ -6090,10 +6884,10 @@ exports.push([module.i, ".global-header h1 {\n  line-height: 85px; }\n\n.global-
 
 
 /***/ }),
-/* 65 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(10)(false);
+exports = module.exports = __webpack_require__(12)(false);
 // imports
 
 
@@ -6104,10 +6898,10 @@ exports.push([module.i, "li .details {\n  display: none; }\n  li .details.show {
 
 
 /***/ }),
-/* 66 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(10)(false);
+exports = module.exports = __webpack_require__(12)(false);
 // imports
 
 
@@ -6118,10 +6912,10 @@ exports.push([module.i, "/*\n * Default stylesheet\n * This stylesheet is includ
 
 
 /***/ }),
-/* 67 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(10)(false);
+exports = module.exports = __webpack_require__(12)(false);
 // imports
 
 
@@ -6132,7 +6926,7 @@ exports.push([module.i, "body {\n  font-family: \"BlissPro-Regular\",\"Trebuchet
 
 
 /***/ }),
-/* 68 */
+/* 72 */
 /***/ (function(module, exports) {
 
 
@@ -6201,110 +6995,6 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 69 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(60);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(11)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Cm18Accordian.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Cm18Accordian.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 70 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(61);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(11)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 71 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(62);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(11)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav__Item.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav__Item.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 72 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(63);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(11)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./RegionLanguageSelect.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./RegionLanguageSelect.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
 /* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6314,14 +7004,14 @@ if(false) {
 var content = __webpack_require__(64);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(11)(content, {});
+var update = __webpack_require__(13)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./GlobalHeader.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./GlobalHeader.scss");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Cm18Accordian.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Cm18Accordian.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -6340,14 +7030,14 @@ if(false) {
 var content = __webpack_require__(65);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(11)(content, {});
+var update = __webpack_require__(13)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Home.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Home.scss");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -6366,14 +7056,14 @@ if(false) {
 var content = __webpack_require__(66);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(11)(content, {});
+var update = __webpack_require__(13)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./framework.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./framework.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav__Item.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav__Item.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -6392,7 +7082,111 @@ if(false) {
 var content = __webpack_require__(67);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(11)(content, {});
+var update = __webpack_require__(13)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./RegionLanguageSelect.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./RegionLanguageSelect.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(68);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(13)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./GlobalHeader.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./GlobalHeader.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(69);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(13)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Home.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Home.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(70);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(13)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./framework.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./framework.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(71);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(13)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {

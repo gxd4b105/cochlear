@@ -66,11 +66,27 @@ export function getTreatingHearingLoss() {
     }
 }
 
+export function getHearingLoss() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/hearing-loss`);
+        dispatch({ type: Types.UPDATE_HEARINGLOSS, payload: data });
+    }
+}
+
 export function getTypesOfTreatment() {
     return async function (dispatch, getState) {
         // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
         let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/types-of-treatment`);
         dispatch({ type: Types.UPDATE_TYPESOFTREATMENT, payload: data });
+    }
+}
+
+export function getImpactOfHearingLoss() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/impact-of-hearing-loss`);
+        dispatch({ type: Types.UPDATE_IMPACTOFHEARINGLOSS, payload: data });
     }
 }
 
@@ -81,6 +97,23 @@ export function getHearingAidVsImplantableSolutions() {
         dispatch({ type: Types.UPDATE_HEARINGAIDSVSIMPLANTABLESOLUTIONS, payload: data });
     }
 }
+
+export function getUntreatedHearingLossChildren() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/untreated-hearing-loss-children`);
+        dispatch({ type: Types.UPDATE_UNTREATEDHEARINGLOSSCHILDREN, payload: data });
+    }
+}
+
+export function getUntreatedHearingLossAdult() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/untreated-hearing-loss-adult`);
+        dispatch({ type: Types.UPDATE_UNTREATEDHEARINGLOSSADULT, payload: data });
+    }
+}
+
 
 export function getFindAClinic() {
     return async function (dispatch, getState) {

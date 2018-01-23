@@ -18,7 +18,7 @@ if (typeof window === 'undefined') {
 
 class UntreatedHearingLossAdult extends Component {
     static fetchData({ store, params }) {
-        return store.dispatch(actions.getTypesOfTreatment());
+        return store.dispatch(actions.getUntreatedHearingLossAdult());
     }
 
     componentDidMount() {
@@ -27,8 +27,8 @@ class UntreatedHearingLossAdult extends Component {
 
     render() {
 
-        console.log(this.props.dataTypesOfTreatment);
-        let getData = this.props.dataTypesOfTreatment;
+        console.log(this.props.dataUntreatedHearingLossAdult);
+        let getData = this.props.dataUntreatedHearingLossAdult;
 
 
         console.log(global.window.dataLayer);
@@ -74,12 +74,6 @@ class UntreatedHearingLossAdult extends Component {
                                                             additionalClass="is-shaded is-small"/>
                                     </div>
                                     <div className="sl-item">
-                                        <Cm02ContentTile    title={getData['cm02-title-02'].title}
-                                                            description={getData['cm02-description-02']}
-                                                            path={getData['cm02-title-02'].path}
-                                                            image={'https://auth.cochlear.com'+getData['cm02-image-02'].src}
-                                                            imagePath={getData['cm02-title-02'].path}
-                                                            additionalClass="is-shaded is-small"/>
                                     </div>
                                 </div>
                             </div>

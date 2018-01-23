@@ -18,7 +18,7 @@ if (typeof window === 'undefined') {
 
 class ImpactOfHearingLoss extends Component {
     static fetchData({ store, params }) {
-        return store.dispatch(actions.getTypesOfTreatment());
+        return store.dispatch(actions.getImpactOfHearingLoss());
     }
 
     componentDidMount() {
@@ -27,8 +27,8 @@ class ImpactOfHearingLoss extends Component {
 
     render() {
 
-        console.log(this.props.dataTypesOfTreatment);
-        let getData = this.props.dataTypesOfTreatment;
+        console.log(this.props.dataImpactOfHearingLoss);
+        let getData = this.props.dataImpactOfHearingLoss;
 
 
         console.log(global.window.dataLayer);
