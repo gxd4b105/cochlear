@@ -6,10 +6,6 @@ import * as actions from '../../shared/app/redux/actions/actions';
 
 import OnScreeNav from '../../components/OnScreenNav/OnScreeNav.jsx';
 import OnScreenNav__Item from '../../components/OnScreenNav__Item/OnScreenNav__Item.jsx';
-
-import GoogleTagManager from "../../components/GoogleTagManager/GoogleTagManager.jsx";
-import GTM from 'react-tag-manager';
-import DataLayer from 'react-tag-manager/DataLayer';
 import RegionLanguageSelect from "../../components/RegionLanguageSelect/RegionLanguageSelect.jsx";
 
 
