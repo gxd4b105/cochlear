@@ -3328,6 +3328,8 @@ var RegionLanguageSelect = function (_React$Component) {
         key: 'handleSubmit',
         value: function handleSubmit(event) {
             alert('Region selection: ' + this.state.selectRegion + '\nLanguage selection: ' + this.state.selectLanguage);
+            alert(this.href);
+            self.location = "/" + this.state.selectRegion + "/" + this.state.selectLanguage;
             event.preventDefault();
         }
     }, {
@@ -3353,8 +3355,12 @@ var RegionLanguageSelect = function (_React$Component) {
                 { className: 'nav-region-dropdown ' + this.props.additionalClass },
                 _react2.default.createElement(
                     'h4',
-                    { onClick: showHide, className: 'nav-region-dropdown__cta' },
-                    this.props.cta
+                    { onClick: showHide, id: 'nav-region-dropdown__cta', className: 'nav-region-dropdown__cta' },
+                    'Select: (',
+                    this.state.selectRegion,
+                    '/',
+                    this.state.selectLanguage,
+                    ')'
                 ),
                 _react2.default.createElement(
                     'form',

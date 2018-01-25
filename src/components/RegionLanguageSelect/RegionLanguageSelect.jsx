@@ -56,6 +56,8 @@ class RegionLanguageSelect extends React.Component {
 
     handleSubmit(event) {
         alert('Region selection: ' + this.state.selectRegion + '\nLanguage selection: '+ this.state.selectLanguage);
+        alert(this.href.substr(this.href.lastIndexOf('/') + 1));
+        self.location = "/" + this.state.selectRegion + "/" + this.state.selectLanguage;
         event.preventDefault();
     }
 
@@ -77,7 +79,7 @@ class RegionLanguageSelect extends React.Component {
 
         return (
             <nav className={`nav-region-dropdown ${this.props.additionalClass}`}>
-                <h4 onClick={showHide}  className="nav-region-dropdown__cta">{this.props.cta}</h4>
+                <h4 onClick={showHide} id="nav-region-dropdown__cta"  className="nav-region-dropdown__cta">Select: ({this.state.selectRegion}/{this.state.selectLanguage})</h4>
                 <form onSubmit={this.handleSubmit} id="nav-region-dropdown__form" className="nav-region-dropdown__form">
                     <label className="nav-region-dropdown__label" htmlFor="nav-region-dropdown__region">
                         <span>Select a region:</span>

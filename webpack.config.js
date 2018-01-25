@@ -31,6 +31,10 @@ module.exports = {
                 }, {
                     loader: "sass-loader" // compiles Sass to CSS
                 }]
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|otf|woff2)$/,
+                loader: 'file?name=public/fonts/[name].[ext]'
             }
             //loaders for other file types can go here
         ]
