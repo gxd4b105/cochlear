@@ -1,16 +1,27 @@
 import React from 'react';
 
 class Cm02ContentTile extends React.Component {
+
+
     render() {
+
+        let copyReturn = ()=> {
+            if (this.props.image.includes('youtube')) {
+                return (<div className="video-embed"><iframe width="560" height="315" src={`${this.props.image}`} frameBorder="0" allow="encrypted-media" allowFullScreen></iframe></div>);
+            } else {
+                return (<a href={`${this.props.path}`} className="image">
+                    <img className="img" src={`${this.props.image}`} alt={this.props.imageAlt} />
+                </a>);
+            }
+        }
 
         return (
             <section className={`cm cm-content-tile ${this.props.additionalClass}`}>
                 <div className="cm-image-block-link">
                     {/*  <% end %> */}
+                    {copyReturn()}
                     {/*  <% if vars[:image] != false %> */}
-                    <a href={`${this.props.path}`} className="image">
-                        <img className="img" src={`${this.props.image}`} alt={this.props.imageAlt} />
-                    </a>
+
                     {/*  <% end %> */}
 
                     <div className="content">

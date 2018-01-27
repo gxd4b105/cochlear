@@ -13,9 +13,11 @@ import HeaderLandingBanner from "../../components/HeaderLandingBanner/HeaderLand
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs.jsx";
 import ClinicNearYouMini from "../../components/ClinicNearYou/ClinicNearYouMini.jsx";
 import ContentHeader from "../../components/ContentHeader/ContentHeader.jsx";
-import Cm02bContentTile from "../../components/Cm02bContentTile/Cm02bContentTile.jsx"
+import Cm02bContentTile from "../../components/Cm02bContentTile/Cm02bContentTile.jsx";
+import Cm02ContentTileThree from "../../components/Cm02ContentTileThree/Cm02ContentTileThree.jsx";
 
 import axios from 'axios';
+
 
 
 class HearingAidVsCochlearImplant extends Component {
@@ -116,6 +118,31 @@ class HearingAidVsCochlearImplant extends Component {
                                               image={'https://auth.cochlear.com/'+getData['cm02b-image-01'].src}/>
 
                             <Cm01RichText body={getData['video-embed']}/>
+
+                            <Cm02ContentTileThree additionalClass="sl__testimonials"
+                                                  ctaText="View All"
+                                                  ctaLink="/initl/testimonials"
+                                                  ctaClass="cta__view-all"
+
+                                                  title01 = "Alexandre's Story"
+                                                  description01 = "Alexandre, a 53 year old married father of three. He talks about the things that matter to him most, his family, his work, his love of sports and music and how the Carina System helped change his life for the better."
+                                                  path01 = "http://www.cochlear.com/wps/wcm/connect/intl/home/understand/i-have-hl/hearing-stories-from-recipients/bronwyns-story"
+                                                  image01 = "http://www.youtube.com/embed/Un8idyyS1UU"
+                                                  additionalClass01 = "is-shaded is-small"
+
+                                                  title02 = "Mateo's story"
+                                                  description02 = "After learning that their baby boy would never hear, Stéphane and Karla traveled from Mexico to the Johns Hopkins Hospital in the United States for a second opinion. "
+                                                  path02 = "http://www.cochlear.com/wps/wcm/connect/intl/home/understand/i-have-hl/hearing-stories-from-recipients/bronwyns-story"
+                                                  image02 = "http://www.youtube.com/embed/DO7ohHj-WQw"
+                                                  additionalClass02 = "is-shaded is-small"
+
+                                                  title03 = "Jude's story"
+                                                  description03 = "Jude was struck with sudden deafness in both ears just before his 50th birthday. Learn how a cochlear implant restored his ability to communicate with his friends, family and colleagues."
+                                                  path03 = "http://www.cochlear.com/wps/wcm/connect/intl/home/understand/i-have-hl/hearing-stories-from-recipients/judes-story"
+                                                  image03 = "http://www.cochlear.com/wps/wcm/connect/b25adb27-f84e-46a3-b684-b80d24122120/testimonial_cochlearimplant_judedemello_210x140.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE-b25adb27-f84e-46a3-b684-b80d24122120-l5rFEoh"
+                                                  additionalClass03 = "is-shaded is-small"
+                            />
+
 
                             <ClinicNearYouMini title="Clinics near"
                                            description=""

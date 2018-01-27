@@ -30,8 +30,8 @@ class RegionLanguageSelect extends React.Component {
         console.log('pass one ' + selectRegion.value);
         console.log('pass one ' + selectLanguage.value);
 
-        this.setState({selectRegion: selectRegion.value});
-        this.setState({selectLanguage: selectLanguage.value});
+        this.setState({selectRegion: "intl/home"});
+        this.setState({selectLanguage: "en_us"});
 
         axios.get(`https://freegeoip.net/json/`)
             .then(res => {
@@ -83,9 +83,9 @@ class RegionLanguageSelect extends React.Component {
                 <form onSubmit={this.handleSubmit} id="nav-region-dropdown__form" className="nav-region-dropdown__form">
                     <label className="nav-region-dropdown__label" htmlFor="nav-region-dropdown__region">
                         <span>Select a region:</span>
-                        <select defaultValue="intl/home" value={this.state.selectRegion}  onChange={this.handleRegionChange} ref="selectRegion" id="nav-region-dropdown__region" data-placeholder="Choose a Region..." className="nav-region-dropdown__select nav-region-dropdown__region">
+                        <select value={this.state.selectRegion}  onChange={this.handleRegionChange} ref="selectRegion" id="nav-region-dropdown__region" data-placeholder="Choose a Region..." className="nav-region-dropdown__select nav-region-dropdown__region">
                             <optgroup label="International">
-                                <option value="intl/home" selected>Cochlear International</option>
+                                <option value="intl/home">Cochlear International</option>
                             </optgroup>
                             <optgroup label="North America">
                                 <option value="us">United States &amp; Canada</option>
@@ -138,7 +138,7 @@ class RegionLanguageSelect extends React.Component {
                     </label>
                     <label className="nav-region-dropdown__label" htmlFor="nav-region-dropdown__language">
                         <span>Select a language:</span>
-                        <select defaultValue="en_us" value={this.state.selectLanguage} onChange={this.handleLanguageChange} ref="selectLanguage" id="nav-region-dropdown__language" data-placeholder="Choose a Language..." className="nav-region-dropdown__select nav-region-dropdown__language">
+                        <select value={this.state.selectLanguage} onChange={this.handleLanguageChange} ref="selectLanguage" id="nav-region-dropdown__language" data-placeholder="Choose a Language..." className="nav-region-dropdown__select nav-region-dropdown__language">
                             <option value="AF">Afrikanns</option>
                             <option value="SQ">Albanian</option>
                             <option value="AR">Arabic</option>
