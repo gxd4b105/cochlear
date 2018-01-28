@@ -19,6 +19,8 @@ import UntreatedHearingLossChildren from "../../containers/UntreatedHearingLossC
 import PlanningYourTest from "../../containers/PlanningYourTest/PlanningYourTest.jsx";
 
 
+import Main from "../../containers/_poc/Main.jsx";
+
 export default {
     routes: [
         {
@@ -109,6 +111,11 @@ export default {
         {
             path: '/:country/find-a-clinic',
             component: FindAClinic,
+            exact: true
+        },
+        {
+            path: '/:country/main',
+            component: Main,
             exact: true
         }
     ],
