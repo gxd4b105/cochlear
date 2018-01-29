@@ -17,6 +17,7 @@ import Cm02bContentTile from "../../components/Cm02bContentTile/Cm02bContentTile
 import Cm02ContentTileThree from "../../components/Cm02ContentTileThree/Cm02ContentTileThree.jsx";
 
 import axios from 'axios';
+import BrochureDownload from "../../components/BrochureDownload/BrochureDownload.jsx";
 
 
 
@@ -143,18 +144,22 @@ class HearingAidVsCochlearImplant extends Component {
                                                   additionalClass03 = "is-shaded is-small"
                             />
 
+                            <BrochureDownload title="Download a Brochure"
+                                              description="This is description"
+                                              additionalClass="is-shaded is-medium brochure-download"/>
+
 
                             <ClinicNearYouMini title="Clinics near"
-                                           description=""
-                                            additionalClass="is-shaded"
-                                            label=""
-                                            city={this.props.city}
-                                            markers={this.props.markers}
-                                            test={this.test}
-                                            lat={this.props.lat}
-                                            lng={this.props.lng}
-                                            path={'/intl/find-a-clinic'}
-                                            getCurrentPosition={this.props.getCurrentPosition} />
+                                               description=""
+                                               additionalClass="is-shaded"
+                                               label=""
+                                               city={this.props.city}
+                                               markers={this.props.markers}
+                                               test={this.test}
+                                               lat={this.props.lat}
+                                               lng={this.props.lng}
+                                               path={'/intl/find-a-clinic'}
+                                               getCurrentPosition={this.props.getCurrentPosition} />
                         </main>
                     </article>
                 </div>
