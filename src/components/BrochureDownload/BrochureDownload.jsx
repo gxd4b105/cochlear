@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 if (process.env.BROWSER) {
     require("./BrochureDownload.scss");
@@ -12,7 +13,8 @@ class BrochureDownload extends React.Component {
         super(props);
 
         this.state =   {
-            selectDeliveryOption: '----'
+            selectDeliveryOption: '----',
+            downloadDisplay: 'none'
         };
 
         this.handleDeliveryOption = this.handleDeliveryOption.bind(this);
@@ -20,7 +22,7 @@ class BrochureDownload extends React.Component {
 
     }
 
-
+    
 
     handleDeliveryOption(event) {
         this.setState({selectDeliveryOption: event.target.value});
@@ -45,10 +47,174 @@ class BrochureDownload extends React.Component {
         //alert(this.state.selectDeliveryOption);
     }
 
-    handleSubmit(event) {
-        alert(this.state.selectDeliveryOption);
-        event.preventDefault();
+    validation(){
+        console.log('test');
+        console.log(document.getElementById('txt-firstname').value);
+
+        let errorState = false;
+        let firstName = document.getElementById('txt-firstname');
+        let lastName = document.getElementById('txt-lastname');
+        let email = document.getElementById('txt-email');
+        let street = document.getElementById('txt-street');
+        let suburb = document.getElementById('txt-suburb');
+        let postcode = document.getElementById('txt-postcode'); 
+
+        if (firstName.value === '' || firstName.value.length > 255 || !/^[a-zA-Z]*$/g.test(firstName.value)) {
+            let errorMessage = '';
+            errorMessage = firstName.value === '' ? errorMessage += '<p style="color:red;">This field is required</p>' : errorMessage;
+            errorMessage = firstName.value.length > 255 ? errorMessage += '<p style="color:red;">You must have no more than 255 characters</p>' : errorMessage;
+            errorMessage = !/^[a-zA-Z]*$/g.test(firstName.value) ? errorMessage += '<p style="color:red;">You must only use A to Z characters</p>' : errorMessage;
+            
+            if (errorMessage !== '') {
+                errorState = true;
+                firstName.nextSibling.innerHTML = errorMessage;
+                firstName.nextSibling.style.display = 'block';
+                firstName.style.border = '1px solid red';
+            };
+        } else {
+            firstName.nextSibling.innerHTML = '';
+            firstName.nextSibling.style.display = 'none';
+            firstName.style.border = '0';
+        }
+
+        if (lastName.value === '' || lastName.value.length > 255 || !/^[a-zA-Z]*$/g.test(lastName.value)) {
+            let errorMessage = '';
+            errorMessage = lastName.value === '' ? errorMessage += '<p style="color:red;">This field is required</p>' : errorMessage;
+            errorMessage = lastName.value.length > 255 ? errorMessage += '<p style="color:red;">You must have no more than 255 characters</p>' : errorMessage;
+            errorMessage = !/^[a-zA-Z]*$/g.test(lastName.value) ? errorMessage += '<p style="color:red;">You must only use A to Z characters</p>' : errorMessage;
+            
+            if (errorMessage !== '') {
+                errorState = true;
+                lastName.nextSibling.innerHTML = errorMessage;
+                lastName.nextSibling.style.display = 'block';
+                lastName.style.border = '1px solid red';
+            };
+        } else {
+            lastName.nextSibling.innerHTML = '';
+            lastName.nextSibling.style.display = 'none';
+            lastName.style.border = '0';
+        }
+
+        if (email.value === '' || !/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/g.test(email.value)) {
+            let errorMessage = '';
+            errorMessage = email.value === '' ? errorMessage += '<p style="color:red;">This field is required</p>' : errorMessage;
+            errorMessage = !/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/g.test(lastName.value) ? errorMessage += '<p style="color:red;">You must enter a valid email</p>' : errorMessage;
+            
+            if (errorMessage !== '') {
+                errorState = true;
+                email.nextSibling.innerHTML = errorMessage;
+                email.nextSibling.style.display = 'block';
+                email.style.border = '1px solid red';
+            };
+        } else {
+            email.nextSibling.innerHTML = '';
+            email.nextSibling.style.display = 'none';
+            email.style.border = '0';
+        }
+
+
+
+        // postal ADDRESS validation
+
+        if(this.state.selectDeliveryOption === 'mail'){
+
+        
+
+        if (street.value === '' || street.value.length > 255) {
+            let errorMessage = '';
+            errorMessage = street.value === '' ? errorMessage += '<p style="color:red;">This field is required</p>' : errorMessage;
+            errorMessage = street.value.length > 255 ? errorMessage += '<p style="color:red;">You must have no more than 255 characters</p>' : errorMessage;
+            
+            if (errorMessage !== '') {
+                errorState = true;
+                street.nextSibling.innerHTML = errorMessage;
+                street.nextSibling.style.display = 'block';
+                street.style.border = '1px solid red';
+            };
+        } else {
+            street.nextSibling.innerHTML = '';
+            street.nextSibling.style.display = 'none';
+            street.style.border = '0';
+        }
+
+        if (suburb.value === '' || suburb.value.length > 255) {
+            let errorMessage = '';
+            errorMessage = suburb.value === '' ? errorMessage += '<p style="color:red;">This field is required</p>' : errorMessage;
+            errorMessage = suburb.value.length > 255 ? errorMessage += '<p style="color:red;">You must have no more than 255 characters</p>' : errorMessage;
+            
+            if (errorMessage !== '') {
+                errorState = true;
+                suburb.nextSibling.innerHTML = errorMessage;
+                suburb.nextSibling.style.display = 'block';
+                suburb.style.border = '1px solid red';
+            };
+        } else {
+            suburb.nextSibling.innerHTML = '';
+            suburb.nextSibling.style.display = 'none';
+            suburb.style.border = '0';
+        }
+
+
+        if (postcode.value === '' || postcode.value.length > 255) {
+            let errorMessage = '';
+            errorMessage = postcode.value === '' ? errorMessage += '<p style="color:red;">This field is required</p>' : errorMessage;
+            errorMessage = postcode.value.length > 255 ? errorMessage += '<p style="color:red;">You must have no more than 255 characters</p>' : errorMessage;
+            
+            if (errorMessage !== '') {
+                errorState = true;
+                postcode.nextSibling.innerHTML = errorMessage;
+                postcode.nextSibling.style.display = 'block';
+                postcode.style.border = '1px solid red';
+            };
+        } else {
+            postcode.nextSibling.innerHTML = '';
+            postcode.nextSibling.style.display = 'none';
+            postcode.style.border = '0';
+        }
+
+
     }
+    return errorState;
+
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        console.log(this.state.selectDeliveryOption);
+        if(!this.validation()){
+            console.log('this is valid');
+
+
+            const url = 'https://api.myjson.com/bins/govgt';
+            
+                    
+                    axios.get(url)
+                    .then(res => {
+                        console.log('RES is ', res);
+                        if(res.data.response === 'success'){
+                            console.log('SUCCESS');
+                            //document.getElementById('download').display='block';
+                            //this.state.downloadDisplay="block";
+
+                            this.setState({downloadDisplay: 'block'});
+                        }
+                    });
+
+
+
+
+
+
+        } else {
+            console.log('this is NOT valid');
+        }
+        
+        
+
+        
+    }
+
+
 
     render() {
 
@@ -113,7 +279,7 @@ class BrochureDownload extends React.Component {
                                             </div>
                                         </div>
                                         <div className="ctrl-holder width-l">
-                                            <label htmlFor="txt-suburb">Suburb<em>*<span className="vh">Required field</span></em></label>
+                                            <label htmlFor="txt-suburb">Suburb / City<em>*<span className="vh">Required field</span></em></label>
                                             <div className="ctrl">
                                                 <input name="txt-suburb" id="txt-suburb" className="text" type="text" data-rule-required="true" />
                                                 <div className="status-msg">
@@ -163,6 +329,10 @@ class BrochureDownload extends React.Component {
                             </div>
                         </fieldset>
                     </form>
+                    <div id="download" style={{display: this.state.downloadDisplay}}>
+                    <p>Your form was successfully sent! Please click the link below to download your brochure.</p>
+                    <p><a href='#'>Brochure Link</a></p>
+                </div>
                 </div>
             </section>
 
