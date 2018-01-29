@@ -17,6 +17,7 @@ import Cm02bContentTile from "../../components/Cm02bContentTile/Cm02bContentTile
 import Cm02ContentTileThree from "../../components/Cm02ContentTileThree/Cm02ContentTileThree.jsx";
 
 import axios from 'axios';
+import BrochureDownload from "../../components/BrochureDownload/BrochureDownload.jsx";
 
 
 
@@ -127,13 +128,13 @@ class HearingAidVsCochlearImplant extends Component {
                                                   title01 = "Alexandre's Story"
                                                   description01 = "Alexandre, a 53 year old married father of three. He talks about the things that matter to him most, his family, his work, his love of sports and music and how the Carina System helped change his life for the better."
                                                   path01 = "http://www.cochlear.com/wps/wcm/connect/intl/home/understand/i-have-hl/hearing-stories-from-recipients/bronwyns-story"
-                                                  image01 = "http://www.youtube.com/embed/Un8idyyS1UU"
+                                                  image01 = "https://www.youtube.com/embed/Un8idyyS1UU"
                                                   additionalClass01 = "is-shaded is-small"
 
                                                   title02 = "Mateo's story"
                                                   description02 = "After learning that their baby boy would never hear, Stéphane and Karla traveled from Mexico to the Johns Hopkins Hospital in the United States for a second opinion. "
                                                   path02 = "http://www.cochlear.com/wps/wcm/connect/intl/home/understand/i-have-hl/hearing-stories-from-recipients/bronwyns-story"
-                                                  image02 = "http://www.youtube.com/embed/DO7ohHj-WQw"
+                                                  image02 = "https://www.youtube.com/embed/DO7ohHj-WQw"
                                                   additionalClass02 = "is-shaded is-small"
 
                                                   title03 = "Jude's story"
@@ -143,18 +144,22 @@ class HearingAidVsCochlearImplant extends Component {
                                                   additionalClass03 = "is-shaded is-small"
                             />
 
+                            <BrochureDownload title="Download a Brochure"
+                                              description="This is description"
+                                              additionalClass="is-shaded is-medium brochure-download"/>
+
 
                             <ClinicNearYouMini title="Clinics near"
-                                           description=""
-                                            additionalClass="is-shaded"
-                                            label=""
-                                            city={this.props.city}
-                                            markers={this.props.markers}
-                                            test={this.test}
-                                            lat={this.props.lat}
-                                            lng={this.props.lng}
-                                            path={'/intl/find-a-clinic'}
-                                            getCurrentPosition={this.props.getCurrentPosition} />
+                                               description=""
+                                               additionalClass="is-shaded"
+                                               label=""
+                                               city={this.props.city}
+                                               markers={this.props.markers}
+                                               test={this.test}
+                                               lat={this.props.lat}
+                                               lng={this.props.lng}
+                                               path={'/intl/find-a-clinic'}
+                                               getCurrentPosition={this.props.getCurrentPosition} />
                         </main>
                     </article>
                 </div>
