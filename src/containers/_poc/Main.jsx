@@ -23,7 +23,7 @@ class Main extends Component {
                     }
 
     componentDidMount() {
-
+        console.log('test');
         axios.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/test-components`)
         .then(res => {
             this.setState({finalData: res.data});
