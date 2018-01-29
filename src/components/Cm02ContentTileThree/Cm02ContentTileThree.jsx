@@ -17,6 +17,7 @@ class Cm02ContentTileThree extends React.Component {
                                             description={this.props.description01}
                                             path={this.props.path01}
                                             image={this.props.image01}
+                                            embed={this.props.embed01}
                                             additionalClass={this.props.additionalClass01} />
                     </div>
                     <div className="sl-item">
@@ -24,6 +25,7 @@ class Cm02ContentTileThree extends React.Component {
                                             description={this.props.description02}
                                             path={this.props.path02}
                                             image={this.props.image02}
+                                            embed={this.props.embed02}
                                             additionalClass={this.props.additionalClass02} />
                     </div>
                     <div className="sl-item">
@@ -31,6 +33,7 @@ class Cm02ContentTileThree extends React.Component {
                                             description={this.props.description03}
                                             path={this.props.path03}
                                             image={this.props.image03}
+                                            embed={this.props.embed03}
                                             additionalClass={this.props.additionalClass03} />
                     </div>
                     <a href={this.props.ctaLink} className={`cta ${this.props.ctaClass}`}>{this.props.ctaText}</a>

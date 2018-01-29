@@ -6,12 +6,26 @@ class Cm02ContentTile extends React.Component {
     render() {
 
         let copyReturn = ()=> {
-            if (this.props.image.includes('youtube')) {
-                return (<div className="video-embed"><iframe width="560" height="315" src={`${this.props.image}`} frameBorder="0" allow="encrypted-media" allowFullScreen></iframe></div>);
+            if (this.props.embed !== '') {
+                return (<div className="video-embed"><iframe width="560" height="315" src={`${this.props.embed}`} frameBorder="0" allow="encrypted-media" allowFullScreen></iframe></div>);
             } else {
                 return (<a href={`${this.props.path}`} className="image">
                     <img className="img" src={`${this.props.image}`} alt={this.props.imageAlt} />
                 </a>);
+            }
+        }
+
+        let showReadMore = () => {
+            if (this.props.path !== '') {
+                return (<a href={`${this.props.path}`} className="cta">Read more</a>)
+            }
+        }
+
+        let showTitle = () => {
+            if (this.props.path !== '') {
+                return (<h1><a href={`${this.props.path}`}>{this.props.title}</a></h1>)
+            } else {
+                return (<h1>{this.props.title}</h1>)
             }
         }
 
@@ -25,7 +39,7 @@ class Cm02ContentTile extends React.Component {
                     {/*  <% end %> */}
 
                     <div className="content">
-                        {/*  <% if vars[:title] %>*/}<h1> <a href={`${this.props.path}`} >{this.props.title}</a> </h1> {/*  <% end %> */}
+                        {showTitle()}
                         {/*
                         <% if vars[:subheading] %>
                         <%= partial(vars[:subheading][:path], :locals => vars[:subheading][:locals]) %>
@@ -33,7 +47,7 @@ class Cm02ContentTile extends React.Component {
                         */}
                         <p>{this.props.description}</p>
 
-                        <a href={`${this.props.path}`} className="cta">Read more</a>
+                        {showReadMore()}
 
                     </div>
                 </div>

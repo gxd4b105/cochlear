@@ -125,22 +125,25 @@ class HearingAidVsCochlearImplant extends Component {
                                                   ctaLink="/initl/testimonials"
                                                   ctaClass="cta__view-all"
 
-                                                  title01 = "Alexandre's Story"
-                                                  description01 = "Alexandre, a 53 year old married father of three. He talks about the things that matter to him most, his family, his work, his love of sports and music and how the Carina System helped change his life for the better."
-                                                  path01 = "http://www.cochlear.com/wps/wcm/connect/intl/home/understand/i-have-hl/hearing-stories-from-recipients/bronwyns-story"
-                                                  image01 = "https://www.youtube.com/embed/Un8idyyS1UU"
+                                                  title01 = {getData['cm02-title-03-01'].title}
+                                                  description01 = {getData['cm02-description-03-01']}
+                                                  path01 = {getData['cm02-title-03-01'].path}
+                                                  image01 = {'https://auth.cochlear.com/'+getData['cm02-image-03-01'].src}
+                                                  embed01 = {getData['cm02-video-embed-03-01']}
                                                   additionalClass01 = "is-shaded is-small"
 
-                                                  title02 = "Mateo's story"
-                                                  description02 = "After learning that their baby boy would never hear, Stéphane and Karla traveled from Mexico to the Johns Hopkins Hospital in the United States for a second opinion. "
-                                                  path02 = "http://www.cochlear.com/wps/wcm/connect/intl/home/understand/i-have-hl/hearing-stories-from-recipients/bronwyns-story"
-                                                  image02 = "https://www.youtube.com/embed/DO7ohHj-WQw"
+                                                  title02 = {getData['cm02-title-03-02'].title}
+                                                  description02 = {getData['cm02-description-03-02']}
+                                                  path02 = {getData['cm02-title-03-02'].path}
+                                                  image02 = {'https://auth.cochlear.com/'+getData['cm02-image-03-02'].src}
+                                                  embed02 = {getData['cm02-video-embed-03-02']}
                                                   additionalClass02 = "is-shaded is-small"
 
-                                                  title03 = "Jude's story"
-                                                  description03 = "Jude was struck with sudden deafness in both ears just before his 50th birthday. Learn how a cochlear implant restored his ability to communicate with his friends, family and colleagues."
-                                                  path03 = "http://www.cochlear.com/wps/wcm/connect/intl/home/understand/i-have-hl/hearing-stories-from-recipients/judes-story"
-                                                  image03 = "http://www.cochlear.com/wps/wcm/connect/b25adb27-f84e-46a3-b684-b80d24122120/testimonial_cochlearimplant_judedemello_210x140.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE-b25adb27-f84e-46a3-b684-b80d24122120-l5rFEoh"
+                                                  title03 = {getData['cm02-title-03-03'].title}
+                                                  description03 = {getData['cm02-description-03-03']}
+                                                  path03 = {getData['cm02-title-03-03'].path}
+                                                  image03 = {'https://auth.cochlear.com/'+getData['cm02-image-03-02'].src}
+                                                  embed03 = {getData['cm02-video-embed-03-03']}
                                                   additionalClass03 = "is-shaded is-small"
                             />
 

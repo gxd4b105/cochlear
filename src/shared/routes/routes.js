@@ -32,7 +32,77 @@ export default {
             path: '/:country/:lang/:component',
             component: Main,
             exact: true
-        }
+        },
+        {
+            path: '/:country/home',
+            component: HomePage,
+            exact: true
+        },
+        {
+            path: '/:country/hearing-aids-vs-implantable-solutions',
+            component: HearingAidVsImplantableSolutions,
+            exact: true
+        },
+        {
+            path: '/:country/costs-and-affordability',
+            component: CostsAndAffordability,
+            exact: true
+        },
+        {
+            path: '/:country/treatment-options',
+            component: TreatmentOptions,
+            exact: true
+        },
+        {
+            path: '/:country/types-of-treatment',
+            component: TypesOfTreatment,
+            exact: true
+        },
+        {
+            path: '/:country/treating-hearing-loss',
+            component: TreatingHearingLoss,
+            exact: true
+        },
+        {
+            path: '/:country/impact-of-hearing-loss',
+            component: ImpactOfHearingLoss,
+            exact: true
+        },
+        {
+            path: '/:country/hearing-loss',
+            component: HearingLoss,
+            exact: true
+        },
+        {
+            path: '/:country/planning-your-test',
+            component: PlanningYourTest,
+            exact: true
+        },
+        {
+            path: '/:country/implantable-solutions',
+            component: ImplantableSolutions,
+            exact: true
+        },
+        {
+            path: '/:country/stats-and-proofs',
+            component: StatsAndProofs,
+            exact: true
+        },
+        {
+            path: '/:country/untreated-hearing-loss-adult',
+            component: UntreatedHearingLossAdult,
+            exact: true
+        },
+        {
+            path: '/:country/untreated-hearing-loss-children',
+            component: UntreatedHearingLossChildren,
+            exact: true
+        },
+        {
+            path: '/:country/find-a-clinic',
+            component: FindAClinic,
+            exact: true
+        },
     ],
     redirects: [
         {
