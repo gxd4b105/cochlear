@@ -127,13 +127,13 @@ class HearingAidVsCochlearImplant extends Component {
                                                   title01 = "Alexandre's Story"
                                                   description01 = "Alexandre, a 53 year old married father of three. He talks about the things that matter to him most, his family, his work, his love of sports and music and how the Carina System helped change his life for the better."
                                                   path01 = "http://www.cochlear.com/wps/wcm/connect/intl/home/understand/i-have-hl/hearing-stories-from-recipients/bronwyns-story"
-                                                  image01 = "http://www.youtube.com/embed/Un8idyyS1UU"
+                                                  image01 = "https://www.youtube.com/embed/Un8idyyS1UU"
                                                   additionalClass01 = "is-shaded is-small"
 
                                                   title02 = "Mateo's story"
                                                   description02 = "After learning that their baby boy would never hear, Stéphane and Karla traveled from Mexico to the Johns Hopkins Hospital in the United States for a second opinion. "
                                                   path02 = "http://www.cochlear.com/wps/wcm/connect/intl/home/understand/i-have-hl/hearing-stories-from-recipients/bronwyns-story"
-                                                  image02 = "http://www.youtube.com/embed/DO7ohHj-WQw"
+                                                  image02 = "https://www.youtube.com/embed/DO7ohHj-WQw"
                                                   additionalClass02 = "is-shaded is-small"
 
                                                   title03 = "Jude's story"
