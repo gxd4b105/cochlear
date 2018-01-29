@@ -9,7 +9,8 @@ import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs.jsx";
 import ClinicNearYou from "../../components/ClinicNearYou/ClinicNearYou.jsx";
 import ContentHeader from "../../components/ContentHeader/ContentHeader.jsx";
 import Cm01RichText from "../../components/Cm01RichText/Cm01RichText.jsx";
-import Header1 from "../../components/_poc/header.jsx";
+import Dummy1 from "../../components/_poc/dummy1.jsx";
+import Dummy2 from "../../components/_poc/dummy2.jsx";
 import axios from 'axios';
 
 class Main extends Component {
@@ -18,13 +19,17 @@ class Main extends Component {
         super(props);
 
         this.state =   {
-                        finalData:''
+                        finalData:'',
+                        component2:[]
                         };
                     }
 
     componentDidMount() {
 
-        axios.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/test-components`)
+        let baseUrl = "https://auth.cochlear.com/contentservice/api/content/deloitte/home/";
+
+
+        axios.get(baseUrl + this.props.match.params.component)
         .then(res => {
             this.setState({finalData: res.data});
         });
@@ -34,7 +39,10 @@ class Main extends Component {
           }
     }
     render() {
-        let button = null;
+
+        console.log('params ', this.props);
+
+        console.log('aaa ',this.state.finalData);
         if (this.state.finalData) {
             let items = [];
             let items1 = 0;
@@ -64,17 +72,30 @@ class Main extends Component {
                 }
             }
 
+            let component1 = [];
+
             items.map((item) => {
                 if(item.dataKey === 'component-header-banner'){
-                    button = <Header1 {...item} />;
+                    this.state.component2.push(<Dummy1 key='component-header-banner' {...item} />);
                 }
-            })
+
+                if(item.dataKey === 'component-content-header'){
+                    this.state.component2.push(<Dummy2 key='component-content-header' {...item} />);
+                }
+
+
+            });
     }
 
         return (
             <div className="l-layout l-two-column cf">
                 {this.state.finalData.container}
-                {button}
+
+                {
+                    this.state.component2.map((item) => {
+                        return item;
+                    })
+                }
             </div>
         );
     }
