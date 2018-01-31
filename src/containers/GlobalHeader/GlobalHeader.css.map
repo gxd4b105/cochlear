@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,cAAe;EACb,UAAU,EAAC,iBAAuB",
+"sources": ["GlobalHeader.scss"],
+"names": [],
+"file": "GlobalHeader.css"
+}

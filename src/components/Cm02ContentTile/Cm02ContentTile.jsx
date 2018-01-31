@@ -23,9 +23,9 @@ class Cm02ContentTile extends React.Component {
 
         let showTitle = () => {
             if (this.props.path !== '') {
-                return (<h1><a href={`${this.props.path}`}>{this.props.title}</a></h1>)
+                return (<h3><a href={`${this.props.path}`}>{this.props.title}</a></h3>)
             } else {
-                return (<h1>{this.props.title}</h1>)
+                return (<h3>{this.props.title}</h3>)
             }
         }
 

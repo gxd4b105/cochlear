@@ -1,0 +1,164 @@
+.cm-content-tile {
+
+  cursor: pointer;
+  border: 1px solid $light-grey;
+  position: relative;
+  background-color: #fff;
+
+  .content {
+    padding: 0;
+    margin: 0;
+    //background-color: $light-grey;
+    // border-left: 5px solid transparent;
+    h3, p {
+      margin: 0;
+      border-left: 5px solid transparent;
+      a {
+        text-decoration: none;
+      }
+    }
+    h3 {
+      padding: 30px 30px 20px 30px;
+      a {
+        font-weight: 600;
+      }
+    }
+    p {
+      padding: 0 30px 30px 30px;
+    }
+    .cta {
+      display: block;
+      border: 0;
+      border-top: 1px solid $light-grey;
+      border-left: 5px solid $cochlear-yellow;
+      color: $link-colour;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: left;
+      padding-left: 30px;
+      margin-top: 0;
+      line-height: 30px;
+
+      &:after {
+        content: '>';
+        font-size: 24px;
+        padding-left: 10px;
+        position: relative;
+        top: 2px;
+      }
+
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .image {
+    img {
+      opacity: 1;
+      -webkit-transition: -webkit-transform 0.35s;
+      transition: transform 0.35s;
+      -webkit-transform: perspective(1000px) translate3d(0,0,0);
+      transform: perspective(1000px) translate3d(0,0,0);
+    }
+  }
+
+  &:before {
+    box-shadow: 0 3px 30px rgba(0,0,0,0.8);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    content: '';
+    -webkit-transition: opacity 0.35s;
+    transition: opacity 0.35s;
+  }
+
+  &:hover {
+
+    border:0;
+
+    &:before {
+      opacity: 1;
+    }
+
+    .content {
+      .cta {
+        // border-left: 0;
+        &:after {
+          padding-left: 15px;
+          transition: all 1s ease-in-out;
+          -webkit-transition: all 0.2s ease-in-out; /** Chrome & Safari **/
+          -moz-transition: all 0.2s ease-in-out; /** Firefox **/
+          -o-transition: all 0.2s ease-in-out; /** Opera **/
+        }
+      }
+    }
+
+    .image {
+      img {
+        -webkit-transform: perspective(1000px) translate3d(0,0,21px);
+        transform: perspective(1000px) translate3d(0,0,21px);
+      }
+    }
+  }
+
+}
+
+.cm-image-block-link {
+  &:hover {
+    img {
+      -webkit-filter: grayscale(0);
+      filter: grayscale(0);
+    }
+  }
+  &:after {
+    background-color: transparent;
+  }
+  .image {
+    &:after {
+      background-color: transparent;
+    }
+  }
+}
+
+.is-cta {
+
+  border: 0;
+  overflow: hidden;
+
+  .image {
+    height: 350px;
+    position: relative;
+    left: 30px;
+    display: block;
+    img {
+      max-width: none;
+      height: 100%;
+      display: block;
+      width: auto;
+    }
+  }
+  .content {
+    background-color: $cochlear-yellow;
+    opacity: 0.9;
+    width: 90%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .cta {
+      border: 0;
+      width: 170px;
+      background-color: #ffffff;
+      padding: 10px;
+      margin: 29px;
+      border-radius: 30px;
+      text-align: center;
+    }
+  }
+}

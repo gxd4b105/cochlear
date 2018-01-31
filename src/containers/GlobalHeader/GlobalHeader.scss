@@ -1,8 +1,13 @@
 .global-header {
-  h1 {
-    line-height: 85px;
-  }
+  border-top:5px solid $cochlear-yellow;
+
   .logo {
-    height: auto;
+    a {
+      //background-image: url('../../images/logo_mobile.png');
+      display: block;
+    }
+    img {
+      display: none;
+    }
   }
 }

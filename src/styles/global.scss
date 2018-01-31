@@ -1,7 +1,62 @@
+/* ----------- COLOURS ----------- */
+$cochlear-yellow: #fdc82f;
+$cool-grey: #56565a;
+$mid-grey: #cccccc;
+$light-grey: #efefef;
+$link-colour: #3f1482; // Eggplant
+
+
+/* ----------- FONTS ----------- */
+
+$font-header: "BlissPro-Regular","Trebuchet MS","Gill Sans","Helvetica Neue",Arial,sans-serif;
+$font-primary: "BlissPro-Regular","Trebuchet MS","Gill Sans","Helvetica Neue",Arial,sans-serif;
+$font-primary-light: "BlissPro-Light","Trebuchet MS","Gill Sans","Helvetica Neue",Arial,sans-serif;
+
 
 body {
-  font-family: "BlissPro-Regular","Trebuchet MS","Gill Sans","Helvetica Neue",Arial,sans-serif;
+  font-family: $font-primary;
 }
+h1, h2, h3, h4, h5 {
+  font-family: $font-header;
+  font-weight: 600;
+  color: $cool-grey;
+  a {
+    color: $cool-grey;
+  }
+}
+
+h1 {
+  font-size: 42px;
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 40px;
+}
+
+h3 {
+  font-size: 30px;
+  line-height: 36px;
+}
+
+h4 {
+  font-size: 22px;
+  line-height: 24px;
+}
+
+
+p {
+  font-family: $font-primary;
+  font-size: 18px;
+  line-height: 28px;
+  color: $cool-grey;
+}
+
+a:focus, a:hover {
+  color: $link-colour;
+}
+
+/* ----------- WIDGETS ----------- */
 .video-embed {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
@@ -15,3 +70,10 @@ body {
   width: 100%;
   height: 100%;
 }
+
+/* ----------- COMPONENTS ----------- */
+@import "../../src/containers/GlobalHeader/GlobalHeader.scss";
+@import "../../src/components/HeaderLandingBanner/HeaderLandingBanner.scss";
+@import "../../src/components/Cm01RichText/Cm01RichText.scss";
+@import "../../src/components/Cm28SocialShare/Cm28SocialShare.scss";
+@import "../../src/components/Cm02ContentTile/Cm02ContentTitle.scss";

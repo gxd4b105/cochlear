@@ -14,8 +14,8 @@ class HeaderLandingBanner extends React.Component {
                     </div>
 
                     {/*<% if !vars[:image].nil? %>*/}
-                    <div className='image' style={{backgroundImage:'url('+this.props.image+')'}}>
-                        <span className='vh'>Image: {this.props.imageAlt}</span>
+                    <div className="image">
+                        <img className="img" src={`${this.props.image}`} alt={this.props.imageAlt} />
                     </div>
                     {/*<% end %>*/}
                 </div>

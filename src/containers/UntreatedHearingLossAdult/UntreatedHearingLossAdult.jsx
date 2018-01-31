@@ -10,7 +10,7 @@ import Cm02ContentTile from "../../components/Cm02ContentTile/Cm02ContentTile.js
 import Cm01RichText from "../../components/Cm01RichText/Cm01RichText.jsx";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs.jsx";
 import HeaderLandingBanner from "../../components/HeaderLandingBanner/HeaderLandingBanner.jsx";
-import ContentHeader from "../../components/ContentHeader/ContentHeader.jsx";
+import Cm28SocialShare from "../../components/Cm28SocialShare/Cm28SocialShare.jsx";
 
 if (typeof window === 'undefined') {
     global.window = {}
@@ -45,20 +45,20 @@ class UntreatedHearingLossAdult extends Component {
                 </Helmet>
 
                 <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
-                <BreadCrumbs/>
 
-                <HeaderLandingBanner title=""
-                                     description=""
+                <HeaderLandingBanner title={getData['title']}
+                                     description={getData['description']}
                                      image={'https://auth.cochlear.com/'+getData['banner-image'].src}
                                      imagePath={getData['banner-image'].alt}
-                                     additionalClass="is-dark"/>
+                                     additionalClass=""/>
+
+                <BreadCrumbs/>
 
                 <div className='l-content-container cf l-padding'>
                     <article className="l-content-column">
                         <main id="main" tabIndex="-1" role="main" className="l-main">
 
-                            <ContentHeader title={getData['title']}
-                                           description={getData['description']} />
+                            <Cm28SocialShare />
 
                             <Cm01RichText body={getData['body-copy']}/>
 
@@ -70,8 +70,9 @@ class UntreatedHearingLossAdult extends Component {
                                                             description={getData['cm02-description-01']}
                                                             path={getData['cm02-title-01'].path}
                                                             image={'https://auth.cochlear.com'+getData['cm02-image-01'].src}
+                                                            embed = {getData['cm02-video-embed-01']}
                                                             imagePath={getData['cm02-title-01'].path}
-                                                            additionalClass="is-shaded is-small"/>
+                                                            additionalClass="is-small is-cta"/>
                                     </div>
                                     <div className="sl-item">
                                     </div>

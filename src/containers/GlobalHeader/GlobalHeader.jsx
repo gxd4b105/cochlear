@@ -11,8 +11,10 @@ import RegionLanguageSelect from "../../components/RegionLanguageSelect/RegionLa
 
 if (process.env.BROWSER) {
     require("../../styles/framework.css");
+    // require("../../styles/fonts.scss");
+    //require("../../styles/mixins.scss");
     require("../../styles/global.scss");
-    require("./GlobalHeader.scss");
+    //require("./GlobalHeader.scss");
 }
 
 
@@ -46,12 +48,11 @@ class Header extends Component {
 
                 <header className={`global-header ${this.props.additionalClass}`}>
                     <div className="l-padding">
-                        {/*
+
                         <button className="nav-toggle js-offscreen-toggle" type="button" role="button" aria-label="Toggle navigation" data-offscreen-id="nav">
                             <span className="lines"></span>
                             <span className="vh">Toggle navigation</span>
                         </button>
-                        */}
 
                         <RegionLanguageSelect cta="Select a region and language"
                                               formAction="/intl/home"

@@ -1,6 +1,7 @@
 .nav-region-dropdown {
   float: right;
-  position: relative; }
+  position: relative;
+  display: none; }
   .nav-region-dropdown .nav-region-dropdown__cta {
     cursor: pointer;
     font-size: 14px;
