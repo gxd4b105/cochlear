@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-class OnScreenNav__Item extends React.Component {
+class GlobalHeader__Nav__Item extends React.Component {
     render() {
 
         return (
@@ -36,10 +36,10 @@ class OnScreenNav__Item extends React.Component {
         );
     }
 }
-OnScreenNav__Item.defaultProps = {
+GlobalHeader__Nav__Item.defaultProps = {
     title: "On Screen Nav",
     path: "#",
     additionalClass: ''
 }
 
-export default OnScreenNav__Item;
+export default GlobalHeader__Nav__Item;

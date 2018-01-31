@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 66);
+/******/ 	return __webpack_require__(__webpack_require__.s = 68);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -543,15 +543,23 @@ var _actions = __webpack_require__(4);
 
 var actions = _interopRequireWildcard(_actions);
 
-var _OnScreeNav = __webpack_require__(44);
+var _OnScreeNav = __webpack_require__(46);
 
 var _OnScreeNav2 = _interopRequireDefault(_OnScreeNav);
 
-var _OnScreenNav__Item = __webpack_require__(45);
+var _OnScreenNav__Item = __webpack_require__(47);
 
 var _OnScreenNav__Item2 = _interopRequireDefault(_OnScreenNav__Item);
 
-var _RegionLanguageSelect = __webpack_require__(46);
+var _GlobalHeader__Nav = __webpack_require__(44);
+
+var _GlobalHeader__Nav2 = _interopRequireDefault(_GlobalHeader__Nav);
+
+var _GlobalHeader__Nav__Item = __webpack_require__(45);
+
+var _GlobalHeader__Nav__Item2 = _interopRequireDefault(_GlobalHeader__Nav__Item);
+
+var _RegionLanguageSelect = __webpack_require__(48);
 
 var _RegionLanguageSelect2 = _interopRequireDefault(_RegionLanguageSelect);
 
@@ -566,10 +574,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(87);
-    // require("../../styles/fonts.scss");
+    __webpack_require__(83);
+    //require("../../styles/fonts.scss");
     //require("../../styles/mixins.scss");
-    __webpack_require__(88);
+    __webpack_require__(84);
     //require("./GlobalHeader.scss");
 }
 
@@ -617,6 +625,11 @@ var Header = function (_Component) {
                                 'Toggle navigation'
                             )
                         ),
+                        _react2.default.createElement(
+                            'a',
+                            { href: '#', 'class': 'icon-button login' },
+                            'Login'
+                        ),
                         _react2.default.createElement(_RegionLanguageSelect2.default, { cta: 'Select a region and language',
                             formAction: '/intl/home',
                             submitText: 'Change' }),
@@ -629,14 +642,32 @@ var Header = function (_Component) {
                                 _react2.default.createElement('img', { src: this.props.logoPath, alt: this.props.title })
                             )
                         ),
-                        _react2.default.createElement('h1', null),
                         _react2.default.createElement(
-                            _OnScreeNav2.default,
-                            { additionalClass: 'nav-onscreen__global-header' },
-                            _react2.default.createElement(_OnScreenNav__Item2.default, { title: 'Home',
-                                subtitle: 'Home',
-                                path: '/intl/home' })
+                            _GlobalHeader__Nav2.default,
+                            { additionalClass: 'nav-global__global-header' },
+                            _react2.default.createElement(_GlobalHeader__Nav__Item2.default, { title: 'Contact Us',
+                                path: '/intl/contact-us' }),
+                            _react2.default.createElement(_GlobalHeader__Nav__Item2.default, { title: 'Find a clinic',
+                                path: '/intl/find-a-clinic' }),
+                            _react2.default.createElement(_GlobalHeader__Nav__Item2.default, { title: 'Careers',
+                                path: '/intl/careers' }),
+                            _react2.default.createElement(_GlobalHeader__Nav__Item2.default, { title: 'About Us',
+                                path: '/intl/about-us' })
                         )
+                    ),
+                    _react2.default.createElement(
+                        _OnScreeNav2.default,
+                        { additionalClass: 'nav-onscreen__main-header' },
+                        _react2.default.createElement(_OnScreenNav__Item2.default, { title: 'Hearing Loss',
+                            path: '/intl/hearing-loss' }),
+                        _react2.default.createElement(_OnScreenNav__Item2.default, { title: 'Treating hearing loss',
+                            path: '/intl/treating-hearing-loss' }),
+                        _react2.default.createElement(_OnScreenNav__Item2.default, { title: 'Life with a hearing implant',
+                            path: '/intl/life-with-a-hearing-implant' }),
+                        _react2.default.createElement(_OnScreenNav__Item2.default, { title: 'Products & Solutions',
+                            path: '/intl/products-and-solutions' }),
+                        _react2.default.createElement(_OnScreenNav__Item2.default, { title: 'Community & resources',
+                            path: '/intl/community-and-resources' })
                     )
                 )
             );
@@ -713,33 +744,37 @@ var HeaderLandingBanner = function (_React$Component) {
     }
 
     _createClass(HeaderLandingBanner, [{
-        key: 'render',
+        key: "render",
         value: function render() {
 
             return _react2.default.createElement(
-                'header',
-                { className: 'landing-banner ' + this.props.additionalClass },
+                "header",
+                { className: "landing-banner " + this.props.additionalClass },
                 _react2.default.createElement(
-                    'div',
-                    { className: 'l-padding' },
+                    "div",
+                    { className: "l-padding" },
                     _react2.default.createElement(
-                        'div',
-                        { className: 'content' },
+                        "div",
+                        { className: "content" },
                         _react2.default.createElement(
-                            'h1',
-                            null,
-                            this.props.title
-                        ),
-                        _react2.default.createElement(
-                            'p',
-                            null,
-                            this.props.description
+                            "span",
+                            { className: "content-grouper" },
+                            _react2.default.createElement(
+                                "h1",
+                                null,
+                                this.props.title
+                            ),
+                            _react2.default.createElement(
+                                "p",
+                                null,
+                                this.props.description
+                            )
                         )
                     ),
                     _react2.default.createElement(
-                        'div',
-                        { className: 'image' },
-                        _react2.default.createElement('img', { className: 'img', src: '' + this.props.image, alt: this.props.imageAlt })
+                        "div",
+                        { className: "image" },
+                        _react2.default.createElement("img", { className: "img", src: "" + this.props.image, alt: this.props.imageAlt })
                     )
                 )
             );
@@ -803,48 +838,44 @@ var BreadCrumbs = function (_React$Component) {
                 "div",
                 { className: "breadcrumbs" },
                 _react2.default.createElement(
-                    "div",
-                    { className: "l-padding" },
+                    "a",
+                    { href: "/demo/templates/modules/index.html", "class": "back-to-parent" },
+                    "Back to Home"
+                ),
+                _react2.default.createElement(
+                    "ul",
+                    { itemprop: "breadcrumb" },
                     _react2.default.createElement(
-                        "a",
-                        { href: "/demo/templates/modules/index.html", "class": "back-to-parent" },
-                        "Back to Home"
+                        "li",
+                        { "class": "home" },
+                        _react2.default.createElement(
+                            "a",
+                            { href: "/", rel: "home" },
+                            "Home"
+                        )
                     ),
                     _react2.default.createElement(
-                        "ul",
-                        { itemprop: "breadcrumb" },
+                        "li",
+                        null,
                         _react2.default.createElement(
-                            "li",
-                            { "class": "home" },
-                            _react2.default.createElement(
-                                "a",
-                                { href: "/", rel: "home" },
-                                "Home"
-                            )
-                        ),
-                        _react2.default.createElement(
-                            "li",
-                            null,
-                            _react2.default.createElement(
-                                "a",
-                                { href: "/demo/templates/index.html" },
-                                "Hearing Loss"
-                            )
-                        ),
-                        _react2.default.createElement(
-                            "li",
-                            null,
-                            _react2.default.createElement(
-                                "a",
-                                { href: "/demo/templates/modules/index.html" },
-                                "Untreated hearing Loss for children"
-                            )
-                        ),
-                        _react2.default.createElement(
-                            "li",
-                            { "class": "is-active" },
-                            "CM02 Content Tile"
+                            "a",
+                            { href: "/demo/templates/index.html" },
+                            "Hearing Loss"
                         )
+                    ),
+                    _react2.default.createElement(
+                        "li",
+                        null,
+                        _react2.default.createElement(
+                            "a",
+                            { href: "/demo/templates/modules/index.html" },
+                            "Untreated hearing Loss for children"
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "li",
+                        { "class": "is-active" },
+                        "CM02 Content Tile"
                     )
                 )
             );
@@ -1097,6 +1128,12 @@ exports.default = ContentHeader;
 /* 12 */
 /***/ (function(module, exports) {
 
+module.exports = require("react-router-dom");
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports) {
+
 /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
@@ -1176,7 +1213,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -1200,7 +1237,7 @@ var stylesInDom = {},
 	singletonElement = null,
 	singletonCounter = 0,
 	styleElementsInsertedAtTop = [],
-	fixUrls = __webpack_require__(79);
+	fixUrls = __webpack_require__(78);
 
 module.exports = function(list, options) {
 	if(typeof DEBUG !== "undefined" && DEBUG) {
@@ -1453,12 +1490,6 @@ function updateLink(linkElement, options, obj) {
 
 
 /***/ }),
-/* 14 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-router-dom");
-
-/***/ }),
 /* 15 */
 /***/ (function(module, exports) {
 
@@ -1487,79 +1518,79 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Home = __webpack_require__(52);
+var _Home = __webpack_require__(54);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _Homesecond = __webpack_require__(54);
+var _Homesecond = __webpack_require__(56);
 
 var _Homesecond2 = _interopRequireDefault(_Homesecond);
 
-var _Homethird = __webpack_require__(55);
+var _Homethird = __webpack_require__(57);
 
 var _Homethird2 = _interopRequireDefault(_Homethird);
 
-var _user = __webpack_require__(69);
+var _user = __webpack_require__(71);
 
 var _user2 = _interopRequireDefault(_user);
 
-var _HomePage = __webpack_require__(53);
+var _HomePage = __webpack_require__(55);
 
 var _HomePage2 = _interopRequireDefault(_HomePage);
 
-var _HearingAidVsImplantableSolutions = __webpack_require__(50);
+var _HearingAidVsImplantableSolutions = __webpack_require__(52);
 
 var _HearingAidVsImplantableSolutions2 = _interopRequireDefault(_HearingAidVsImplantableSolutions);
 
-var _FindAClinic = __webpack_require__(49);
+var _FindAClinic = __webpack_require__(51);
 
 var _FindAClinic2 = _interopRequireDefault(_FindAClinic);
 
-var _StatsAndProofs = __webpack_require__(59);
+var _StatsAndProofs = __webpack_require__(61);
 
 var _StatsAndProofs2 = _interopRequireDefault(_StatsAndProofs);
 
-var _TreatmentOptions = __webpack_require__(61);
+var _TreatmentOptions = __webpack_require__(63);
 
 var _TreatmentOptions2 = _interopRequireDefault(_TreatmentOptions);
 
-var _TypesOfTreatment = __webpack_require__(62);
+var _TypesOfTreatment = __webpack_require__(64);
 
 var _TypesOfTreatment2 = _interopRequireDefault(_TypesOfTreatment);
 
-var _TreatingHearingLoss = __webpack_require__(60);
+var _TreatingHearingLoss = __webpack_require__(62);
 
 var _TreatingHearingLoss2 = _interopRequireDefault(_TreatingHearingLoss);
 
-var _HearingLoss = __webpack_require__(51);
+var _HearingLoss = __webpack_require__(53);
 
 var _HearingLoss2 = _interopRequireDefault(_HearingLoss);
 
-var _ImplantableSolutions = __webpack_require__(57);
+var _ImplantableSolutions = __webpack_require__(59);
 
 var _ImplantableSolutions2 = _interopRequireDefault(_ImplantableSolutions);
 
-var _CostsAndAffordability = __webpack_require__(48);
+var _CostsAndAffordability = __webpack_require__(50);
 
 var _CostsAndAffordability2 = _interopRequireDefault(_CostsAndAffordability);
 
-var _ImpactOfHearingLoss = __webpack_require__(56);
+var _ImpactOfHearingLoss = __webpack_require__(58);
 
 var _ImpactOfHearingLoss2 = _interopRequireDefault(_ImpactOfHearingLoss);
 
-var _UntreatedHearingLossAdult = __webpack_require__(63);
+var _UntreatedHearingLossAdult = __webpack_require__(65);
 
 var _UntreatedHearingLossAdult2 = _interopRequireDefault(_UntreatedHearingLossAdult);
 
-var _UntreatedHearingLossChildren = __webpack_require__(64);
+var _UntreatedHearingLossChildren = __webpack_require__(66);
 
 var _UntreatedHearingLossChildren2 = _interopRequireDefault(_UntreatedHearingLossChildren);
 
-var _PlanningYourTest = __webpack_require__(58);
+var _PlanningYourTest = __webpack_require__(60);
 
 var _PlanningYourTest2 = _interopRequireDefault(_PlanningYourTest);
 
-var _Main = __webpack_require__(65);
+var _Main = __webpack_require__(67);
 
 var _Main2 = _interopRequireDefault(_Main);
 
@@ -2140,9 +2171,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(14);
+var _reactRouterDom = __webpack_require__(12);
 
-var _redirectWStatus = __webpack_require__(67);
+var _redirectWStatus = __webpack_require__(69);
 
 var _redirectWStatus2 = _interopRequireDefault(_redirectWStatus);
 
@@ -2274,7 +2305,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(1);
 
-var _reducer = __webpack_require__(68);
+var _reducer = __webpack_require__(70);
 
 var _reducer2 = _interopRequireDefault(_reducer);
 
@@ -2323,7 +2354,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(14);
+var _reactRouterDom = __webpack_require__(12);
 
 var _reactRedux = __webpack_require__(2);
 
@@ -2409,7 +2440,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(14);
+var _reactRouterDom = __webpack_require__(12);
 
 var _reactRedux = __webpack_require__(2);
 
@@ -2491,7 +2522,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(14);
+var _reactRouterDom = __webpack_require__(12);
 
 var _reactRedux = __webpack_require__(2);
 
@@ -2580,7 +2611,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(80);
+    __webpack_require__(79);
 }
 
 var BrochureDownload = function (_React$Component) {
@@ -3167,7 +3198,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(81);
+    __webpack_require__(80);
 }
 
 var Cm02ContentTileThree = function (_React$Component) {
@@ -3329,7 +3360,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(82);
+    __webpack_require__(81);
 }
 
 var Cm18Accordian = function (_React$Component) {
@@ -3719,9 +3750,150 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-if (process.env.BROWSER) {
-    __webpack_require__(83);
-}
+var GlobalHeader__Nav = function (_React$Component) {
+    _inherits(GlobalHeader__Nav, _React$Component);
+
+    function GlobalHeader__Nav() {
+        _classCallCheck(this, GlobalHeader__Nav);
+
+        return _possibleConstructorReturn(this, (GlobalHeader__Nav.__proto__ || Object.getPrototypeOf(GlobalHeader__Nav)).apply(this, arguments));
+    }
+
+    _createClass(GlobalHeader__Nav, [{
+        key: "render",
+        value: function render() {
+
+            var children = this.props.children;
+
+            {/*
+                       <%
+                       vars = {
+                       :currentPagePath => '/' + current_page.path,
+                       :hasLogin => false
+                   }.deep_merge!(locals)
+                        def get_menu_classes(lvl, path, checkChildren=false)
+                       classes = []
+                        if lvl.path == path
+                           classes.push('is-active')
+                end
+                if !lvl.pages.nil?
+                if checkChildren
+                classes.push('has-children')
+                end
+                if dd_nav_isChildActive(path, lvl.pages)
+                classes.push('is-active-parent')
+                end
+                end
+                return classes
+                end
+                %> */}
+
+            return _react2.default.createElement(
+                "nav",
+                { className: "nav-global-header " + this.props.additionalClass },
+                _react2.default.createElement(
+                    "ul",
+                    { className: "nav cf" },
+                    _react2.default.Children.map(children, function (child) {
+                        return child;
+                    })
+                )
+            );
+        }
+    }]);
+
+    return GlobalHeader__Nav;
+}(_react2.default.Component);
+
+exports.default = GlobalHeader__Nav;
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(12);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var GlobalHeader__Nav__Item = function (_React$Component) {
+    _inherits(GlobalHeader__Nav__Item, _React$Component);
+
+    function GlobalHeader__Nav__Item() {
+        _classCallCheck(this, GlobalHeader__Nav__Item);
+
+        return _possibleConstructorReturn(this, (GlobalHeader__Nav__Item.__proto__ || Object.getPrototypeOf(GlobalHeader__Nav__Item)).apply(this, arguments));
+    }
+
+    _createClass(GlobalHeader__Nav__Item, [{
+        key: 'render',
+        value: function render() {
+
+            return _react2.default.createElement(
+                'li',
+                { className: 'nav-item ' + this.props.additionalClass },
+                _react2.default.createElement(
+                    _reactRouterDom.NavLink,
+                    { className: 'nav-item-title', to: '' + this.props.path },
+                    this.props.title
+                )
+            );
+        }
+    }]);
+
+    return GlobalHeader__Nav__Item;
+}(_react2.default.Component);
+
+GlobalHeader__Nav__Item.defaultProps = {
+    title: "On Screen Nav",
+    path: "#",
+    additionalClass: ''
+};
+
+exports.default = GlobalHeader__Nav__Item;
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var OnScreeNav = function (_React$Component) {
     _inherits(OnScreeNav, _React$Component);
@@ -3765,11 +3937,15 @@ var OnScreeNav = function (_React$Component) {
                 "nav",
                 { className: "nav-onscreen js-onscreen " + this.props.additionalClass },
                 _react2.default.createElement(
-                    "ul",
-                    { className: "nav cf" },
-                    _react2.default.Children.map(children, function (child) {
-                        return child;
-                    })
+                    "div",
+                    { className: "l-padding" },
+                    _react2.default.createElement(
+                        "ul",
+                        { className: "nav cf" },
+                        _react2.default.Children.map(children, function (child) {
+                            return child;
+                        })
+                    )
                 )
             );
         }
@@ -3781,7 +3957,7 @@ var OnScreeNav = function (_React$Component) {
 exports.default = OnScreeNav;
 
 /***/ }),
-/* 45 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3797,7 +3973,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(14);
+var _reactRouterDom = __webpack_require__(12);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3806,10 +3982,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-if (process.env.BROWSER) {
-    __webpack_require__(84);
-}
 
 var OnScreenNav__Item = function (_React$Component) {
     _inherits(OnScreenNav__Item, _React$Component);
@@ -3830,13 +4002,7 @@ var OnScreenNav__Item = function (_React$Component) {
                 _react2.default.createElement(
                     _reactRouterDom.NavLink,
                     { className: 'nav-item-title', to: '' + this.props.path },
-                    this.props.title,
-                    '  ',
-                    _react2.default.createElement(
-                        'span',
-                        { className: 'sub-text' },
-                        this.props.subtitle
-                    )
+                    this.props.title
                 )
             );
         }
@@ -3847,7 +4013,6 @@ var OnScreenNav__Item = function (_React$Component) {
 
 OnScreenNav__Item.defaultProps = {
     title: "On Screen Nav",
-    subtitle: '',
     path: "#",
     additionalClass: ''
 };
@@ -3855,7 +4020,7 @@ OnScreenNav__Item.defaultProps = {
 exports.default = OnScreenNav__Item;
 
 /***/ }),
-/* 46 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3882,10 +4047,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-if (process.env.BROWSER) {
-    __webpack_require__(85);
-}
 
 var RegionLanguageSelect = function (_React$Component) {
     _inherits(RegionLanguageSelect, _React$Component);
@@ -3975,11 +4136,9 @@ var RegionLanguageSelect = function (_React$Component) {
                 _react2.default.createElement(
                     'h4',
                     { onClick: showHide, id: 'nav-region-dropdown__cta', className: 'nav-region-dropdown__cta' },
-                    'Select: (',
                     this.state.selectRegion,
                     '/',
-                    this.state.selectLanguage,
-                    ')'
+                    this.state.selectLanguage
                 ),
                 _react2.default.createElement(
                     'form',
@@ -4599,7 +4758,7 @@ var RegionLanguageSelect = function (_React$Component) {
 exports.default = RegionLanguageSelect;
 
 /***/ }),
-/* 47 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4646,7 +4805,7 @@ var Header1 = function (_React$Component) {
 exports.default = Header1;
 
 /***/ }),
-/* 48 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4800,7 +4959,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(CostsAndAffordability);
 
 /***/ }),
-/* 49 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4997,7 +5156,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(FindAClinic);
 
 /***/ }),
-/* 50 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5255,7 +5414,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(HearingAidVsCochlearImplant);
 
 /***/ }),
-/* 51 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5427,7 +5586,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(HearingLoss);
 
 /***/ }),
-/* 52 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5478,7 +5637,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(86);
+    __webpack_require__(82);
     //import style from './Home.scss';
 }
 
@@ -5531,7 +5690,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Home);
 
 /***/ }),
-/* 53 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5649,7 +5808,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(HomePage);
 
 /***/ }),
-/* 54 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5748,7 +5907,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Homesecond);
 
 /***/ }),
-/* 55 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5847,7 +6006,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Homethird);
 
 /***/ }),
-/* 56 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6030,7 +6189,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(ImpactOfHearingLoss);
 
 /***/ }),
-/* 57 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6180,7 +6339,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(ImplantableSolutions);
 
 /***/ }),
-/* 58 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6321,7 +6480,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(PlanningYourTest);
 
 /***/ }),
-/* 59 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6454,7 +6613,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(StatsAndProofs);
 
 /***/ }),
-/* 60 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6606,7 +6765,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TreatingHearingLoss);
 
 /***/ }),
-/* 61 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6798,7 +6957,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TreatmentOptions);
 
 /***/ }),
-/* 62 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6981,7 +7140,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TypesOfTreatment);
 
 /***/ }),
-/* 63 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7107,26 +7266,13 @@ var UntreatedHearingLossAdult = function (_Component) {
                             { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
                             _react2.default.createElement(_Cm28SocialShare2.default, null),
                             _react2.default.createElement(_Cm01RichText2.default, { body: getData['body-copy'] }),
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'sl' },
-                                _react2.default.createElement(
-                                    'div',
-                                    { className: 'sl-list has-2-items' },
-                                    _react2.default.createElement(
-                                        'div',
-                                        { className: 'sl-item' },
-                                        _react2.default.createElement(_Cm02ContentTile2.default, { title: getData['cm02-title-01'].title,
-                                            description: getData['cm02-description-01'],
-                                            path: getData['cm02-title-01'].path,
-                                            image: 'https://auth.cochlear.com' + getData['cm02-image-01'].src,
-                                            embed: getData['cm02-video-embed-01'],
-                                            imagePath: getData['cm02-title-01'].path,
-                                            additionalClass: 'is-small is-cta' })
-                                    ),
-                                    _react2.default.createElement('div', { className: 'sl-item' })
-                                )
-                            )
+                            _react2.default.createElement(_Cm02ContentTile2.default, { title: getData['cm02-title-01'].title,
+                                description: getData['cm02-description-01'],
+                                path: getData['cm02-title-01'].path,
+                                image: 'https://auth.cochlear.com' + getData['cm02-image-01'].src,
+                                embed: getData['cm02-video-embed-01'],
+                                imagePath: getData['cm02-title-01'].path,
+                                additionalClass: 'is-large is-cta' })
                         )
                     )
                 ),
@@ -7155,7 +7301,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(UntreatedHearingLossAdult);
 
 /***/ }),
-/* 64 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7333,7 +7479,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(UntreatedHearingLossChildren);
 
 /***/ }),
-/* 65 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7385,7 +7531,7 @@ var _Cm01RichText = __webpack_require__(9);
 
 var _Cm01RichText2 = _interopRequireDefault(_Cm01RichText);
 
-var _header = __webpack_require__(47);
+var _header = __webpack_require__(49);
 
 var _header2 = _interopRequireDefault(_header);
 
@@ -7495,7 +7641,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Main);
 
 /***/ }),
-/* 66 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7630,7 +7776,7 @@ function renderFullPage(html, preloadedState, helmet) {
 }
 
 /***/ }),
-/* 67 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7644,7 +7790,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(14);
+var _reactRouterDom = __webpack_require__(12);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -7665,7 +7811,7 @@ var RedirectWithStatus = function RedirectWithStatus(_ref) {
 exports.default = RedirectWithStatus;
 
 /***/ }),
-/* 68 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7764,7 +7910,7 @@ function userReducer() {
 }
 
 /***/ }),
-/* 69 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7864,10 +8010,10 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(User);
 
 /***/ }),
-/* 70 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)(false);
+exports = module.exports = __webpack_require__(13)(false);
 // imports
 
 
@@ -7878,10 +8024,10 @@ exports.push([module.i, ".brochure-download .delivery-common {\n  display: none;
 
 
 /***/ }),
-/* 71 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)(false);
+exports = module.exports = __webpack_require__(13)(false);
 // imports
 
 
@@ -7892,10 +8038,10 @@ exports.push([module.i, ".sl__testimonials .cta__view-all {\n  width: 100%;\n  m
 
 
 /***/ }),
-/* 72 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)(false);
+exports = module.exports = __webpack_require__(13)(false);
 // imports
 
 
@@ -7906,52 +8052,10 @@ exports.push([module.i, "/* Style the buttons that are used to open and close th
 
 
 /***/ }),
-/* 73 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(12)(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
-/* 74 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(12)(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
 /* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)(false);
-// imports
-
-
-// module
-exports.push([module.i, ".nav-region-dropdown {\n  float: right;\n  position: relative;\n  display: none; }\n  .nav-region-dropdown .nav-region-dropdown__cta {\n    cursor: pointer;\n    font-size: 14px;\n    text-transform: uppercase;\n    text-decoration: underline; }\n    .nav-region-dropdown .nav-region-dropdown__cta:hover {\n      color: #81BC00; }\n  .nav-region-dropdown .nav-region-dropdown__form {\n    display: none;\n    position: absolute;\n    background-color: #ffffff;\n    z-index: 901; }\n  .nav-region-dropdown .nav-region-dropdown__label {\n    display: block; }\n    .nav-region-dropdown .nav-region-dropdown__label span {\n      width: 150px;\n      display: inline-block; }\n  .nav-region-dropdown .nav-region-dropdown__select {\n    width: 200px;\n    padding: 5px;\n    border: 1px solid #efefef; }\n  .nav-region-dropdown .nav-region-dropdown__submit {\n    display: block;\n    width: 100px;\n    text-align: center;\n    background-color: #000000;\n    color: #ffffff;\n    margin-top: 10px; }\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 76 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(12)(false);
+exports = module.exports = __webpack_require__(13)(false);
 // imports
 
 
@@ -7962,10 +8066,10 @@ exports.push([module.i, "li .details {\n  display: none; }\n  li .details.show {
 
 
 /***/ }),
-/* 77 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)(false);
+exports = module.exports = __webpack_require__(13)(false);
 // imports
 
 
@@ -7976,21 +8080,21 @@ exports.push([module.i, "/*\n * Default stylesheet\n * This stylesheet is includ
 
 
 /***/ }),
-/* 78 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)(false);
+exports = module.exports = __webpack_require__(13)(false);
 // imports
 
 
 // module
-exports.push([module.i, "/* ----------- COLOURS ----------- */\n/* ----------- FONTS ----------- */\nbody {\n  font-family: \"BlissPro-Regular\", \"Trebuchet MS\", \"Gill Sans\", \"Helvetica Neue\", Arial, sans-serif; }\n\nh1, h2, h3, h4, h5 {\n  font-family: \"BlissPro-Regular\", \"Trebuchet MS\", \"Gill Sans\", \"Helvetica Neue\", Arial, sans-serif;\n  font-weight: 600;\n  color: #56565a; }\n  h1 a, h2 a, h3 a, h4 a, h5 a {\n    color: #56565a; }\n\nh1 {\n  font-size: 42px; }\n\nh2 {\n  font-size: 36px;\n  line-height: 40px; }\n\nh3 {\n  font-size: 30px;\n  line-height: 36px; }\n\nh4 {\n  font-size: 22px;\n  line-height: 24px; }\n\np {\n  font-family: \"BlissPro-Regular\", \"Trebuchet MS\", \"Gill Sans\", \"Helvetica Neue\", Arial, sans-serif;\n  font-size: 18px;\n  line-height: 28px;\n  color: #56565a; }\n\na:focus, a:hover {\n  color: #3f1482; }\n\n/* ----------- WIDGETS ----------- */\n.video-embed {\n  position: relative;\n  padding-bottom: 56.25%;\n  /* 16:9 */\n  padding-top: 25px;\n  height: 0; }\n\n.video-embed iframe {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n/* ----------- COMPONENTS ----------- */\n.global-header {\n  border-top: 5px solid #fdc82f; }\n  .global-header .logo a {\n    display: block; }\n  .global-header .logo img {\n    display: none; }\n\n.landing-banner {\n  background-color: #efefef;\n  margin-bottom: 0; }\n  .landing-banner .l-padding {\n    padding: 0; }\n  .landing-banner .content {\n    padding: 20px 30px 20px; }\n  .landing-banner .image {\n    position: relative;\n    line-height: 0; }\n    .landing-banner .image .img {\n      padding: 0;\n      position: relative;\n      width: 100%; }\n  .landing-banner p {\n    font-family: \"BlissPro-Light\", \"Trebuchet MS\", \"Gill Sans\", \"Helvetica Neue\", Arial, sans-serif;\n    font-size: 24px;\n    line-height: 34px; }\n\n.cm-rich-text .key-points {\n  border-top: 5px solid #fdc82f;\n  border-bottom: 2px solid #cccccc;\n  margin: 40px 0;\n  padding: 20px 0; }\n  .cm-rich-text .key-points h4 {\n    font-size: 22px;\n    line-height: 28px; }\n  .cm-rich-text .key-points p {\n    font-size: 18px;\n    line-height: 28px; }\n  .cm-rich-text .key-points li {\n    padding-left: 25px; }\n\n.cm-rich-text .breakout {\n  border-bottom: 2px solid #cccccc;\n  margin: 30px 0 20px 0;\n  padding-bottom: 30px; }\n  .cm-rich-text .breakout h3 {\n    border-bottom: 5px solid #fdc82f;\n    padding-bottom: 20px;\n    margin-bottom: 20px; }\n\n.cm-content-tile {\n  cursor: pointer;\n  border: 1px solid #efefef;\n  position: relative;\n  background-color: #fff; }\n  .cm-content-tile .content {\n    padding: 0;\n    margin: 0; }\n    .cm-content-tile .content h3, .cm-content-tile .content p {\n      margin: 0;\n      border-left: 5px solid transparent; }\n      .cm-content-tile .content h3 a, .cm-content-tile .content p a {\n        text-decoration: none; }\n    .cm-content-tile .content h3 {\n      padding: 30px 30px 20px 30px; }\n      .cm-content-tile .content h3 a {\n        font-weight: 600; }\n    .cm-content-tile .content p {\n      padding: 0 30px 30px 30px; }\n    .cm-content-tile .content .cta {\n      display: block;\n      border: 0;\n      border-top: 1px solid #efefef;\n      border-left: 5px solid #fdc82f;\n      color: #3f1482;\n      font-size: 18px;\n      font-weight: bold;\n      text-align: left;\n      padding-left: 30px;\n      margin-top: 0;\n      line-height: 30px; }\n      .cm-content-tile .content .cta:after {\n        content: '>';\n        font-size: 24px;\n        padding-left: 10px;\n        position: relative;\n        top: 2px; }\n      .cm-content-tile .content .cta:hover {\n        background-color: transparent; }\n  .cm-content-tile .image img {\n    opacity: 1;\n    -webkit-transition: -webkit-transform 0.35s;\n    transition: transform 0.35s;\n    -webkit-transform: perspective(1000px) translate3d(0, 0, 0);\n    transform: perspective(1000px) translate3d(0, 0, 0); }\n  .cm-content-tile:before {\n    box-shadow: 0 3px 30px rgba(0, 0, 0, 0.8);\n    opacity: 0;\n    position: absolute;\n    top: 0;\n    left: 0;\n    z-index: -1;\n    width: 100%;\n    height: 100%;\n    background: #000;\n    content: '';\n    -webkit-transition: opacity 0.35s;\n    transition: opacity 0.35s; }\n  .cm-content-tile:hover {\n    border: 0; }\n    .cm-content-tile:hover:before {\n      opacity: 1; }\n    .cm-content-tile:hover .content .cta:after {\n      padding-left: 15px;\n      transition: all 1s ease-in-out;\n      -webkit-transition: all 0.2s ease-in-out;\n      /** Chrome & Safari **/\n      -moz-transition: all 0.2s ease-in-out;\n      /** Firefox **/\n      -o-transition: all 0.2s ease-in-out;\n      /** Opera **/ }\n    .cm-content-tile:hover .image img {\n      -webkit-transform: perspective(1000px) translate3d(0, 0, 21px);\n      transform: perspective(1000px) translate3d(0, 0, 21px); }\n\n.cm-image-block-link:hover img {\n  -webkit-filter: grayscale(0);\n  filter: grayscale(0); }\n\n.cm-image-block-link:after {\n  background-color: transparent; }\n\n.cm-image-block-link .image:after {\n  background-color: transparent; }\n\n.is-cta {\n  border: 0;\n  overflow: hidden; }\n  .is-cta .image {\n    height: 350px;\n    position: relative;\n    left: 30px;\n    display: block; }\n    .is-cta .image img {\n      max-width: none;\n      height: 100%;\n      display: block;\n      width: auto; }\n  .is-cta .content {\n    background-color: #fdc82f;\n    opacity: 0.9;\n    width: 90%;\n    position: absolute;\n    top: 0;\n    left: 0; }\n    .is-cta .content .cta {\n      border: 0;\n      width: 170px;\n      background-color: #ffffff;\n      padding: 10px;\n      margin: 29px;\n      border-radius: 30px;\n      text-align: center; }\n", ""]);
+exports.push([module.i, "/* ----------- COLOURS ----------- */\n/* ----------- LAYOUT ----------- */\n.l-content-column {\n  max-width: 730px;\n  width: 100%;\n  margin: 0 auto; }\n\n/* ----------- FONTS ----------- */\n@font-face {\n  font-family: \"Knockout-30\";\n  src: url(\"/fonts/Knockout-30JuniorWelterwt.eot\");\n  src: url(\"/fonts/Knockout-30JuniorWelterwt.eot?#iefix\") format(\"embedded-opentype\"), url(\"/fonts/Knockout-30JuniorWelterwt.woff2\") format(\"woff2\"), url(\"/fonts/Knockout-30JuniorWelterwt.woff\") format(\"woff\"), url(\"/fonts/Knockout-30JuniorWelterwt.svg#Knockout-30JuniorWelterwt\") format(\"svg\");\n  font-weight: 300;\n  font-style: normal; }\n\n@font-face {\n  font-family: \"BlissPro-Regular\";\n  src: url(\"/fonts/BlissPro-Regular.eot\");\n  src: url(\"/fonts/BlissPro-Regular.eot?#iefix\") format(\"embedded-opentype\"), url(\"/fonts/BlissPro-Regular.woff2\") format(\"woff2\"), url(\"/fonts/BlissPro-Regular.woff\") format(\"woff\"), url(\"/fonts/BlissPro-Regular.svg#BlissPro-Regular\") format(\"svg\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: \"BlissPro-Light\";\n  src: url(\"/fonts/BlissPro-Light.eot\");\n  src: url(\"/fonts/BlissPro-Light.eot?#iefix\") format(\"embedded-opentype\"), url(\"/fonts/BlissPro-Light.woff2\") format(\"woff2\"), url(\"/fonts/BlissPro-Light.woff\") format(\"woff\"), url(\"/fonts/BlissPro-Light.svg#BlissPro-Light\") format(\"svg\");\n  font-weight: 300;\n  font-style: normal; }\n\nbody {\n  font-family: \"BlissPro-Regular\", \"Trebuchet MS\", \"Gill Sans\", \"Helvetica Neue\", Arial, sans-serif; }\n\nh1, h2, h3, h4, h5 {\n  font-family: \"BlissPro-Regular\", \"Trebuchet MS\", \"Gill Sans\", \"Helvetica Neue\", Arial, sans-serif;\n  font-weight: 600;\n  color: #56565a; }\n  h1 a, h2 a, h3 a, h4 a, h5 a {\n    color: #56565a; }\n\nh1 {\n  font-size: 42px; }\n\nh2 {\n  font-size: 36px;\n  line-height: 40px; }\n\nh3 {\n  font-size: 30px;\n  line-height: 36px; }\n\nh4 {\n  font-size: 22px;\n  line-height: 24px; }\n\np {\n  font-family: \"BlissPro-Regular\", \"Trebuchet MS\", \"Gill Sans\", \"Helvetica Neue\", Arial, sans-serif;\n  font-size: 18px;\n  line-height: 28px;\n  color: #56565a; }\n\na:focus, a:hover {\n  color: #3f1482; }\n\n/* ----------- WIDGETS ----------- */\n.video-embed {\n  position: relative;\n  padding-bottom: 56.25%;\n  /* 16:9 */\n  padding-top: 25px;\n  height: 0; }\n\n.video-embed iframe {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n/* ----------- COMPONENTS ----------- */\n.global-header {\n  border-top: 5px solid #fdc82f; }\n  .global-header .logo a {\n    background-image: url(\"/images/logo_mobile.png\");\n    display: block; }\n  .global-header .logo img {\n    display: none; }\n\n@media only screen and (min-width: 64em) {\n  .global-header {\n    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);\n    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);\n    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);\n    padding-top: 20px;\n    padding-bottom: 10px; }\n    .global-header .login {\n      float: right;\n      width: 160px;\n      cursor: pointer;\n      font-size: 16px;\n      font-weight: 300;\n      text-transform: uppercase;\n      border: 1px solid #3f1482;\n      line-height: 44px;\n      border-radius: 40px;\n      text-decoration: none;\n      text-align: center;\n      background-color: #3f1482;\n      color: #ffffff;\n      margin: 25px 0 0 30px; }\n      .global-header .login:hover {\n        color: #ffffff; }\n    .global-header .logo {\n      height: auto;\n      width: 100px;\n      overflow: hidden; }\n      .global-header .logo a {\n        background-image: url(\"/images/logo_desktop.png\"); }\n      .global-header .logo img {\n        display: block; } }\n\n.landing-banner {\n  background-color: #efefef;\n  margin-bottom: 0; }\n  .landing-banner .l-padding {\n    padding: 0; }\n  .landing-banner .content {\n    padding: 20px 30px 20px; }\n  .landing-banner .image {\n    position: relative;\n    line-height: 0; }\n    .landing-banner .image .img {\n      padding: 0;\n      position: relative;\n      width: 100%; }\n  .landing-banner p {\n    font-family: \"BlissPro-Light\", \"Trebuchet MS\", \"Gill Sans\", \"Helvetica Neue\", Arial, sans-serif;\n    font-size: 24px;\n    line-height: 34px; }\n\n@media only screen and (min-width: 64em) {\n  .landing-banner {\n    background-color: transparent; }\n    .landing-banner .content {\n      float: left;\n      width: 650px;\n      max-width: none;\n      background-color: #efefef;\n      height: 410px;\n      padding: 0; }\n      .landing-banner .content .content-grouper {\n        display: block;\n        padding: 40px;\n        margin: 0 90px;\n        border-left: 5px solid #fdc82f; }\n    .landing-banner .image {\n      position: relative;\n      line-height: 0;\n      z-index: 2; }\n      .landing-banner .image .img {\n        width: 640px;\n        position: absolute;\n        right: 0;\n        left: auto; } }\n\n.cm-rich-text .key-points {\n  border-top: 5px solid #fdc82f;\n  border-bottom: 2px solid #cccccc;\n  margin: 40px 0;\n  padding: 20px 0; }\n  .cm-rich-text .key-points h4 {\n    font-size: 22px;\n    line-height: 28px; }\n  .cm-rich-text .key-points p {\n    font-size: 18px;\n    line-height: 28px; }\n  .cm-rich-text .key-points li {\n    padding-left: 25px; }\n\n.cm-rich-text .breakout {\n  border-bottom: 2px solid #cccccc;\n  margin: 30px 0 20px 0;\n  padding-bottom: 30px; }\n  .cm-rich-text .breakout h3 {\n    border-bottom: 5px solid #fdc82f;\n    padding-bottom: 20px;\n    margin-bottom: 20px; }\n\n.cm-content-tile {\n  cursor: pointer;\n  border: 1px solid #efefef;\n  position: relative;\n  background-color: #fff; }\n  .cm-content-tile .content {\n    padding: 0;\n    margin: 0; }\n    .cm-content-tile .content h3, .cm-content-tile .content p {\n      margin: 0;\n      border-left: 5px solid transparent; }\n      .cm-content-tile .content h3 a, .cm-content-tile .content p a {\n        text-decoration: none; }\n    .cm-content-tile .content h3 {\n      padding: 30px 30px 20px 30px; }\n      .cm-content-tile .content h3 a {\n        font-weight: 600; }\n    .cm-content-tile .content p {\n      padding: 0 30px 30px 30px; }\n    .cm-content-tile .content .cta {\n      display: block;\n      border: 0;\n      border-top: 1px solid #efefef;\n      border-left: 5px solid #fdc82f;\n      color: #3f1482;\n      font-size: 18px;\n      font-weight: bold;\n      text-align: left;\n      padding-left: 30px;\n      margin-top: 0;\n      line-height: 30px; }\n      .cm-content-tile .content .cta:after {\n        content: '>';\n        font-size: 24px;\n        padding-left: 10px;\n        position: relative;\n        top: 2px; }\n      .cm-content-tile .content .cta:hover {\n        background-color: transparent; }\n  .cm-content-tile .image img {\n    opacity: 1;\n    -webkit-transition: -webkit-transform 0.35s;\n    transition: transform 0.35s;\n    -webkit-transform: perspective(1000px) translate3d(0, 0, 0);\n    transform: perspective(1000px) translate3d(0, 0, 0); }\n  .cm-content-tile:before {\n    box-shadow: 0 3px 30px rgba(0, 0, 0, 0.8);\n    opacity: 0;\n    position: absolute;\n    top: 0;\n    left: 0;\n    z-index: -1;\n    width: 100%;\n    height: 100%;\n    background: #000;\n    content: '';\n    -webkit-transition: opacity 0.35s;\n    transition: opacity 0.35s; }\n  .cm-content-tile:hover {\n    border: 0; }\n    .cm-content-tile:hover:before {\n      opacity: 1; }\n    .cm-content-tile:hover .content .cta:after {\n      padding-left: 15px;\n      transition: all 1s ease-in-out;\n      -webkit-transition: all 0.2s ease-in-out;\n      /** Chrome & Safari **/\n      -moz-transition: all 0.2s ease-in-out;\n      /** Firefox **/\n      -o-transition: all 0.2s ease-in-out;\n      /** Opera **/ }\n    .cm-content-tile:hover .image img {\n      -webkit-transform: perspective(1000px) translate3d(0, 0, 21px);\n      transform: perspective(1000px) translate3d(0, 0, 21px); }\n\n.cm-image-block-link:hover img, .cm-image-block-link:hover .img {\n  -webkit-filter: grayscale(0);\n  filter: grayscale(0); }\n\n.cm-image-block-link:after {\n  background-color: transparent; }\n\n.cm-image-block-link .image:after {\n  background-color: transparent; }\n\n.is-cta {\n  border: 0;\n  overflow: hidden; }\n  .is-cta .image {\n    height: 350px;\n    position: relative;\n    left: 30px;\n    display: block; }\n    .is-cta .image img {\n      max-width: none;\n      height: 100%;\n      display: block;\n      width: auto;\n      border-radius: 0 0 0 50px; }\n  .is-cta .content {\n    background-color: #fdc82f;\n    opacity: 0.9;\n    width: 90%;\n    position: absolute;\n    top: 0;\n    left: 0; }\n    .is-cta .content .cta {\n      border: 0;\n      width: 170px;\n      background-color: #ffffff;\n      padding: 10px;\n      margin: 29px;\n      border-radius: 30px;\n      text-align: center; }\n      .is-cta .content .cta:hover {\n        background-color: #3f1482;\n        color: #ffffff; }\n  .is-cta:hover .cta {\n    background-color: #3f1482;\n    color: #ffffff; }\n\n@media only screen and (min-width: 64em) {\n  .nav-onscreen__main-header {\n    float: none;\n    clear: both;\n    width: 100%;\n    padding: 20px 0;\n    border-top: 1px solid #ccc;\n    margin-top: 20px; }\n    .nav-onscreen__main-header .nav {\n      display: flex;\n      float: none; }\n    .nav-onscreen__main-header .nav > li {\n      float: none;\n      flex-grow: 1; }\n  .global-header .nav-onscreen {\n    padding-right: 0; } }\n\n@media only screen and (min-width: 77.75em) {\n  .global-header .nav-onscreen {\n    padding-right: 0; } }\n\n@media only screen and (min-width: 64em) {\n  .nav-global-header {\n    float: left;\n    padding-right: 0;\n    padding-left: 75px; }\n    .nav-global-header .nav {\n      padding: 0; }\n    .nav-global-header .nav > li {\n      margin-right: 60px;\n      display: inline-block;\n      list-style-type: none; }\n    .nav-global-header .nav > li .nav-item-title {\n      line-height: 80px;\n      font-size: 16px;\n      font-weight: 600;\n      padding-top: 0;\n      color: #56565a;\n      text-decoration: none; } }\n\n.breadcrumbs {\n  font-size: 16px;\n  max-width: 1052px;\n  width: 100%;\n  margin: 25px auto 0 auto; }\n  .breadcrumbs ul li:before {\n    content: \"/\";\n    left: 5px;\n    top: 0;\n    margin-top: 0; }\n  .breadcrumbs a {\n    color: #3f1482; }\n    .breadcrumbs a:hover {\n      color: inherit; }\n\n.nav-region-dropdown {\n  display: none; }\n\n@media only screen and (min-width: 64em) {\n  .nav-region-dropdown {\n    float: right;\n    position: relative;\n    margin-top: 25px;\n    display: block; }\n    .nav-region-dropdown .nav-region-dropdown__cta {\n      width: 160px;\n      cursor: pointer;\n      font-size: 16px;\n      font-weight: 300;\n      text-transform: uppercase;\n      border: 1px solid #3f1482;\n      line-height: 44px;\n      border-radius: 40px;\n      text-decoration: none;\n      text-align: center;\n      color: #3f1482;\n      margin: 0; }\n      .nav-region-dropdown .nav-region-dropdown__cta:hover {\n        color: #3f1482; }\n    .nav-region-dropdown .nav-region-dropdown__form {\n      display: none;\n      position: absolute;\n      background-color: #ffffff;\n      z-index: 901; }\n    .nav-region-dropdown .nav-region-dropdown__label {\n      display: block; }\n      .nav-region-dropdown .nav-region-dropdown__label span {\n        width: 150px;\n        display: inline-block; }\n    .nav-region-dropdown .nav-region-dropdown__select {\n      width: 200px;\n      padding: 5px;\n      border: 1px solid #efefef; }\n    .nav-region-dropdown .nav-region-dropdown__submit {\n      display: block;\n      width: 100px;\n      text-align: center;\n      background-color: #000000;\n      color: #ffffff;\n      margin-top: 10px; } }\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 79 */
+/* 78 */
 /***/ (function(module, exports) {
 
 
@@ -8059,16 +8163,16 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 80 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(70);
+var content = __webpack_require__(72);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(13)(content, {});
+var update = __webpack_require__(14)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -8085,16 +8189,16 @@ if(false) {
 }
 
 /***/ }),
-/* 81 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(71);
+var content = __webpack_require__(73);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(13)(content, {});
+var update = __webpack_require__(14)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -8111,16 +8215,16 @@ if(false) {
 }
 
 /***/ }),
-/* 82 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(72);
+var content = __webpack_require__(74);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(13)(content, {});
+var update = __webpack_require__(14)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -8137,59 +8241,7 @@ if(false) {
 }
 
 /***/ }),
-/* 83 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(73);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(13)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 84 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(74);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(13)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav__Item.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./OnScreenNav__Item.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 85 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -8198,33 +8250,7 @@ if(false) {
 var content = __webpack_require__(75);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(13)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./RegionLanguageSelect.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./RegionLanguageSelect.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 86 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(76);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(13)(content, {});
+var update = __webpack_require__(14)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -8241,16 +8267,16 @@ if(false) {
 }
 
 /***/ }),
-/* 87 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(77);
+var content = __webpack_require__(76);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(13)(content, {});
+var update = __webpack_require__(14)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -8267,16 +8293,16 @@ if(false) {
 }
 
 /***/ }),
-/* 88 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(78);
+var content = __webpack_require__(77);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(13)(content, {});
+var update = __webpack_require__(14)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {

@@ -22,3 +22,35 @@
     line-height: 34px;
   }
 }
+
+
+@media only screen and (min-width: 64em) {
+  .landing-banner {
+    background-color: transparent;
+    .content {
+      float: left;
+      width: 650px;
+      max-width: none;
+      background-color: $light-grey;
+      height: 410px;
+      padding: 0;
+      .content-grouper {
+        display: block;
+        padding: 40px;
+        margin: 0 90px;
+        border-left: 5px solid $cochlear-yellow;
+      }
+    }
+    .image {
+      position: relative;
+      line-height: 0;
+      z-index: 2;
+      .img {
+        width: 640px;
+        position: absolute;
+        right: 0;
+        left: auto;
+      }
+    }
+  }
+}

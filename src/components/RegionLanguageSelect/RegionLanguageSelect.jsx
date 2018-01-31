@@ -1,10 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 
-if (process.env.BROWSER) {
-    require("./RegionLanguageSelect.scss");
-}
-
 class RegionLanguageSelect extends React.Component {
 
     constructor(props) {
@@ -79,7 +75,7 @@ class RegionLanguageSelect extends React.Component {
 
         return (
             <nav className={`nav-region-dropdown ${this.props.additionalClass}`}>
-                <h4 onClick={showHide} id="nav-region-dropdown__cta"  className="nav-region-dropdown__cta">Select: ({this.state.selectRegion}/{this.state.selectLanguage})</h4>
+                <h4 onClick={showHide} id="nav-region-dropdown__cta"  className="nav-region-dropdown__cta">{this.state.selectRegion}/{this.state.selectLanguage}</h4>
                 <form onSubmit={this.handleSubmit} id="nav-region-dropdown__form" className="nav-region-dropdown__form">
                     <label className="nav-region-dropdown__label" htmlFor="nav-region-dropdown__region">
                         <span>Select a region:</span>

@@ -1,0 +1,28 @@
+@media only screen and (min-width: 64em) {
+  .nav-global-header {
+    float: left;
+    padding-right: 0;
+    padding-left: 75px;
+
+    .nav {
+      padding: 0;
+    }
+
+    .nav > li  {
+      margin-right: 60px;
+      display: inline-block;
+      list-style-type: none;
+    }
+
+    .nav > li .nav-item-title {
+      line-height: 80px;
+      font-size: 16px;
+      font-weight: 600;
+      padding-top: 0;
+      color: $cool-grey;
+      text-decoration: none;
+    }
+
+  }
+
+}

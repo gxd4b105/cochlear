@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-class OnScreeNav extends React.Component {
+class GlobalHeader__Nav extends React.Component {
     render() {
 
 
@@ -36,20 +36,18 @@ class OnScreeNav extends React.Component {
 %> */}
 
         return (
-            <nav className={`nav-onscreen js-onscreen ${this.props.additionalClass}`}>
-                <div className="l-padding">
-                    <ul className="nav cf">
-                        {/*
-                        <% data.nav.main.each_with_index do |lvl1, lvl1Index| %>
-                        <%
-                            lvl1Class = get_menu_classes(lvl1, vars[:currentPagePath])
-                        %>
-                        */}
-                        {React.Children.map(children, (child) => {
-                            return  child
-                        })}
-                    </ul>
-                </div>
+            <nav className={`nav-global-header ${this.props.additionalClass}`}>
+                <ul className="nav cf">
+                    {/*
+                    <% data.nav.main.each_with_index do |lvl1, lvl1Index| %>
+                    <%
+                        lvl1Class = get_menu_classes(lvl1, vars[:currentPagePath])
+                    %>
+                    */}
+                    {React.Children.map(children, (child) => {
+                        return  child
+                    })}
+                </ul>
                 {/* <% if vars[:hasLogin] == true %>
                     <a href="#" className="icon-button login">Login</a>
                 <% end %> */}
@@ -58,5 +56,5 @@ class OnScreeNav extends React.Component {
     }
 }
 
-export default OnScreeNav;
+export default GlobalHeader__Nav;
 

@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,4BAA6B;EAC3B,KAAK,EAAE,IAAI",
+"sources": ["OnScreenNav.scss"],
 "names": [],
 "file": "OnScreenNav.css"
 }

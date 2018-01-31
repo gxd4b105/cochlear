@@ -112,7 +112,7 @@
 
 .cm-image-block-link {
   &:hover {
-    img {
+    img, .img {
       -webkit-filter: grayscale(0);
       filter: grayscale(0);
     }
@@ -142,6 +142,7 @@
       height: 100%;
       display: block;
       width: auto;
+      border-radius: 0 0 0 50px;
     }
   }
   .content {
@@ -159,6 +160,19 @@
       margin: 29px;
       border-radius: 30px;
       text-align: center;
+
+      &:hover {
+        background-color: $link-colour;
+        color: #ffffff;
+      }
+
+    }
+  }
+
+  &:hover {
+    .cta {
+      background-color: $link-colour;
+      color: #ffffff;
     }
   }
 }

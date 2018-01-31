@@ -1,0 +1,36 @@
+@media only screen and (min-width: 64em) {
+  .nav-onscreen__main-header {
+    float: none;
+    clear: both;
+    width: 100%;
+    padding: 20px 0;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+
+    .nav {
+      display: flex;
+      float: none;
+    }
+
+    .nav > li  {
+      float: none;
+      flex-grow: 1;
+    }
+
+  }
+
+  .global-header {
+    .nav-onscreen {
+      padding-right: 0;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 77.75em){
+  .global-header {
+    .nav-onscreen {
+      padding-right: 0;
+    }
+  }
+}

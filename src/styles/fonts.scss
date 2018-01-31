@@ -1,15 +1,32 @@
 @font-face {
-  font-family: 'BlissPro-Regular';
-  src: url('../fonts/BlissPro-Regular.otf') format('opentype');
+  font-family: "Knockout-30";
+  src: url('/fonts/Knockout-30JuniorWelterwt.eot');
+  src: url('/fonts/Knockout-30JuniorWelterwt.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/Knockout-30JuniorWelterwt.woff2') format('woff2'),
+  url('/fonts/Knockout-30JuniorWelterwt.woff') format('woff'),
+  url('/fonts/Knockout-30JuniorWelterwt.svg#Knockout-30JuniorWelterwt') format('svg');
+  font-weight: 300;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'BlissPro-Light';
-  src: url('../fonts/BlissPro-Light.otf') format('opentype');
+  font-family: "BlissPro-Regular";
+  src: url('/fonts/BlissPro-Regular.eot');
+  src: url('/fonts/BlissPro-Regular.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/BlissPro-Regular.woff2') format('woff2'),
+  url('/fonts/BlissPro-Regular.woff') format('woff'),
+  url('/fonts/BlissPro-Regular.svg#BlissPro-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'Knockout-30';
-  src: url('../fonts/Knockout-30.otf') format('opentype');
+  font-family: "BlissPro-Light";
+  src: url('/fonts/BlissPro-Light.eot');
+  src: url('/fonts/BlissPro-Light.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/BlissPro-Light.woff2') format('woff2'),
+  url('/fonts/BlissPro-Light.woff') format('woff'),
+  url('/fonts/BlissPro-Light.svg#BlissPro-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
 }
-

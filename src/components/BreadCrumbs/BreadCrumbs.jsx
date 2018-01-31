@@ -6,7 +6,6 @@ class BreadCrumbs extends React.Component {
 
         return (
             <div className="breadcrumbs">
-                <div className="l-padding">
                     <a href="/demo/templates/modules/index.html" class="back-to-parent">Back to Home</a>
                     <ul itemprop="breadcrumb">
                         <li class="home">
@@ -22,7 +21,6 @@ class BreadCrumbs extends React.Component {
                             CM02 Content Tile
                         </li>
                     </ul>
-                </div>
             </div>
         );
     }
