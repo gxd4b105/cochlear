@@ -74,7 +74,7 @@ class ImpactOfHearingLoss extends Component {
                                     </div>
                                     <div className="sl-item">
                                         <Cm02ContentTile    title={getData['cm02-title-02-02'].title}
-                                                            description={getData['cm02-description-02']}
+                                                            description={getData['cm02-description-02-02']}
                                                             path={getData['cm02-title-02-02'].path}
                                                             image={'https://auth.cochlear.com'+getData['cm02-image-02-02'].src}
                                                             imagePath={getData['cm02-image-02-02'].path}
