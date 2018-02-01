@@ -254,30 +254,20 @@
             left: 0;
             padding-left: 50px;
 
-            // @include bp(0,s) {
-            //   padding-left: 0;
-            // }
-
             & > img {
               width: 100%;
-              // padding-right: 44px;
               border-radius: 0;
               height: auto;
-
-              // @include bp(0,s) {
-              //   width: auto;
-              //   height: 100%;
-              // }
             }
           }
 
           .content {
             left: 0;
-            top: calc(50% - 141.5px);
+            top: calc(50% - 180px);
             width: 50%;
             max-width: 380px;
             border-radius: 0 0 50px 0;
-            height: auto;
+            height: 360px;
             padding-left: 18px;
 
             h3 {
@@ -292,8 +282,7 @@
           }
 
           .cta {
-            margin: 29px;
-            position: initial;
+            margin-left: 29px;
             &:after {
               display: inline-block;
             }
