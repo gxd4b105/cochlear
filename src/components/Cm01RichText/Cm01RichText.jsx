@@ -1,10 +1,21 @@
 import React from 'react';
 
 class Cm01RichText extends React.Component {
+
+    
+
+
     render() {
 
+        console.log('this.props.body is', this.props.body);
+        let listElement = /<li>/gi,
+            endListElement = /<\/li>/gi;
+        let richTextBody = this.props.body.replace(listElement, '<li><p>');
+        richTextBody = richTextBody.replace(endListElement, '</p></li>');
+
+
         return (
-            <div className="cm cm-rich-text" dangerouslySetInnerHTML={{ __html: this.props.body }}>
+            <div className="cm cm-rich-text" dangerouslySetInnerHTML={{ __html: richTextBody }}>
                 {/*
                 <p className="intro">Intro paragraph. Lorem ipsum consequat enim incididunt ea aliqua ut minim anim occaecat cupidatat id eiusmod culpa in velit ut fugiat laboris commodo anim. Esse ut proident ea Ut dolore proident enim</p>
 
