@@ -9,7 +9,7 @@ module.exports = {
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, './dist/assets'),
-        publicPath: '/assets',
+        publicPath: '/dist/assets'
     },
     module: {
         rules: [
@@ -22,16 +22,52 @@ module.exports = {
                 }],
             },
             {
-                test: /\.(css|scss)$/,
-                exclude: [/node_modules/],
-                use: [{
-                    loader: "style-loader" // creates style nodes from JS strings
-                }, {
-                    loader: "css-loader" // translates CSS into CommonJS
-                }, {
-                    loader: "sass-loader" // compiles Sass to CSS
+                test: /\.(scss)$/,
+                use:
+                [{
+                    loader: 'style-loader'
+                },
+                {
+                    loader : 'css-loader',
+                    options:
+                    {
+                        importLoaders : 2,
+                        sourceMap     : true
+                    }
+                },
+                {
+                    loader : 'sass-loader',
+                    options:
+                    {
+                        outputStyle       : 'expanded',
+                        sourceMap         : true,
+                        sourceMapContents : true
+                    }
                 }]
             },
+            {
+                test: /\.(css)$/,
+                use:
+                [{
+                    loader: 'style-loader'
+                },
+                {
+                    loader : 'css-loader',
+                    options:
+                    {
+                        importLoaders : 2,
+                        sourceMap     : true
+                    }
+                }]
+            },
+            {
+                test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+                loader: require.resolve('url-loader'),
+                options: {
+                  limit: 10000,
+                  name: 'assets/images/[name].[hash:8].[ext]',
+                },
+              },
             {
                 test: /\.(eot|svg|ttf|woff|otf|woff2)$/,
                 loader: 'file?name=public/fonts/[name].[ext]'

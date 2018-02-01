@@ -1,12 +1,13 @@
 const path = require('path'),
     srcPath = path.resolve(__dirname),
-    distPath = path.resolve(__dirname, 'dist');
+    distPath = path.resolve(__dirname, 'dist/assets');
 
 module.exports = {
     context: srcPath,
     entry: './src/server/server.js',
     output: {
-        path: distPath,
+        path: path.resolve(__dirname, './dist/assets'),
+        publicPath: '/dist/assets',
         filename: 'server.js'
     },
     target: 'node',
@@ -15,6 +16,9 @@ module.exports = {
         __filename: false
     },
     module: {
+        loaders: [
+            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
+          ],
         rules: [
             {
                 test: /\.(js|jsx)$/,
@@ -25,14 +29,55 @@ module.exports = {
                 }],
             },
             {
-                test: /\.(css|scss)$/,
-                use: [{
-                    loader: "style-loader" // creates style nodes from JS strings
-                }, {
-                    loader: "css-loader" // translates CSS into CommonJS
-                }, {
-                    loader: "sass-loader" // compiles Sass to CSS
+                test: /\.(scss)$/,
+                use:
+                [{
+                    loader: 'style-loader'
+                },
+                {
+                    loader : 'css-loader',
+                    options:
+                    {
+                        importLoaders : 2,
+                        sourceMap     : true
+                    }
+                },
+                {
+                    loader : 'sass-loader',
+                    options:
+                    {
+                        outputStyle       : 'expanded',
+                        sourceMap         : true,
+                        sourceMapContents : true
+                    }
                 }]
+            },
+            {
+                test: /\.(css)$/,
+                use:
+                [{
+                    loader: 'style-loader'
+                },
+                {
+                    loader : 'css-loader',
+                    options:
+                    {
+                        importLoaders : 2,
+                        sourceMap     : true
+                    }
+                }]
+            },
+            {
+                test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+                loader: require.resolve('url-loader'),
+                options: {
+                  limit: 10000,
+                  name: 'assets/images/[name].[hash:8].[ext]',
+                },
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|otf|woff2)$/,
+                loader: 'file?name=public/fonts/[name].[ext]'
             }
             //loaders for other file types can go here
         ]
