@@ -63,16 +63,17 @@ class UntreatedHearingLossAdult extends Component {
                             <Cm01RichText body={getData['body-copy']}/>
 
 
-                            <Cm02ContentTile    title={getData['cm02-title-01'].title}
-                                                description={getData['cm02-description-01']}
-                                                path={getData['cm02-title-01'].path}
-                                                image={'https://auth.cochlear.com'+getData['cm02-image-01'].src}
-                                                embed = {getData['cm02-video-embed-01']}
-                                                imagePath={getData['cm02-title-01'].path}
-                                                additionalClass="is-large is-cta"/>
 
                         </main>
                     </article>
+                    <Cm02ContentTile
+                      title={getData['cm02-title-01'].title}
+                      description={getData['cm02-description-01']}
+                      path={getData['cm02-title-01'].path}
+                      image={'https://auth.cochlear.com'+getData['cm02-image-01'].src}
+                      embed = {getData['cm02-video-embed-01']}
+                      imagePath={getData['cm02-title-01'].path}
+                      additionalClass="is-large is-cta"/>
                 </div>
 
                 <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />

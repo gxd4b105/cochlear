@@ -89,3 +89,17 @@ a:focus, a:hover {
 @import "../../src/components/GlobalHeader__Nav/GlobalHeader__Nav.scss";
 @import "../../src/components/BreadCrumbs/BreadCrumbs.scss";
 @import "../../src/components/RegionLanguageSelect/RegionLanguageSelect.scss";
+
+/* ----------- MIXINS ----------- */
+
+@mixin bp($minWidth , $maxWidth) {
+  @if $minWidth == s {
+    @media (min-width: 768px) { @content; }
+  }
+  @else if $minWidth == m {
+    @media (min-width: 1024px) { @content; }
+  }
+  @else if $minWidth == l{
+    @media (min-width: 1600px)  { @content; }
+  }
+}

@@ -922,10 +922,16 @@ var Cm01RichText = function (_React$Component) {
     }
 
     _createClass(Cm01RichText, [{
-        key: "render",
+        key: 'render',
         value: function render() {
 
-            return _react2.default.createElement("div", { className: "cm cm-rich-text", dangerouslySetInnerHTML: { __html: this.props.body } });
+            console.log('this.props.body is', this.props.body);
+            var listElement = /<li>/gi,
+                endListElement = /<\/li>/gi;
+            var richTextBody = this.props.body.replace(listElement, '<li><p>');
+            richTextBody = richTextBody.replace(endListElement, '</p></li>');
+
+            return _react2.default.createElement('div', { className: 'cm cm-rich-text', dangerouslySetInnerHTML: { __html: richTextBody } });
         }
     }]);
 
@@ -1503,12 +1509,81 @@ module.exports = require("react-dom");
 
 /***/ }),
 /* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Cm28SocialShare = function (_React$Component) {
+    _inherits(Cm28SocialShare, _React$Component);
+
+    function Cm28SocialShare() {
+        _classCallCheck(this, Cm28SocialShare);
+
+        return _possibleConstructorReturn(this, (Cm28SocialShare.__proto__ || Object.getPrototypeOf(Cm28SocialShare)).apply(this, arguments));
+    }
+
+    _createClass(Cm28SocialShare, [{
+        key: "render",
+        value: function render() {
+
+            return _react2.default.createElement(
+                "div",
+                { className: "cm cm-social-share" },
+                _react2.default.createElement(
+                    "ul",
+                    null,
+                    _react2.default.createElement(
+                        "li",
+                        null,
+                        _react2.default.createElement("a", { href: "#", target: "_blank", rel: "noopener", title: "Follow us on LinkedIn", onClick: "window.open('https://www.linkedin.com/cws/share?url={{PAGE_URL_GOES_HERE}}', 'newwindow', 'width=600, height=350'); return false;" })
+                    ),
+                    _react2.default.createElement(
+                        "li",
+                        null,
+                        _react2.default.createElement("a", { href: "#", target: "_blank", rel: "noopener", title: "Like us on Facebook", onClick: "window.open('https://www.facebook.com/dialog/share?app_id={{APP_ID_GOES_HERE}}&href={{PAGE_URL_GOES_HERE}}', 'newwindow', 'width=600, height=350'); return false;" })
+                    ),
+                    _react2.default.createElement(
+                        "li",
+                        null,
+                        _react2.default.createElement("a", { href: "#", target: "_blank", rel: "noopener", title: "Tweet us on Twitter", onClick: "window.open('https://twitter.com/intent/tweet?url={{PAGE_URL_GOES_HERE}}', 'newwindow', 'width=600, height=350'); return false;" })
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Cm28SocialShare;
+}(_react2.default.Component);
+
+exports.default = Cm28SocialShare;
+
+/***/ }),
+/* 18 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-google-maps");
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1670,7 +1745,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1686,11 +1761,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _GoogleMapsWrapper = __webpack_require__(20);
+var _GoogleMapsWrapper = __webpack_require__(21);
 
 var _GoogleMapsWrapper2 = _interopRequireDefault(_GoogleMapsWrapper);
 
-var _reactGoogleMaps = __webpack_require__(17);
+var _reactGoogleMaps = __webpack_require__(18);
 
 var _MarkerClusterer = __webpack_require__(24);
 
@@ -2006,7 +2081,7 @@ var ClinicNearYou = function (_React$Component) {
 exports.default = ClinicNearYou;
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2022,7 +2097,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactGoogleMaps = __webpack_require__(17);
+var _reactGoogleMaps = __webpack_require__(18);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2035,75 +2110,6 @@ var GoogleMapsWrapper = (0, _reactGoogleMaps.withScriptjs)((0, _reactGoogleMaps.
 }));
 
 exports.default = GoogleMapsWrapper;
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Cm28SocialShare = function (_React$Component) {
-    _inherits(Cm28SocialShare, _React$Component);
-
-    function Cm28SocialShare() {
-        _classCallCheck(this, Cm28SocialShare);
-
-        return _possibleConstructorReturn(this, (Cm28SocialShare.__proto__ || Object.getPrototypeOf(Cm28SocialShare)).apply(this, arguments));
-    }
-
-    _createClass(Cm28SocialShare, [{
-        key: "render",
-        value: function render() {
-
-            return _react2.default.createElement(
-                "div",
-                { className: "cm cm-social-share" },
-                _react2.default.createElement(
-                    "ul",
-                    null,
-                    _react2.default.createElement(
-                        "li",
-                        null,
-                        _react2.default.createElement("a", { href: "#", target: "_blank", rel: "noopener", title: "Follow us on LinkedIn", onClick: "window.open('https://www.linkedin.com/cws/share?url={{PAGE_URL_GOES_HERE}}', 'newwindow', 'width=600, height=350'); return false;" })
-                    ),
-                    _react2.default.createElement(
-                        "li",
-                        null,
-                        _react2.default.createElement("a", { href: "#", target: "_blank", rel: "noopener", title: "Like us on Facebook", onClick: "window.open('https://www.facebook.com/dialog/share?app_id={{APP_ID_GOES_HERE}}&href={{PAGE_URL_GOES_HERE}}', 'newwindow', 'width=600, height=350'); return false;" })
-                    ),
-                    _react2.default.createElement(
-                        "li",
-                        null,
-                        _react2.default.createElement("a", { href: "#", target: "_blank", rel: "noopener", title: "Tweet us on Twitter", onClick: "window.open('https://twitter.com/intent/tweet?url={{PAGE_URL_GOES_HERE}}', 'newwindow', 'width=600, height=350'); return false;" })
-                    )
-                )
-            );
-        }
-    }]);
-
-    return Cm28SocialShare;
-}(_react2.default.Component);
-
-exports.default = Cm28SocialShare;
 
 /***/ }),
 /* 22 */
@@ -2177,7 +2183,7 @@ var _redirectWStatus = __webpack_require__(69);
 
 var _redirectWStatus2 = _interopRequireDefault(_redirectWStatus);
 
-var _routes = __webpack_require__(18);
+var _routes = __webpack_require__(19);
 
 var _routes2 = _interopRequireDefault(_routes);
 
@@ -2602,6 +2608,10 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _axios = __webpack_require__(15);
+
+var _axios2 = _interopRequireDefault(_axios);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2623,7 +2633,9 @@ var BrochureDownload = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (BrochureDownload.__proto__ || Object.getPrototypeOf(BrochureDownload)).call(this, props));
 
         _this.state = {
-            selectDeliveryOption: '----'
+            selectDeliveryOption: '----',
+            downloadDisplay: 'none',
+            buttonText: 'Send to me'
         };
 
         _this.handleDeliveryOption = _this.handleDeliveryOption.bind(_this);
@@ -2643,22 +2655,213 @@ var BrochureDownload = function (_React$Component) {
             if (event.target.value === "mail") {
                 deliveryOptions.style.display = "block";
                 deliveryAddress.style.display = "block";
+                this.setState({ buttonText: 'Send to me' });
             } else if (event.target.value === "email") {
                 deliveryOptions.style.display = "block";
                 deliveryAddress.style.display = "none";
+                this.setState({ buttonText: 'Send to me' });
             } else if (event.target.value === "direct") {
                 deliveryOptions.style.display = "block";
                 deliveryAddress.style.display = "none";
+                this.setState({ buttonText: 'Download' });
             } else {
                 deliveryOptions.style.display = "none";
             }
             //alert(this.state.selectDeliveryOption);
         }
     }, {
+        key: 'validation',
+        value: function validation() {
+            console.log('test!!!!!!!!!!! validat');
+            console.log(window.document.getElementById('txt-firstname').value);
+            console.log('test!!!!!!!!!!! validatooooo ');
+
+            var errorState = false;
+            var firstName = document.getElementById('txt-firstname');
+            var lastName = document.getElementById('txt-lastname');
+            var email = document.getElementById('txt-email');
+            var street = document.getElementById('txt-street');
+            var street2 = document.getElementById('txt-street2');
+            var suburb = document.getElementById('txt-suburb');
+            var state = document.getElementById('txt-state');
+            var postcode = document.getElementById('txt-postcode');
+            var country = document.getElementById('txt-country');
+
+            if (firstName.value === '' || firstName.value.length > 255 || !/^[a-zA-Z]*$/g.test(firstName.value)) {
+                var errorMessage = '';
+                errorMessage = firstName.value === '' ? errorMessage += '<p style="color:red;">This field is required</p>' : errorMessage;
+                errorMessage = firstName.value.length > 255 ? errorMessage += '<p style="color:red;">You must have no more than 255 characters</p>' : errorMessage;
+                errorMessage = !/^[a-zA-Z]*$/g.test(firstName.value) ? errorMessage += '<p style="color:red;">You must only use A to Z characters</p>' : errorMessage;
+
+                if (errorMessage !== '') {
+                    errorState = true;
+                    firstName.nextSibling.innerHTML = errorMessage;
+                    firstName.nextSibling.style.display = 'block';
+                    firstName.style.border = '1px solid red';
+                };
+            } else {
+                firstName.nextSibling.innerHTML = '';
+                firstName.nextSibling.style.display = 'none';
+                firstName.style.border = '0';
+            }
+
+            if (lastName.value === '' || lastName.value.length > 255 || !/^[a-zA-Z]*$/g.test(lastName.value)) {
+                var _errorMessage = '';
+                _errorMessage = lastName.value === '' ? _errorMessage += '<p style="color:red;">This field is required</p>' : _errorMessage;
+                _errorMessage = lastName.value.length > 255 ? _errorMessage += '<p style="color:red;">You must have no more than 255 characters</p>' : _errorMessage;
+                _errorMessage = !/^[a-zA-Z]*$/g.test(lastName.value) ? _errorMessage += '<p style="color:red;">You must only use A to Z characters</p>' : _errorMessage;
+
+                if (_errorMessage !== '') {
+                    errorState = true;
+                    lastName.nextSibling.innerHTML = _errorMessage;
+                    lastName.nextSibling.style.display = 'block';
+                    lastName.style.border = '1px solid red';
+                };
+            } else {
+                lastName.nextSibling.innerHTML = '';
+                lastName.nextSibling.style.display = 'none';
+                lastName.style.border = '0';
+            }
+
+            if (email.value === '' || !/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/g.test(email.value)) {
+                var _errorMessage2 = '';
+                _errorMessage2 = email.value === '' ? _errorMessage2 += '<p style="color:red;">This field is required</p>' : _errorMessage2;
+                _errorMessage2 = !/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/g.test(lastName.value) ? _errorMessage2 += '<p style="color:red;">You must enter a valid email</p>' : _errorMessage2;
+
+                if (_errorMessage2 !== '') {
+                    errorState = true;
+                    email.nextSibling.innerHTML = _errorMessage2;
+                    email.nextSibling.style.display = 'block';
+                    email.style.border = '1px solid red';
+                };
+            } else {
+                email.nextSibling.innerHTML = '';
+                email.nextSibling.style.display = 'none';
+                email.style.border = '0';
+            }
+
+            // postal ADDRESS validation
+
+            if (this.state.selectDeliveryOption === 'mail') {
+
+                if (street.value === '' || street.value.length > 255) {
+                    var _errorMessage3 = '';
+                    _errorMessage3 = street.value === '' ? _errorMessage3 += '<p style="color:red;">This field is required</p>' : _errorMessage3;
+                    _errorMessage3 = street.value.length > 255 ? _errorMessage3 += '<p style="color:red;">You must have no more than 255 characters</p>' : _errorMessage3;
+
+                    if (_errorMessage3 !== '') {
+                        errorState = true;
+                        street.nextSibling.innerHTML = _errorMessage3;
+                        street.nextSibling.style.display = 'block';
+                        street.style.border = '1px solid red';
+                    };
+                } else {
+                    street.nextSibling.innerHTML = '';
+                    street.nextSibling.style.display = 'none';
+                    street.style.border = '0';
+                }
+
+                if (suburb.value === '' || suburb.value.length > 255) {
+                    var _errorMessage4 = '';
+                    _errorMessage4 = suburb.value === '' ? _errorMessage4 += '<p style="color:red;">This field is required</p>' : _errorMessage4;
+                    _errorMessage4 = suburb.value.length > 255 ? _errorMessage4 += '<p style="color:red;">You must have no more than 255 characters</p>' : _errorMessage4;
+
+                    if (_errorMessage4 !== '') {
+                        errorState = true;
+                        suburb.nextSibling.innerHTML = _errorMessage4;
+                        suburb.nextSibling.style.display = 'block';
+                        suburb.style.border = '1px solid red';
+                    };
+                } else {
+                    suburb.nextSibling.innerHTML = '';
+                    suburb.nextSibling.style.display = 'none';
+                    suburb.style.border = '0';
+                }
+
+                if (state.value === '' || state.value.length > 255) {
+                    var _errorMessage5 = '';
+                    _errorMessage5 = state.value === '' ? _errorMessage5 += '<p style="color:red;">This field is required</p>' : _errorMessage5;
+                    _errorMessage5 = state.value.length > 255 ? _errorMessage5 += '<p style="color:red;">You must have no more than 255 characters</p>' : _errorMessage5;
+
+                    if (_errorMessage5 !== '') {
+                        errorState = true;
+                        state.nextSibling.innerHTML = _errorMessage5;
+                        state.nextSibling.style.display = 'block';
+                        state.style.border = '1px solid red';
+                    };
+                } else {
+                    state.nextSibling.innerHTML = '';
+                    state.nextSibling.style.display = 'none';
+                    state.style.border = '0';
+                }
+
+                if (postcode.value === '' || postcode.value.length > 255) {
+                    var _errorMessage6 = '';
+                    _errorMessage6 = postcode.value === '' ? _errorMessage6 += '<p style="color:red;">This field is required</p>' : _errorMessage6;
+                    _errorMessage6 = postcode.value.length > 255 ? _errorMessage6 += '<p style="color:red;">You must have no more than 255 characters</p>' : _errorMessage6;
+
+                    if (_errorMessage6 !== '') {
+                        errorState = true;
+                        postcode.nextSibling.innerHTML = _errorMessage6;
+                        postcode.nextSibling.style.display = 'block';
+                        postcode.style.border = '1px solid red';
+                    };
+                } else {
+                    postcode.nextSibling.innerHTML = '';
+                    postcode.nextSibling.style.display = 'none';
+                    postcode.style.border = '0';
+                }
+
+                console.log('QQQQQQQ ', country);
+                console.log(country.options[country.selectedIndex].text);
+
+                if (country.options[country.selectedIndex].text === 'Select Country' || country.options[country.selectedIndex].text.length > 255) {
+                    console.log('PPPPPPPPPPPPP');
+                    var _errorMessage7 = '';
+                    _errorMessage7 = country.options[country.selectedIndex].text === 'Select Country' ? _errorMessage7 += '<p style="color:red;">This field is required</p>' : _errorMessage7;
+                    _errorMessage7 = country.value.length > 255 ? _errorMessage7 += '<p style="color:red;">You must have no more than 255 characters</p>' : _errorMessage7;
+
+                    if (_errorMessage7 !== '') {
+                        errorState = true;
+                        country.nextSibling.innerHTML = _errorMessage7;
+                        country.nextSibling.style.display = 'block';
+                        country.style.border = '1px solid red';
+                    };
+                } else {
+                    country.nextSibling.innerHTML = '';
+                    country.nextSibling.style.display = 'none';
+                    country.style.border = '0';
+                }
+            }
+            return errorState;
+        }
+    }, {
         key: 'handleSubmit',
         value: function handleSubmit(event) {
-            alert(this.state.selectDeliveryOption);
+            var _this2 = this;
+
             event.preventDefault();
+            console.log(this.state.selectDeliveryOption);
+            if (!this.validation()) {
+                console.log('this is valid');
+
+                var url = 'https://api.myjson.com/bins/govgt';
+
+                _axios2.default.get(url).then(function (res) {
+                    console.log('RES is ', res);
+                    if (res.data.response === 'success') {
+                        console.log('SUCCESS');
+                        //document.getElementById('download').display='block';
+                        //this.state.downloadDisplay="block";
+
+                        if (_this2.state.selectDeliveryOption === 'direct') {
+                            _this2.setState({ downloadDisplay: 'block' });
+                        }
+                    }
+                });
+            } else {
+                console.log('this is NOT valid');
+            }
         }
     }, {
         key: 'render',
@@ -2672,7 +2875,7 @@ var BrochureDownload = function (_React$Component) {
                     { className: 'l-padding' },
                     _react2.default.createElement(
                         'form',
-                        { onSubmit: this.handleSubmit, className: 'fn_validate', action: '/' },
+                        { id: 'brochure-download', onSubmit: this.handleSubmit, className: 'fn_validate', action: '/' },
                         _react2.default.createElement('div', { className: 'fn_validate_summary' }),
                         _react2.default.createElement(
                             'fieldset',
@@ -2766,7 +2969,7 @@ var BrochureDownload = function (_React$Component) {
                                         _react2.default.createElement(
                                             'div',
                                             { className: 'ctrl' },
-                                            _react2.default.createElement('input', { name: 'txt-firstname', id: 'txt-firstname', className: 'text', 'data-rule-required': 'true' }),
+                                            _react2.default.createElement('input', { name: 'txt-firstname', id: 'txt-firstname', className: 'text', 'data-rule-required': 'true', onblur: 'this.validation()' }),
                                             _react2.default.createElement('div', { className: 'status-msg' })
                                         )
                                     ),
@@ -2829,7 +3032,7 @@ var BrochureDownload = function (_React$Component) {
                                             _react2.default.createElement(
                                                 'label',
                                                 { htmlFor: 'txt-street' },
-                                                'Street Number and Name',
+                                                'Street Address 1',
                                                 _react2.default.createElement(
                                                     'em',
                                                     null,
@@ -2853,8 +3056,32 @@ var BrochureDownload = function (_React$Component) {
                                             { className: 'ctrl-holder width-l' },
                                             _react2.default.createElement(
                                                 'label',
+                                                { htmlFor: 'txt-street' },
+                                                'Street Address 2',
+                                                _react2.default.createElement(
+                                                    'em',
+                                                    null,
+                                                    _react2.default.createElement(
+                                                        'span',
+                                                        { className: 'vh' },
+                                                        'Required field'
+                                                    )
+                                                )
+                                            ),
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'ctrl' },
+                                                _react2.default.createElement('input', { name: 'txt-street', id: 'txt-street2', className: 'text', type: 'text', 'data-rule-required': 'true' }),
+                                                _react2.default.createElement('div', { className: 'status-msg' })
+                                            )
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'ctrl-holder width-l' },
+                                            _react2.default.createElement(
+                                                'label',
                                                 { htmlFor: 'txt-suburb' },
-                                                'Suburb',
+                                                'Suburb / City',
                                                 _react2.default.createElement(
                                                     'em',
                                                     null,
@@ -2870,6 +3097,31 @@ var BrochureDownload = function (_React$Component) {
                                                 'div',
                                                 { className: 'ctrl' },
                                                 _react2.default.createElement('input', { name: 'txt-suburb', id: 'txt-suburb', className: 'text', type: 'text', 'data-rule-required': 'true' }),
+                                                _react2.default.createElement('div', { className: 'status-msg' })
+                                            )
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'ctrl-holder width-l' },
+                                            _react2.default.createElement(
+                                                'label',
+                                                { htmlFor: 'txt-state' },
+                                                'State',
+                                                _react2.default.createElement(
+                                                    'em',
+                                                    null,
+                                                    '*',
+                                                    _react2.default.createElement(
+                                                        'span',
+                                                        { className: 'vh' },
+                                                        'Required field'
+                                                    )
+                                                )
+                                            ),
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'ctrl' },
+                                                _react2.default.createElement('input', { name: 'txt-state', id: 'txt-state', className: 'text', type: 'text', 'data-rule-required': 'true' }),
                                                 _react2.default.createElement('div', { className: 'status-msg' })
                                             )
                                         ),
@@ -2895,6 +3147,1299 @@ var BrochureDownload = function (_React$Component) {
                                                 'div',
                                                 { className: 'ctrl' },
                                                 _react2.default.createElement('input', { name: 'txt-postcode', id: 'txt-postcode', className: 'text', type: 'text', 'data-rule-required': 'true' }),
+                                                _react2.default.createElement('div', { className: 'status-msg' })
+                                            )
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'ctrl-holder width-l' },
+                                            _react2.default.createElement(
+                                                'label',
+                                                { htmlFor: 'txt-country' },
+                                                'Country',
+                                                _react2.default.createElement(
+                                                    'em',
+                                                    null,
+                                                    '*',
+                                                    _react2.default.createElement(
+                                                        'span',
+                                                        { className: 'vh' },
+                                                        'Required field'
+                                                    )
+                                                )
+                                            ),
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'ctrl' },
+                                                _react2.default.createElement(
+                                                    'select',
+                                                    { ref: 'selectRegion', name: 'txt-country', id: 'txt-country', className: 'select', 'data-rule-required': 'true' },
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: '-1' },
+                                                        'Select Country'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Afghanistan' },
+                                                        'Afghanistan'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Albania' },
+                                                        'Albania'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Algeria' },
+                                                        'Algeria'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'American Samoa' },
+                                                        'American Samoa'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Angola' },
+                                                        'Angola'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Anguilla' },
+                                                        'Anguilla'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Antartica' },
+                                                        'Antartica'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Antigua and Barbuda' },
+                                                        'Antigua and Barbuda'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Argentina' },
+                                                        'Argentina'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Armenia' },
+                                                        'Armenia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Aruba' },
+                                                        'Aruba'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Ashmore and Cartier Island' },
+                                                        'Ashmore and Cartier Island'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Australia' },
+                                                        'Australia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Austria' },
+                                                        'Austria'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Azerbaijan' },
+                                                        'Azerbaijan'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Bahamas' },
+                                                        'Bahamas'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Bahrain' },
+                                                        'Bahrain'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Bangladesh' },
+                                                        'Bangladesh'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Barbados' },
+                                                        'Barbados'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Belarus' },
+                                                        'Belarus'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Belgium' },
+                                                        'Belgium'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Belize' },
+                                                        'Belize'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Benin' },
+                                                        'Benin'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Bermuda' },
+                                                        'Bermuda'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Bhutan' },
+                                                        'Bhutan'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Bolivia' },
+                                                        'Bolivia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Bosnia and Herzegovina' },
+                                                        'Bosnia and Herzegovina'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Botswana' },
+                                                        'Botswana'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Brazil' },
+                                                        'Brazil'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'British Virgin Islands' },
+                                                        'British Virgin Islands'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Brunei' },
+                                                        'Brunei'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Bulgaria' },
+                                                        'Bulgaria'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Burkina Faso' },
+                                                        'Burkina Faso'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Burma' },
+                                                        'Burma'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Burundi' },
+                                                        'Burundi'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Cambodia' },
+                                                        'Cambodia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Cameroon' },
+                                                        'Cameroon'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Canada' },
+                                                        'Canada'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Cape Verde' },
+                                                        'Cape Verde'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Cayman Islands' },
+                                                        'Cayman Islands'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Central African Republic' },
+                                                        'Central African Republic'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Chad' },
+                                                        'Chad'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Chile' },
+                                                        'Chile'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'China' },
+                                                        'China'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Christmas Island' },
+                                                        'Christmas Island'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Clipperton Island' },
+                                                        'Clipperton Island'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Cocos (Keeling) Islands' },
+                                                        'Cocos (Keeling) Islands'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Colombia' },
+                                                        'Colombia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Comoros' },
+                                                        'Comoros'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Congo, Democratic Republic of the' },
+                                                        'Congo, Democratic Republic of the'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Congo, Republic of the' },
+                                                        'Congo, Republic of the'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Cook Islands' },
+                                                        'Cook Islands'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Costa Rica' },
+                                                        'Costa Rica'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Cote d\'Ivoire' },
+                                                        'Cote d\'Ivoire'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Croatia' },
+                                                        'Croatia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Cuba' },
+                                                        'Cuba'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Cyprus' },
+                                                        'Cyprus'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Czeck Republic' },
+                                                        'Czeck Republic'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Denmark' },
+                                                        'Denmark'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Djibouti' },
+                                                        'Djibouti'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Dominica' },
+                                                        'Dominica'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Dominican Republic' },
+                                                        'Dominican Republic'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Ecuador' },
+                                                        'Ecuador'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Egypt' },
+                                                        'Egypt'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'El Salvador' },
+                                                        'El Salvador'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Equatorial Guinea' },
+                                                        'Equatorial Guinea'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Eritrea' },
+                                                        'Eritrea'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Estonia' },
+                                                        'Estonia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Ethiopia' },
+                                                        'Ethiopia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Europa Island' },
+                                                        'Europa Island'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Falkland Islands (Islas Malvinas)' },
+                                                        'Falkland Islands (Islas Malvinas)'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Faroe Islands' },
+                                                        'Faroe Islands'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Fiji' },
+                                                        'Fiji'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Finland' },
+                                                        'Finland'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'France' },
+                                                        'France'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'French Guiana' },
+                                                        'French Guiana'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'French Polynesia' },
+                                                        'French Polynesia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'French Southern and Antarctic Lands' },
+                                                        'French Southern and Antarctic Lands'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Gabon' },
+                                                        'Gabon'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Gambia, The' },
+                                                        'Gambia, The'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Gaza Strip' },
+                                                        'Gaza Strip'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Georgia' },
+                                                        'Georgia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Germany' },
+                                                        'Germany'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Ghana' },
+                                                        'Ghana'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Gibraltar' },
+                                                        'Gibraltar'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Glorioso Islands' },
+                                                        'Glorioso Islands'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Greece' },
+                                                        'Greece'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Greenland' },
+                                                        'Greenland'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Grenada' },
+                                                        'Grenada'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Guadeloupe' },
+                                                        'Guadeloupe'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Guam' },
+                                                        'Guam'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Guatemala' },
+                                                        'Guatemala'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Guernsey' },
+                                                        'Guernsey'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Guinea' },
+                                                        'Guinea'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Guinea-Bissau' },
+                                                        'Guinea-Bissau'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Guyana' },
+                                                        'Guyana'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Haiti' },
+                                                        'Haiti'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Heard Island and McDonald Islands' },
+                                                        'Heard Island and McDonald Islands'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Holy See (Vatican City)' },
+                                                        'Holy See (Vatican City)'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Honduras' },
+                                                        'Honduras'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Hong Kong' },
+                                                        'Hong Kong'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Howland Island' },
+                                                        'Howland Island'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Hungary' },
+                                                        'Hungary'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Iceland' },
+                                                        'Iceland'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'India' },
+                                                        'India'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Indonesia' },
+                                                        'Indonesia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Iran' },
+                                                        'Iran'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Iraq' },
+                                                        'Iraq'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Ireland' },
+                                                        'Ireland'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Ireland, Northern' },
+                                                        'Ireland, Northern'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Israel' },
+                                                        'Israel'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Italy' },
+                                                        'Italy'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Jamaica' },
+                                                        'Jamaica'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Jan Mayen' },
+                                                        'Jan Mayen'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Japan' },
+                                                        'Japan'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Jarvis Island' },
+                                                        'Jarvis Island'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Jersey' },
+                                                        'Jersey'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Johnston Atoll' },
+                                                        'Johnston Atoll'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Jordan' },
+                                                        'Jordan'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Juan de Nova Island' },
+                                                        'Juan de Nova Island'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Kazakhstan' },
+                                                        'Kazakhstan'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Kenya' },
+                                                        'Kenya'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Kiribati' },
+                                                        'Kiribati'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Korea, North' },
+                                                        'Korea, North'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Korea, South' },
+                                                        'Korea, South'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Kuwait' },
+                                                        'Kuwait'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Kyrgyzstan' },
+                                                        'Kyrgyzstan'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Laos' },
+                                                        'Laos'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Latvia' },
+                                                        'Latvia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Lebanon' },
+                                                        'Lebanon'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Lesotho' },
+                                                        'Lesotho'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Liberia' },
+                                                        'Liberia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Libya' },
+                                                        'Libya'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Liechtenstein' },
+                                                        'Liechtenstein'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Lithuania' },
+                                                        'Lithuania'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Luxembourg' },
+                                                        'Luxembourg'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Macau' },
+                                                        'Macau'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Macedonia, Former Yugoslav Republic of' },
+                                                        'Macedonia, Former Yugoslav Republic of'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Madagascar' },
+                                                        'Madagascar'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Malawi' },
+                                                        'Malawi'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Malaysia' },
+                                                        'Malaysia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Maldives' },
+                                                        'Maldives'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Mali' },
+                                                        'Mali'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Malta' },
+                                                        'Malta'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Man, Isle of' },
+                                                        'Man, Isle of'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Marshall Islands' },
+                                                        'Marshall Islands'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Martinique' },
+                                                        'Martinique'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Mauritania' },
+                                                        'Mauritania'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Mauritius' },
+                                                        'Mauritius'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Mayotte' },
+                                                        'Mayotte'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Mexico' },
+                                                        'Mexico'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Micronesia, Federated States of' },
+                                                        'Micronesia, Federated States of'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Midway Islands' },
+                                                        'Midway Islands'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Moldova' },
+                                                        'Moldova'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Monaco' },
+                                                        'Monaco'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Mongolia' },
+                                                        'Mongolia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Montserrat' },
+                                                        'Montserrat'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Morocco' },
+                                                        'Morocco'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Mozambique' },
+                                                        'Mozambique'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Namibia' },
+                                                        'Namibia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Nauru' },
+                                                        'Nauru'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Nepal' },
+                                                        'Nepal'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Netherlands' },
+                                                        'Netherlands'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Netherlands Antilles' },
+                                                        'Netherlands Antilles'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'New Caledonia' },
+                                                        'New Caledonia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'New Zealand' },
+                                                        'New Zealand'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Nicaragua' },
+                                                        'Nicaragua'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Niger' },
+                                                        'Niger'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Nigeria' },
+                                                        'Nigeria'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Niue' },
+                                                        'Niue'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Norfolk Island' },
+                                                        'Norfolk Island'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Northern Mariana Islands' },
+                                                        'Northern Mariana Islands'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Norway' },
+                                                        'Norway'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Oman' },
+                                                        'Oman'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Pakistan' },
+                                                        'Pakistan'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Palau' },
+                                                        'Palau'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Panama' },
+                                                        'Panama'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Papua New Guinea' },
+                                                        'Papua New Guinea'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Paraguay' },
+                                                        'Paraguay'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Peru' },
+                                                        'Peru'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Philippines' },
+                                                        'Philippines'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Pitcaim Islands' },
+                                                        'Pitcaim Islands'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Poland' },
+                                                        'Poland'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Portugal' },
+                                                        'Portugal'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Puerto Rico' },
+                                                        'Puerto Rico'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Qatar' },
+                                                        'Qatar'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Reunion' },
+                                                        'Reunion'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Romainia' },
+                                                        'Romainia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Russia' },
+                                                        'Russia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Rwanda' },
+                                                        'Rwanda'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Saint Helena' },
+                                                        'Saint Helena'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Saint Kitts and Nevis' },
+                                                        'Saint Kitts and Nevis'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Saint Lucia' },
+                                                        'Saint Lucia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Saint Pierre and Miquelon' },
+                                                        'Saint Pierre and Miquelon'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Saint Vincent and the Grenadines' },
+                                                        'Saint Vincent and the Grenadines'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Samoa' },
+                                                        'Samoa'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'San Marino' },
+                                                        'San Marino'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Sao Tome and Principe' },
+                                                        'Sao Tome and Principe'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Saudi Arabia' },
+                                                        'Saudi Arabia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Scotland' },
+                                                        'Scotland'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Senegal' },
+                                                        'Senegal'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Seychelles' },
+                                                        'Seychelles'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Sierra Leone' },
+                                                        'Sierra Leone'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Singapore' },
+                                                        'Singapore'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Slovakia' },
+                                                        'Slovakia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Slovenia' },
+                                                        'Slovenia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Solomon Islands' },
+                                                        'Solomon Islands'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Somalia' },
+                                                        'Somalia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'South Africa' },
+                                                        'South Africa'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'South Georgia and South Sandwich Islands' },
+                                                        'South Georgia and South Sandwich Islands'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Spain' },
+                                                        'Spain'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Spratly Islands' },
+                                                        'Spratly Islands'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Sri Lanka' },
+                                                        'Sri Lanka'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Sudan' },
+                                                        'Sudan'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Suriname' },
+                                                        'Suriname'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Svalbard' },
+                                                        'Svalbard'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Swaziland' },
+                                                        'Swaziland'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Sweden' },
+                                                        'Sweden'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Switzerland' },
+                                                        'Switzerland'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Syria' },
+                                                        'Syria'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Taiwan' },
+                                                        'Taiwan'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Tajikistan' },
+                                                        'Tajikistan'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Tanzania' },
+                                                        'Tanzania'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Thailand' },
+                                                        'Thailand'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Tobago' },
+                                                        'Tobago'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Toga' },
+                                                        'Toga'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Tokelau' },
+                                                        'Tokelau'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Tonga' },
+                                                        'Tonga'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Trinidad' },
+                                                        'Trinidad'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Tunisia' },
+                                                        'Tunisia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Turkey' },
+                                                        'Turkey'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Turkmenistan' },
+                                                        'Turkmenistan'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Tuvalu' },
+                                                        'Tuvalu'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Uganda' },
+                                                        'Uganda'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Ukraine' },
+                                                        'Ukraine'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'United Arab Emirates' },
+                                                        'United Arab Emirates'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'United Kingdom' },
+                                                        'United Kingdom'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Uruguay' },
+                                                        'Uruguay'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'USA' },
+                                                        'USA'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Uzbekistan' },
+                                                        'Uzbekistan'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Vanuatu' },
+                                                        'Vanuatu'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Venezuela' },
+                                                        'Venezuela'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Vietnam' },
+                                                        'Vietnam'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Virgin Islands' },
+                                                        'Virgin Islands'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Wales' },
+                                                        'Wales'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Wallis and Futuna' },
+                                                        'Wallis and Futuna'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'West Bank' },
+                                                        'West Bank'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Western Sahara' },
+                                                        'Western Sahara'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Yemen' },
+                                                        'Yemen'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Yugoslavia' },
+                                                        'Yugoslavia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Zambia' },
+                                                        'Zambia'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: 'Zimbabwe' },
+                                                        'Zimbabwe'
+                                                    )
+                                                ),
                                                 _react2.default.createElement('div', { className: 'status-msg' })
                                             )
                                         )
@@ -2946,10 +4491,28 @@ var BrochureDownload = function (_React$Component) {
                                         _react2.default.createElement(
                                             'button',
                                             { role: 'button', type: 'submit', className: 'fn_validate_submit cta' },
-                                            'Send to me'
+                                            this.state.buttonText
                                         )
                                     )
                                 )
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { id: 'download', style: { display: this.state.downloadDisplay } },
+                        _react2.default.createElement(
+                            'p',
+                            null,
+                            'Your form was successfully sent! Please click the link below to download your brochure.'
+                        ),
+                        _react2.default.createElement(
+                            'p',
+                            null,
+                            _react2.default.createElement(
+                                'a',
+                                { href: '#' },
+                                'Brochure Link'
                             )
                         )
                     )
@@ -2980,11 +4543,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _GoogleMapsWrapper = __webpack_require__(20);
+var _GoogleMapsWrapper = __webpack_require__(21);
 
 var _GoogleMapsWrapper2 = _interopRequireDefault(_GoogleMapsWrapper);
 
-var _reactGoogleMaps = __webpack_require__(17);
+var _reactGoogleMaps = __webpack_require__(18);
 
 var _MarkerClusterer = __webpack_require__(24);
 
@@ -4999,7 +6562,7 @@ var _BreadCrumbs = __webpack_require__(8);
 
 var _BreadCrumbs2 = _interopRequireDefault(_BreadCrumbs);
 
-var _ClinicNearYou = __webpack_require__(19);
+var _ClinicNearYou = __webpack_require__(20);
 
 var _ClinicNearYou2 = _interopRequireDefault(_ClinicNearYou);
 
@@ -7001,6 +8564,10 @@ var _Cm01RichText = __webpack_require__(9);
 
 var _Cm01RichText2 = _interopRequireDefault(_Cm01RichText);
 
+var _Cm28SocialShare = __webpack_require__(17);
+
+var _Cm28SocialShare2 = _interopRequireDefault(_Cm28SocialShare);
+
 var _BreadCrumbs = __webpack_require__(8);
 
 var _BreadCrumbs2 = _interopRequireDefault(_BreadCrumbs);
@@ -7066,12 +8633,12 @@ var TypesOfTreatment = function (_Component) {
                     _react2.default.createElement('link', { rel: 'canonical', href: 'http://www.cochlear.com/wps/wcm/connect/intl/home/understand/my-child-has-hl' })
                 ),
                 _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
-                _react2.default.createElement(_BreadCrumbs2.default, null),
-                _react2.default.createElement(_HeaderLandingBanner2.default, { title: '',
-                    description: '',
+                _react2.default.createElement(_HeaderLandingBanner2.default, { title: getData['title'],
+                    description: getData['description'],
                     image: 'https://auth.cochlear.com/' + getData['banner-image'].src,
                     imagePath: getData['banner-image'].alt,
                     additionalClass: 'is-dark' }),
+                _react2.default.createElement(_BreadCrumbs2.default, null),
                 _react2.default.createElement(
                     'div',
                     { className: 'l-content-container cf l-padding' },
@@ -7081,8 +8648,7 @@ var TypesOfTreatment = function (_Component) {
                         _react2.default.createElement(
                             'main',
                             { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
-                            _react2.default.createElement(_ContentHeader2.default, { title: getData['title'],
-                                description: getData['description'] }),
+                            _react2.default.createElement(_Cm28SocialShare2.default, null),
                             _react2.default.createElement(_Cm01RichText2.default, { body: getData['body-copy'] }),
                             _react2.default.createElement(
                                 'div',
@@ -7192,7 +8758,7 @@ var _HeaderLandingBanner = __webpack_require__(7);
 
 var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
 
-var _Cm28SocialShare = __webpack_require__(21);
+var _Cm28SocialShare = __webpack_require__(17);
 
 var _Cm28SocialShare2 = _interopRequireDefault(_Cm28SocialShare);
 
@@ -7265,16 +8831,17 @@ var UntreatedHearingLossAdult = function (_Component) {
                             'main',
                             { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
                             _react2.default.createElement(_Cm28SocialShare2.default, null),
-                            _react2.default.createElement(_Cm01RichText2.default, { body: getData['body-copy'] }),
-                            _react2.default.createElement(_Cm02ContentTile2.default, { title: getData['cm02-title-01'].title,
-                                description: getData['cm02-description-01'],
-                                path: getData['cm02-title-01'].path,
-                                image: 'https://auth.cochlear.com' + getData['cm02-image-01'].src,
-                                embed: getData['cm02-video-embed-01'],
-                                imagePath: getData['cm02-title-01'].path,
-                                additionalClass: 'is-large is-cta' })
+                            _react2.default.createElement(_Cm01RichText2.default, { body: getData['body-copy'] })
                         )
-                    )
+                    ),
+                    _react2.default.createElement(_Cm02ContentTile2.default, {
+                        title: getData['cm02-title-01'].title,
+                        description: getData['cm02-description-01'],
+                        path: getData['cm02-title-01'].path,
+                        image: 'https://auth.cochlear.com' + getData['cm02-image-01'].src,
+                        embed: getData['cm02-video-embed-01'],
+                        imagePath: getData['cm02-title-01'].path,
+                        additionalClass: 'is-large is-cta' })
                 ),
                 _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
             );
@@ -7357,7 +8924,7 @@ var _ContentHeader = __webpack_require__(11);
 
 var _ContentHeader2 = _interopRequireDefault(_ContentHeader);
 
-var _Cm28SocialShare = __webpack_require__(21);
+var _Cm28SocialShare = __webpack_require__(17);
 
 var _Cm28SocialShare2 = _interopRequireDefault(_Cm28SocialShare);
 
@@ -7519,7 +9086,7 @@ var _BreadCrumbs = __webpack_require__(8);
 
 var _BreadCrumbs2 = _interopRequireDefault(_BreadCrumbs);
 
-var _ClinicNearYou = __webpack_require__(19);
+var _ClinicNearYou = __webpack_require__(20);
 
 var _ClinicNearYou2 = _interopRequireDefault(_ClinicNearYou);
 
@@ -7683,7 +9250,7 @@ var _thunk = __webpack_require__(26);
 
 var _thunk2 = _interopRequireDefault(_thunk);
 
-var _routes = __webpack_require__(18);
+var _routes = __webpack_require__(19);
 
 var _routes2 = _interopRequireDefault(_routes);
 
@@ -7772,7 +9339,7 @@ app.listen(port, function () {
 });
 
 function renderFullPage(html, preloadedState, helmet) {
-	return '\n    <!doctype html>\n    <html>\n      <head>\n        <link rel="icon" href="/dist/favicon.ico" type="image/ico" />\n        <meta name="viewport" content="width=device-width,initial-scale=1" />\n        \n\t\t<script type="text/javascript">\n\t\t\tlet gtm4wp_datalayer_name = "dataLayer";\n\t\t\tif ( "undefined" == typeof dataLayer ) {\n\t\t\t\tdataLayer = new Array();\n\t\t\t}\n\t\t</script>\t\n        \n        \n\t   <script type="text/javascript">\nfunction dataLayerPush (){\n\tdataLayer.push({\n\t\tpage:{\n\t\t\tpageInfo:{\t\t\t\n\t\t\t\t"page-title":  \'\',\n\t\t\t\t"page-url": window.location.href\n\t\t\t}\n\t\t}\n\t}); \n}\n\ndataLayerPush(); \n\n\n\t\t</script>\t\n        \n        ' + helmet.title.toString() + '\n        ' + helmet.meta.toString() + '\n        ' + helmet.link.toString() + '\n      </head>\n      <body>\n\t\t<!-- Google Tag Manager (noscript) -->\n\t\t<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVM6MWV"\n\t\theight="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>\n\t\t<!-- End Google Tag Manager (noscript) -->      \n        <div id="root">' + html + '</div>\n        <script>\n          // WARNING: See the following for security issues around embedding JSON in HTML:\n          // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations\n          window.__PRELOADED_STATE__ = ' + JSON.stringify(preloadedState).replace(/</g, '\\u003c') + '\n        </script>\n        <script src="/dist/assets/app.bundle.js"></script>\n        \n\t\t<!-- Google Tag Manager -->\n\t\t<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({\'gtm.start\':\n\t\tnew Date().getTime(),event:\'gtm.js\'});var f=d.getElementsByTagName(s)[0],\n\t\tj=d.createElement(s),dl=l!=\'dataLayer\'?\'&l=\'+l:\'\';j.async=true;j.src=\n\t\t\'https://www.googletagmanager.com/gtm.js?id=\'+i+dl;f.parentNode.insertBefore(j,f);\n\t\t})(window,document,\'script\',\'dataLayer\',\'GTM-PVM6MWV\');</script>\n\t\t<!-- End Google Tag Manager -->        \n      </body>\n    </html>\n    ';
+	return '\n    <!doctype html>\n    <html>\n      <head>\n        <link rel="icon" href="/dist/favicon.ico" type="image/ico" />\n        <meta name="viewport" content="width=device-width,initial-scale=1" />\n        \n\t\t<script type="text/javascript">\n\t\t\tlet gtm4wp_datalayer_name = "dataLayer";\n\t\t\tif ( "undefined" == typeof dataLayer ) {\n\t\t\t\tdataLayer = new Array();\n\t\t\t}\n\t\t</script>\t\n        \n        \n\t   <script type="text/javascript">\nfunction dataLayerPush (){\n\tdataLayer.push({\n\t\tpage:{\n\t\t\tpageInfo:{\t\t\t\n\t\t\t\t"page-title":  \'\',\n\t\t\t\t"page-url": window.location.href\n\t\t\t}\n\t\t}\n\t}); \n}\n\ndataLayerPush(); \n\n\n\t\t</script>\t\n        \n        ' + helmet.title.toString() + '\n        ' + helmet.meta.toString() + '\n\t\t' + helmet.link.toString() + '\n\t\t\n\t\t<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>\n      </head>\n      <body>\n\t\t<!-- Google Tag Manager (noscript) -->\n\t\t<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVM6MWV"\n\t\theight="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>\n\t\t<!-- End Google Tag Manager (noscript) -->      \n        <div id="root">' + html + '</div>\n        <script>\n          // WARNING: See the following for security issues around embedding JSON in HTML:\n          // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations\n          window.__PRELOADED_STATE__ = ' + JSON.stringify(preloadedState).replace(/</g, '\\u003c') + '\n        </script>\n        <script src="/dist/assets/app.bundle.js"></script>\n        \n\t\t<!-- Google Tag Manager -->\n\t\t<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({\'gtm.start\':\n\t\tnew Date().getTime(),event:\'gtm.js\'});var f=d.getElementsByTagName(s)[0],\n\t\tj=d.createElement(s),dl=l!=\'dataLayer\'?\'&l=\'+l:\'\';j.async=true;j.src=\n\t\t\'https://www.googletagmanager.com/gtm.js?id=\'+i+dl;f.parentNode.insertBefore(j,f);\n\t\t})(window,document,\'script\',\'dataLayer\',\'GTM-PVM6MWV\');</script>\n\t\t<!-- End Google Tag Manager -->        \n      </body>\n    </html>\n    ';
 }
 
 /***/ }),
@@ -8088,7 +9655,7 @@ exports = module.exports = __webpack_require__(13)(false);
 
 
 // module
-exports.push([module.i, "/* ----------- COLOURS ----------- */\n/* ----------- LAYOUT ----------- */\n.l-content-column {\n  max-width: 730px;\n  width: 100%;\n  margin: 0 auto; }\n\n/* ----------- FONTS ----------- */\n@font-face {\n  font-family: \"Knockout-30\";\n  src: url(\"/fonts/Knockout-30JuniorWelterwt.eot\");\n  src: url(\"/fonts/Knockout-30JuniorWelterwt.eot?#iefix\") format(\"embedded-opentype\"), url(\"/fonts/Knockout-30JuniorWelterwt.woff2\") format(\"woff2\"), url(\"/fonts/Knockout-30JuniorWelterwt.woff\") format(\"woff\"), url(\"/fonts/Knockout-30JuniorWelterwt.svg#Knockout-30JuniorWelterwt\") format(\"svg\");\n  font-weight: 300;\n  font-style: normal; }\n\n@font-face {\n  font-family: \"BlissPro-Regular\";\n  src: url(\"/fonts/BlissPro-Regular.eot\");\n  src: url(\"/fonts/BlissPro-Regular.eot?#iefix\") format(\"embedded-opentype\"), url(\"/fonts/BlissPro-Regular.woff2\") format(\"woff2\"), url(\"/fonts/BlissPro-Regular.woff\") format(\"woff\"), url(\"/fonts/BlissPro-Regular.svg#BlissPro-Regular\") format(\"svg\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: \"BlissPro-Light\";\n  src: url(\"/fonts/BlissPro-Light.eot\");\n  src: url(\"/fonts/BlissPro-Light.eot?#iefix\") format(\"embedded-opentype\"), url(\"/fonts/BlissPro-Light.woff2\") format(\"woff2\"), url(\"/fonts/BlissPro-Light.woff\") format(\"woff\"), url(\"/fonts/BlissPro-Light.svg#BlissPro-Light\") format(\"svg\");\n  font-weight: 300;\n  font-style: normal; }\n\nbody {\n  font-family: \"BlissPro-Regular\", \"Trebuchet MS\", \"Gill Sans\", \"Helvetica Neue\", Arial, sans-serif; }\n\nh1, h2, h3, h4, h5 {\n  font-family: \"BlissPro-Regular\", \"Trebuchet MS\", \"Gill Sans\", \"Helvetica Neue\", Arial, sans-serif;\n  font-weight: 600;\n  color: #56565a; }\n  h1 a, h2 a, h3 a, h4 a, h5 a {\n    color: #56565a; }\n\nh1 {\n  font-size: 42px; }\n\nh2 {\n  font-size: 36px;\n  line-height: 40px; }\n\nh3 {\n  font-size: 30px;\n  line-height: 36px; }\n\nh4 {\n  font-size: 22px;\n  line-height: 24px; }\n\np {\n  font-family: \"BlissPro-Regular\", \"Trebuchet MS\", \"Gill Sans\", \"Helvetica Neue\", Arial, sans-serif;\n  font-size: 18px;\n  line-height: 28px;\n  color: #56565a; }\n\na:focus, a:hover {\n  color: #3f1482; }\n\n/* ----------- WIDGETS ----------- */\n.video-embed {\n  position: relative;\n  padding-bottom: 56.25%;\n  /* 16:9 */\n  padding-top: 25px;\n  height: 0; }\n\n.video-embed iframe {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n/* ----------- COMPONENTS ----------- */\n.global-header {\n  border-top: 5px solid #fdc82f; }\n  .global-header .logo a {\n    background-image: url(\"/images/logo_mobile.png\");\n    display: block; }\n  .global-header .logo img {\n    display: none; }\n\n@media only screen and (min-width: 64em) {\n  .global-header {\n    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);\n    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);\n    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);\n    padding-top: 20px;\n    padding-bottom: 10px; }\n    .global-header .login {\n      float: right;\n      width: 160px;\n      cursor: pointer;\n      font-size: 16px;\n      font-weight: 300;\n      text-transform: uppercase;\n      border: 1px solid #3f1482;\n      line-height: 44px;\n      border-radius: 40px;\n      text-decoration: none;\n      text-align: center;\n      background-color: #3f1482;\n      color: #ffffff;\n      margin: 25px 0 0 30px; }\n      .global-header .login:hover {\n        color: #ffffff; }\n    .global-header .logo {\n      height: auto;\n      width: 100px;\n      overflow: hidden; }\n      .global-header .logo a {\n        background-image: url(\"/images/logo_desktop.png\"); }\n      .global-header .logo img {\n        display: block; } }\n\n.landing-banner {\n  background-color: #efefef;\n  margin-bottom: 0; }\n  .landing-banner .l-padding {\n    padding: 0; }\n  .landing-banner .content {\n    padding: 20px 30px 20px; }\n  .landing-banner .image {\n    position: relative;\n    line-height: 0; }\n    .landing-banner .image .img {\n      padding: 0;\n      position: relative;\n      width: 100%; }\n  .landing-banner p {\n    font-family: \"BlissPro-Light\", \"Trebuchet MS\", \"Gill Sans\", \"Helvetica Neue\", Arial, sans-serif;\n    font-size: 24px;\n    line-height: 34px; }\n\n@media only screen and (min-width: 64em) {\n  .landing-banner {\n    background-color: transparent; }\n    .landing-banner .content {\n      float: left;\n      width: 650px;\n      max-width: none;\n      background-color: #efefef;\n      height: 410px;\n      padding: 0; }\n      .landing-banner .content .content-grouper {\n        display: block;\n        padding: 40px;\n        margin: 0 90px;\n        border-left: 5px solid #fdc82f; }\n    .landing-banner .image {\n      position: relative;\n      line-height: 0;\n      z-index: 2; }\n      .landing-banner .image .img {\n        width: 640px;\n        position: absolute;\n        right: 0;\n        left: auto; } }\n\n.cm-rich-text .key-points {\n  border-top: 5px solid #fdc82f;\n  border-bottom: 2px solid #cccccc;\n  margin: 40px 0;\n  padding: 20px 0; }\n  .cm-rich-text .key-points h4 {\n    font-size: 22px;\n    line-height: 28px; }\n  .cm-rich-text .key-points p {\n    font-size: 18px;\n    line-height: 28px; }\n  .cm-rich-text .key-points li {\n    padding-left: 25px; }\n\n.cm-rich-text .breakout {\n  border-bottom: 2px solid #cccccc;\n  margin: 30px 0 20px 0;\n  padding-bottom: 30px; }\n  .cm-rich-text .breakout h3 {\n    border-bottom: 5px solid #fdc82f;\n    padding-bottom: 20px;\n    margin-bottom: 20px; }\n\n.cm-content-tile {\n  cursor: pointer;\n  border: 1px solid #efefef;\n  position: relative;\n  background-color: #fff; }\n  .cm-content-tile .content {\n    padding: 0;\n    margin: 0; }\n    .cm-content-tile .content h3, .cm-content-tile .content p {\n      margin: 0;\n      border-left: 5px solid transparent; }\n      .cm-content-tile .content h3 a, .cm-content-tile .content p a {\n        text-decoration: none; }\n    .cm-content-tile .content h3 {\n      padding: 30px 30px 20px 30px; }\n      .cm-content-tile .content h3 a {\n        font-weight: 600; }\n    .cm-content-tile .content p {\n      padding: 0 30px 30px 30px; }\n    .cm-content-tile .content .cta {\n      display: block;\n      border: 0;\n      border-top: 1px solid #efefef;\n      border-left: 5px solid #fdc82f;\n      color: #3f1482;\n      font-size: 18px;\n      font-weight: bold;\n      text-align: left;\n      padding-left: 30px;\n      margin-top: 0;\n      line-height: 30px; }\n      .cm-content-tile .content .cta:after {\n        content: '>';\n        font-size: 24px;\n        padding-left: 10px;\n        position: relative;\n        top: 2px; }\n      .cm-content-tile .content .cta:hover {\n        background-color: transparent; }\n  .cm-content-tile .image img {\n    opacity: 1;\n    -webkit-transition: -webkit-transform 0.35s;\n    transition: transform 0.35s;\n    -webkit-transform: perspective(1000px) translate3d(0, 0, 0);\n    transform: perspective(1000px) translate3d(0, 0, 0); }\n  .cm-content-tile:before {\n    box-shadow: 0 3px 30px rgba(0, 0, 0, 0.8);\n    opacity: 0;\n    position: absolute;\n    top: 0;\n    left: 0;\n    z-index: -1;\n    width: 100%;\n    height: 100%;\n    background: #000;\n    content: '';\n    -webkit-transition: opacity 0.35s;\n    transition: opacity 0.35s; }\n  .cm-content-tile:hover {\n    border: 0; }\n    .cm-content-tile:hover:before {\n      opacity: 1; }\n    .cm-content-tile:hover .content .cta:after {\n      padding-left: 15px;\n      transition: all 1s ease-in-out;\n      -webkit-transition: all 0.2s ease-in-out;\n      /** Chrome & Safari **/\n      -moz-transition: all 0.2s ease-in-out;\n      /** Firefox **/\n      -o-transition: all 0.2s ease-in-out;\n      /** Opera **/ }\n    .cm-content-tile:hover .image img {\n      -webkit-transform: perspective(1000px) translate3d(0, 0, 21px);\n      transform: perspective(1000px) translate3d(0, 0, 21px); }\n\n.cm-image-block-link:hover img, .cm-image-block-link:hover .img {\n  -webkit-filter: grayscale(0);\n  filter: grayscale(0); }\n\n.cm-image-block-link:after {\n  background-color: transparent; }\n\n.cm-image-block-link .image:after {\n  background-color: transparent; }\n\n.is-cta {\n  border: 0;\n  overflow: hidden; }\n  .is-cta .image {\n    height: 350px;\n    position: relative;\n    left: 30px;\n    display: block; }\n    .is-cta .image img {\n      max-width: none;\n      height: 100%;\n      display: block;\n      width: auto;\n      border-radius: 0 0 0 50px; }\n  .is-cta .content {\n    background-color: #fdc82f;\n    opacity: 0.9;\n    width: 90%;\n    position: absolute;\n    top: 0;\n    left: 0; }\n    .is-cta .content .cta {\n      border: 0;\n      width: 170px;\n      background-color: #ffffff;\n      padding: 10px;\n      margin: 29px;\n      border-radius: 30px;\n      text-align: center; }\n      .is-cta .content .cta:hover {\n        background-color: #3f1482;\n        color: #ffffff; }\n  .is-cta:hover .cta {\n    background-color: #3f1482;\n    color: #ffffff; }\n\n@media only screen and (min-width: 64em) {\n  .nav-onscreen__main-header {\n    float: none;\n    clear: both;\n    width: 100%;\n    padding: 20px 0;\n    border-top: 1px solid #ccc;\n    margin-top: 20px; }\n    .nav-onscreen__main-header .nav {\n      display: flex;\n      float: none; }\n    .nav-onscreen__main-header .nav > li {\n      float: none;\n      flex-grow: 1; }\n  .global-header .nav-onscreen {\n    padding-right: 0; } }\n\n@media only screen and (min-width: 77.75em) {\n  .global-header .nav-onscreen {\n    padding-right: 0; } }\n\n@media only screen and (min-width: 64em) {\n  .nav-global-header {\n    float: left;\n    padding-right: 0;\n    padding-left: 75px; }\n    .nav-global-header .nav {\n      padding: 0; }\n    .nav-global-header .nav > li {\n      margin-right: 60px;\n      display: inline-block;\n      list-style-type: none; }\n    .nav-global-header .nav > li .nav-item-title {\n      line-height: 80px;\n      font-size: 16px;\n      font-weight: 600;\n      padding-top: 0;\n      color: #56565a;\n      text-decoration: none; } }\n\n.breadcrumbs {\n  font-size: 16px;\n  max-width: 1052px;\n  width: 100%;\n  margin: 25px auto 0 auto; }\n  .breadcrumbs ul li:before {\n    content: \"/\";\n    left: 5px;\n    top: 0;\n    margin-top: 0; }\n  .breadcrumbs a {\n    color: #3f1482; }\n    .breadcrumbs a:hover {\n      color: inherit; }\n\n.nav-region-dropdown {\n  display: none; }\n\n@media only screen and (min-width: 64em) {\n  .nav-region-dropdown {\n    float: right;\n    position: relative;\n    margin-top: 25px;\n    display: block; }\n    .nav-region-dropdown .nav-region-dropdown__cta {\n      width: 160px;\n      cursor: pointer;\n      font-size: 16px;\n      font-weight: 300;\n      text-transform: uppercase;\n      border: 1px solid #3f1482;\n      line-height: 44px;\n      border-radius: 40px;\n      text-decoration: none;\n      text-align: center;\n      color: #3f1482;\n      margin: 0; }\n      .nav-region-dropdown .nav-region-dropdown__cta:hover {\n        color: #3f1482; }\n    .nav-region-dropdown .nav-region-dropdown__form {\n      display: none;\n      position: absolute;\n      background-color: #ffffff;\n      z-index: 901; }\n    .nav-region-dropdown .nav-region-dropdown__label {\n      display: block; }\n      .nav-region-dropdown .nav-region-dropdown__label span {\n        width: 150px;\n        display: inline-block; }\n    .nav-region-dropdown .nav-region-dropdown__select {\n      width: 200px;\n      padding: 5px;\n      border: 1px solid #efefef; }\n    .nav-region-dropdown .nav-region-dropdown__submit {\n      display: block;\n      width: 100px;\n      text-align: center;\n      background-color: #000000;\n      color: #ffffff;\n      margin-top: 10px; } }\n", ""]);
+exports.push([module.i, "/* ----------- COLOURS ----------- */\n/* ----------- LAYOUT ----------- */\n.l-content-column {\n  max-width: 730px;\n  width: 100%;\n  margin: 0 auto; }\n\n/* ----------- FONTS ----------- */\n@font-face {\n  font-family: \"Knockout-30\";\n  src: url(\"/fonts/Knockout-30JuniorWelterwt.eot\");\n  src: url(\"/fonts/Knockout-30JuniorWelterwt.eot?#iefix\") format(\"embedded-opentype\"), url(\"/fonts/Knockout-30JuniorWelterwt.woff2\") format(\"woff2\"), url(\"/fonts/Knockout-30JuniorWelterwt.woff\") format(\"woff\"), url(\"/fonts/Knockout-30JuniorWelterwt.svg#Knockout-30JuniorWelterwt\") format(\"svg\");\n  font-weight: 300;\n  font-style: normal; }\n\n@font-face {\n  font-family: \"BlissPro-Regular\";\n  src: url(\"/fonts/BlissPro-Regular.eot\");\n  src: url(\"/fonts/BlissPro-Regular.eot?#iefix\") format(\"embedded-opentype\"), url(\"/fonts/BlissPro-Regular.woff2\") format(\"woff2\"), url(\"/fonts/BlissPro-Regular.woff\") format(\"woff\"), url(\"/fonts/BlissPro-Regular.svg#BlissPro-Regular\") format(\"svg\");\n  font-weight: normal;\n  font-style: normal; }\n\n@font-face {\n  font-family: \"BlissPro-Light\";\n  src: url(\"/fonts/BlissPro-Light.eot\");\n  src: url(\"/fonts/BlissPro-Light.eot?#iefix\") format(\"embedded-opentype\"), url(\"/fonts/BlissPro-Light.woff2\") format(\"woff2\"), url(\"/fonts/BlissPro-Light.woff\") format(\"woff\"), url(\"/fonts/BlissPro-Light.svg#BlissPro-Light\") format(\"svg\");\n  font-weight: 300;\n  font-style: normal; }\n\nbody {\n  font-family: \"BlissPro-Regular\", \"Trebuchet MS\", \"Gill Sans\", \"Helvetica Neue\", Arial, sans-serif; }\n\nh1, h2, h3, h4, h5 {\n  font-family: \"BlissPro-Regular\", \"Trebuchet MS\", \"Gill Sans\", \"Helvetica Neue\", Arial, sans-serif;\n  font-weight: 600;\n  color: #56565a; }\n  h1 a, h2 a, h3 a, h4 a, h5 a {\n    color: #56565a; }\n\nh1 {\n  font-size: 42px; }\n\nh2 {\n  font-size: 36px;\n  line-height: 40px; }\n\nh3 {\n  font-size: 30px;\n  line-height: 36px; }\n\nh4 {\n  font-size: 22px;\n  line-height: 24px; }\n\np {\n  font-family: \"BlissPro-Regular\", \"Trebuchet MS\", \"Gill Sans\", \"Helvetica Neue\", Arial, sans-serif;\n  font-size: 18px;\n  line-height: 28px;\n  color: #56565a; }\n\na:focus, a:hover {\n  color: #3f1482; }\n\n/* ----------- WIDGETS ----------- */\n.video-embed {\n  position: relative;\n  padding-bottom: 56.25%;\n  /* 16:9 */\n  padding-top: 25px;\n  height: 0; }\n\n.video-embed iframe {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%; }\n\n/* ----------- COMPONENTS ----------- */\n.global-header {\n  border-top: 5px solid #fdc82f; }\n  .global-header .logo a {\n    background-image: url(\"/images/logo_mobile.png\");\n    display: block; }\n  .global-header .logo img {\n    display: none; }\n\n@media only screen and (min-width: 64em) {\n  .global-header {\n    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);\n    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);\n    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);\n    padding-top: 20px;\n    padding-bottom: 10px; }\n    .global-header .login {\n      float: right;\n      width: 160px;\n      cursor: pointer;\n      font-size: 16px;\n      font-weight: 300;\n      text-transform: uppercase;\n      border: 1px solid #3f1482;\n      line-height: 44px;\n      border-radius: 40px;\n      text-decoration: none;\n      text-align: center;\n      background-color: #3f1482;\n      color: #ffffff;\n      margin: 25px 0 0 30px; }\n      .global-header .login:hover {\n        color: #ffffff; }\n    .global-header .logo {\n      height: auto;\n      width: 100px;\n      overflow: hidden; }\n      .global-header .logo a {\n        background-image: url(\"/images/logo_desktop.png\"); }\n      .global-header .logo img {\n        display: block; } }\n\n.landing-banner {\n  background-color: #efefef;\n  margin-bottom: 0; }\n  .landing-banner .l-padding {\n    padding: 0; }\n  .landing-banner .content {\n    padding: 20px 30px 20px; }\n  .landing-banner .image {\n    position: relative;\n    line-height: 0; }\n    .landing-banner .image .img {\n      padding: 0;\n      position: relative;\n      width: 100%; }\n  .landing-banner p {\n    font-family: \"BlissPro-Light\", \"Trebuchet MS\", \"Gill Sans\", \"Helvetica Neue\", Arial, sans-serif;\n    font-size: 24px;\n    line-height: 34px; }\n\n@media only screen and (min-width: 64em) {\n  .landing-banner {\n    background-color: transparent; }\n    .landing-banner .content {\n      float: left;\n      width: 650px;\n      max-width: none;\n      background-color: #efefef;\n      height: 410px;\n      padding: 0; }\n      .landing-banner .content .content-grouper {\n        display: block;\n        padding: 40px;\n        margin: 0 90px;\n        border-left: 5px solid #fdc82f; }\n    .landing-banner .image {\n      position: relative;\n      line-height: 0;\n      z-index: 2; }\n      .landing-banner .image .img {\n        width: 640px;\n        position: absolute;\n        right: 0;\n        left: auto; } }\n\n.cm-rich-text .key-points {\n  border-top: 5px solid #fdc82f;\n  border-bottom: 2px solid #cccccc;\n  margin: 40px 0;\n  padding: 20px 0; }\n  .cm-rich-text .key-points h4 {\n    font-size: 22px;\n    line-height: 28px; }\n  .cm-rich-text .key-points p {\n    font-size: 18px;\n    line-height: 28px; }\n  .cm-rich-text .key-points li {\n    padding-left: 25px; }\n\n.cm-rich-text .breakout {\n  border-bottom: 2px solid #cccccc;\n  margin: 30px 0 20px 0;\n  padding-bottom: 30px; }\n  .cm-rich-text .breakout h3 {\n    border-bottom: 5px solid #fdc82f;\n    padding-bottom: 20px;\n    margin-bottom: 20px; }\n\n.cm-rich-text ol li {\n  font-size: 30px;\n  font-family: \"Knockout-30\";\n  color: #56565a; }\n  .cm-rich-text ol li h4 {\n    font-size: 22px;\n    font-weight: bold; }\n\n.cm-content-tile {\n  cursor: pointer;\n  border: 1px solid #efefef;\n  position: relative;\n  background-color: #fff;\n  max-width: 1180px;\n  margin: 0 auto; }\n  .cm-content-tile .content {\n    padding: 0;\n    margin: 0; }\n    .cm-content-tile .content h3, .cm-content-tile .content p {\n      margin: 0;\n      border-left: 5px solid transparent; }\n      .cm-content-tile .content h3 a, .cm-content-tile .content p a {\n        text-decoration: none; }\n    .cm-content-tile .content h3 {\n      padding: 30px 30px 20px 30px; }\n      .cm-content-tile .content h3 a {\n        font-weight: 600; }\n    .cm-content-tile .content p {\n      padding: 0 30px 30px 30px; }\n    .cm-content-tile .content .cta {\n      display: block;\n      border: 0;\n      border-top: 1px solid #efefef;\n      border-left: 5px solid #fdc82f;\n      color: #3f1482;\n      font-size: 18px;\n      font-weight: bold;\n      text-align: left;\n      padding-left: 30px;\n      margin-top: 0;\n      line-height: 30px; }\n      .cm-content-tile .content .cta:after {\n        content: '>';\n        font-size: 24px;\n        padding-left: 10px;\n        position: relative;\n        top: 2px; }\n      .cm-content-tile .content .cta:hover {\n        background-color: transparent; }\n  .cm-content-tile .image img {\n    opacity: 1;\n    -webkit-transition: -webkit-transform 0.35s;\n    transition: transform 0.35s;\n    -webkit-transform: perspective(1000px) translate3d(0, 0, 0);\n    transform: perspective(1000px) translate3d(0, 0, 0); }\n  .cm-content-tile:before {\n    box-shadow: 0 3px 30px rgba(0, 0, 0, 0.8);\n    opacity: 0;\n    position: absolute;\n    top: 0;\n    left: 0;\n    z-index: -1;\n    width: 100%;\n    height: 100%;\n    background: #000;\n    content: '';\n    -webkit-transition: opacity 0.35s;\n    transition: opacity 0.35s; }\n  .cm-content-tile:hover {\n    border: 0; }\n    .cm-content-tile:hover:before {\n      opacity: 1; }\n    .cm-content-tile:hover .content .cta:after {\n      padding-left: 15px;\n      transition: all 1s ease-in-out;\n      -webkit-transition: all 0.2s ease-in-out;\n      /** Chrome & Safari **/\n      -moz-transition: all 0.2s ease-in-out;\n      /** Firefox **/\n      -o-transition: all 0.2s ease-in-out;\n      /** Opera **/ }\n    .cm-content-tile:hover .image img {\n      -webkit-transform: perspective(1000px) translate3d(0, 0, 21px);\n      transform: perspective(1000px) translate3d(0, 0, 21px); }\n\n.cm-image-block-link:hover img, .cm-image-block-link:hover .img {\n  -webkit-filter: grayscale(0);\n  filter: grayscale(0); }\n\n.cm-image-block-link:after {\n  background-color: transparent; }\n\n.cm-image-block-link .image:after {\n  background-color: transparent; }\n\n.is-cta {\n  border: 0;\n  overflow: hidden; }\n  .is-cta .image {\n    height: 350px;\n    position: relative;\n    left: 30px;\n    display: block; }\n    .is-cta .image img {\n      max-width: none;\n      height: 100%;\n      display: block;\n      width: auto;\n      border-radius: 0 0 0 50px; }\n  .is-cta .content {\n    background-color: #fdc82f;\n    opacity: 0.9;\n    width: 90%;\n    position: absolute;\n    top: 0;\n    left: 0; }\n    .is-cta .content .cta {\n      border: 0;\n      width: 170px;\n      background-color: #ffffff;\n      padding: 10px;\n      margin: 29px;\n      border-radius: 30px;\n      text-align: center; }\n      .is-cta .content .cta:hover {\n        background-color: #3f1482;\n        color: #ffffff; }\n  .is-cta:hover .cta {\n    background-color: #3f1482;\n    color: #ffffff; }\n  .is-cta:hover.is-large.is-cta .image img {\n    transform: none; }\n  .is-cta.is-large.is-cta {\n    margin-left: -20px;\n    padding-left: 20px; }\n    .is-cta.is-large.is-cta .cm-image-block-link > a {\n      width: 100%;\n      padding-right: 0;\n      left: 0;\n      padding-left: 0; }\n      .is-cta.is-large.is-cta .cm-image-block-link > a > img {\n        width: auto;\n        border-radius: 0;\n        height: 100%; }\n    .is-cta.is-large.is-cta .cm-image-block-link .content {\n      left: -20px;\n      top: 30px;\n      max-width: 308px;\n      width: 100%;\n      border-radius: 0 0 50px 0;\n      height: calc(100% - 60px);\n      padding-left: 23px; }\n      .is-cta.is-large.is-cta .cm-image-block-link .content h3 {\n        padding: 0;\n        font-size: 22px;\n        padding-right: 54px;\n        padding-top: 30px; }\n      .is-cta.is-large.is-cta .cm-image-block-link .content p {\n        padding: 0;\n        font-size: 28px;\n        padding-right: 54px; }\n    .is-cta.is-large.is-cta .cm-image-block-link .cta {\n      margin: 0;\n      bottom: 40px;\n      position: absolute; }\n      .is-cta.is-large.is-cta .cm-image-block-link .cta:after {\n        display: inline-block; }\n  @media screen and (min-width: 64em) {\n    .is-cta.is-large.is-cta .cm-image-block-link {\n      height: 480px; }\n      .is-cta.is-large.is-cta .cm-image-block-link > a {\n        width: 100%;\n        padding-right: 0;\n        left: 0;\n        padding-left: 50px; }\n        .is-cta.is-large.is-cta .cm-image-block-link > a > img {\n          width: 100%;\n          border-radius: 0;\n          height: auto; }\n      .is-cta.is-large.is-cta .cm-image-block-link .content {\n        left: 0;\n        top: calc(50% - 141.5px);\n        width: 50%;\n        max-width: 380px;\n        border-radius: 0 0 50px 0;\n        height: auto;\n        padding-left: 18px; }\n        .is-cta.is-large.is-cta .cm-image-block-link .content h3 {\n          padding: 30px 30px 20px 30px;\n          font-size: 22px; }\n        .is-cta.is-large.is-cta .cm-image-block-link .content p {\n          padding: 0 30px 30px 30px;\n          font-size: 32px; }\n      .is-cta.is-large.is-cta .cm-image-block-link .cta {\n        margin: 29px;\n        position: initial; }\n        .is-cta.is-large.is-cta .cm-image-block-link .cta:after {\n          display: inline-block; } }\n\n@media only screen and (min-width: 64em) {\n  .nav-onscreen__main-header {\n    float: none;\n    clear: both;\n    width: 100%;\n    padding: 20px 0;\n    border-top: 1px solid #ccc;\n    margin-top: 20px; }\n    .nav-onscreen__main-header .nav {\n      display: flex;\n      float: none; }\n    .nav-onscreen__main-header .nav > li {\n      float: none;\n      flex-grow: 1; }\n  .global-header .nav-onscreen {\n    padding-right: 0; } }\n\n@media only screen and (min-width: 77.75em) {\n  .global-header .nav-onscreen {\n    padding-right: 0; } }\n\n@media only screen and (min-width: 64em) {\n  .nav-global-header {\n    float: left;\n    padding-right: 0;\n    padding-left: 75px; }\n    .nav-global-header .nav {\n      padding: 0; }\n    .nav-global-header .nav > li {\n      margin-right: 60px;\n      display: inline-block;\n      list-style-type: none; }\n    .nav-global-header .nav > li .nav-item-title {\n      line-height: 80px;\n      font-size: 16px;\n      font-weight: 600;\n      padding-top: 0;\n      color: #56565a;\n      text-decoration: none; } }\n\n.breadcrumbs {\n  font-size: 16px;\n  max-width: 1052px;\n  width: 100%;\n  margin: 25px auto 0 auto; }\n  .breadcrumbs ul li:before {\n    content: \"/\";\n    left: 5px;\n    top: 0;\n    margin-top: 0; }\n  .breadcrumbs a {\n    color: #3f1482; }\n    .breadcrumbs a:hover {\n      color: inherit; }\n\n.nav-region-dropdown {\n  display: none; }\n\n@media only screen and (min-width: 64em) {\n  .nav-region-dropdown {\n    float: right;\n    position: relative;\n    margin-top: 25px;\n    display: block; }\n    .nav-region-dropdown .nav-region-dropdown__cta {\n      width: 160px;\n      cursor: pointer;\n      font-size: 16px;\n      font-weight: 300;\n      text-transform: uppercase;\n      border: 1px solid #3f1482;\n      line-height: 44px;\n      border-radius: 40px;\n      text-decoration: none;\n      text-align: center;\n      color: #3f1482;\n      margin: 0; }\n      .nav-region-dropdown .nav-region-dropdown__cta:hover {\n        color: #3f1482; }\n    .nav-region-dropdown .nav-region-dropdown__form {\n      display: none;\n      position: absolute;\n      background-color: #ffffff;\n      z-index: 901; }\n    .nav-region-dropdown .nav-region-dropdown__label {\n      display: block; }\n      .nav-region-dropdown .nav-region-dropdown__label span {\n        width: 150px;\n        display: inline-block; }\n    .nav-region-dropdown .nav-region-dropdown__select {\n      width: 200px;\n      padding: 5px;\n      border: 1px solid #efefef; }\n    .nav-region-dropdown .nav-region-dropdown__submit {\n      display: block;\n      width: 100px;\n      text-align: center;\n      background-color: #000000;\n      color: #ffffff;\n      margin-top: 10px; } }\n\n/* ----------- MIXINS ----------- */\n", ""]);
 
 // exports
 
