@@ -1,5 +1,4 @@
-const nodeExternals = require('webpack-node-externals'),
-    path = require('path'),
+const path = require('path'),
     srcPath = path.resolve(__dirname),
     distPath = path.resolve(__dirname, 'dist');
 
@@ -38,6 +37,5 @@ module.exports = {
             //loaders for other file types can go here
         ]
     },
-    externals: nodeExternals(),
     devtool: 'source-map'
 };

@@ -117,7 +117,9 @@ dataLayerPush();
         
         ${helmet.title.toString()}
         ${helmet.meta.toString()}
-        ${helmet.link.toString()}
+		${helmet.link.toString()}
+		
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
       </head>
       <body>
 		<!-- Google Tag Manager (noscript) -->

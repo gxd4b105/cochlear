@@ -8,6 +8,7 @@ import GlobalHeader from './../GlobalHeader/GlobalHeader.jsx';
 import GlobalFooter from './../GlobalFooter/GlobalFooter.jsx';
 import Cm02ContentTile from "../../components/Cm02ContentTile/Cm02ContentTile.jsx";
 import Cm01RichText from "../../components/Cm01RichText/Cm01RichText.jsx";
+import Cm28SocialShare from "../../components/Cm28SocialShare/Cm28SocialShare.jsx";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs.jsx";
 import HeaderLandingBanner from "../../components/HeaderLandingBanner/HeaderLandingBanner.jsx";
 import ContentHeader from "../../components/ContentHeader/ContentHeader.jsx";
@@ -45,20 +46,20 @@ class TypesOfTreatment extends Component {
                 </Helmet>
 
                 <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
-                <BreadCrumbs/>
 
-                <HeaderLandingBanner title=""
-                                     description=""
+                <HeaderLandingBanner title={getData['title']}
+                                     description={getData['description']}
                                      image={'https://auth.cochlear.com/'+getData['banner-image'].src}
                                      imagePath={getData['banner-image'].alt}
                                      additionalClass="is-dark"/>
+
+               <BreadCrumbs/>
 
                 <div className='l-content-container cf l-padding'>
                     <article className="l-content-column">
                         <main id="main" tabIndex="-1" role="main" className="l-main">
 
-                            <ContentHeader title={getData['title']}
-                                           description={getData['description']} />
+                            <Cm28SocialShare />
 
                             <Cm01RichText body={getData['body-copy']}/>
 
