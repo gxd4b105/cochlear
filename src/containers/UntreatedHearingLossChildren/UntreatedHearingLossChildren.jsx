@@ -10,8 +10,8 @@ import Cm02ContentTile from "../../components/Cm02ContentTile/Cm02ContentTile.js
 import Cm01RichText from "../../components/Cm01RichText/Cm01RichText.jsx";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs.jsx";
 import HeaderLandingBanner from "../../components/HeaderLandingBanner/HeaderLandingBanner.jsx";
-import ContentHeader from "../../components/ContentHeader/ContentHeader.jsx";
 import Cm28SocialShare from "../../components/Cm28SocialShare/Cm28SocialShare.jsx";
+import RelatedContent from "../../components/RelatedContent/RelatedContent.jsx";
 
 if (typeof window === 'undefined') {
     global.window = {}
@@ -56,34 +56,41 @@ class UntreatedHearingLossChildren extends Component {
                 <BreadCrumbs/>
 
                 <div className='l-content-container cf l-padding'>
-                    <article className="l-content-column">
-                        <main id="main" tabIndex="-1" role="main" className="l-main">
-
+                    <main id="main" tabIndex="-1" role="main" className="l-main">
+                        <article className="l-content-column">
                             <Cm28SocialShare />
 
 
                             <Cm01RichText body={getData['body-copy']}/>
 
+                        </article>
 
-                            <div className="sl">
-                                <div className="sl-list has-2-items">
-                                    <div className="sl-item">
-                                        <Cm02ContentTile    title={getData['cm02-title-01'].title}
-                                                            description={getData['cm02-description-01']}
-                                                            path={getData['cm02-title-01'].path}
-                                                            embed = {getData['cm02-video-embed-01']}
-                                                            image={'https://auth.cochlear.com'+getData['cm02-image-01'].src}
-                                                            imagePath={getData['cm02-title-01'].path}
-                                                            additionalClass="is-small is-cta"/>
-                                    </div>
-                                    <div className="sl-item">
+                    </main>
 
-                                    </div>
-                                </div>
-                            </div>
 
-                        </main>
-                    </article>
+                    <RelatedContent   additionalClass="sl__related-articles"
+
+                                      title01 = {getData['related-title-01'].title}
+                                      description01 = {getData['related-description-01']}
+                                      path01 = {getData['related-title-01'].path}
+                                      image01 = {'https://auth.cochlear.com/'+getData['related-image-01'].src}
+                                      embed01 = {getData['related-video-embed-01']}
+                                      additionalClass01 = "is-small"
+
+                                      title02 = {getData['related-title-02'].title}
+                                      description02 = {getData['related-description-02']}
+                                      path02 = {getData['related-title-02'].path}
+                                      image02 = {'https://auth.cochlear.com/'+getData['related-image-02'].src}
+                                      embed02= {getData['related-video-embed-02']}
+                                      additionalClass02 = "is-small"
+
+                                      title03 = {getData['related-title-03'].title}
+                                      description03 = {getData['related-description-03']}
+                                      path03 = {getData['related-title-03'].path}
+                                      image03 = {'https://auth.cochlear.com/'+getData['related-image-03'].src}
+                                      embed03 = {getData['related-video-embed-03']}
+                                      additionalClass03 = "is-small"
+                    />
                 </div>
 
                 <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />

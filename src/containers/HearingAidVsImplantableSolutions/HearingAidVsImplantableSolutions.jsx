@@ -106,65 +106,66 @@ class HearingAidVsCochlearImplant extends Component {
                                      additionalClass="is-dark"/>
 
                 <div className='l-content-container cf l-padding'>
-                    <article className="l-content-column">
-                        <main id="main" tabIndex="-1" role="main" className="l-main">
+                    <main id="main" tabIndex="-1" role="main" className="l-main">
+                        <article className="l-content-column">
 
-                            <ContentHeader title={getData['title']}
-                                           description={getData['description']} />
+                                <ContentHeader title={getData['title']}
+                                               description={getData['description']} />
 
-                            <Cm01RichText body={getData['body-copy']}/>
+                                <Cm01RichText body={getData['body-copy']}/>
 
-                            <Cm02bContentTile title={getData['cm02b-title-01']}
-                                              body={getData['cm02b-description-01']}
-                                              image={'https://auth.cochlear.com/'+getData['cm02b-image-01'].src}/>
+                                <Cm02bContentTile title={getData['cm02b-title-01']}
+                                                  body={getData['cm02b-description-01']}
+                                                  image={'https://auth.cochlear.com/'+getData['cm02b-image-01'].src}/>
 
-                            <Cm01RichText body={getData['video-embed']}/>
+                                <Cm01RichText body={getData['video-embed']}/>
 
-                            <Cm02ContentTileThree additionalClass="sl__testimonials"
-                                                  ctaText="View All"
-                                                  ctaLink="/initl/testimonials"
-                                                  ctaClass="cta__view-all"
+                                <Cm02ContentTileThree additionalClass="sl__testimonials"
+                                                      ctaText="View All"
+                                                      ctaLink="/initl/testimonials"
+                                                      ctaClass="cta__view-all"
 
-                                                  title01 = {getData['cm02-title-03-01'].title}
-                                                  description01 = {getData['cm02-description-03-01']}
-                                                  path01 = {getData['cm02-title-03-01'].path}
-                                                  image01 = {'https://auth.cochlear.com/'+getData['cm02-image-03-01'].src}
-                                                  embed01 = {getData['cm02-video-embed-03-01']}
-                                                  additionalClass01 = "is-shaded is-small"
+                                                      title01 = {getData['cm02-title-03-01'].title}
+                                                      description01 = {getData['cm02-description-03-01']}
+                                                      path01 = {getData['cm02-title-03-01'].path}
+                                                      image01 = {'https://auth.cochlear.com/'+getData['cm02-image-03-01'].src}
+                                                      embed01 = {getData['cm02-video-embed-03-01']}
+                                                      additionalClass01 = "is-small"
 
-                                                  title02 = {getData['cm02-title-03-02'].title}
-                                                  description02 = {getData['cm02-description-03-02']}
-                                                  path02 = {getData['cm02-title-03-02'].path}
-                                                  image02 = {'https://auth.cochlear.com/'+getData['cm02-image-03-02'].src}
-                                                  embed02 = {getData['cm02-video-embed-03-02']}
-                                                  additionalClass02 = "is-shaded is-small"
+                                                      title02 = {getData['cm02-title-03-02'].title}
+                                                      description02 = {getData['cm02-description-03-02']}
+                                                      path02 = {getData['cm02-title-03-02'].path}
+                                                      image02 = {'https://auth.cochlear.com/'+getData['cm02-image-03-02'].src}
+                                                      embed02 = {getData['cm02-video-embed-03-02']}
+                                                      additionalClass02 = "is-small"
 
-                                                  title03 = {getData['cm02-title-03-03'].title}
-                                                  description03 = {getData['cm02-description-03-03']}
-                                                  path03 = {getData['cm02-title-03-03'].path}
-                                                  image03 = {'https://auth.cochlear.com/'+getData['cm02-image-03-02'].src}
-                                                  embed03 = {getData['cm02-video-embed-03-03']}
-                                                  additionalClass03 = "is-shaded is-small"
-                            />
+                                                      title03 = {getData['cm02-title-03-03'].title}
+                                                      description03 = {getData['cm02-description-03-03']}
+                                                      path03 = {getData['cm02-title-03-03'].path}
+                                                      image03 = {'https://auth.cochlear.com/'+getData['cm02-image-03-02'].src}
+                                                      embed03 = {getData['cm02-video-embed-03-03']}
+                                                      additionalClass03 = "is-small"
+                                />
 
-                            <BrochureDownload title="Download a Brochure"
-                                              description="This is description"
-                                              additionalClass="is-shaded is-medium brochure-download"/>
+                                <BrochureDownload title="Download a Brochure"
+                                                  description="This is description"
+                                                  additionalClass="is-shaded is-medium brochure-download"/>
 
 
-                            <ClinicNearYouMini title="Clinics near"
-                                               description=""
-                                               additionalClass="is-shaded"
-                                               label=""
-                                               city={this.props.city}
-                                               markers={this.props.markers}
-                                               test={this.test}
-                                               lat={this.props.lat}
-                                               lng={this.props.lng}
-                                               path={'/intl/find-a-clinic'}
-                                               getCurrentPosition={this.props.getCurrentPosition} />
-                        </main>
-                    </article>
+                                <ClinicNearYouMini title="Clinics near"
+                                                   description=""
+                                                   additionalClass="is-shaded"
+                                                   label=""
+                                                   city={this.props.city}
+                                                   markers={this.props.markers}
+                                                   test={this.test}
+                                                   lat={this.props.lat}
+                                                   lng={this.props.lng}
+                                                   path={'/intl/find-a-clinic'}
+                                                   getCurrentPosition={this.props.getCurrentPosition} />
+
+                        </article>
+                    </main>
                 </div>
                 <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
             </div>

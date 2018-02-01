@@ -29,12 +29,14 @@ class HomePage extends Component {
                                         description="Find out what treatment options are available to manage hearing loss"
                                         image="https://auth.cochlear.com//wps/wcm/connect/dd2107e8-0708-4a4c-9fb9-1bcc1b82be49/CHILD_SWITCH-ON_1_RGB.jpg?MOD=AJPERES&amp;CVID="
                                         path="/intl/treating-hearing-loss"
+                                        embed =""
                                         additionalClass="is-shaded is-large"/>
 
                     <Cm02ContentTile    title="Hearing loss"
                                         description="Learn more about the different degrees and types of hearing loss."
                                         image="https://auth.cochlear.com/wps/wcm/connect/296231d8-90a5-4303-9292-6c85752ca872/GettyImages-753288525_super.jpg?MOD=AJPERES&amp;CVID="
                                         path="/intl/hearing-loss"
+                                        embed =""
                                         additionalClass="is-shaded is-large"/>
 
                 </div>

@@ -6,9 +6,9 @@ class BreadCrumbs extends React.Component {
 
         return (
             <div className="breadcrumbs">
-                    <a href="/demo/templates/modules/index.html" class="back-to-parent">Back to Home</a>
+                    <a href="/demo/templates/modules/index.html" className="back-to-parent">Back to Home</a>
                     <ul itemprop="breadcrumb">
-                        <li class="home">
+                        <li className="home">
                             <a href="/" rel="home">Home</a>
                         </li>
                         <li>
@@ -17,7 +17,7 @@ class BreadCrumbs extends React.Component {
                         <li>
                             <a href="/demo/templates/modules/index.html">Untreated hearing Loss for children</a>
                         </li>
-                        <li class="is-active">
+                        <li className="is-active">
                             CM02 Content Tile
                         </li>
                     </ul>

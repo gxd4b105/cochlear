@@ -1,14 +1,14 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class OnScreenNav__Item extends React.Component {
     render() {
 
         return (
                 <li className={`nav-item ${this.props.additionalClass}`}>
-                    <NavLink className="nav-item-title" to={`${this.props.path}`}>
+                    <a className="nav-item-title" href={`${this.props.path}`}>
                         {this.props.title}
-                    </NavLink>
+                    </a>
 
                     {/* <% if !lvl1.pages.nil? %>
                     <div className="dropdown">

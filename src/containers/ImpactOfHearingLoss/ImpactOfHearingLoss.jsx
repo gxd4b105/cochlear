@@ -45,47 +45,47 @@ class ImpactOfHearingLoss extends Component {
                 </Helmet>
 
                 <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
-                <BreadCrumbs/>
 
-                <HeaderLandingBanner title=""
-                                     description=""
+                <HeaderLandingBanner title={getData['title']}
+                                     description={getData['description']}
                                      image={'https://auth.cochlear.com/'+getData['banner-image'].src}
                                      imagePath={getData['banner-image'].alt}
-                                     additionalClass="is-dark"/>
+                                     additionalClass=""/>
+
+                <BreadCrumbs/>
 
                 <div className='l-content-container cf l-padding'>
-                    <article className="l-content-column">
-                        <main id="main" tabIndex="-1" role="main" className="l-main">
 
-                            <ContentHeader title={getData['title']}
-                                           description={getData['description']} />
+                    <main id="main" tabIndex="-1" role="main" className="l-main">
+                        <article className="l-content-column">
 
                             <Cm01RichText body={getData['body-copy']}/>
-
 
                             <div className="sl">
                                 <div className="sl-list has-2-items">
                                     <div className="sl-item">
-                                        <Cm02ContentTile    title={getData['cm02-title-01'].title}
-                                                            description={getData['cm02-description-01']}
-                                                            path={getData['cm02-title-01'].path}
-                                                            image={'https://auth.cochlear.com'+getData['cm02-image-01'].src}
-                                                            imagePath={getData['cm02-title-01'].path}
-                                                            additionalClass="is-shaded is-small"/>
+                                        <Cm02ContentTile    title={getData['cm02-title-02-01'].title}
+                                                            description={getData['cm02-description-02-01']}
+                                                            path={getData['cm02-title-02-01'].path}
+                                                            image={'https://auth.cochlear.com'+getData['cm02-image-02-01'].src}
+                                                            imagePath={getData['cm02-image-02-01'].path}
+                                                            embed = {getData['cm02-video-embed-02-01']}
+                                                            additionalClass="is-small"/>
                                     </div>
                                     <div className="sl-item">
-                                        <Cm02ContentTile    title={getData['cm02-title-02'].title}
-                                                            description={getData['cm02-description-02']}
-                                                            path={getData['cm02-title-02'].path}
-                                                            image={'https://auth.cochlear.com'+getData['cm02-image-02'].src}
-                                                            imagePath={getData['cm02-title-02'].path}
-                                                            additionalClass="is-shaded is-small"/>
+                                        <Cm02ContentTile    title={getData['cm02-title-02-02'].title}
+                                                            description={getData['cm02-description-02-02']}
+                                                            path={getData['cm02-title-02-02'].path}
+                                                            image={'https://auth.cochlear.com'+getData['cm02-image-02-02'].src}
+                                                            imagePath={getData['cm02-image-02-02'].path}
+                                                            embed = {getData['cm02-video-embed-02-02']}
+                                                            additionalClass="is-small"/>
                                     </div>
                                 </div>
                             </div>
+                        </article>
+                    </main>
 
-                        </main>
-                    </article>
                 </div>
 
                 <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />

@@ -105,8 +105,8 @@ function mapDispatchToProps(dispatch) {
 }
 
 Header.defaultProps = {
-    title: "FED Framework 4.2",
-    logoURL: "#",
+    title: "",
+    logoURL: "/initl/home",
     logoPath:"http://www.cochlear.com/wps/wcm/connect/f3088c94-a515-45e6-b59f-a6f79299d16b/logo.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE-f3088c94-a515-45e6-b59f-a6f79299d16b-kSekuTE",
     additionalClass: "is-dark"
 }
