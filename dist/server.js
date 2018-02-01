@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 68);
+/******/ 	return __webpack_require__(__webpack_require__.s = 69);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -123,7 +123,7 @@ exports.getCurrentPosition = getCurrentPosition;
 exports.updateMarkers = updateMarkers;
 exports.updateCity = updateCity;
 
-var _userTypes = __webpack_require__(22);
+var _userTypes = __webpack_require__(23);
 
 var _axios = __webpack_require__(15);
 
@@ -357,19 +357,19 @@ var _actions = __webpack_require__(4);
 
 var actions = _interopRequireWildcard(_actions);
 
-var _GlobalFooter__Nav = __webpack_require__(40);
+var _GlobalFooter__Nav = __webpack_require__(41);
 
 var _GlobalFooter__Nav2 = _interopRequireDefault(_GlobalFooter__Nav);
 
-var _GlobalFooter__Nav__Item = __webpack_require__(41);
+var _GlobalFooter__Nav__Item = __webpack_require__(42);
 
 var _GlobalFooter__Nav__Item2 = _interopRequireDefault(_GlobalFooter__Nav__Item);
 
-var _GlobalFooter__Nav__Social = __webpack_require__(42);
+var _GlobalFooter__Nav__Social = __webpack_require__(43);
 
 var _GlobalFooter__Nav__Social2 = _interopRequireDefault(_GlobalFooter__Nav__Social);
 
-var _GlobalFooter__Nav__Social__Item = __webpack_require__(43);
+var _GlobalFooter__Nav__Social__Item = __webpack_require__(44);
 
 var _GlobalFooter__Nav__Social__Item2 = _interopRequireDefault(_GlobalFooter__Nav__Social__Item);
 
@@ -543,23 +543,23 @@ var _actions = __webpack_require__(4);
 
 var actions = _interopRequireWildcard(_actions);
 
-var _OnScreeNav = __webpack_require__(46);
+var _OnScreeNav = __webpack_require__(47);
 
 var _OnScreeNav2 = _interopRequireDefault(_OnScreeNav);
 
-var _OnScreenNav__Item = __webpack_require__(47);
+var _OnScreenNav__Item = __webpack_require__(48);
 
 var _OnScreenNav__Item2 = _interopRequireDefault(_OnScreenNav__Item);
 
-var _GlobalHeader__Nav = __webpack_require__(44);
+var _GlobalHeader__Nav = __webpack_require__(45);
 
 var _GlobalHeader__Nav2 = _interopRequireDefault(_GlobalHeader__Nav);
 
-var _GlobalHeader__Nav__Item = __webpack_require__(45);
+var _GlobalHeader__Nav__Item = __webpack_require__(46);
 
 var _GlobalHeader__Nav__Item2 = _interopRequireDefault(_GlobalHeader__Nav__Item);
 
-var _RegionLanguageSelect = __webpack_require__(48);
+var _RegionLanguageSelect = __webpack_require__(49);
 
 var _RegionLanguageSelect2 = _interopRequireDefault(_RegionLanguageSelect);
 
@@ -574,10 +574,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(83);
+    __webpack_require__(84);
     //require("../../styles/fonts.scss");
     //require("../../styles/mixins.scss");
-    __webpack_require__(84);
+    __webpack_require__(85);
     //require("./GlobalHeader.scss");
 }
 
@@ -701,8 +701,8 @@ function mapDispatchToProps(dispatch) {
 }
 
 Header.defaultProps = {
-    title: "FED Framework 4.2",
-    logoURL: "#",
+    title: "",
+    logoURL: "/initl/home",
     logoPath: "http://www.cochlear.com/wps/wcm/connect/f3088c94-a515-45e6-b59f-a6f79299d16b/logo.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE-f3088c94-a515-45e6-b59f-a6f79299d16b-kSekuTE",
     additionalClass: "is-dark"
 };
@@ -839,7 +839,7 @@ var BreadCrumbs = function (_React$Component) {
                 { className: "breadcrumbs" },
                 _react2.default.createElement(
                     "a",
-                    { href: "/demo/templates/modules/index.html", "class": "back-to-parent" },
+                    { href: "/demo/templates/modules/index.html", className: "back-to-parent" },
                     "Back to Home"
                 ),
                 _react2.default.createElement(
@@ -847,7 +847,7 @@ var BreadCrumbs = function (_React$Component) {
                     { itemprop: "breadcrumb" },
                     _react2.default.createElement(
                         "li",
-                        { "class": "home" },
+                        { className: "home" },
                         _react2.default.createElement(
                             "a",
                             { href: "/", rel: "home" },
@@ -874,7 +874,7 @@ var BreadCrumbs = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                         "li",
-                        { "class": "is-active" },
+                        { className: "is-active" },
                         "CM02 Content Tile"
                     )
                 )
@@ -1237,7 +1237,7 @@ var stylesInDom = {},
 	singletonElement = null,
 	singletonCounter = 0,
 	styleElementsInsertedAtTop = [],
-	fixUrls = __webpack_require__(78);
+	fixUrls = __webpack_require__(79);
 
 module.exports = function(list, options) {
 	if(typeof DEBUG !== "undefined" && DEBUG) {
@@ -1518,79 +1518,79 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Home = __webpack_require__(54);
+var _Home = __webpack_require__(55);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _Homesecond = __webpack_require__(56);
+var _Homesecond = __webpack_require__(57);
 
 var _Homesecond2 = _interopRequireDefault(_Homesecond);
 
-var _Homethird = __webpack_require__(57);
+var _Homethird = __webpack_require__(58);
 
 var _Homethird2 = _interopRequireDefault(_Homethird);
 
-var _user = __webpack_require__(71);
+var _user = __webpack_require__(72);
 
 var _user2 = _interopRequireDefault(_user);
 
-var _HomePage = __webpack_require__(55);
+var _HomePage = __webpack_require__(56);
 
 var _HomePage2 = _interopRequireDefault(_HomePage);
 
-var _HearingAidVsImplantableSolutions = __webpack_require__(52);
+var _HearingAidVsImplantableSolutions = __webpack_require__(53);
 
 var _HearingAidVsImplantableSolutions2 = _interopRequireDefault(_HearingAidVsImplantableSolutions);
 
-var _FindAClinic = __webpack_require__(51);
+var _FindAClinic = __webpack_require__(52);
 
 var _FindAClinic2 = _interopRequireDefault(_FindAClinic);
 
-var _StatsAndProofs = __webpack_require__(61);
+var _StatsAndProofs = __webpack_require__(62);
 
 var _StatsAndProofs2 = _interopRequireDefault(_StatsAndProofs);
 
-var _TreatmentOptions = __webpack_require__(63);
+var _TreatmentOptions = __webpack_require__(64);
 
 var _TreatmentOptions2 = _interopRequireDefault(_TreatmentOptions);
 
-var _TypesOfTreatment = __webpack_require__(64);
+var _TypesOfTreatment = __webpack_require__(65);
 
 var _TypesOfTreatment2 = _interopRequireDefault(_TypesOfTreatment);
 
-var _TreatingHearingLoss = __webpack_require__(62);
+var _TreatingHearingLoss = __webpack_require__(63);
 
 var _TreatingHearingLoss2 = _interopRequireDefault(_TreatingHearingLoss);
 
-var _HearingLoss = __webpack_require__(53);
+var _HearingLoss = __webpack_require__(54);
 
 var _HearingLoss2 = _interopRequireDefault(_HearingLoss);
 
-var _ImplantableSolutions = __webpack_require__(59);
+var _ImplantableSolutions = __webpack_require__(60);
 
 var _ImplantableSolutions2 = _interopRequireDefault(_ImplantableSolutions);
 
-var _CostsAndAffordability = __webpack_require__(50);
+var _CostsAndAffordability = __webpack_require__(51);
 
 var _CostsAndAffordability2 = _interopRequireDefault(_CostsAndAffordability);
 
-var _ImpactOfHearingLoss = __webpack_require__(58);
+var _ImpactOfHearingLoss = __webpack_require__(59);
 
 var _ImpactOfHearingLoss2 = _interopRequireDefault(_ImpactOfHearingLoss);
 
-var _UntreatedHearingLossAdult = __webpack_require__(65);
+var _UntreatedHearingLossAdult = __webpack_require__(66);
 
 var _UntreatedHearingLossAdult2 = _interopRequireDefault(_UntreatedHearingLossAdult);
 
-var _UntreatedHearingLossChildren = __webpack_require__(66);
+var _UntreatedHearingLossChildren = __webpack_require__(67);
 
 var _UntreatedHearingLossChildren2 = _interopRequireDefault(_UntreatedHearingLossChildren);
 
-var _PlanningYourTest = __webpack_require__(60);
+var _PlanningYourTest = __webpack_require__(61);
 
 var _PlanningYourTest2 = _interopRequireDefault(_PlanningYourTest);
 
-var _Main = __webpack_require__(67);
+var _Main = __webpack_require__(68);
 
 var _Main2 = _interopRequireDefault(_Main);
 
@@ -1692,11 +1692,11 @@ var _GoogleMapsWrapper2 = _interopRequireDefault(_GoogleMapsWrapper);
 
 var _reactGoogleMaps = __webpack_require__(17);
 
-var _MarkerClusterer = __webpack_require__(24);
+var _MarkerClusterer = __webpack_require__(25);
 
 var _MarkerClusterer2 = _interopRequireDefault(_MarkerClusterer);
 
-var _reactGeosuggest = __webpack_require__(23);
+var _reactGeosuggest = __webpack_require__(24);
 
 var _reactGeosuggest2 = _interopRequireDefault(_reactGeosuggest);
 
@@ -2115,6 +2115,99 @@ exports.default = Cm28SocialShare;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Cm02ContentTile = __webpack_require__(10);
+
+var _Cm02ContentTile2 = _interopRequireDefault(_Cm02ContentTile);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var RelatedContent = function (_React$Component) {
+    _inherits(RelatedContent, _React$Component);
+
+    function RelatedContent() {
+        _classCallCheck(this, RelatedContent);
+
+        return _possibleConstructorReturn(this, (RelatedContent.__proto__ || Object.getPrototypeOf(RelatedContent)).apply(this, arguments));
+    }
+
+    _createClass(RelatedContent, [{
+        key: "render",
+        value: function render() {
+
+            return _react2.default.createElement(
+                "aside",
+                { className: "sl " + this.props.additionalClass },
+                _react2.default.createElement(
+                    "div",
+                    { className: "sl-list has-3-items" },
+                    _react2.default.createElement(
+                        "h3",
+                        null,
+                        "Related articles"
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "sl-item" },
+                        _react2.default.createElement(_Cm02ContentTile2.default, { title: this.props.title01,
+                            description: this.props.description01,
+                            path: this.props.path01,
+                            image: this.props.image01,
+                            embed: this.props.embed01,
+                            additionalClass: this.props.additionalClass01 })
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "sl-item" },
+                        _react2.default.createElement(_Cm02ContentTile2.default, { title: this.props.title02,
+                            description: this.props.description02,
+                            path: this.props.path02,
+                            image: this.props.image02,
+                            embed: this.props.embed02,
+                            additionalClass: this.props.additionalClass02 })
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "sl-item" },
+                        _react2.default.createElement(_Cm02ContentTile2.default, { title: this.props.title03,
+                            description: this.props.description03,
+                            path: this.props.path03,
+                            image: this.props.image03,
+                            embed: this.props.embed03,
+                            additionalClass: this.props.additionalClass03 })
+                    )
+                )
+            );
+        }
+    }]);
+
+    return RelatedContent;
+}(_react2.default.Component);
+
+exports.default = RelatedContent;
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 var Types = exports.Types = {
     UPDATE_NAME: 'UPDATE_NAME',
     UPDATE_HEADER: 'UPDATE_HEADER',
@@ -2141,19 +2234,19 @@ var Types = exports.Types = {
 };
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-geosuggest");
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-google-maps/lib/components/addons/MarkerClusterer");
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2173,7 +2266,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(12);
 
-var _redirectWStatus = __webpack_require__(69);
+var _redirectWStatus = __webpack_require__(70);
 
 var _redirectWStatus2 = _interopRequireDefault(_redirectWStatus);
 
@@ -2270,7 +2363,7 @@ function mapDispatchToProps(dispatch) {
 //export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2293,7 +2386,7 @@ var isFunction = function isFunction(action) {
 exports.default = customMiddleware;
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2305,7 +2398,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(1);
 
-var _reducer = __webpack_require__(70);
+var _reducer = __webpack_require__(71);
 
 var _reducer2 = _interopRequireDefault(_reducer);
 
@@ -2318,25 +2411,25 @@ var reducers = (0, _redux.combineReducers)({
 exports.default = reducers;
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports) {
 
 module.exports = require("express");
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router");
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2422,7 +2515,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Body);
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2504,7 +2597,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Bodysecond);
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2586,7 +2679,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Bodythird);
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2611,7 +2704,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(79);
+    __webpack_require__(80);
 }
 
 var BrochureDownload = function (_React$Component) {
@@ -2964,7 +3057,7 @@ var BrochureDownload = function (_React$Component) {
 exports.default = BrochureDownload;
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2986,11 +3079,11 @@ var _GoogleMapsWrapper2 = _interopRequireDefault(_GoogleMapsWrapper);
 
 var _reactGoogleMaps = __webpack_require__(17);
 
-var _MarkerClusterer = __webpack_require__(24);
+var _MarkerClusterer = __webpack_require__(25);
 
 var _MarkerClusterer2 = _interopRequireDefault(_MarkerClusterer);
 
-var _reactGeosuggest = __webpack_require__(23);
+var _reactGeosuggest = __webpack_require__(24);
 
 var _reactGeosuggest2 = _interopRequireDefault(_reactGeosuggest);
 
@@ -3169,7 +3262,7 @@ var ClinicNearYouMini = function (_React$Component) {
 exports.default = ClinicNearYouMini;
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3198,7 +3291,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(80);
+    __webpack_require__(81);
 }
 
 var Cm02ContentTileThree = function (_React$Component) {
@@ -3266,7 +3359,7 @@ var Cm02ContentTileThree = function (_React$Component) {
 exports.default = Cm02ContentTileThree;
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3335,7 +3428,7 @@ Cm02bContentTile.defaultProps = {
 exports.default = Cm02bContentTile;
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3360,7 +3453,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(81);
+    __webpack_require__(82);
 }
 
 var Cm18Accordian = function (_React$Component) {
@@ -3403,7 +3496,7 @@ var Cm18Accordian = function (_React$Component) {
 exports.default = Cm18Accordian;
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3467,7 +3560,7 @@ var Cm18Accordian__Item = function (_React$Component) {
 exports.default = Cm18Accordian__Item;
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3540,7 +3633,7 @@ GlobalFooter__Nav.defaultProps = {
 exports.default = GlobalFooter__Nav;
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3600,7 +3693,7 @@ GlobalFooter__Nav__Item.defaultProps = {
 exports.default = GlobalFooter__Nav__Item;
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3664,7 +3757,7 @@ var GlobalFooter__Nav__Social = function (_React$Component) {
 exports.default = GlobalFooter__Nav__Social;
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3726,7 +3819,7 @@ GlobalFooter__Nav__Social__Item.defaultProps = {
 exports.default = GlobalFooter__Nav__Social__Item;
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3808,7 +3901,7 @@ var GlobalHeader__Nav = function (_React$Component) {
 exports.default = GlobalHeader__Nav;
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3871,7 +3964,7 @@ GlobalHeader__Nav__Item.defaultProps = {
 exports.default = GlobalHeader__Nav__Item;
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3957,7 +4050,7 @@ var OnScreeNav = function (_React$Component) {
 exports.default = OnScreeNav;
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4000,8 +4093,8 @@ var OnScreenNav__Item = function (_React$Component) {
                 'li',
                 { className: 'nav-item ' + this.props.additionalClass },
                 _react2.default.createElement(
-                    _reactRouterDom.NavLink,
-                    { className: 'nav-item-title', to: '' + this.props.path },
+                    'a',
+                    { className: 'nav-item-title', href: '' + this.props.path },
                     this.props.title
                 )
             );
@@ -4020,7 +4113,7 @@ OnScreenNav__Item.defaultProps = {
 exports.default = OnScreenNav__Item;
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4758,7 +4851,7 @@ var RegionLanguageSelect = function (_React$Component) {
 exports.default = RegionLanguageSelect;
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4805,7 +4898,7 @@ var Header1 = function (_React$Component) {
 exports.default = Header1;
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4857,11 +4950,11 @@ var _HeaderLandingBanner = __webpack_require__(7);
 
 var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
 
-var _Cm18Accordian = __webpack_require__(38);
+var _Cm18Accordian = __webpack_require__(39);
 
 var _Cm18Accordian2 = _interopRequireDefault(_Cm18Accordian);
 
-var _Cm18Accordian__Item = __webpack_require__(39);
+var _Cm18Accordian__Item = __webpack_require__(40);
 
 var _Cm18Accordian__Item2 = _interopRequireDefault(_Cm18Accordian__Item);
 
@@ -4913,23 +5006,22 @@ var CostsAndAffordability = function (_Component) {
                     )
                 ),
                 _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
-                _react2.default.createElement(_BreadCrumbs2.default, null),
-                _react2.default.createElement(_HeaderLandingBanner2.default, { title: '',
-                    description: '',
+                _react2.default.createElement(_HeaderLandingBanner2.default, { title: getData['title'],
+                    description: getData['description'],
                     image: 'https://auth.cochlear.com/' + getData['banner-image'].src,
                     imagePath: getData['banner-image'].alt,
+                    embed: getData['cm02-title-01'],
                     additionalClass: 'is-dark' }),
+                _react2.default.createElement(_BreadCrumbs2.default, null),
                 _react2.default.createElement(
                     'div',
                     { className: 'l-content-container cf l-padding' },
                     _react2.default.createElement(
-                        'article',
-                        { className: 'l-content-column' },
+                        'main',
+                        { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
                         _react2.default.createElement(
-                            'main',
-                            { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
-                            _react2.default.createElement(_ContentHeader2.default, { title: getData['title'],
-                                description: getData['description'] }),
+                            'article',
+                            { className: 'l-content-column' },
                             _react2.default.createElement(_Cm01RichText2.default, { body: getData['body-copy'] })
                         )
                     )
@@ -4959,7 +5051,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(CostsAndAffordability);
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5156,7 +5248,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(FindAClinic);
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5208,7 +5300,7 @@ var _BreadCrumbs = __webpack_require__(8);
 
 var _BreadCrumbs2 = _interopRequireDefault(_BreadCrumbs);
 
-var _ClinicNearYouMini = __webpack_require__(35);
+var _ClinicNearYouMini = __webpack_require__(36);
 
 var _ClinicNearYouMini2 = _interopRequireDefault(_ClinicNearYouMini);
 
@@ -5216,11 +5308,11 @@ var _ContentHeader = __webpack_require__(11);
 
 var _ContentHeader2 = _interopRequireDefault(_ContentHeader);
 
-var _Cm02bContentTile = __webpack_require__(37);
+var _Cm02bContentTile = __webpack_require__(38);
 
 var _Cm02bContentTile2 = _interopRequireDefault(_Cm02bContentTile);
 
-var _Cm02ContentTileThree = __webpack_require__(36);
+var _Cm02ContentTileThree = __webpack_require__(37);
 
 var _Cm02ContentTileThree2 = _interopRequireDefault(_Cm02ContentTileThree);
 
@@ -5228,7 +5320,7 @@ var _axios = __webpack_require__(15);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _BrochureDownload = __webpack_require__(34);
+var _BrochureDownload = __webpack_require__(35);
 
 var _BrochureDownload2 = _interopRequireDefault(_BrochureDownload);
 
@@ -5334,11 +5426,11 @@ var HearingAidVsCochlearImplant = function (_Component) {
                     'div',
                     { className: 'l-content-container cf l-padding' },
                     _react2.default.createElement(
-                        'article',
-                        { className: 'l-content-column' },
+                        'main',
+                        { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
                         _react2.default.createElement(
-                            'main',
-                            { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
+                            'article',
+                            { className: 'l-content-column' },
                             _react2.default.createElement(_ContentHeader2.default, { title: getData['title'],
                                 description: getData['description'] }),
                             _react2.default.createElement(_Cm01RichText2.default, { body: getData['body-copy'] }),
@@ -5356,21 +5448,21 @@ var HearingAidVsCochlearImplant = function (_Component) {
                                 path01: getData['cm02-title-03-01'].path,
                                 image01: 'https://auth.cochlear.com/' + getData['cm02-image-03-01'].src,
                                 embed01: getData['cm02-video-embed-03-01'],
-                                additionalClass01: 'is-shaded is-small',
+                                additionalClass01: 'is-small',
 
                                 title02: getData['cm02-title-03-02'].title,
                                 description02: getData['cm02-description-03-02'],
                                 path02: getData['cm02-title-03-02'].path,
                                 image02: 'https://auth.cochlear.com/' + getData['cm02-image-03-02'].src,
                                 embed02: getData['cm02-video-embed-03-02'],
-                                additionalClass02: 'is-shaded is-small',
+                                additionalClass02: 'is-small',
 
                                 title03: getData['cm02-title-03-03'].title,
                                 description03: getData['cm02-description-03-03'],
                                 path03: getData['cm02-title-03-03'].path,
                                 image03: 'https://auth.cochlear.com/' + getData['cm02-image-03-02'].src,
                                 embed03: getData['cm02-video-embed-03-03'],
-                                additionalClass03: 'is-shaded is-small'
+                                additionalClass03: 'is-small'
                             }),
                             _react2.default.createElement(_BrochureDownload2.default, { title: 'Download a Brochure',
                                 description: 'This is description',
@@ -5414,7 +5506,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(HearingAidVsCochlearImplant);
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5521,23 +5613,21 @@ var HearingLoss = function (_Component) {
                     _react2.default.createElement('link', { rel: 'canonical', href: 'http://www.cochlear.com/wps/wcm/connect/intl/home/understand/my-child-has-hl' })
                 ),
                 _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
-                _react2.default.createElement(_BreadCrumbs2.default, null),
-                _react2.default.createElement(_HeaderLandingBanner2.default, { title: '',
-                    description: '',
+                _react2.default.createElement(_HeaderLandingBanner2.default, { title: getData['title'],
+                    description: getData['description'],
                     image: 'https://auth.cochlear.com/' + getData['banner-image'].src,
                     imagePath: getData['banner-image'].alt,
-                    additionalClass: 'is-dark' }),
+                    additionalClass: '' }),
+                _react2.default.createElement(_BreadCrumbs2.default, null),
                 _react2.default.createElement(
                     'div',
                     { className: 'l-content-container cf l-padding' },
                     _react2.default.createElement(
-                        'article',
-                        { className: 'l-content-column' },
+                        'main',
+                        { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
                         _react2.default.createElement(
-                            'main',
-                            { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
-                            _react2.default.createElement(_ContentHeader2.default, { title: getData['title'],
-                                description: getData['description'] }),
+                            'article',
+                            { className: 'l-content-column' },
                             _react2.default.createElement(_Cm01RichText2.default, { body: getData['body-copy'] }),
                             _react2.default.createElement(
                                 'div',
@@ -5553,7 +5643,8 @@ var HearingLoss = function (_Component) {
                                             path: getData['cm02-title-01'].path,
                                             image: 'https://auth.cochlear.com' + getData['cm02-image-01'].src,
                                             imagePath: getData['cm02-title-01'].path,
-                                            additionalClass: 'is-shaded is-small' })
+                                            embed: getData['cm02-video-embed-01'],
+                                            additionalClass: 'is-small' })
                                     ),
                                     _react2.default.createElement('div', { className: 'sl-item' })
                                 )
@@ -5586,7 +5677,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(HearingLoss);
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5618,7 +5709,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Body = __webpack_require__(31);
+var _Body = __webpack_require__(32);
 
 var _Body2 = _interopRequireDefault(_Body);
 
@@ -5637,7 +5728,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 if (process.env.BROWSER) {
-    __webpack_require__(82);
+    __webpack_require__(83);
     //import style from './Home.scss';
 }
 
@@ -5690,7 +5781,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Home);
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5776,11 +5867,13 @@ var HomePage = function (_Component) {
                         description: 'Find out what treatment options are available to manage hearing loss',
                         image: 'https://auth.cochlear.com//wps/wcm/connect/dd2107e8-0708-4a4c-9fb9-1bcc1b82be49/CHILD_SWITCH-ON_1_RGB.jpg?MOD=AJPERES&CVID=',
                         path: '/intl/treating-hearing-loss',
+                        embed: '',
                         additionalClass: 'is-shaded is-large' }),
                     _react2.default.createElement(_Cm02ContentTile2.default, { title: 'Hearing loss',
                         description: 'Learn more about the different degrees and types of hearing loss.',
                         image: 'https://auth.cochlear.com/wps/wcm/connect/296231d8-90a5-4303-9292-6c85752ca872/GettyImages-753288525_super.jpg?MOD=AJPERES&CVID=',
                         path: '/intl/hearing-loss',
+                        embed: '',
                         additionalClass: 'is-shaded is-large' })
                 ),
                 _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
@@ -5808,7 +5901,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(HomePage);
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5840,7 +5933,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Bodysecond = __webpack_require__(32);
+var _Bodysecond = __webpack_require__(33);
 
 var _Bodysecond2 = _interopRequireDefault(_Bodysecond);
 
@@ -5907,7 +6000,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Homesecond);
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5939,7 +6032,7 @@ var _GlobalFooter = __webpack_require__(5);
 
 var _GlobalFooter2 = _interopRequireDefault(_GlobalFooter);
 
-var _Bodythird = __webpack_require__(33);
+var _Bodythird = __webpack_require__(34);
 
 var _Bodythird2 = _interopRequireDefault(_Bodythird);
 
@@ -6006,7 +6099,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Homethird);
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6115,23 +6208,21 @@ var ImpactOfHearingLoss = function (_Component) {
                     _react2.default.createElement('link', { rel: 'canonical', href: 'http://www.cochlear.com/wps/wcm/connect/intl/home/understand/my-child-has-hl' })
                 ),
                 _react2.default.createElement(_GlobalHeader2.default, { title: this.props.headerTitle, country: this.props.headerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' }),
-                _react2.default.createElement(_BreadCrumbs2.default, null),
-                _react2.default.createElement(_HeaderLandingBanner2.default, { title: '',
-                    description: '',
+                _react2.default.createElement(_HeaderLandingBanner2.default, { title: getData['title'],
+                    description: getData['description'],
                     image: 'https://auth.cochlear.com/' + getData['banner-image'].src,
                     imagePath: getData['banner-image'].alt,
-                    additionalClass: 'is-dark' }),
+                    additionalClass: '' }),
+                _react2.default.createElement(_BreadCrumbs2.default, null),
                 _react2.default.createElement(
                     'div',
                     { className: 'l-content-container cf l-padding' },
                     _react2.default.createElement(
-                        'article',
-                        { className: 'l-content-column' },
+                        'main',
+                        { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
                         _react2.default.createElement(
-                            'main',
-                            { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
-                            _react2.default.createElement(_ContentHeader2.default, { title: getData['title'],
-                                description: getData['description'] }),
+                            'article',
+                            { className: 'l-content-column' },
                             _react2.default.createElement(_Cm01RichText2.default, { body: getData['body-copy'] }),
                             _react2.default.createElement(
                                 'div',
@@ -6142,22 +6233,24 @@ var ImpactOfHearingLoss = function (_Component) {
                                     _react2.default.createElement(
                                         'div',
                                         { className: 'sl-item' },
-                                        _react2.default.createElement(_Cm02ContentTile2.default, { title: getData['cm02-title-01'].title,
-                                            description: getData['cm02-description-01'],
-                                            path: getData['cm02-title-01'].path,
-                                            image: 'https://auth.cochlear.com' + getData['cm02-image-01'].src,
-                                            imagePath: getData['cm02-title-01'].path,
-                                            additionalClass: 'is-shaded is-small' })
+                                        _react2.default.createElement(_Cm02ContentTile2.default, { title: getData['cm02-title-02-01'].title,
+                                            description: getData['cm02-description-02-01'],
+                                            path: getData['cm02-title-02-01'].path,
+                                            image: 'https://auth.cochlear.com' + getData['cm02-image-02-01'].src,
+                                            imagePath: getData['cm02-image-02-01'].path,
+                                            embed: getData['cm02-video-embed-02-01'],
+                                            additionalClass: 'is-small' })
                                     ),
                                     _react2.default.createElement(
                                         'div',
                                         { className: 'sl-item' },
-                                        _react2.default.createElement(_Cm02ContentTile2.default, { title: getData['cm02-title-02'].title,
+                                        _react2.default.createElement(_Cm02ContentTile2.default, { title: getData['cm02-title-02-02'].title,
                                             description: getData['cm02-description-02'],
-                                            path: getData['cm02-title-02'].path,
-                                            image: 'https://auth.cochlear.com' + getData['cm02-image-02'].src,
-                                            imagePath: getData['cm02-title-02'].path,
-                                            additionalClass: 'is-shaded is-small' })
+                                            path: getData['cm02-title-02-02'].path,
+                                            image: 'https://auth.cochlear.com' + getData['cm02-image-02-02'].src,
+                                            imagePath: getData['cm02-image-02-02'].path,
+                                            embed: getData['cm02-video-embed-02-02'],
+                                            additionalClass: 'is-small' })
                                     )
                                 )
                             )
@@ -6189,7 +6282,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(ImpactOfHearingLoss);
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6339,7 +6432,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(ImplantableSolutions);
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6480,7 +6573,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(PlanningYourTest);
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6613,7 +6706,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(StatsAndProofs);
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6765,7 +6858,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TreatingHearingLoss);
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6957,7 +7050,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TreatmentOptions);
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7140,7 +7233,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TypesOfTreatment);
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7195,6 +7288,10 @@ var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
 var _Cm28SocialShare = __webpack_require__(21);
 
 var _Cm28SocialShare2 = _interopRequireDefault(_Cm28SocialShare);
+
+var _RelatedContent = __webpack_require__(22);
+
+var _RelatedContent2 = _interopRequireDefault(_RelatedContent);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -7259,21 +7356,37 @@ var UntreatedHearingLossAdult = function (_Component) {
                     'div',
                     { className: 'l-content-container cf l-padding' },
                     _react2.default.createElement(
-                        'article',
-                        { className: 'l-content-column' },
+                        'main',
+                        { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
                         _react2.default.createElement(
-                            'main',
-                            { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
+                            'article',
+                            { className: 'l-content-column' },
                             _react2.default.createElement(_Cm28SocialShare2.default, null),
-                            _react2.default.createElement(_Cm01RichText2.default, { body: getData['body-copy'] }),
-                            _react2.default.createElement(_Cm02ContentTile2.default, { title: getData['cm02-title-01'].title,
-                                description: getData['cm02-description-01'],
-                                path: getData['cm02-title-01'].path,
-                                image: 'https://auth.cochlear.com' + getData['cm02-image-01'].src,
-                                embed: getData['cm02-video-embed-01'],
-                                imagePath: getData['cm02-title-01'].path,
-                                additionalClass: 'is-large is-cta' })
-                        )
+                            _react2.default.createElement(_Cm01RichText2.default, { body: getData['body-copy'] })
+                        ),
+                        _react2.default.createElement(_RelatedContent2.default, { additionalClass: 'sl__related-articles',
+
+                            title01: getData['related-title-01'].title,
+                            description01: getData['related-description-01'],
+                            path01: getData['related-title-01'].path,
+                            image01: 'https://auth.cochlear.com/' + getData['related-image-01'].src,
+                            embed01: getData['related-video-embed-01'],
+                            additionalClass01: 'is-small',
+
+                            title02: getData['related-title-02'].title,
+                            description02: getData['related-description-02'],
+                            path02: getData['related-title-02'].path,
+                            image02: 'https://auth.cochlear.com/' + getData['related-image-02'].src,
+                            embed02: getData['related-video-embed-02'],
+                            additionalClass02: 'is-small',
+
+                            title03: getData['related-title-03'].title,
+                            description03: getData['related-description-03'],
+                            path03: getData['related-title-03'].path,
+                            image03: 'https://auth.cochlear.com/' + getData['related-image-03'].src,
+                            embed03: getData['related-video-embed-03'],
+                            additionalClass03: 'is-small'
+                        })
                     )
                 ),
                 _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
@@ -7301,7 +7414,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(UntreatedHearingLossAdult);
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7353,13 +7466,13 @@ var _HeaderLandingBanner = __webpack_require__(7);
 
 var _HeaderLandingBanner2 = _interopRequireDefault(_HeaderLandingBanner);
 
-var _ContentHeader = __webpack_require__(11);
-
-var _ContentHeader2 = _interopRequireDefault(_ContentHeader);
-
 var _Cm28SocialShare = __webpack_require__(21);
 
 var _Cm28SocialShare2 = _interopRequireDefault(_Cm28SocialShare);
+
+var _RelatedContent = __webpack_require__(22);
+
+var _RelatedContent2 = _interopRequireDefault(_RelatedContent);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -7424,35 +7537,38 @@ var UntreatedHearingLossChildren = function (_Component) {
                     'div',
                     { className: 'l-content-container cf l-padding' },
                     _react2.default.createElement(
-                        'article',
-                        { className: 'l-content-column' },
+                        'main',
+                        { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
                         _react2.default.createElement(
-                            'main',
-                            { id: 'main', tabIndex: '-1', role: 'main', className: 'l-main' },
+                            'article',
+                            { className: 'l-content-column' },
                             _react2.default.createElement(_Cm28SocialShare2.default, null),
-                            _react2.default.createElement(_Cm01RichText2.default, { body: getData['body-copy'] }),
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'sl' },
-                                _react2.default.createElement(
-                                    'div',
-                                    { className: 'sl-list has-2-items' },
-                                    _react2.default.createElement(
-                                        'div',
-                                        { className: 'sl-item' },
-                                        _react2.default.createElement(_Cm02ContentTile2.default, { title: getData['cm02-title-01'].title,
-                                            description: getData['cm02-description-01'],
-                                            path: getData['cm02-title-01'].path,
-                                            embed: getData['cm02-video-embed-01'],
-                                            image: 'https://auth.cochlear.com' + getData['cm02-image-01'].src,
-                                            imagePath: getData['cm02-title-01'].path,
-                                            additionalClass: 'is-small is-cta' })
-                                    ),
-                                    _react2.default.createElement('div', { className: 'sl-item' })
-                                )
-                            )
+                            _react2.default.createElement(_Cm01RichText2.default, { body: getData['body-copy'] })
                         )
-                    )
+                    ),
+                    _react2.default.createElement(_RelatedContent2.default, { additionalClass: 'sl__related-articles',
+
+                        title01: getData['related-title-01'].title,
+                        description01: getData['related-description-01'],
+                        path01: getData['related-title-01'].path,
+                        image01: 'https://auth.cochlear.com/' + getData['related-image-01'].src,
+                        embed01: getData['related-video-embed-01'],
+                        additionalClass01: 'is-small',
+
+                        title02: getData['related-title-02'].title,
+                        description02: getData['related-description-02'],
+                        path02: getData['related-title-02'].path,
+                        image02: 'https://auth.cochlear.com/' + getData['related-image-02'].src,
+                        embed02: getData['related-video-embed-02'],
+                        additionalClass02: 'is-small',
+
+                        title03: getData['related-title-03'].title,
+                        description03: getData['related-description-03'],
+                        path03: getData['related-title-03'].path,
+                        image03: 'https://auth.cochlear.com/' + getData['related-image-03'].src,
+                        embed03: getData['related-video-embed-03'],
+                        additionalClass03: 'is-small'
+                    })
                 ),
                 _react2.default.createElement(_GlobalFooter2.default, { title: this.props.footerTitle, country: this.props.footerCountry, countryParams: this.props.match.params.country, countryUpdate: 'false' })
             );
@@ -7479,7 +7595,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(UntreatedHearingLossChildren);
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7531,7 +7647,7 @@ var _Cm01RichText = __webpack_require__(9);
 
 var _Cm01RichText2 = _interopRequireDefault(_Cm01RichText);
 
-var _header = __webpack_require__(49);
+var _header = __webpack_require__(50);
 
 var _header2 = _interopRequireDefault(_header);
 
@@ -7641,13 +7757,13 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Main);
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _express = __webpack_require__(28);
+var _express = __webpack_require__(29);
 
 var _express2 = _interopRequireDefault(_express);
 
@@ -7655,7 +7771,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(29);
+var _server = __webpack_require__(30);
 
 var _server2 = _interopRequireDefault(_server);
 
@@ -7663,7 +7779,7 @@ var _reactHelmet = __webpack_require__(3);
 
 var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
-var _app = __webpack_require__(25);
+var _app = __webpack_require__(26);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -7673,13 +7789,13 @@ var _reactRedux = __webpack_require__(2);
 
 var _redux = __webpack_require__(1);
 
-var _combine = __webpack_require__(27);
+var _combine = __webpack_require__(28);
 
 var _combine2 = _interopRequireDefault(_combine);
 
-var _reactRouter = __webpack_require__(30);
+var _reactRouter = __webpack_require__(31);
 
-var _thunk = __webpack_require__(26);
+var _thunk = __webpack_require__(27);
 
 var _thunk2 = _interopRequireDefault(_thunk);
 
@@ -7776,7 +7892,7 @@ function renderFullPage(html, preloadedState, helmet) {
 }
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7811,7 +7927,7 @@ var RedirectWithStatus = function RedirectWithStatus(_ref) {
 exports.default = RedirectWithStatus;
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7825,7 +7941,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 exports.default = userReducer;
 
-var _userTypes = __webpack_require__(22);
+var _userTypes = __webpack_require__(23);
 
 var initialState = {
     name: null,
@@ -7910,7 +8026,7 @@ function userReducer() {
 }
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8010,7 +8126,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, null, { withRef: true })(User);
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(13)(false);
@@ -8024,7 +8140,7 @@ exports.push([module.i, ".brochure-download .delivery-common {\n  display: none;
 
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(13)(false);
@@ -8038,7 +8154,7 @@ exports.push([module.i, ".sl__testimonials .cta__view-all {\n  width: 100%;\n  m
 
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(13)(false);
@@ -8052,7 +8168,7 @@ exports.push([module.i, "/* Style the buttons that are used to open and close th
 
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(13)(false);
@@ -8066,7 +8182,7 @@ exports.push([module.i, "li .details {\n  display: none; }\n  li .details.show {
 
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(13)(false);
@@ -8080,7 +8196,7 @@ exports.push([module.i, "/*\n * Default stylesheet\n * This stylesheet is includ
 
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(13)(false);
@@ -8094,7 +8210,7 @@ exports.push([module.i, "/* ----------- COLOURS ----------- */\n/* ----------- L
 
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports) {
 
 
@@ -8163,32 +8279,6 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 79 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(72);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(14)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./BrochureDownload.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./BrochureDownload.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
 /* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8204,8 +8294,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Cm02ContentTileThree.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Cm02ContentTileThree.scss");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./BrochureDownload.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./BrochureDownload.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -8230,8 +8320,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Cm18Accordian.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Cm18Accordian.scss");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Cm02ContentTileThree.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Cm02ContentTileThree.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -8256,8 +8346,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Home.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Home.scss");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Cm18Accordian.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Cm18Accordian.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -8282,8 +8372,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./framework.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./framework.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Home.scss", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/sass-loader/lib/loader.js!./Home.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -8300,6 +8390,32 @@ if(false) {
 
 // load the styles
 var content = __webpack_require__(77);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(14)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./framework.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./framework.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(78);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(14)(content, {});

@@ -35,27 +35,28 @@ class CostsAndAffordability extends Component {
                     <meta charSet="utf-8" />
                     <title>{getData['title']}</title>
                 </Helmet>
-                <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
-                <BreadCrumbs/>
 
-                <HeaderLandingBanner title=""
-                                     description=""
+                <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
+
+
+                <HeaderLandingBanner title={getData['title']}
+                                     description={getData['description']}
                                      image={'https://auth.cochlear.com/'+getData['banner-image'].src}
                                      imagePath={getData['banner-image'].alt}
+                                     embed = {getData['cm02-title-01']}
                                      additionalClass="is-dark"/>
 
+                <BreadCrumbs/>
+
                 <div className='l-content-container cf l-padding'>
-                    <article className="l-content-column">
-                        <main id="main" tabIndex="-1" role="main" className="l-main">
 
-                            <ContentHeader title={getData['title']}
-                                           description={getData['description']} />
-
+                    <main id="main" tabIndex="-1" role="main" className="l-main">
+                        <article className="l-content-column">
                             <Cm01RichText body={getData['body-copy']}/>
 
+                        </article>
+                    </main>
 
-                        </main>
-                    </article>
                 </div>
 
                 <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
