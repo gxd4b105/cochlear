@@ -2,7 +2,7 @@ import React from 'react';
 
 class Cm01RichText extends React.Component {
 
-    
+
 
 
     render() {
