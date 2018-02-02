@@ -54,7 +54,7 @@ class Header extends Component {
                                 <span className="vh">Toggle navigation</span>
                             </button>
 
-                            <a href="#" class="icon-button login">Login</a>
+                            <a href="#" className="icon-button login">Login</a>
 
                             <RegionLanguageSelect cta="Select a region and language"
                                                   formAction="/intl/home"
