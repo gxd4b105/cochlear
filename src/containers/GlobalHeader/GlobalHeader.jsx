@@ -10,17 +10,15 @@ import GlobalHeader__Nav from '../../components/GlobalHeader__Nav/GlobalHeader__
 import GlobalHeader__Nav__Item from '../../components/GlobalHeader__Nav__Item/GlobalHeader__Nav__Item.jsx';
 import RegionLanguageSelect from "../../components/RegionLanguageSelect/RegionLanguageSelect.jsx";
 
+//import imageSrc from '../../../images/logo2.png';
 
 if (process.env.BROWSER) {
     require("../../styles/framework.css");
-    //require("../../styles/fonts.scss");
+    require("../../styles/fonts.scss");
     //require("../../styles/mixins.scss");
     require("../../styles/global.scss");
     //require("./GlobalHeader.scss");
 }
-
-
-
 class Header extends Component {
     static fetchData({ store, params }) {
         if (store.getState().user.headerCountry != params.country || store.getState().user.headerCountry === null){
@@ -56,7 +54,7 @@ class Header extends Component {
                                 <span className="vh">Toggle navigation</span>
                             </button>
 
-                            <a href="#" class="icon-button login">Login</a>
+                            <a href="#" className="icon-button login">Login</a>
 
                             <RegionLanguageSelect cta="Select a region and language"
                                                   formAction="/intl/home"

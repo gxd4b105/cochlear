@@ -2,27 +2,56 @@ import React from 'react';
 // import Breadcrumbs from 'react-breadcrumbs';
 
 class BreadCrumbs extends React.Component {
+
     render() {
 
-        return (
-            <div className="breadcrumbs">
-                    <a href="/demo/templates/modules/index.html" className="back-to-parent">Back to Home</a>
-                    <ul itemprop="breadcrumb">
-                        <li className="home">
-                            <a href="/" rel="home">Home</a>
-                        </li>
-                        <li>
-                            <a href="/demo/templates/index.html">Hearing Loss</a>
-                        </li>
-                        <li>
-                            <a href="/demo/templates/modules/index.html">Untreated hearing Loss for children</a>
-                        </li>
-                        <li className="is-active">
-                            CM02 Content Tile
-                        </li>
-                    </ul>
-            </div>
-        );
+        let json= this.props.jsonData || {
+            "breadcrumbs": [
+                { title : "Home", link: "#home" },
+                { title : "FirstLevel", link: "#first" },
+                { title : "SecondLevel", link: "#second" },
+                { title : "ThirdLevel", link: "#third" },
+                { title : "Leaf", link: "#fourth" }
+            ]
+        };
+        
+        const length = json['breadcrumbs'].length;
+        const itemsList = json["breadcrumbs"].map ( (obj, index) => {  
+            
+            let title='';
+            if (index === 0 ) {
+                title='Home';
+            } else {
+                if (index === json["breadcrumbs"].length-1) {
+                    title='is-active';
+                }
+            }  
+            let item  = (index===length-1) ? (<li className={title}><p>{obj.title} </p></li>) : (<li className={title}><a href={obj.link} alt="breadcrumb link">{obj.title}</a></li>);
+            return (item); 
+            
+        });
+
+        let content;
+        if (length===0){
+        content=(<div className='vh'></div>);
+        } else if (length===1) {
+            content=(<div className="breadcrumbs">
+                        <a href={json["breadcrumbs"][0].link} className="back-to-parent">Back to {json["breadcrumbs"][0].title}}</a>
+                        <ul itemProp="breadcrumb">
+                            {itemsList}
+                        </ul>
+                    </div>);
+        } else {
+            content=(<div className="breadcrumbs">
+                        <a href={json["breadcrumbs"][length-2].link} className="back-to-parent">Back to {json["breadcrumbs"][length-2].title}</a>
+                        <ul itemProp="breadcrumb">
+                            {itemsList}
+                        </ul>
+            </div>);
+        }
+
+        return content;
+
     }
 }
 

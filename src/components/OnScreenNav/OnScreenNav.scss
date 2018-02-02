@@ -26,11 +26,28 @@
   }
 }
 
-
 @media only screen and (min-width: 77.75em){
   .global-header {
     .nav-onscreen {
       padding-right: 0;
+    }
+  }
+}
+
+.nav-onscreen {
+  .nav {
+    & > li {
+      & > a.nav-item-title {
+        &:after {
+          content: "";
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          background-image: url('/dist/assets/images/icons/Icon_Yellow_Chevron.svg');
+          background-size: 100% 100%;
+          margin-left: 2px;
+        }
+      }
     }
   }
 }

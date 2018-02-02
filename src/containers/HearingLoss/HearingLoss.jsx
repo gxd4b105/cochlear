@@ -29,7 +29,11 @@ class HearingLoss extends Component {
 
         console.log(this.props.dataHearingLoss);
         let getData = this.props.dataHearingLoss;
-
+        let json = {
+            "breadcrumbs": [{ title: "Home", link:'/intl/home' },
+                            { title: "Hearing Loss", link: '/intl/hearing-loss' }
+            ]
+        };
         return (
             <div className="l-layout l-one-column cf">
                 <Helmet>
@@ -48,7 +52,7 @@ class HearingLoss extends Component {
                                      image={'https://auth.cochlear.com/'+getData['banner-image'].src}
                                      imagePath={getData['banner-image'].alt}
                                      additionalClass=""/>
-                <BreadCrumbs/>
+                <BreadCrumbs jsonData={json}/>
 
                 <div className='l-content-container cf l-padding'>
 

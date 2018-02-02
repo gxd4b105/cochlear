@@ -31,6 +31,13 @@ class UntreatedHearingLossAdult extends Component {
         console.log(this.props.dataUntreatedHearingLossAdult);
         let getData = this.props.dataUntreatedHearingLossAdult;
 
+        let json = {
+            "breadcrumbs": [{   title: "Home", link:'/intl/home' },
+                            {   title: "Hearing Loss", link: '/intl/hearing-loss' },
+                            {   title: "Impact of hearing loss", link: '/intl/impact-hearing-loss'},
+                            {   title: "Impact of hearing loss on daily life", link: '/intl/untreadted-hearing-loss-adult'}
+            ]
+        };
 
         console.log(global.window.dataLayer);
 
@@ -53,7 +60,7 @@ class UntreatedHearingLossAdult extends Component {
                                      imagePath={getData['banner-image'].alt}
                                      additionalClass=""/>
 
-                <BreadCrumbs/>
+                <BreadCrumbs jsonData={json} />
 
                 <div className='l-content-container cf l-padding'>
 
