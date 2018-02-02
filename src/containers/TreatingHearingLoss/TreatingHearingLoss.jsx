@@ -26,7 +26,7 @@ class TreatingHearingLoss extends Component {
         console.log(this.props.dataTreatingHearingLoss);
 
         let getData = this.props.dataTreatingHearingLoss;
-        
+
         return (
             <div className="l-layout l-one-column cf">
                 <Helmet>

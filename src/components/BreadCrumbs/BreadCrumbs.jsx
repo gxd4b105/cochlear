@@ -6,7 +6,7 @@ class BreadCrumbs extends React.Component {
     render() {
 
         let json= this.props.jsonData || {
-            "nav-breadcrumb": [
+            "breadcrumbs": [
                 { title : "Home", link: "#home" },
                 { title : "FirstLevel", link: "#first" },
                 { title : "SecondLevel", link: "#second" },
@@ -15,14 +15,14 @@ class BreadCrumbs extends React.Component {
             ]
         };
         
-        const length = json['nav-breadcrumb'].length;
-        const itemsList = json["nav-breadcrumb"].map ( (obj, index) => {  
+        const length = json['breadcrumbs'].length;
+        const itemsList = json["breadcrumbs"].map ( (obj, index) => {  
             
             let title='';
             if (index === 0 ) {
                 title='Home';
             } else {
-                if (index === json["nav-breadcrumb"].length-1) {
+                if (index === json["breadcrumbs"].length-1) {
                     title='is-active';
                 }
             }  
@@ -36,14 +36,14 @@ class BreadCrumbs extends React.Component {
         content=(<div className='vh'></div>);
         } else if (length===1) {
             content=(<div className="breadcrumbs">
-                        <a href={json["nav-breadcrumb"][0].link} className="back-to-parent">Back to {json["nav-breadcrumb"][0].title}}</a>
+                        <a href={json["breadcrumbs"][0].link} className="back-to-parent">Back to {json["breadcrumbs"][0].title}}</a>
                         <ul itemProp="breadcrumb">
                             {itemsList}
                         </ul>
                     </div>);
         } else {
             content=(<div className="breadcrumbs">
-                        <a href={json["nav-breadcrumb"][length-2].link} className="back-to-parent">Back to {json["nav-breadcrumb"][length-2].title}</a>
+                        <a href={json["breadcrumbs"][length-2].link} className="back-to-parent">Back to {json["breadcrumbs"][length-2].title}</a>
                         <ul itemProp="breadcrumb">
                             {itemsList}
                         </ul>

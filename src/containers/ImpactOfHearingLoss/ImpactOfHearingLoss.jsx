@@ -29,7 +29,12 @@ class ImpactOfHearingLoss extends Component {
 
         console.log(this.props.dataImpactOfHearingLoss);
         let getData = this.props.dataImpactOfHearingLoss;
-
+        let json = {
+            "breadcrumbs": [{ title: "Home", link:'/intl/home' },
+                            { title: "Hearing Loss", link: '/intl/hearing-loss' },
+                            { title: "Impact of hearing loss", link: '/intl/impact-hearing-loss'}
+            ]
+        };
 
         console.log(global.window.dataLayer);
 
@@ -52,7 +57,7 @@ class ImpactOfHearingLoss extends Component {
                                      imagePath={getData['banner-image'].alt}
                                      additionalClass=""/>
 
-                <BreadCrumbs/>
+                <BreadCrumbs jsonData={json} />
 
                 <div className='l-content-container cf l-padding'>
 
