@@ -7,6 +7,7 @@ $link-colour: #3f1482; // Eggplant
 
 /* ----------- LAYOUT ----------- */
 .l-content-column {
+  position: relative;
   max-width: 730px;
   width: 100%;
   margin: 0 auto 30px auto;
