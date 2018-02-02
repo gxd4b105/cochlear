@@ -1,0 +1,21 @@
+.nav-footer-item {
+    float:left;
+    padding-top: 20px;
+    ._2columns{
+        width:50%;
+    }
+    ._1column {
+        width:100%;
+    }
+    ul{
+        display:block;
+    }
+}
+
+.nav-footer-social {
+    width: 100%;
+    text-align:center;
+    h2 {
+        display:none;
+    }
+}

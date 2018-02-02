@@ -14,7 +14,7 @@ class GlobalFooter__Nav extends React.Component {
             <li>
                 <h2>{properties.title}</h2>
 
-                <ul>
+                <ul className='nav-footer-item'>
                     { itemsList }
                 </ul>
             </li>

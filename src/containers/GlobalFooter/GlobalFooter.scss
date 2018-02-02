@@ -28,23 +28,31 @@
 
     }
 
-    .nav-footer-item{
-        display: flex;
-        flex-flow: column wrap;
-    }
-
     .brandImg {
-        align-self: center;
+        text-align: center;
     }
 
-    .nav-footer-item{
-        display:block;
+    .nav-footer-item {
+        float:left;
+        padding-top: 20px;
+        ._2columns{
+            width:50%;
+        }
+        ._1column {
+            width:100%;
+        }
         ul{
-            display: block;
-            
+            display:block;
         }
     }
-
+    
+    .nav-footer-social {
+        width: 100%;
+        text-align:center;
+        h2 {
+            display:none;
+        }
+    }
 
     .subfooter-container{
         display: flex;
@@ -69,11 +77,10 @@
            margin: 0; 
            justify-content: center;
            color: #FFF;
-           padding-bottom:20px; 
+           padding:20px; 
            font-size: 14px;
         }
     }
-    
 
 }
 

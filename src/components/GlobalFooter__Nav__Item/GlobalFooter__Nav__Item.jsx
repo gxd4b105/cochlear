@@ -5,7 +5,7 @@ class GlobalFooter__Nav__Item extends React.Component {
         let prop= this.props.propObj;
 
         return (
-            <li className='nav-footer-item'>
+            <li>
                 <a href={prop.path}>{prop.title}</a>
             </li>
         );
