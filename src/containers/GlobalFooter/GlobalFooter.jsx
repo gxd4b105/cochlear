@@ -70,7 +70,7 @@ class Footer extends Component {
         let arrayOfColumns = mockUpData || [ 1, 2, 3, 4 ];
         const columnsList = arrayOfColumns.map( (column, index) => {
             
-        return (<div className="footer-column"><GlobalFooter__Nav propObj={column} key={index}/></div>); 
+        return (<div className='nav-footer-item'><GlobalFooter__Nav propObj={column} key={index}/></div>); 
         });
 
         return (
@@ -79,12 +79,13 @@ class Footer extends Component {
                     <nav>
                         {/* Add class in has-XX-items */}
                         <ul className={`nav-footer has-5-items`}>
-                            <div className="footer-columns">
-                                <li className="brandImg"> 
-                                    <img src='http://via.placeholder.com/120x100' alt='' /> 
-                                </li> 
-                            </div>
+                            
+                            <li className="brandImg"> 
+                                <img src='http://via.placeholder.com/120x100' alt='' /> 
+                            </li> 
+                            
                             {columnsList}
+
                             <GlobalFooter__Nav__Social />
 
                         </ul>

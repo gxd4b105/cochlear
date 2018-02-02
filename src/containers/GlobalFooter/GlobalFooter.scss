@@ -30,18 +30,21 @@
 
     .nav-footer{
         display: flex;
+        flex-flow: column wrap;
     }
 
-
     .brandImg {
-        li {
-            text-align:center;
+        align-self: center;
+    }
+
+    .nav-footer-item{
+        display:block;
+        ul{
+            display: block;
+            
         }
     }
 
-    .footer-column{
-        width: 50%    
-    }
 
     .subfooter-container{
         display: flex;
@@ -66,7 +69,7 @@
            margin: 0; 
            justify-content: center;
            color: #FFF;
-           padding:20px 0; 
+           padding-bottom:20px; 
            font-size: 14px;
         }
     }
