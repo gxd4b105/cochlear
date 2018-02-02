@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AACE,gCAAe;EACb,KAAK,EAAE,IAAI;EACX,SAAS,EAAE,MAAM;EACjB,MAAM,EAAE,gBAAgB",
+"mappings": "AAAA,qBAAsB;EACpB,MAAM,EAAE,CAAC;EACT,gBAAgB,EAAE,OAAO;EACzB,OAAO,EAAE,SAAS",
 "sources": ["RelatedContent.scss"],
 "names": [],
 "file": "RelatedContent.css"
