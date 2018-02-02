@@ -1,8 +1,24 @@
 .cm-rich-text {
+
+  margin: 0;
+
+  blockquote {
+    border-left: solid $cochlear-yellow 5px;
+    padding-left: 30px;
+    font-size: 18px;
+    font-family: $font-primary;
+    color: $cool-grey;
+    p {
+      font-size: 18px;
+      font-family: $font-primary;
+      color: $cool-grey;
+    }
+  }
+
   .key-points {
     border-top: 5px solid $cochlear-yellow;
     border-bottom: 2px solid #cccccc;
-    margin: 40px 0;
+    margin: 0 0 40px 0;
     padding: 20px 0;
     h4 {
       font-size: 22px;

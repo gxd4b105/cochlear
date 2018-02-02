@@ -9,9 +9,32 @@ $link-colour: #3f1482; // Eggplant
 .l-content-column {
   max-width: 730px;
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
 }
 
+
+.sl {
+  .sl-list {
+    display: flex;
+    .sl-item {
+      flex: 1;
+      .cm-content-tile {
+        height: 100%;
+        .content {
+          margin-bottom: 60px;
+        }
+        .cm-image-block-link {
+          height: 100%;
+        }
+        .cta {
+          position: absolute;
+          width: 100%;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}
 
 /* ----------- FONTS ----------- */
 @import "fonts.scss";
