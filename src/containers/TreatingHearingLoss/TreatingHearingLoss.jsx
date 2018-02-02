@@ -26,7 +26,7 @@ class TreatingHearingLoss extends Component {
         console.log(this.props.dataTreatingHearingLoss);
 
         let getData = this.props.dataTreatingHearingLoss;
-
+        
         return (
             <div className="l-layout l-one-column cf">
                 <Helmet>
@@ -34,7 +34,7 @@ class TreatingHearingLoss extends Component {
                     <title>{getData['title']}</title>
                 </Helmet>
                 <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
-                <BreadCrumbs/>
+                <BreadCrumbs />
 
                     <HeaderLandingBanner title=""
                                          description=""

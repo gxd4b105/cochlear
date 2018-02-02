@@ -5,7 +5,7 @@ class BreadCrumbs extends React.Component {
 
     render() {
 
-        let json= {
+        let json= this.props.jsonData || {
             "nav-breadcrumb": [
                 { title : "Home", link: "#home" },
                 { title : "FirstLevel", link: "#first" },
@@ -14,7 +14,7 @@ class BreadCrumbs extends React.Component {
                 { title : "Leaf", link: "#fourth" }
             ]
         };
-
+        
         const length = json['nav-breadcrumb'].length;
         const itemsList = json["nav-breadcrumb"].map ( (obj, index) => {  
             
@@ -23,14 +23,12 @@ class BreadCrumbs extends React.Component {
                 title='Home';
             } else {
                 if (index === json["nav-breadcrumb"].length-1) {
-                    console.log(json["nav-breadcrumb"][index]);
                     title='is-active';
                 }
-
             }  
             let item  = (index===length-1) ? (<li className={title}><p>{obj.title} </p></li>) : (<li className={title}><a href={obj.link} alt="breadcrumb link">{obj.title}</a></li>);
             return (item); 
-
+            
         });
 
         let content;
