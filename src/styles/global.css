@@ -23,20 +23,20 @@
 /* ----------- FONTS ----------- */
 @font-face {
   font-family: "Knockout-30";
-  src: url("/fonts/Knockout-30JuniorWelterwt.eot");
-  src: url("/fonts/Knockout-30JuniorWelterwt.eot?#iefix") format("embedded-opentype"), url("/fonts/Knockout-30JuniorWelterwt.woff2") format("woff2"), url("/fonts/Knockout-30JuniorWelterwt.woff") format("woff"), url("/fonts/Knockout-30JuniorWelterwt.svg#Knockout-30JuniorWelterwt") format("svg");
+  src: url("/dist/fonts/Knockout-30JuniorWelterwt.eot");
+  src: url("/dist/fonts/Knockout-30JuniorWelterwt.eot?#iefix") format("embedded-opentype"), url("/dist/fonts/Knockout-30JuniorWelterwt.woff2") format("woff2"), url("/dist/fonts/Knockout-30JuniorWelterwt.woff") format("woff"), url("/dist/fonts/Knockout-30JuniorWelterwt.svg#Knockout-30JuniorWelterwt") format("svg");
   font-weight: 300;
   font-style: normal; }
 @font-face {
   font-family: "BlissPro-Regular";
-  src: url("/fonts/BlissPro-Regular.eot");
-  src: url("/fonts/BlissPro-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/BlissPro-Regular.woff2") format("woff2"), url("/fonts/BlissPro-Regular.woff") format("woff"), url("/fonts/BlissPro-Regular.svg#BlissPro-Regular") format("svg");
+  src: url("/dist/fonts/BlissPro-Regular.eot");
+  src: url("/dist/fonts/BlissPro-Regular.eot?#iefix") format("embedded-opentype"), url("/dist/fonts/BlissPro-Regular.woff2") format("woff2"), url("/dist/fonts/BlissPro-Regular.woff") format("woff"), url("/dist/fonts/BlissPro-Regular.svg#BlissPro-Regular") format("svg");
   font-weight: normal;
   font-style: normal; }
 @font-face {
   font-family: "BlissPro-Light";
-  src: url("/fonts/BlissPro-Light.eot");
-  src: url("/fonts/BlissPro-Light.eot?#iefix") format("embedded-opentype"), url("/fonts/BlissPro-Light.woff2") format("woff2"), url("/fonts/BlissPro-Light.woff") format("woff"), url("/fonts/BlissPro-Light.svg#BlissPro-Light") format("svg");
+  src: url("/dist/fonts/BlissPro-Light.eot");
+  src: url("/dist/fonts/BlissPro-Light.eot?#iefix") format("embedded-opentype"), url("/dist/fonts/BlissPro-Light.woff2") format("woff2"), url("/dist/fonts/BlissPro-Light.woff") format("woff"), url("/dist/fonts/BlissPro-Light.svg#BlissPro-Light") format("svg");
   font-weight: 300;
   font-style: normal; }
 body {
@@ -92,7 +92,7 @@ a:focus, a:hover {
 .global-header {
   border-top: 5px solid #fdc82f; }
   .global-header .logo a {
-    background-image: url("/images/logo_mobile.png");
+    background-image: url("/dist/assets/images/logo_mobile.png");
     display: block; }
   .global-header .logo img {
     display: none; }
@@ -126,52 +126,63 @@ a:focus, a:hover {
       width: 100px;
       overflow: hidden; }
       .global-header .logo a {
-        background-image: url("/images/logo_desktop.png"); }
+        background-image: url("/dist/assets/images/logo_desktop.png"); }
       .global-header .logo img {
         display: block; } }
-.landing-banner {
+.landing-banner > div > div.content {
   background-color: #efefef;
-  margin-bottom: 0; }
-  .landing-banner .l-padding {
-    padding: 0; }
-  .landing-banner .content {
-    padding: 20px 30px 20px; }
-  .landing-banner .image {
-    position: relative;
-    line-height: 0; }
-    .landing-banner .image .img {
-      padding: 0;
-      position: relative;
-      width: 100%; }
-  .landing-banner p {
-    font-family: "BlissPro-Light", "Trebuchet MS", "Gill Sans", "Helvetica Neue", Arial, sans-serif;
-    font-size: 24px;
-    line-height: 34px; }
+  padding: 0; }
+  .landing-banner > div > div.content .content-grouper {
+    display: block;
+    margin: 0 8px;
+    padding: 28px 20px 139px 20px;
+    border-left: 5px solid #fdc82f; }
+    .landing-banner > div > div.content .content-grouper p {
+      padding-bottom: 15px; }
+    .landing-banner > div > div.content .content-grouper .arrow {
+      transform: rotate(90deg); }
+.landing-banner > div > div.image {
+  position: relative;
+  margin-top: -100px;
+  z-index: 2;
+  width: calc(100% - 20px); }
+  .landing-banner > div > div.image img {
+    width: 100%; }
 
 @media only screen and (min-width: 64em) {
   .landing-banner {
-    background-color: transparent; }
-    .landing-banner .content {
-      float: left;
-      width: 650px;
-      max-width: none;
-      background-color: #efefef;
-      height: 410px;
-      padding: 0; }
-      .landing-banner .content .content-grouper {
-        display: block;
-        padding: 40px;
-        margin: 0 90px;
-        border-left: 5px solid #fdc82f; }
-    .landing-banner .image {
-      position: relative;
-      line-height: 0;
-      z-index: 2; }
-      .landing-banner .image .img {
-        width: 640px;
-        position: absolute;
-        right: 0;
-        left: auto; } }
+    margin-bottom: 0; }
+    .landing-banner > div {
+      position: relative; }
+      .landing-banner > div > div {
+        position: absolute; }
+        .landing-banner > div > div.content {
+          width: 49.4%;
+          max-width: none;
+          background-color: #efefef;
+          padding: 0;
+          padding-bottom: 100px; }
+          .landing-banner > div > div.content .content-grouper {
+            display: block;
+            padding: 80px 0 0 36px;
+            margin: 0 90px;
+            border-left: 5px solid #fdc82f; }
+            .landing-banner > div > div.content .content-grouper p {
+              padding-bottom: 40px; }
+            .landing-banner > div > div.content .content-grouper .arrow {
+              transform: rotate(90deg); }
+        .landing-banner > div > div.image {
+          width: 56%;
+          max-width: none;
+          left: 44%;
+          z-index: 2;
+          margin-top: 0;
+          position: absolute;
+          height: 90%;
+          overflow: hidden; }
+          .landing-banner > div > div.image img {
+            width: 100%;
+            height: auto; } }
 .cm-rich-text {
   margin: 0; }
   .cm-rich-text blockquote {
@@ -374,36 +385,38 @@ a:focus, a:hover {
       .is-cta.is-large.is-cta .cm-image-block-link .cta:after {
         display: inline-block; }
   @media screen and (min-width: 64em) {
-    .is-cta.is-large.is-cta .cm-image-block-link {
-      height: 480px; }
-      .is-cta.is-large.is-cta .cm-image-block-link > a {
-        width: 100%;
-        padding-right: 0;
-        left: 0;
-        padding-left: 50px; }
-        .is-cta.is-large.is-cta .cm-image-block-link > a > img {
+    .is-cta.is-large.is-cta {
+      margin-left: auto;
+      padding-left: 0; }
+      .is-cta.is-large.is-cta .cm-image-block-link {
+        height: 480px; }
+        .is-cta.is-large.is-cta .cm-image-block-link > a {
           width: 100%;
-          border-radius: 0;
-          height: auto; }
-      .is-cta.is-large.is-cta .cm-image-block-link .content {
-        left: 0;
-        top: calc(50% - 141.5px);
-        width: 50%;
-        max-width: 380px;
-        border-radius: 0 0 50px 0;
-        height: auto;
-        padding-left: 18px; }
-        .is-cta.is-large.is-cta .cm-image-block-link .content h3 {
-          padding: 30px 30px 20px 30px;
-          font-size: 22px; }
-        .is-cta.is-large.is-cta .cm-image-block-link .content p {
-          padding: 0 30px 30px 30px;
-          font-size: 32px; }
-      .is-cta.is-large.is-cta .cm-image-block-link .cta {
-        margin: 29px;
-        position: initial; }
-        .is-cta.is-large.is-cta .cm-image-block-link .cta:after {
-          display: inline-block; } }
+          padding-right: 0;
+          left: 0;
+          padding-left: 50px; }
+          .is-cta.is-large.is-cta .cm-image-block-link > a > img {
+            width: 100%;
+            border-radius: 0;
+            height: auto; }
+        .is-cta.is-large.is-cta .cm-image-block-link .content {
+          left: 0;
+          top: calc(50% - 180px);
+          width: 50%;
+          max-width: 380px;
+          border-radius: 0 0 50px 0;
+          height: 360px;
+          padding-left: 18px; }
+          .is-cta.is-large.is-cta .cm-image-block-link .content h3 {
+            padding: 30px 30px 20px 30px;
+            font-size: 22px; }
+          .is-cta.is-large.is-cta .cm-image-block-link .content p {
+            padding: 0 30px 30px 30px;
+            font-size: 32px; }
+        .is-cta.is-large.is-cta .cm-image-block-link .cta {
+          margin-left: 29px; }
+          .is-cta.is-large.is-cta .cm-image-block-link .cta:after {
+            display: inline-block; } }
 
 @media only screen and (min-width: 64em) {
   .nav-onscreen__main-header {
@@ -425,6 +438,15 @@ a:focus, a:hover {
 @media only screen and (min-width: 77.75em) {
   .global-header .nav-onscreen {
     padding-right: 0; } }
+.nav-onscreen .nav > li > a.nav-item-title:after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-image: url("/dist/assets/images/icons/Icon_Yellow_Chevron.svg");
+  background-size: 100% 100%;
+  margin-left: 2px; }
+
 @media only screen and (min-width: 64em) {
   .nav-global-header {
     float: left;
@@ -503,6 +525,58 @@ a:focus, a:hover {
       background-color: #000000;
       color: #ffffff;
       margin-top: 10px; } }
+@media (min-width: 22.4375em) {
+  .global-footer {
+    background-color: #51515a;
+    color: #fff;
+    padding: 0;
+    font-size: 14px; }
+    .global-footer h2 {
+      font-size: 22px;
+      margin: 0; }
+    .global-footer a {
+      font-size: 18px;
+      color: #fff;
+      text-decoration: none; }
+    .global-footer p {
+      font-size: 16px; }
+    .global-footer .l-padding {
+      padding-top: 60px;
+      padding-bottom: 60px; }
+
+  .nav-footer {
+    display: flex;
+    flex-flow: column wrap; }
+
+  .brandImg {
+    align-self: center; }
+
+  .nav-footer-item {
+    display: block; }
+    .nav-footer-item ul {
+      display: block; }
+
+  .subfooter-container {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: #000; }
+    .subfooter-container a {
+      font-size: 14px; }
+
+  .subfooter-link {
+    justify-content: space-around;
+    padding: 20px 0;
+    margin: 0 auto; }
+
+  .subfooter-copyright {
+    flex: auto;
+    text-align: center; }
+    .subfooter-copyright p {
+      margin: 0;
+      justify-content: center;
+      color: #FFF;
+      padding-bottom: 20px;
+      font-size: 14px; } }
 /* ----------- MIXINS ----------- */
 
 /*# sourceMappingURL=global.css.map */

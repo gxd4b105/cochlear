@@ -7,8 +7,8 @@ class RelatedContent extends React.Component {
 
         return (
             <aside className={`sl ${this.props.additionalClass}`}>
+                <h3>Related articles</h3>
                 <div className="sl-list has-3-items">
-                    <h3>Related articles</h3>
                     <div className="sl-item">
                         <Cm02ContentTile    title={this.props.title01}
                                             description={this.props.description01}
