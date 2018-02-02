@@ -4,10 +4,14 @@ import { bindActionCreators } from 'redux';
 import { Helmet } from 'react-helmet';
 import * as actions from '../../shared/app/redux/actions/actions';
 
-import GlobalFooter__Nav from '../../components/GlobalFooter__Nav/GlobalFooter__Nav.js';
-import GlobalFooter__Nav__Item from '../../components/GlobalFooter__Nav__Item/GlobalFooter__Nav__Item.js';
-import GlobalFooter__Nav__Social from '../../components/GlobalFooter__Nav__Social/GlobalFooter__Nav__Social.js';
-import GlobalFooter__Nav__Social__Item from '../../components/GlobalFooter__Nav__Social__Item/GlobalFooter__Nav__Social__Item.js';
+import GlobalFooter__Nav from '../../components/GlobalFooter__Nav/GlobalFooter__Nav.jsx';
+//import GlobalFooter__Nav__Item from '../../components/GlobalFooter__Nav__Item/GlobalFooter__Nav__Item.jsx';
+import GlobalFooter__Nav__Social from '../../components/GlobalFooter__Nav__Social/GlobalFooter__Nav__Social.jsx';
+//import GlobalFooter__Nav__Social__Item from '../../components/GlobalFooter__Nav__Social__Item/GlobalFooter__Nav__Social__Item.jsx';
+
+
+//import cochlearWhiteLogo from '../../../images/COH_Logo_White@2x.png';
+
 
 class Footer extends Component {
     static fetchData({store, params}) {
@@ -37,63 +41,62 @@ class Footer extends Component {
         const children = this.props.children;
 
         let today = new Date(), Year = today.getFullYear();
+        let items = this.props.items || 5;
+
+        let mockUpData=
+        [{
+            title: 'Connect',
+            links: [
+                {title: 'Careers', path: '#'},
+                {title: 'Contact us', path: '#'},
+                {title: 'About us', path: '#'}
+            ]
+        },
+        {
+            title: 'Links',
+            links: [
+                {title: 'Investor centre', path: '#'},
+                {title: 'Sitemap', path: '#'}
+            ]
+        }
+        ,{
+            title: 'Blog',
+            links: [
+                {title: 'Hear and Now', path: '#'},
+                {title: 'ProNews', path: '#'}
+            ]
+        }];
+
+        let arrayOfColumns = mockUpData || [ 1, 2, 3, 4 ];
+        const columnsList = arrayOfColumns.map( (column, index) => {
+            
+        return (<div className="footer-column"><GlobalFooter__Nav propObj={column} key={index}/></div>); 
+        });
 
         return (
             <footer className="global-footer" role="contentinfo">
                 <div className="l-padding">
-                    <h2>title: {this.props.footerTitle} </h2>
-
                     <nav>
                         {/* Add class in has-XX-items */}
                         <ul className={`nav-footer has-5-items`}>
-
-                            <GlobalFooter__Nav>
-                                <GlobalFooter__Nav__Item/>
-                                <GlobalFooter__Nav__Item/>
-                                <GlobalFooter__Nav__Item/>
-                                <GlobalFooter__Nav__Item/>
-                            </GlobalFooter__Nav>
-                            <GlobalFooter__Nav>
-                                <GlobalFooter__Nav__Item/>
-                                <GlobalFooter__Nav__Item/>
-                                <GlobalFooter__Nav__Item/>
-                                <GlobalFooter__Nav__Item/>
-                            </GlobalFooter__Nav>
-                            <GlobalFooter__Nav>
-                                <GlobalFooter__Nav__Item/>
-                                <GlobalFooter__Nav__Item/>
-                                <GlobalFooter__Nav__Item/>
-                                <GlobalFooter__Nav__Item/>
-                            </GlobalFooter__Nav>
-                            <GlobalFooter__Nav>
-                                <GlobalFooter__Nav__Item/>
-                                <GlobalFooter__Nav__Item/>
-                                <GlobalFooter__Nav__Item/>
-                                <GlobalFooter__Nav__Item/>
-                            </GlobalFooter__Nav>
-                            <GlobalFooter__Nav__Social>
-                                <GlobalFooter__Nav__Social__Item/>
-                                <GlobalFooter__Nav__Social__Item/>
-                                <GlobalFooter__Nav__Social__Item/>
-                                <GlobalFooter__Nav__Social__Item/>
-                            </GlobalFooter__Nav__Social>
-
-                            {/* <% if vars[:isMinimal] == false %> */}
-                            {/* <% data.nav.footer.each_with_index do |lvl1, i| %> */}
-                            {/*
-                            {React.Children.map(children, (child) => {
-                                return  child
-                            })}
-                            */}
-
-                            {/* <% end %>
-                            <% end %> */}
+                            <div className="footer-columns">
+                                <li className="brandImg"> 
+                                    <img src='http://via.placeholder.com/120x100' alt='' /> 
+                                </li> 
+                            </div>
+                            {columnsList}
+                            <GlobalFooter__Nav__Social />
 
                         </ul>
-                    </nav>
-
-                    <p>&copy; {Year} Deloitte Digital Australia</p>
+                    </nav>   
                 </div>
+                <div className='subfooter-container'>
+                    <div className='subfooter-link'><a href=''>Privacy policy</a></div>
+                    <div className='subfooter-link'><a href=''>Terms of use</a></div>
+                    <div className='subfooter-link'><a href=''>Disclaimer</a></div>
+                    <div className='subfooter-copyright'><p>Copyright &copy; {Year} Cochlear Ltd. All rights reserved</p></div>
+                </div>
+
             </footer>
         );
     }
