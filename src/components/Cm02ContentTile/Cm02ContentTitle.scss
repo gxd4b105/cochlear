@@ -246,6 +246,8 @@
 
     &.is-large {
       &.is-cta {
+        margin-left: auto;
+        padding-left: 0;
         .cm-image-block-link {
           height: 480px;
           & > a {
