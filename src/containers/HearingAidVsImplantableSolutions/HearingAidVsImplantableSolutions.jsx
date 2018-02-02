@@ -122,7 +122,7 @@ class HearingAidVsCochlearImplant extends Component {
 
                                 <Cm02ContentTileThree additionalClass="sl__testimonials"
                                                       ctaText="View All"
-                                                      ctaLink="/initl/testimonials"
+                                                      ctaLink="/intl/testimonials"
                                                       ctaClass="cta__view-all"
 
                                                       title01 = {getData['cm02-title-03-01'].title}
