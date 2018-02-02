@@ -321,7 +321,7 @@ a:focus, a:hover {
         position: relative;
         top: 2px; }
       .cm-content-tile .content .cta:hover {
-        background-color: transparent; }
+        background-color: #ffffff; }
   .cm-content-tile .image img {
     opacity: 1; }
   .cm-content-tile:before {

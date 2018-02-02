@@ -7,14 +7,13 @@ class HeaderLandingBanner extends React.Component {
         return (
 
             <header className={`landing-banner ${this.props.additionalClass}`}>
-                <div className={`background`}>
-                </div>
+                <div className="background"> </div>
                 <div className="l-padding">
                     <div className="content">
                         <span className="content-grouper">
                             <h1>{this.props.title}</h1>
                             <p>{this.props.description}</p>
-                            <img className="arrow" src="/dist/assets/images/icons/Icon_Purple_Arrow.svg"></img>
+                            <img className="arrow" src="/dist/assets/images/icons/Icon_Purple_Arrow.svg" />
                         </span>
                     </div>
 
