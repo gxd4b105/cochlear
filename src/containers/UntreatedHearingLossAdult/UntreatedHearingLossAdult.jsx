@@ -66,8 +66,8 @@ class UntreatedHearingLossAdult extends Component {
                 <div className='l-content-container cf l-padding'>
 
                     <main id="main" tabIndex="-1" role="main" className="l-main">
-                        <Cm28SocialShare />
                         <article className="l-content-column">
+                          <Cm28SocialShare />
 
                             <Cm01RichText body={getData['body-copy']}/>
                         </article>
