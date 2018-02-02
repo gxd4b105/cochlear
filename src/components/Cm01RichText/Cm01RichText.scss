@@ -1,5 +1,4 @@
 .cm-rich-text {
-
   margin: 0;
 
   blockquote {
@@ -61,10 +60,22 @@
     }
   }
   ol {
+    margin-left: -15px;
+
     li {
-      font-size: 30px;
+      font-size: 29px;
       font-family: "Knockout-30";
-      color: #56565a;
+      color: #666666;
+      padding-left: 15px;
+      position: relative;
+
+      &:before {
+        content: ' ';
+        border: 5px solid #fff;
+        left: -11px;
+        top: 29px;
+        position: absolute;
+      }
 
       h4 {
         font-size: 22px;
@@ -73,3 +84,11 @@
     }
   }
 }
+@media only screen and (min-width: 64em) {
+  .cm-rich-text {
+    ol {
+      margin-left: -50px;
+    }
+  }
+}
+
