@@ -129,8 +129,15 @@ a:focus, a:hover {
         background-image: url("/dist/assets/images/logo_desktop.png"); }
       .global-header .logo img {
         display: block; } }
-.landing-banner > div > div.content {
+.landing-banner > div.background {
+  height: 100%;
   background-color: #efefef;
+  width: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute; }
+.landing-banner > div > div.content {
   padding: 0; }
   .landing-banner > div > div.content .content-grouper {
     display: block;
@@ -159,7 +166,6 @@ a:focus, a:hover {
         .landing-banner > div > div.content {
           width: 49.4%;
           max-width: none;
-          background-color: #efefef;
           padding: 0;
           padding-bottom: 100px; }
           .landing-banner > div > div.content .content-grouper {
@@ -209,9 +215,20 @@ a:focus, a:hover {
     .cm-rich-text .key-points li {
       padding-left: 25px; }
   .cm-rich-text .breakout {
-    border-bottom: 2px solid #cccccc;
     margin: 30px 0 20px 0;
-    padding-bottom: 30px; }
+    padding-bottom: 40px;
+    padding-top: 40px;
+    position: relative;
+    background-color: #efefef; }
+    .cm-rich-text .breakout:before {
+      content: "";
+      position: absolute;
+      width: 999%;
+      height: 100%;
+      left: -999%;
+      background-color: #efefef;
+      z-index: -1;
+      margin-top: -40px; }
     .cm-rich-text .breakout h3 {
       border-bottom: 5px solid #fdc82f;
       padding-bottom: 20px;
@@ -224,8 +241,43 @@ a:focus, a:hover {
       font-size: 22px;
       font-weight: bold; }
 
-.cm-social-share {
-  margin: 0; }
+.cm-social-share ul {
+  max-width: 200px;
+  margin: 0 auto; }
+  .cm-social-share ul li:not(:first-child) {
+    border: none;
+    padding-left: 10px;
+    margin-left: 10px; }
+  .cm-social-share ul li a {
+    height: 45px;
+    width: 45px;
+    border-radius: 25px;
+    display: block;
+    border: solid 1px #cccccc;
+    background-repeat: no-repeat;
+    background-size: 63%; }
+    .cm-social-share ul li a.linkedin {
+      background-image: url("/dist/assets/images/icons/Icon_Google_.svg");
+      background-position: 9px 8px; }
+    .cm-social-share ul li a.twitter {
+      background-image: url("/dist/assets/images/icons/Icon_Twitter.svg");
+      background-position: 9px 9px; }
+    .cm-social-share ul li a.fb {
+      background-image: url("/dist/assets/images/icons/Icon_Facebook.svg");
+      background-position: 7px 7px; }
+@media screen and (min-width: 64em) {
+  .cm-social-share ul {
+    max-width: none;
+    margin: 0;
+    position: absolute; }
+    .cm-social-share ul li {
+      margin-top: 10px;
+      float: none;
+      margin-left: 15px;
+      padding-left: 15px; }
+      .cm-social-share ul li:not(:first-child) {
+        padding-left: 15px;
+        margin-left: 15px; } }
 
 .cm-content-tile {
   cursor: pointer;
@@ -544,7 +596,7 @@ a:focus, a:hover {
       padding-top: 60px;
       padding-bottom: 60px; }
 
-  .nav-footer {
+  .nav-footer-item {
     display: flex;
     flex-flow: column wrap; }
 
@@ -583,6 +635,10 @@ a:focus, a:hover {
   padding: 50px 10px; }
   .sl__related-articles h3 {
     margin-bottom: 30px; }
+
+.disclaimer p {
+  font-size: 14px;
+  color: #56565a; }
 
 /* ----------- MIXINS ----------- */
 
