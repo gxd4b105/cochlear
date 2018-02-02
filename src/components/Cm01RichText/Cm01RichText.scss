@@ -33,9 +33,23 @@
     }
   }
   .breakout {
-    border-bottom: 2px solid #cccccc;
     margin: 30px 0 20px 0;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    position: relative;
+    background-color: $light-grey;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 999%;
+      height: 100%;
+      left: -999%;
+      background-color: $light-grey;
+      z-index: -1;
+      margin-top: -40px;
+
+    }
     h3 {
       border-bottom: 5px solid $cochlear-yellow;
       padding-bottom: 20px;
