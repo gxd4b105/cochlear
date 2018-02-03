@@ -33,9 +33,9 @@ class UntreatedHearingLossAdult extends Component {
 
         let json = {
             "breadcrumbs": [{   title: "Home", link:'/intl/home' },
-                            {   title: "Hearing Loss", link: '/intl/hearing-loss' },
-                            {   title: "Impact of hearing loss", link: '/intl/impact-hearing-loss'},
-                            {   title: "Impact of hearing loss on daily life", link: '/intl/untreadted-hearing-loss-adult'}
+                {   title: "Hearing Loss", link: '/intl/hearing-loss' },
+                {   title: "Impact of hearing loss", link: '/intl/impact-hearing-loss'},
+                {   title: "Impact of hearing loss on daily life", link: '/intl/untreadted-hearing-loss-adult'}
             ]
         };
 
@@ -65,43 +65,40 @@ class UntreatedHearingLossAdult extends Component {
                 <div className='l-content-container cf l-padding'>
 
                     <main id="main" tabIndex="-1" role="main" className="l-main">
-                        <Cm28SocialShare />
                         <article className="l-content-column">
+                            <Cm28SocialShare />
 
                             <Cm01RichText body={getData['body-copy']}/>
+
+
                         </article>
-                        <div class="disclaimer">
-                          <p>Disclaimer</p>
-                          <p>Please seek advice from your medical practitioner or health professional about treatments for hearing loss. They will be able to advise on a suitable solution for the hearing loss condition. All products should be used only as directed by your medical practitioner or health professional. </p>
-                          <p>Not all products are available in all countries. Please contact your local Cochlear representative.</p>
-                        </div>
-
-                        <RelatedContent   additionalClass="sl__related-articles"
-
-                                          title01 = {getData['related-title-01'].title}
-                                          description01 = {getData['related-description-01']}
-                                          path01 = {getData['related-title-01'].path}
-                                          image01 = {'https://auth.cochlear.com/'+getData['related-image-01'].src}
-                                          embed01 = {getData['related-video-embed-01']}
-                                          additionalClass01 = "is-small"
-
-                                          title02 = {getData['related-title-02'].title}
-                                          description02 = {getData['related-description-02']}
-                                          path02 = {getData['related-title-02'].path}
-                                          image02 = {'https://auth.cochlear.com/'+getData['related-image-02'].src}
-                                          embed02= {getData['related-video-embed-02']}
-                                          additionalClass02 = "is-small"
-
-                                          title03 = {getData['related-title-03'].title}
-                                          description03 = {getData['related-description-03']}
-                                          path03 = {getData['related-title-03'].path}
-                                          image03 = {'https://auth.cochlear.com/'+getData['related-image-03'].src}
-                                          embed03 = {getData['related-video-embed-03']}
-                                          additionalClass03 = "is-small"
-                        />
                     </main>
 
                 </div>
+
+                <RelatedContent   additionalClass="sl__related-articles"
+
+                                  title01 = {getData['related-title-01'].title}
+                                  description01 = {getData['related-description-01']}
+                                  path01 = {getData['related-title-01'].path}
+                                  image01 = {'https://auth.cochlear.com/'+getData['related-image-01'].src}
+                                  embed01 = {getData['related-video-embed-01']}
+                                  additionalClass01 = "is-small"
+
+                                  title02 = {getData['related-title-02'].title}
+                                  description02 = {getData['related-description-02']}
+                                  path02 = {getData['related-title-02'].path}
+                                  image02 = {'https://auth.cochlear.com/'+getData['related-image-02'].src}
+                                  embed02= {getData['related-video-embed-02']}
+                                  additionalClass02 = "is-small"
+
+                                  title03 = {getData['related-title-03'].title}
+                                  description03 = {getData['related-description-03']}
+                                  path03 = {getData['related-title-03'].path}
+                                  image03 = {'https://auth.cochlear.com/'+getData['related-image-03'].src}
+                                  embed03 = {getData['related-video-embed-03']}
+                                  additionalClass03 = "is-small"
+                />
 
                 <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
             </div>

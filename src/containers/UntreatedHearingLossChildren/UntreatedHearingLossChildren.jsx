@@ -35,6 +35,7 @@ class UntreatedHearingLossChildren extends Component {
                             { title: "Hearing Loss", link: '/intl/hearing-loss' },
                             { title: "Impact of hearing loss", link: '/intl/impact-hearing-loss' },
                             { title: "Benefits of early treatment for children", link: '/intl/untreadted-hearing-loss-children' }
+
             ]
         };
 

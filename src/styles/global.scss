@@ -7,6 +7,7 @@ $link-colour: #3f1482; // Eggplant
 
 /* ----------- LAYOUT ----------- */
 .l-content-column {
+  position: relative;
   max-width: 730px;
   width: 100%;
   margin: 0 auto 30px auto;
@@ -21,7 +22,7 @@ $link-colour: #3f1482; // Eggplant
       .cm-content-tile {
         height: 100%;
         .content {
-          margin-bottom: 60px;
+          padding-bottom: 60px;
         }
         .cm-image-block-link {
           height: 100%;
@@ -113,6 +114,7 @@ a:focus, a:hover {
 @import "../../src/components/BreadCrumbs/BreadCrumbs.scss";
 @import "../../src/components/RegionLanguageSelect/RegionLanguageSelect.scss";
 @import "../../src/containers/GlobalFooter/GlobalFooter.scss";
+@import "../../src/components/RelatedContent/RelatedContent.scss";
 @import "../../src/components/Disclaimer/Disclaimer.scss";
 
 
