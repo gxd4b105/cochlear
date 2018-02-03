@@ -6,15 +6,16 @@ class GlobalFooter__Nav extends React.Component {
 
         let properties = this.props.propObj;
         let itemsArray = properties.links;  
+        let classNames=this.props.classNames;
         const itemsList = itemsArray.map( (item, index) => { 
             return (<GlobalFooter__Nav__Item propObj={item} key={index} />);
         });
 
         return (
-            <li>
+            <li className={classNames}>
                 <h2>{properties.title}</h2>
 
-                <ul className='nav-footer-item'>
+                <ul >
                     { itemsList }
                 </ul>
             </li>

@@ -10,7 +10,7 @@ import GlobalFooter__Nav__Social from '../../components/GlobalFooter__Nav__Socia
 //import GlobalFooter__Nav__Social__Item from '../../components/GlobalFooter__Nav__Social__Item/GlobalFooter__Nav__Social__Item.jsx';
 
 
-//import cochlearWhiteLogo from '../../../images/COH_Logo_White@2x.png';
+// import cochlearWhiteLogo from '../../images/COH_Logo_White@2x.png';
 
 
 class Footer extends Component {
@@ -69,8 +69,14 @@ class Footer extends Component {
 
         let arrayOfColumns = mockUpData || [ 1, 2, 3, 4 ];
         const columnsList = arrayOfColumns.map( (column, index) => {
-            
-        return (<GlobalFooter__Nav propObj={column} key={index}/>); 
+            let classes='nav-footer-item ';
+            if (index!=arrayOfColumns.length-1){
+                classes+='columns2';
+            }
+            else {
+                classes+='column';
+            }
+        return (<GlobalFooter__Nav propObj={column} classNames={classes} key={index}/>); 
         });
 
         return (
@@ -81,7 +87,7 @@ class Footer extends Component {
                         <ul className={`nav-footer has-5-items`}>
                             
                             <li className="brandImg"> 
-                                <img src='http://via.placeholder.com/120x100' alt='' /> 
+                                <img src="https://via.placeholder.com/120x100" alt='Cochlear Ltd Logo' /> 
                             </li> 
                             
                             {columnsList}
