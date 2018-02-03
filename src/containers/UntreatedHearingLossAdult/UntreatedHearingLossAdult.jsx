@@ -17,6 +17,7 @@ if (typeof window === 'undefined') {
     global.window = {}
 }
 
+
 class UntreatedHearingLossAdult extends Component {
     static fetchData({ store, params }) {
         return store.dispatch(actions.getUntreatedHearingLossAdult());
@@ -51,6 +52,19 @@ class UntreatedHearingLossAdult extends Component {
                     <meta name="keywords" content="Hearing aids for children,Sensorineural hearing loss in children,Conductive hearing loss in children,Single sided deafness in children,hearing aids,unilateral hearing loss in children,hearing loss in one ear" />
                     <link rel="canonical" href="http://www.cochlear.com/wps/wcm/connect/intl/home/understand/my-child-has-hl" />
                 </Helmet>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
 

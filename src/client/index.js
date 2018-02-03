@@ -5,6 +5,9 @@ import { Provider } from 'react-redux';
 import store from '../shared/app/redux/store';
 import App from '../shared/app/app.jsx';
 
+require('../images/logo_desktop.png');
+require('../fonts/BlissPro-Light.eot');
+
 hydrate((
     <Provider store={store}>
         <Router>

@@ -9,7 +9,7 @@ module.exports = {
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, './dist/assets'),
-        publicPath: '/dist/assets'
+        publicPath: './assets'
     },
     module: {
         rules: [
@@ -61,20 +61,25 @@ module.exports = {
                 }]
             },
             {
-                test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-                loader: require.resolve('url-loader'),
-                options: {
-                  limit: 10000,
-                  name: 'assets/images/[name].[hash:8].[ext]',
-                },
-              },
+                test: /\.(png|jpg|gif)$/,
+                loader: "file-loader?name=images/img-[hash:6].[ext]"
+            },
+            // {
+            //     test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+            //     loader: require.resolve('file-loader'),
+            //     options: {
+            //       limit: 10000,
+            //       name: 'assets/images/[name].[hash:8].[ext]',
+            //     },
+            //   },
             {
                 test: /\.(eot|svg|ttf|woff|otf|woff2)$/,
-                loader: 'file?name=public/fonts/[name].[ext]'
+                loader: 'file-loader?name=public/fonts/[name].[ext]'
             }
             //loaders for other file types can go here
         ]
     },
+    
     plugins: [
         new webpack.DefinePlugin({
             "process.env": {

@@ -66,19 +66,19 @@ module.exports = {
                         sourceMap     : true
                     }
                 }]
-            },
-            {
-                test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-                loader: require.resolve('url-loader'),
-                options: {
-                  limit: 10000,
-                  name: 'assets/images/[name].[hash:8].[ext]',
-                },
-            },
-            {
-                test: /\.(eot|svg|ttf|woff|otf|woff2)$/,
-                loader: 'file?name=public/fonts/[name].[ext]'
             }
+            // {
+            //     test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+            //     loader: require.resolve('url-loader'),
+            //     options: {
+            //       limit: 10000,
+            //       name: 'assets/images/[name].[hash:8].[ext]',
+            //     },
+            // },
+            // {
+            //     test: /\.(eot|svg|ttf|woff|otf|woff2)$/,
+            //     loader: 'file?name=public/fonts/[name].[ext]'
+            // }
             //loaders for other file types can go here
         ]
     },
