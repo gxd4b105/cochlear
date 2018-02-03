@@ -38,6 +38,9 @@
   .nav {
     & > li {
       & > a.nav-item-title {
+        &:hover {
+          color:$link-colour;
+        }
         &:after {
           content: "";
           width: 20px;

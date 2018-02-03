@@ -1,6 +1,7 @@
 /* ----------- COLOURS ----------- */
 /* ----------- LAYOUT ----------- */
 .l-content-column {
+  position: relative;
   max-width: 730px;
   width: 100%;
   margin: 0 auto 30px auto; }
@@ -92,7 +93,7 @@ a:focus, a:hover {
 .global-header {
   border-top: 5px solid #fdc82f; }
   .global-header .logo a {
-    background-image: url("/dist/assets/images/logo_mobile.png");
+    background-image: url("/dist/images/logo_mobile.png");
     display: block; }
   .global-header .logo img {
     display: none; }
@@ -126,7 +127,7 @@ a:focus, a:hover {
       width: 100px;
       overflow: hidden; }
       .global-header .logo a {
-        background-image: url("/dist/assets/images/logo_desktop.png"); }
+        background-image: url("/dist/images/logo_desktop.png"); }
       .global-header .logo img {
         display: block; } }
 .landing-banner > div.background {
@@ -233,14 +234,29 @@ a:focus, a:hover {
       border-bottom: 5px solid #fdc82f;
       padding-bottom: 20px;
       margin-bottom: 20px; }
-  .cm-rich-text ol li {
-    font-size: 30px;
-    font-family: "Knockout-30";
-    color: #56565a; }
-    .cm-rich-text ol li h4 {
-      font-size: 22px;
-      font-weight: bold; }
+    .cm-rich-text .breakout p {
+      padding-right: 70px; }
+  .cm-rich-text ol {
+    margin-left: -15px; }
+    .cm-rich-text ol li {
+      font-size: 29px;
+      font-family: "Knockout-30";
+      color: #666666;
+      padding-left: 15px;
+      position: relative; }
+      .cm-rich-text ol li:before {
+        content: ' ';
+        border: 5px solid #fff;
+        left: -11px;
+        top: 29px;
+        position: absolute; }
+      .cm-rich-text ol li h4 {
+        font-size: 22px;
+        font-weight: bold; }
 
+@media only screen and (min-width: 64em) {
+  .cm-rich-text ol {
+    margin-left: -50px; } }
 .cm-social-share ul {
   max-width: 200px;
   margin: 0 auto; }
@@ -257,19 +273,21 @@ a:focus, a:hover {
     background-repeat: no-repeat;
     background-size: 63%; }
     .cm-social-share ul li a.linkedin {
-      background-image: url("/dist/assets/images/icons/Icon_Google_.svg");
+      background-image: url("/dist/images/icons/Icon_Google_.svg");
       background-position: 9px 8px; }
     .cm-social-share ul li a.twitter {
-      background-image: url("/dist/assets/images/icons/Icon_Twitter.svg");
+      background-image: url("/dist/images/icons/Icon_Twitter.svg");
       background-position: 9px 9px; }
     .cm-social-share ul li a.fb {
-      background-image: url("/dist/assets/images/icons/Icon_Facebook.svg");
+      background-image: url("/dist/images/icons/Icon_Facebook.svg");
       background-position: 7px 7px; }
 @media screen and (min-width: 64em) {
   .cm-social-share ul {
     max-width: none;
     margin: 0;
-    position: absolute; }
+    position: absolute;
+    left: -130px;
+    top: -10px; }
     .cm-social-share ul li {
       margin-top: 10px;
       float: none;
@@ -490,12 +508,14 @@ a:focus, a:hover {
 @media only screen and (min-width: 77.75em) {
   .global-header .nav-onscreen {
     padding-right: 0; } }
+.nav-onscreen .nav > li > a.nav-item-title:hover {
+  color: #3f1482; }
 .nav-onscreen .nav > li > a.nav-item-title:after {
   content: "";
   width: 20px;
   height: 20px;
   position: absolute;
-  background-image: url("/dist/assets/images/icons/Icon_Yellow_Chevron.svg");
+  background-image: url("/dist/images/icons/Icon_Yellow_Chevron.svg");
   background-size: 100% 100%;
   margin-left: 2px; }
 
