@@ -12,7 +12,7 @@ import { StaticRouter as Router, matchPath } from 'react-router';
 import thunk from '../shared/app/redux/middleware/thunk';
 import routeBank from '../shared/routes/routes';
 
-app.use('/dist', express.static('./dist'));
+app.use('/', express.static('./dist'));
 
 app.use('/', (req, res) => {
 	try {
@@ -132,7 +132,7 @@ dataLayerPush();
           // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations
           window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
         </script>
-        <script src="/dist/assets/app.bundle.js"></script>
+        <script src="/app.bundle.js"></script>
         
 		<!-- Google Tag Manager -->
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

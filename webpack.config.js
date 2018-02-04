@@ -8,8 +8,8 @@ module.exports = {
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, './dist/assets'),
-        publicPath: './assets'
+        path: path.resolve(__dirname, './dist'),
+        publicPath: '/'
     },
     module: {
         rules: [
@@ -62,7 +62,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|gif)$/,
-                loader: "file-loader?name=images/img-[hash:6].[ext]"
+                loader: "file-loader?name=images/img-[name].[ext]"
             },
             // {
             //     test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
