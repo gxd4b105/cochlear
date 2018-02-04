@@ -4,7 +4,7 @@ import React from 'react';
 class BreadCrumbs extends React.Component {
 
     render() {
-        let jsonObj=null;
+        let jsonObj = this.props.jsonData || null;
         //Formatter
         // if (this.props.jsonData) {
         //     let string = this.props.jsonData.breadcrumbs;
