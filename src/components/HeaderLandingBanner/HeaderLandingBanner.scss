@@ -1,17 +1,19 @@
 .landing-banner {
+
+  margin-bottom: 20px;
+
+  .l-padding {
+    padding: 0;
+  }
+
   & > div {
-    // position: relative;
-    // padding: 0;
-    // margin: 0;
-    // width: 100%;
 
     &.background {
       height: 100%;
-      background-color: #efefef;
-      width: 50%;
-      top: 0;
+      background-color: $light-grey;
+      width: 100%;
+      top: -40px;
       left: 0;
-      right: 0;
       position: absolute;
     }
 
@@ -19,16 +21,12 @@
       // position: absolute;
 
       &.content {
-        // width: 49.4%;
-        // max-width: none;
-        // padding: 0;
-        // padding-bottom: 100px;
         padding: 0;
 
         .content-grouper {
           display: block;
           margin: 0 8px;
-          padding: 28px 20px 139px 20px;
+          padding: 28px 20px 20px 20px;
           border-left: 5px solid $cochlear-yellow;
 
           p {
@@ -41,17 +39,12 @@
         }
       }
       &.image {
-        // width: 56%;
-        // max-width: none;
-        // left: 44%;
-        // z-index: 2;
         position: relative;
-        margin-top: -100px;
         z-index: 2;
         width: calc(100% - 20px);
         img {
           width: 100%;
-          // height: 90%;
+          height: auto;
         }
       }
     }
@@ -64,9 +57,6 @@
     margin-bottom: 0;
     &> div {
       position: relative;
-      // padding: 0;
-      // margin: 0;
-      // width: 100%;
 
       & > div {
         position: absolute;
@@ -74,13 +64,12 @@
         &.content {
           width: 49.4%;
           max-width: none;
-          padding: 0;
-          padding-bottom: 100px;
+          padding: 0 0 100px 0;
 
           .content-grouper {
             display: block;
             padding: 80px 0 0 36px;
-            margin: 0 150px 0 90px;
+            margin: 0 150px 0 36px;
             border-left: 5px solid $cochlear-yellow;
 
             p {
@@ -107,6 +96,14 @@
           }
         }
       }
+
+      &.background {
+        width: 48%;
+        border-radius: 0 0 40px 0;
+        top: 0;
+      }
+
     }
+
   }
 }

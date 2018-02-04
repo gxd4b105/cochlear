@@ -56,6 +56,12 @@ class Header extends Component {
 
                             <a href="#" className="icon-button login">Login</a>
 
+                            <button className="link-icon search-toggle js-popover-toggle" type="button" role="button" aria-label="Toggle search" data-popover-id="global-search">
+                                <span className="icon svg-search-black" data-grunticon-embed></span>
+                                <span className="icon svg-close-grey" data-grunticon-embed></span>
+                                <span className="vh">Toggle search</span>
+                            </button>
+
                             <RegionLanguageSelect cta="Select a region and language"
                                                   formAction="/intl/home"
                                                   submitText="Change"/>

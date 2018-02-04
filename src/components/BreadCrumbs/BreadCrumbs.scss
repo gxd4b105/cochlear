@@ -1,24 +1,30 @@
 .breadcrumbs {
-  font-size: 16px;
-  max-width: 1052px;
-  width: 100%;
-  margin: 25px auto 40px auto;
+  display: none;
+}
 
-  ul {
-    li {
-      &:before {
-        content: "/";
-        left: 5px;
-        top: 0;
-        margin-top: 0;
+@media only screen and (min-width: 64em) {
+  .breadcrumbs {
+    font-size: 16px;
+    padding: 0 80px;
+    margin: 40px auto 30px auto;
+    display: block;
+
+    ul {
+      li {
+        &:before {
+          content: "/";
+          left: 5px;
+          top: 0;
+          margin-top: 0;
+        }
       }
     }
-  }
 
-  a {
-    color: $link-colour;
-    &:hover {
-      color: inherit;
+    a {
+      color: $link-colour;
+      &:hover {
+        color: inherit;
+      }
     }
   }
 }
