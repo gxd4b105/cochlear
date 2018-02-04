@@ -12,7 +12,7 @@ import { StaticRouter as Router, matchPath } from 'react-router';
 import thunk from '../shared/app/redux/middleware/thunk';
 import routeBank from '../shared/routes/routes';
 
-app.use('/blah', express.static('dist'));
+app.use('/dist', express.static('./dist'));
 
 app.use('/', (req, res) => {
 	try {
