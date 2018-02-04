@@ -6,7 +6,7 @@ import store from '../shared/app/redux/store';
 import App from '../shared/app/app.jsx';
 
 require('../images/logo_desktop.png');
-require('../fonts/BlissPro-Light.eot');
+require('../fonts/fonts.scss');
 
 hydrate((
     <Provider store={store}>

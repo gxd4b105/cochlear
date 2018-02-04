@@ -14,7 +14,7 @@ import RegionLanguageSelect from "../../components/RegionLanguageSelect/RegionLa
 
 if (process.env.BROWSER) {
     require("../../styles/framework.css");
-    require("../../styles/fonts.scss");
+    //require("../../styles/fonts.scss");
     //require("../../styles/mixins.scss");
     require("../../styles/global.scss");
     //require("./GlobalHeader.scss");

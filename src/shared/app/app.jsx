@@ -6,7 +6,9 @@ import Header from '../../containers/GlobalHeader/GlobalHeader.jsx';
 import Footer from '../../containers/GlobalFooter/GlobalFooter.jsx';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actions from './redux/actions/actions'
+import * as actions from './redux/actions/actions';
+
+
 
 class App extends Component {
     static fetchData({ store, params }) {  

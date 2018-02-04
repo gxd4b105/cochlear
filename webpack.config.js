@@ -74,7 +74,7 @@ module.exports = {
             //   },
             {
                 test: /\.(eot|svg|ttf|woff|otf|woff2)$/,
-                loader: 'file-loader?name=public/fonts/[name].[ext]'
+                loader: 'file-loader?name=fonts/[name].[ext]'
             }
             //loaders for other file types can go here
         ]
