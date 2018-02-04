@@ -1,5 +1,6 @@
 const path = require('path'),
     webpack = require('webpack');
+const srcPath = path.join(__dirname, 'src');
 
 module.exports = {
     context: path.resolve(__dirname, './src'),
@@ -75,6 +76,23 @@ module.exports = {
             {
                 test: /\.(eot|svg|ttf|woff|otf|woff2)$/,
                 loader: 'file-loader?name=fonts/[name].[ext]'
+            },
+            {
+                test: /\.svg$/,
+                include: path.join(srcPath, 'icons'),
+                loaders: [
+                  'svg-sprite-loader?' + JSON.stringify({
+                    name: '[name].[hash]',
+                    prefixize: true
+                  }),
+                  'svgo-loader?' + JSON.stringify({
+                    plugins: [
+                      { removeTitle: true },
+                      { convertPathData: false },
+                      { removeUselessStrokeAndFill: true }
+                    ]
+                  })
+                ]
             }
             //loaders for other file types can go here
         ]
