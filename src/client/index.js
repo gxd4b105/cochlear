@@ -6,6 +6,7 @@ import store from '../shared/app/redux/store';
 import App from '../shared/app/app.jsx';
 
 require('../images/logo_desktop.png');
+require('../images/logo_mobile.png');
 require('../fonts/fonts.scss');
 
 hydrate((

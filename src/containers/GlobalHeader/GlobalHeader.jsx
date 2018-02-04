@@ -49,12 +49,20 @@ class Header extends Component {
                 <header className={`global-header ${this.props.additionalClass}`}>
                         <div className="l-padding">
 
+                        
+
                             <button className="nav-toggle js-offscreen-toggle" type="button" role="button" aria-label="Toggle navigation" data-offscreen-id="nav">
                                 <span className="lines"></span>
                                 <span className="vh">Toggle navigation</span>
                             </button>
 
                             <a href="#" className="icon-button login">Login</a>
+
+                            <button className="link-icon search-toggle js-popover-toggle" type="button" role="button" aria-label="Toggle search" data-popover-id="global-search">
+                                <span className="icon svg-search-black" data-grunticon-embed></span>
+                                <span className="icon svg-close-grey" data-grunticon-embed></span>
+                                <span className="vh">Toggle search</span>
+                            </button>
 
                             <RegionLanguageSelect cta="Select a region and language"
                                                   formAction="/intl/home"

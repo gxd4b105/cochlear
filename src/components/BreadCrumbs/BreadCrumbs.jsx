@@ -57,14 +57,14 @@ class BreadCrumbs extends React.Component {
         if (length===0){
         content=(<div className='vh'></div>);
         } else if (length===1) {
-            content=(<div className="breadcrumbs">
+            content=(<div className="breadcrumbs l-padding">
                         <a href={json["breadcrumbs"][0].link} className="back-to-parent">Back to {json["breadcrumbs"][0].title}}</a>
                         <ul itemProp="breadcrumb">
                             {itemsList}
                         </ul>
                     </div>);
         } else {
-            content=(<div className="breadcrumbs">
+            content=(<div className="breadcrumbs l-padding">
                         <a href={json["breadcrumbs"][length-2].link} className="back-to-parent">Back to {json["breadcrumbs"][length-2].title}</a>
                         <ul itemProp="breadcrumb">
                             {itemsList}

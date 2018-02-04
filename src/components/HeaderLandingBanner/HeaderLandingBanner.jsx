@@ -13,7 +13,7 @@ class HeaderLandingBanner extends React.Component {
                         <span className="content-grouper">
                             <h1>{this.props.title}</h1>
                             <p>{this.props.description}</p>
-                            <img className="arrow" src="/dist/assets/images/icons/Icon_Purple_Arrow.svg" />
+                            <img className="arrow" src="/dist/images/icons/Icon_Purple_Arrow.svg" />
                         </span>
                     </div>
 

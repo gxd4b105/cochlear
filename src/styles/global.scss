@@ -6,6 +6,9 @@ $light-grey: #efefef;
 $link-colour: #3f1482; // Eggplant
 
 /* ----------- LAYOUT ----------- */
+.l-layout {
+  margin-top: 66px;
+}
 .l-content-column {
   position: relative;
   max-width: 730px;
@@ -13,27 +16,13 @@ $link-colour: #3f1482; // Eggplant
   margin: 0 auto 30px auto;
 }
 
+.l-padding {
+  position: relative;
+}
 
-.sl {
-  .sl-list {
-    display: flex;
-    .sl-item {
-      flex: 1;
-      .cm-content-tile {
-        height: 100%;
-        .content {
-          padding-bottom: 60px;
-        }
-        .cm-image-block-link {
-          height: 100%;
-        }
-        .cta {
-          position: absolute;
-          width: 100%;
-          bottom: 0;
-        }
-      }
-    }
+@media only screen and (min-width: 64em) {
+  .l-layout {
+    margin-top:0;
   }
 }
 

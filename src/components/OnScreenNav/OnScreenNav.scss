@@ -1,3 +1,25 @@
+.nav-onscreen {
+  .nav {
+    & > li {
+      & > a.nav-item-title {
+        &:hover {
+          color:$link-colour;
+        }
+        &:after {
+          content: "";
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          background-image: url('/dist/images/icons/Icon_Yellow_Chevron.svg');
+          background-size: 100% 100%;
+          margin-left: 2px;
+        }
+      }
+    }
+  }
+}
+
+
 @media only screen and (min-width: 64em) {
   .nav-onscreen__main-header {
     float: none;
@@ -14,40 +36,29 @@
 
     .nav > li  {
       float: none;
-      flex-grow: 1;
+      flex-grow: 0;
+      margin-right: 40px;
+      > a {
+        margin-left:0;
+      }
     }
-
   }
-
   .global-header {
-    .nav-onscreen {
+    .nav-onscreen__main-header {
       padding-right: 0;
     }
   }
 }
 
 @media only screen and (min-width: 77.75em){
-  .global-header {
-    .nav-onscreen {
-      padding-right: 0;
+  .nav-onscreen__main-header {
+    .nav > li  {
+      margin-right: 60px;
     }
   }
-}
-
-.nav-onscreen {
-  .nav {
-    & > li {
-      & > a.nav-item-title {
-        &:after {
-          content: "";
-          width: 20px;
-          height: 20px;
-          position: absolute;
-          background-image: url('/dist/images/icons/Icon_Yellow_Chevron.svg');
-          background-size: 100% 100%;
-          margin-left: 2px;
-        }
-      }
+  .global-header {
+    .nav-onscreen__main-header {
+      padding-right: 0;
     }
   }
 }

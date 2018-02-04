@@ -1,8 +1,13 @@
+.nav-global-header {
+  display: none;
+}
+
 @media only screen and (min-width: 64em) {
   .nav-global-header {
     float: left;
     padding-right: 0;
     padding-left: 75px;
+    display: block;
 
     .nav {
       padding: 0;

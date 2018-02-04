@@ -7,7 +7,7 @@ class RelatedContent extends React.Component {
 
         return (
             <aside className={`sl ${this.props.additionalClass}`}>
-                <div className='l-content-container cf l-padding'>
+                <div className='l-padding'>
                     <h3>Related articles</h3>
                     <div className="sl-list has-3-items">
                         <div className="sl-item">

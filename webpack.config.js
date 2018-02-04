@@ -62,7 +62,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|gif)$/,
-                loader: "file-loader?name=images/img-[name].[ext]"
+                loader: "file-loader?name=images/[name].[ext]"
             },
             // {
             //     test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],

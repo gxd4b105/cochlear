@@ -5,9 +5,13 @@
   cursor: pointer;
   border: 1px solid $light-grey;
   position: relative;
-  background-color: #fff;
+  background-color: #ffffff;
   max-width: 1180px;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
+
+  &:last-child {
+    margin-bottom: 20px;
+  }
 
   .content {
     padding: 0;
@@ -31,6 +35,7 @@
       padding: 0 30px 30px 30px;
     }
     .cta {
+      position: relative;
       display: block;
       border: 0;
       border-top: 1px solid $light-grey;
@@ -45,11 +50,15 @@
       line-height: 30px;
 
       &:after {
-        content: '>';
-        font-size: 24px;
-        padding-left: 10px;
-        position: relative;
-        top: 2px;
+        content: ' ';
+        left: 120px;
+        top: 20px;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        background-image: url('/dist/images/icons/Icon_Purple_Chevron.svg');
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
       }
 
 
@@ -66,7 +75,7 @@
   }
 
   &:before {
-    box-shadow: 0 3px 30px rgba(0,0,0,0.4);
+    box-shadow: 0 3px 30px rgba(0,0,0,0.5);
     opacity: 0;
     position: absolute;
     top: 0;
@@ -74,7 +83,7 @@
     z-index: -1;
     width: 100%;
     height: 100%;
-    background: #000;
+    // background: #000;
     content: '';
     -webkit-transition: opacity 0.35s;
     transition: opacity 0.35s;
@@ -87,8 +96,6 @@
     -webkit-transform: perspective(1000px) translate3d(0,0,21px);
     transform: perspective(1000px) translate3d(0,0,21px);
 
-
-
     background-color: #ffffff;
 
     &:before {
@@ -99,17 +106,6 @@
 
       h3 {
         color: $link-colour;
-      }
-
-      .cta {
-        // border-left: 0;
-        &:after {
-          padding-left: 15px;
-          transition: all 1s ease-in-out;
-          -webkit-transition: all 0.2s ease-in-out; /** Chrome & Safari **/
-          -moz-transition: all 0.2s ease-in-out; /** Firefox **/
-          -o-transition: all 0.2s ease-in-out; /** Opera **/
-        }
       }
     }
 
@@ -138,6 +134,7 @@
 
   border: 0;
   overflow: hidden;
+  margin-top: 50px;
 
   .image {
     height: 350px;
@@ -163,10 +160,14 @@
       border: 0;
       width: 170px;
       background-color: #ffffff;
-      padding: 10px;
       margin: 29px;
       border-radius: 30px;
-      text-align: center;
+      padding: 10px 0 10px 40px;
+
+      &:after {
+        left: 123px;
+        top: 18px;
+      }
 
       &:hover {
         background-color: $link-colour;
@@ -177,9 +178,20 @@
   }
 
   &:hover {
+
+    -webkit-transform: perspective(1000px) translate3d(0,0,0);
+    transform: perspective(1000px) translate3d(0,0,0);
+
     .cta {
       background-color: $link-colour;
       color: #ffffff;
+      &:after {
+        background-image: url('/dist/images/icons/Icon_White_Chevron.svg');
+      }
+    }
+
+    h3 a, p {
+      color:$link-colour;
     }
 
     &.is-large {
@@ -222,10 +234,8 @@
           padding-left: 23px;
 
           h3 {
-            padding: 0;
+            padding: 30px 54px 10px 0;
             font-size: 22px;
-            padding-right: 54px;
-            padding-top: 30px
           }
 
           p {
@@ -246,9 +256,136 @@
       }
     }
   }
+}
 
-  @media screen and (min-width: 64em) {
+@media screen and (min-width: 64em) {
 
+  .cm-content-tile {
+
+    .image {
+      img {
+        opacity: 1;
+      }
+    }
+
+    &:before {
+      box-shadow: 0 3px 30px rgba(0,0,0,0.5);
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      // background: #000;
+      content: '';
+      -webkit-transition: opacity 0.35s;
+      transition: opacity 0.35s;
+    }
+
+    &:hover {
+
+      border:0;
+
+      -webkit-transform: perspective(1000px) translate3d(0,0,21px);
+      transform: perspective(1000px) translate3d(0,0,21px);
+
+      background-color: #ffffff;
+
+      &:before {
+        opacity: 1;
+      }
+
+      .content {
+
+        h3 {
+          color: $link-colour;
+        }
+
+        .cta {
+          // border-left: 0;
+          &:after {
+            left: 125px;
+            transition: all 1s ease-in-out;
+            -webkit-transition: all 0.2s ease-in-out; /** Chrome & Safari **/
+            -moz-transition: all 0.2s ease-in-out; /** Firefox **/
+            -o-transition: all 0.2s ease-in-out; /** Opera **/
+
+            background-image: url('/dist/images/icons/Icon_Purple_Chevron.svg');
+            -webkit-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+
+          }
+        }
+      }
+
+    }
+
+    .cm-image-block-link {
+      &:hover {
+        img, .img {
+          -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+        }
+      }
+      &:after {
+        background-color: transparent;
+      }
+      .image {
+        &:after {
+          background-color: transparent;
+        }
+      }
+    }
+
+  }
+
+  .sl-list {
+    display: flex;
+    .sl-item {
+      flex: 1;
+      .cm-content-tile {
+        height: 100%;
+        .content {
+          margin-bottom: 60px;
+        }
+        .cm-image-block-link {
+          height: 100%;
+        }
+        .cta {
+          position: absolute;
+          width: 100%;
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+  .is-cta {
+    &:hover {
+      -webkit-transform: perspective(1000px) translate3d(0, 0, 0);
+      transform: perspective(1000px) translate3d(0, 0, 0);
+
+      .content {
+
+        .cta {
+          // border-left: 0;
+          &:after {
+            left: 130px;
+            transition: all 1s ease-in-out;
+            -webkit-transition: all 0.2s ease-in-out; /** Chrome & Safari **/
+            -moz-transition: all 0.2s ease-in-out; /** Firefox **/
+            -o-transition: all 0.2s ease-in-out; /** Opera **/
+
+            background-image: url('/dist/images/icons/Icon_White_Chevron.svg');
+            -webkit-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+
+          }
+        }
+      }
+
+    }
     &.is-large {
       &.is-cta {
         margin-left: auto;
@@ -285,6 +422,7 @@
             p {
               padding: 0 30px 30px 30px;
               font-size: 32px;
+              line-height: 40px;
             }
           }
 

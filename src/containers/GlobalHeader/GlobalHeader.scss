@@ -1,34 +1,74 @@
 .global-header {
   border-top:5px solid $cochlear-yellow;
+  -webkit-box-shadow: 0 0 15px rgba(0,0,0,.3);
+  -moz-box-shadow: 0 0 15px rgba(0,0,0,.3);
+  box-shadow: 0 0 15px rgba(0,0,0,.3);
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+
 
   .logo {
+
+    float: none;
+    width:130px;
+    margin: 0 auto;
+    padding: 0;
+
     a {
-      background-image: url('/dist/images/logo_mobile.png');
+      background: url('/images/logo_mobile.png') no-repeat center center;
+      background-size: 100%;
       display: block;
+      height: 40px;
     }
     img {
       display: none;
     }
   }
+
+  .nav-toggle {
+    position: absolute;
+    top: 0;
+    left: 20px;
+  }
+
+  .login {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    display: none;
+  }
+
+  .search-toggle {
+    border-radius: 40px;
+    width: 40px;
+    height: 40px;
+    background: $cochlear-yellow url('/images/icons/Icon_Purple_Search.svg') no-repeat center center;
+    background-size: 23px;
+  }
+
+
+
 }
 
 @media only screen and (min-width: 64em) {
   .global-header {
 
-    -webkit-box-shadow: 0 0 15px rgba(0,0,0,.3);
-    -moz-box-shadow: 0 0 15px rgba(0,0,0,.3);
-    box-shadow: 0 0 15px rgba(0,0,0,.3);
-
+    position: relative;
     padding-top: 20px;
     padding-bottom: 10px;
 
     .login {
       float: right;
+      display: block;
+      position: relative;
+      right:0;
       width: 160px;
       cursor: pointer;
       font-size: 16px;
       font-weight: 300;
-      text-transform: uppercase;
+      text-transform: capitalize;
       border: 1px solid $link-colour;
       line-height: 44px;
       border-radius: 40px;
@@ -37,6 +77,19 @@
       background-color: $link-colour;
       color: #ffffff;
       margin: 25px 0 0 30px;
+
+      &:after {
+        content: '';
+        background-image: url('/dist/images/icons/Icon_White_Chevron.svg');
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 15px;
+        right: 35px;
+      }
+
       &:hover {
         color: #ffffff;
       }
@@ -44,16 +97,26 @@
 
     .logo {
 
-      height: auto;
+      height: 84px;
       width: 100px;
       overflow: hidden;
-
+      margin: 0;
+      float: left;
       a {
         background-image: url('/images/logo_desktop.png');
-      }
-      img {
         display: block;
+        height: 83px;
+        background-size: 100%;
+        background-repeat: no-repeat;
       }
+    }
+
+    .search-toggle {
+      position: absolute;
+      bottom: -80px;
+      right: 40px;
+      float: none;
+      top: auto;
     }
   }
 }
