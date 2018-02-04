@@ -8,15 +8,15 @@ class GlobalFooter__Nav__Social extends React.Component {
         let mockUpData = [{
 
         }]
-        let itemsArray = this.props.items || [1,2,3,4,5];
+        let itemsArray = this.props.items || [1,2,3,4];
 
         const itemsList = itemsArray.map( (item, index) =>{
             return ( <GlobalFooter__Nav_Social__Item key={index} /> );
         });
 
         return (
-            <li className="nav-footer-social link-icons-disabled">
-                <h2>Connect with us</h2>
+            <li className="nav-footer-social nav-footer-item link-icons-disabled">
+                <h2>Find us</h2>
 
                 <ul>
                     { itemsList }

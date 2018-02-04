@@ -4,8 +4,30 @@ import React from 'react';
 class BreadCrumbs extends React.Component {
 
     render() {
+        let jsonObj=null;
+        //Formatter
+        // if (this.props.jsonData) {
+        //     let string = this.props.jsonData.breadcrumbs;
+        //     let removeNewLines=string.split('\n').join('');
+        //     let objects=removeNewLines.split('}{');
+        //     objects=objects.join('};{');
+        //     let arrayOfStringObjs = objs.split(';');
+        //     let arrayOfStringObjects=[];
+        //     let objString = '{"breadcrumbs": ['; 
+        //     for(let stringObj in arrayOfStringObjs ){
+        //         if (stringObj<arrayOfStringObjs.length-1){ 
+        //           objString+=JSON.stringify(JSON.parse(arrayOfStringObjs[stringObj]))+',';
+        //         } else {
+        //           objString+=JSON.stringify(JSON.parse(arrayOfStringObjs[stringObj]))+']';
+        //         }
+        //      }
+        //     objString+='}'; 
+        //     jsonObj=JSON.parse(objString);
+        // }
 
-        let json= this.props.jsonData || {
+
+        
+        let json= jsonObj || {
             "breadcrumbs": [
                 { title : "Home", link: "#home" },
                 { title : "FirstLevel", link: "#first" },
