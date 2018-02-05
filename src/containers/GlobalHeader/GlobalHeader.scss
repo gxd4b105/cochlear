@@ -17,7 +17,7 @@
     padding: 0;
 
     a {
-      background: url('/images/logos/logo_mobile.png') no-repeat center center;
+      background: url('/images/logo_mobile.png') no-repeat center center;
       background-size: 100%;
       display: block;
       height: 40px;
@@ -44,7 +44,7 @@
     border-radius: 40px;
     width: 40px;
     height: 40px;
-    background: $cochlear-yellow url('/images/icons/Icon_Purple_Search.svg') no-repeat center center;
+    background: $cochlear-yellow url('/images/Icon_Purple_Search@2x.png') no-repeat center center;
     background-size: 23px;
   }
 
@@ -80,7 +80,8 @@
 
       &:after {
         content: '';
-        background-image: url('/images/icons/Icon_White_Chevron.svg');
+        background-image: url('/images/Icon_White_Chevron@2x.png');
+        background-size: 24px;
         -webkit-transform: rotate(-90deg);
         -moz-transform: rotate(-90deg);
         position: absolute;
@@ -103,7 +104,7 @@
       margin: 0;
       float: left;
       a {
-        background-image: url('/images/logos/logo_desktop.png');
+        background-image: url('/images/logo_desktop.png');
         display: block;
         height: 83px;
         background-size: 100%;

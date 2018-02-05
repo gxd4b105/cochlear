@@ -1,7 +1,5 @@
 import React from 'react';
 
-//import MyIcon from 'svg-react-loader?name=MyIcon!../../images/icons/Icon_Purple_Arrow.svg';
-
 class HeaderLandingBanner extends React.Component {
     render () {
 
@@ -14,7 +12,7 @@ class HeaderLandingBanner extends React.Component {
                         <span className="content-grouper">
                             <h1>{this.props.title}</h1>
                             <p>{this.props.description}</p>
-                            <img className="arrow" src="/images/icons/Icon_Purple_Arrow.svg" />
+                            <img className="arrow" src="/images/Icon_Purple_Arrow@2x.png" />
                         </span>
                     </div>
 
@@ -33,7 +31,7 @@ class HeaderLandingBanner extends React.Component {
 HeaderLandingBanner.defaultProps = {
     title: "Landing page title",
     description:"",
-    image: "http://fed.donlineclients.com/assets/img/placeholder/landing-hero.jpg",
+    image: "",
     imageAlt: "Landing page banner alt text",
     additionalClass: ""
 };

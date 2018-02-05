@@ -12,16 +12,16 @@
       width: 30px;
     }
     .facebook {
-      background-image: url('/images/icons/Social_White_Facebook@2x.png');
+      background-image: url('/images/Social_White_Facebook@2x.png');
     }
-    .google {
-      background-image: url('/images/icons/Social_White_Google@2x.png');
+    .googleplus {
+      background-image: url('/images/Social_White_Google@2x.png');
     }
     .youtube {
-      background-image: url('/images/icons/Social_White_Twitter@2x.png');
+      background-image: url('/images/Social_White_Twitter@2x.png');
     }
     .twitter {
-      background-image: url('/images/icons/Social_White_Youtube@2x.png');
+      background-image: url('/images/Social_White_Youtube@2x.png');
     }
   }
 }
@@ -34,12 +34,14 @@
       h2 {
         display:block;
         text-align: left;
-        margin-left: 20px;
       }
       ul{
         li {
           padding-right:20px;
         }
+      }
+      a {
+        padding: 0;
       }
     }
   }

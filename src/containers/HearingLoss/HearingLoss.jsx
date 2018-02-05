@@ -62,32 +62,25 @@ class HearingLoss extends Component {
                             <Cm01RichText body={getData['body-copy']}/>
                         </article>
 
-                        <Cm02ContentTile    title={getData['cm02-title-01'].title}
-                                            description={getData['cm02-description-01']}
-                                            path={getData['cm02-title-01'].path}
-                                            image={'https://auth.cochlear.com'+getData['cm02-image-01'].src}
-                                            imagePath={getData['cm02-title-01'].path}
-                                            embed = {getData['cm02-video-embed-01']}
-                                            additionalClass="is-large is-cta"/>
 
                         <div className="sl">
                             <div className="sl-list has-2-items">
                                 <div className="sl-item">
-                                    <Cm02ContentTile    title={getData['cm02-title-01'].title}
-                                                        description={getData['cm02-description-01']}
-                                                        path={getData['cm02-title-01'].path}
-                                                        image={'https://auth.cochlear.com'+getData['cm02-image-01'].src}
-                                                        imagePath={getData['cm02-title-01'].path}
-                                                        embed = {getData['cm02-video-embed-01']}
+                                    <Cm02ContentTile    title={getData['cm02-title-02-01'].title}
+                                                        description={getData['cm02-description-02-01']}
+                                                        path={getData['cm02-title-02-01'].path}
+                                                        image={'https://auth.cochlear.com'+getData['cm02-image-02-01'].src}
+                                                        imagePath={getData['cm02-title-02-01'].path}
+                                                        embed = {getData['cm02-video-embed-02-01']}
                                                         additionalClass="is-small"/>
                                 </div>
                                 <div className="sl-item">
-                                    <Cm02ContentTile    title={getData['cm02-title-01'].title}
-                                                        description={getData['cm02-description-01']}
-                                                        path={getData['cm02-title-01'].path}
-                                                        image={'https://auth.cochlear.com'+getData['cm02-image-01'].src}
-                                                        imagePath={getData['cm02-title-01'].path}
-                                                        embed = {getData['cm02-video-embed-01']}
+                                    <Cm02ContentTile    title={getData['cm02-title-02-02'].title}
+                                                        description={getData['cm02-description-02-02']}
+                                                        path={getData['cm02-title-02-02'].path}
+                                                        image={'https://auth.cochlear.com'+getData['cm02-image-02-02'].src}
+                                                        imagePath={getData['cm02-title-02-02'].path}
+                                                        embed = {getData['cm02-video-embed-02-02']}
                                                         additionalClass="is-small"/>
                                 </div>
                             </div>

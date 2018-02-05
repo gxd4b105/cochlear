@@ -66,7 +66,8 @@ class Header extends Component {
 
                             <RegionLanguageSelect cta="Select a region and language"
                                                   formAction="/intl/home"
-                                                  submitText="Change"/>
+                                                  submitText="Change"
+                                                  additionalClass=""/>
 
                             <div className="logo">
                                 <a href={this.props.logoURL}><img src={this.props.logoPath} alt={this.props.title} /></a>

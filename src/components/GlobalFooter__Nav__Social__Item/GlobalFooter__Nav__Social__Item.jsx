@@ -1,5 +1,4 @@
 import React from 'react';
-// import socialFb from '../../images/icons/Icon_Facebook.svg';
 
 class GlobalFooter__Nav__Social__Item extends React.Component {
     render() {
@@ -9,7 +8,7 @@ class GlobalFooter__Nav__Social__Item extends React.Component {
             <li>
                 <a href={obj.path} title={`${obj.socialVerb} us on ${obj.socialTitle}`}>
                     <span className={`icon ${obj.socialIcon}`}>
-                        <img src="https://via.placeholder.com/40x40"/>
+
                     </span>
                 </a>
             </li>
