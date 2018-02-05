@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Helmet } from 'react-helmet';
 import * as actions from '../../shared/app/redux/actions/actions';
 
 import GlobalFooter__Nav from '../../components/GlobalFooter__Nav/GlobalFooter__Nav.jsx';
-//import GlobalFooter__Nav__Item from '../../components/GlobalFooter__Nav__Item/GlobalFooter__Nav__Item.jsx';
 import GlobalFooter__Nav__Social from '../../components/GlobalFooter__Nav__Social/GlobalFooter__Nav__Social.jsx';
-//import GlobalFooter__Nav__Social__Item from '../../components/GlobalFooter__Nav__Social__Item/GlobalFooter__Nav__Social__Item.jsx';
-
-
-// import cochlearWhiteLogo from '../../images/COH_Logo_White@2x.png';
 
 
 class Footer extends Component {
@@ -87,7 +81,7 @@ class Footer extends Component {
                         <ul className={`nav-footer has-5-items`}>
                             
                             <li className="brandImg"> 
-                                <img src="https://via.placeholder.com/120x100" alt='Cochlear Ltd Logo' /> 
+                                <a href="/">Cochlear</a>
                             </li> 
                             
                             {columnsList}
