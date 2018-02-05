@@ -241,7 +241,7 @@ class BrochureDownload extends React.Component {
                     axios.get(url)
                     .then(res => {
                         console.log('RES is ', res);
-                        if(res.data.response === 'success'){
+                        if(res.data.response === 'success' || (res.data.response === 'error' && this.state.selectDeliveryOption === 'direct')){
                             console.log('SUCCESS');
                             //document.getElementById('download').display='block';
                             //this.state.hasSubmitted="block";
@@ -259,6 +259,7 @@ class BrochureDownload extends React.Component {
                                   title: 'Thank you!',
                                   description: 'We’ve recieved your information, and will delivered to your address shortly.',
                                 });
+
                             }
 
                         } else {
