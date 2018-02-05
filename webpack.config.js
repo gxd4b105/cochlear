@@ -1,6 +1,7 @@
 const path = require('path'),
     webpack = require('webpack');
 const srcPath = path.join(__dirname, 'src');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     context: path.resolve(__dirname, './src'),
@@ -23,44 +24,13 @@ module.exports = {
                 }],
             },
             {
-                test: /\.(scss)$/,
-                use:
-                [{
-                    loader: 'style-loader'
-                },
-                {
-                    loader : 'css-loader',
-                    options:
-                    {
-                        importLoaders : 2,
-                        sourceMap     : true
-                    }
-                },
-                {
-                    loader : 'sass-loader',
-                    options:
-                    {
-                        outputStyle       : 'expanded',
-                        sourceMap         : true,
-                        sourceMapContents : true
-                    }
-                }]
-            },
-            {
-                test: /\.(css)$/,
-                use:
-                [{
-                    loader: 'style-loader'
-                },
-                {
-                    loader : 'css-loader',
-                    options:
-                    {
-                        importLoaders : 2,
-                        sourceMap     : true
-                    }
-                }]
-            },
+                test: /\.(scss|css)$/,
+                use: ExtractTextPlugin.extract({
+                  fallback: 'style-loader',
+                  //resolve-url-loader may be chained before sass-loader if necessary
+                  use: ['css-loader', 'sass-loader']
+                })
+              },
             {
                 test: /\.(png|jpg|gif)$/,
                 loader: "file-loader?name=images/[name].[ext]"
@@ -103,6 +73,7 @@ module.exports = {
             "process.env": {
                 BROWSER: JSON.stringify(true)
             }
-        })
+        }),
+        new ExtractTextPlugin('style.css')
     ]
 }
