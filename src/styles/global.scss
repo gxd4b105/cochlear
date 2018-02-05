@@ -94,6 +94,7 @@ a:focus, a:hover {
 
 /* ----------- COMPONENTS ----------- */
 @import "../../src/containers/GlobalHeader/GlobalHeader.scss";
+@import "../../src/containers/GlobalFooter/GlobalFooter.scss";
 @import "../../src/components/HeaderLandingBanner/HeaderLandingBanner.scss";
 @import "../../src/components/Cm01RichText/Cm01RichText.scss";
 @import "../../src/components/Cm28SocialShare/Cm28SocialShare.scss";
@@ -102,7 +103,7 @@ a:focus, a:hover {
 @import "../../src/components/GlobalHeader__Nav/GlobalHeader__Nav.scss";
 @import "../../src/components/BreadCrumbs/BreadCrumbs.scss";
 @import "../../src/components/RegionLanguageSelect/RegionLanguageSelect.scss";
-@import "../../src/containers/GlobalFooter/GlobalFooter.scss";
+@import "../../src/components/GlobalFooter__Nav__Social__Item/GlobalFooter__Nav__Social__Item.scss";
 @import "../../src/components/RelatedContent/RelatedContent.scss";
 @import "../../src/components/Disclaimer/Disclaimer.scss";
 @import "../../src/components/BrochureDownload/BrochureDownload.scss";

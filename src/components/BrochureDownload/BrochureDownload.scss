@@ -1,9 +1,258 @@
-.brochure-download {
+.l-padding .cm-subscription-banner .brochure-download {
   background-color: $light-grey;
+  padding: 40px;
+  border-left: solid $cochlear-yellow 5px;
+
+  .ctrl-holder{
+    clear: both;
+    &.width-l {
+      & > .ctrl {
+        max-width: none;
+        width: 100%;
+      }
+      p, label {
+        font-size: 14px;
+        color: $cool-grey;
+      }
+    }
+
+    a {
+      color: $link-colour;
+    }
+
+    .ctrl {
+      select {
+        background-image: url('/images/icons/Icon_Purple_Chevron.svg');
+        background-repeat: no-repeat;
+      }
+
+      select, input {
+        font-family: $font-primary;
+      }
+    }
+
+    .text,
+    select,
+    textarea {
+      &:focus {
+        border-color: $mid-grey;
+        background-color: white;
+        border-bottom: solid $cochlear-yellow 3px;
+      }
+    }
+
+    &.half-width {
+      width: 50%;
+      float: left;
+      margin-top: 0;
+      padding-right: 7.5px;
+      clear: none;
+
+      & + .half-width {
+        padding-left: 7.5px;
+        padding-right: 0;
+      }
+    }
+  }
+
+  .title-text-container {
+    legend {
+      color: $cool-grey;
+      font-family: $font-primary;
+      font-weight: bold;
+    }
+  }
+
   .delivery-common {
     display: none;
   }
   .delivery-address {
+    display: none;
+  }
+  .btn-holder .cta {
+    background-color: $link-colour;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-family: $font-primary;
+    padding-left: 27px;
+    padding-right: 27px;
+  }
+
+  .downloadBox {
+    background: white;
+    float:left;
+    width: 100%;
+    padding: 25px 0 25px 73px;
+    position: relative;
+
+    &:before {
+      content: '';
+      background-image: url(/images/icons/Icon_Yellow_PDF.svg);
+      width: 25px;
+      height: 29px;
+      position: absolute;
+      top: calc(50% - 21.5px);
+      left: 27px;
+      background-size: 100% 100%;
+    }
+
+    p {
+      margin: 0;
+
+      &.title {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+/* Customize the label (the container) */
+.radio-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  /* Hide the browser's default radio button */
+  input {
+    position: absolute;
+    opacity: 0;
+
+    &:checked {
+      /* When the radio button is checked, add a blue background */
+      & ~ .radiopoint {
+        // background-color: #2196F3;
+        border: 1px solid $link-colour;
+        /* Show the indicator (dot/circle) when checked */
+        &:after {
+          display: block;
+        }
+      }
+    }
+  }
+  /* Style the indicator (dot/circle) */
+  .radiopoint {
+    &:after {
+      top: 6.5px;
+      left: 6.5px;
+      width: 7.5px;
+      height: 7.5px;
+      border-radius: 50%;
+      background: $link-colour;
+    }
+  }
+
+  &:hover {
+    color: $link-colour !important;
+    input {
+      & ~ .radiopoint {
+        /* On mouse-over, add a grey background color */
+        // background-color: #ccc;
+        border: 1px solid $link-colour;
+      }
+    }
+  }
+}
+
+
+
+/* Create a custom radio button */
+.radiopoint {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 23px;
+  width: 23px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: solid 1px $mid-grey;
+
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  &:after {
+    content : "";
+    position: absolute;
+    display: none;
+  }
+}
+
+/* Customize the label (the container) */
+.check-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  /* Hide the browser's default radio button */
+  input {
+    position: absolute;
+    opacity: 0;
+
+    &:checked {
+      & ~ .checkmark {
+        border: 1px solid $link-colour;
+        /* Show the indicator (dot/circle) when checked */
+        &:after {
+          display: block;
+        }
+      }
+    }
+  }
+  /* Style the indicator (dot/circle) */
+  .checkmark {
+    &:after {
+      left: 8px;
+      top: 1.5px;
+      width: 6px;
+      height: 16px;
+      border: solid $link-colour;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(35deg);
+      -ms-transform: rotate(35deg);
+      transform: rotate(35deg);
+    }
+  }
+
+  &:hover {
+    color: $link-colour !important;
+    input {
+      & ~ .checkmark {
+        /* On mouse-over, add a grey background color */
+        // background-color: #ccc;
+        border: 1px solid $link-colour;
+      }
+    }
+  }
+}
+
+
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 23px;
+  width: 23px;
+  background-color: #fff;
+  border: solid 1px $mid-grey;
+
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  &:after {
+    content : "";
+    position: absolute;
     display: none;
   }
 }

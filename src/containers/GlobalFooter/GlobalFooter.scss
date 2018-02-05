@@ -29,6 +29,16 @@
     .brandImg {
         text-align: center;
         padding:20px;
+        a {
+          display: block;
+          width: 120px;
+          height: 100px;
+          margin: 0 auto;
+          text-indent: -999em;
+          background-image: url('/images/logos/White.svg');
+          background-repeat: no-repeat;
+          background-size: 100%;
+        }
     }
  
     .nav-footer-item {
