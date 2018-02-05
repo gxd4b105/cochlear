@@ -7,7 +7,7 @@ class Cm28SocialShare extends React.Component {
             <div className="cm cm-social-share">
                 <ul>
                     <li>
-                        <a href="#" className='linkedin' target="_blank" rel="noopener" title="Follow us on LinkedIn" onClick="window.open('https://www.linkedin.com/cws/share?url={{PAGE_URL_GOES_HERE}}', 'newwindow', 'width=600, height=350'); return false;">
+                        <a href="#" className='googleplus' target="_blank" rel="noopener" title="Follow us on Google Plus" onClick="window.open('https://www.linkedin.com/cws/share?url={{PAGE_URL_GOES_HERE}}', 'newwindow', 'width=600, height=350'); return false;">
 
                         </a>
                     </li>

@@ -12,6 +12,7 @@ import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs.jsx";
 import HeaderLandingBanner from "../../components/HeaderLandingBanner/HeaderLandingBanner.jsx";
 import Cm28SocialShare from "../../components/Cm28SocialShare/Cm28SocialShare.jsx";
 import RelatedContent from "../../components/RelatedContent/RelatedContent.jsx";
+import BrochureDownload from "../../components/BrochureDownload/BrochureDownload.jsx";
 
 if (typeof window === 'undefined') {
     global.window = {}
@@ -53,19 +54,6 @@ class UntreatedHearingLossAdult extends Component {
                     <link rel="canonical" href="http://www.cochlear.com/wps/wcm/connect/intl/home/understand/my-child-has-hl" />
                 </Helmet>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
 
                 <HeaderLandingBanner title={getData['title']}
@@ -83,6 +71,8 @@ class UntreatedHearingLossAdult extends Component {
                             <Cm28SocialShare />
 
                             <Cm01RichText body={getData['body-copy']}/>
+
+                            <BrochureDownload title="Request additional information" description="Fill in your details below if you'd like us to send you more information about implantable solutions."/>
 
 
                         </article>

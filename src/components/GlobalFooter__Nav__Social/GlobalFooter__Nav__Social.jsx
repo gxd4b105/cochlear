@@ -8,10 +8,11 @@ class GlobalFooter__Nav__Social extends React.Component {
         let mockUpData = [{
 
         }]
-        let itemsArray = this.props.items || [1,2,3,4];
+        let itemsArray = this.props.socialItemsObj || [1,2,3,4];
 
         const itemsList = itemsArray.map( (item, index) =>{
-            return ( <GlobalFooter__Nav_Social__Item key={index} /> );
+        console.log('item:', item);
+            return ( <GlobalFooter__Nav_Social__Item  socialObj={item} key={index} /> );
         });
 
         return (
