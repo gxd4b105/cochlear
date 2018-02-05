@@ -67,6 +67,34 @@ class Footer extends Component {
             ]
         }];
 
+        let socialItems=[
+            {
+                path: '#',
+                socialVerb: "Talk to",
+                socialTitle: "Twitter",
+                socialIcon: "twitter"
+            },
+            {
+                path: '#',
+                socialVerb: "Talk to",
+                socialTitle: "Facebook",
+                socialIcon: "facebook"
+            },
+            {
+                path: '#',
+                socialVerb: "Talk to",
+                socialTitle: "Youtube",
+                socialIcon: "youtube"
+            },
+            {
+                path: '#',
+                socialVerb: "Talk to",
+                socialTitle: "Google Plus",
+                socialIcon: "googleplus"
+            }
+        ];
+
+
         let arrayOfColumns = mockUpData || [ 1, 2, 3, 4 ];
         const columnsList = arrayOfColumns.map( (column, index) => {
             let classes='nav-footer-item ';
@@ -92,7 +120,7 @@ class Footer extends Component {
                             
                             {columnsList}
 
-                            <GlobalFooter__Nav__Social />
+                            <GlobalFooter__Nav__Social socialItemsObj={socialItems} />
 
                         </ul>
                     </nav>   

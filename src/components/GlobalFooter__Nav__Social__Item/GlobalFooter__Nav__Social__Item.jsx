@@ -3,11 +3,12 @@ import React from 'react';
 
 class GlobalFooter__Nav__Social__Item extends React.Component {
     render() {
-
+        let obj=this.props.socialObj;
+        console.log(obj);
         return (
             <li>
-                <a href={this.props.path} title={`${this.props.socialVerb} us on ${this.props.socialTitle}`}>
-                    <span className={`icon ${this.props.socialIcon}`}>
+                <a href={obj.path} title={`${obj.socialVerb} us on ${obj.socialTitle}`}>
+                    <span className={`icon ${obj.socialIcon}`}>
                         <img src="https://via.placeholder.com/40x40"/>
                     </span>
                 </a>
