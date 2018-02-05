@@ -82,6 +82,14 @@ export function getImpactOfHearingLoss() {
     }
 }
 
+export function getSignsOfHearingLoss() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/signs-of-hearing-loss`);
+        dispatch({ type: Types.UPDATE_SIGNSOFHEARINGLOSS, payload: data });
+    }
+}
+
 export function getTypesOfTreatment() {
     return async function (dispatch, getState) {
         // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
@@ -114,6 +122,21 @@ export function getUntreatedHearingLossAdult() {
     }
 }
 
+export function getCommonSignsAdult() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/common-signs-in-adults`);
+        dispatch({ type: Types.UPDATE_COMMONSIGNSADULTS, payload: data });
+    }
+}
+
+export function getCommonSignsChildren() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/common-signs-in-children`);
+        dispatch({ type: Types.UPDATE_COMMONSIGNSCHILDREN, payload: data });
+    }
+}
 
 export function getFindAClinic() {
     return async function (dispatch, getState) {

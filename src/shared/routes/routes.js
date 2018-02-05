@@ -1,7 +1,5 @@
 import Home from '../../containers/Home/Home.jsx';
-import Homesecond from '../../containers/Homesecond/Homesecond.jsx';
-import Homethird from '../../containers/Homethird/Homethird.jsx';
-import User from '../app/user.jsx';
+import Main from "../../containers/_poc/Main.jsx";
 
 import HomePage from "../../containers/HomePage/HomePage.jsx";
 import HearingAidVsImplantableSolutions from "../../containers/HearingAidVsImplantableSolutions/HearingAidVsImplantableSolutions.jsx";
@@ -17,9 +15,10 @@ import ImpactOfHearingLoss from "../../containers/ImpactOfHearingLoss/ImpactOfHe
 import UntreatedHearingLossAdult from "../../containers/UntreatedHearingLossAdult/UntreatedHearingLossAdult.jsx";
 import UntreatedHearingLossChildren from "../../containers/UntreatedHearingLossChildren/UntreatedHearingLossChildren.jsx";
 import PlanningYourTest from "../../containers/PlanningYourTest/PlanningYourTest.jsx";
+import SignsOfHearingLoss from "../../containers/SignsOfHearingLoss/SignsOfHearingLoss.jsx";
+import CommonSignsAdult from "../../containers/CommonSignsAdult/CommonSignsAdult.jsx";
+import CommonSignsChildren from "../../containers/CommonSignsChildren/CommonSignsChildren.jsx";
 
-
-import Main from "../../containers/_poc/Main.jsx";
 
 export default {
     routes: [
@@ -69,6 +68,11 @@ export default {
             exact: true
         },
         {
+            path: '/:country/signs-of-hearing-loss',
+            component: SignsOfHearingLoss,
+            exact: true
+        },
+        {
             path: '/:country/hearing-loss',
             component: HearingLoss,
             exact: true
@@ -96,6 +100,16 @@ export default {
         {
             path: '/:country/untreated-hearing-loss-children',
             component: UntreatedHearingLossChildren,
+            exact: true
+        },
+        {
+            path: '/:country/common-signs-in-adults',
+            component: CommonSignsAdult,
+            exact: true
+        },
+        {
+            path: '/:country/common-signs-in-children',
+            component: CommonSignsChildren,
             exact: true
         },
         {

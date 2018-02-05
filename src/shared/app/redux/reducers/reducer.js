@@ -21,6 +21,9 @@ const initialState = {
     dataUntreatedHearingLossChildren: null,
     dataFindAClinic: null,
     dataImpactOfHearingLoss: null,
+    dataSignsOfHearingLoss: null,
+    dataCommonSignsAdults : null,
+    dataCommonSignsChildren : null,
     getCurrentPosition: null,
     markers: [],
     lat: 0,
@@ -58,10 +61,16 @@ export default function userReducer(state = initialState, action) {
             return {...state, dataCostsAndAffordability: action.payload}
         case Types.UPDATE_IMPACTOFHEARINGLOSS:
             return {...state, dataImpactOfHearingLoss: action.payload}
+        case Types.UPDATE_SIGNSOFHEARINGLOSS:
+            return {...state, dataSignsOfHearingLoss: action.payload}
         case Types.UPDATE_UNTREATEDHEARINGLOSSADULT:
             return {...state, dataUntreatedHearingLossAdult: action.payload}
         case Types.UPDATE_UNTREATEDHEARINGLOSSCHILDREN:
             return {...state, dataUntreatedHearingLossChildren: action.payload}
+        case Types.UPDATE_COMMONSIGNSADULTS:
+            return {...state, dataCommonSignsAdults: action.payload}
+        case Types.UPDATE_COMMONSIGNSCHILDREN:
+            return {...state, dataCommonSignsChildren: action.payload}
         case Types.UPDATE_HOMETHIRD:
             return {...state, bodythirdTitle: action.payload['title']}
         case Types.GET_CURRENT_POSITION:
