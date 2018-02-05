@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 
-if (process.env.BROWSER) {
-    require("./BrochureDownload.scss");
-}
+// if (process.env.BROWSER) {
+//     require("./BrochureDownload.scss");
+// }
 
 
 class BrochureDownload extends React.Component {
@@ -23,7 +23,7 @@ class BrochureDownload extends React.Component {
 
     }
 
-    
+
 
     handleDeliveryOption(event) {
         this.setState({selectDeliveryOption: event.target.value});
@@ -64,7 +64,7 @@ class BrochureDownload extends React.Component {
         let street2 = document.getElementById('txt-street2');
         let suburb = document.getElementById('txt-suburb');
         let state = document.getElementById('txt-state');
-        let postcode = document.getElementById('txt-postcode'); 
+        let postcode = document.getElementById('txt-postcode');
         let country = document.getElementById('txt-country');
 
         if (firstName.value === '' || firstName.value.length > 255 || !/^[a-zA-Z]*$/g.test(firstName.value)) {
@@ -72,7 +72,7 @@ class BrochureDownload extends React.Component {
             errorMessage = firstName.value === '' ? errorMessage += '<p style="color:red;">This field is required</p>' : errorMessage;
             errorMessage = firstName.value.length > 255 ? errorMessage += '<p style="color:red;">You must have no more than 255 characters</p>' : errorMessage;
             errorMessage = !/^[a-zA-Z]*$/g.test(firstName.value) ? errorMessage += '<p style="color:red;">You must only use A to Z characters</p>' : errorMessage;
-            
+
             if (errorMessage !== '') {
                 errorState = true;
                 firstName.nextSibling.innerHTML = errorMessage;
@@ -90,7 +90,7 @@ class BrochureDownload extends React.Component {
             errorMessage = lastName.value === '' ? errorMessage += '<p style="color:red;">This field is required</p>' : errorMessage;
             errorMessage = lastName.value.length > 255 ? errorMessage += '<p style="color:red;">You must have no more than 255 characters</p>' : errorMessage;
             errorMessage = !/^[a-zA-Z]*$/g.test(lastName.value) ? errorMessage += '<p style="color:red;">You must only use A to Z characters</p>' : errorMessage;
-            
+
             if (errorMessage !== '') {
                 errorState = true;
                 lastName.nextSibling.innerHTML = errorMessage;
@@ -107,7 +107,7 @@ class BrochureDownload extends React.Component {
             let errorMessage = '';
             errorMessage = email.value === '' ? errorMessage += '<p style="color:red;">This field is required</p>' : errorMessage;
             errorMessage = !/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/g.test(lastName.value) ? errorMessage += '<p style="color:red;">You must enter a valid email</p>' : errorMessage;
-            
+
             if (errorMessage !== '') {
                 errorState = true;
                 email.nextSibling.innerHTML = errorMessage;
@@ -126,13 +126,13 @@ class BrochureDownload extends React.Component {
 
         if(this.state.selectDeliveryOption === 'mail'){
 
-        
+
 
         if (street.value === '' || street.value.length > 255) {
             let errorMessage = '';
             errorMessage = street.value === '' ? errorMessage += '<p style="color:red;">This field is required</p>' : errorMessage;
             errorMessage = street.value.length > 255 ? errorMessage += '<p style="color:red;">You must have no more than 255 characters</p>' : errorMessage;
-            
+
             if (errorMessage !== '') {
                 errorState = true;
                 street.nextSibling.innerHTML = errorMessage;
@@ -149,7 +149,7 @@ class BrochureDownload extends React.Component {
             let errorMessage = '';
             errorMessage = suburb.value === '' ? errorMessage += '<p style="color:red;">This field is required</p>' : errorMessage;
             errorMessage = suburb.value.length > 255 ? errorMessage += '<p style="color:red;">You must have no more than 255 characters</p>' : errorMessage;
-            
+
             if (errorMessage !== '') {
                 errorState = true;
                 suburb.nextSibling.innerHTML = errorMessage;
@@ -166,7 +166,7 @@ class BrochureDownload extends React.Component {
             let errorMessage = '';
             errorMessage = state.value === '' ? errorMessage += '<p style="color:red;">This field is required</p>' : errorMessage;
             errorMessage = state.value.length > 255 ? errorMessage += '<p style="color:red;">You must have no more than 255 characters</p>' : errorMessage;
-            
+
             if (errorMessage !== '') {
                 errorState = true;
                 state.nextSibling.innerHTML = errorMessage;
@@ -184,7 +184,7 @@ class BrochureDownload extends React.Component {
             let errorMessage = '';
             errorMessage = postcode.value === '' ? errorMessage += '<p style="color:red;">This field is required</p>' : errorMessage;
             errorMessage = postcode.value.length > 255 ? errorMessage += '<p style="color:red;">You must have no more than 255 characters</p>' : errorMessage;
-            
+
             if (errorMessage !== '') {
                 errorState = true;
                 postcode.nextSibling.innerHTML = errorMessage;
@@ -205,7 +205,7 @@ class BrochureDownload extends React.Component {
             let errorMessage = '';
             errorMessage = country.options[country.selectedIndex].text === 'Select Country' ? errorMessage += '<p style="color:red;">This field is required</p>' : errorMessage;
             errorMessage = country.value.length > 255 ? errorMessage += '<p style="color:red;">You must have no more than 255 characters</p>' : errorMessage;
-            
+
             if (errorMessage !== '') {
                 errorState = true;
                 country.nextSibling.innerHTML = errorMessage;
@@ -232,8 +232,8 @@ class BrochureDownload extends React.Component {
 
 
             const url = 'https://api.myjson.com/bins/govgt';
-            
-                    
+
+
                     axios.get(url)
                     .then(res => {
                         console.log('RES is ', res);
@@ -246,7 +246,7 @@ class BrochureDownload extends React.Component {
                                 this.setState({downloadDisplay: 'block'});
                             }
 
-                            
+
                         }
                     });
 
@@ -258,10 +258,10 @@ class BrochureDownload extends React.Component {
         } else {
             console.log('this is NOT valid');
         }
-        
-        
 
-        
+
+
+
     }
 
 
@@ -271,7 +271,7 @@ class BrochureDownload extends React.Component {
         return (
 
             <section className={`cm cm-subscription-banner ${this.props.additionalClass}`}>
-                <div className="l-padding">
+                <div className="l-padding brochure-download">
                     <form id="brochure-download" onSubmit={this.handleSubmit} className="fn_validate" action="/">
                         <div className="fn_validate_summary"></div>
                         <fieldset>
