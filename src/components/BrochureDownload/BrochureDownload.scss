@@ -25,6 +25,10 @@
         background-image: url('/images/icons/Icon_Purple_Chevron.svg');
         background-repeat: no-repeat;
       }
+
+      select, input {
+        font-family: $font-primary;
+      }
     }
 
     .text,
@@ -74,6 +78,33 @@
     padding-left: 27px;
     padding-right: 27px;
   }
+
+  .downloadBox {
+    background: white;
+    float:left;
+    width: 100%;
+    padding: 25px 0 25px 73px;
+    position: relative;
+
+    &:before {
+      content: '';
+      background-image: url(/images/icons/Icon_Yellow_PDF.svg);
+      width: 25px;
+      height: 29px;
+      position: absolute;
+      top: calc(50% - 21.5px);
+      left: 27px;
+      background-size: 100% 100%;
+    }
+
+    p {
+      margin: 0;
+
+      &.title {
+        font-weight: bold;
+      }
+    }
+  }
 }
 
 /* Customize the label (the container) */
@@ -119,10 +150,12 @@
   }
 
   &:hover {
+    color: $link-colour !important;
     input {
       & ~ .radiopoint {
         /* On mouse-over, add a grey background color */
-        background-color: #ccc;
+        // background-color: #ccc;
+        border: 1px solid $link-colour;
       }
     }
   }
@@ -149,7 +182,6 @@
   }
 }
 
-// asdasdasd
 /* Customize the label (the container) */
 .check-container {
   display: block;
@@ -194,10 +226,12 @@
   }
 
   &:hover {
+    color: $link-colour !important;
     input {
       & ~ .checkmark {
         /* On mouse-over, add a grey background color */
-        background-color: #ccc;
+        // background-color: #ccc;
+        border: 1px solid $link-colour;
       }
     }
   }

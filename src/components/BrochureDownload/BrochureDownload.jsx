@@ -305,6 +305,10 @@ class BrochureDownload extends React.Component {
                                 <legend>{this.state.title}</legend>
                                 <p>{this.state.description}</p>
                             </div>
+                            <div className="downloadBox">
+                              <p className='title'>When hearing aids are not enough</p>
+                              <p className='details'>2.5MB | PDF</p>
+                            </div>
                             {!this.state.hasSubmitted &&
                             <div className="input-container">
                                 <div className="ctrl-holder width-l">
