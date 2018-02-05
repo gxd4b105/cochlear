@@ -99,21 +99,119 @@ function renderFullPage(html, preloadedState, helmet) {
         
         
 	   <script type="text/javascript">
-function dataLayerPush (){
-	dataLayer.push({
-		page:{
-			pageInfo:{			
-				"page-title":  '',
-				"page-url": window.location.href
-			}
+	    function getSubDomain() {
+			let hostname = document.domain; 
+			var topLevel = new RegExp('\.(com.au|co.uk|me|com|us|es|fr|it)');
+			var tmpDomain = hostname.replace(topLevel, '');
+			var mainDomain = tmpDomain.split('.').pop();
+			var subDomain = tmpDomain.split(mainDomain)[0];
+			return subDomain;
 		}
-	}); 
-}
-
-dataLayerPush(); 
 
 
-		</script>	
+
+		function getCountry(){
+			let country='';
+
+			var req = new XMLHttpRequest();
+			req.open('GET', 'https://freegeoip.net/json/', true);
+			req.onreadystatechange = function (aEvt) {
+				if (req.readyState == 4) {
+     				if(req.status == 200)
+      					country=req.country_code;
+		    		else
+      					console.log("Error loading page");
+  				}
+			};
+			req.send(null);
+			return country;
+		}
+
+		function getDevice(){
+			if( navigator.userAgent.match(/Android/i)
+				|| navigator.userAgent.match(/webOS/i)
+				|| navigator.userAgent.match(/iPhone/i)
+				|| navigator.userAgent.match(/iPod/i)
+				|| navigator.userAgent.match(/BlackBerry/i)
+				|| navigator.userAgent.match(/Windows Phone/i)
+			){
+	    		return 'mobile';
+			} else if (
+				navigator.userAgent.match(/Mac/i)
+				|| navigator.userAgent.match(/Linux/i)
+				|| navigator.userAgent.match(/Win/i)
+				|| navigator.userAgent.match(/Unix/i)
+			){
+				return 'desktop';
+			} else {
+				return 'tablet';
+			}
+				  
+		} 
+
+		function getSubCategories(){
+			let subCategories=[];
+			let element=document.getElementsByClassName('breadcrumb')[0].children;
+			for (let item in element){
+				if (element[item].className==='is-active'){
+					let tmp = element[item].children[0].baseURI;
+					let tmp2=tmp.split('/');
+					let subCategory= tmp2[tmp.length-1];
+					subCategories.push(subCategory);			
+				}
+				else{
+					let tmp = element[item].children[0].href;
+					let tmp2=tmp.split('/');
+					let subCategory= tmp2[tmp.length-1];
+					subCategories.push(subCategory);
+				}
+			}
+			return subCategories;
+		}
+
+		function dataLayerPush (){
+			
+			let subDomain=getSubDomain();
+			//let countryName=getCountry();
+			let device=getDevice();
+			//let categories=getSubCategories();
+			let categories['', '' ,'', ''];
+			dataLayer.push({
+				page:{
+					pageInfo:{			
+						pageID: "",
+						pageTitle: window.document.title,
+						pageURL: window.document.location.href,
+						publicationDate: "",
+						updatedDate: document.lastModified,
+						domain:document.domain,
+						subDomain: subDomain,
+						sysEnv: device,                         // “desktop”, “mobile”, “tablet”
+						country: '',                        // ISO 3166 recommended
+						language: window.navigator.language                        // ISO 3166 recommended
+					},
+					category: {
+						pageType: "",                       // "Home Page", "Product Page", "Campaign Page"
+						subCategory1: categories[0] || "",                   // First level of IA (e.g. "/learn about hearing loss"
+						subCategory2: categories[1] || "",                   // Second level of IA (e.g. "/learn about hearing loss/how hearing works"
+						subCategory3: categories[2] || "",                   // Third level of IA (e.g. "/learn about hearing loss/how hearing works/abc"
+						subCategory4: categories[3] || ""                    // Fourth level of IA (e.g. "/learn about hearing loss/how hearing works/abc/xyz"
+					},
+				},
+				user: {
+					profileInfo: {
+						visitorType: "",                    //”New”, “Returning”
+						segment: ""                         // Definitions TBC
+					},
+				},
+			}); 
+		}
+
+		window.addEventListener("load", function(event) {
+			dataLayerPush(); 
+		});
+
+	</script>	
         
         ${helmet.title.toString()}
         ${helmet.meta.toString()}
