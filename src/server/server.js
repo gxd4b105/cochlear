@@ -132,7 +132,8 @@ dataLayerPush();
           // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations
           window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
         </script>
-        <script src="/app.bundle.js"></script>
+		<script src="/app.bundle.js"></script>
+		<link rel="stylesheet" href="/style.css"></link>
         
 		<!-- Google Tag Manager -->
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
