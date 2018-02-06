@@ -182,7 +182,6 @@ export function updateMarkers(data) {
 
 export function updateCity(data) {
     return function (dispatch, getState) {
-        console.log('YYYYYYYYYYYYYYYYY ', data);
         dispatch({ type: Types.UPDATE_CITY, payload: data.city });
     }
 }

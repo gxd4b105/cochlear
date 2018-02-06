@@ -25,8 +25,6 @@ class ImpactOfHearingLoss extends Component {
 
 
     render() {
-
-        console.log(this.props.dataSignsOfHearingLoss);
         let getData = this.props.dataSignsOfHearingLoss;
         let json = {
             "breadcrumbs": [{ title: "Home", link:'/intl/home' },
@@ -34,8 +32,6 @@ class ImpactOfHearingLoss extends Component {
                             { title: "Signs of hearing loss", link: '/intl/signs-of-hearing-loss'}
             ]
         };
-
-        console.log(global.window.dataLayer);
 
         return (
             <div className="l-layout l-one-column cf">

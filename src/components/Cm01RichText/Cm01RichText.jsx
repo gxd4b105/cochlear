@@ -6,8 +6,6 @@ class Cm01RichText extends React.Component {
 
 
     render() {
-
-        console.log('this.props.body is', this.props.body);
         let listElement = /<li>/gi,
             endListElement = /<\/li>/gi;
         let richTextBody = this.props.body.replace(listElement, '<li><p>');

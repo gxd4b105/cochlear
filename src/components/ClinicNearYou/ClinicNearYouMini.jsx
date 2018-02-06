@@ -96,8 +96,6 @@ if(this.state.counter === 0){
 
       toggleClinic(lat) {
         var node = ReactDOM.findDOMNode(this.refs[lat]);
-
-        console.log('NODE ', node);
         //node.querySelector('.details').classList.toggle('show');
         
     }

@@ -30,7 +30,6 @@ class UntreatedHearingLossChildren extends Component {
 
     render() {
 
-        console.log(this.props.dataUntreatedHearingLossChildren);
         let getData = this.props.dataUntreatedHearingLossChildren;
         let json = {
             "breadcrumbs": [{ title: "Home", link:'/intl/home' },
@@ -40,8 +39,6 @@ class UntreatedHearingLossChildren extends Component {
 
             ]
         };
-
-        console.log(global.window.dataLayer);
 
         return (
             <div className="l-layout l-one-column cf">
