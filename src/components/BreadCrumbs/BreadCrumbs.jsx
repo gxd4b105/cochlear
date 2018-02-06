@@ -89,7 +89,6 @@ class BreadCrumbs extends React.Component {
 
         let array=json.breadcrumbs;
         var listArray=array.map((item, index ) => {
-            console.log(item);
             return (item.title);
         });
           
@@ -105,14 +104,11 @@ class BreadCrumbs extends React.Component {
             stringArray.push(string);
         }
         
-        console.log('stringArray: ', stringArray);
         let categoriesObject={};
         for (var i=0; i<stringArray.length;i++){
            var key='subCategory'+(i+1);
-           categoriesObject[key]=stringArray[i];  
-           console.log(categoriesObject);          
+           categoriesObject[key]=stringArray[i];         
         }
-        console.log('categories: ', categoriesObject);
         dataLayerPushCategories(categoriesObject);
     }
 

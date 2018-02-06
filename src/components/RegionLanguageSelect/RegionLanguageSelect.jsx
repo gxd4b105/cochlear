@@ -22,10 +22,6 @@ class RegionLanguageSelect extends React.Component {
         let selectRegion = this.refs.selectRegion;
         let selectLanguage = this.refs.selectLanguage;
 
-        console.log(navigator.language.toLowerCase().replace('-','_'));
-        console.log('pass one ' + selectRegion.value);
-        console.log('pass one ' + selectLanguage.value);
-
         this.setState({selectRegion: "intl/home"});
         this.setState({selectLanguage: "en_us"});
 
@@ -33,7 +29,6 @@ class RegionLanguageSelect extends React.Component {
             .then(res => {
                 //const posts = res.data.data.children.map(obj => obj.data);
                 //this.setState({ posts });
-                // console.log(res.data.country_code);
                 let countryCode = res.data.country_code.toLowerCase();
                 let languageCode = navigator.language.toLowerCase().replace('-','_');
                 this.setState({selectRegion: countryCode});
@@ -41,7 +36,6 @@ class RegionLanguageSelect extends React.Component {
                 dataLayerPushCountry(this.state.selectRegion,this.state.selectLanguage);
             });
     }
-
 
     handleRegionChange(event) {
         this.setState({selectRegion: event.target.value});
@@ -70,9 +64,6 @@ class RegionLanguageSelect extends React.Component {
                 x.style.display = "none";
             }
         }
-
-        console.log('pass two ' + this.state.selectRegion);
-        console.log('pass two ' + this.state.selectLanguage);
 
         return (
             <nav className={`nav-region-dropdown ${this.props.additionalClass}`}>

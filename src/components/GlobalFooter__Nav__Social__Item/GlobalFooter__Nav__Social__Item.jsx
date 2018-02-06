@@ -3,7 +3,6 @@ import React from 'react';
 class GlobalFooter__Nav__Social__Item extends React.Component {
     render() {
         let obj=this.props.socialObj;
-        console.log(obj);
         return (
             <li>
                 <a href={obj.path} title={`${obj.socialVerb} us on ${obj.socialTitle}`}>

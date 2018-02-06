@@ -3,4 +3,5 @@ git
 dist/
 .DS_Store
 node_modules/
-server.js*
+server.js
+server.js.map

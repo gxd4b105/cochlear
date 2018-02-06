@@ -47,7 +47,6 @@ app.use('/', (req, res) => {
 			//await component.fetchData({ store, params: (foundPath ? foundPath.params : {}) });
 			//await App.fetchData({ store, params: (foundPath ? foundPath.params : {}) });
 			//get store state (js object of entire store)
-			console.log('store is ', store.getState());
 			let preloadedState = store.getState();
 			//context is used by react router, empty by default
 			let context = {};
@@ -203,7 +202,6 @@ function renderFullPage(html, preloadedState, helmet) {
 		}
 
 		window.addEventListener("load", function(event) {
-			console.log('Loaded');
 			dataLayerPushDevice();
 			dataLayerPush(); 
 		});
