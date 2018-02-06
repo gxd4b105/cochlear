@@ -136,7 +136,16 @@ function renderFullPage(html, preloadedState, helmet) {
 		function dataLayerPush(){
 			
 			let subDomain=getSubDomain();
-
+			let array=document.location.href.split('/');
+			let subCategory=array[array.length-1];
+			subCategory=subCategory.toString().toLowerCase()
+			.replace(/\s+/g, '-')           // Replace spaces with -
+			.replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+			.replace(/\-\-+/g, '-')         // Replace multiple - with single -
+			.replace(/^-+/, '')             // Trim - from start of text
+			.replace(/-+$/, '');   
+			if (subCategory==='')
+				subCategory='home';
 			dataLayer.push({
 				page:{
 					pageInfo:{			
@@ -149,7 +158,8 @@ function renderFullPage(html, preloadedState, helmet) {
 						subDomain: subDomain
 					},
 					category: {
-						pageType: ""                       // "Home Page", "Product Page", "Campaign Page"				
+						pageType: "",                       // "Home Page", "Product Page", "Campaign Page"				
+						subCategory1: subCategory
 					}
 				},
 				user: {

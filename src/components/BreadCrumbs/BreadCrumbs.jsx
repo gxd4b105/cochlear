@@ -101,15 +101,8 @@ class BreadCrumbs extends React.Component {
           .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
           .replace(/\-\-+/g, '-')         // Replace multiple - with single -
           .replace(/^-+/, '')             // Trim - from start of text
-          .replace(/-+$/, '');
-          if (stringArray.length>0){
-            var tmp=stringArray[stringArray.length-1]+'/'+string;
-          }
-          else {
-            
-            var tmp='/'+string;  
-          }
-        stringArray.push(tmp);
+          .replace(/-+$/, '');        
+            stringArray.push(string);
         }
         
         console.log('stringArray: ', stringArray);
