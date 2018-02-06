@@ -37,7 +37,8 @@ class RegionLanguageSelect extends React.Component {
                 let countryCode = res.data.country_code.toLowerCase();
                 let languageCode = navigator.language.toLowerCase().replace('-','_');
                 this.setState({selectRegion: countryCode});
-                this.setState({selectLanguage: languageCode})
+                this.setState({selectLanguage: languageCode});
+                dataLayerPushCountry(this.state.selectRegion,this.state.selectLanguage);
             });
     }
 

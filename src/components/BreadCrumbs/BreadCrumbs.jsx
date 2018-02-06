@@ -3,12 +3,23 @@ import React from 'react';
 
 class BreadCrumbs extends React.Component {
 
-    render() {
+    constructor(props){
+        super(props);
+        this.state = { 
+            breadcrumbs:[],
+            content: ''
+        };
+    }
+
+    componentDidMount(){
+
         let jsonObj = this.props.jsonData || null;
+
+               
         //Formatter
         // if (this.props.jsonData) {
-        //     let string = this.props.jsonData.breadcrumbs;
-        //     let removeNewLines=string.split('\n').join('');
+        //     let breadcrumbsString = this.props.jsonData.breadcrumbs;
+        //     let removeNewLines=breadcrumbsString.split('\n').join('');
         //     let objects=removeNewLines.split('}{');
         //     objects=objects.join('};{');
         //     let arrayOfStringObjs = objs.split(';');
@@ -25,10 +36,8 @@ class BreadCrumbs extends React.Component {
         //     jsonObj=JSON.parse(objString);
         // }
 
-
-        
         let json= jsonObj || {
-            "breadcrumbs": [
+            breadcrumbs: [
                 { title : "Home", link: "#home" },
                 { title : "FirstLevel", link: "#first" },
                 { title : "SecondLevel", link: "#second" },
@@ -36,6 +45,7 @@ class BreadCrumbs extends React.Component {
                 { title : "Leaf", link: "#fourth" }
             ]
         };
+       
         
         const length = json['breadcrumbs'].length;
         const itemsList = json["breadcrumbs"].map ( (obj, index) => {  
@@ -53,27 +63,68 @@ class BreadCrumbs extends React.Component {
             
         });
 
-        let content;
+        let contentContainer;
         if (length===0){
-        content=(<div className='vh'></div>);
+        contentContainer=(<div className='vh'></div>);
         } else if (length===1) {
-            content=(<div className="breadcrumbs l-padding">
+            contentContainer=(<div className="breadcrumbs l-padding">
                         <a href={json["breadcrumbs"][0].link} className="back-to-parent">Back to {json["breadcrumbs"][0].title}}</a>
                         <ul className="breadcrumb">
                             {itemsList}
                         </ul>
                     </div>);
         } else {
-            content=(<div className="breadcrumbs l-padding">
+            contentContainer=(<div className="breadcrumbs l-padding">
                         <a href={json["breadcrumbs"][length-2].link} className="back-to-parent">Back to {json["breadcrumbs"][length-2].title}</a>
                         <ul className="breadcrumb">
                             {itemsList}
                         </ul>
             </div>);
         }
+        this.setState({
+            breadcrumbs: json,
+            content: contentContainer
+        });
 
-        return content;
 
+        let array=json.breadcrumbs;
+        var listArray=array.map((item, index ) => {
+            console.log(item);
+            return (item.title);
+        });
+          
+        var string='';
+        var stringArray=[];
+        for (var i = 0; i< listArray.length; i++){
+          string=listArray[i].toString().toLowerCase()
+          .replace(/\s+/g, '-')           // Replace spaces with -
+          .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+          .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+          .replace(/^-+/, '')             // Trim - from start of text
+          .replace(/-+$/, '');
+          if (stringArray.length>0){
+            var tmp=stringArray[stringArray.length-1]+'/'+string;
+          }
+          else {
+            
+            var tmp='/'+string;  
+          }
+        stringArray.push(tmp);
+        }
+        
+        console.log('stringArray: ', stringArray);
+        let categoriesObject={};
+        for (var i=0; i<stringArray.length;i++){
+           var key='subCategory'+(i+1);
+           categoriesObject[key]=stringArray[i];  
+           console.log(categoriesObject);          
+        }
+        console.log('categories: ', categoriesObject);
+        dataLayerPushCategories(categoriesObject);
+    }
+
+    render() {
+        return this.state.content;
     }
 }
 
