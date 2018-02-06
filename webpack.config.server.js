@@ -6,8 +6,8 @@ module.exports = {
     context: srcPath,
     entry: './src/server/server.js',
     output: {
-        path: path.resolve(__dirname, './dist/'),
-        publicPath: '/dist',
+        path: path.resolve(__dirname,''),
+        publicPath: '',
         filename: 'server.js'
     },
     target: 'node',
