@@ -72,8 +72,8 @@ class UntreatedHearingLossChildren extends Component {
                             <Cm01RichText body={getData['body-copy']}/>
 
                             <MediaContainer
-                              quoteText="Sample"
-                              embedVideo="https://www.youtube.com/embed/tUzjHJhVCgU?enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A9000"
+                              quoteText="Having no understanding of hearing loss, her mom, Allison, was fearful of her daughter’s future but found hope in cochlear implants."
+                              embedVideo="https://www.youtube.com/embed/kuKEU5OAE5Y"
                               />
 
                             <BrochureDownload
