@@ -134,41 +134,11 @@ function renderFullPage(html, preloadedState, helmet) {
 				  
 		}
 
-		function dataLayerPush (){
+		function dataLayerPush(){
 			
 			let subDomain=getSubDomain();
 
 			dataLayer.push({
-				// page:{
-				// 	pageInfo:{			
-						
-				// 		pageID: "",
-				// 		pageTitle: window.document.title,
-				// 		pageURL: window.document.location.href,
-				// 		publicationDate: "",
-				// 		updatedDate: document.lastModified,
-				// 		domain:document.domain,
-				// 		subDomain: subDomain,
-				// 		sysEnv: device,                         // “desktop”, “mobile”, “tablet”
-				// 		country: countryName,                        // ISO 3166 recommended
-				// 		language: window.navigator.language                        // ISO 3166 recommended
-
-				// 	},
-				// 	category: {
-				// 		pageType: "",                       // "Home Page", "Product Page", "Campaign Page"
-				// 		subCategory1: categories[0] || "",                   // First level of IA (e.g. "/learn about hearing loss"
-				// 		subCategory2: categories[1] || "",                   // Second level of IA (e.g. "/learn about hearing loss/how hearing works"
-				// 		subCategory3: categories[2] || "",                   // Third level of IA (e.g. "/learn about hearing loss/how hearing works/abc"
-				// 		subCategory4: categories[3] || ""                    // Fourth level of IA (e.g. "/learn about hearing loss/how hearing works/abc/xyz"
-				// 	},
-				// },
-				// user: {
-				// 	profileInfo: {
-				// 		visitorType: "",                    //”New”, “Returning”
-				// 		segment: ""                         // Definitions TBC
-				// 	},
-				// },
-
 				page:{
 					pageInfo:{			
 						pageID: "",
@@ -177,18 +147,18 @@ function renderFullPage(html, preloadedState, helmet) {
 						publicationDate: "",
 						updatedDate: document.lastModified,
 						domain:document.domain,
-						subDomain: subDomain,
+						subDomain: subDomain
 					},
 					category: {
-						pageType: "",                       // "Home Page", "Product Page", "Campaign Page"				
-					},
+						pageType: ""                       // "Home Page", "Product Page", "Campaign Page"				
+					}
 				},
 				user: {
 					profileInfo: {
 						visitorType: "",                    //”New”, “Returning”
 						segment: ""                         // Definitions TBC
 					},
-				},
+				}
 			}); 
 		}
 
@@ -210,18 +180,19 @@ function renderFullPage(html, preloadedState, helmet) {
 				}
 			});
 		}
+
 		function dataLayerPushDevice(){
 			let device=getDevice();
 			dataLayer.push({
 				page:{
 					pageInfo: { 
-						sysEnv: device,
+						sysEnv: device
 					} 
 				}
 			});
 		}
 
-		window.addEventListener("Load", function(event) {
+		window.addEventListener("load", function(event) {
 			console.log('Loaded');
 			dataLayerPushDevice();
 			dataLayerPush(); 
