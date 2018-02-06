@@ -45,7 +45,7 @@ class Cm02ContentTile extends React.Component {
                         <%= partial(vars[:subheading][:path], :locals => vars[:subheading][:locals]) %>
                         <% end %>
                         */}
-                        <p>{this.props.description}</p>
+                        <p><a href={`${this.props.path}`}>{this.props.description}</a></p>
 
                         {showReadMore()}
 

@@ -122,6 +122,8 @@
   border: 0;
   overflow: hidden;
   margin-top: 50px;
+  margin-left: -20px;
+  padding-left: 20px;
 
   .image {
     height: 350px;
@@ -134,8 +136,10 @@
       display: block;
       width: auto;
       border-radius: 0 0 0 50px;
+      transform: none;
     }
   }
+
   .content {
     background-color: $cochlear-yellow;
     opacity: 0.9;
@@ -153,7 +157,7 @@
 
       &:after {
         left: 123px;
-        top: 18px;
+        top: 16px;
       }
 
       &:hover {
@@ -161,6 +165,50 @@
         color: #ffffff;
       }
 
+    }
+  }
+
+  .cm-image-block-link {
+    & > a {
+      width: 100%;
+      padding-right: 0;
+      left: 0;
+      padding-left: 0;
+
+      & > img {
+        width: auto;
+        // padding-right: 44px;
+        border-radius: 0;
+        height: 100%;
+      }
+    }
+
+    .content {
+      left: -20px;
+      top: 30px;
+      max-width: 308px;
+      width: 100%;
+      border-radius: 0 0 50px 0;
+      height: calc(100% - 60px);
+      padding-left: 23px;
+
+      h3 {
+        padding: 20px 54px 10px 0;
+        font-size: 22px;
+      }
+
+      p {
+        padding: 0 54px 0 0;
+        font-size: 28px;
+        min-height: 155px;
+      }
+    }
+
+    .cta {
+      margin: 0;
+      &:after {
+        display: inline-block;
+      }
     }
   }
 
@@ -173,7 +221,7 @@
       background-color: $link-colour;
       color: #ffffff;
       &:after {
-        background-image: url('/images/Icon_White_Chevron@2x');
+        background-image: url('/images/Icon_White_Chevron@2x.png');
       }
     }
 
@@ -181,67 +229,6 @@
       color:$link-colour;
     }
 
-    &.is-large {
-      &.is-cta {
-        .image {
-          img {
-            transform: none;
-          }
-        }
-      }
-    }
-  }
-
-  &.is-large {
-    &.is-cta {
-      margin-left: -20px;
-      padding-left: 20px;
-      .cm-image-block-link {
-        & > a {
-          width: 100%;
-          padding-right: 0;
-          left: 0;
-          padding-left: 0;
-
-          & > img {
-            width: auto;
-            // padding-right: 44px;
-            border-radius: 0;
-            height: 100%;
-          }
-        }
-
-        .content {
-          left: -20px;
-          top: 30px;
-          max-width: 308px;
-          width: 100%;
-          border-radius: 0 0 50px 0;
-          height: calc(100% - 60px);
-          padding-left: 23px;
-
-          h3 {
-            padding: 30px 54px 10px 0;
-            font-size: 22px;
-          }
-
-          p {
-            padding: 0;
-            font-size: 28px;
-            padding-right: 54px;
-          }
-        }
-
-        .cta {
-          margin: 0;
-          bottom: 40px;
-          position: absolute;
-          &:after {
-            display: inline-block;
-          }
-        }
-      }
-    }
   }
 }
 
@@ -344,6 +331,54 @@
   }
 
   .is-cta {
+
+    margin-left: auto;
+    padding-left: 0;
+
+    .cm-image-block-link {
+      height: 480px;
+      & > a {
+        width: 100%;
+        padding-right: 0;
+        left: 0;
+        padding-left: 50px;
+
+        & > img {
+          width: 100%;
+          border-radius: 0;
+          height: auto;
+        }
+      }
+
+      .content {
+        left: 0;
+        top: calc(50% - 180px);
+        width: 50%;
+        max-width: 380px;
+        border-radius: 0 0 50px 0;
+        height: 360px;
+        padding-left: 18px;
+
+        h3 {
+          padding: 30px 30px 20px 30px;;
+          font-size: 22px;
+        }
+
+        p {
+          padding: 0 30px 30px 30px;
+          font-size: 32px;
+          line-height: 40px;
+        }
+      }
+
+      .cta {
+        margin-left: 29px;
+        &:after {
+          display: inline-block;
+        }
+      }
+    }
+
     &:hover {
       -webkit-transform: perspective(1000px) translate3d(0, 0, 0);
       transform: perspective(1000px) translate3d(0, 0, 0);
@@ -359,7 +394,6 @@
             -moz-transition: all 0.2s ease-in-out; /** Firefox **/
             -o-transition: all 0.2s ease-in-out; /** Opera **/
 
-            background-image: url('/images/Icon_White_Chevron@2x');
             -webkit-transform: rotate(-90deg);
             -moz-transform: rotate(-90deg);
 
@@ -367,55 +401,6 @@
         }
       }
 
-    }
-    &.is-large {
-      &.is-cta {
-        margin-left: auto;
-        padding-left: 0;
-        .cm-image-block-link {
-          height: 480px;
-          & > a {
-            width: 100%;
-            padding-right: 0;
-            left: 0;
-            padding-left: 50px;
-
-            & > img {
-              width: 100%;
-              border-radius: 0;
-              height: auto;
-            }
-          }
-
-          .content {
-            left: 0;
-            top: calc(50% - 180px);
-            width: 50%;
-            max-width: 380px;
-            border-radius: 0 0 50px 0;
-            height: 360px;
-            padding-left: 18px;
-
-            h3 {
-              padding: 30px 30px 20px 30px;;
-              font-size: 22px;
-            }
-
-            p {
-              padding: 0 30px 30px 30px;
-              font-size: 32px;
-              line-height: 40px;
-            }
-          }
-
-          .cta {
-            margin-left: 29px;
-            &:after {
-              display: inline-block;
-            }
-          }
-        }
-      }
     }
   }
 }

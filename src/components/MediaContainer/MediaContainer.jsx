@@ -7,11 +7,21 @@ class MediaContainer extends React.Component {
         return (
             <div className="cm cm-media-container">
                 { !!this.props.embedVideo &&
-                  <div className="video-embed">
-                    <iframe width="560" height="315" src={`${this.props.embedVideo}`} frameBorder="0" allow="encrypted-media" allowFullScreen></iframe>
-                  </div>
+                  <figure>
+                    <div className="video-embed">
+                      <iframe width="560" height="315" src={`${this.props.embedVideo}`} frameBorder="0" allow="encrypted-media" allowFullScreen></iframe>
+                    </div>
+                    <figcaption>{this.props.quoteText}</figcaption>
+                  </figure>
                 }
-                <p>{this.props.quoteText}</p>
+                { !!this.props.imageLink &&
+                  <figure>
+                    <div className="image-embed">
+                      <img src={this.props.imageLink}/>
+                    </div>
+                    <figcaption>{this.props.quoteText}</figcaption>
+                  </figure>
+                }
             </div>
         );
     }
