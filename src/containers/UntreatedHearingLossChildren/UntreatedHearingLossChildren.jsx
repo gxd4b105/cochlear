@@ -12,6 +12,8 @@ import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs.jsx";
 import HeaderLandingBanner from "../../components/HeaderLandingBanner/HeaderLandingBanner.jsx";
 import Cm28SocialShare from "../../components/Cm28SocialShare/Cm28SocialShare.jsx";
 import RelatedContent from "../../components/RelatedContent/RelatedContent.jsx";
+import BrochureDownload from "../../components/BrochureDownload/BrochureDownload.jsx";
+import MediaContainer from "../../components/MediaContainer/MediaContainer.jsx";
 
 if (typeof window === 'undefined') {
     global.window = {}
@@ -67,8 +69,19 @@ class UntreatedHearingLossChildren extends Component {
                         <article className="l-content-column">
                             <Cm28SocialShare />
 
-
                             <Cm01RichText body={getData['body-copy']}/>
+
+                            <MediaContainer
+                              quoteText="Having no understanding of hearing loss, her mom, Allison, was fearful of her daughter’s future but found hope in cochlear implants."
+                              embedVideo="https://www.youtube.com/embed/kuKEU5OAE5Y"
+                              />
+
+                            <BrochureDownload
+                              title="Request additional information"
+                              description="Fill in your details below if you'd like us to send you more information about implantable solutions."
+                              additionalClass="brochure-download"
+                            />
+
 
                         </article>
 

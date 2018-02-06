@@ -297,7 +297,7 @@ class BrochureDownload extends React.Component {
         return (
 
             <section className={`cm cm-subscription-banner ${this.props.additionalClass}`}>
-                <div className="l-padding brochure-download">
+                <div className="l-padding">
                     <form id="brochure-download" onSubmit={this.handleSubmit} className="fn_validate" action="/">
                         <div className="fn_validate_summary"></div>
                         <fieldset>

@@ -88,7 +88,8 @@ function renderFullPage(html, preloadedState, helmet) {
     <html>
       <head>
         <link rel="icon" href="/dist/favicon.ico" type="image/ico" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         
 		<script type="text/javascript">
 			let gtm4wp_datalayer_name = "dataLayer";
@@ -96,7 +97,6 @@ function renderFullPage(html, preloadedState, helmet) {
 				dataLayer = new Array();
 			}
 		</script>	
-        
         
 	   <script type="text/javascript">
 	    function getSubDomain() {
@@ -108,23 +108,8 @@ function renderFullPage(html, preloadedState, helmet) {
 			return subDomain;
 		}
 
-
-
-		function getCountry(){
-			let country='';
-
-			var req = new XMLHttpRequest();
-			req.open('GET', 'https://freegeoip.net/json/', true);
-			req.onreadystatechange = function (aEvt) {
-				if (req.readyState == 4) {
-     				if(req.status == 200)
-      					country=req.country_code;
-		    		else
-      					console.log("Error loading page");
-  				}
-			};
-			req.send(null);
-			return country;
+		function getCountryAndLanguage(){
+			return document.getElementById('nav-region-dropdown__cta').innerHTML;
 		}
 
 		function getDevice(){
@@ -147,35 +132,21 @@ function renderFullPage(html, preloadedState, helmet) {
 				return 'tablet';
 			}
 				  
-		} 
-
-		function getSubCategories(){
-			let subCategories=[];
-			let element=document.getElementsByClassName('breadcrumb')[0].children;
-			for (let item in element){
-				if (element[item].className==='is-active'){
-					let tmp = element[item].children[0].baseURI;
-					let tmp2=tmp.split('/');
-					let subCategory= tmp2[tmp.length-1];
-					subCategories.push(subCategory);			
-				}
-				else{
-					let tmp = element[item].children[0].href;
-					let tmp2=tmp.split('/');
-					let subCategory= tmp2[tmp.length-1];
-					subCategories.push(subCategory);
-				}
-			}
-			return subCategories;
 		}
 
-		function dataLayerPush (){
+		function dataLayerPush(){
 			
 			let subDomain=getSubDomain();
-			//let countryName=getCountry();
-			let device=getDevice();
-			//let categories=getSubCategories();
-			let categories['', '' ,'', ''];
+			let array=document.location.href.split('/');
+			let subCategory=array[array.length-1];
+			subCategory=subCategory.toString().toLowerCase()
+			.replace(/\s+/g, '-')           // Replace spaces with -
+			.replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+			.replace(/\-\-+/g, '-')         // Replace multiple - with single -
+			.replace(/^-+/, '')             // Trim - from start of text
+			.replace(/-+$/, '');   
+			if (subCategory==='')
+				subCategory='home';
 			dataLayer.push({
 				page:{
 					pageInfo:{			
@@ -185,29 +156,55 @@ function renderFullPage(html, preloadedState, helmet) {
 						publicationDate: "",
 						updatedDate: document.lastModified,
 						domain:document.domain,
-						subDomain: subDomain,
-						sysEnv: device,                         // “desktop”, “mobile”, “tablet”
-						country: '',                        // ISO 3166 recommended
-						language: window.navigator.language                        // ISO 3166 recommended
+						subDomain: subDomain
 					},
 					category: {
-						pageType: "",                       // "Home Page", "Product Page", "Campaign Page"
-						subCategory1: categories[0] || "",                   // First level of IA (e.g. "/learn about hearing loss"
-						subCategory2: categories[1] || "",                   // Second level of IA (e.g. "/learn about hearing loss/how hearing works"
-						subCategory3: categories[2] || "",                   // Third level of IA (e.g. "/learn about hearing loss/how hearing works/abc"
-						subCategory4: categories[3] || ""                    // Fourth level of IA (e.g. "/learn about hearing loss/how hearing works/abc/xyz"
-					},
+						pageType: "",                       // "Home Page", "Product Page", "Campaign Page"				
+						subCategory1: subCategory
+					}
 				},
 				user: {
 					profileInfo: {
 						visitorType: "",                    //”New”, “Returning”
 						segment: ""                         // Definitions TBC
 					},
-				},
+				}
 			}); 
 		}
 
+		function dataLayerPushCountry(country, language){
+			dataLayer.push({
+				page: {
+					pageInfo:{ 
+						country: country,                     // ISO 3166 recommended
+						language: language						// ISO 3166 recommended
+					}
+				}
+			});
+		}
+
+		function dataLayerPushCategories(categoriesObj){
+			dataLayer.push({
+				page:{
+					category: categoriesObj
+				}
+			});
+		}
+
+		function dataLayerPushDevice(){
+			let device=getDevice();
+			dataLayer.push({
+				page:{
+					pageInfo: { 
+						sysEnv: device
+					} 
+				}
+			});
+		}
+
 		window.addEventListener("load", function(event) {
+			console.log('Loaded');
+			dataLayerPushDevice();
 			dataLayerPush(); 
 		});
 

@@ -1,4 +1,4 @@
-.l-padding .cm-subscription-banner .brochure-download {
+.brochure-download {
   background-color: $light-grey;
   padding: 40px;
   border-left: solid $cochlear-yellow 5px;
@@ -22,7 +22,7 @@
 
     .ctrl {
       select {
-        background-image: url('/images/icons/Icon_Purple_Chevron.svg');
+        background-image: url('/images/Icon_Purple_Chevron.svg');
         background-repeat: no-repeat;
       }
 
@@ -85,10 +85,11 @@
     width: 100%;
     padding: 25px 0 25px 73px;
     position: relative;
+    margin-bottom: 30px;
 
     &:before {
       content: '';
-      background-image: url(/images/icons/Icon_Yellow_PDF.svg);
+      background-image: url(/images/Icon_Yellow_PDF.svg);
       width: 25px;
       height: 29px;
       position: absolute;

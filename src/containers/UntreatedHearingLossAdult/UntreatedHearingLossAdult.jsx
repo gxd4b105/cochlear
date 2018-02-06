@@ -13,6 +13,7 @@ import HeaderLandingBanner from "../../components/HeaderLandingBanner/HeaderLand
 import Cm28SocialShare from "../../components/Cm28SocialShare/Cm28SocialShare.jsx";
 import RelatedContent from "../../components/RelatedContent/RelatedContent.jsx";
 import BrochureDownload from "../../components/BrochureDownload/BrochureDownload.jsx";
+import MediaContainer from "../../components/MediaContainer/MediaContainer.jsx";
 
 if (typeof window === 'undefined') {
     global.window = {}
@@ -72,7 +73,16 @@ class UntreatedHearingLossAdult extends Component {
 
                             <Cm01RichText body={getData['body-copy']}/>
 
-                            <BrochureDownload title="Request additional information" description="Fill in your details below if you'd like us to send you more information about implantable solutions."/>
+                              <MediaContainer
+                                quoteText="What made me choose to go through with it? It was the voices I would never hear. The voices of my future children. There was no risk I wouldn’t take."
+                                imageLink="../images/CLTD_INSPIRING_STORIES_USA_CHAD_Still004.jpg"
+                                />
+
+                            <BrochureDownload
+                              title="Request additional information"
+                              description="Fill in your details below if you'd like us to send you more information about implantable solutions."
+                              additionalClass="brochure-download"
+                            />
 
 
                         </article>
