@@ -276,13 +276,13 @@ a:focus, a:hover {
     background-repeat: no-repeat;
     background-size: 63%; }
     .cm-social-share ul li a.linkedin {
-      background-image: url("/dist/images/icons/Icon_Google_.svg");
+      background-image: url("/dist/images/Icon_Google_.svg");
       background-position: 9px 8px; }
     .cm-social-share ul li a.twitter {
-      background-image: url("/dist/images/icons/Icon_Twitter.svg");
+      background-image: url("/dist/images/Icon_Twitter.svg");
       background-position: 9px 9px; }
     .cm-social-share ul li a.fb {
-      background-image: url("/dist/images/icons/Icon_Facebook.svg");
+      background-image: url("/dist/images/Icon_Facebook.svg");
       background-position: 7px 7px; }
 @media screen and (min-width: 64em) {
   .cm-social-share ul {
@@ -342,7 +342,7 @@ a:focus, a:hover {
         width: 20px;
         height: 20px;
         position: absolute;
-        background-image: url("/dist/images/icons/Icon_P.svg");
+        background-image: url("/dist/images/Icon_P.svg");
         background-size: 100% 100%;
         margin-left: 2px; }
       .cm-content-tile .content .cta:hover {
@@ -525,7 +525,7 @@ a:focus, a:hover {
   width: 20px;
   height: 20px;
   position: absolute;
-  background-image: url("/dist/images/icons/Icon_Yellow_Chevron.svg");
+  background-image: url("/dist/images/Icon_Yellow_Chevron.svg");
   background-size: 100% 100%;
   margin-left: 2px; }
 

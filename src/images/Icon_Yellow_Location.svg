@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/24px/Yellow/Location</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Icon/24px/Yellow/Location" stroke="#FDC82F" stroke-width="2">
+            <path d="M20,10.2611765 C20,16.3470588 12.0006013,22 12.0006013,22 C12.0006013,22 4,16.3470588 4,10.2611765 C4,5.69882353 7.33588876,2 12.0006013,2 C16.6629087,2 20,5.69882353 20,10.2611765 Z" id="Stroke-1"></path>
+            <path d="M15,10 C15,11.6568571 13.6568571,13 12,13 C10.3422857,13 9,11.6568571 9,10 C9,8.34314286 10.3422857,7 12,7 C13.6568571,7 15,8.34314286 15,10 Z" id="Stroke-3"></path>
+        </g>
+    </g>
+</svg>

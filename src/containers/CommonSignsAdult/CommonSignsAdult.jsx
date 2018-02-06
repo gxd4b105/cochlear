@@ -69,8 +69,6 @@ class UntreatedHearingLossAdult extends Component {
 
                             <Cm01RichText body={getData['body-copy']}/>
 
-                            <BrochureDownload title="Request additional information" description="Fill in your details below if you'd like us to send you more information about implantable solutions."/>
-
 
                         </article>
                     </main>

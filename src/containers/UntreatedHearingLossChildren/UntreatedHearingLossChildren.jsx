@@ -12,6 +12,8 @@ import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs.jsx";
 import HeaderLandingBanner from "../../components/HeaderLandingBanner/HeaderLandingBanner.jsx";
 import Cm28SocialShare from "../../components/Cm28SocialShare/Cm28SocialShare.jsx";
 import RelatedContent from "../../components/RelatedContent/RelatedContent.jsx";
+import BrochureDownload from "../../components/BrochureDownload/BrochureDownload.jsx";
+import MediaContainer from "../../components/MediaContainer/MediaContainer.jsx";
 
 if (typeof window === 'undefined') {
     global.window = {}
@@ -67,8 +69,19 @@ class UntreatedHearingLossChildren extends Component {
                         <article className="l-content-column">
                             <Cm28SocialShare />
 
-
                             <Cm01RichText body={getData['body-copy']}/>
+
+                            <MediaContainer
+                              quoteText="Sample"
+                              embedVideo="https://www.youtube.com/embed/tUzjHJhVCgU?enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A9000"
+                              />
+
+                            <BrochureDownload
+                              title="Request additional information"
+                              description="Fill in your details below if you'd like us to send you more information about implantable solutions."
+                              additionalClass="brochure-download"
+                            />
+
 
                         </article>
 
