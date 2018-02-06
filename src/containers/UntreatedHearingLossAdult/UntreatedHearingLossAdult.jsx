@@ -75,7 +75,7 @@ class UntreatedHearingLossAdult extends Component {
 
                               <MediaContainer
                                 quoteText="What made me choose to go through with it? It was the voices I would never hear. The voices of my future children. There was no risk I wouldn’t take."
-                                embedVideo="https://www.youtube.com/embed/kuKEU5OAE5Y"
+                                imageLink="../images/CLTD_INSPIRING_STORIES_USA_CHAD_Still004.jpg"
                                 />
 
                             <BrochureDownload

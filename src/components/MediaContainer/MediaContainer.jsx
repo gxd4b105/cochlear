@@ -14,6 +14,14 @@ class MediaContainer extends React.Component {
                     <figcaption>{this.props.quoteText}</figcaption>
                   </figure>
                 }
+                { !!this.props.imageLink &&
+                  <figure>
+                    <div className="image-embed">
+                      <img src={this.props.imageLink}/>
+                    </div>
+                    <figcaption>{this.props.quoteText}</figcaption>
+                  </figure>
+                }
             </div>
         );
     }
