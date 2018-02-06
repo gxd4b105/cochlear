@@ -17,6 +17,10 @@ class HomePage extends Component {
     }
 
     render() {
+
+        console.log(this.props.dataHome);
+        let getData = this.props.dataHome;
+
         return (
             <div>
                 <Helmet>
@@ -25,19 +29,29 @@ class HomePage extends Component {
                 </Helmet>
                 <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
                 <div className='l-content-container cf l-padding'>
-                    <Cm02ContentTile    title="Treating hearing loss"
-                                        description="Find out what treatment options are available to manage hearing loss"
-                                        image="https://auth.cochlear.com//wps/wcm/connect/dd2107e8-0708-4a4c-9fb9-1bcc1b82be49/CHILD_SWITCH-ON_1_RGB.jpg?MOD=AJPERES&amp;CVID="
-                                        path="/intl/treating-hearing-loss"
-                                        embed =""
-                                        additionalClass="is-large is-cta"/>
 
-                    <Cm02ContentTile    title="Hearing loss"
-                                        description="Learn more about the different degrees and types of hearing loss."
-                                        image="https://auth.cochlear.com/wps/wcm/connect/296231d8-90a5-4303-9292-6c85752ca872/GettyImages-753288525_super.jpg?MOD=AJPERES&amp;CVID="
-                                        path="/intl/hearing-loss"
-                                        embed =""
-                                        additionalClass="is-large is-cta"/>
+                    <div className="sl">
+                        <div className="sl-list has-2-items">
+                            <div className="sl-item">
+                                <Cm02ContentTile    title={getData['cm02-title-02-01'].title}
+                                                    description={getData['cm02-description-02-01']}
+                                                    path={getData['cm02-title-02-01'].path}
+                                                    image={'https://auth.cochlear.com'+getData['cm02-image-02-01'].src}
+                                                    imagePath={getData['cm02-title-02-01'].path}
+                                                    embed = {getData['cm02-video-embed-02-01']}
+                                                    additionalClass="is-small"/>
+                            </div>
+                            <div className="sl-item">
+                                <Cm02ContentTile    title={getData['cm02-title-02-02'].title}
+                                                    description={getData['cm02-description-02-02']}
+                                                    path={getData['cm02-title-02-02'].path}
+                                                    image={'https://auth.cochlear.com'+getData['cm02-image-02-02'].src}
+                                                    imagePath={getData['cm02-title-02-02'].path}
+                                                    embed = {getData['cm02-video-embed-02-02']}
+                                                    additionalClass="is-small"/>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />

@@ -78,17 +78,6 @@
 
   &:hover {
 
-    border:0;
-
-    -webkit-transform: perspective(1000px) translate3d(0,0,21px);
-    transform: perspective(1000px) translate3d(0,0,21px);
-
-    background-color: #ffffff;
-
-    &:before {
-      opacity: 1;
-    }
-
     .content {
 
       h3 {
@@ -111,6 +100,7 @@
     background-color: transparent;
   }
   .image {
+
     &:after {
       background-color: transparent;
     }
@@ -242,6 +232,9 @@
       }
     }
 
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+
     &:before {
       box-shadow: 0 3px 30px rgba(0,0,0,0.3);
       opacity: 0;
@@ -253,8 +246,8 @@
       height: 100%;
       // background: #000;
       content: '';
-      -webkit-transition: opacity 0.35s;
-      transition: opacity 0.35s;
+     // -webkit-transition: opacity 0.35s;
+     // transition: opacity 0.35s;
     }
 
     &:hover {
@@ -301,6 +294,9 @@
         background-color: transparent;
       }
       .image {
+        display: block;
+        overflow: hidden;
+
         &:after {
           background-color: transparent;
         }

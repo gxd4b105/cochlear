@@ -30,8 +30,8 @@ class Cm02ContentTile extends React.Component {
         }
 
         return (
-            <section className={`cm cm-content-tile ${this.props.additionalClass}`}>
-                <div className="cm-image-block-link">
+            <div className={`cm cm-content-tile ${this.props.additionalClass}`}>
+                <span className="cm-image-block-link">
                     {/*  <% end %> */}
                     {copyReturn()}
                     {/*  <% if vars[:image] != false %> */}
@@ -50,8 +50,8 @@ class Cm02ContentTile extends React.Component {
                         {showReadMore()}
 
                     </div>
-                </div>
-            </section>
+                </span>
+            </div>
         );
     }
 }

@@ -31,7 +31,7 @@ export function setHeaderCountry(data) {
 
 export function getHome() {
     return async function (dispatch, getState) {
-        let {data} = await Request.get(`https://api.myjson.com/bins/8rflz`);
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/home-page`);
         dispatch({ type: Types.UPDATE_HOME, payload: data });
     }
 }

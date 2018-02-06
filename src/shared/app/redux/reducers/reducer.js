@@ -11,6 +11,7 @@ const initialState = {
     bodyTitle: null,
     bodysecondTitle: null,
     bodythirdTitle: null,
+    dataHome: null,
     dataTreatmentOptions: null,
     dataTreatingHearingLoss: null,
     dataHearingLoss: null,
@@ -42,7 +43,7 @@ export default function userReducer(state = initialState, action) {
         case Types.UPDATE_FOOTER:
             return {...state, footerTitle: action.payload['title']}
         case Types.UPDATE_HOME:
-            return {...state, bodyTitle: action.payload['title']}
+            return {...state, dataHome: action.payload}
         case Types.UPDATE_HOMESECOND:
             return {...state, bodysecondTitle: action.payload['title']}
         case Types.UPDATE_TREATMENTOPTIONS:
