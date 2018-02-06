@@ -71,6 +71,7 @@ require('../images/Icon_Yellow_Mail.svg');
 require('../images/Icon_Yellow_Location.svg');
 require('../images/Icon_Yellow_Time.svg');
 require('../images/Icon_Youtube.svg');
+require('../images/CLTD_INSPIRING_STORIES_USA_CHAD_Still004.jpg');
 
 /* Styles */
 require('../styles/global.scss');

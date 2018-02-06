@@ -1,6 +1,14 @@
 .cm-media-container {
-  p {
-    border-left: 3px solid $cochlear-yellow;
+  .video-embed + figcaption {
+    border-left: 5px solid $cochlear-yellow;
+    padding-left: 20px;
+    font-size: 16px;
+    color: $cool-grey;
+  }
+  .image-embed + figcaption {
+    font-size: 16px;
+    color: $cool-grey;
+    border-left: 5px solid $cochlear-yellow;
     padding-left: 20px;
   }
 }

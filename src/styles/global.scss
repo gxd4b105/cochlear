@@ -6,7 +6,7 @@ $light-grey: #efefef;
 $link-colour: #3f1482; // Eggplant
 
 /* ----------- LAYOUT ----------- */
-.l-layout {
+.l-layout, .l-content-container {
   margin-top: 66px;
 }
 .l-content-column {
@@ -21,7 +21,7 @@ $link-colour: #3f1482; // Eggplant
 }
 
 @media only screen and (min-width: 64em) {
-  .l-layout {
+  .l-layout, .l-content-container  {
     margin-top:0;
   }
 }

@@ -65,9 +65,12 @@
     li {
       font-size: 29px;
       font-family: "Knockout-30";
-      color: #666666;
+      color: rgba(102,102,102,0.6);
       padding-left: 15px;
       position: relative;
+      list-style-type: decimal-leading-zero;
+      border-bottom: 1px solid $mid-grey;
+      padding-bottom: 20px;
 
       &:before {
         content: ' ';
@@ -80,6 +83,7 @@
       h4 {
         font-size: 22px;
         font-weight: bold;
+        margin: 0;
       }
       p {
         margin: 0;
