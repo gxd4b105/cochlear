@@ -88,7 +88,8 @@ function renderFullPage(html, preloadedState, helmet) {
     <html>
       <head>
         <link rel="icon" href="/dist/favicon.ico" type="image/ico" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         
 		<script type="text/javascript">
 			let gtm4wp_datalayer_name = "dataLayer";
