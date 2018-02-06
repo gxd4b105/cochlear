@@ -136,11 +136,38 @@ function renderFullPage(html, preloadedState, helmet) {
 		function dataLayerPush (){
 			
 			let subDomain=getSubDomain();
-			let countryName=getCountry();	
-			let device=getDevice();
-			//let categories=getSubCategories();
-		    let categories=['', '', '', ''];
+
 			dataLayer.push({
+				// page:{
+				// 	pageInfo:{			
+						
+				// 		pageID: "",
+				// 		pageTitle: window.document.title,
+				// 		pageURL: window.document.location.href,
+				// 		publicationDate: "",
+				// 		updatedDate: document.lastModified,
+				// 		domain:document.domain,
+				// 		subDomain: subDomain,
+				// 		sysEnv: device,                         // “desktop”, “mobile”, “tablet”
+				// 		country: countryName,                        // ISO 3166 recommended
+				// 		language: window.navigator.language                        // ISO 3166 recommended
+
+				// 	},
+				// 	category: {
+				// 		pageType: "",                       // "Home Page", "Product Page", "Campaign Page"
+				// 		subCategory1: categories[0] || "",                   // First level of IA (e.g. "/learn about hearing loss"
+				// 		subCategory2: categories[1] || "",                   // Second level of IA (e.g. "/learn about hearing loss/how hearing works"
+				// 		subCategory3: categories[2] || "",                   // Third level of IA (e.g. "/learn about hearing loss/how hearing works/abc"
+				// 		subCategory4: categories[3] || ""                    // Fourth level of IA (e.g. "/learn about hearing loss/how hearing works/abc/xyz"
+				// 	},
+				// },
+				// user: {
+				// 	profileInfo: {
+				// 		visitorType: "",                    //”New”, “Returning”
+				// 		segment: ""                         // Definitions TBC
+				// 	},
+				// },
+
 				page:{
 					pageInfo:{			
 						pageID: "",
@@ -150,16 +177,9 @@ function renderFullPage(html, preloadedState, helmet) {
 						updatedDate: document.lastModified,
 						domain:document.domain,
 						subDomain: subDomain,
-						sysEnv: device,                         // “desktop”, “mobile”, “tablet”
-						country: countryName,                        // ISO 3166 recommended
-						language: window.navigator.language                        // ISO 3166 recommended
 					},
 					category: {
-						pageType: "",                       // "Home Page", "Product Page", "Campaign Page"
-						subCategory1: categories[0] || "",                   // First level of IA (e.g. "/learn about hearing loss"
-						subCategory2: categories[1] || "",                   // Second level of IA (e.g. "/learn about hearing loss/how hearing works"
-						subCategory3: categories[2] || "",                   // Third level of IA (e.g. "/learn about hearing loss/how hearing works/abc"
-						subCategory4: categories[3] || ""                    // Fourth level of IA (e.g. "/learn about hearing loss/how hearing works/abc/xyz"
+						pageType: "",                       // "Home Page", "Product Page", "Campaign Page"				
 					},
 				},
 				user: {
@@ -189,12 +209,22 @@ function renderFullPage(html, preloadedState, helmet) {
 				}
 			});
 		}
+		function dataLayerPushDevice(){
+			let device=getDevice();
+			dataLayer.push({
+				page:{
+					pageInfo: { 
+						sysEnv: device,
+					} 
+				}
+			});
+		}
 
 		window.addEventListener("Load", function(event) {
 			console.log('Loaded');
-			//dataLayerPush(); 
+			dataLayerPushDevice();
+			dataLayerPush(); 
 		});
-
 
 	</script>	
         
