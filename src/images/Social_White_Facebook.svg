@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/Social/Facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M25,8.0625 L22.2891566,8.0625 C20.1204819,8.0625 19.7590361,9.1875 19.7590361,10.6875 L19.7590361,14.0625 L24.8192771,14.0625 L24.0963855,19.3125 L19.7590361,19.3125 L19.7590361,33 L14.5180723,33 L14.5180723,19.3125 L10,19.3125 L10,14.0625 L14.5180723,14.0625 L14.5180723,10.125 C14.3373494,5.4375 17.0481928,3 21.0240964,3 C22.8313253,3 24.4578313,3.1875 25,3.1875 L25,8.0625 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/Social/Facebook">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#FFFFFF" xlink:href="#path-1"></use>
+            <g id="Styleguide/Colour/White" mask="url(#mask-2)" fill="#FFFFFF">
+                <g transform="translate(-11.000000, -6.000000)" id="Rectangle-4-Copy-7">
+                    <rect x="0" y="0" width="50" height="50"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

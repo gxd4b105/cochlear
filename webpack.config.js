@@ -32,7 +32,7 @@ module.exports = {
                 })
               },
             {
-                test: /\.(png|jpg|gif)$/,
+                test: /\.(png|jpg|gif|svg)$/,
                 loader: "file-loader?name=images/[name].[ext]"
             },
             // {
@@ -44,7 +44,7 @@ module.exports = {
             //     },
             //   },
             {
-                test: /\.(eot|svg|ttf|woff|otf|woff2)$/,
+                test: /\.(eot|ttf|woff|otf|woff2)$/,
                 loader: 'file-loader?name=fonts/[name].[ext]'
             },
             {
@@ -67,7 +67,7 @@ module.exports = {
             //loaders for other file types can go here
         ]
     },
-    
+
     plugins: [
         new webpack.DefinePlugin({
             "process.env": {

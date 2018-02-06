@@ -15,6 +15,7 @@ import ClinicNearYouMini from "../../components/ClinicNearYou/ClinicNearYouMini.
 import ContentHeader from "../../components/ContentHeader/ContentHeader.jsx";
 import Cm02bContentTile from "../../components/Cm02bContentTile/Cm02bContentTile.jsx";
 import Cm02ContentTileThree from "../../components/Cm02ContentTileThree/Cm02ContentTileThree.jsx";
+import MediaContainer from "../../components/MediaContainer/MediaContainer.jsx";
 
 import axios from 'axios';
 import BrochureDownload from "../../components/BrochureDownload/BrochureDownload.jsx";
@@ -27,26 +28,26 @@ class HearingAidVsCochlearImplant extends Component {
     }
     componentDidMount() {
         if (navigator.geolocation) {
-            
+
                         console.log('test4 ', this.props);
                         navigator.geolocation.getCurrentPosition((position) => {
                             console.log('test222');
                             //this.setState({ lat: position.coords.latitude, lng: position.coords.longitude});
                             //console.log(this.mapDispatchToProps);
-            
+
                             this.props.getCurrentPosition({ lat: position.coords.latitude, lng: position.coords.longitude});
-            
-            
-            
+
+
+
                             console.log('this.state is ', this.state);
-            
+
                         });
                     }
-                    
+
                     const url = 'https://api.myjson.com/bins/h0g21';
-            
+
                     console.log('HERE WE GO 1 ..............');
-                    
+
                     axios.get(url)
                     .then(res => {
                         console.log('RES ', res);
@@ -65,9 +66,9 @@ class HearingAidVsCochlearImplant extends Component {
                     console.log('HERE WE GOJSON!!!!!!!!!!!!  !!! ..............');
 
                     const url2 = 'https://freegeoip.net/json/';
-                    
+
                             console.log('HERE WE GOJSON ..............');
-                            
+
                             axios.get(url2)
                             .then(res => {
                                 console.log('RES JSON ', res.data.city);
@@ -149,7 +150,7 @@ class HearingAidVsCochlearImplant extends Component {
 
                                 <BrochureDownload title="Download a Brochure"
                                                   description="This is description"
-                                                  additionalClass="is-shaded is-medium brochure-download"/>
+                                                  additionalClass="brochure-download"/>
 
 
                                 <ClinicNearYouMini title="Clinics near"

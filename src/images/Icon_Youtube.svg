@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/Social/Youtube</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M15,22.0001235 L15,13 L22.7940486,17.5000617 L15,22.0001235 Z M32.373256,10.2791703 C32.0280282,8.98864057 31.0116064,7.97197185 29.7208297,7.62699099 C27.3812816,7 17.9998765,7 17.9998765,7 C17.9998765,7 8.61871836,7 6.27917027,7.62699099 C4.98839363,7.97197185 3.97197185,8.98864057 3.62699099,10.2791703 C3,12.6187184 3,17.5000617 3,17.5000617 C3,17.5000617 3,22.3814051 3.62699099,24.7209532 C3.97197185,26.0114829 4.98839363,27.0281516 6.27917027,27.3731325 C8.61871836,28.0001235 17.9998765,28.0001235 17.9998765,28.0001235 C17.9998765,28.0001235 27.3812816,28.0001235 29.7208297,27.3731325 C31.0116064,27.0281516 32.0280282,26.0114829 32.373256,24.7209532 C33,22.3814051 33,17.5000617 33,17.5000617 C33,17.5000617 33,12.6187184 32.373256,10.2791703 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/Social/Youtube">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#FFFFFF" xlink:href="#path-1"></use>
+            <g id="Styleguide/Colour/Purple" mask="url(#mask-2)" fill="#3F1482">
+                <g transform="translate(-11.000000, -6.000000)" id="Rectangle-4-Copy-7">
+                    <rect x="0" y="0" width="50" height="50"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
