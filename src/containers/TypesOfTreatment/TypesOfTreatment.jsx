@@ -11,7 +11,6 @@ import Cm01RichText from "../../components/Cm01RichText/Cm01RichText.jsx";
 import Cm28SocialShare from "../../components/Cm28SocialShare/Cm28SocialShare.jsx";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs.jsx";
 import HeaderLandingBanner from "../../components/HeaderLandingBanner/HeaderLandingBanner.jsx";
-import ContentHeader from "../../components/ContentHeader/ContentHeader.jsx";
 
 if (typeof window === 'undefined') {
     global.window = {}
@@ -31,8 +30,12 @@ class TypesOfTreatment extends Component {
         console.log(this.props.dataTypesOfTreatment);
         let getData = this.props.dataTypesOfTreatment;
 
-
-        console.log(global.window.dataLayer);
+        let json = {
+            "breadcrumbs": [{ title: "Home", link:'/intl/home' },
+                { title: "Treating hearing loss", link: '/intl/treating-hearing-loss' },
+                { title: "Types of treatment", link: '/intl/types-of-treatment' }
+            ]
+        };
 
         return (
             <div className="l-layout l-one-column cf">
@@ -51,42 +54,42 @@ class TypesOfTreatment extends Component {
                                      description={getData['description']}
                                      image={'https://auth.cochlear.com/'+getData['banner-image'].src}
                                      imagePath={getData['banner-image'].alt}
-                                     additionalClass="is-dark"/>
-
-               <BreadCrumbs/>
+                                     additionalClass=""/>
+                <BreadCrumbs jsonData={json}/>
 
                 <div className='l-content-container cf l-padding'>
-                    <article className="l-content-column">
-                        <main id="main" tabIndex="-1" role="main" className="l-main">
 
-                            <Cm28SocialShare />
+                    <main id="main" tabIndex="-1" role="main" className="l-main">
 
+                        <article className="l-content-column">
                             <Cm01RichText body={getData['body-copy']}/>
+                        </article>
 
 
-                            <div className="sl">
-                                <div className="sl-list has-2-items">
-                                    <div className="sl-item">
-                                        <Cm02ContentTile    title={getData['cm02-title-01'].title}
-                                                            description={getData['cm02-description-01']}
-                                                            path={getData['cm02-title-01'].path}
-                                                            image={'https://auth.cochlear.com'+getData['cm02-image-01'].src}
-                                                            imagePath={getData['cm02-title-01'].path}
-                                                            additionalClass="is-shaded is-small"/>
-                                    </div>
-                                    <div className="sl-item">
-                                        <Cm02ContentTile    title={getData['cm02-title-02'].title}
-                                                            description={getData['cm02-description-02']}
-                                                            path={getData['cm02-title-02'].path}
-                                                            image={'https://auth.cochlear.com'+getData['cm02-image-02'].src}
-                                                            imagePath={getData['cm02-title-02'].path}
-                                                            additionalClass="is-shaded is-small"/>
-                                    </div>
+                        <div className="sl">
+                            <div className="sl-list has-2-items">
+                                <div className="sl-item">
+                                    <Cm02ContentTile    title={getData['cm02-title-02-01'].title}
+                                                        description={getData['cm02-description-02-01']}
+                                                        path={getData['cm02-title-02-01'].path}
+                                                        image={'https://auth.cochlear.com'+getData['cm02-image-02-01'].src}
+                                                        imagePath={getData['cm02-title-02-01'].path}
+                                                        embed = {getData['cm02-video-embed-02-01']}
+                                                        additionalClass="is-small"/>
+                                </div>
+                                <div className="sl-item">
+                                    <Cm02ContentTile    title={getData['cm02-title-02-02'].title}
+                                                        description={getData['cm02-description-02-02']}
+                                                        path={getData['cm02-title-02-02'].path}
+                                                        image={'https://auth.cochlear.com'+getData['cm02-image-02-02'].src}
+                                                        imagePath={getData['cm02-title-02-02'].path}
+                                                        embed = {getData['cm02-video-embed-02-02']}
+                                                        additionalClass="is-small"/>
                                 </div>
                             </div>
+                        </div>
 
-                        </main>
-                    </article>
+                    </main>
                 </div>
 
                 <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
