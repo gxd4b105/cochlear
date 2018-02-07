@@ -30,6 +30,7 @@ const initialState = {
     dataCarinaMiddleEarImplants:null,
     dataBahaBoneConductionSystem:null,
     dataSurgicalAndNonSurgicalProcedures:null,
+    dataPreparingForAnImplant:null,
     getCurrentPosition: null,
     markers: [],
     lat: 0,
@@ -100,7 +101,8 @@ export default function userReducer(state = initialState, action) {
             return {...state, dataBahaBoneConductionSystem: action.payload}
         case Types.UPDATE_SURGICALANDNONSURGICALPROCEDURES:
             return {...state, dataSurgicalAndNonSurgicalProcedures: action.payload}
-            
+        case Types.UPDATE_PREPARINGFORANIMPLANT:
+            return {...state, dataPreparingForAnImplant: action.payload}    
         default:
             return state;
     }

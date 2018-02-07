@@ -10,15 +10,19 @@ import Cm02ContentTile from "../../components/Cm02ContentTile/Cm02ContentTile.js
 import Cm01RichText from "../../components/Cm01RichText/Cm01RichText.jsx";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs.jsx";
 import HeaderLandingBanner from "../../components/HeaderLandingBanner/HeaderLandingBanner.jsx";
-import ContentHeader from "../../components/ContentHeader/ContentHeader.jsx";
+import Cm28SocialShare from "../../components/Cm28SocialShare/Cm28SocialShare.jsx";
+import RelatedContent from "../../components/RelatedContent/RelatedContent.jsx";
+import BrochureDownload from "../../components/BrochureDownload/BrochureDownload.jsx";
+import MediaContainer from "../../components/MediaContainer/MediaContainer.jsx";
 
 if (typeof window === 'undefined') {
     global.window = {}
 }
 
-class CarinaMiddleEarImplants extends Component {
+
+class PreparingForAnImplant extends Component {
     static fetchData({ store, params }) {
-        return store.dispatch(actions.getCarinaMiddleEarImplants());
+        return store.dispatch(actions.getPreparingForAnImplant());
     }
 
     componentDidMount() {
@@ -27,14 +31,19 @@ class CarinaMiddleEarImplants extends Component {
 
     render() {
 
-//        console.log(this.props.dataProductsAndSolutions);
-        let getData = this.props.dataCarinaMiddleEarImplants;
+        console.log(this.props.dataPreparingForAnImplant);
+        let getData = this.props.dataPreparingForAnImplant;
+
         let json = {
-            "breadcrumbs": [{ title: "Home", link:'/intl/home' },
-                            { title: "Products & Solutions", link: '/intl/products-and-solutions' },
-                            { title: "Carina middle ear implants", link: '/intl/carina-middle-ear-implants'}
+            "breadcrumbs": [{   title: "Home", link:'/intl/home' },
+                {   title: "Hearing Loss", link: '/intl/hearing-loss' },
+                {   title: "Treating hearing loss", link: '/intl/treating-hearing-loss'},
+                {   title: "Preparing for an implant", link: '/intl/preparing-for-an-implant'}
             ]
         };
+
+        console.log(global.window.dataLayer);
+
         return (
             <div className="l-layout l-one-column cf">
                 <Helmet>
@@ -53,38 +62,44 @@ class CarinaMiddleEarImplants extends Component {
                                      image={'https://auth.cochlear.com/'+getData['banner-image'].src}
                                      imagePath={getData['banner-image'].alt}
                                      additionalClass=""/>
-                <BreadCrumbs jsonData={json}/>
+
+                <BreadCrumbs jsonData={json} />
 
                 <div className='l-content-container cf l-padding'>
 
                     <main id="main" tabIndex="-1" role="main" className="l-main">
-
                         <article className="l-content-column">
+                            <Cm28SocialShare />
+
                             <Cm01RichText body={getData['body-copy']}/>
+
+                              <MediaContainer
+                                quoteText="What made me choose to go through with it? It was the voices I would never hear. The voices of my future children. There was no risk I wouldn’t take."
+                                imageLink="../images/CLTD_INSPIRING_STORIES_USA_CHAD_Still004.jpg"
+                                />
+
+                            <BrochureDownload
+                              title="Request additional information"
+                              description="Fill in your details below if you'd like us to send you more information about implantable solutions."
+                              additionalClass="brochure-download"
+                            />
+
+
                         </article>
-
-
-                        <div className="sl">
-                            <div className="sl-list has-1-items">
-                                <div className="sl-item">
-                                    <Cm02ContentTile    title={getData['cm02-title-01-01'].title}
-                                                        description={getData['cm02-description-01-01']}
-                                                        path={getData['cm02-title-01-01'].path}
-                                                        //title="Surgical and non surgical procedures"
-                                                        //description="Trust me! I won't hurt you..."
-                                                        //path="/intl/surgical-and-non-surgical-procedures"
-                                                        image={'https://auth.cochlear.com'+getData['cm02-image-01-01'].src}
-                                                        imagePath={getData['cm02-title-01-01'].path}
-//                                                        embed = {getData['cm02-video-embed-02-01']}
-
-                                                        additionalClass="is-small"/>
-                                </div>
-                                
-                            </div>
-                        </div>
-
                     </main>
+
                 </div>
+
+                <RelatedContent   additionalClass="sl__related-articles"
+
+                                  title01 = {getData['related-title-01'].title}
+                                  description01 = {getData['related-description-01']}
+                                  path01 = {getData['related-title-01'].path}
+                                  image01 = {'https://auth.cochlear.com/'+getData['related-image-01'].src}
+                                //  embed01 = {getData['related-video-embed-01']}
+                                  additionalClass01 = "is-small"
+
+                />
 
                 <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
             </div>
@@ -99,4 +114,4 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators(actions, dispatch);
 }
-export default connect(mapStateToProps, mapDispatchToProps, null, { withRef: true })(CarinaMiddleEarImplants);
+export default connect(mapStateToProps, mapDispatchToProps, null, { withRef: true })(PreparingForAnImplant);

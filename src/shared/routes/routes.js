@@ -24,6 +24,7 @@ import NucleusProfileEarImplants from "../../containers/NucleusProfileEarImplant
 import CarinaMiddleEarImplants from "../../containers/CarinaMiddleEarImplants/CarinaMiddleEarImplants.jsx"; 
 import BahaBoneConductionSystem from "../../containers/BahaBoneConductionSystem/BahaBoneConductionSystem.jsx";
 import SurgicalAndNonSurgicalProcedures from "../../containers/SurgicalAndNonSurgicalProcedures/SurgicalAndNonSurgicalProcedures.jsx";
+import PreparingForAnImplant from '../../containers/PreparingForAnImplant/PreparingForAnImplant';
 
 
 
@@ -152,6 +153,11 @@ export default {
         {
             path: '/:country/surgical-and-non-surgical-procedures',
             component: SurgicalAndNonSurgicalProcedures,
+            exact: true
+        },
+        {
+            path: '/:country/preparing-for-an-implant',
+            component: PreparingForAnImplant,
             exact: true
         }
     ],
