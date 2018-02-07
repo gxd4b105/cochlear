@@ -17,9 +17,9 @@ if (typeof window === 'undefined') {
     global.window = {}
 }
 
-class ImpactOfHearingLoss extends Component {
+class TalkingFamilyHearingLoss extends Component {
     static fetchData({ store, params }) {
-        return store.dispatch(actions.getImpactOfHearingLoss());
+        return store.dispatch(actions.getTalkingFamilyHearingLoss());
     }
 
     componentDidMount() {
@@ -27,11 +27,12 @@ class ImpactOfHearingLoss extends Component {
 
 
     render() {
-        let getData = this.props.dataImpactOfHearingLoss;
+        let getData = this.props.dataTalkingFamilyHearingLoss;
         let json = {
             "breadcrumbs": [{ title: "Home", link:'/intl/home' },
                             { title: "Hearing Loss", link: '/intl/hearing-loss' },
-                            { title: "Impact of hearing loss", link: '/intl/impact-hearing-loss'}
+                            { title: "Impact of hearing loss", link: '/intl/impact-hearing-loss'},
+                            { title: "Talking to your family about hearing loss", link: '/intl/talking-family-hearing-loss'}
             ]
         };
 
@@ -64,41 +65,33 @@ class ImpactOfHearingLoss extends Component {
                             <Cm01RichText body={getData['body-copy']}/>
 
                         </article>
-                        <div className="sl">
-                          <div className="sl-list has-3-items">
-                            <div className="sl-item">
-                              <Cm02ContentTile    title={getData['cm02-title-02-01'].title}
-                                description={getData['cm02-description-02-01']}
-                                path={getData['cm02-title-02-01'].path}
-                                image={'https://auth.cochlear.com'+getData['cm02-image-02-01'].src}
-                                imagePath={getData['cm02-image-02-01'].path}
-                                embed = {getData['cm02-video-embed-02-01']}
-                                additionalClass="is-small"/>
-                            </div>
-                            <div className="sl-item">
-                              <Cm02ContentTile    title={getData['cm02-title-02-02'].title}
-                                description={getData['cm02-description-02-02']}
-                                path={getData['cm02-title-02-02'].path}
-                                image={'https://auth.cochlear.com'+getData['cm02-image-02-02'].src}
-                                imagePath={getData['cm02-image-02-02'].path}
-                                embed = {getData['cm02-video-embed-02-02']}
-                                additionalClass="is-small"/>
-                            </div>
-                            <div className="sl-item">
-                              <Cm02ContentTile
-                                title='Talking to your Family about Hearing Loss'
-                                description={getData['cm02-description-02-02']}
-                                path='/intl/talking-family-hearing-loss'
-                                image={'https://auth.cochlear.com'+getData['cm02-image-02-02'].src}
-                                imagePath={getData['cm02-image-02-02'].path}
-                                embed = {getData['cm02-video-embed-02-02']}
-                                additionalClass="is-small"/>
-                            </div>
-                          </div>
-                        </div>
+
                     </main>
 
                 </div>
+                <RelatedContent   additionalClass="sl__related-articles"
+
+                                  title01 = {getData['related-title-01'].title}
+                                  description01 = {getData['related-description-01']}
+                                  path01 = {getData['related-title-01'].path}
+                                  image01 = {'https://auth.cochlear.com/'+getData['related-image-01'].src}
+                                  embed01 = {getData['related-video-embed-01']}
+                                  additionalClass01 = "is-small"
+
+                                  title02 = {getData['related-title-02'].title}
+                                  description02 = {getData['related-description-02']}
+                                  path02 = {getData['related-title-02'].path}
+                                  image02 = {'https://auth.cochlear.com/'+getData['related-image-02'].src}
+                                  embed02= {getData['related-video-embed-02']}
+                                  additionalClass02 = "is-small"
+
+                                  title03 = {getData['related-title-03'].title}
+                                  description03 = {getData['related-description-03']}
+                                  path03 = {getData['related-title-03'].path}
+                                  image03 = {'https://auth.cochlear.com/'+getData['related-image-03'].src}
+                                  embed03 = {getData['related-video-embed-03']}
+                                  additionalClass03 = "is-small"
+                />
 
                 <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
             </div>
@@ -113,4 +106,4 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators(actions, dispatch);
 }
-export default connect(mapStateToProps, mapDispatchToProps, null, { withRef: true })(ImpactOfHearingLoss);
+export default connect(mapStateToProps, mapDispatchToProps, null, { withRef: true })(TalkingFamilyHearingLoss);

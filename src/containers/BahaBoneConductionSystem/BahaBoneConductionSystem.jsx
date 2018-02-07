@@ -11,15 +11,14 @@ import Cm01RichText from "../../components/Cm01RichText/Cm01RichText.jsx";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs.jsx";
 import HeaderLandingBanner from "../../components/HeaderLandingBanner/HeaderLandingBanner.jsx";
 import ContentHeader from "../../components/ContentHeader/ContentHeader.jsx";
-import RelatedContent from "../../components/RelatedContent/RelatedContent.jsx";
 
 if (typeof window === 'undefined') {
     global.window = {}
 }
 
-class ImpactOfHearingLoss extends Component {
+class BahaBoneConductionSystem extends Component {
     static fetchData({ store, params }) {
-        return store.dispatch(actions.getImpactOfHearingLoss());
+        return store.dispatch(actions.getBahaBoneConductionSystem());
     }
 
     componentDidMount() {
@@ -27,14 +26,15 @@ class ImpactOfHearingLoss extends Component {
 
 
     render() {
-        let getData = this.props.dataImpactOfHearingLoss;
+
+//        console.log(this.props.dataProductsAndSolutions);
+        let getData = this.props.dataBahaBoneConductionSystem;
         let json = {
             "breadcrumbs": [{ title: "Home", link:'/intl/home' },
-                            { title: "Hearing Loss", link: '/intl/hearing-loss' },
-                            { title: "Impact of hearing loss", link: '/intl/impact-hearing-loss'}
+                            { title: "Products & Solutions", link: '/intl/products-and-solutions' },
+                            { title: "Baha bone conduction system", link: '/intl/baha-bone-conduction-system'}
             ]
         };
-
         return (
             <div className="l-layout l-one-column cf">
                 <Helmet>
@@ -53,51 +53,36 @@ class ImpactOfHearingLoss extends Component {
                                      image={'https://auth.cochlear.com/'+getData['banner-image'].src}
                                      imagePath={getData['banner-image'].alt}
                                      additionalClass=""/>
-
-                <BreadCrumbs jsonData={json} />
+                <BreadCrumbs jsonData={json}/>
 
                 <div className='l-content-container cf l-padding'>
 
                     <main id="main" tabIndex="-1" role="main" className="l-main">
+
                         <article className="l-content-column">
-
                             <Cm01RichText body={getData['body-copy']}/>
-
                         </article>
-                        <div className="sl">
-                          <div className="sl-list has-3-items">
-                            <div className="sl-item">
-                              <Cm02ContentTile    title={getData['cm02-title-02-01'].title}
-                                description={getData['cm02-description-02-01']}
-                                path={getData['cm02-title-02-01'].path}
-                                image={'https://auth.cochlear.com'+getData['cm02-image-02-01'].src}
-                                imagePath={getData['cm02-image-02-01'].path}
-                                embed = {getData['cm02-video-embed-02-01']}
-                                additionalClass="is-small"/>
-                            </div>
-                            <div className="sl-item">
-                              <Cm02ContentTile    title={getData['cm02-title-02-02'].title}
-                                description={getData['cm02-description-02-02']}
-                                path={getData['cm02-title-02-02'].path}
-                                image={'https://auth.cochlear.com'+getData['cm02-image-02-02'].src}
-                                imagePath={getData['cm02-image-02-02'].path}
-                                embed = {getData['cm02-video-embed-02-02']}
-                                additionalClass="is-small"/>
-                            </div>
-                            <div className="sl-item">
-                              <Cm02ContentTile
-                                title='Talking to your Family about Hearing Loss'
-                                description={getData['cm02-description-02-02']}
-                                path='/intl/talking-family-hearing-loss'
-                                image={'https://auth.cochlear.com'+getData['cm02-image-02-02'].src}
-                                imagePath={getData['cm02-image-02-02'].path}
-                                embed = {getData['cm02-video-embed-02-02']}
-                                additionalClass="is-small"/>
-                            </div>
-                          </div>
-                        </div>
-                    </main>
 
+
+                        <div className="sl">
+                            <div className="sl-list has-1-items">
+                                <div className="sl-item">
+                                    <Cm02ContentTile    //title={getData['cm02-title-02-01'].title}
+                                                        //description={getData['cm02-description-02-01']}
+                                                        //path={getData['cm02-title-02-01'].path}
+                                                        title="Surgical and non surgical procedures"
+                                                        description="Trust me! I won't hurt you..."
+                                                        path="/intl/surgical-and-non-surgical-procedures"
+                                                        image={'https://auth.cochlear.com'+getData['cm02-image-02-01'].src}
+                                                        imagePath={getData['cm02-title-02-01'].path}
+                                                        embed = {getData['cm02-video-embed-02-01']}
+                                                        additionalClass="is-small"/>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </main>
                 </div>
 
                 <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
@@ -113,4 +98,4 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators(actions, dispatch);
 }
-export default connect(mapStateToProps, mapDispatchToProps, null, { withRef: true })(ImpactOfHearingLoss);
+export default connect(mapStateToProps, mapDispatchToProps, null, { withRef: true })(BahaBoneConductionSystem);

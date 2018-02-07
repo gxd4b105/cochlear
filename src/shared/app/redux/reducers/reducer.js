@@ -25,6 +25,11 @@ const initialState = {
     dataSignsOfHearingLoss: null,
     dataCommonSignsAdults : null,
     dataCommonSignsChildren : null,
+    dataProductsAndSolutions:null,
+    dataNucleusProfileEarImplants:null,
+    dataCarinaMiddleEarImplants:null,
+    dataBahaBoneConductionSystem:null,
+    dataSurgicalAndNonSurgicalProcedures:null,
     getCurrentPosition: null,
     markers: [],
     lat: 0,
@@ -72,6 +77,8 @@ export default function userReducer(state = initialState, action) {
             return {...state, dataCommonSignsAdults: action.payload}
         case Types.UPDATE_COMMONSIGNSCHILDREN:
             return {...state, dataCommonSignsChildren: action.payload}
+        case Types.UPDATE_TALKINGFAMILYHEARINGLOSS:
+            return {...state, dataTalkingFamilyHearingLoss: action.payload}
         case Types.UPDATE_HOMETHIRD:
             return {...state, bodythirdTitle: action.payload['title']}
         case Types.GET_CURRENT_POSITION:
@@ -82,8 +89,18 @@ export default function userReducer(state = initialState, action) {
             return {...state, markers: action.payload.markers}
         case Types.UPDATE_CITY:
         console.log(' CITY ---  ',action.payload);
-             return {...state, city: action.payload}
-             
+            return {...state, city: action.payload}
+        case Types.UPDATE_PRODUCTSANDSOLUTIONS:
+            return {...state, dataProductsAndSolutions: action.payload}
+        case Types.UPDATE_NUCLEUSPROFILEEARIMPLANTS:
+            return {...state, dataNucleusProfileEarImplants: action.payload}
+        case Types.UPDATE_CARINAMIDDLEEARIMPLANTS:
+            return {...state, dataCarinaMiddleEarImplants: action.payload}
+        case Types.UPDATE_BAHABONECONDUCTIONSYSTEM:
+            return {...state, dataBahaBoneConductionSystem: action.payload}
+        case Types.UPDATE_SURGICALANDNONSURGICALPROCEDURES:
+            return {...state, dataSurgicalAndNonSurgicalProcedures: action.payload}
+            
         default:
             return state;
     }
