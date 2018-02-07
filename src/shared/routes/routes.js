@@ -21,10 +21,13 @@ import CommonSignsChildren from "../../containers/CommonSignsChildren/CommonSign
 import TalkingFamilyHearingLoss from "../../containers/TalkingFamilyHearingLoss/TalkingFamilyHearingLoss.jsx";
 import ProductsAndSolutions from "../../containers/ProductsAndSolutions/ProductsAndSolutions.jsx";
 import NucleusProfileEarImplants from "../../containers/NucleusProfileEarImplants/NucleusProfileEarImplants.jsx";
-import CarinaMiddleEarImplants from "../../containers/CarinaMiddleEarImplants/CarinaMiddleEarImplants.jsx"; 
+import CarinaMiddleEarImplants from "../../containers/CarinaMiddleEarImplants/CarinaMiddleEarImplants.jsx";
 import BahaBoneConductionSystem from "../../containers/BahaBoneConductionSystem/BahaBoneConductionSystem.jsx";
 import SurgicalAndNonSurgicalProcedures from "../../containers/SurgicalAndNonSurgicalProcedures/SurgicalAndNonSurgicalProcedures.jsx";
-
+import HearingAids from "../../containers/HearingAids/HearingAids.jsx";
+import CochlearImplants from "../../containers/CochlearImplants/CochlearImplants.jsx";
+import BoneConductionImplants from "../../containers/BoneConductionImplants/BoneConductionImplants.jsx";
+import MiddleEarImplants from "../../containers/MiddleEarImplants/MiddleEarImplants.jsx";
 
 
 export default {
@@ -152,6 +155,26 @@ export default {
         {
             path: '/:country/surgical-and-non-surgical-procedures',
             component: SurgicalAndNonSurgicalProcedures,
+            exact: true
+        },
+        {
+            path: '/:country/hearing-aids',
+            component: HearingAids,
+            exact: true
+        },
+        {
+            path: '/:country/cochlear-implants',
+            component: CochlearImplants,
+            exact: true
+        },
+        {
+            path: '/:country/bone-conduction-implants',
+            component: BoneConductionImplants,
+            exact: true
+        },
+        {
+            path: '/:country/middle-ear-implants',
+            component: MiddleEarImplants,
             exact: true
         }
     ],

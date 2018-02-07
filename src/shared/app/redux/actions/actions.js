@@ -154,6 +154,38 @@ export function getTalkingFamilyHearingLoss() {
     }
 }
 
+export function getHearingAids() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/hearing-aids`);
+        dispatch({ type: Types.UPDATE_HEARINGAIDS, payload: data });
+    }
+}
+
+export function getCochlearImplants() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/cochlear-implants`);
+        dispatch({ type: Types.UPDATE_COCHLEARIMPLANTS, payload: data });
+    }
+}
+
+export function getBoneConductionImplants() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/bone-conduction-implants`);
+        dispatch({ type: Types.UPDATE_BONECONDUCTIONIMPLANTS, payload: data });
+    }
+}
+
+export function getMiddleEarImplants() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/middle-ear-implants`);
+        dispatch({ type: Types.UPDATE_MIDDLEEARIMPLANTS, payload: data });
+    }
+}
+
 export function getCostsAndAffordability() {
     return async function (dispatch, getState) {
         // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);

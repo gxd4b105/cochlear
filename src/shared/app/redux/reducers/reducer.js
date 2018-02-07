@@ -77,6 +77,14 @@ export default function userReducer(state = initialState, action) {
             return {...state, dataCommonSignsAdults: action.payload}
         case Types.UPDATE_COMMONSIGNSCHILDREN:
             return {...state, dataCommonSignsChildren: action.payload}
+        case Types.UPDATE_HEARINGAIDS:
+            return {...state, dataHearingAids: action.payload}
+        case Types.UPDATE_COCHLEARIMPLANTS:
+            return {...state, dataCochlearImplants: action.payload}
+        case Types.UPDATE_BONECONDUCTIONIMPLANTS:
+            return {...state, dataBoneConductionImplants: action.payload}
+        case Types.UPDATE_MIDDLEEARIMPLANTS:
+            return {...state, dataMiddleEarImplants: action.payload}
         case Types.UPDATE_TALKINGFAMILYHEARINGLOSS:
             return {...state, dataTalkingFamilyHearingLoss: action.payload}
         case Types.UPDATE_HOMETHIRD:
@@ -100,7 +108,7 @@ export default function userReducer(state = initialState, action) {
             return {...state, dataBahaBoneConductionSystem: action.payload}
         case Types.UPDATE_SURGICALANDNONSURGICALPROCEDURES:
             return {...state, dataSurgicalAndNonSurgicalProcedures: action.payload}
-            
+
         default:
             return state;
     }
