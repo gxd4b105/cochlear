@@ -19,6 +19,12 @@ import SignsOfHearingLoss from "../../containers/SignsOfHearingLoss/SignsOfHeari
 import CommonSignsAdult from "../../containers/CommonSignsAdult/CommonSignsAdult.jsx";
 import CommonSignsChildren from "../../containers/CommonSignsChildren/CommonSignsChildren.jsx";
 import TalkingFamilyHearingLoss from "../../containers/TalkingFamilyHearingLoss/TalkingFamilyHearingLoss.jsx";
+import ProductsAndSolutions from "../../containers/ProductsAndSolutions/ProductsAndSolutions.jsx";
+import NucleusProfileEarImplants from "../../containers/NucleusProfileEarImplants/NucleusProfileEarImplants.jsx";
+import CarinaMiddleEarImplants from "../../containers/CarinaMiddleEarImplants/CarinaMiddleEarImplants.jsx"; 
+import BahaBoneConductionSystem from "../../containers/BahaBoneConductionSystem/BahaBoneConductionSystem.jsx";
+import SurgicalAndNonSurgicalProcedures from "../../containers/SurgicalAndNonSurgicalProcedures/SurgicalAndNonSurgicalProcedures.jsx";
+
 
 
 export default {
@@ -123,6 +129,31 @@ export default {
             component: TalkingFamilyHearingLoss,
             exact: true
         },
+        {
+            path: '/:country/products-and-solutions',
+            component: ProductsAndSolutions,
+            exact: true
+        },
+        {
+            path: '/:country/nucleus-profile-ear-implants',
+            component: NucleusProfileEarImplants,
+            exact: true
+        },
+        {
+            path: '/:country/carina-middle-ear-implants',
+            component: CarinaMiddleEarImplants,
+            exact: true
+        },
+        {
+            path: '/:country/baha-bone-conduction-system',
+            component: BahaBoneConductionSystem,
+            exact: true
+        },
+        {
+            path: '/:country/surgical-and-non-surgical-procedures',
+            component: SurgicalAndNonSurgicalProcedures,
+            exact: true
+        }
     ],
     redirects: [
         {

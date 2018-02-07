@@ -193,3 +193,43 @@ export function updateCity(data) {
         dispatch({ type: Types.UPDATE_CITY, payload: data.city });
     }
 }
+
+export function getProductsAndSolutions() {
+    return async function (dispatch, getState) {
+        //To be changed
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/hearing-loss`);
+        dispatch({ type: Types.UPDATE_PRODUCTSANDSOLUTIONS, payload: data})
+    }
+}
+
+export function getNucleusProfileEarImplants(){
+    return async function (dispatch, getState) {
+        //To be changed
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/hearing-loss`);
+        dispatch({ type: Types.UPDATE_NUCLEUSPROFILEEARIMPLANTS, payload: data})
+    }
+}
+
+export function getCarinaMiddleEarImplants(){
+    return async function (dispatch, getState) {
+        //To be changed
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/hearing-loss`);
+        dispatch({ type: Types.UPDATE_CARINAMIDDLEEARIMPLANTS, payload: data})
+    }
+}
+
+export function getBahaBoneConductionSystem(){
+    return async function (dispatch, getState) {
+        //To be changed
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/hearing-loss`);
+        dispatch({ type: Types.UPDATE_BAHABONECONDUCTIONSYSTEM, payload: data})
+    }
+}
+
+export function getSurgicalAndNonSurgicalProcedures(){
+    return async function (dispatch, getState) {
+        //To be changed
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/untreated-hearing-loss-adult`);
+        dispatch({ type: Types.UPDATE_SURGICALANDNONSURGICALPROCEDURES, payload: data})
+    }
+}
