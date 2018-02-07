@@ -85,13 +85,12 @@ class ImpactOfHearingLoss extends Component {
                                 additionalClass="is-small"/>
                             </div>
                             <div className="sl-item">
-                              <Cm02ContentTile
-                                title='Talking to your Family about Hearing Loss'
-                                description={getData['cm02-description-02-02']}
-                                path='/intl/talking-family-hearing-loss'
-                                image={'https://auth.cochlear.com'+getData['cm02-image-02-02'].src}
-                                imagePath={getData['cm02-image-02-02'].path}
-                                embed = {getData['cm02-video-embed-02-02']}
+                              <Cm02ContentTile    title={getData['cm02-title-02-03'].title}
+                                description={getData['cm02-description-02-03']}
+                                path={getData['cm02-title-02-03'].path}
+                                image={'https://auth.cochlear.com'+getData['cm02-image-02-03'].src}
+                                imagePath={getData['cm02-image-02-03'].path}
+                                embed = {getData['cm02-video-embed-02-03']}
                                 additionalClass="is-small"/>
                             </div>
                           </div>
