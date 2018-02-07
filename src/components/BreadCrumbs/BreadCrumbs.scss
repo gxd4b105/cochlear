@@ -11,6 +11,11 @@
 
     ul {
       li {
+        .is-active {
+          p {
+            font-size: 16px;
+          }
+        }
         &:before {
           content: "/";
           left: 5px;
