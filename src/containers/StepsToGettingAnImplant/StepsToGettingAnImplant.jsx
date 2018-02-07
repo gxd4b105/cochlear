@@ -20,9 +20,9 @@ if (typeof window === 'undefined') {
 }
 
 
-class PreparingForAnImplant extends Component {
+class StepsToGettingAnImplant extends Component {
     static fetchData({ store, params }) {
-        return store.dispatch(actions.getPreparingForAnImplant());
+        return store.dispatch(actions.getStepsToGettingAnImplant());
     }
 
     componentDidMount() {
@@ -31,14 +31,15 @@ class PreparingForAnImplant extends Component {
 
     render() {
 
-        console.log(this.props.dataPreparingForAnImplant);
-        let getData = this.props.dataPreparingForAnImplant;
+        //console.log(this.props.dataStepsToGettingAnImplant);
+        let getData = this.props.dataStepsToGettingAnImplant;
 
         let json = {
             "breadcrumbs": [{   title: "Home", link:'/intl/home' },
                 {   title: "Hearing Loss", link: '/intl/hearing-loss' },
                 {   title: "Treating hearing loss", link: '/intl/treating-hearing-loss'},
-                {   title: "Preparing for an implant", link: '/intl/preparing-for-an-implant'}
+                {   title: "Preparing for an implant", link: '/intl/preparing-for-an-implant'},
+                {   title: "Steps to getting an implant", link: '/intl/steps-to-getting-an-implant'},
             ]
         };
 
@@ -123,4 +124,4 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators(actions, dispatch);
 }
-export default connect(mapStateToProps, mapDispatchToProps, null, { withRef: true })(PreparingForAnImplant);
+export default connect(mapStateToProps, mapDispatchToProps, null, { withRef: true })(StepsToGettingAnImplant);

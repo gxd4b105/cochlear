@@ -273,3 +273,11 @@ export function getPreparingForAnImplant(){
         dispatch({ type: Types.UPDATE_PREPARINGFORANIMPLANT, payload: data})
     }
 }
+
+export function getStepsToGettingAnImplant(){
+    return async function (dispatch, getState) {
+        //To be changed
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/steps-to-getting-an-implant`);
+        dispatch({ type: Types.UPDATE_STEPSTOGETTINGANIMPLANT, payload: data})
+    }
+}

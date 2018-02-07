@@ -28,7 +28,8 @@ import HearingAids from "../../containers/HearingAids/HearingAids.jsx";
 import CochlearImplants from "../../containers/CochlearImplants/CochlearImplants.jsx";
 import BoneConductionImplants from "../../containers/BoneConductionImplants/BoneConductionImplants.jsx";
 import MiddleEarImplants from "../../containers/MiddleEarImplants/MiddleEarImplants.jsx";
-import PreparingForAnImplant from '../../containers/PreparingForAnImplant/PreparingForAnImplant';
+import PreparingForAnImplant from '../../containers/PreparingForAnImplant/PreparingForAnImplant.jsx';
+import StepsToGettingAnImplant from '../../containers/StepsToGettingAnImplant/StepsToGettingAnImplant.jsx';
 
 export default {
     routes: [
@@ -180,6 +181,10 @@ export default {
         {
             path: '/:country/preparing-for-an-implant',
             component: PreparingForAnImplant,
+        },
+        {
+            path: '/:country/steps-to-getting-an-implant',
+            component: StepsToGettingAnImplant,
         }
     ],
     redirects: [

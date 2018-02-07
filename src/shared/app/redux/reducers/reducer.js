@@ -31,6 +31,7 @@ const initialState = {
     dataBahaBoneConductionSystem:null,
     dataSurgicalAndNonSurgicalProcedures:null,
     dataPreparingForAnImplant:null,
+    dataStepsToGettingAnImplant: null,
     getCurrentPosition: null,
     markers: [],
     lat: 0,
@@ -111,6 +112,8 @@ export default function userReducer(state = initialState, action) {
             return {...state, dataSurgicalAndNonSurgicalProcedures: action.payload}
         case Types.UPDATE_PREPARINGFORANIMPLANT:
             return {...state, dataPreparingForAnImplant: action.payload}    
+        case Types.UPDATE_STEPSTOGETTINGANIMPLANT:
+            return {...state, dataStepsToGettingAnImplant: action.payload}    
         default:
             return state;
     }
