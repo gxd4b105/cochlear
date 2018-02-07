@@ -3,24 +3,26 @@ import React from 'react';
 
 class MediaContainer extends React.Component {
     render() {
-        const children = this.props.children;
         return (
             <div className="cm cm-media-container">
-                { !!this.props.embedVideo &&
-                  <figure>
-                    <div className="video-embed">
+                <figure>
+                  { !!this.props.embedVideo ?
+                    (<div className="video-embed">
                       <iframe width="560" height="315" src={`${this.props.embedVideo}`} frameBorder="0" allow="encrypted-media" allowFullScreen></iframe>
-                    </div>
-                    <figcaption>{this.props.quoteText}</figcaption>
-                  </figure>
-                }
-                { !!this.props.imageLink &&
+                    </div>) : (!!this.props.imageLink &&
+                    <div className="image-embed">
+                      <img src={this.props.imageLink}/>
+                    </div>)
+                  }
+                  <figcaption>{this.props.captionText}</figcaption>
+                </figure>
+                { /*!!this.props.imageLink &&
                   <figure>
                     <div className="image-embed">
                       <img src={this.props.imageLink}/>
                     </div>
-                    <figcaption>{this.props.quoteText}</figcaption>
-                  </figure>
+                    <figcaption>{this.props.captionText}</figcaption>
+                  </figure>*/
                 }
             </div>
         );

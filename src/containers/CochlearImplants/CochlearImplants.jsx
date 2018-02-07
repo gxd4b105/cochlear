@@ -10,19 +10,17 @@ import Cm02ContentTile from "../../components/Cm02ContentTile/Cm02ContentTile.js
 import Cm01RichText from "../../components/Cm01RichText/Cm01RichText.jsx";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs.jsx";
 import HeaderLandingBanner from "../../components/HeaderLandingBanner/HeaderLandingBanner.jsx";
-import Cm28SocialShare from "../../components/Cm28SocialShare/Cm28SocialShare.jsx";
+import ContentHeader from "../../components/ContentHeader/ContentHeader.jsx";
 import RelatedContent from "../../components/RelatedContent/RelatedContent.jsx";
-import BrochureDownload from "../../components/BrochureDownload/BrochureDownload.jsx";
 import MediaContainer from "../../components/MediaContainer/MediaContainer.jsx";
 
 if (typeof window === 'undefined') {
     global.window = {}
 }
 
-
-class UntreatedHearingLossAdult extends Component {
+class CochlearImplants extends Component {
     static fetchData({ store, params }) {
-        return store.dispatch(actions.getUntreatedHearingLossAdult());
+        return store.dispatch(actions.getCochlearImplants());
     }
 
     componentDidMount() {
@@ -30,19 +28,14 @@ class UntreatedHearingLossAdult extends Component {
 
 
     render() {
-
-        console.log(this.props.dataUntreatedHearingLossAdult);
-        let getData = this.props.dataUntreatedHearingLossAdult;
-
+        let getData = this.props.dataCochlearImplants;
         let json = {
-            "breadcrumbs": [{   title: "Home", link:'/intl/home' },
-                {   title: "Hearing Loss", link: '/intl/hearing-loss' },
-                {   title: "Impact of hearing loss", link: '/intl/impact-hearing-loss'},
-                {   title: "Impact of hearing loss on daily life", link: '/intl/untreadted-hearing-loss-adult'}
+            "breadcrumbs": [{ title: "Home", link:'/intl/home' },
+                            { title: "Hearing Loss", link: '/intl/hearing-loss' },
+                            { title: "Impact of hearing loss", link: '/intl/impact-hearing-loss'},
+                            { title: "Talking to your family about hearing loss", link: '/intl/talking-family-hearing-loss'}
             ]
         };
-
-        console.log(global.window.dataLayer);
 
         return (
             <div className="l-layout l-one-column cf">
@@ -69,28 +62,20 @@ class UntreatedHearingLossAdult extends Component {
 
                     <main id="main" tabIndex="-1" role="main" className="l-main">
                         <article className="l-content-column">
-                            <Cm28SocialShare />
 
                             <Cm01RichText body={getData['body-copy']}/>
 
-                              <MediaContainer
-                                captionText={getData['media-container-caption-01']}
-                                imageLink={getData['media-container-image-01']}
-                                embedVideo={getData['media-container-embed-01']}
-                                />
-
-                            <BrochureDownload
-                              title="Request additional information"
-                              description="Fill in your details below if you'd like us to send you more information about implantable solutions."
-                              additionalClass="brochure-download"
-                            />
-
+                            <MediaContainer
+                              captionText={getData['media-container-caption-01']}
+                              imageLink={getData['media-container-image-01']}
+                              embedVideo={getData['media-container-embed-01']}
+                              />
 
                         </article>
+
                     </main>
 
                 </div>
-
                 <RelatedContent   additionalClass="sl__related-articles"
 
                                   title01 = {getData['related-title-01'].title}
@@ -128,4 +113,4 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators(actions, dispatch);
 }
-export default connect(mapStateToProps, mapDispatchToProps, null, { withRef: true })(UntreatedHearingLossAdult);
+export default connect(mapStateToProps, mapDispatchToProps, null, { withRef: true })(CochlearImplants);
