@@ -18,6 +18,7 @@ import PlanningYourTest from "../../containers/PlanningYourTest/PlanningYourTest
 import SignsOfHearingLoss from "../../containers/SignsOfHearingLoss/SignsOfHearingLoss.jsx";
 import CommonSignsAdult from "../../containers/CommonSignsAdult/CommonSignsAdult.jsx";
 import CommonSignsChildren from "../../containers/CommonSignsChildren/CommonSignsChildren.jsx";
+import TalkingFamilyHearingLoss from "../../containers/TalkingFamilyHearingLoss/TalkingFamilyHearingLoss.jsx";
 
 
 export default {
@@ -117,6 +118,11 @@ export default {
             component: FindAClinic,
             exact: true
         },
+        {
+            path: '/:country/talking-family-hearing-loss',
+            component: TalkingFamilyHearingLoss,
+            exact: true
+        },
     ],
     redirects: [
         {
@@ -125,4 +131,4 @@ export default {
             status: 301
         }
     ]
-} 
+}

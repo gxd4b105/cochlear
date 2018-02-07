@@ -146,6 +146,14 @@ export function getFindAClinic() {
     }
 }
 
+export function getTalkingFamilyHearingLoss() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/talking-family-hearing-loss`);
+        dispatch({ type: Types.UPDATE_TALKINGFAMILYHEARINGLOSS, payload: data });
+    }
+}
+
 export function getCostsAndAffordability() {
     return async function (dispatch, getState) {
         // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);

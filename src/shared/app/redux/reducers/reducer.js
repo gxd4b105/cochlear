@@ -72,6 +72,8 @@ export default function userReducer(state = initialState, action) {
             return {...state, dataCommonSignsAdults: action.payload}
         case Types.UPDATE_COMMONSIGNSCHILDREN:
             return {...state, dataCommonSignsChildren: action.payload}
+        case Types.UPDATE_TALKINGFAMILYHEARINGLOSS:
+            return {...state, dataTalkingFamilyHearingLoss: action.payload}
         case Types.UPDATE_HOMETHIRD:
             return {...state, bodythirdTitle: action.payload['title']}
         case Types.GET_CURRENT_POSITION:
@@ -83,7 +85,7 @@ export default function userReducer(state = initialState, action) {
         case Types.UPDATE_CITY:
         console.log(' CITY ---  ',action.payload);
              return {...state, city: action.payload}
-             
+
         default:
             return state;
     }
