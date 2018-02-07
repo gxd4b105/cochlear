@@ -74,6 +74,7 @@ class ImpactOfHearingLoss extends Component {
                                 imagePath={getData['cm02-image-03-01'].path}
                                 embed = {getData['cm02-video-embed-03-01']}
                                 additionalClass="is-small"/>
+
                             </div>
                             <div className="sl-item">
                               <Cm02ContentTile    title={getData['cm02-title-03-02'].title}
