@@ -30,6 +30,11 @@ import BoneConductionImplants from "../../containers/BoneConductionImplants/Bone
 import MiddleEarImplants from "../../containers/MiddleEarImplants/MiddleEarImplants.jsx";
 import PreparingForAnImplant from '../../containers/PreparingForAnImplant/PreparingForAnImplant.jsx';
 import StepsToGettingAnImplant from '../../containers/StepsToGettingAnImplant/StepsToGettingAnImplant.jsx';
+import LifestyleFactors from '../../containers/LifestyleFactors/LifestyleFactors.jsx';
+import WaterproofOptions from '../../containers/WaterproofOptions/WaterproofOptions.jsx';
+import ForActiveLife from '../../containers/ForActiveLife/ForActiveLife.jsx';
+import ForNoisyEnvironments from '../../containers/ForNoisyEnvironments/ForNoisyEnvironments.jsx';
+import ForSpeechMusic from '../../containers/ForSpeechMusic/ForSpeechMusic.jsx';
 
 export default {
     routes: [
@@ -185,6 +190,26 @@ export default {
         {
             path: '/:country/steps-to-getting-an-implant',
             component: StepsToGettingAnImplant,
+        },
+        {
+            path: '/:country/lifestyle-factors',
+            component: LifestyleFactors,
+        },
+        {
+            path: '/:country/waterproof-options',
+            component: WaterproofOptions,
+        },
+        {
+            path: '/:country/for-active-life',
+            component: ForActiveLife,
+        },
+        {
+            path: '/:country/for-noisy-environments',
+            component: ForNoisyEnvironments,
+        },
+        {
+            path: '/:country/for-speech-music',
+            component: ForSpeechMusic,
         }
     ],
     redirects: [

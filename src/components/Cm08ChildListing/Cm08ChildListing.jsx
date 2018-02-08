@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link'
 
 class Cm08ChildListing extends React.Component {
     render () {
@@ -9,7 +8,7 @@ class Cm08ChildListing extends React.Component {
         return (
             <div className='cm cm-child-listing'>
                 <div className='title'>
-                    <h2><Link prefetch href={`${this.props.path}`}><a>{this.props.title}</a></Link></h2>
+                    <h2><a href={`${this.props.path}`}>{this.props.title}</a></h2>
                     {/* <% if vars[:description] != '' %> */}
                     <p>{this.props.description}</p>
                     {/* <% end %> */}
