@@ -29,13 +29,15 @@
     li {
       border-bottom: 1px solid $mid-grey;
       margin: 0;
-      padding: 13px 70px 13px 20px;
       position:relative;
 
       &:hover {
         background-color: rgba(204,204,204,0.2);
         border-left: 5px solid $cochlear-yellow;
-        padding-left: 15px;
+
+        a {
+          padding-left: 15px;
+        }
 
         &:after {
           transform: rotate(-90deg) translateX(50%) translateY(-5px);
@@ -55,6 +57,7 @@
       }
 
       a {
+        padding: 13px 70px 13px 20px;
         text-decoration: none;
       }
     }
