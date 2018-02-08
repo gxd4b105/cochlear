@@ -76,6 +76,21 @@ class HomePage extends Component {
                         </div>
                     </div>
 
+                    <div className="sl">
+                        <div className="sl-list has-2-items">
+                            <div className="sl-item">
+                                <Cm02ContentTile    title={getData['cm02-title-05-05'].title}
+                                                    description={getData['cm02-description-05-05']}
+                                                    path={getData['cm02-title-05-05'].path}
+                                                    image={'https://auth.cochlear.com'+getData['cm02-image-05-05'].src}
+                                                    imagePath={getData['cm02-title-05-05'].path}
+                                                    embed = {getData['cm02-video-embed-05-05']}
+                                                    additionalClass="is-small"/>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
                 <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
             </div>

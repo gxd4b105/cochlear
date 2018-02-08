@@ -309,7 +309,7 @@ export function getSurgicalAndNonSurgicalProcedures(){
 export function getPreparingForAnImplant(){
     return async function (dispatch, getState) {
         //To be changed
-        let {data} = await Request.get(`https://auth.cochlear.com/api/content/v1/deloitte/home/untreated-hearing-loss-adult`);
+        let {data} = await Request.get(`https://auth.cochlear.com/api/content/v1/deloitte/home/preparing-for-an-implant`);
         dispatch({ type: Types.UPDATE_PREPARINGFORANIMPLANT, payload: data})
     }
 }
@@ -319,5 +319,22 @@ export function getStepsToGettingAnImplant(){
         //To be changed
         let {data} = await Request.get(`https://auth.cochlear.com/api/content/v1/deloitte/home/steps-to-getting-an-implant`);
         dispatch({ type: Types.UPDATE_STEPSTOGETTINGANIMPLANT, payload: data})
+    }
+}
+
+export function getFundingYourHearingSolution(){
+    return async function (dispatch, getState) {
+        //To be changed
+        let {data} = await Request.get(`https://auth.cochlear.com/api/content/v1/deloitte/home/funding-your-hearing-solution`);
+        dispatch({ type: Types.UPDATE_FUNDINGYOURHEARINGSOLUTION, payload: data})
+    }
+}
+
+
+export function getHealthInsurance(){
+    return async function (dispatch, getState) {
+        //To be changed
+        let {data} = await Request.get(`https://auth.cochlear.com/api/content/v1/deloitte/home/health-insurance`);
+        dispatch({ type: Types.UPDATE_HEALTHINSURANCE, payload: data})
     }
 }

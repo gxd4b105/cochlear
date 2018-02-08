@@ -35,6 +35,8 @@ import WaterproofOptions from '../../containers/WaterproofOptions/WaterproofOpti
 import ForActiveLife from '../../containers/ForActiveLife/ForActiveLife.jsx';
 import ForNoisyEnvironments from '../../containers/ForNoisyEnvironments/ForNoisyEnvironments.jsx';
 import ForSpeechMusic from '../../containers/ForSpeechMusic/ForSpeechMusic.jsx';
+import FundingYourHearingSolution from '../../containers/FundingYourHearingSolution/FundingYourHearingSolution.jsx';
+import HealthInsurance from '../../containers/HealthInsurance/HealthInsurance.jsx';
 
 export default {
     routes: [
@@ -210,6 +212,15 @@ export default {
         {
             path: '/:country/for-speech-music',
             component: ForSpeechMusic,
+        },
+        {
+            path: '/:country/funding-your-hearing-solution',
+            component: FundingYourHearingSolution,
+            exact: true
+        },
+        {
+            path: '/:country/health-insurance',
+            component: HealthInsurance,
         }
     ],
     redirects: [

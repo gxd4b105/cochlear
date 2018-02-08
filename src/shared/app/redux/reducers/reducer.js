@@ -124,6 +124,10 @@ export default function userReducer(state = initialState, action) {
             return {...state, dataForActiveLife: action.payload}
         case Types.UPDATE_FORSPEECHMUSIC:
             return {...state, dataForSpeechMusic: action.payload}  
+        case Types.UPDATE_FUNDINGYOURHEARINGSOLUTION:
+            return {...state, dataFundingYourHearingSolution: action.payload}
+        case Types.UPDATE_HEALTHINSURANCE:
+            return {...state, dataHealthInsurance: action.payload}
         default:
             return state;
     }
