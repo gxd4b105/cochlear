@@ -6,20 +6,28 @@ class Cm08ChildListing extends React.Component {
         const children = this.props.children
 
         return (
-            <div className='cm cm-child-listing'>
-                <div className='title'>
+            <div className={`cm cm-child-listing ${this.props.additionalClass.join(' ')}`}>
+                {
+                  this.props.image &&
+                  <div className='image'>
+                    <img src={this.props.image} />
+                  </div>
+                }
+                <div className='content'>
+                  <div className='title'>
                     <h2><a href={`${this.props.path}`}>{this.props.title}</a></h2>
                     {/* <% if vars[:description] != '' %> */}
                     <p>{this.props.description}</p>
                     {/* <% end %> */}
-                </div>
-                {/* <% if vars[:pages].length > 0 %>*/}
-                <ul>
+                  </div>
+                  {/* <% if vars[:pages].length > 0 %>*/}
+                  <ul>
                     {React.Children.map(children, (child) => {
-                        return  child
+                      return child;
                     })}
-                </ul>
-                {/* <% end %> */}
+                  </ul>
+                  {/* <% end %> */}
+                </div>
             </div>
 
         );
@@ -31,7 +39,8 @@ Cm08ChildListing.defaultProps = {
     path: "#",
     description:"Aliquam eget ornare nisl. Pellentesque varius magna eu sodales fringilla. Nam feugiat tincidunt orci fringilla pharetra. Aenean a turpis in nunc commodo posuere. Nullam molestie velit leo.",
     image: "/assets/img/placeholder/landing-hero.jpg",
-    imageAlt: "Landing page banner alt text"
+    imageAlt: "Landing page banner alt text",
+    additionalClass: [],
 }
 
 export default Cm08ChildListing;

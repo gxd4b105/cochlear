@@ -91,7 +91,7 @@ class WaterproofOptions extends Component {
 
                 </div>
 
-                <RelatedContent   additionalClass="sl__related-articles"
+                {/*<RelatedContent   additionalClass="sl__related-articles"
 
                                   title01 = {getData['related-title-01'].title}
                                   description01 = {getData['related-description-01']}
@@ -113,7 +113,7 @@ class WaterproofOptions extends Component {
                                   image03 = {'https://auth.cochlear.com/'+getData['related-image-03'].src}
                                   embed03 = {getData['related-video-embed-03']}
                                   additionalClass03 = "is-small"
-                />
+                />*/}
 
                 <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
             </div>

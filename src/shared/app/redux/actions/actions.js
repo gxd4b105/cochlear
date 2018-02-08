@@ -181,7 +181,7 @@ export function getBoneConductionImplants() {
 export function getLifestyleFactors() {
     return async function (dispatch, getState) {
         // let {data} = await Request.get(`https://dev.cochlear.com/api/content/v1/intl/dig/treatment-options`);
-        let {data} = await Request.get(`https://auth.cochlear.com/api/content/v1/deloitte/home/hearing-loss`);
+        let {data} = await Request.get(`https://auth.cochlear.com/api/content/v1/deloitte/home/lifestyle-factors`);
         dispatch({ type: Types.UPDATE_LIFESTYLEFACTORS, payload: data });
     }
 }
@@ -189,7 +189,7 @@ export function getLifestyleFactors() {
 export function getWaterproofOptions() {
     return async function (dispatch, getState) {
         // let {data} = await Request.get(`https://dev.cochlear.com/api/content/v1/intl/dig/treatment-options`);
-        let {data} = await Request.get(`https://auth.cochlear.com/api/content/v1/deloitte/home/untreated-hearing-loss-adult`);
+        let {data} = await Request.get(`https://auth.cochlear.com/api/content/v1/deloitte/home/waterproof-options`);
         dispatch({ type: Types.UPDATE_WATERPROOFOPTIONS, payload: data });
     }
 }
@@ -197,7 +197,7 @@ export function getWaterproofOptions() {
 export function getForNoisyEnvironments() {
     return async function (dispatch, getState) {
         // let {data} = await Request.get(`https://dev.cochlear.com/api/content/v1/intl/dig/treatment-options`);
-        let {data} = await Request.get(`https://auth.cochlear.com/api/content/v1/deloitte/home/untreated-hearing-loss-adult`);
+        let {data} = await Request.get(`https://auth.cochlear.com/api/content/v1/deloitte/home/for-noisy-environments`);
         dispatch({ type: Types.UPDATE_FORNOISYENVIRONMENTS, payload: data });
     }
 }
@@ -205,7 +205,7 @@ export function getForNoisyEnvironments() {
 export function getForActiveLife() {
     return async function (dispatch, getState) {
         // let {data} = await Request.get(`https://dev.cochlear.com/api/content/v1/intl/dig/treatment-options`);
-        let {data} = await Request.get(`https://auth.cochlear.com/api/content/v1/deloitte/home/untreated-hearing-loss-adult`);
+        let {data} = await Request.get(`https://auth.cochlear.com/api/content/v1/deloitte/home/for-an-active-life`);
         dispatch({ type: Types.UPDATE_FORACTIVELIFE, payload: data });
     }
 }
@@ -213,7 +213,7 @@ export function getForActiveLife() {
 export function getForSpeechMusic() {
     return async function (dispatch, getState) {
         // let {data} = await Request.get(`https://dev.cochlear.com/api/content/v1/intl/dig/treatment-options`);
-        let {data} = await Request.get(`https://auth.cochlear.com/api/content/v1/deloitte/home/untreated-hearing-loss-adult`);
+        let {data} = await Request.get(`https://auth.cochlear.com/api/content/v1/deloitte/home/for-speech-and-music`);
         dispatch({ type: Types.UPDATE_FORSPEECHMUSIC, payload: data });
     }
 }
