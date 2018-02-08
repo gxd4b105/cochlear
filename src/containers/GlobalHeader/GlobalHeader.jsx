@@ -22,7 +22,7 @@ if (process.env.BROWSER) {
 class Header extends Component {
     static fetchData({ store, params }) {
         if (store.getState().user.headerCountry != params.country || store.getState().user.headerCountry === null){
-            store.dispatch(actions.setHeaderCountry(params));
+            return store.dispatch(actions.setHeaderCountry(params));
             if(params.country === 'intl') {
                 return store.dispatch(actions.getHeader());
             }

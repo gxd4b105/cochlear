@@ -10,7 +10,7 @@ import GlobalFooter__Nav__Social from '../../components/GlobalFooter__Nav__Socia
 class Footer extends Component {
     static fetchData({store, params}) {
         if (store.getState().user.footerCountry != params.country || store.getState().user.footerCountry === null){
-            store.dispatch(actions.setHeaderCountry(params));
+            return store.dispatch(actions.setHeaderCountry(params));
             if (params.country === 'intl') {
                 return store.dispatch(actions.getFooter());
             }
