@@ -111,9 +111,19 @@ export default function userReducer(state = initialState, action) {
         case Types.UPDATE_SURGICALANDNONSURGICALPROCEDURES:
             return {...state, dataSurgicalAndNonSurgicalProcedures: action.payload}
         case Types.UPDATE_PREPARINGFORANIMPLANT:
-            return {...state, dataPreparingForAnImplant: action.payload}    
+            return {...state, dataPreparingForAnImplant: action.payload}
         case Types.UPDATE_STEPSTOGETTINGANIMPLANT:
-            return {...state, dataStepsToGettingAnImplant: action.payload}    
+            return {...state, dataStepsToGettingAnImplant: action.payload}
+        case Types.UPDATE_LIFESTYLEFACTORS:
+            return {...state, dataLifestyleFactors: action.payload}
+        case Types.UPDATE_WATERPROOFOPTIONS:
+            return {...state, dataWaterproofOptions: action.payload}
+        case Types.UPDATE_FORNOISYENVIRONMENTS:
+            return {...state, dataForNoisyEnvironments: action.payload}
+        case Types.UPDATE_FORACTIVELIFE:
+            return {...state, dataForActiveLife: action.payload}
+        case Types.UPDATE_FORSPEECHMUSIC:
+            return {...state, dataForSpeechMusic: action.payload}  
         default:
             return state;
     }

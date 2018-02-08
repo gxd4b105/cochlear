@@ -178,6 +178,46 @@ export function getBoneConductionImplants() {
     }
 }
 
+export function getLifestyleFactors() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/hearing-loss`);
+        dispatch({ type: Types.UPDATE_LIFESTYLEFACTORS, payload: data });
+    }
+}
+
+export function getWaterproofOptions() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/untreated-hearing-loss-adult`);
+        dispatch({ type: Types.UPDATE_WATERPROOFOPTIONS, payload: data });
+    }
+}
+
+export function getForNoisyEnvironments() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/untreated-hearing-loss-adult`);
+        dispatch({ type: Types.UPDATE_FORNOISYENVIRONMENTS, payload: data });
+    }
+}
+
+export function getForActiveLife() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/untreated-hearing-loss-adult`);
+        dispatch({ type: Types.UPDATE_FORACTIVELIFE, payload: data });
+    }
+}
+
+export function getForSpeechMusic() {
+    return async function (dispatch, getState) {
+        // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
+        let {data} = await Request.get(`https://auth.cochlear.com/contentservice/api/content/deloitte/home/untreated-hearing-loss-adult`);
+        dispatch({ type: Types.UPDATE_FORSPEECHMUSIC, payload: data });
+    }
+}
+
 export function getMiddleEarImplants() {
     return async function (dispatch, getState) {
         // let {data} = await Request.get(`https://dev.cochlear.com/contentservice/api/content/intl/dig/treatment-options`);
