@@ -1,0 +1,65 @@
+.cm-child-listing {
+  & > div {
+    width:50%;
+  }
+  .image {
+    position: absolute;
+    left: 0;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .content {
+    float: right;
+    clear: both;
+    padding-left: 100px;
+
+    .title {
+      border-left: 5px solid $cochlear-yellow;
+      padding-left: 30px;
+      padding-right: 60px;
+    }
+  }
+
+  ul {
+    border: none;
+    padding: 0 30px;
+    li {
+      border-bottom: 1px solid $mid-grey;
+      margin: 0;
+      position:relative;
+
+      &:hover {
+        background-color: rgba(204,204,204,0.2);
+        border-left: 5px solid $cochlear-yellow;
+
+        a {
+          padding-left: 15px;
+        }
+
+        &:after {
+          transform: rotate(-90deg) translateX(50%) translateY(-5px);
+        }
+      }
+
+      &:after {
+        content: '';
+        background-image: url('/images/Icon_Purple_Chevron@2x.png');
+        position:absolute;
+        background-size: 100%;
+        width: 20px;
+        height: 20px;
+        right: 0;
+        top: 50%;
+        transform: rotate(-90deg) translateX(50%) translateY(-14px);
+      }
+
+      a {
+        padding: 13px 70px 13px 20px;
+        text-decoration: none;
+      }
+    }
+  }
+}
