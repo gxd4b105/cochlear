@@ -67,7 +67,7 @@ class HearingAids extends Component {
 
                             <MediaContainer
                               captionText={getData['media-container-caption-01']}
-                              imageLink={getData['media-container-image-01']}
+                              imageLink={'https://auth.cochlear.com/'+getData['media-container-image-01'].src}
                               embedVideo={getData['media-container-embed-01']}
                               />
 
