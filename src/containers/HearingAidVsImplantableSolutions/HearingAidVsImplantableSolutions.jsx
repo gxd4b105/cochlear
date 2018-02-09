@@ -15,7 +15,7 @@ import ClinicNearYouMini from "../../components/ClinicNearYou/ClinicNearYouMini.
 import ContentHeader from "../../components/ContentHeader/ContentHeader.jsx";
 import Cm02bContentTile from "../../components/Cm02bContentTile/Cm02bContentTile.jsx";
 import Cm02ContentTileThree from "../../components/Cm02ContentTileThree/Cm02ContentTileThree.jsx";
-import MediaContainer from "../../components/MediaContainer/MediaContainer.jsx";
+import Cm28SocialShare from "../../components/Cm28SocialShare/Cm28SocialShare.jsx";
 
 import axios from 'axios';
 import BrochureDownload from "../../components/BrochureDownload/BrochureDownload.jsx";
@@ -87,31 +87,41 @@ class HearingAidVsCochlearImplant extends Component {
 
     render() {
 
-        console.log(this.props.dataHearingAidVsImplantableSolutions);
-
         let getData = this.props.dataHearingAidVsImplantableSolutions;
+
+        let json = {
+            "breadcrumbs": [{ title: "Home", link:'/intl/home' },
+                { title: "Treating hearing hoss", link: '/intl/treating-hearing-loss' },
+                { title: "Types of treatment", link: '/intl/types-of-treatment'},
+                { title: "Hearing aids vs implantable solutions", link: '/intl/hearing-aids-vs-implantable-solutions'}
+            ]
+        };
 
         return (
             <div className="l-layout l-two-column cf">
                 <Helmet>
                     <meta charSet="utf-8" />
                     <title>{getData['title']}</title>
+                    <meta name="title" content={getData['title']} />
+                    <meta name="description" content={getData['description']} />
+                    <meta name="keywords" content="Hearing aids for children,Sensorineural hearing loss in children,Conductive hearing loss in children,Single sided deafness in children,hearing aids,unilateral hearing loss in children,hearing loss in one ear" />
                 </Helmet>
                 <GlobalHeader title={this.props.headerTitle} country={this.props.headerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
-                <BreadCrumbs/>
 
-                <HeaderLandingBanner title=""
-                                     description=""
+
+                <HeaderLandingBanner title={getData['title']}
+                                     description={getData['description']}
                                      image={'https://auth.cochlear.com/'+getData['banner-image'].src}
                                      imagePath={getData['banner-image'].alt}
-                                     additionalClass="is-dark"/>
+                                     additionalClass=""/>
+
+                <BreadCrumbs jsonData={json} />
 
                 <div className='l-content-container cf l-padding'>
                     <main id="main" tabIndex="-1" role="main" className="l-main">
                         <article className="l-content-column">
 
-                                <ContentHeader title={getData['title']}
-                                               description={getData['description']} />
+                                <Cm28SocialShare />
 
                                 <Cm01RichText body={getData['body-copy']}/>
 

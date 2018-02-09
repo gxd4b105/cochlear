@@ -68,6 +68,7 @@ class HealthInsurance extends Component {
 
                     <main id="main" tabIndex="-1" role="main" className="l-main">
                         <article className="l-content-column">
+
                             <Cm28SocialShare />
 
                             <Cm01RichText body={getData['body-copy']}/>
@@ -80,6 +81,7 @@ class HealthInsurance extends Component {
                             <BrochureDownload
                               title="Request additional information"
                               description="Fill in your details below if you'd like us to send you more information about implantable solutions."
+                              fileName=""
                               additionalClass="brochure-download"
                             />
 

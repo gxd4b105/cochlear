@@ -10,7 +10,7 @@ import Cm02ContentTile from "../../components/Cm02ContentTile/Cm02ContentTile.js
 import Cm01RichText from "../../components/Cm01RichText/Cm01RichText.jsx";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs.jsx";
 import HeaderLandingBanner from "../../components/HeaderLandingBanner/HeaderLandingBanner.jsx";
-import ContentHeader from "../../components/ContentHeader/ContentHeader.jsx";
+import RelatedContent from "../../components/RelatedContent/RelatedContent.jsx";
 
 if (typeof window === 'undefined') {
     global.window = {}
@@ -81,6 +81,30 @@ class NucleusProfileEarImplants extends Component {
                                 
                             </div>
                         </div>
+
+                        <RelatedContent   additionalClass="sl__related-articles"
+
+                                          title01 = {getData['related-title-01'].title}
+                                          description01 = {getData['related-description-01']}
+                                          path01 = {getData['related-title-01'].path}
+                                          image01 = {'https://auth.cochlear.com/'+getData['related-image-01'].src}
+                                          embed01 = {getData['related-video-embed-01']}
+                                          additionalClass01 = "is-small"
+
+                                          title02 = {getData['related-title-02'].title}
+                                          description02 = {getData['related-description-02']}
+                                          path02 = {getData['related-title-02'].path}
+                                          image02 = {'https://auth.cochlear.com/'+getData['related-image-02'].src}
+                                          embed02= {getData['related-video-embed-02']}
+                                          additionalClass02 = "is-small"
+
+                                          title03 = {getData['related-title-03'].title}
+                                          description03 = {getData['related-description-03']}
+                                          path03 = {getData['related-title-03'].path}
+                                          image03 = {'https://auth.cochlear.com/'+getData['related-image-03'].src}
+                                          embed03 = {getData['related-video-embed-03']}
+                                          additionalClass03 = "is-small"
+                        />
 
                     </main>
                 </div>
