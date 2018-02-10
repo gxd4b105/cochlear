@@ -25,8 +25,6 @@ class CostsAndAffordability extends Component {
 
     render() {
 
-        console.log(this.props.dataCostsAndAffordability);
-
         let getData = this.props.dataCostsAndAffordability;
 
         return (

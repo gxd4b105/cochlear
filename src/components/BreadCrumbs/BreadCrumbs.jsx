@@ -58,7 +58,7 @@ class BreadCrumbs extends React.Component {
                     title='is-active';
                 }
             }  
-            let item  = (index===length-1) ? (<li className={title}><p>{obj.title} </p></li>) : (<li className={title}><a href={obj.link} alt="breadcrumb link">{obj.title}</a></li>);
+            let item  = (index===length-1) ? (<li key={index} className={title}><p>{obj.title} </p></li>) : (<li key={index} className={title}><a href={obj.link} alt="breadcrumb link">{obj.title}</a></li>);
             return (item); 
             
         });

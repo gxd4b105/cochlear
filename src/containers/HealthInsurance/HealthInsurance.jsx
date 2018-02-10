@@ -31,7 +31,6 @@ class HealthInsurance extends Component {
 
     render() {
 
-        //console.log(this.props.dataStepsToGettingAnImplant);
         let getData = this.props.dataHealthInsurance;
 
         let json = {

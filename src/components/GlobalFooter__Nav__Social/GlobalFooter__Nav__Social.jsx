@@ -4,10 +4,6 @@ import GlobalFooter__Nav_Social__Item from '../GlobalFooter__Nav__Social__Item/G
 class GlobalFooter__Nav__Social extends React.Component {
     render() {
 
-        const children = this.props.children;
-        let mockUpData = [{
-
-        }]
         let itemsArray = this.props.socialItemsObj || [1,2,3,4];
 
         const itemsList = itemsArray.map( (item, index) =>{

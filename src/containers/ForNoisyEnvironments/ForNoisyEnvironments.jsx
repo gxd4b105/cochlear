@@ -31,7 +31,6 @@ class ForNoisyEnvironments extends Component {
 
     render() {
 
-        console.log(this.props.dataForNoisyEnvironments);
         let getData = this.props.dataForNoisyEnvironments;
 
         let json = {

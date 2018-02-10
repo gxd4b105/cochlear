@@ -27,7 +27,6 @@ class HearingLoss extends Component {
 
     render() {
 
-        console.log(this.props.dataHearingLoss);
         let getData = this.props.dataHearingLoss;
         let json = {
             "breadcrumbs": [{ title: "Home", link:'/intl/home' },

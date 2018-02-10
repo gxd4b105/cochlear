@@ -23,8 +23,6 @@ class TreatingHearingLoss extends Component {
 
     render() {
 
-        console.log(this.props.dataTreatingHearingLoss);
-
         let getData = this.props.dataTreatingHearingLoss;
 
         let json = {
