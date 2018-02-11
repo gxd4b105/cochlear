@@ -37,6 +37,7 @@ import ForNoisyEnvironments from '../../containers/ForNoisyEnvironments/ForNoisy
 import ForSpeechMusic from '../../containers/ForSpeechMusic/ForSpeechMusic.jsx';
 import FundingYourHearingSolution from '../../containers/FundingYourHearingSolution/FundingYourHearingSolution.jsx';
 import HealthInsurance from '../../containers/HealthInsurance/HealthInsurance.jsx';
+import SearchResults from '../../containers/SearchResults/SearchResults.jsx';
 
 export default {
     routes: [
@@ -188,30 +189,37 @@ export default {
         {
             path: '/:country/preparing-for-an-implant',
             component: PreparingForAnImplant,
+            exact: true
         },
         {
             path: '/:country/steps-to-getting-an-implant',
             component: StepsToGettingAnImplant,
+            exact: true
         },
         {
             path: '/:country/lifestyle-factors',
             component: LifestyleFactors,
+            exact: true
         },
         {
             path: '/:country/waterproof-options',
             component: WaterproofOptions,
+            exact: true
         },
         {
             path: '/:country/for-active-life',
             component: ForActiveLife,
+            exact: true
         },
         {
             path: '/:country/for-noisy-environments',
             component: ForNoisyEnvironments,
+            exact: true
         },
         {
             path: '/:country/for-speech-music',
             component: ForSpeechMusic,
+            exact: true
         },
         {
             path: '/:country/funding-your-hearing-solution',
@@ -221,7 +229,13 @@ export default {
         {
             path: '/:country/health-insurance',
             component: HealthInsurance,
-        }
+            exact: true
+        },
+        {
+            path: '/:country/search-results',
+            component: SearchResults,
+            exact: true
+        },
     ],
     redirects: [
         {

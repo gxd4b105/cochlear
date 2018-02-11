@@ -32,7 +32,11 @@ const initialState = {
     dataSurgicalAndNonSurgicalProcedures:null,
     dataPreparingForAnImplant:null,
     dataStepsToGettingAnImplant: null,
+    dataFundingYourHearingSolution:null,
+    dataHealthInsurance: null,
+    dataSearchResults: null,
     getCurrentPosition: null,
+    getGlobalSearch:null,
     markers: [],
     lat: 0,
     lng: 0
@@ -128,6 +132,10 @@ export default function userReducer(state = initialState, action) {
             return {...state, dataFundingYourHearingSolution: action.payload}
         case Types.UPDATE_HEALTHINSURANCE:
             return {...state, dataHealthInsurance: action.payload}
+        case Types.UPDATE_SEARCHRESULTS:
+            return {...state, dataSearchResults: action.payload}
+        case Types.GET_GLOBALSEARCH:
+            return {...state,getGlobalSearch: action.payload}
         default:
             return state;
     }

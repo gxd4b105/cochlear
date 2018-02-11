@@ -338,3 +338,17 @@ export function getHealthInsurance(){
         dispatch({ type: Types.UPDATE_HEALTHINSURANCE, payload: data})
     }
 }
+
+export function getSearchResults(){
+    return async function (dispatch, getState) {
+        //To be changed
+        let {data} = await Request.get(`https://auth.cochlear.com/api/content/v1/deloitte/home/search`);
+        dispatch({ type: Types.UPDATE_SEARCHRESULTS, payload: data})
+    }
+}
+
+export function getGlobalSearch(){
+    return function (dispatch, getState){
+        dispatch({ type: Types.GET_GLOBALSEARCH, payload: data});
+    }
+}

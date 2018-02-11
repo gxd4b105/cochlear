@@ -9,7 +9,8 @@ import OnScreenNav__Item from '../../components/OnScreenNav__Item/OnScreenNav__I
 import GlobalHeader__Nav from '../../components/GlobalHeader__Nav/GlobalHeader__Nav.jsx';
 import GlobalHeader__Nav__Item from '../../components/GlobalHeader__Nav__Item/GlobalHeader__Nav__Item.jsx';
 import RegionLanguageSelect from "../../components/RegionLanguageSelect/RegionLanguageSelect.jsx";
-
+import Cm29GoogleSearch from "../../components/Cm29GoogleSearch/Cm29GoogleSearch.jsx";
+import SearchIcon from "../../components/SearchIcon/SearchIcon.jsx";
 //import imageSrc from '../../../images/logo2.png';
 
 if (process.env.BROWSER) {
@@ -20,6 +21,13 @@ if (process.env.BROWSER) {
     //require("./GlobalHeader.scss");
 }
 class Header extends Component {
+    
+
+    constructor(props){
+        super(props);
+        //this.handleClick=this.handleClick.bind(this);
+    }
+
     static fetchData({ store, params }) {
         if (store.getState().user.headerCountry != params.country || store.getState().user.headerCountry === null){
             return store.dispatch(actions.setHeaderCountry(params));
@@ -31,6 +39,10 @@ class Header extends Component {
         
         return ;
     }
+
+
+
+
     componentDidMount() {
         if (this.props.countryUpdate === 'true' || this.props.countryUpdate === true) {
             this.props.setHeaderCountry({'country': this.props.countryParams});
@@ -58,11 +70,17 @@ class Header extends Component {
 
                             <a href="#" className="icon-button login">Login</a>
 
-                            <button className="link-icon search-toggle js-popover-toggle" type="button" role="button" aria-label="Toggle search" data-popover-id="global-search">
+                            {/* <button
+                                onClick = {event => this.handleClick(event)} 
+                                className="link-icon search-toggle js-popover-toggle" type="button" role="button" aria-label="Toggle search" data-popover-id="global-search">
                                 <span className="icon svg-search-black" data-grunticon-embed></span>
                                 <span className="icon svg-close-grey" data-grunticon-embed></span>
                                 <span className="vh">Toggle search</span>
-                            </button>
+                            </button> */}
+                            
+                            <SearchIcon />
+
+                            <Cm29GoogleSearch />
 
                             <RegionLanguageSelect cta="Select a region and language"
                                                   formAction="/intl/home"
@@ -83,7 +101,7 @@ class Header extends Component {
                                 <GlobalHeader__Nav__Item title="About Us"
                                                    path="/intl/about-us"/>
                             </GlobalHeader__Nav>
-
+                            
                         </div>
 
                         <OnScreeNav additionalClass="nav-onscreen__main-header">
