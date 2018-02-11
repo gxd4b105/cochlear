@@ -61,6 +61,10 @@ class TypesOfTreatment extends Component {
 
                     <main id="main" tabIndex="-1" role="main" className="l-main">
 
+                        <article className="l-content-column">
+                            <Cm01RichText body={getData['body-copy']}/>
+                        </article>
+
                         <div className="sl">
                             <div className="sl-list has-2-items">
                                 <div className="sl-item">

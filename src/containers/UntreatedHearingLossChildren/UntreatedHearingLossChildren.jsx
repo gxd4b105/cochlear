@@ -74,12 +74,6 @@ class UntreatedHearingLossChildren extends Component {
                               embedVideo={getData['media-container-embed-01']}
                               />
 
-                            <BrochureDownload
-                              title="Request additional information"
-                              description="Fill in your details below if you'd like us to send you more information about implantable solutions."
-                              additionalClass="brochure-download"
-                            />
-
 
                         </article>
 

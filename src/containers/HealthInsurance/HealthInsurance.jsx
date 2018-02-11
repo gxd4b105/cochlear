@@ -31,7 +31,6 @@ class HealthInsurance extends Component {
 
     render() {
 
-        //console.log(this.props.dataStepsToGettingAnImplant);
         let getData = this.props.dataHealthInsurance;
 
         let json = {
@@ -68,6 +67,7 @@ class HealthInsurance extends Component {
 
                     <main id="main" tabIndex="-1" role="main" className="l-main">
                         <article className="l-content-column">
+
                             <Cm28SocialShare />
 
                             <Cm01RichText body={getData['body-copy']}/>
@@ -80,34 +80,40 @@ class HealthInsurance extends Component {
                             <BrochureDownload
                               title="Request additional information"
                               description="Fill in your details below if you'd like us to send you more information about implantable solutions."
+                              fileName=""
                               additionalClass="brochure-download"
                             />
 
 
                         </article>
 
-                        <div className="sl">
-                            <div className="sl-list has-1-items">
-                                <div className="sl-item">
-                                    <Cm02ContentTile    title={getData['cm02-title-01-01'].title}
-                                                        description={getData['cm02-description-01-01']}
-                                                        path={getData['cm02-title-01-01'].path}
-                                                       // title="Nucleus profile ear implants"
-                                                       // description="Hear my roar with the new nucleus profile ear implant!"
-                                                       // path="/intl/nucleus-profile-ear-implants"
-                                                        image={'https://auth.cochlear.com'+getData['cm02-image-01-01'].src}
-                                                        imagePath={getData['cm02-title-01-01'].path}
-                                                        //embed = {getData['cm02-video-embed-03-01']}
-                                                        additionalClass="is-small"/>
-                                </div>
-                            </div>
-                        </div>
-
                     </main>
 
                 </div>
 
-                
+                <RelatedContent   additionalClass="sl__related-articles"
+
+                                  title01 = {getData['related-title-01'].title}
+                                  description01 = {getData['related-description-01']}
+                                  path01 = {getData['related-title-01'].path}
+                                  image01 = {'https://auth.cochlear.com/'+getData['related-image-01'].src}
+                                  embed01 = {getData['related-video-embed-01']}
+                                  additionalClass01 = "is-small"
+
+                                  title02 = {getData['related-title-02'].title}
+                                  description02 = {getData['related-description-02']}
+                                  path02 = {getData['related-title-02'].path}
+                                  image02 = {'https://auth.cochlear.com/'+getData['related-image-02'].src}
+                                  embed02= {getData['related-video-embed-02']}
+                                  additionalClass02 = "is-small"
+
+                                  title03 = {getData['related-title-03'].title}
+                                  description03 = {getData['related-description-03']}
+                                  path03 = {getData['related-title-03'].path}
+                                  image03 = {'https://auth.cochlear.com/'+getData['related-image-03'].src}
+                                  embed03 = {getData['related-video-embed-03']}
+                                  additionalClass03 = "is-small"
+                />
 
                 <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
             </div>

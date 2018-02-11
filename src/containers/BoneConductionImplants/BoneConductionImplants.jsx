@@ -67,7 +67,7 @@ class BoneConductionImplants extends Component {
 
                             <MediaContainer
                               captionText={getData['media-container-caption-01']}
-                              imageLink={getData['media-container-image-01']}
+                              imageLink={'https://auth.cochlear.com/'+getData['media-container-image-01'].src}
                               embedVideo={getData['media-container-embed-01']}
                               />
 
@@ -76,29 +76,6 @@ class BoneConductionImplants extends Component {
                     </main>
 
                 </div>
-                <RelatedContent   additionalClass="sl__related-articles"
-
-                                  title01 = {getData['related-title-01'].title}
-                                  description01 = {getData['related-description-01']}
-                                  path01 = {getData['related-title-01'].path}
-                                  image01 = {'https://auth.cochlear.com/'+getData['related-image-01'].src}
-                                  embed01 = {getData['related-video-embed-01']}
-                                  additionalClass01 = "is-small"
-
-                                  title02 = {getData['related-title-02'].title}
-                                  description02 = {getData['related-description-02']}
-                                  path02 = {getData['related-title-02'].path}
-                                  image02 = {'https://auth.cochlear.com/'+getData['related-image-02'].src}
-                                  embed02= {getData['related-video-embed-02']}
-                                  additionalClass02 = "is-small"
-
-                                  title03 = {getData['related-title-03'].title}
-                                  description03 = {getData['related-description-03']}
-                                  path03 = {getData['related-title-03'].path}
-                                  image03 = {'https://auth.cochlear.com/'+getData['related-image-03'].src}
-                                  embed03 = {getData['related-video-embed-03']}
-                                  additionalClass03 = "is-small"
-                />
 
                 <GlobalFooter title={this.props.footerTitle} country={this.props.footerCountry} countryParams={this.props.match.params.country} countryUpdate = 'false' />
             </div>

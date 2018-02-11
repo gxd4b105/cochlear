@@ -29,7 +29,6 @@ class UntreatedHearingLossAdult extends Component {
 
     render() {
 
-        console.log(this.props.dataCommonSignsAdults);
         let getData = this.props.dataCommonSignsAdults;
 
         let json = {

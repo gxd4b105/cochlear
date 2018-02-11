@@ -31,7 +31,6 @@ class ForActiveLife extends Component {
 
     render() {
 
-        console.log(this.props.dataForActiveLife);
         let getData = this.props.dataForActiveLife;
 
         let json = {

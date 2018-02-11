@@ -29,7 +29,6 @@ class FundingYourHearingSolution extends Component {
 
     render() {
 
-        console.log(this.props.dataFundingYourHearingSolution);
         let getData = this.props.dataFundingYourHearingSolution;
         let json = {
             "breadcrumbs": [{ title: "Home", link:'/intl/home' },

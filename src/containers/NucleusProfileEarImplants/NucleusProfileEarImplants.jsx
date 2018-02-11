@@ -10,7 +10,7 @@ import Cm02ContentTile from "../../components/Cm02ContentTile/Cm02ContentTile.js
 import Cm01RichText from "../../components/Cm01RichText/Cm01RichText.jsx";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs.jsx";
 import HeaderLandingBanner from "../../components/HeaderLandingBanner/HeaderLandingBanner.jsx";
-import ContentHeader from "../../components/ContentHeader/ContentHeader.jsx";
+import RelatedContent from "../../components/RelatedContent/RelatedContent.jsx";
 
 if (typeof window === 'undefined') {
     global.window = {}

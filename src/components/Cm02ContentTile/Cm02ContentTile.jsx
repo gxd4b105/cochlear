@@ -13,14 +13,19 @@ class Cm02ContentTile extends React.Component {
             <div className={`cm cm-content-tile ${this.props.additionalClass}`}>
                 {
                   wrapLink(
-                    <span className="cm-image-block-link">
-                        {
-                          !!this.props.embed ?
-                          <div className="video-embed"><iframe width="560" height="315" src={`${this.props.embed}`} frameBorder="0" allow="encrypted-media" allowFullScreen></iframe></div> :
-                          <img className="img" src={`${this.props.image}`} alt={this.props.imageAlt} />
-                        }
+                    <span>
 
-                        <div className="content">
+                        <span className="cm-image-block-link">
+                          {!!this.props.embed ?
+                              <div className="video-embed">
+                                  <iframe width="560" height="315" src={`${this.props.embed}`} frameBorder="0"  allow="encrypted-media" allowFullScreen></iframe>
+                              </div> :
+                              <img className="img" src={`${this.props.image}`} alt={this.props.imageAlt}/>
+                          }
+                        </span>
+
+
+                        <span className="content">
                             <h3>{this.props.title}</h3>
                             {/*
                             <% if vars[:subheading] %>
@@ -29,9 +34,9 @@ class Cm02ContentTile extends React.Component {
                             */}
                             <p>{this.props.description}</p>
 
-                            {!!this.props.path && <a href={`${this.props.path}`} className="cta">Read more</a>}
+                            {!!this.props.path && <span className="cta">Read more</span>}
 
-                        </div>
+                        </span>
                     </span>
                   )
                 }

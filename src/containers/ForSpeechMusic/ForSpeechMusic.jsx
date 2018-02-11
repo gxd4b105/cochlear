@@ -31,7 +31,6 @@ class ForSpeechMusic extends Component {
 
     render() {
 
-        console.log(this.props.dataForSpeechMusic);
         let getData = this.props.dataForSpeechMusic;
 
         let json = {
